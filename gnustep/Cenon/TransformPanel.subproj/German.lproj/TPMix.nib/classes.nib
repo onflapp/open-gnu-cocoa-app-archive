@@ -1,0 +1,20 @@
+{
+    IBClasses = (
+        {CLASS = DragMatrix; LANGUAGE = ObjC; SUPERCLASS = NSMatrix; }, 
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {mix = id; }; 
+            CLASS = TPMix; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {lockRadio = id; mixLayersSwitch = id; }; 
+            SUPERCLASS = NSPanel; 
+        }, 
+        {
+            CLASS = TransformPanel; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {mixPanel = id; }; 
+            SUPERCLASS = NSPanel; 
+        }
+    ); 
+    IBVersion = 1; 
+}

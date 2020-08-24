@@ -1,0 +1,87 @@
+/* property list of changes for all gmodel files.
+ * This file should contain all gmodel files to have the size of
+ * NSSwitches removed.
+ *
+ * - "languages" lists the languages to process
+ * - "%@FILENAME.gmodel" lists the changes for the specified gmodel file
+ *   '%@' is replaced with the project directory
+ *   The entries are dictionary entries of key/value pairs
+ *
+ * Author:   Georg Fleischmann
+ * modified: 2005-11-06
+ */
+
+{
+    languages = ( English.lproj/, German.lproj/, "" );
+
+    "%@Document.gmodel" =
+    {
+        "Object   11" = { isa = DocWindow; };
+        "Object   14" = { autoresizingMask = 18; };
+        "Object   19" = { selectedItem = "100%"; };
+    };
+    "%@GridPanel.gmodel" =
+    {
+        "Object   11" = { isa = GridPanel; };
+    };
+    "%@IntersectionPanel.gmodel" =
+    {
+        "Object   11" = { isa = IntersectionPanel; };
+    };
+    "%@PrintPanelAccessory.gmodel" = { };
+    "%@TilePanel.gmodel" =
+    {
+        "Object   11" = { isa = TilePanel; };
+    };
+    "%@WorkingAreaPanel.gmodel" =
+    {
+        "Object   11" = { isa = WorkingAreaPanel; };
+    };
+
+    "InspectorPanel.subproj/%@InspectorPanel.gmodel" =
+    {
+        "Object   11" = { isa = InspectorPanel; };
+    };
+    "InspectorPanel.subproj/%@IPAllFilling.gmodel" =	{ "Object   11" = { isa = IPAllFilling; }; };
+    "InspectorPanel.subproj/%@IPAllLayers.gmodel" =	{ "Object   11" = { isa = IPAllLayers; }; };
+    "InspectorPanel.subproj/%@IPAllStrokeWidth.gmodel" =	{ "Object   11" = { isa = IPAllStrokeWidth; }; };
+    "InspectorPanel.subproj/%@IPAllText.gmodel" =	{ "Object   11" = { isa = IPAllText; }; };
+    "InspectorPanel.subproj/%@IPArc.gmodel" =		{ "Object   11" = { isa = IPArc; }; };
+    "InspectorPanel.subproj/%@IPCrosshairs.gmodel" =	{ "Object   11" = { isa = IPCrosshairs; }; };
+    "InspectorPanel.subproj/%@IPCurve.gmodel" =		{ "Object   11" = { isa = IPCurve; }; };
+    "InspectorPanel.subproj/%@IPGroup.gmodel" =		{ "Object   11" = { isa = IPGroup; }; };
+    "InspectorPanel.subproj/%@IPImage.gmodel" =		{ "Object   11" = { isa = IPImage; }; };
+    "InspectorPanel.subproj/%@IPLine.gmodel" =		{ "Object   11" = { isa = IPLine; }; };
+    "InspectorPanel.subproj/%@IPLine3D.gmodel" =	{ "Object   11" = { isa = IPLine3D; }; };
+    "InspectorPanel.subproj/%@IPPolyLine.gmodel" =	{ "Object   11" = { isa = IPPolyLine; }; };
+    "InspectorPanel.subproj/%@IPMark.gmodel" =		{ "Object   11" = { isa = IPMark; }; };
+    "InspectorPanel.subproj/%@IPPath.gmodel" =		{ "Object   11" = { isa = IPPath; }; };
+    "InspectorPanel.subproj/%@IPRectangle.gmodel" =	{ "Object   11" = { isa = IPRectangle; }; };
+    "InspectorPanel.subproj/%@IPSinking.gmodel" =	{ "Object   11" = { isa = IPSinking; }; };
+    "InspectorPanel.subproj/%@IPTextPath.gmodel" =	{ "Object   11" = { isa = IPTextPath; }; };
+    "InspectorPanel.subproj/%@IPText.gmodel" =		{ "Object   11" = { isa = IPText; }; };
+    "InspectorPanel.subproj/%@IPThread.gmodel" =	{ "Object   11" = { isa = IPThread; }; };
+    "InspectorPanel.subproj/%@IPWeb.gmodel" =		{ "Object   11" = { isa = IPWeb; }; };
+
+    "PreferencesPanel.subproj/%@PreferencesPanel.gmodel" =
+    {
+        "Object   11" = { isa = PreferencesPanel; };
+        "Object   14" = { className = NSTabView; };
+    };
+    "PreferencesPanel.subproj/General.bproj/%@General.gmodel" =	{ };
+    "PreferencesPanel.subproj/Export.bproj/%@Export.gmodel"   =	{ };
+    "PreferencesPanel.subproj/Import.bproj/%@Import.gmodel"   =	{ };
+
+    "ProjectSettingsPanel.subproj/%@PSInfo.gmodel"     =	{ };
+    "ProjectSettingsPanel.subproj/%@PSSettings.gmodel" =	{ };
+
+    "TransformPanel.subproj/%@TransformPanel.gmodel" =
+    {
+        "Object   11" = { isa = TransformPanel; };
+    };
+    "TransformPanel.subproj/%@TPAlign.gmodel" =		{ "Object   11" = { isa = TPAlign; }; };
+    "TransformPanel.subproj/%@TPMix.gmodel" =		{ "Object   11" = { isa = TPMix; }; };
+    "TransformPanel.subproj/%@TPRotate.gmodel" =	{ "Object   11" = { isa = TPRotate; }; };
+    "TransformPanel.subproj/%@TPScale.gmodel" =		{ "Object   11" = { isa = TPScale; }; };
+    "TransformPanel.subproj/%@TPMove.gmodel" =		{ "Object   11" = { isa = TPMove; }; };
+}

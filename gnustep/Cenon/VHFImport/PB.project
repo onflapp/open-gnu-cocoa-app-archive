@@ -1,0 +1,28 @@
+{
+    DYNAMIC_CODE_GEN = YES; 
+    FILESTABLE = {
+        CLASSES = (DINImport.m, DXFImport.m, GerberImport.m, HPGLImport.m, PSImport.m); 
+        H_FILES = (
+            DINImport.h, 
+            DXFImport.h, 
+            dxfColorTable.h, 
+            dxfOperators.h, 
+            GerberImport.h, 
+            HPGLImport.h, 
+            PSImport.h
+        ); 
+        OTHER_LINKED = (psi.psw); 
+        OTHER_RESOURCES = (psImport.prolog, psImportAI3.prolog, psImportAI3.trailer); 
+        OTHER_SOURCES = (Makefile.preamble, Makefile, Makefile.postamble, README); 
+        SUBPROJECTS = (); 
+    }; 
+    LANGUAGE = English; 
+    LOCALIZABLE_FILES = {}; 
+    MAKEFILEDIR = "$(NEXT_ROOT)/NextDeveloper/Makefiles/pb_makefiles"; 
+    NEXTSTEP_BUILDTOOL = /bin/gnumake; 
+    PDO_UNIX_BUILDTOOL = $NEXT_ROOT/NextDeveloper/bin/make; 
+    PROJECTNAME = VHFImport; 
+    PROJECTTYPE = Component; 
+    PROJECTVERSION = 2.6; 
+    WINDOWS_BUILDTOOL = $NEXT_ROOT/NextDeveloper/Executables/make; 
+}

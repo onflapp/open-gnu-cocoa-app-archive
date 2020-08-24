@@ -1,0 +1,66 @@
+Cenon Change Log - January 2002
+
+2002-01-03  Georg Fleischmann
+	* DocWindow.m, h (enableCoordDisplay:): new
+	  DocWindow.h: tileScrollView, coordBox added
+	  DocWindow.nib: tileScrollView, coordBox added,
+	                 line between tileScrollView removed, box now serves as line
+2002-01-03  Ilonka Fleischmann
+	* VPath.m (-subPathInsidePath::) iCnt = -1 instead of 1, if(iCnt<0) in 3.loop -> sidestep
+	* PickOutAri.m (-pickOutPath:..) && t > 0.90 instead of 0.99
+	  PickOutAri.m (-pickOutPath:..) ohne path width !!!!!!!!!!!!!!!
+	* Type1Import.m (-lineto::) if( currentPoint==end) do not add
+	* Type1Font.m (-setCharMetricsFromList:in...) if(!..ColorSpace -> nach rgb gesetzt statt NSLOG()..
+
+2002-01-09  Georg Fleischmann
+	* DXFImportSub.m, h (-addText:...): alignment added
+	* DocWindow (-close): send update message to data panel instead of self
+
+2002-01-12  Georg Fleischmann
+	* Xyz.m (-applicationDidFinishLaunching:): nil for host instead of "*"
+	* PathCFill.m (-contourFillPath:inset:offset:, -contourPath:width:, -contourImage:width:):
+		init behind alloc !!
+	  PathCFill.m (-contourFillPath:inset:offset:, -contourPath:width:, -contourImage:width:):
+		rect.origin = NSZeroPoint
+
+2002-01-17  Georg Fleischmann
+	* MoveMatrix.m (-mouseDown:): use -dataWithEPSInsideRect: for Apple
+
+2002-01-18  Georg Fleischmann
+	* VImage.m (-writeFilesToDirectory:): compress files as LZW
+
+2002-01-22  Georg Fleischmann
+	* ToolObject.h: LIMITDIAMETER set to 100 (was 20)
+
+2002-01-24  Georg Fleischmann
+	* VText.m (-setFont:): check bounds before setting frame
+
+2002-01-25  Georg Fleischmann
+	* DocView.m (-moveObject:): !betaView -> beta = NO
+	  DocView.m (-setParameter): for Apple set betaCache = nil
+	* KeyPanel.m (-setLicensorString:): write string to LOCALLIBRARY or HOME-Library
+	  KeyPanel.m (-licensorString:): read from HOME-Library or LOCALLIBRARY
+	* vhfLockFunctions.m (readKey(), writeKey()): read/write from HOME-Library or LOCALLIBRARY
+	* PPMisc.m: for Apple no caching
+
+2002-01-26  Georg Fleischmann
+	* DocView.m (-joinSelection:messages:): update object in performance map
+
+2002-01-29  Georg Fleischmann
+	* App.m (-listFromFile): importPDF added, cleanup
+	  App.m (-openDocument:): pdf extension added
+	* locations.h: PDF_EXT added
+
+2002-01-30  Georg Fleischmann
+	* App.m (-terminate:): send performClose to window
+	* App.m (-init): openPanel workaround wieder aktiviert
+	* DPLayerDetails.m (-setDipDepth:): set layer = dirty for conical cutters
+	* VPath.m (-createOutput): for pickout use [tool diameter]
+	* PSImportSub.m (-setBounds:): check for empty list
+	* VPath.m, h (-pathWithBezierPath:): new
+	* VCurve.m, h (-curveWithPoints::::): new
+
+2002-01-31  Georg Fleischmann
+	* DocView.m: NSCopyBits() instead of PScomposite() for cacheView
+	* VText.m: use [textStorage length] instead of [string length]
+	* VText.m (-getFlattenedObjectAt:withOffset:): Apple stuff added, clean up

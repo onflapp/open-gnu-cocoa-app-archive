@@ -1,0 +1,58 @@
+{\rtf0\ansi{\fonttbl\f0\fmodern Courier;}
+\pard\tx1440\tx5400\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li5400\fi-5400\ql\qnatural
+
+\f0\b\fs24 \cf0 …nderungen för October 1999\
+\pard\tx1440\tx5400\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li5400\fi-5400\ql\qnatural
+
+\b0 \cf0 \
+31.10.99	Cenon\
+\
+Datum	Datei	VerÙndert\
+----------------------------------------------------------------------------------------------\
+01.10.99	Editor2DGraphic.m	-mouseDown:, -placeGraphic: -> CreateGraphicsChange eingebaut\
+		-insertGraphic:onLayer: -> new\
+		-isSelectionEditable -> new\
+		-delete: -> change eingebaut\
+	CreateGraphicsChange.m	-undoChange, redoChange -> redraw eingebaut\
+		-layerOfGraphic: -> new\
+		int layer -> new\
+	ChangeDetail.m	recordGraphicPosition -> auch layer\
+	DeleteGraphicsChange.m, h	new\
+	CutGraphicsChange.m,h	new\
+	e2Pasteboard.m	drawundo.h added\
+		-cut: -> change aktiviert\
+	drawundo.h	???GraphicChange aktiviert\
+	Localizable.strings	Undo strings hinzugefögt\
+02.10.99	TextGraphic.m	-textDidEnd: -> string auf * gesetzt, wenn leer\
+	e2Pasteboard.m	-pasteFromPasteboard: -> change eingebaut\
+03.10.99	Operations.strings	new\
+	Localizable.strings	undo strings entfernt\
+		; angehÙngt\
+		title der Graphicobjekte hinzugefögt\
+04.10.99	Group.m, h\
+	Path.m, h	-transferSubGraphicsTo: at: -> new\
+	Editor2DView.m	-group, -ungroup -> change hinzugefögt\
+		-join -> change hinzugefögt\
+	GroupGraphicsChange.m, h	new\
+	UngroupGraphicsChange.m, h	new\
+	JoinGraphicsChange.m, h	new\
+\pard\tx1440\tx5400\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li5400\fi-5400\ql\qnatural
+
+\b \cf0 3.20 Beta 17\
+\
+\pard\tx1440\tx5400\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li5400\fi-5400\ql\qnatural
+
+\b0 \cf0 22.10.99	Path.m	-contour -> smooth edge\
+26.10.99	DPLayerDetails.nib	inlay in 'alle Lagen'-Bereich eingebaut\
+	DPLayerDetails.m	-setSwitches: inlay hinzugefögt\
+	LayerObject.m, h	inlay -> new\
+	e2Output.m	inlay -> new\
+	Editor2DView.h	inlay -> new\
+\pard\tx1440\tx5400\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li5400\fi-5400\ql\qnatural
+
+\b \cf0 3.20 Beta 18\
+\pard\tx1440\tx5400\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li5400\fi-5400\ql\qnatural
+
+\b0 \cf0 \
+31.10.99	Path.m	-putFillUPath -> in step loop free(pts) bei continue\
+}

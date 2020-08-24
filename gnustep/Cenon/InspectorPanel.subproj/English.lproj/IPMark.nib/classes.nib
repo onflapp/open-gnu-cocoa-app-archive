@@ -1,0 +1,35 @@
+{
+    IBClasses = (
+        {
+            CLASS = App; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {inspectorPanel = id; }; 
+            SUPERCLASS = NSApplication; 
+        }, 
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {setLock = id; setName = id; setPointX = id; setPointY = id; setPointZ = id; }; 
+            CLASS = IPMark; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                lockSwitch = id; 
+                nameField = id; 
+                xField = id; 
+                yField = id; 
+                zField = id; 
+                zLeftButton = id; 
+                zRightButton = id; 
+                zSwitch = id; 
+            }; 
+            SUPERCLASS = NSPanel; 
+        }, 
+        {
+            CLASS = InspectorPanel; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {markWindow = id; }; 
+            SUPERCLASS = NSPanel; 
+        }, 
+        {CLASS = SurfaceWell; LANGUAGE = ObjC; SUPERCLASS = NSColorWell; }
+    ); 
+    IBVersion = 1; 
+}

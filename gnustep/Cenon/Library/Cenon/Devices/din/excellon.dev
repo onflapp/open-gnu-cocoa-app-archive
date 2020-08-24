@@ -1,0 +1,44 @@
+device name                                  #DEV "Excellon 2"
+
+baudrate (0=parallel)                        #BAU 9600
+handshake (0=none, 1=XON/XOFF, 2=RTS/CTS)    #HSK 1
+
+special characters in command strings:
+linefeed                  \n
+escape                    \e
+carriage Return           \r
+quotationmarks            \"
+parameters will be inserted at %f (%d, %x, %ld, %e)
+
+XY-maximum in mm                             #MAX 1000 1000
+resolution (inch) in points/inch             #RES 10000
+resolution (mm) in points/inch               #RMM 25400
+
+mm                                           #UMM "M71"
+
+for output only:
+initialize                                   #INI ""
+X-coordinate                                 #XPO "X%f"
+Y-coordinate                                 #YPO "Y%f"
+select tool                                  #TNR "T%d"
+diameter of tool                             #TDM "C%f"
+revolution                                   #TRV "S%f"
+separator                                    #SEP " "
+terminator                                   #TRM "\n"
+line number                                  #NUM "N%d "
+begin                                        #BEG "M25"
+drill                                        #DRL "G05"
+end                                          #END "M01"
+end of program                               #PEN "M30"
+reset                                        #RST ""
+
+for interpreter only:
+comment                                      #REM "/"
+select tool                                  #ITL "T"
+X                                            #IXP "X"
+Y                                            #IYP "Y"
+diameter of tool                             #IDM "C"
+revolution                                   #IRV "S"
+terminator                                   #ITM "\n"
+
+tool parameter

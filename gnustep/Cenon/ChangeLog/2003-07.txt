@@ -1,0 +1,44 @@
+Cenon Change Log - July 2003
+
+2003-07-07  Georg Fleischmann
+	* DocView.m (-mouseDown:): post DocViewMouseDown notification
+	  DocView.h (DocViewMouseDown): new
+
+2003-07-07  Georg Fleischmann
+	* DXFImportSub.m (-setBounds:): ask user before removing objects
+	* VSinking.m (-encodeWithCoder:, -decodeWithCoder:): origin added
+	* IPText.nib, IPArc.nib, IPRectangle.nib: degree fields are wider now
+
+2003-07-10  Georg Fleischmann
+	* VPolyLine.m (-isPointInside:): without path representation and sidesteps, faster!
+	* VPath.m (-intersectionsForPtInside:with:): [self numPoints] instead of [list count]*9 for memory
+
+2003-07-14  Georg Fleischmann
+	* PreferencesPanel.m (+initialize): new with defaults for general and import
+	  ImportController.m (+initialize): disabled
+	  GeneralController.m (+initialize): disabled
+	* Document (-save): pass fileDirectory to DocumentHasBeenSaved notification,
+	                    removal of 'ouput' removed
+
+2003-07-16  Georg Fleischmann
+	* Arc.m, h (+arcWithCenter:radius:filled:): new
+
+2003-07-19  Georg Fleischmann
+	* VPolyLine.m, h (-intersect:withRect:): new
+	  vhf2DFunctions.m, h (intersectLineAndRect()): new
+
+2003-07-22  Georg Fleischmann
+	* VSinking.m, h (-sqrDistanceGraphic:): new
+	* GeneralController.m, h (SWITCH_SELECTNONEDIT): selection of non editable layers added
+	  General.nib: switch added
+	  DocView.m (-mouseDown:, -selectAll:, -dragSelect:): check for Prefs_SelectNonEditable instead of camModul
+
+2003-07-24  Georg Fleischmann
+	* DocView.m (-mouseDown:): post notification DocViewMouseDown object and userInfo exchanged
+	  Document.m (-save): post notification DocumentHasBeenSaved, object and userInfo exchanged
+
+2003-07-28  Georg Fleischmann
+	* VPath.m (-directionOfSubPath::): new way to handle arcs
+
+2003-07-29  Georg Fleischmann
+	* ImportController.m (-update:): for popup menus let for-loop run while i > 0, not i >= 0

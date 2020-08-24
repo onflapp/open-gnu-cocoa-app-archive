@@ -1,0 +1,393 @@
+{
+    Author = "Ilonka Fleischmann"; 
+    Comment = ""; 
+    Copyright = "1995 by Ilonka Fleischmann"; 
+    CreationDate = "2003-03-28 00:36"; 
+    Creator = Cenon; 
+    Data = {
+        gridSpacing = 0; 
+        gridUnit = 0; 
+        layerList = (
+            {
+                Class = LayerObject; 
+                approachAngle = 0; 
+                dippingDepth = 0; 
+                editable = YES; 
+                fillDirection = 0; 
+                fillOverlap = 0.25; 
+                flatness = 0.15; 
+                levelingLimits = "2 2"; 
+                likeOtherLayers = YES; 
+                list = (
+                    {
+                        Class = VPath; 
+                        ccw = 1; 
+                        color = {A = 1; B = 0.6667; G = 0.6667; R = 0.6667; s = CalRGB; }; 
+                        endColor = {A = 1; B = 0; G = 0.8; R = 1; s = CalRGB; }; 
+                        fillColor = {A = 1; B = 0; G = 0.3333333; R = 1; s = CalRGB; }; 
+                        filled = 2; 
+                        graduateAngle = 0; 
+                        list = (
+                            {
+                                Class = VCurve; 
+                                color = {A = 1; B = 0.6667; G = 0.6667; R = 0.6667; s = CalRGB; }; 
+                                p0 = "205.174683 127.29422"; 
+                                p1 = "205.174683 130.819366"; 
+                                p2 = "208.032227 133.67691"; 
+                                p3 = "211.55719 133.67691"; 
+                                width = 0.85035; 
+                            }, 
+                            {
+                                Class = VCurve; 
+                                color = {A = 1; B = 0.6667; G = 0.6667; R = 0.6667; s = CalRGB; }; 
+                                p0 = "211.55719 133.67691"; 
+                                p1 = "215.074646 133.67691"; 
+                                p2 = "217.93219 130.819366"; 
+                                p3 = "217.93219 127.29422"; 
+                                width = 0.85035; 
+                            }, 
+                            {
+                                Class = VCurve; 
+                                color = {A = 1; B = 0.6667; G = 0.6667; R = 0.6667; s = CalRGB; }; 
+                                p0 = "217.93219 127.29422"; 
+                                p1 = "217.93219 123.76944"; 
+                                p2 = "215.074646 120.91922"; 
+                                p3 = "211.55719 120.91922"; 
+                                width = 0.85035; 
+                            }, 
+                            {
+                                Class = VCurve; 
+                                color = {A = 1; B = 0.6667; G = 0.6667; R = 0.6667; s = CalRGB; }; 
+                                p0 = "211.55719 120.91922"; 
+                                p1 = "208.032227 120.91922"; 
+                                p2 = "205.174683 123.76944"; 
+                                p3 = "205.174683 127.29422"; 
+                                width = 0.85035; 
+                            }, 
+                            {
+                                Class = VCurve; 
+                                color = {A = 1; B = 0.6667; G = 0.6667; R = 0.6667; s = CalRGB; }; 
+                                p0 = "138.102234 229.361969"; 
+                                p1 = "129.094727 217.901764"; 
+                                p2 = "127.347168 208.751984"; 
+                                p3 = "126.80719 198.799469"; 
+                                width = 0.85035; 
+                            }, 
+                            {
+                                Class = VCurve; 
+                                color = {A = 1; B = 0.6667; G = 0.6667; R = 0.6667; s = CalRGB; }; 
+                                p0 = "126.80719 198.799469"; 
+                                p1 = "126.289734 189.409454"; 
+                                p2 = "131.607117 179.996735"; 
+                                p3 = "134.112183 174.20694"; 
+                                width = 0.85035; 
+                            }, 
+                            {
+                                Class = VCurve; 
+                                color = {A = 1; B = 0.6667; G = 0.6667; R = 0.6667; s = CalRGB; }; 
+                                p0 = "134.112183 174.20694"; 
+                                p1 = "136.962219 167.64444"; 
+                                p2 = "134.112183 162.911896"; 
+                                p3 = "126.139587 162.911896"; 
+                                width = 0.85035; 
+                            }, 
+                            {
+                                Class = VCurve; 
+                                color = {A = 1; B = 0.6667; G = 0.6667; R = 0.6667; s = CalRGB; }; 
+                                p0 = "126.139587 162.911896"; 
+                                p1 = "116.742065 162.911896"; 
+                                p2 = "99.784668 172.414337"; 
+                                p3 = "85.602234 171.55191"; 
+                                width = 0.85035; 
+                            }, 
+                            {
+                                Class = VCurve; 
+                                color = {A = 1; B = 0.6667; G = 0.6667; R = 0.6667; s = CalRGB; }; 
+                                p0 = "85.602234 171.55191"; 
+                                p1 = "63.679565 170.224396"; 
+                                p2 = "59.689697 142.316925"; 
+                                p3 = "72.312073 138.327057"; 
+                                width = 0.85035; 
+                            }, 
+                            {
+                                Class = VCurve; 
+                                color = {A = 1; B = 0.6667; G = 0.6667; R = 0.6667; s = CalRGB; }; 
+                                p0 = "72.312073 138.327057"; 
+                                p1 = "54.372131 136.999542"; 
+                                p2 = "53.712219 108.424469"; 
+                                p3 = "64.339661 103.10672"; 
+                                width = 0.85035; 
+                            }, 
+                            {
+                                Class = VCurve; 
+                                color = {A = 1; B = 0.6667; G = 0.6667; R = 0.6667; s = CalRGB; }; 
+                                p0 = "64.339661 103.10672"; 
+                                p1 = "52.377197 92.471954"; 
+                                p2 = "57.034668 72.54422"; 
+                                p3 = "70.324646 69.221954"; 
+                                width = 0.85035; 
+                            }, 
+                            {
+                                Class = VCurve; 
+                                color = {A = 1; B = 0.6667; G = 0.6667; R = 0.6667; s = CalRGB; }; 
+                                p0 = "70.324646 69.221954"; 
+                                p1 = "60.559631 60.16922"; 
+                                p2 = "66.102234 44.599396"; 
+                                p3 = "80.149719 42.409454"; 
+                                width = 0.85035; 
+                            }, 
+                            {
+                                Class = VCurve; 
+                                color = {A = 1; B = 0.6667; G = 0.6667; R = 0.6667; s = CalRGB; }; 
+                                p0 = "80.149719 42.409454"; 
+                                p1 = "91.962219 40.571808"; 
+                                p2 = "112.872131 37.766998"; 
+                                p3 = "129.484741 37.099396"; 
+                                width = 0.85035; 
+                            }, 
+                            {
+                                Class = VCurve; 
+                                color = {A = 1; B = 0.6667; G = 0.6667; R = 0.6667; s = CalRGB; }; 
+                                p0 = "129.484741 37.099396"; 
+                                p1 = "142.099609 36.596954"; 
+                                p2 = "159.762146 40.361969"; 
+                                p3 = "170.074646 43.346954"; 
+                                width = 0.85035; 
+                            }, 
+                            {
+                                Class = VCurve; 
+                                color = {A = 1; B = 0.6667; G = 0.6667; R = 0.6667; s = CalRGB; }; 
+                                p0 = "170.074646 43.346954"; 
+                                p1 = "183.154602 47.134308"; 
+                                p2 = "197.292175 52.279572"; 
+                                p3 = "211.909668 54.274323"; 
+                                width = 0.85035; 
+                            }, 
+                            {
+                                Class = VCurve; 
+                                color = {A = 1; B = 0.6667; G = 0.6667; R = 0.6667; s = CalRGB; }; 
+                                p0 = "211.909668 54.274323"; 
+                                p1 = "214.572205 85.504425"; 
+                                p2 = "225.417175 113.246735"; 
+                                p3 = "224.089661 139.827057"; 
+                                width = 0.85035; 
+                            }, 
+                            {
+                                Class = VCurve; 
+                                color = {A = 1; B = 0.6667; G = 0.6667; R = 0.6667; s = CalRGB; }; 
+                                p0 = "224.089661 139.827057"; 
+                                p1 = "207.477234 139.827057"; 
+                                p2 = "193.722168 148.077057"; 
+                                p3 = "188.404602 152.066925"; 
+                                width = 0.85035; 
+                            }, 
+                            {
+                                Class = VCurve; 
+                                color = {A = 1; B = 0.6667; G = 0.6667; R = 0.6667; s = CalRGB; }; 
+                                p0 = "188.404602 152.066925"; 
+                                p1 = "182.389587 156.574249"; 
+                                p2 = "168.634705 171.056793"; 
+                                p3 = "167.614624 183.799469"; 
+                                width = 0.85035; 
+                            }, 
+                            {
+                                Class = VCurve; 
+                                color = {A = 1; B = 0.6667; G = 0.6667; R = 0.6667; s = CalRGB; }; 
+                                p0 = "167.614624 183.799469"; 
+                                p1 = "166.887146 192.911896"; 
+                                p2 = "161.727234 199.29422"; 
+                                p3 = "158.49469 205.67691"; 
+                                width = 0.85035; 
+                            }, 
+                            {
+                                Class = VCurve; 
+                                color = {A = 1; B = 0.6667; G = 0.6667; R = 0.6667; s = CalRGB; }; 
+                                p0 = "158.49469 205.67691"; 
+                                p1 = "155.269653 212.066925"; 
+                                p2 = "156.732117 221.479279"; 
+                                p3 = "155.374573 229.361969"; 
+                                width = 0.85035; 
+                            }, 
+                            {
+                                Class = VCurve; 
+                                color = {A = 1; B = 0.6667; G = 0.6667; R = 0.6667; s = CalRGB; }; 
+                                p0 = "155.374573 229.361969"; 
+                                p1 = "154.017212 237.251984"; 
+                                p2 = "142.302124 234.709381"; 
+                                p3 = "138.102234 229.361969"; 
+                                width = 0.85035; 
+                            }
+                        ); 
+                        radialCenter = "0 0"; 
+                        stepWidth = 2; 
+                        width = 0; 
+                    }, 
+                    {
+                        Class = VPath; 
+                        ccw = 1; 
+                        color = {A = 1; B = 0; G = 0; R = 0; s = CalRGB; }; 
+                        endColor = {A = 1; W = 0; s = CalWhite; }; 
+                        fillColor = {A = 1; B = 0; G = 0; R = 0; s = CalRGB; }; 
+                        graduateAngle = 0; 
+                        list = (
+                            {
+                                Class = VCurve; 
+                                color = {A = 1; B = 0; G = 0; R = 0; s = CalRGB; }; 
+                                p0 = "72.312073 138.327057"; 
+                                p1 = "76.737183 135.214264"; 
+                                p2 = "115.107117 126.469513"; 
+                                p3 = "126.99469 124.541779"; 
+                                width = 0.85035; 
+                            }, 
+                            {
+                                Class = VCurve; 
+                                color = {A = 1; B = 0; G = 0; R = 0; s = CalRGB; }; 
+                                p0 = "126.99469 124.541779"; 
+                                p1 = "139.737183 122.479279"; 
+                                p2 = "154.189697 150.35672"; 
+                                p3 = "131.127197 157.931793"; 
+                                width = 0.85035; 
+                            }
+                        ); 
+                        radialCenter = "0 0"; 
+                        stepWidth = 0; 
+                        width = 0.5669; 
+                    }, 
+                    {
+                        Class = VPath; 
+                        ccw = 1; 
+                        color = {A = 1; B = 0; G = 0; R = 0; s = CalRGB; }; 
+                        endColor = {A = 1; W = 0; s = CalWhite; }; 
+                        fillColor = {A = 1; B = 0; G = 0; R = 0; s = CalRGB; }; 
+                        graduateAngle = 0; 
+                        list = (
+                            {
+                                Class = VCurve; 
+                                color = {A = 1; B = 0; G = 0; R = 0; s = CalRGB; }; 
+                                p0 = "64.339661 103.10672"; 
+                                p1 = "78.117065 95.629425"; 
+                                p2 = "110.884705 92.98172"; 
+                                p3 = "121.144653 91.842072"; 
+                                width = 0.85035; 
+                            }, 
+                            {
+                                Class = VCurve; 
+                                color = {A = 1; B = 0; G = 0; R = 0; s = CalRGB; }; 
+                                p0 = "121.144653 91.842072"; 
+                                p1 = "136.639587 90.116852"; 
+                                p2 = "145.93219 118.001984"; 
+                                p3 = "126.99469 124.541779"; 
+                                width = 0.85035; 
+                            }
+                        ); 
+                        radialCenter = "0 0"; 
+                        stepWidth = 0; 
+                        width = 0.5669; 
+                    }, 
+                    {
+                        Class = VPath; 
+                        ccw = 1; 
+                        color = {A = 1; B = 0; G = 0; R = 0; s = CalRGB; }; 
+                        endColor = {A = 1; W = 0; s = CalWhite; }; 
+                        fillColor = {A = 1; B = 0; G = 0; R = 0; s = CalRGB; }; 
+                        graduateAngle = 0; 
+                        list = (
+                            {
+                                Class = VCurve; 
+                                color = {A = 1; B = 0; G = 0; R = 0; s = CalRGB; }; 
+                                p0 = "70.324646 69.221954"; 
+                                p1 = "82.249573 63.95694"; 
+                                p2 = "105.99469 62.134308"; 
+                                p3 = "114.259705 61.89444"; 
+                                width = 0.85035; 
+                            }, 
+                            {
+                                Class = VCurve; 
+                                color = {A = 1; B = 0; G = 0; R = 0; s = CalRGB; }; 
+                                p0 = "114.259705 61.89444"; 
+                                p1 = "125.967102 61.549469"; 
+                                p2 = "135.259705 82.886749"; 
+                                p3 = "121.144653 91.842072"; 
+                                width = 0.85035; 
+                            }
+                        ); 
+                        radialCenter = "0 0"; 
+                        stepWidth = 0; 
+                        width = 0.5669; 
+                    }, 
+                    {
+                        Class = VCurve; 
+                        color = {A = 1; B = 0; G = 0; R = 0; s = CalRGB; }; 
+                        p0 = "114.259705 61.89444"; 
+                        p1 = "125.112183 57.709381"; 
+                        p2 = "123.334595 37.286896"; 
+                        p3 = "108.874573 38.666779"; 
+                        width = 0.85035; 
+                    }
+                ); 
+                numSteps = 0; 
+                removeLoops = YES; 
+                settle = 0; 
+                side = 2; 
+                state = 1; 
+                step0 = 0; 
+                step1 = 0; 
+                step2 = 0; 
+                string = "Thumb Up"; 
+                tag = 0; 
+                toolIndex = "-1"; 
+                toolString = ""; 
+                type = 0; 
+                useForTile = YES; 
+                v = 4; 
+            }, 
+            {
+                Class = LayerObject; 
+                approachAngle = 0; 
+                dippingDepth = 0; 
+                fillDirection = 0; 
+                fillOverlap = 0.25; 
+                flatness = 0.15; 
+                levelingLimits = "2 2"; 
+                list = (); 
+                numSteps = 0; 
+                removeLoops = YES; 
+                settle = 0; 
+                side = 2; 
+                state = 1; 
+                step0 = 0; 
+                step1 = 0; 
+                step2 = 0; 
+                string = Clipping; 
+                tag = 0; 
+                toolIndex = "-1"; 
+                toolString = ""; 
+                type = 2; 
+                v = 4; 
+            }
+        ); 
+        origin = {
+            Class = VCrosshairs; 
+            ccw = 1; 
+            color = {A = 1; W = 0; s = CalWhite; }; 
+            origin = "0 0"; 
+            width = 0; 
+        }; 
+        tileDistance = "0 0"; 
+        tileLimits = "0 0"; 
+    }; 
+    DocVersion = 1.0; 
+    MagazineIndex = 0; 
+    PrintInfo = {
+        bottomMargin = 0; 
+        leftMargin = 0; 
+        orientation = 0; 
+        paperName = A4; 
+        paperSize = "595 842"; 
+        rightMargin = 0; 
+        topMargin = 0; 
+    }; 
+    Version = 102; 
+    ViewSize = "0 0 283.464569 255.118103"; 
+    WindowFrame = "384 423 305 339 0 0 1532 1200 "; 
+}

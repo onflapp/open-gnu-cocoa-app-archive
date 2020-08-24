@@ -1,0 +1,46 @@
+{
+    IBClasses = (
+        {
+            CLASS = App; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {inspectorPanel = id; }; 
+            SUPERCLASS = NSApplication; 
+        }, 
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {
+                setLock = id; 
+                setOriginX = id; 
+                setOriginY = id; 
+                setPointX = id; 
+                setPointY = id; 
+                setSizeHeight = id; 
+                setSizeWidth = id; 
+            }; 
+            CLASS = IPPath; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                lockSwitch = id; 
+                originXField = id; 
+                originYField = id; 
+                sizeHeightField = id; 
+                sizeWidthField = id; 
+                xButtonLeft = id; 
+                xButtonRight = id; 
+                xField = id; 
+                yButtonLeft = id; 
+                yButtonRight = id; 
+                yField = id; 
+            }; 
+            SUPERCLASS = NSPanel; 
+        }, 
+        {
+            CLASS = InspectorPanel; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {pathWindow = id; }; 
+            SUPERCLASS = NSPanel; 
+        }, 
+        {CLASS = SurfaceWell; LANGUAGE = ObjC; SUPERCLASS = NSColorWell; }
+    ); 
+    IBVersion = 1; 
+}

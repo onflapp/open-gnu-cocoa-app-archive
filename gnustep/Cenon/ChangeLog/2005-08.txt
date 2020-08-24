@@ -1,0 +1,25 @@
+Cenon Change Log - August 2005
+
+2005-08-03 Georg Fleischmann
+	* App.m (-openFile:): check, wheather file exists, returns BOOL now
+
+2005-08-03 Georg Fleischmann
+	* GridPanel.nib: text field is first responder now
+
+2005-08-04 Georg Fleischmann
+	* App.m, h (-openedDocument:): return the last opened document
+	  App.m (-setCurrentDocumtent:): (Document*)
+
+2005-08-22 Georg Fleischmann
+	* App.m (-init:): workaround with save panel on OpenStep added again (Grrr !)
+
+2005-08-31 Georg Fleischmann
+	* LayerObject.h (LayerType): now enum, LAYER_PAGE added for multi page documents
+	  LayerDetailsController.m, h: new, to change the layer type (layer / page)
+	  LayerDetails.nib: new
+	  IPAllLayers.h (-currentLayerObject): added to header
+	  IPAllLayers.h (-doubleClickLayer:): open layer details panel to set layer type
+	  IPLayerCell.m (-trackMouse...): sendDoubleAction, text width now full rest of column (no /2.5)
+	  -> Multi page Documents
+
+next Cenon 3.71

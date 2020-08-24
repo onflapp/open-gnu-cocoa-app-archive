@@ -1,0 +1,29 @@
+{\rtf0\ansi{\fonttbl\f0\fmodern Courier;}
+\pard\tx1440\tx2700\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li2700\fi-2700\ql\qnatural
+
+\f0\b\fs24 \cf0 …nderungen för Januar 1998\
+
+\b0 \
+29.01.98	Cenon\
+\
+\pard\tx1440\tx4320\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li4320\fi-4320\ql\qnatural
+\cf0 Datum	Datei	VerÙndert\
+----------------------------------------------------------------------------------------------\
+09.01.98	Path.m	-putFillUPath:: -> Abfrage auf !userPath->maxElems\
+		-buildFillUPath -> mindestens Platz för 10 Elemente\
+14.01.98	Info.nib	Version B02\
+	DataPanel.nib	Mindestgrðûe der Deutschen OberflÙche\
+	IPRectangle.m	-setLeft, -setLow -> verschiebt gesamtes Rechteck\
+	Rectangle.m	-scale::withCenter: -> neu\
+		-putUPath::lastPoint -> neu\
+	Editor2DView.m	-join: -> Rectangle aufgenommen, gefölltes object in selectedList -> Pfad föllen\
+	Path.m	diverse release in autorelease verwandelt\
+		-addToClosestEnd: -> [obj release] entfernt\
+		-closed -> !cnt -> YES\
+		-complexJoin:, -join -> rectangle wird zum path gemacht\
+	Path.h	MAX_OBJECTPTS -> neu\
+15.01.98	Editor2DView.m	-mouseDown -> Selektieren von Objekten mehrerer Lagen bricht nach erstem Erfolg ab\
+17.01.98	Xyz.m	-xyzMoveXY -> xyzSetKnife mit mx und my statt x und y aufgerufen\
+		-setKnife -> vMove statt vDraw zum Drehen\
+29.01.98	DPControl.m	-start -> Fahrbereichsabfrage lag um 0.5 mm schlechter wegen Knobs\
+}

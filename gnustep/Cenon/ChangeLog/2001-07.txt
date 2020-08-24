@@ -1,0 +1,61 @@
+Cenon Change Log - July 2001
+
+
+2001-07-02  Georg Fleischmann
+	* PCBContour.m (+createRubOutputWithList:, +createOutputWithList:): set bounds of output
+
+2001-07-08  Ilonka Fleischmann
+	* GerberImport.m (-loadRS274XApertures:): setCaseSensitive:YES !!!
+	* HiddenArea.m (-uniteAreas:): in beiden Schleifen Autoreleasepool eingebaut
+	* PCBContour.m (-pcbContourWithList:): in zweiter Farbverteilungs Schleife Autoreleasepool eingebaut
+	  PCBContour.m (-pcbContourWithList:): in Farbverteilungs insert:[[g2 copy] autorlease] instead insert:g2
+	  PCBContour.m (-pcbContourWithList:): in zweiter avoidShortCircuits Schleife Autoreleasepool eingebaut
+
+2001-07-10  Georg Fleischmann
+	* Path.m (-getIntersections:with:): realloc if needed, better memory management started but not in use
+
+Cenon 3.50 beta 5
+
+2001-07-12  Ilonka Fleischmann
+	* Rectangle.m (-pathRepresentation:): [pathG setFilled:filled optimize:NO] instead YES !
+	  Rectangle.m (-contour:): remark width !
+	* PCBContour.m (-pcbContourWithList:): Farbverteilung start mit 0 0 0
+	  PCBContour.m (-clearListForPCBContour:): arc on line same great compare with arc width !!
+	  PCBContour.m (-clearListForPCBContour:): if only 1 element inside a polygon add to list remove polygon
+	* GerberImport.m (): ???
+	* Path.m (-intersectionsForPtInside:) if intersection pt is an edge pt of graphic returns -1
+	  Path.m (-intersectionsForPtInside:) curve extrempunkte ergÙnzt
+	  Path.m #import "../vhfMath.h"
+	  Path.m (-contourOpen:): remark width ! -> width for contour is w+width !
+	  Path.m (-contourOpen:): setWidth of gr to 0.0 for contour - some graphic has/has not a width(!=0) in stroked path
+2001-07-12  Georg Fleischmann
+	* Path.m (-getLastObjectOfSubPath:): TOLERANCE*TOLERANCE instead of TOLERANCE
+	* Path.m (-contour:inlay:...): width used for calculation (r = (w + width) / 2.0;)
+
+Cenon 3.50 beta 6
+
+2001-07-13  Georg Fleischmann
+	* App.m, h	pathU, pathV: removed
+
+2001-07-17  Ilonka Fleischmann
+  	* GerberImport.m (-getMacroRect:-getMacroRectCenter:): wenn rotation -> c gesetzt !
+
+2001-07-22  Georg Fleischmann
+	* LocalizableStringsForUndo.h: & for underlined mnemonics removed
+	* Operations.strings: & removed
+
+2001-07-24  Georg Fleischmann
+	* fastMath.c, h: removed
+	* type1Funs.c: now type1Funs.m
+	* PCBContour.m (-lineTouchArc:::): YES instead of TRUE
+
+2001-07-25  Georg Fleischmann
+	* Arc.m (tangentIntersectionArc:): parantheses around && within ||
+	  Arc.m (-intersectCurve()): parantheses around assignment used as truth value, clean up
+	  Arc.m (-intersectCurveT()): parantheses around assignment used as truth value, clean up
+	  Arc.m (-createOutput:tools:): parantheses around assignment used as truth value
+	  Arc.m: calls of sqrDistPointRect() without pointers
+	* vhf2DFunctions.m, h (sqrDistPointRect()): pass structures directly
+	  vhf2DFunctions.m, h: clean up
+
+next Cenon 3.50 beta 7

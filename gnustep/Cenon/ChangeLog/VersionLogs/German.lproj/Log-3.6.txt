@@ -1,0 +1,75 @@
+Cenon 3.67:
+
+- Apple (3.67-2): Linien-Inspektor unterstötzt jetzt Linien von 90 Grad
+- Apple (3.67-2): Separation von Farben auf Lagen funktioniert
+- Gruppen: VerÙnderung der LinienstÙrke und Föllung
+- PS-Import: Dateinamen mit Leerzeichen werden unterstötzt
+- Debian: Verwende System-Bibliothek falls lokale Bibliothek leer ist
+- Apple: Mehrere neue Dokumente kðnnen geðffnet werden
+  (Workaround för manche OS-X Versionen).
+- Apple, PS-Import: GhostScript (gs) wird in /usr/bin und /usr/local/bin
+  gesucht.
+- Apple, PS-Import: Import von PostScript-Dateien mit unkodierten
+  Sonderzeichen.
+- Apple, PS-Import: Verwende verfögbaren Default-Zeichensatz
+- Apple: Cenon-Menu nach Deutsch öbersetzt
+- weitere Details und Bug-Fixes
+
+Cenon 3.66:
+
+- Drag: Schieben von EPS-Dateien in ein Cenon-Dokument importiert nun
+  Vektordaten statt Image
+
+Cenon 3.65:
+
+- DXF-Import: Verwende Default-Lage, falls keine Lage in der DXF-Datei
+- DXF-Import: Korrekte Arc-Bounds för PolyLine und Vertex.
+- weitere kleine Bug Fixes
+
+Cenon 3.64:
+
+- GNUstep: Drucken von Dokumenten mit Images funktioniert
+- weitere Details und Bug-Fixes
+
+Cenon 3.63:
+
+- Neu: Copy and Paste von PostScript in andere Applikationen
+- Neu: Voreinstellungen erlauben setzen der Default-LinienstÙrke
+- Dokument-Grðsse auf Platte deutlich reduziert
+- Schnelleres laden von Dokumenten
+- Nutzen: Schnelleres Kopieren im Nutzen
+- GNUstep: einfacherer Code zum Drucken um Drucken zu ermðglichen
+- DXF-Import: richtige Arc-Bounds werden gesetzt
+- weitere Bug-Fixes
+- AufrÙumarbeiten
+
+Cenon 3.62
+
+- Import: HPGL-Import und DXF-Import lassen das Zentrum von Kreisbðgen
+  ausserhalb des Arbeitsbereichs.
+- Fix, Text: Speicherleck behoben
+- Fix, Speichern: Speichern von Fonts tut wieder
+- Voreinstellungen besitzen bei Neuinstallationen Defaultwerte
+  (seit 3.60b1)
+- weitere kleinere Bug Fixes
+
+Cenon 3.61:
+
+- Type-1 Fonts gestatten Bearbeitung grðsserer Zeichen
+
+Cenon 3.60:
+
+- Images um CMYK-Image Handling erweitert
+- Fix, ASCII-Import: Konvertierungen werden wieder geladen (seit 3.60 beta 9)
+- Apple/GNUstep: Bibliotheks-Pfade werden dynamisch ermittelt
+- Fix, Zerlegen: Potentiellen Absturz behoben bei Editieren->Zerlegen
+- Apple: Absturz bei mehrfachem 'Speichern Als' behoben
+- Text-Kontur: Die Randdicke wird auf 0 gesetzt, insbesondere för
+  gestrokten Fonts (z.B. Single-Line Fonts)
+- Gitter: Hintergrundgitter wird schðner gezeichnet mit Anti-Aliasing
+  (z.B. GNUstep Art-Backend)
+- Cenon Source
+  * CharConversion, SinkingMetrics.plist, COPYRIGHT hinzugefögt
+  * FontListNoFill aus Projekt-Resources entfernt
+  * Apple: nichtexistierende BUGS-Datei aus Projekt entfernt
+  * VHFImport: README hinzugefögt mit Funktionsöberblick

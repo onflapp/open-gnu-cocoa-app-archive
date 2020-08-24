@@ -1,0 +1,24 @@
+{
+    IBClasses = (
+        {
+            CLASS = App; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {gridPanel = id; }; 
+            SUPERCLASS = NSApplication; 
+        }, 
+        {
+            ACTIONS = {orderFrontNXColorPanel = id; }; 
+            CLASS = FirstResponder; 
+            LANGUAGE = ObjC; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            ACTIONS = {setGrid = id; }; 
+            CLASS = GridPanel; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {gridField = id; unitPopUp = id; }; 
+            SUPERCLASS = NSPanel; 
+        }
+    ); 
+    IBVersion = 1; 
+}

@@ -1,0 +1,40 @@
+Cenon Change Log - August 2004
+
+2004-08-01  Georg Fleischmann
+	* OpenStep, UITabActionCell.subproj: moved from CAM module to Cenon
+
+2004-08-04  Georg Fleischmann
+	* dvTile.m (-buildTileCopies:): use [layer addObjectWithoutCheck:g]
+	  LayerObject.m, h (-addObjectWithoutCheck:): new
+
+2004-08-05  Georg Fleischmann
+	* GeneralController.m, h: cacheLimitField, cacheLimit added
+	  General.nib: cacheLimitField added
+	  PreferencesMacros.h: Prefs_CacheLimit added
+	  App.m (+initialize): default cacheLimit = 20 MB
+	  DocView.m (-setCaching:redraw:, -sizeCacheWindow::, -scaleCacheWindow::):
+	            use Prefs_CacheLimit to determine cache limit
+	* DXFImport.m (-getCircle::::): set bounds of full circle
+	  HPGLImport.m (-getCircle::::): set bounds of full circle
+	* DXFImport.m (-getArc::::): use vhfBoundsOfArc() to get bounds
+	  vhf2DFunctions.m, h (vhfBoundsOfArc()): new
+
+Cenon 3.63 pre 1
+
+2004-08-10  Georg Fleischmann
+	* VArc.m (-propertyList):
+	         save angle, colors, gradientAngle, stepWidth, radialCenter
+	         only if they differ from default, load defaults, if missing
+	  VGraphic.m (-propertyList, -initFromPropertyList:): save color only if it differs from black
+
+Cenon 3.63 pre 2
+
+	* Document.m (-printDocument:): simple printing code for GNUstep added
+	                                to make Printing work on GNUstep (no color separation)
+
+Cenon 3.63 pre 3
+
+2004-08-24  Georg Fleischmann
+	* DocViewOutput.m (-flatRedraw:): check for redrawEntireView to recache
+
+Cenon 3.63

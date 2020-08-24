@@ -1,0 +1,75 @@
+#import <string.h>
+
+defineps PSInit()
+
+/oval {
+% w h x y
+    translate scale newpath .5 .5 .5 0 360 arc closepath
+} def
+
+/line {
+% w h x y
+    moveto rlineto stroke
+} def
+
+/setup {
+% linejoin lincap linewidth
+    setlinewidth
+    setlinecap
+    setlinejoin
+    gsave
+} def
+
+/arrow {
+% angle x y
+    newpath
+    moveto
+    dup rotate
+    -13 6 rlineto
+    4 -6 rlineto
+    -4 -6 rlineto
+    closepath
+    gsave
+    0 setlinejoin
+    stroke
+    grestore
+    fill
+    neg rotate
+} def
+
+endps
+
+/*
+ * The following proc has an interesting feature.  Since we draw an oval by
+ * drawing a unit circle, then scaling it in both directions, we run into the
+ * problem that the linewidth also gets scaled!  We avoid this by reverting
+ * to the device matrix (the non-scaled matrix) just before stroking the line.
+ * This works because the path is built up with the scaled matrix, but the
+ * stroke is done with the unscaled one.  Neat, huh?
+ */
+
+defineps PSFramedOval(float x, y, w, h)
+    matrix currentmatrix
+    w h x y oval
+    setmatrix stroke
+endps
+
+defineps PSFilledOval(float x, y, w, h)
+    w h x y oval fill
+endps
+
+defineps PSLine(float x, y, w, h)
+    w h x y line
+endps
+
+defineps PSCurve(float x0, y0, x1, y1, x2, y2, x3, y3)
+    x0 y0 moveto x1 y1 x2 y2 x3 y3 curveto stroke
+endps
+
+defineps PSArrow(float x, y, angle)
+    angle x y arrow
+endps
+
+defineps PSSetParameters(int cap, join; float linewidth)
+    join cap linewidth setup
+endps

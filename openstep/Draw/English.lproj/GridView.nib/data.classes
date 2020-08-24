@@ -1,0 +1,17 @@
+"DrawApp" = {ACTIONS = {}; OUTLETS = {gridInspector = id; }; SUPERCLASS = NSApplication; };
+"GridView" = {
+    ACTIONS = {
+        "cancel:" = id; 
+        "changeGray:" = id; 
+        "changeSpacing:" = id; 
+        "off:" = id; 
+        "show:" = id; 
+    }; 
+    OUTLETS = {form = id; grayField = id; graySlider = id; spacing = id; }; 
+    SUPERCLASS = NSView; 
+};
+"FirstResponder" = {
+    ACTIONS = {"orderFrontNXColorPanel:" = id; }; 
+    CATEGORY = LocalActions; 
+    OUTLETS = {}; 
+};

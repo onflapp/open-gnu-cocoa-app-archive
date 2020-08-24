@@ -1,0 +1,108 @@
+Cenon Change Log - March 2001
+
+
+2001-03-02  Georg Fleischmann
+	* Xyz.m (-selectTool:): reset x/y position just before setting of x/y to avoid problems
+	  Xyz.m (-startLeveling:x:y:): changed to mm
+	* DPControl (-start:): no 'No Data' message if levelingLayer exists
+	  DPControl (-start:): set bounds for leveling layer directly, unit changed to mm
+
+3.40 beta 8
+
+2001-03-06  Georg Fleischmann
+
+	* Xyz.m (-arc:::addToStream:): check for radius > 0.5 only for CNC450
+	* Xyz.m (-line:::, -line2D:::): use sqrt of max line length
+
+3.40 beta 8
+
+2001-03-07  Georg Fleischmann
+	* TextGraphic.m (-getFlattenedObjectAt:): try currentView to get editView
+	* Arc.m (-create:in:): scale snap distance
+	* DocView.m (-dragSelect): use bounds instead of extended bounds
+	  DocView.m (-dragSelect): check for intersections with lines, arcs, and curves
+	* Graphic.m, h (-intersectsRect:, -intersectLine:::): new
+
+2001-03-08  Georg Fleischmann
+	* InspectorPanel.m (-loadGraphic:): call displayWillEnd only if window will change
+	* IP*.m (-displayWillEnd:): deactivate color well
+	* Xyz.m (-arc:::addToStream:): use flatness as it is
+
+3.40 beta 9
+
+2001-03-12  Georg Fleischmann
+	* Path.m (-createOutput:tools:): settlement at steps.count-2 instead -1
+	* Arc.m (-createOutput:tools:): use path if arc needs to be settled
+	* DPMagazine.m (-matrixDidShuffleCellFrom:to:): set all layers dirty
+	* Xyz.m (-arc:::addToStream:): set currentPoint if addToStream=YES and no arc defined
+
+2001-03-13  Georg Fleischmann
+	* Arc.m (-contour:): limit shrink to zero
+
+2001-03-13  Ilonka Fleischmann
+	* Arc.m (-intersectLine:): lBounds nur um TOLERANCE erweitert nicht 15.0*TOLERANCE !
+	  Arc.m (-parallelObject:): check if newBeg/newEnd points change direction to begP/endP
+	* Path.h (-optimizePath:): in .h bekannt gemacht
+	  Path.m (-optimizePath:): um Rectangle ergÙnzt (start/end punkt gehole)
+	  Path.m (-getListOfObjectsSplittedFrom:): g not splitted add a copy! to splitList !
+	  Path.m (-getIntersections:with:): if pointInArray case Rectangle erweitert
+	  Path.m (-fillStreamWithinset:offset:): (stepWidth*6.0) instead of (stepWidth*3.0)
+	  Path.m (-fillStreamWithinset:offset:): (2.0+4.0*TOLERANCE)*offset instead of 1.8*offset
+	  Path.m (-fillStreamWithinset:offset:): in first part moveto if(![stream numOps]) instead of (!i)
+	* HiddenArea.m (-uniteAreas:): [cColor isEqual:oColor] colors geholt mit colorUsingColorSpaceName:..
+	  HiddenArea.m (-removeHiddenAreas): [cColor isEqual:oColor] colors geholt mit colorUsingColorSpaceName:..
+	  HiddenArea.m (-removeSingleGraphicsInList:): skip Rectangles 2x
+	  HiddenArea.m (-removeGraphics:outside:): new
+	  HiddenArea.m (-removeGraphics:inside:): if (g is Path) and Path count is 0 after remove -> remove path
+	  HiddenArea.m (-removeGraphics:inside:): -pointAt: instead of -getPoint:at:
+	* Curve.m (-hitControl:): hitsettting auf 4.0 und lastDist*lastdist
+	* PathCFill.m (-uniteLinesWithSameGradient2:) erste & zweite Schleife nur wenn count > 1
+
+3.40 beta 9
+
+2001-03-15  Ilonka Fleischmann
+	* Path.m (-fillStreamWithinset:offset:): line length check changed
+
+2001-03-16  Georg Fleischmann
+	* Xyz.m, h (-currentPoint): new
+	* DPControl.m (-setOriginZ:): check currentPoint.z before increasing z position
+
+2001-03-18  Georg Fleischmann
+	* Xyz.h (XyzParms): originOffset added
+	* Xyz.m (-xyzLoadParms:): #POF added
+	* Xyz.m (-setOrigin..., -setMoveHeight:): originOffset added, keep offset inside machine range
+	* messages.h: Clipping, Leveling for those layers
+	* German.lproj/Localizable.strings: Clipping, Nivellierung
+	* DPControl.m (-setOrigin..., -setPosition:): not secure, if adjustZMode
+
+3.40 beta 10
+
+2001-03-19  Georg Fleischmann
+	* OutputStream.m, h (-drawWithStart:...): 3D, draw line if z has changed
+	* DocView.m, Graphic.m, h (-drawWithStart:...): 3D
+
+3.40 beta 10 (2)
+
+2001-03-20  Georg Fleischmann
+	* LayerObject.m (-setType:): useForTile = NO for clipping layer and leveling layer
+	  LayerObject.m (-useForTile): return NO for clipping and leveling layers
+	* e2Tile.m (-tileBounds): ignor zero rects
+	* DPLayer.m (-showDetails:): no details for clipping layer
+	* Xyz.m (-selectTool:): return to next position if on output
+	  Xyz.m (-nextPosition): new
+
+3.40 beta 11
+
+2001-03-21  Georg Fleischmann
+	* Path.m (-setSize:): check for width or height = 0
+
+2001-03-29  Ilonka Fleischmann
+	* Type1Import.m (-encodeCharStrings): cnt = charStringCnt instead of 256 !
+	  Type1Import.m (-getCharStrings:): checked if l > 19 pro forma
+	* type1Funs.c (getString()): malloc(len+1) instead malloc(len)
+
+2001-03-30  Georg Fleischmann
+	* Xyz.m (-move2D:::): above surface -> move z with moving speed
+	* IPSinking.nib: metrics popup disabled
+
+next 3.40 beta 12

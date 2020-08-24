@@ -1,0 +1,33 @@
+{
+    IBClasses = (
+        {
+            CLASS = App; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {inspectorPanel = id; }; 
+            SUPERCLASS = NSApplication; 
+        }, 
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {setColor = id; setStrokeState = id; setWidth = id; }; 
+            CLASS = IPAllStrokeWidth; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                colorWell = id; 
+                strokePopup = id; 
+                widthButtonLeft = id; 
+                widthButtonRight = id; 
+                widthField = id; 
+                widthSlider = id; 
+            }; 
+            SUPERCLASS = NSPanel; 
+        }, 
+        {
+            CLASS = InspectorPanel; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {allStrokeWindow = id; }; 
+            SUPERCLASS = NSPanel; 
+        }, 
+        {CLASS = SurfaceWell; LANGUAGE = ObjC; SUPERCLASS = NSColorWell; }
+    ); 
+    IBVersion = 1; 
+}

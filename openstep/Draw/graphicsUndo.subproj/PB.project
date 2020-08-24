@@ -1,0 +1,94 @@
+{
+    APPCLASS = NSApplication; 
+    APPICON = ""; 
+    FILESTABLE = {
+        CLASSES = (
+            AlignGraphicsChange.m, 
+            ArrowGraphicsChange.m, 
+            AspectRatioGraphicsChange.m, 
+            BringToFrontGraphicsChange.m, 
+            ChangeDetail.m, 
+            CreateGraphicsChange.m, 
+            CutGraphicsChange.m, 
+            DeleteGraphicsChange.m, 
+            DimensionsGraphicsChange.m, 
+            EndEditingGraphicsChange.m, 
+            FillGraphicsChange.m, 
+            GraphicsChange.m, 
+            GridChange.m, 
+            GroupGraphicsChange.m, 
+            LineCapGraphicsChange.m, 
+            LineColorGraphicsChange.m, 
+            LineJoinGraphicsChange.m, 
+            LineWidthGraphicsChange.m, 
+            LockGraphicsChange.m, 
+            MoveGraphicsChange.m, 
+            PasteGraphicsChange.m, 
+            PerformTextGraphicsChange.m, 
+            ReorderGraphicsChange.m, 
+            ResizeGraphicsChange.m, 
+            SendToBackGraphicsChange.m, 
+            SimpleGraphicsChange.m, 
+            StartEditingGraphicsChange.m, 
+            UngroupGraphicsChange.m, 
+            UnlockGraphicsChange.m
+        ); 
+        C_FILES = (); 
+        H_FILES = (
+            drawundo.h, 
+            AlignGraphicsChange.h, 
+            ArrowGraphicsChange.h, 
+            AspectRatioGraphicsChange.h, 
+            BringToFrontGraphicsChange.h, 
+            ChangeDetail.h, 
+            CreateGraphicsChange.h, 
+            CutGraphicsChange.h, 
+            DeleteGraphicsChange.h, 
+            DimensionsGraphicsChange.h, 
+            EndEditingGraphicsChange.h, 
+            FillGraphicsChange.h, 
+            GraphicsChange.h, 
+            GridChange.h, 
+            GroupGraphicsChange.h, 
+            LineCapGraphicsChange.h, 
+            LineColorGraphicsChange.h, 
+            LineJoinGraphicsChange.h, 
+            LineWidthGraphicsChange.h, 
+            LockGraphicsChange.h, 
+            MoveGraphicsChange.h, 
+            PasteGraphicsChange.h, 
+            PerformTextGraphicsChange.h, 
+            ReorderGraphicsChange.h, 
+            ResizeGraphicsChange.h, 
+            SendToBackGraphicsChange.h, 
+            SimpleGraphicsChange.h, 
+            StartEditingGraphicsChange.h, 
+            UngroupGraphicsChange.h, 
+            UnlockGraphicsChange.h, 
+            LocalizableStringsForGraphicsUndo.h
+        ); 
+        IMAGES = (); 
+        INTERFACES = (); 
+        M_FILES = (); 
+        OTHER_LIBS = (); 
+        OTHER_SOURCES = (Makefile, Makefile.preamble, Makefile.postamble); 
+        PRECOMPILED_HEADERS = (); 
+        PROJECT_HEADERS = (drawundo.h); 
+        PSWM_FILES = (); 
+        PSW_FILES = (); 
+        SOUNDS = (); 
+        SUBPROJECTS = (); 
+    }; 
+    INSTALLDIR = ""; 
+    LANGUAGE = English; 
+    LOCALIZABLE_FILES = {}; 
+    MAINNIB = graphicsUndo; 
+    PROJECTNAME = graphicsUndo; 
+    PROJECTTYPE = Subproject; 
+    PROJECTVERSION = 2.2; 
+    appClassName = Application; 
+    appWrapper = NO; 
+    makeTarget = "make debug"; 
+    writeMainfile = 0; 
+    writeMakefile = 1; 
+}

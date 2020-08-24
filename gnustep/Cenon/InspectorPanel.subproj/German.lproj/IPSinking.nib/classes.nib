@@ -1,0 +1,42 @@
+{
+    IBClasses = (
+        {
+            CLASS = App; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {inspectorPanel = id; }; 
+            SUPERCLASS = NSApplication; 
+        }, 
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {
+                setDiameter = id; 
+                setLock = id; 
+                setMetrics = id; 
+                setPositionX = id; 
+                setPositionY = id; 
+                setType = id; 
+                setUnit = id; 
+            }; 
+            CLASS = IPSinking; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                diameterPopUp = id; 
+                lockSwitch = id; 
+                metricsMatrix = id; 
+                positionXField = id; 
+                positionYField = id; 
+                typeMatrix = id; 
+                unitPopUp = id; 
+            }; 
+            SUPERCLASS = NSPanel; 
+        }, 
+        {
+            CLASS = InspectorPanel; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {sinkingWindow = id; }; 
+            SUPERCLASS = NSPanel; 
+        }, 
+        {CLASS = SurfaceWell; LANGUAGE = ObjC; SUPERCLASS = NSColorWell; }
+    ); 
+    IBVersion = 1; 
+}

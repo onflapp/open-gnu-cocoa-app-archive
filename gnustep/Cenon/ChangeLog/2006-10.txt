@@ -1,0 +1,16 @@
+Cenon CAM Change Log - October 2006
+
+2006-10-12 Ilonka Fleischmann
+	* DocView.m (-validateMenuItem:): @selector(flatten:) + [VTextPath class]
+	  -> damit auch text auf Pfad zum Pfad convertiert werden kann
+
+2006-10-21 Ilonka Fleischmann
+	* Type1Font.m (getCharFromList()): stems auch auf neue Umrechnung umgestellt
+	  Type1Font.m (-setGraphic:): convert graphic points in other way so we dont loss exactness
+	  Type1Font.m (-update:): Versionsnummer auf 002.000
+	-> damit werden die punkte zueinander nicht mehr so sehr verschoben
+	* Type1ImportSub.m (-addStrokeList:toList:): do not sortList !!!
+	  Type1ImportSub.m (-addFillList:toList:): do not sortList !!!
+	-> zerstoert sonst die korrekte Richtung der 1-Linien Schriften beim Import
+
+next Cenon 3.82

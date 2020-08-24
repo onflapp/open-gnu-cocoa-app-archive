@@ -1,0 +1,37 @@
+Cenon Change Log - March 2004
+
+2004-03-04 Georg Fleischmann
+	* vhfCommonFunctions.m (vhfUserLibrary()): double '/' removed for OpenStep
+
+Cenon 3.60 Vorab (Frank)
+
+2004-03-20 Ilonka Fleischmann
+	* VImage.m (-separateImageWithColor:): auf cmyk erweitert
+	  VImage.m (-thumbnailImage:): auf cmyk erweitert
+	  VImage.m (-saveToCMYKTiff:): new
+	  VImage.m (-compositeAntialiased:toPoint:): auf cmyk erweitert
+	  VImage.m (-compositeInRect:toPoint:withScalse:): auf cmyk erweitert
+	  VImage.m (-compositeInRect:toPoint:withScalse:): klammer bei lx berechnung um (pl) ? abfrage
+	  VImage.m (-clipImage:withPath:scale:): auf cmyk erweitert
+
+2004-03-23  Georg Fleischmann
+	* DocView.m (-setParameter): For Apple and GNUstep: [betaCache setOpaque:NO];
+
+2004-03-25  Georg Fleischmann
+	* VImage.m (-separateImageWithColor:): c = y = m = 0
+
+2004-03-27  Georg Fleischmann
+	* GNUstep, *.strings: special characters converted to unicode
+
+2004-03-29  Georg Fleischmann
+	* functions.m (fillPopup()): use resource path to load charConversion
+
+2004-03-31 Ilonka Fleischmann
+	* VGraphic.m (-separationColor:): rgb umwandlung nach cmyk geÙndert
+	* HiddenArea.m (-removeHiddenAreas:): vhfIntersectsRect() instead of !NSIsEmptyRect(NSIntersectionRect())
+	* HiddenArea.m (-uniteAreas:): vhfIntersectsRect() instead of !NSIsEmptyRect(NSIntersectionRect())
+	* VArc.m (-getListOfObjectsSplittedFrom::): add Splitarc if ( ((2.0*Pi*radius)/360.0)*Abs(na) > TOLERANCE)
+	  VArc.m (-getListOfObjectsSplittedAtPoint:): add Splitarc if ( ((2.0*Pi*radius)/360.0)*Abs(na) > TOLERANCE)
+	  VArc.m (-getListOfObjectsSplittedFromGraphic:): add Splitarc if ( ((2.0*Pi*radius)/360.0)*Abs(na) > TOLERANCE)
+
+Cenon 3.60

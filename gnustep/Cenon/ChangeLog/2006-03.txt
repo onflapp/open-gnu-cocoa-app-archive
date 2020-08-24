@@ -1,0 +1,25 @@
+Cenon CAM Change Log - March 2006
+
+2006-03-01 Georg Fleischmann
+	* DocView.m (-split:): if object is an image, check for clipPath
+	  SplitGraphicsChange.m (-saveBeforeChange): check for clipPath before adding to groups
+	  VImage.m (-splitTo:): don't split if clipPath is nil
+	  -> removes exception when unjoining an image which is not clipped
+
+2006-03-01 Ilonka Fleischmann
+	* VImage.m (-drawWithPrincipal:): in #ifndef __APPLE__  with vhf antialias:
+	                                  if (clipPath) PSgrestore(); added
+	  -> removes DPS exception in antialiasing of clipped images
+
+2006-03-04 Ilonka Fleischmann
+	* VArc.m (-intersectLine:): c = umgestellt - die floats einzeln double gecasted för apple
+
+2006-03-22 Ilonka Fleischmann
+	* VPath.m (-subPathInsidePath::): iPts und spIpts arrays variabel gemacht
+	-> Fix: Contourberechnung bei Pfad aus fast nur waagerechten angeordneten Kreisen tut damit
+
+2006-03-24 Ilonka Fleischmann
+	* GerberImport.m (-getApertureMacro::::): Eagle Workaround to make Octagons work
+	-> this special makes octagonal pads created with the Eagle pcb program work
+
+next Cenon 3.81

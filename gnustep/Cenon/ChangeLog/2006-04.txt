@@ -1,0 +1,6 @@
+Cenon CAM Change Log - April 2006
+
+2006-04-07 Georg Fleischmann
+	* Cenon.eu: Domain registered at 2006-04-07 09:08:46 UTC
+
+next Cenon 3.81

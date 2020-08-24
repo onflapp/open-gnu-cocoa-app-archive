@@ -1,0 +1,37 @@
+Cenon CAM Change Log - June 2006
+
+2006-06-06 Georg Fleischmann
+	* TilePanel.m (-updatePanel:): no update of limits from panel
+	  DocView.m (-draw:): check for count in tileOriginList
+	  -> this repairs changing the kind of limits
+
+2006-06-07 Georg Fleischmann
+	* HiddenArea.m (-addGraphics:): check with respondsToSelector before applying isPointInside
+	  HiddenArea.m (-removeHiddenAreas:): skip text
+	  DocView.m (-punch:): remove VText from selection before doing punch
+	  -> this removes exceptions with text inside selection
+
+3.81 beta 2
+
+2006-06-13 Ilonka Fleischmann
+	* VGroup.m (-countRecursive:): zÙhlt jetzt so, dass die Gruppen in der Gruppe nicht mitgezÙhlt werden
+	  -> sonst absturz beim rekursiven Gruppen Objekt abfragen
+	* VPolyLine.m (-setFilled:): schliesst jetzt indem der erste Punkt als letzer addiert wird
+	  -> close PolyLines: we add the first point at end - so we dont loose a point in PolyLine
+	* VPath.m (-uniteWith:): endIs wird nicht mehr mit si abgefraget (raus)
+	  VArc.m (-uniteWith:): endIs wird nicht mehr mit si abgefraget (raus)
+	  VRectangle.m (-uniteWith:): endIs wird nicht mehr mit si abgefragt (raus) je 3x
+	  -> absturz weniger
+
+3.81 beta 3
+
+Cenon 3.81
+
+
+2006-06-19 Georg Fleischmann
+	* DocView.m (-draw:): batch for Printing added. So far only OpenStep is tested.
+	                      Apple needs it different
+	  LayerObvject.m (-setType:): for template layers set useForTile = NO
+	  -> Batch Production for Printing
+
+next Cenon 3.82

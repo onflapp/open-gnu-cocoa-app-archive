@@ -1,0 +1,6 @@
+Cenon CAM Change Log - September 2006
+
+2006-09-20 Georg Fleischmann
+	* VText.m (-edit:in:): scroll edited text to visible
+
+next Cenon 3.82

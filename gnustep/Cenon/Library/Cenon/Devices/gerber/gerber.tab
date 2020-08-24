@@ -1,0 +1,97 @@
+tool, type (L=trace/line, P=flash/pad, A=both), width, height (mill), form (C=circle, R=rectangle)
+
+                           tool   typ w   h form
+
+line     0.1 mm       #DCD "D10*" L   4   4 C
+         0.2          #DCD "D11*" L   8   8 C
+         0.3          #DCD "D12*" L  12  12 C
+         0.4          #DCD "D13*" L  16  16 C
+         0.5          #DCD "D14*" L  20  20 C
+         0.6          #DCD "D15*" L  24  24 C
+         0.7          #DCD "D16*" L  28  28 C
+         0.8          #DCD "D17*" L  31  31 C
+         0.9          #DCD "D18*" L  35  35 C
+         1.0          #DCD "D19*" L  39  39 C
+         1.1          #DCD "D20*" L  43  43 C
+         1.2          #DCD "D21*" L  47  47 C
+         1.3          #DCD "D22*" L  50  50 C
+         1.4          #DCD "D23*" L  55  55 C
+         1.5          #DCD "D24*" L  59  59 C
+         1.6          #DCD "D25*" L  63  63 C
+         1.7          #DCD "D26*" L  67  67 C
+         1.8          #DCD "D27*" L  71  71 C
+         1.9          #DCD "D28*" L  75  75 C
+         2.0          #DCD "D29*" L  79  79 C
+         2.2          #DCD "D30*" L  87  87 C
+         2.4          #DCD "D31*" L  94  94 C
+         2.6          #DCD "D32*" L 102 102 C
+         2.8          #DCD "D33*" L 110 110 C
+         3.0          #DCD "D34*" L 118 118 C
+         3.5          #DCD "D35*" L 138 138 C
+         4.0          #DCD "D36*" L 157 157 C
+         4.5          #DCD "D37*" L 177 177 C
+         5.0          #DCD "D38*" L 197 197 C
+
+pad      0.5          #DCD "D39*" P  20  20 C
+         0.6          #DCD "D40*" P  24  24 C
+         0.7          #DCD "D41*" P  28  28 C
+         0.8          #DCD "D42*" P  31  31 C
+         0.9          #DCD "D43*" P  35  35 C
+         1.0          #DCD "D44*" P  39  39 C
+         1.1          #DCD "D45*" P  43  43 C
+         1.2          #DCD "D46*" P  47  47 C
+         1.3          #DCD "D47*" P  50  50 C
+         1.4          #DCD "D48*" P  55  55 C
+         1.5          #DCD "D49*" P  59  59 C
+         1.6          #DCD "D50*" P  63  63 C
+         1.7          #DCD "D51*" P  67  67 C
+         1.8          #DCD "D52*" P  71  71 C
+         1.9          #DCD "D53*" P  75  75 C
+         2.0          #DCD "D54*" P  79  79 C
+         2.2          #DCD "D55*" P  87  87 C
+         2.4          #DCD "D56*" P  94  94 C
+         2.6          #DCD "D57*" P 102 102 C
+         2.8          #DCD "D58*" P 110 110 C
+         3.0          #DCD "D59*" P 118 118 C
+         3.5          #DCD "D60*" P 138 138 C
+         4.0          #DCD "D61*" P 157 157 C
+         4.5          #DCD "D62*" P 177 177 C
+         5.0          #DCD "D63*" P 197 197 C
+
+         0.5          #DCD "D64*" P  20  20 R
+         0.6          #DCD "D65*" P  24  24 R
+         0.7          #DCD "D66*" P  28  28 R
+         0.8          #DCD "D67*" P  31  31 R
+         0.9          #DCD "D68*" P  35  35 R
+         1.0          #DCD "D69*" P  39  39 R
+         1.1          #DCD "D70*" P  43  43 R
+         1.2          #DCD "D71*" P  47  47 R
+         1.3          #DCD "D72*" P  50  50 R
+         1.4          #DCD "D73*" P  55  55 R
+         1.5          #DCD "D74*" P  59  59 R
+         1.6          #DCD "D75*" P  63  63 R
+         1.7          #DCD "D76*" P  67  67 R
+         1.8          #DCD "D77*" P  71  71 R
+         1.9          #DCD "D78*" P  75  75 R
+         2.0          #DCD "D79*" P  79  79 R
+         2.2          #DCD "D80*" P  87  87 R
+         2.4          #DCD "D81*" P  94  94 R
+         2.6          #DCD "D82*" P 102 102 R
+         2.8          #DCD "D83*" P 110 110 R
+         3.0          #DCD "D84*" P 118 118 R
+         3.5          #DCD "D85*" P 138 138 R
+         4.0          #DCD "D86*" P 157 157 R
+         4.5          #DCD "D87*" P 177 177 R
+         5.0          #DCD "D88*" P 197 197 R
+
+         1.4 x 3.0    #DCD "D89*" P  55 118 R
+         1.5 x 2.0    #DCD "D90*" P  59  79 R
+         1.5 x 2.6    #DCD "D91*" P  59 102 R
+         1.7 x 2.5    #DCD "D92*" P  67  98 R
+         1.7 x 3.2    #DCD "D93*" P  67 126 R
+         2.5 x 4.0    #DCD "D94*" P  98 157 R
+         3.0 x 1.4    #DCD "D95*" P 118  55 R
+         2.0 x 1.5    #DCD "D96*" P  79  59 R
+         2.6 x 1.5    #DCD "D97*" P 102  59 R
+         2.5 x 1.7    #DCD "D98*" P  98  67 R
+         3.2 x 1.7    #DCD "D99*" P 126  67 R

@@ -1,0 +1,26 @@
+{
+    IBClasses = (
+        {
+            CLASS = App; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {inspectorPanel = id; }; 
+            SUPERCLASS = NSApplication; 
+        }, 
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {setLock = id; setPointX = id; setPointY = id; }; 
+            CLASS = IPWeb; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {lockSwitch = id; xField = id; yField = id; }; 
+            SUPERCLASS = NSPanel; 
+        }, 
+        {
+            CLASS = InspectorPanel; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {webWindow = id; }; 
+            SUPERCLASS = NSPanel; 
+        }, 
+        {CLASS = SurfaceWell; LANGUAGE = ObjC; SUPERCLASS = NSColorWell; }
+    ); 
+    IBVersion = 1; 
+}

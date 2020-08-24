@@ -1,0 +1,14 @@
+"DragMatrix" = {ACTIONS = {}; OUTLETS = {}; SUPERCLASS = NSMatrix; };
+"ExportController" = {
+    ACTIONS = {"set:" = id; }; 
+    OUTLETS = {
+        box = id; 
+        dinPopup = id; 
+        dxfResField = id; 
+        gerberPopup = id; 
+        hpglPopup = id; 
+        switchMatrix = id; 
+    }; 
+    SUPERCLASS = NSObject; 
+};
+"FirstResponder" = {ACTIONS = {}; OUTLETS = {}; SUPERCLASS = NSObject; };

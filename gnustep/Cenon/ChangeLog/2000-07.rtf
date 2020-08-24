@@ -1,0 +1,118 @@
+{\rtf0\ansi{\fonttbl\f0\fmodern Courier;}
+\pard\tx1440\tx5400\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li5400\fi-5400\ql\qnatural
+
+\f0\b\fs24 \cf0 Changes in July 2000\
+
+\b0 \
+27.07.00	Cenon\
+\
+Datum	Datei	VerÙndert\
+----------------------------------------------------------------------------------------------\
+03.07.00	\
+\
+
+\b 3.20\
+
+\b0 \
+09.07.00	Xyz.m	-xyzLoadParams: -> #TOG (tool offset get)\
+		-xyzMeasureToolOffset -> new\
+		-xyzSetTool: -> measure tool offset\
+		call -setXYZToolByString:offset: in Cenon\
+	Xyz.h	toolMeasure, toolGetOffset -> new\
+		XYZSUBPROCESS = controller.app\
+	apXyz.m	-setXYZToolByString:offset: -> set offset for tool\
+		-startXyzSubProcess: -> %@/%@ for XYZSUBPROCESS\
+	ToolObject.m, h	clean up\
+	DPMagazine.m	-clickTool: -> [[NSApp xyz] setTool:toolObject]\
+10.07.00	XYZ	VHFDictionaryAdditions, ToolObject added\
+	ToolObject.m	-addToArray: -> use of setInt:\
+	Xyz.m	-executeVector: -> state.zOffset not set to 0\
+		-stop, -adjustment, -executeVector, xyzSetTool: -> moveZ to ZUpPosition()\
+		 -setOriginZ, setOrigin::: -> move z to z+state.zOffset\
+		xyzSetKnife -> check state.point instead of mPoint, compare to ZUpPosition()\
+		-selectTool: -> measureing added, manual change added\
+	XYZ/messages.h	DESELECTTOOL_STRING -> new\
+	ioFunctions.m, h	ioInputInstruction() -> terminator counting added\
+	DPLayer.m	clickLayer: -> set tool\
+	DPToolParms.m	-update: -> enable/disable adjustModeSwitch, zOffsetField\
+		-update: -> [self flush] removed\
+		-update: -> no longer set tool parmameter\
+		-setRevolution:, -setCuttingSpeed:, -setLoweringSpeed:, -> set parameter for selected tool only\
+		-setZOffset: -> check for automatic measurement\
+	Rectangle.m	-hit: -> rotate p\
+	*.m	rotatePointAroundCenter() -> vhfRotatePointAroundCenter()\
+	Arc.m	calcPointAngleFromRefPoint() -> pass NSPoint instead of pointer\
+	Curve.m	-hitControl: -> lastDist increased\
+	DPMagazine.m	-clickTool:, doubleClickTool: -> return void\
+		no longer set tool parameter\
+		-setMagazineAt: -> no longer set tool parameter\
+	DPLayer.m	-clickLayer:, -update: -> no longer set tool parmameter\
+	DPToolParms.nib	selectToolButton -> enabled\
+	DPControl.m	-setSwitch: -> set rev of selected tool in xyz (not magazine)\
+	DPControl.h\
+	DPControl.nib	infoMatrix -> new\
+	messages.h	NOTOOLSELECTED_STRING -> new\
+11.07.00	Xyz.h	ops.helix -> new\
+	Xyz.m	-xyzLoadParms: -> ops.helix added\
+		-xyzThread:, xyzHelixTo::: -> new\
+		-selectTool: -> deselect in Cenon\
+	vhf2DFunctions.m, h	vhfCalcPointAngleFromRefPoint() -> vhfPointAngleFromRefPoint()\
+	DPControl.m	-setOriginZDown: -> tool offset added\
+	DPMagazine.m	-toolFromString: -> checked for string == nil\
+\
+
+\b 3.21\
+\
+
+\b0 12.07.00	IPThread.m, h, nib	new\
+	InspectorPanel.m	-loadGraphic: ->thread replaces spriral, \
+		title and levelView outside of cases\
+	InspectorPanel.h	thread instead of spiral\
+	Thread.m, h	new\
+	E2DGraphics.h	thread.h\
+	Editor2DView.m	-mouseDown: -> Thread\
+	DPToolParms.nib	Thread Cutter added to PopUp\
+	ToolObject.h, Xyz.h	TYPE_THREADCUTTER\
+	Xyz.m	xyzSetTool: -> update state before moving z\
+		-executePath -> don't force tool selection if automatic\
+		-executeVector: -> don't remove tool in Cenon when finished\
+	DPToolParms.m	-setType: -> thread cutter added\
+		-update: -> calls updatePanelActivation\
+		-updatePanelActivation -> new\
+		-setTipAngle: -> thread stuff added\
+		-setPitch: -> new\
+		-setMaxDiameter: -> thread core diameter added\
+	e2Output.m	-calcOutputFor: -> TYšE_THREADCUTTER added\
+	ToolObject.m	-initWithDictionary, -addToArray: -> thread cutter added\
+	CNC750.dev	#HEL added\
+	DPControl.m	-start: -> if( !r.size.width && !r.size.height )... to work around Unite bug\
+\
+
+\b 3.22\
+
+\b0 \
+16.07.00	Line3D.h	+line3D -> new\
+	PickOut.m\
+	PathCFill.m\
+	PathContour.m	update\
+18.07.00	vhfDPSFunctions.m	DPS_OPS_LIMIT = 990, 1000 didn't work in one case\
+		PSWait() behind PSDoUserPath\
+22.07.00	*.m	#import "GraphicViewWraps.h" removed \
+	PickOut.m, h	updated\
+20.07.00	Path.m, h	pickOutWithTipAngle: -> + overlap\
+	e2Output.m	calcOutputFor: -> + overlap\
+27.07.00	PathContour.m	contourPath: -> Kontur linie dichter an Graphik gelegt !\
+		contourImage: -> -"- waren zu weit weg !\
+28.07.00	LayerCell.m	#import "../messages.h"\
+		-trackMouse:... -> warn user before removing fill layer of pick out\
+	messages.h	SIDELEAVEPICKOUT_STRING -> new\
+	German/Localized.strings	new message for pick out added\
+30.07.00	PathContour.m	contourPath:, contourImage: -> Kontur linie wieder weiter weg !!! daför um versetzten arc center nach oben rechts geschoben
+\b \
+
+\b0 31.07.00	DPPositions.m	-addPositionWithName: -> if layer exists display existing layer\
+	TextPath.m, h	new\
+\
+
+\b next 3.23\
+}

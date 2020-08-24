@@ -1,0 +1,24 @@
+Change Log - 2004
+
+2004-03-04 Georg Fleischmann
+	* vhfCommonFunctions.m (vhfUserLibrary()):
+	  double '/' removed for OpenStep
+
+2004-05-18  Georg Fleischmann
+	* VHFStringAdditions (-countOfCharacter:inRange:): new
+
+2004-08-05  Georg Fleischmann
+	* vhf2DFunctions.m, h (vhfBoundsOfArc()): new
+
+2004-09-15  Georg Fleischmann
+	* types.h (ExchangeInts()): new
+
+2004-10-31  Georg Fleischmann
+	* vhf2DFunctions.m, h (vhfSqrDistancePointLine()): new
+
+2004-11-12  Georg Fleischmann
+	* vhfCommonFunctions.m, h (vhfExchangeValues()): new
+	* types.h (Exchange*()): i -> _i, f -> _f, ...
+
+2004-12-12  Georg Fleischmann
+	* vhfCommonFunctions.m, h (buildDecimalString()): new

@@ -1,0 +1,77 @@
+Cenon Change Log - February 2002
+
+2002-02-01  Georg Fleischmann
+	* VText.m (-drawWithPrincipal:): get textContainer from drawText instead of lm
+	* VText.m (-setRichTextData:): retain instead of copy
+	* VText.m (-textDidEndEditing:): [[fe textStorage] length]
+	* dvPasteboard.m (-pasteFromPasteboard:...): [[... alloc] init] instead of [[... array] init]
+	* dvOutput.m (-propertyListForOutput, -readOutputFromPropertyList:): write and check for BigEndian
+	* OutputStream.m (-propertyList): truncate stream
+	* EPSExport.m: import KeyPanel.h removed
+
+2002-02-05  Georg Fleischmann
+	* VText.m (-getFlattenedText:...): rotate and scale for Apple
+
+2002-02-06  Georg Fleischmann
+	* VText.m (-font): renew shared text
+
+2002-02-07  Georg Fleischmann
+	* controllerApp.m: applicationDidFinishLaunching: hide
+
+2002-02-11  Georg Fleischmann
+	* DPLayerDetails.nib: 'Reverse Direction' instead of 'Revert Direction'
+	                      'Use for Batch Production' instead of 'Use for Duplicates'
+	* DPTilePanel.nib: 'Batch Production' instead of 'Tile'
+	* Main.nib: 'Batch Production' instead of 'Tile Panel'
+	* IntersectionPanel.m (-create:): add objects to layer (not list) to be included in Performance Map
+	* //DPLayerDetails.m (-setSide:): update settlement field if 0
+	  //LayerObject.m (-setSide:): turn off settlement for other than inside and outside
+	  LayerObject.m (-settle): return 0.0 for other than inside and outside correction
+
+2002-02-12  Georg Fleischmann
+	* DPToolParms.nib, English: RPM instead of U/min, 'Tool Parameters'
+
+2002-02-15  Georg Fleischmann
+	* DPToolParms.m (-updatePanelActivation): loweringSpeedEnabled = YES;	// overshoot offset
+	  DPToolParms.m (-update:): set overshoot in loweringSpeedField
+	  DPToolParms.m (-setType:): overshoot = 0.0
+	  DPToolParms.m (-setOvershoot:): new
+	  DPToolParms.m (-updateUnits:): firstCall replaced with diameterStr, overshoot added
+	  DPToolParms.m: more with overshoot and cleanup
+	* ToolObject.m, h: overshoot, -overshoot, -setOvershoot -> new, overshoot added, cleanup
+	* messages.h: OVERSHOOTFIELD_STRING -> new
+	* Localizable.strings, German: Overshoot added
+
+2002-02-16  Georg Fleischmann
+	* VThread.m (-createOutput:tools:): overshoot case added
+
+Cenon 3.50 beta 13
+
+2002-02-22  Ilonka Fleischmann
+	* VArc.m (-tangentIntersectionArc::::) if( radius > radius1 -> + && Diff(radius1, radius) > TOLERANCE )
+	  VArc.m (-intersectCurve:) !vhfIntersectsRect() instead of NSEmpty...
+	  VArc.m (-tangentIntersectionWithPath:) testet schnittpunkte !!!
+	  VArc.m (-tangentIntersectionWith::) Aufrufe mit schnittpunkten !
+	  VArc.m (-tangentIntersectionLine:) mit schnittpunkten !
+	  VArc.m (-tangentIntersectionCurve:) mit schnittpunkten !
+	  VArc.m (-tangentIntersectionArc:) mit schnittpunkten !
+	//* VPath.m (-closePath) -> closed to graphic when nearer than startG
+	* VPath.m (-directionOfSubPath::) Diff(a, 0.0) > 1 instead > TOLERANCE
+	  VPath.m (-directionOfSubPath::) Arc angle with start middle end
+	* PathCFillAri.m (-linesToCurvesInPath::) -> bei addLastGraphic i--, nacher wieder i++ !!!
+	  PathCFillAri.m (-linesToCurvesInPath::) -> sameLength in AbhÙngigkeit, von linien lÙngen
+	  PathCFillAri.m (-smoothenLinesInPath:) -> ende war falsch !!!
+	* PathContour.m (-linesToCurvesInPath::) -> bei addLastGraphic i--, nacher wieder i++ !!! ( not used here )
+	* PathCFill.m (-linesToCurvesInPath::) -> bei addLastGraphic i--, nacher wieder i++ !!!
+	* VArc.m (distancePointCurveIsRadius()) -> CRVRASIUSTOL (45.0*TOLERANCE)*() instead of (50.0*...
+	  VArc.m (-tangentIntersectionWithPath:) s/e compare with same TOLERANCE like point inside Array ! (50.0*TOL.. instead of 25.0*TOL..)
+
+2002-02-22  Georg Fleischmann
+	* PerformanceMap.m (-initList:): [self removeAllObjects]
+	* NSBezierPath.m (+bezierPath): autorelease
+
+2002-02-25  Ilonka Fleischmann
+	* PathCFill.m (-contourFillPath:): Min bounds statt Max
+	  PathCFill.m (cubicSplineCF()): double splineSize (workaround Apple compiler bug)
+
+next Cenon 3.50 beta 14

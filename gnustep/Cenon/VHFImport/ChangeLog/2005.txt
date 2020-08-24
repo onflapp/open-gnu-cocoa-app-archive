@@ -1,0 +1,36 @@
+VHFImport Library Change Log - 2005
+
+
+2005-01-04 Georg Fleischmann
+	* PSImport.m (-importPS:, -importPDFFromFile:):
+          put filename in quotes to allow names with space
+
+2005-01-06 Georg Fleischmann
+	* PSImport.m (-importPS:): Apple: convert string to ASCII,
+	  if it contains special characters.
+	  -> For Apple, import of EPS files with special characters works now
+	* PSImport.m (-gsPath): new, returns complete path to gs
+	  PSImport.m (-importPDFFromFile:, -importPS:):
+	             use [self gsPath] and don't add 'gs'
+	  -> gs is now searched in /usr/local/bin and /usr/bin
+	  on OpenStep and Apple
+	* PSImport.h, HPGLImport.h, DXFImport.h, Type1Import.h (DEFAULT_FONT):
+	  DEFAULT_FONT removed
+	  DXFImport.m (getGraphicFromData:): pass string "Courier" directly
+
+2005-09-26 Georg Fleischmann
+	* DXFImport.m (-getGraphicFromData:): close PolyLines with Arc added
+
+2005-11-19 Georg Fleischmann
+	* PSImport.m (): use vhfPathWithPathComponents(),
+	                 use PS_TMPPATH macro as temporary directory
+	  PSImport.h: PS_TMPPATH added
+
+2005-11-23 Georg Fleischmann
+	* DXFImport.m (-getVisibleListFromData:): check for EOF
+	  to avoid warning message for double newline
+
+2005-12-19 Georg Fleischmann
+	* psi.psw, psImport.prolog (/glyphshow): new
+	  -> this implements the glyphshow operator
+	  -> and makes flatten text work again with GNUstep

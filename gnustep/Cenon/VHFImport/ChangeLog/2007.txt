@@ -1,0 +1,8 @@
+VHFImport Library Change Log - 2007
+
+
+2007-01-30 Ilonka Fleischmann
+	* DXFImport.m (-getGraphicFromData::): case MODE_VERTEX bei GRPSEQEND
+	  make sure that start and end point differ befor creating a close
+	  element.
+	-> Fix: DXFImport already closed Polylines work now

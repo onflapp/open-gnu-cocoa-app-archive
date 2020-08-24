@@ -1,0 +1,38 @@
+{
+    APPCLASS = NSApplication; 
+    APPICON = ""; 
+    FILESTABLE = {
+        CLASSES = (Change.m, ChangeManager.m, MultipleChange.m); 
+        C_FILES = (); 
+        H_FILES = (
+            Change.h, 
+            ChangeManager.h, 
+            MultipleChange.h, 
+            undochange.h, 
+            LocalizableStringsForUndo.h
+        ); 
+        IMAGES = (); 
+        INTERFACES = (); 
+        M_FILES = (); 
+        OTHER_LIBS = (); 
+        OTHER_SOURCES = (Makefile, Makefile.preamble, Makefile.postamble); 
+        PRECOMPILED_HEADERS = (); 
+        PROJECT_HEADERS = (undochange.h); 
+        PSWM_FILES = (); 
+        PSW_FILES = (); 
+        SOUNDS = (); 
+        SUBPROJECTS = (); 
+    }; 
+    INSTALLDIR = ""; 
+    LANGUAGE = English; 
+    LOCALIZABLE_FILES = {}; 
+    MAINNIB = undo; 
+    PROJECTNAME = undo; 
+    PROJECTTYPE = Subproject; 
+    PROJECTVERSION = 2.2; 
+    appClassName = Application; 
+    appWrapper = NO; 
+    makeTarget = "make debug"; 
+    writeMainfile = 0; 
+    writeMakefile = 1; 
+}

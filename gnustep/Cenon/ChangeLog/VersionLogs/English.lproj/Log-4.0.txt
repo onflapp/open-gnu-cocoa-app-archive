@@ -1,0 +1,49 @@
+Cenon 4.0.2 (2013-03-21)
+
++ Zoom with Command + / -
++ Grid: the Menu Format->Grid has assigned new key shortcuts:
+  Cmd-* (On/Off), CMD-Alt-* (Panel), and Cmd-Shift-* (Align to Grid)
++ Transparency in Color-Panel
+
+Cenon 4.0.1 (2012-11-16)
+
++ Code-Signing for GateKeeper / Mountain Lion added
++ Package Requirements: >= Mac OS 10.5 (Leopard), Intel Processor
++ Snapshots: close documents before opening snapshot
++ Fix, Drag-Select: selection of groups improved
+
+Cenon 4.0.0 (2012-07-19)
+
++ New: Import of Scalable Vector Graphics (SVG)
+       Millions of vector data are readily available on the Internet,
+       Signs, Logos, Crests, Symbols, Icons and more are waiting for
+       download.
++ New: Vectorizing Images. A new menu entry "Tools -> Vectorize Images"
+       shows a new Vectorising Panel.
+       Vectorization of Images to lines and curves is supported.
++ New, Apple: 64 bit binary for Intel processors added
+       3-way universal binary (Intel 64 bit, Intel 32 bit, PPC 32 bit)
++ New, Transform-Panel: scale absolute added
++ New, Set starting point of a selected Path
+       1. select a point of a Path
+       2. from the menu chose "Edit -> Set Start"
++ New in Open-Panel: Buttons to jump to Cenon locations:
+       Cenon-Library, Cenon User-Library, Cenon Documents
++ New in Intersection-Panel: creation of objects from Marks, Threads, Sinkings, Webs added
++ Batch: sort columns more effective, 1. upwards, 2. downwards, 3. upwards, ...
++ Build Contour: created graphic will be selected
++ ToolPanel: Tool-Tips added, icons that are not needed are removed
++ Edit-Menu, Tool-Menu: Tool Tips added
++ Import DXF: import 3D Lines and 3D Faces (so far as lines only)
++ Import PDF/PS: Alert if GhostScript is not installed
++ Import PS: PostScript Operators for character displacement added (xshow, yshow, xyshow).
+  When keeping texts editable (no flatten text), the displacement will be ignored.
++ Grid: every tenth line is drawn thicker for better overview
++ Select Object: no annoying beep when locked object is being selected
++ Text: editing a locked Text will not adjust the size of the text box any more
++ Working Area Panel: changes are accepted by pressing Tab key (as well as Enter)
++ Editing, Snap: address issue where snap to point skips some points
++ Inspector: improve setting of angles
++ Layer-Inspector: Fast switching on and off of a layer
+  does not open the Layer-Details Panel any more.
++ Apple, Text: Fit Horizontal text improved

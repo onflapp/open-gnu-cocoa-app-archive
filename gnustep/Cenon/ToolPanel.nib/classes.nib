@@ -1,0 +1,13 @@
+{
+    IBClasses = (
+        {
+            ACTIONS = {setCurrent2DTool = id; }; 
+            CLASS = App; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {toolPanel = id; }; 
+            SUPERCLASS = NSApplication; 
+        }, 
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }
+    ); 
+    IBVersion = 1; 
+}

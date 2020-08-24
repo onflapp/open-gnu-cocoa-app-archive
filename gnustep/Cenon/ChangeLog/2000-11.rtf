@@ -1,0 +1,106 @@
+{\rtf0\ansi{\fonttbl\f0\fmodern Courier;\f1\fmodern Ohlfs;}
+\pard\tx1440\tx5400\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li5400\fi-5400\ql\qnatural
+
+\f0\b\fs24 \cf0 Cenon Changes in November 2000\
+
+\b0 \
+2000-11-12\
+\
+\
+Date	File	Modification\
+----------------------------------------------------------------------------------------------\
+01.11.00	
+\f1\fs20 IPRectangle.m	Fix: setting origin no longer moves selected sub object\
+	
+\f0\fs24 IPRectangle.m, h, nib	width added, size renamed\
+	German/IPRectangle.nib	angle added\
+	Editor2DView.m	-draw: -> copy output for tiles\
+		-draw: -> draw streams for serial numbers\
+	DPControl.m	-buildOutputAndExecute: -> copy streams for tiles\
+	OutputStream.m, h	-appendStream:offset: -> new\
+	TextPath.m	-outputPropertyList, -getOutputFromPropertyList: -> for text\
+	TextGraphic.m, h	-outputPropertyList, -getOutputFromPropertyList: -> new\
+		-serialStreams, serialStreams -> new\
+		-createOutput:: -> serial numbers added\
+	LayerObject.m, h	-setTileCount:, -tileCount -> new\
+	e2Output.m	-calcOutput: -> setTileCOunt added\
+02.11.00	Editor2DWindow.m	-windowDidBecomeMain -> update tile panel\
+	TextGraphic.m	-setSerialTextFor: -> single leading alpha-char works\
+	E2Window.m	-windowDidResignKey: -> calcOutput moved to -windowDidBecomeMain\
+	Line.m\
+	Curve.m	-constrainPoint: -> aView used instead of currentView method\
+	Graphics*.m, h\
+	Editor2DView.m	-drawKnob:, -drawControls:, drawKnob() -> scaleFactor passed\
+	Graphics*.m, h	-drawDirection -> now -drawDirectionAtScale:\
+		-draw -> checks if directions need redraw\
+		-setColor -> drawColorPale:\
+		+scaledMaxKnobSize -> +maxKnobSizeWithScale:\
+		-draw* -> drawWithPrincipal:, drawAtAngle:*:in:\
+	*.m, h	-boundsWithKnobs: -> -bounds or -extendedBoundsWithScale:\
+	Editor2DView.m, h	+boundsOfArray instead of +boundsOfArray:knobs:\
+		-boundsOfArray:knobs: -> new\
+03.11.00	all Graphics	-getOutputFromPropertyList:, -createOutput: -> dirty = NO\
+		dirty = YES for all changes\
+	Group.m\
+	Image.m\
+	Mark.m\
+	(Path.m)\
+	Sinking.m\
+	TextGraphic.m\
+	TextPath.m\
+	Thread.m	-putUPath removed\
+	Curve.m, h	-putP0P3UPath removed\
+	e2Output.m	-optimize: -> don't optimize webs\
+	Main.nib	Format->'Optimize Moves' -> new\
+		'O' = 'Optimize Moves'\
+	e2Output.m	-optimizeMoves: -> optimizeMovesInArray:\
+		-optimizeMoves -> new\
+	DPControl.m	-start -> allow output for Demo version\
+05.11.00	Curve.m	-drawControls: -> draw handles thin for all scales\
+	LayerObject.m	-setType: -> ClippingLayer -> likeOtherLayer = NO\
+	Group.m	-setFilled -> new\
+06.11.00	Editor2DView.m	-drawSelect -> allow deselection with Shift-Drag on selected objects\
+07.11.00	*	Clipping reactivated\
+	Image.m, h	-relief, setRelief: -> new\
+	IPImage.m, h, nib	relief, -setRelief: -> new\
+08.11.00	DeleteGraphicsChange.m	-undo -> fixed exception in case earlier object has higher position index\
+	IPGroup.m	use realBounds\
+	Editor2DView.m, h	-realBoundsOfArray: -> new\
+		-group: -> addObjects from layerList to keep objects sorted\
+		-ungroup: -> keep objects sorted\
+	e2Tile.m	-tileBounds -> use realBounds\
+	Group.m, h	-addObject: -> new\
+	Editor2DDocument.m	+newFromFile, -initializePrintInfo -> set auto pagination\
+		-resetScrollers -> use frame directly and add 36.0\
+12.11.00	XYz.m	-move:::, -line::: -> spindle on if output in progress\
+	Sinking.m, h\
+	IPSinking.m, h	step size added\
+13.11.00	VHFStringAdditions.m, h	-stringByReplacingSequence: -> new\
+		-rangeOfSequence:options:range:wildcards: -> wildcards passed\
+	Xyz.m	-xyzLoadParms -> #REM for removing comments\
+	ioFunctions.m	-putMultiInstruction: -> extract specific instruction in case of error\
+	vhfCommonFunctions.m, h	vhfStringWithFloat() -> new\
+	*.m	vhfStringWithFloat() used instead of buildRoundedString() where easy to do\
+14.11.00	Editor2DDocument.m	-save -> check if file is writable, restore backup if write failed, Option to remove Backup-File activated\
+15.11.00	Image.m	-propertyList, -initFromPropertyList:, -initWithCoder, -encodeWithCoder:, -writeFilesToDirectory -> Image saved as TIFF\
+	PathCFill.h,m	-contourFillPath: -> inset wurde falsch "scaliert"\
+		                  -> setFilled removed path must be filled\
+		                  -> addList: ersetzt durch setList:\
+		- #CenterPoint statt #LineMiddlePoint\
+	PathContour.h,m	- #CenterPoint statt #LineMiddlePoint\
+16.11.00	\
+17.11.00	Xyz.m, h\
+	DPToolParms	-updateTool: -> new\
+	DPControl.m	\
+18.11.00	Image.m, h\
+	IPImage.m, h, nib	relief type added\
+	Image.m	-moveBy: -> move origin instead of corner points\
+\
+next 3.40 beta 1\
+\
+20.11.00	DataPanel.m, h\
+	PreferencesPanel.m, h\
+	Editor2DWindow.m	__linux__ switch added\
+\
+next 3.40 beta 2\
+}

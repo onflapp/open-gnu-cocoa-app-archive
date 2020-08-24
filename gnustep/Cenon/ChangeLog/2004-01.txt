@@ -1,0 +1,15 @@
+Cenon Change Log - January 2004
+
+2004-01-07	Cenon 3.60 beta 9
+
+Cenon 3.60 beta 9
+
+2004-01-17 Georg Fleischmann
+	* *.nib: changed heights of NSSwitches and NSRadioButtons to 16.0
+	  nib2gmodel.plist: added names of missing gmodel files
+
+Cenon 3.60 beta 9 (GNUstep)
+
+2004-01-22 Georg Fleischmann
+	* functions.m (fillPopup(), dictionaryFromFolder()): use localLibrary(), userLibrary()
+	* App.m (-applicationDidFinishLaunching:, ...): LOCALLIBRARY -> use localLibrary()

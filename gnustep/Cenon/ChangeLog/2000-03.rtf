@@ -1,0 +1,87 @@
+{\rtf0\ansi{\fonttbl\f0\fmodern Courier;}
+\pard\tx1440\tx5400\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li5400\fi-5400\ql\qnatural
+
+\f0\b\fs24 \cf0 Changes in March 2000\
+\pard\tx1440\tx5400\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li5400\fi-5400\ql\qnatural
+
+\b0 \cf0 \
+30.03.00	Cenon\
+\
+Datum	Datei	VerÙndert\
+----------------------------------------------------------------------------------------------\
+01.03.00	Editor2DDocument.nib	increased window size 600 x 400\
+		5% zoom\
+	TileScrollView.m	changeScale: -> use center of visible rect\
+	Editor2DDocument.m	-calcFrame: -> removed margins\
+		-initializePrintInfo -> set xyz bounds\
+	DPControl.m	-subProcessTerminated -> activate Application, gotoPosition not for writing to file\
+	Xyz.m	xyzSetTool:layer: -> application activated before showing panel\
+04.03.00	Image.m	-contour: -> new\
+	Line3D.m	+line3D -> new\
+	PathContour.m, h	update from Ilonka\
+	Transform.nib	all resized to look better\
+	DPPosition.m	-setPositionAt: -> nameField, removeButton for parkingPosition disabled\
+	DPPosition.nib, h	outlet for removeButton\
+	Rectangle.m	-drawWithWidth: -> new\
+	Arc.m	create:in: -> drawRect and gridRect united in radius loop\
+	e2Pasteboard.m	-paste:andLink: -> consecutive pate 2 takes bounds without knobs\
+		-pasteFromPasteboard: -> insertObject: at the end of lists, without changing order\
+	Editor2DDocument.m	+new -> now calls -init\
+	Xyz.m, h	ops.switchOn[4], ops.switchOff[4] -> new\
+		-setSwitch -> ops.switches used if defined\
+		-xyzLoadParms -> load ops.switches\
+	vhfGetTypesFromData.m	string retained\
+\
+\pard\tx1440\tx5400\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li5400\fi-5400\ql\qnatural
+
+\b \cf0 3.20 Beta 34\
+\pard\tx1440\tx5400\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li5400\fi-5400\ql\qnatural
+
+\b0 \cf0 \
+05.03.00	PathContour.m	update von Ilonka\
+09.03.00	Path.m	all aFillUPath->pts = malloc((8) * sizeof(float)); instead of 2\
+10.03.00	Curve.m	intersectCurves() -> recursions limited to 100\
+11.03.00	Editor2DDocument.m	newFromFile:, newFromList: -> workaround for 10000 limit problem.\
+\
+\pard\tx1440\tx5400\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li5400\fi-5400\ql\qnatural
+
+\b \cf0 3.20 Beta 35\
+\
+\pard\tx1440\tx5400\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li5400\fi-5400\ql\qnatural
+
+\b0 \cf0 15.03.00	ioFunctions.m	ioPutMultipleInstructions() -> check for returnValue\
+	KeyPanel.m	CODE_IX 1 -> new\
+	vhfLockFunctions	code index added\
+\pard\tx1440\tx5400\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li5400\fi-5400\ql\qnatural
+
+\b \cf0 \
+3.20 Beta 36\
+\pard\tx1440\tx5400\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li5400\fi-5400\ql\qnatural
+
+\b0 \cf0 \
+21.03.00	Mark.m	-drawWithWidth: -> new\
+		-setAngle:withCenter: -> new\
+	e2Output.m	-calcOutputFor: -> optimize drills in olist\
+22.03.00	IPRectangle.m	-update: -> set size of rectangle correctly\
+	LayerCell.m	-trackMouse:inRect: -> call displayChanged if made editable\
+\
+\pard\tx1440\tx5400\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li5400\fi-5400\ql\qnatural
+
+\b \cf0 3.20 Beta 37\
+\pard\tx1440\tx5400\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li5400\fi-5400\ql\qnatural
+
+\b0 \cf0 \
+28.03.00	Xyz.m	-executeVector: -> 2. step 0 checked with tolerance\
+\
+\pard\tx1440\tx5400\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li5400\fi-5400\ql\qnatural
+
+\b \cf0 3.20 Beta 38\
+\pard\tx1440\tx5400\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li5400\fi-5400\ql\qnatural
+
+\b0 \cf0 \
+29.03.00	PathcFill	update from Ilonka\
+30.03.00	Xyz.m, h	-xyzLoadParms -> #BUG, debug added\
+		-initXYZ -> debugging output\
+	apXyz.m	-registerClient -> loadParms not for demo version\
+	vhfCFGFunctions.h	id -> dataId problems under Linux\
+}

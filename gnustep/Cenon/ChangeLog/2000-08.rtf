@@ -1,0 +1,88 @@
+{\rtf0\ansi{\fonttbl\f0\fmodern Courier;}
+\pard\tx1440\tx5400\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li5400\fi-5400\ql\qnatural
+
+\f0\b\fs24 \cf0 Changes in August 2000\
+
+\b0 \
+28.08.00	Cenon\
+\
+\
+Datum	Datei	VerÙndert\
+----------------------------------------------------------------------------------------------\
+03.08.00	Main.nib	-bindTextToPath: -> new\
+	Editor2DGraphic.m	-validateMenuItem: -> check for -bindTextToPath:\
+		-bindTextToPath: -> new\
+	E2DGraphic.h	TextPath added\
+	TextGraphic.h, m	-font -> returns NSFont*\
+		-stringLength, -characterOffsetAtIndex:, -subTextWithRange: -> new\
+04.08.00	TextGraphic.m	-drawAtAngle:withCenter: -> implemented\
+		-description -> new\
+		-sizeToFit -> new\
+	Editor2DView.m	-mouseDown: -> check for selector(edit:in:) on double click\
+05.08.00	TextGraphic.m	-setString:, -sizeToFit: -> renewSharedText to start with unrotated view\
+		-renewSharedText -> returns void\
+		-draw -> save and restore autodisplay for window\
+	Editor2DView.m	-redrawObject: -> [window saveAutoDisplay:NO]\
+06.08.00	TextGraphic.m	-setBaseOrigin: -> tidied up\
+	InspectorPanel.m, h	TextPath added\
+07.08.00	e2Output.m\
+	e2Tile.m	check if object responds to isSerial instead of checking for TextGraphic\
+	Editor2DView.m	-importASCII:sort: -> check for replaceTextWithString: instead of TextGraphic\
+	Tile.nib	tileLimitsPopUp, tileLimitsMatrix, -updateTilePanel: -> new\
+08.08.00	TilePanel.m, h, nib	new from Tile.m, Tile.nib, App.h\
+	App.m, h	Tile stuff removed\
+	e2Tile.m	-tileLimits, -tileLimitSize -> new\
+		-setTileWithLimits:... -> use new parameters\
+	Editor2DView.m, h	tileLimits, tileLimitSize -> new\
+		+initialize -> version = 6\
+		-initWithCoder:, -encodeWithCoder: -> new tile stuff added\
+09.08.00	PPControl.nib	switchMatrix output -> new, switch to increment serial number\
+		*Switch outputs removed, call of -okPanel: in cells removed\
+	PPControl.m, h	increment of serial number added\
+		SWITCH_* -> new\
+		incrementSerial -> new\
+		*Switch removed -> switchMatrix used instead\
+	Path.m	call Prefs_UseRaster instead of useBitmap\
+	DPControl.m	-subProcessTerminated: -incrementSerialNumbers added\
+	e2Tile.m, h	-incrementSerialNumbers -> new\
+		-numberOfTiles -> new\
+
+\b \
+3.23 beta 8\
+\
+
+\b0 15.08.00	PathContour.m\
+	PickOut.m	update\
+
+\b \
+3.23 beta 9\
+\
+
+\b0 15.08.00	TextGraphic.m	-setFont: -> renew instead of setting empty data\
+		-renewSharedText, initClassVars() -> setMinSize:\
+		-draw -> setFrame before setting data, renewSharedText activated\
+16.08.00	TextGraphic.m	-textDidEndEditing: -> fe: 1st setDelegate:nil, then removeFromSuperview, fe = nil removed\
+		#import <math.h> added\
+17.08.00	TextGraphic.m	-setLineHeight:, -lineHeight -> NSParagraphStyleAttributeName instead of @"NSParagraphStyle"\
+		font retained/released\
+18.08.00	TextGraphic.m	-textDidEndEditing: -> setString:@"" before setting RTF\
+19.08.00	XYZ/Xyz.m\
+	XYZ/messages.h\
+	XYZ/German.lproj/*.strings	ZOFFSETRANGE_STRING -> new\
+24.08.00	GridPanel.m, h, nib	new from apGrid.m, Grid.nib, App.h\
+	App.h	gridPanel, workingArea stuff removed\
+	Menu.nib	calls -runGridPanel: instead of -setGrid:\
+	WorkingAreaPanel.m, h, nib	new from apWorkingArea, WorkingArea.nib, App.h\
+	Editor2DView.m\
+	e2Grid.m	changed to use gridList and numGridRects (no User Path)\
+	App.m\
+	Inspector.nib	-> InspectorPanel.nib\
+	toolSpiral.tiff	-> toolThread.tiff\
+28.08.00	Xyz.m	-selectTool: -> deselect nil tool\
+		-startLeveling:x:y: -> deselect tool\
+
+\b 3.23 beta 10\
+\
+
+\b0 29.08.00	English.lproj/ToolParms.nib	line for settlement before corrected\
+}

@@ -1,0 +1,637 @@
+{\rtf0\ansi{\fonttbl\f0\fnil Times-Roman;\f2\ftech Symbol;\f1\fmodern Courier;}
+\paperw12380
+\paperh13360
+\margl120
+\margr0
+{\colortbl\red0\green0\blue0;}
+\f0\b0\i0\ul0\ql\fs24\fi0\li0\gray0\up0\dn0 \
+
+\pard\tx3120\tx3620\tx4120\fs16\li2620 \
+
+\fs28 \
+
+\fs16 \
+
+\fs28 \
+
+\fs16 \
+
+\pard\b\li1100 \
+\
+\
+\
+
+\fs36 ChangeManager \
+
+\fs16 \
+
+\pard\tx7140\b0\fs28\li2100 INHERITS FROM	Responder : Object\
+
+\fs16 \
+
+\fs28 DECLARED IN	ChangeManager.h\
+
+\fs16 \
+\
+\
+
+\fs28 CLASS DESCRIPTION\
+
+\fs16 \
+
+\pard\tx3120\tx3620\tx4120\fs28\li2620 The ChangeManager class is the part of the undo mechanism that collects change objects and manipulates the undo and redo menu items. This class works with the Change class to provide a simple way to implement multi-level undo. Change managers communicate with change objects through the responder chain. By deriving window delegates from ChangeManager you can easily implement document-level undo. By installing a change manager as an application delegate you can also implement 
+\pard\tx1140\tx2300\tx3440\tx4600\tx5760\tx6900\tx8060\tx9200\tx10360\tx11520\fc0 application
+\pard\tx3120\tx3620\tx4120\li2620  wide undo.\
+
+\fs16 \
+
+\pard\tx7140\li2100 \
+\
+
+\fs28 INSTANCE VARIABLES\
+
+\fs16 \
+
+\pard\tx7140\tx10180\tx10680\i\fs28\fi-5040\li7660 Inherited from Object
+\i0 	Class	isa;\
+\
+
+\i Inherited from Responder
+\i0 	id	nextResponder;\
+\
+
+\pard\tx6140\tx8920\tx9420\i\fi-3540\li6140 Declared in ChangeManager
+\i0 	List	*_changesList;\
+	Change	*_lastChange;\
+	Change	*_nextChange;\
+	Change	*_changeInProgress;\
+	int	_numberOfDoneChanges;\
+	int	_numberOfUndoneChanges;\
+	int	_numberOfDoneChangesAtLastClean;\
+	BOOL	_someChangesForgotten;\
+	int	_changesDisabled;\
+
+\pard\tx7140\tx10180\tx10680\fs16\fi-5040\li7660 \
+
+\fs28 \
+
+\fs16 \
+
+\fs28 _changesList 	A list of changes that have been made.\
+\
+_lastChange	The id of the change that can be undone.\
+\
+_nextChange	The id of the change that can be redone.\
+\
+_changeInProgress	The id of the change which is currently underway.\
+\
+_numberOfDoneChanges	The number of changes made.\
+\
+_numberOfUndoneChanges	The number of changes that have been undone.\
+\
+_numberofDoneChangesAtLastClean	A count of changes made when 
+\b clean
+\b0  was last called.\
+\
+_someChangesForgotten	YES if some changes have been thrown away\
+\
+_changesDisabled	The number of nested calls to 
+\b disableChanges:
+\b0 .\
+
+\fs16 \
+
+\pard\tx7140\li2100 \
+\
+
+\fs28 METHOD TYPES\
+
+\fs16 \
+
+\pard\tx7140\tx10180\tx10680\fs28\fi-5040\li7660 Initializing and freeing 	
+\f2 - 
+\f0 init\
+	± free\
+\
+Disabling undo	± disableChanges:\
+	± enableChanges:\
+\
+Examining state	± canUndo\
+	± canRedo\
+	± isDirty\
+	\
+Setting state	± dirty:\
+	± clean:\
+	± reset:\
+	\
+Validating Menu Commands	± validateCommand:\
+\
+Undoing and Redoing	± undoOrRedoChange:\
+	± undoChange:\
+	± redoChange:\
+	\
+Tracking change progress	± changeInProgress:\
+	± changeComplete:\
+	\
+Subclass notification	± changeWasDone\
+	± changeWasUndone\
+	± changeWasRedone\
+	
+\pard\tx7140\fs16\li2100 \
+\
+
+\fs28 INSTANCE METHODS\
+
+\fs16 \
+
+\b \
+
+\fs28 canRedo\
+
+\pard\f2\b0\fi-1020\li3620 - 
+\f0 (BOOL)
+\b canRedo\
+
+\fs16 \
+
+\pard\tx3120\tx3620\tx4120\b0\fs28\li2620 Returns YES if there is a Change that can be redone. The name of this Change will be visible in the redo or undo/redo menu item. You should not need to override this method.\
+
+\fs16 \
+
+\fs28 See also:  
+\b ± validateCommand:
+\b0 \
+
+\fs16 \
+
+\pard\tx7140\b\li2100 \
+
+\fs28 canUndo\
+
+\pard\f2\b0\fi-1020\li3620 - 
+\f0 (BOOL)
+\b canUndo\
+
+\fs16 \
+
+\pard\tx3120\tx3620\tx4120\b0\fs28\li2620 Returns YES if there is a Change that can be undone. The name of this Change will be visible in the undo or undo/redo menu item. You should not override this method.\
+
+\fs16 \
+
+\fs28 See also:  
+\b ± validateCommand:
+\b0\fs16 \
+
+\pard\tx7140\b\li2100 \
+\
+
+\fs28 changeComplete:\
+
+\pard\f2\b0\fi-1020\li3620 - 
+\f0\b changeComplete:
+\b0\i change\
+
+\fs16\fi0 \
+
+\pard\tx3120\tx3620\tx4120\i0\fs28\li2620 Called by Change objects to signify that 
+\i change
+\i0  is done. The receiving ChangeManager will then ask 
+\i change
+\i0  to save the new state information via 
+\b saveAfterChange
+\b0 . Just before returning, the 
+\b changeComplete:
+\b0  method sends a 
+\b changeWasDone
+\b0  message to self, which provides subclasses of ChangeManager with an opportunity to react to the change. You should never call 
+\b changeComplete:
+\b0  directly, nor should you override it.\
+
+\fs16 \
+
+\fs28 See also:  
+\b ± changeInProgress:, ± changeWasDone, ± saveAfterChange 
+\b0 (Change)
+\fs16 \
+
+\pard\tx7140\b\li2100 \
+\
+
+\fs28 changeInProgress:\
+
+\pard\f2\b0\fi-1020\li3620 - 
+\f0\b changeInProgress:
+\b0\i change\
+
+\fs16\fi0 \
+
+\pard\tx3120\tx3620\tx4120\i0\fs28\li2620 Called by Change objects to signify that a 
+\i change
+\i0  is about to be made. If changes have been disabled using 
+\b disableChanges:
+\b0  then 
+\b changeInProgress:
+\b0  will send a 
+\b disable
+\b0  message to 
+\i change
+\i0  and immediately return. If changes have not been disabled, the receiving ChangeManager tries to find a home for 
+\i change
+\i0 . If another Change is already in progress that Change is sent an 
+\b incorporateChange:
+\b0  message with 
+\i change
+\i0  as the argument. If the Change in progress returns YES then 
+\i change
+\i0  is sent a 
+\b saveBeforeChange
+\b0  message, otherwise it is sent a 
+\b disable
+\b0  message. If there is no Change already in progress, but there is a previous completed Change then the previous Change is sent a 
+\b subsumeChange:
+\b0  message with 
+\i change
+\i0  as the argument. If the previous Change returns YES then 
+\i change
+\i0  is sent a 
+\b disable
+\b0  message. If the previous Change returns NO, or if there is no previous Change, 
+\i change
+\i0  is sent a 
+\b saveBeforeChange
+\b0  message and set to be the current Change in progress, and the previous Change, if there is one, is sent a 
+\b finishChange
+\b0  message. You should never need to call 
+\b changeInProgress:
+\b0  directly, nor should you need to override it.\
+
+\fs16 \
+
+\fs28 See also:  ± 
+\b changeComplete:, ± saveBeforeChange
+\b0  (Change), ± 
+\b incorporateChange:
+\b0  (Change), ± 
+\b subsumeChange:
+\b0  (Change), ± 
+\b finishChange
+\b0  (Change)
+\fs16 \
+
+\pard\tx7140\b\li2100 \
+\
+
+\fs28 changeWasDone\
+
+\pard\f2\b0\fi-1020\li3620 - 
+\f0\b changeWasDone\
+
+\b0\i\fs16\fi0 \
+
+\pard\tx3120\tx3620\tx4120\i0\fs28\li2620 Override this method if your subclass needs to know when a change has been made. For example, this hook can be used to update the close box on a document window to reflect the dirty state of the ChangeManager. You should not call this method directly.\
+
+\fs16 \
+
+\fs28 See also:  
+\b ± changeWasRedone, ± changeWasUndone, ± isDirty\
+
+\pard\tx7140\fs16\li2100 \
+\
+
+\fs28 changeWasRedone\
+
+\pard\f2\b0\fi-1020\li3620 - 
+\f0\b changeWasRedone\
+
+\b0\i\fs16\fi0 \
+
+\pard\tx3120\tx3620\tx4120\i0\fs28\li2620 Override this method if your subclass needs to know when a change has been redone. For example, this hook can be used to update the close box on a document window to reflect the dirty state of the ChangeManager. You should not call this method directly.\
+
+\fs16 \
+
+\fs28 See also:  
+\b ± changeWasDone, ± changeWasUndone, ± isDirty\
+
+\pard\tx7140\fs16\li2100 \
+\
+
+\fs28 changeWasUndone\
+
+\pard\f2\b0\fi-1020\li3620 - 
+\f0\b changeWasUndone\
+
+\b0\i\fs16\fi0 \
+
+\pard\tx3120\tx3620\tx4120\i0\fs28\li2620 Override this method if your subclass needs to know when a change has been undone. For example, this hook can be used to update the close box on a document window to reflect the dirty state of the ChangeManager. You should not call this method directly.\
+
+\fs16 \
+
+\fs28 See also:  
+\b ± changeWasDone, ± changeWasRedone, ± isDirty\
+
+\pard\tx7140\fs16\li2100 \
+\
+
+\fs28 clean:\
+
+\pard\f2\b0\fi-1020\li3620 - 
+\f0\b clean:
+\b0\i sender\
+
+\fs16 \
+
+\pard\tx3120\tx3620\tx4120\i0\fs28\li2620 Tells the receiving ChangeManager to consider its current state to be clean. Calls to 
+\b isDirty
+\b0  will return NO until further change activity occurs. In ChangeManagers that correspond to documents, you should call 
+\b clean:
+\b0  each time the document is saved. By doing this, the 
+\b isDirty
+\b0  method can be used to tell whether the saved representation of the document matches the internal memory representation. When overriding this method you should begin your method with ª[super 
+\b clean
+\b0 :sender]º.\
+
+\fs16 \
+
+\fs28 See also:  ± 
+\b dirty:
+\b0 , ± 
+\b reset:
+\b0 , 
+\b ± isDirty
+\b0 \
+
+\fs16 \
+
+\pard\tx7140\b\li2100 \
+
+\fs28 dirty:\
+
+\pard\f2\b0\fi-1020\li3620 - 
+\f0\b dirty:
+\b0\i sender
+\b\i0 \
+
+\b0\i\fs16 \
+
+\pard\tx3120\tx3620\tx4120\i0\fs28\li2620 Forces the receiving ChangeManager to appear dirty. Call this method when your code as made a change that wasn't recorded with a Change object. After a 
+\b dirty
+\b0  message is received the 
+\b isDirty
+\b0  method will return YES until a 
+\b clean:
+\b0  or 
+\b reset:
+\b0  message is received. When overriding this method you should begin your method with ª[super 
+\b dirty
+\b0 :sender]º.\
+
+\fs16 \
+
+\fs28 See also:  
+\b ± clean:, ± reset:, ± isDirty
+\b0 \
+
+\fs16 \
+
+\pard\tx7140\b\li2100 \
+
+\fs28 disableChanges:\
+
+\pard\f2\b0\fi-1020\li3620 - 
+\f0\b disableChanges:
+\b0\i sender
+\b\i0 \
+
+\fs16 \
+
+\pard\tx3120\tx3620\tx4120\b0\fs28\li2620 This method increments the receiver's changesDisabled instance variable. As long as changesDisabled is non-zero, new change objects will be disabled. You should not need to override this method.\
+
+\fs16 \
+
+\fs28 See also: 
+\b  ± enableChanges, ± disable
+\b0  (Change)\
+
+\fs16 \
+
+\pard\tx7140\b\li2100 \
+
+\fs28 enableChanges:\
+
+\pard\f2\b0\fi-1020\li3620 - 
+\f0\b enableChanges:
+\b0\i sender\
+
+\fs16 \
+
+\pard\tx3120\tx3620\tx4120\i0\fs28\li2620 Decrements the receiver's changesDisabled instance variable. You should not need to override this method.\
+
+\fs16 \
+
+\fs28 See also:  
+\b ± disableChanges\
+
+\b0\fs16 \
+
+\pard\tx7140\b\li2100 \
+
+\fs28 free\
+
+\pard\f2\b0\fi-1020\li3620 - 
+\f0\b free\
+
+\fs16 \
+
+\pard\tx3120\tx3620\tx4120\b0\fs28\li2620 Calls 
+\b reset:
+\b0  to clean out any change objects and frees the ChangeManager object.\
+
+\b\fs16 \
+
+\pard\tx7140\li2100 \
+
+\fs28 init\
+
+\pard\f2\b0\fi-1020\li3620 - 
+\f0\b init\
+
+\fs16 \
+
+\pard\tx3120\tx3620\tx4120\b0\fs28\li2620 Initializes the 
+\pard\tx1140\tx2300\tx3440\tx4600\tx5760\tx6900\tx8060\tx9200\tx10360\tx11520\fc0 receiver
+\pard\tx3120\tx3620\tx4120\li2620 , a newly allocated ChangeManager object.\
+
+\b\fs16 \
+\
+
+\pard\tx7140\fs28\li2100 isDirty\
+
+\pard\f2\b0\fi-1020\li3620 - 
+\f0 (BOOL)
+\b isDirty
+\b0\i \
+
+\fs16 \
+
+\pard\tx3120\tx3620\tx4120\i0\fs28\li2620 Returns NO if no net change activity has 
+\pard\tx1140\tx2300\tx3440\tx4600\tx5760\tx6900\tx8060\tx9200\tx10360\tx11520\fc0 occurred
+\pard\tx3120\tx3620\tx4120\li2620  since the ChangeManager was initialized or since the last 
+\b clean:
+\b0  or 
+\b reset:
+\b0  message was received. For example, if a single Change has been undone and then redone since the last 
+\b clean:
+\b0  message, then isDirty will return NO. The completion of the next new, non-disabled Change will cause 
+\b isDirty
+\b0  to return YES. You should not need to override this method.\
+
+\fs16 \
+
+\fs28 See also:  
+\b ± disableChanges:, ± clean:, ± dirty:, ± reset:
+\b0 \
+
+\i \
+
+\pard\tx7140\b\i0\li2100 redoChange:\
+
+\pard\f2\b0\fi-1020\li3620 - 
+\f0\b redoChange:
+\b0\i sender\
+
+\fs16\fi0 \
+
+\pard\tx3120\tx3620\tx4120\i0\fs28\li2620 This method should be the action performed by the redo menu item in an application with multiple-undo. The 
+\b redoChange:
+\b0  method sends a 
+\b redoChange
+\b0  message to the last Change that was undone. The name of this Change will then appear in the undo menu item. Your application should not use both 
+\b redoChange:
+\b0  and 
+\b undoOrRedoChange:
+\b0  at the same time. You should not need to override this method.\
+
+\fs16 \
+
+\fs28 See also:  
+\b ± undoChange:, ± undoOrRedoChange:
+\b0\fs16 \
+
+\pard\tx7140\b\li2100 \
+\
+
+\fs28 reset:\
+
+\pard\f2\b0\fi-1020\li3620 - 
+\f0\b reset:
+\b0\i sender\
+
+\fs16 \
+
+\pard\tx3120\tx3620\tx4120\i0\fs28\li2620 Causes the receiving ChangeManager to free all the Change objects that it is managing. The state of the ChangeManager is re-initialized to the state after it first received the 
+\b init
+\b0  message. When overriding this method you should begin your method with ª[super 
+\b reset
+\b0 :sender]º.
+\b \
+
+\fs16 \
+
+\pard\tx7140\li2100 \
+
+\fs28 undoChange:\
+
+\pard\f2\b0\fi-1020\li3620 - 
+\f0\b undoChange:
+\b0\i sender\
+
+\fs16\fi0 \
+
+\pard\tx3120\tx3620\tx4120\i0\fs28\li2620 This method should be the action performed by the undo menu item in an application with multiple-undo. The 
+\b undoChange:
+\b0  method sends an 
+\b undoChange
+\b0  message to the last Change that was done or redone. The name of this Change will then appear in the redo menu item. Your application should not use both 
+\b undoChange:
+\b0  and 
+\b undoOrRedoChange:
+\b0  at the same time. You should not need to override this method.\
+
+\fs16 \
+
+\fs28 See also:  
+\b ± redoChange:, ± undoOrRedoChange:
+\b0\fs16 \
+
+\pard\tx7140\b\li2100 \
+\
+
+\fs28 undoOrRedoChange:\
+
+\pard\f2\b0\fi-1020\li3620 - 
+\f0\b undoOrRedoChange:
+\b0\i sender\
+
+\fs16 \
+
+\pard\tx3120\tx3620\tx4120\i0\fs28\li2620 This method should be the action performed by the undo menu item in an application offering single-level undo. If the last change has already been done, then it will be undone. If was just undone, then it will be redone. In order to make your application use single-level undo you must edit ChangeManager.m and define the N_LEVEL_UNDO constant to be 1. Your application should not use both 
+\b undoChange:
+\b0  and 
+\b undoOrRedoChange:
+\b0  at the same time. You should not need to override this method.\
+\
+Although 
+\b undoOrRedoChange:
+\b0  is really intended for applications with single-level undo, it will attempt to do something reasonable in applications with multiple-undo. If there is a Change that can be undone 
+\b undoOrRedoChange:
+\b0  sends an 
+\b undoChange
+\b0  message to the Change. If there is no Change that can be undone, but there is a Change that can be redone then 
+\b undoOrRedoChang
+\b0 e: sends a 
+\b redoChange 
+\b0 message to the Change.\
+
+\fs16 \
+
+\fs28 See also:  
+\b ± undoChange:, ± redoChange:
+\b0\fs16 \
+
+\pard\tx7140\b\li2100 \
+\
+
+\fs28 validateCommand:\
+
+\pard\f2\b0\fi-1020\li3620 - 
+\f0 (BOOL)
+\b validateCommand:
+\b0\i menuCell\
+
+\fs16 \
+
+\pard\tx3120\tx3620\tx4120\i0\fs28\li2620 This method can be used to change the state of menu items corresponding to undo, redo and undo/redo. Use this method as the update action for menu cells that invoke 
+\b undoChange:
+\b0 , 
+\b redoChange:
+\b0 , or 
+\b undoOrRedoChange:
+\b0 . The value returned is YES if the command specified in the update action of 
+\i menuCell
+\i0  is valid.\
+\
+Independent of whether the command is valid or not, the change manager may update the title of 
+\i menuCell
+\i0  to contain the correct name of the current changes.\
+
+\fs16 \
+
+\fs28 See also:  
+\b ± undoChange:, ± redoChange:, ± undoOrRedoChange:, ± setUpdateAction:forMenu:
+\b0  (MenuCell)
+\b\fs16 \
+
+\pard\tx7140\li2100 \
+\
+
+}

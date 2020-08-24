@@ -1,0 +1,13 @@
+/* Apple -> Unix
+ *
+ * "old characters" = "new characters";
+ * \r -> CR
+ * \n -> line feed
+ * \t -> TAB
+ * \" -> "
+ * \\ -> \
+ * \123 -> decimal value of character
+ */
+{
+	"\r" = "\n";
+}

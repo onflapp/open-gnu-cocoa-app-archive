@@ -1,0 +1,52 @@
+{
+    ApplicationDescription = "Image Editor";
+    ApplicationIcon = Pixen;
+    ApplicationName = Pixen;
+    ApplicationRelease = "0.1";
+    ApplicationURL = "http://www.opensword.org";
+    Authors = ("Andy Matushak");
+    Copyright = "";
+    CopyrightDescription = "Released under the MIT Licence.";
+    FullVersionID = "0.1";
+    NSTypes = (
+    {
+       NSName = "jpg";
+       NSHumanReadableName = "JPEG Image";
+       NSUnixExtensions = (jpg,jpeg,JPG,JPEG);
+       NSDOSExtensions = (jpg);
+       NSMIMETypes = ("image/jpeg");
+       NSRole = Editor;
+       NSDocumentClass = PXDocument;
+    },
+    {
+       NSName = "png";
+       NSHumanReadableName = "PNG Image";
+       NSUnixExtensions = (png,PNG);
+       NSDOSExtensions = (png);
+       NSMIMETypes = ("image/png");
+       NSRole = Editor;
+       NSIcon = FileIcon_png.tiff;
+       NSDocumentClass = PXDocument;
+    },
+    {
+       NSName = "tiff";
+       NSHumanReadableName = "TIFF Image";
+       NSUnixExtensions = (tiff,TIFF,tif,TIF);
+       NSDOSExtensions = (tiff);
+       NSMIMETypes = ("image/tiff");
+       NSRole = Editor;
+       NSIcon = FileIcon_tiff.tiff;
+       NSDocumentClass = PXDocument;
+    },
+    {
+       NSName = "pnm";
+       NSHumanReadableName = "PNM Image";
+       NSUnixExtensions = (pnm,PNM);
+       NSDOSExtensions = (pnm);
+       NSMIMETypes = ("image/pnm");
+       NSRole = Viewer;
+       NSIcon = FileIcon_pnm.tiff;
+       NSDocumentClass = PXDocument;
+    }
+ );
+}

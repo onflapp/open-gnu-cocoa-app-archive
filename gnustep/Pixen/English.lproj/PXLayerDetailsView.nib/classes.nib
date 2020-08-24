@@ -1,0 +1,37 @@
+{
+    IBClasses = (
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            CLASS = PXFormCell; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {name = id; opacity = id; thumbnail = id; value = id; view = id; }; 
+            SUPERCLASS = NSCell; 
+        }, 
+        {CLASS = PXImageView; LANGUAGE = ObjC; SUPERCLASS = NSImageView; }, 
+        {
+            CLASS = PXLayerDetailsSubView; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {layer = id; }; 
+            SUPERCLASS = NSView; 
+        }, 
+        {
+            ACTIONS = {nameDidChange = id; opacityDidChange = id; visibilityDidChange = id; }; 
+            CLASS = PXLayerDetailsView; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                image = id; 
+                layer = id; 
+                name = id; 
+                opacity = id; 
+                opacityField = id; 
+                opacityText = id; 
+                thumbnail = id; 
+                timer = id; 
+                view = id; 
+                visibility = id; 
+            }; 
+            SUPERCLASS = NSView; 
+        }
+    ); 
+    IBVersion = 1; 
+}

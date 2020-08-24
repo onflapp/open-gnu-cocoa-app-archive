@@ -1,0 +1,12 @@
+Cenon Change Log - September 2004
+
+2004-09-29  Georg Fleischmann
+	* apContour.m (-contour:): get floatValue directly from the cell
+	                           this avoids problems with no selected cell on GNUstep
+	* DocView.m (+boundsOfArray:): brackets around 2nd rect =; bbox = ;
+	* dvPasteBoard.m (-convert:): call [scrapper initView] to get scale set
+	  dvPasteBoard.m (-convert:): setData for pasteboard only, if data != nil
+	  dvPasteBoard.m (-convert:): release scrapper
+	  dvPasteBoard.m (-convert:): dataForEPSUsingList implemented
+
+Cenon 3.63

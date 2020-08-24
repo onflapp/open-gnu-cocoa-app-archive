@@ -1,0 +1,25 @@
+{
+    IBClasses = (
+        {
+            CLASS = App; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {projectSettingsPanel = id; }; 
+            SUPERCLASS = NSApplication; 
+        }, 
+        {CLASS = DragMatrix; LANGUAGE = ObjC; SUPERCLASS = NSMatrix; }, 
+        {
+            ACTIONS = {orderFrontNXColorPanel = id; }; 
+            CLASS = FirstResponder; 
+            LANGUAGE = ObjC; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            ACTIONS = {setLevel = id; }; 
+            CLASS = ProjectSettings; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {levPopup = id; levView = id; panel = id; }; 
+            SUPERCLASS = NSObject; 
+        }
+    ); 
+    IBVersion = 1; 
+}

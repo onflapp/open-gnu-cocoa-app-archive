@@ -1,0 +1,12 @@
+VHFImport Library Change Log - 2008
+
+
+2008-06-15 Georg Fleischmann
+    * HPGLImport.m (-getGraphicFromData:): imply a PD command,
+      when we get an AA or AR command
+    -> this makes the HPGL import more tolerant
+
+2008-11-29 Ilonka Fleischmann
+    * PSImport.m (-importPS:): in GhostScript version of -importPS:
+      initialize state.color
+    -> imported objects get a color

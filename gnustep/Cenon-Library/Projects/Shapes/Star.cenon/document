@@ -1,0 +1,186 @@
+{
+    Author = "Georg Fleischmann"; 
+    Comment = ""; 
+    Copyright = "1996, Free"; 
+    CreationDate = "2003-03-28 00:55"; 
+    Creator = Cenon; 
+    Data = {
+        gridSpacing = 0; 
+        gridUnit = 0; 
+        layerList = (
+            {
+                Class = LayerObject; 
+                approachAngle = 0; 
+                dippingDepth = 0; 
+                editable = YES; 
+                fillDirection = 0; 
+                fillOverlap = 0.25; 
+                flatness = 0.15; 
+                levelingLimits = "2 2"; 
+                likeOtherLayers = YES; 
+                list = (
+                    {
+                        Class = VPath; 
+                        ccw = 1; 
+                        color = {A = 1; B = 0; G = 0.747; R = 1; s = CalRGB; }; 
+                        endColor = {A = 1; B = 0; G = 1; R = 1; s = CalRGB; }; 
+                        fillColor = {A = 1; B = 0; G = 0.5864662; R = 1; s = CalRGB; }; 
+                        filled = 2; 
+                        graduateAngle = 0; 
+                        list = (
+                            {
+                                Class = VLine; 
+                                color = {A = 1; B = 0; G = 0.747; R = 1; s = CalRGB; }; 
+                                p0 = "133.870605 217.118103"; 
+                                p1 = "112.7771 155.94812"; 
+                                width = 1; 
+                            }, 
+                            {
+                                Class = VLine; 
+                                color = {A = 1; B = 0; G = 0.747; R = 1; s = CalRGB; }; 
+                                p0 = "112.7771 155.94812"; 
+                                p1 = "48.276093 154.928101"; 
+                                width = 1; 
+                            }, 
+                            {
+                                Class = VLine; 
+                                color = {A = 1; B = 0; G = 0.747; R = 1; s = CalRGB; }; 
+                                p0 = "48.276093 154.928101"; 
+                                p1 = "99.876587 116.013092"; 
+                                width = 1; 
+                            }, 
+                            {
+                                Class = VLine; 
+                                color = {A = 1; B = 0; G = 0.747; R = 1; s = CalRGB; }; 
+                                p0 = "99.876587 116.013092"; 
+                                p1 = "80.969589 54.307098"; 
+                                width = 1; 
+                            }, 
+                            {
+                                Class = VLine; 
+                                color = {A = 1; B = 0; G = 0.747; R = 1; s = CalRGB; }; 
+                                p0 = "80.969589 54.307098"; 
+                                p1 = "133.620605 91.363098"; 
+                                width = 1; 
+                            }, 
+                            {
+                                Class = VLine; 
+                                color = {A = 1; B = 0; G = 0.747; R = 1; s = CalRGB; }; 
+                                p0 = "133.620605 91.363098"; 
+                                p1 = "186.769592 54.306091"; 
+                                width = 1; 
+                            }, 
+                            {
+                                Class = VLine; 
+                                color = {A = 1; B = 0; G = 0.747; R = 1; s = CalRGB; }; 
+                                p0 = "186.769592 54.306091"; 
+                                p1 = "167.858093 116.098083"; 
+                                width = 1; 
+                            }, 
+                            {
+                                Class = VLine; 
+                                color = {A = 1; B = 0; G = 0.747; R = 1; s = CalRGB; }; 
+                                p0 = "167.858093 116.098083"; 
+                                p1 = "219.464569 154.928101"; 
+                                width = 1; 
+                            }, 
+                            {
+                                Class = VLine; 
+                                color = {A = 1; B = 0; G = 0.747; R = 1; s = CalRGB; }; 
+                                p0 = "219.464569 154.928101"; 
+                                p1 = "155.028564 156.033081"; 
+                                width = 1; 
+                            }, 
+                            {
+                                Class = VLine; 
+                                color = {A = 1; B = 0; G = 0.747; R = 1; s = CalRGB; }; 
+                                p0 = "155.028564 156.033081"; 
+                                p1 = "133.870605 217.118103"; 
+                                width = 1; 
+                            }
+                        ); 
+                        radialCenter = "0.5 0.5"; 
+                        stepWidth = 7; 
+                        width = 0; 
+                    }, 
+                    {
+                        Class = VLine; 
+                        color = {A = 1; B = 0.3459; G = 1; R = 1; s = CalRGB; }; 
+                        p0 = "124.870605 199.118103"; 
+                        p1 = "142.871094 181.118103"; 
+                        width = 1; 
+                    }, 
+                    {
+                        Class = VLine; 
+                        color = {A = 1; B = 0.3459; G = 1; R = 1; s = CalRGB; }; 
+                        p0 = "142.871094 199.118103"; 
+                        p1 = "124.870605 181.118103"; 
+                        width = 1; 
+                    }
+                ); 
+                numSteps = 0; 
+                removeLoops = YES; 
+                settle = 0; 
+                side = 2; 
+                state = 1; 
+                step0 = 0; 
+                step1 = 0; 
+                step2 = 0; 
+                string = Star; 
+                tag = 0; 
+                toolIndex = "-1"; 
+                toolString = ""; 
+                type = 0; 
+                useForTile = YES; 
+                v = 4; 
+            }, 
+            {
+                Class = LayerObject; 
+                approachAngle = 0; 
+                dippingDepth = 0; 
+                fillDirection = 0; 
+                fillOverlap = 0.25; 
+                flatness = 0.15; 
+                levelingLimits = "2 2"; 
+                list = (); 
+                numSteps = 0; 
+                removeLoops = YES; 
+                settle = 0; 
+                side = 2; 
+                state = 1; 
+                step0 = 0; 
+                step1 = 0; 
+                step2 = 0; 
+                string = Clipping; 
+                tag = 0; 
+                toolIndex = "-1"; 
+                toolString = ""; 
+                type = 2; 
+                v = 4; 
+            }
+        ); 
+        origin = {
+            Class = VCrosshairs; 
+            ccw = 1; 
+            color = {A = 1; W = 0; s = CalWhite; }; 
+            origin = "0 0"; 
+            width = 0; 
+        }; 
+        tileDistance = "0 0"; 
+        tileLimits = "0 0"; 
+    }; 
+    DocVersion = 1.0; 
+    MagazineIndex = 0; 
+    PrintInfo = {
+        bottomMargin = 0; 
+        leftMargin = 0; 
+        orientation = 0; 
+        paperName = A4; 
+        paperSize = "595 842"; 
+        rightMargin = 0; 
+        topMargin = 0; 
+    }; 
+    Version = 102; 
+    ViewSize = "0 0 283.464569 255.118103"; 
+    WindowFrame = "507 290 305 339 0 0 1532 1200 "; 
+}

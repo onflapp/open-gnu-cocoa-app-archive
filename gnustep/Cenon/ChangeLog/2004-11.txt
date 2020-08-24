@@ -1,0 +1,12 @@
+Cenon Change Log - November 2004
+
+2004-11-12  Georg Fleischmann
+	* vhfCommonFunctions.m, h (vhfExchangeValues()): new
+	* types.h (Exchange*()): i -> _i, f -> _f, ...
+
+2004-11-22  Georg Fleischmann
+	* DXFImportSub.m (-layerArrayWithName:): return default layer if no layer fits
+
+2004-11-26  Georg Fleischmann
+	* DXFImport.m (-getLWPolyline:...): calculate bounds of arcs correctly
+	  DXFImport.m (-getVertex::::): calculate bounds of arcs correctly

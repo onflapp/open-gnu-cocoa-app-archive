@@ -1,0 +1,30 @@
+{\rtf0\ansi{\fonttbl\f0\fmodern Courier;}
+\pard\tx1440\tx2700\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li2700\fi-2700\ql\qnatural
+
+\f0\b\fs24 \cf0 …nderungen för February 1998\
+
+\b0 \
+28.02.98	Cenon\
+\
+\pard\tx1440\tx4320\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li4320\fi-4320\ql\qnatural
+\cf0 Datum	Datei	VerÙndert\
+----------------------------------------------------------------------------------------------\
+05.02.98	Trasform.nib	rotate disabled\
+14.02.98	Editor2DView.m	-move: -> layer setDirty\
+next: Beta 05\
+\
+27.02.98	->	Hintergrundredraw fehlte bei schrumpfender Textbox (edit)\
+	->	Nach Texteingabe wurde die Textbox kleiner\
+	Editor2DView.m	-drawRect -> centerScanRect för Anlagenmaûe eingebaut\
+	TextGraphic.m	-textDidEnd -> bounds.size.width vergrðûert um correction\
+		-edit:in: -> editorFrameChanged wird aufgerufen\
+		-editorFrameChanged, -updateEditingViewRect: -> neu\
+28.02.98	->	Fahrwegoptimierung zwischen Objekten -> neu\
+	->	Absturz wegen Hintergrundraster\
+	Editor2DView.h	-optimizeMoves: -> neu\
+	e2Output.m	-calcOutputFor -> optimizeMoves aufgerufen, -optimizeMoves: -> neu\
+	Editor2DView.m	Absturz:\
+		-draw -> grid wird nur noch bei gup.num_pts != 0 gezeichnet\
+\
+next: Beta 06\
+}

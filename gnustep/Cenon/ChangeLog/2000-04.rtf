@@ -1,0 +1,102 @@
+{\rtf0\ansi{\fonttbl\f0\fmodern Courier;}
+\pard\tx1440\tx5400\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li5400\fi-5400\ql\qnatural
+
+\f0\b\fs24 \cf0 Changes in April 2000\
+
+\b0 \
+28.04.00	Cenon\
+\
+Datum	Datei	VerÙndert\
+----------------------------------------------------------------------------------------------\
+01.04.00	vhfDPSFunctions.m, h	new\
+	vhf2DFunctions.m, h	doUserPath moved to vhf DPSFunctions\
+		buildRoundedString() -> calls stringByReplacing:\
+	DPToolParms.m	-updateUnits -> use stringByReplacing:by: instead of vhfReplaceStringPart()\
+	TextGraphic.m	-kernToFitHorizontal -> use -appearanceCountOfCharacter: instead of vhfNumChars()\
+	VHFStringAdditions.m, h	stringByReplacing:by: instead of with:\
+	Xyz.m\
+	ioFunctions.m	-appearanceCountOfCharacter: instead of function.\
+	ToolMagazine.m	-scanUpToSequence used instead of function\
+	vhfCFGFunctions.m	changed all id to dataId\
+03.04.00	German/Localizable.strings	Werkzeug existiert nicht... corrected mistake\
+04.04.00	Editor2DView.m\
+	DPControl.m\
+	Arc.m\
+	Curve.m\
+	Rectangle.m	PSDoUserPath() -> doUserPath()\
+	vhfDPSFunctions.m	vhfDoUserPath() dummy\
+	vhfSoundFunctions.h	new\
+	Arc.m\
+	Editor2DView.m	vhfPlaySound() instead of SoundKit Functions\
+	Arc.m	#import <math.h>\
+	Path.m	Sin() instead of sin(DegToRad())\
+	Editor2DView.m	ASin instead of RadToDeg(asin())\
+	types.h	#import <math.h>\
+	PathCFill.m\
+	PathContour.m	return YES instead of TRUE\
+05.04.00	Xyz.m	-xyzLoadParms -> parms.toolStartIx set\
+		-xyzSetTool:layer: -> parms.toolStartIx added,\
+		move to next start position,\
+		lift z to Z-origin before switching off the spindle,\
+		set state.v = 0 to force setting of speed\
+	DPToolParms.m, h, nib	selectToolButton, selectTool: -> new\
+	App.h	xyzSelectTool -> new\
+	apXyz.m	xyzSelectTool -> new\
+	Xyz.m, h	canSelectTool -> new\
+		ops.deselectTool -> new\
+		-xyzLoadParms -> ops.deselectTool added\
+		-xyzMoveTo -> Abfrage verÙndert && instead of +\
+\
+
+\b 3.20 Beta 39\
+\
+
+\b0 10.04.00	drawundo.h	#import <AppKit/obsoleteGraphics.h> -> removed\
+	ChangeDetail.m	cast: [(FillGraphicsChange*)change fill]\
+	TPMix.m	libc -> commented out\
+	fastMath.c\
+	types.h	#import -> #include\
+	LayerObject.h	#import "ToolObject.h" without ../\
+	DPLayer.m	cast (DPMagazine*) for selectTool:\
+	Editor2DDocument.m	+newZone -> use NSPageSize() instead of vm_...\
+	vhfDPSFunctions.h	VHFIsDrawingToScreen() -> new\
+	Editor2DView.m	-drawRect etc. -> called VHFIsDrawingToScreen() instead of direct call\
+		-buildContour -> [(App*)NSApp contour]\
+		#import <math.h>\
+	Path.m\
+	Rectangle.m\
+	ClipRectangle.m\
+	Curve.m\
+	Line.m	#import <math.h>\
+12.04.00	Editor2DView.m	allocWithZone:, alloc -> sel_getName(_cmd) removed\
+	Xyz.m	#import <math.h>\
+25.04.00	PathContour.m	bessere GlÙttung\
+26.04.00	CNC750_CAM200_SF_KS.dev\
+	CNC750_CAM200_T.dev	new\
+28.04.00	vhfCFGFunctions.m, h	removed from project\
+	App.m	modified error messages for loading model files / nibs\
+29.04.00	KeyPanel.nib	new\
+	Main.nib	KeyPanel moved to it's own nib\
+		Class MoveMatrix removed\
+		... as 3 characters\
+	App.m	-init -> KeyPanel.nib loaded\
+	InspectorPanel.m	-loadGraphic -> [self setLevelView:nil] instead of NULL\
+		-setLevelView: -> only if theView != nil\
+30.04.00	TPMix.m	#import libc only if __mach__ defined\
+	VHFSystemAdditions.m, h	new\
+	*.m	loadNibNamed -> loadModelNamed:\
+	Editor2DDocument.m	-changeLayout -> [pageLayout readPrintInfo] removed\
+		-initializePrintInfo -> get copy of sharedPrintInfo\
+	Editor2DDocument.m\
+	Editor2DView.m\
+	DPControl.m\
+	App.h\
+	apXyz.m	-getXYZBounds:forView -> xyzBoundsForView\
+	Graphic.m, h	+fastKnobFill:isBlack:, +showFastKnobFills, drawKnob(), -numPoints, draw:, draw:width: -> new\
+	Arc.m\
+	Curve.m\
+	Line.m\
+	Mark.m\
+	Rectangle.m	-numPoints -> new\
+	Editor2DView.m	-draw:, draw:width: called instead of draw, drawWithWidth\
+}

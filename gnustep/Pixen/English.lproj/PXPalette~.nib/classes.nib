@@ -1,0 +1,18 @@
+{
+    IBClasses = (
+        {
+            CLASS = FMOtherWellController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {leftColorWell = id; rightColorWell = id; }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            CLASS = PXPaletteController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {dummyView = id; matrix = id; splitView = id; }; 
+            SUPERCLASS = NSWindowController; 
+        }
+    ); 
+    IBVersion = 1; 
+}

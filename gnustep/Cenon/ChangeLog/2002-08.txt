@@ -1,0 +1,75 @@
+Cenon Change Log - August 2002
+
+2002-08-06  Georg Fleischmann
+	* DPControl.m, DPLayer.m, DPLayerDetails.m: include DocViewOutput.h instead of DocView.h
+	* DocView.h (-displayGraphics, -displayOutput): new
+	* Document.m (+newFromFile:): use selector for 'readOutputFromPropertyList:'
+
+2002-08-08  Georg Fleischmann
+	* IPImage.m: include ../messages instead of ../../messages
+	* Info.nib: Farbverlauf im Hintergrund, Schlössel ins Bild integriert
+
+2002-08-10  Georg Fleischmann
+	* Xyz.m (-executeStream): timer removed, calls executeVector directly
+	  Xyz.m (-executeVector): event processing added, output loop added
+	                          perform with delay when waiting for user
+
+2002-08-10  Ilonka Fleischmann
+	* VImage.h (thumbImage): new
+	  VImage.m (-dealloc, -initWithCoder, -encodeWithCoder): thumbnail with thumbImage added
+	  VImage.m (-initFromPropertyList, -writeFilesToDirectory): thumbnail with thumbImage added
+	  VImage.m (-initFromPropertyList): originalSize
+	  VImage.m (-drawWithPrincipal): thumbImage ..
+	  VImage.m (-compositeInRect:toPoint:withScale:): thumbImage .. und (pl) ? ... !
+	  VImage.m (-writeFilesToDirectory): thumbImage .. -> sourcePath
+	  VImage.h (): sourcePath
+	  VImage.m (-initFromPropertyList, -setParameter): sourcePath
+	  VImage.m (-dealloc, -initWithCoder, -encodeWithCoder): sourcePath
+	  VImage.m (-drawWithPrincipal, setTumbnail): sourcePath
+	  VImage.m (-compositeAntialiased:toPoint:): Fix: pixelsWide .. instead originalSize.width ..
+	  VImage.m,h (-setParameter:, -setCompressionType/Factor, -writeFilesToDirectory:): compressionDirty
+	  VImage.m (-drawWithPrincipal): clippen för GnuStep
+	* IPImage.m (-update): [[thumbSwitch controlView] display]
+	* VPath.m (-drawGraduatedWithPrincipal:): startCol/endCol vertauscht
+
+2002-08-16  Ilonka Fleischmann
+	* IPAllFilling.m (-update): AufgerÙumt + Group fehler
+	  IPAllFilling.m (-setFillState): Abfrage of graphic auf setFillColor responds
+	* IPAllStrokeWidth.m (-setStrokeState): Abfrage of graphic auf setFillColor responds
+	  IPAllStrokeWidth.m (-update): Not Stroked disabled
+	* IPText.m (-update): ergÙnzt um size width und height
+	  IPText.m,h (-setSizeWidth, -setSizeHeight): new
+
+2002-08-16  Georg Fleischmann
+	* VPath.m, h, VPathOutput.m (-pointArrayHitsCorner:): moved to VPath
+	* VImage.m (-clipImage:withPath:): 
+
+2002-08-18  Georg Fleischmann
+	* InspectorPanel.m (-loadGraphic:): tpWindow = nil
+
+2002-08-19  Georg Fleischmann
+	* IPAllFIlling.nib: draws background removed for Radial Center
+	* vhfCompatibility.h: define NSDeleteCharacter
+	  DocView.m (-keyDown:): use NSDeleteCharacter instead of NSDeleteKey
+
+2002-08-21  Ilonka Fleischmann
+	* DocView.m (-moveObject:): rect_start is coordBounds and rect_draw is extendedBounds !
+	  DocView.m (-constrainRect:): without margin
+	  DocView.m (-constrainPoint:withOffset:):without margin
+	* VLine3D.m (-length, -setLength:, -drawWithPrincipal:): new
+	* IPLine3D.m, h (): new
+	* IPLine3D.nib (): new
+	* InspectorPanel.m (-loadGraphic:): Line3D added
+	* InspectorPanel.h (line3DWindow): added to windows
+
+2002-08-24  Georg Fleischmann
+	* VText.m (-setFontSize:, -fontSize): use ascender if capHeight == 0.0 (workaround GNUstep)
+
+2002-08-26  Georg Fleischmann
+	* VImage.m, h: keep clipImage for GNUstep alife to avoid calculation everytime
+
+2002-08-29  Georg Fleischmann
+	* VText.m, h: use attributed string for maintaining text to avoid the parsing of rtf data
+
+2002-08-30  Georg Fleischmann
+	* App.m (-sendEvent:): show inspector only for Command-1 - 5

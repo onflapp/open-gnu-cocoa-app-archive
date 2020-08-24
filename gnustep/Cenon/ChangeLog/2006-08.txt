@@ -1,0 +1,12 @@
+Cenon CAM Change Log - August 2006
+
+2006-08-10 Georg Fleischmann
+	* DXFImport.m (-getLWPolyLine:addToList:):
+          check for modeClosed with & operator not '=='
+	-> this closes polyLines with other flags set
+
+2006-08-16 Georg Fleischmann
+	* DocView.m (-draw:): batch printing for Apple added
+
+
+next Cenon 3.82

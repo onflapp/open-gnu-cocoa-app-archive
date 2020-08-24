@@ -1,0 +1,136 @@
+{\rtf0\ansi{\fonttbl\f0\fmodern Courier;}
+\pard\tx1440\tx5400\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li5400\fi-5400\ql\qnatural
+
+\f0\b\fs24 \cf0 Changes in February 2000\
+\pard\tx1440\tx5400\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li5400\fi-5400\ql\qnatural
+
+\b0 \cf0 \
+28.02.00	Cenon\
+\
+Datum	Datei	VerÙndert\
+----------------------------------------------------------------------------------------------\
+01.02.00	PPImport.nib	joinLayersSwitch -> new\
+	PPImport.m, h	joinLayers -> new\
+	Editor2DView.m	-setList: -> added [self joinLayers]\
+		-joinLayers -> new\
+		-joinSelection: -> new, added iCnt-- where object is removed, variables like filled, complex, obj1 etc. moved inside layer loop\
+		-clipObject -> return object only if [list count]\
+	DPControl.m	-start: -> checked if count of outputList < number of layer\
+\
+\pard\tx1440\tx5400\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li5400\fi-5400\ql\qnatural
+
+\b \cf0 3.20 Beta 27\
+\pard\tx1440\tx5400\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li5400\fi-5400\ql\qnatural
+
+\b0 \cf0 \
+02.02.00	DPLayer.m	-addLayerWithName: -> clipping layer is off,\
+		insert layer before clipping layer\
+	PPImport.nib	German: 'Lagen vereinigen' statt 'Lagen joinen'\
+	Editor2DView.m	-initView -> add clipping layer to layerList\
+		-draw: -> Abs(w) to draw negative diameters as well\
+		-joinSelection:messages: -> i--, when removing objects\
+	DPControl.m	-start:, -subProcessTerminated -> don't hide dataPanel as long as we process the output\
+	PPControl.m	-okPanel -> draw graphic view after changing displayDiameter\
+		-update: -> set displayDiameter for displayDiameterSwitch instead of finishAtHome!\
+	Group.m	-drawWithWidth: -> new\
+	LayerObject.m	-levelingPointsY -> returns y now\
+03.02.00	DPLayer.m	-addLayer:withName: -> LAYER_LEVELING: closed eye\
+		-clickLayer: -> LAYER_LEVELING dip depth disabled\
+		-setPopup: -> LAYER_LEVELING tool popup disabled\
+	LayerCell.m	-drawInteriorWithFrame: -> LAYER_LEVELING without dipping depth\
+\pard\tx1440\tx5400\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li5400\fi-5400\ql\qnatural
+
+\b \cf0 \
+3.20 Beta 28\
+\pard\tx1440\tx5400\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li5400\fi-5400\ql\qnatural
+
+\b0 \cf0 \
+04.02.00	ioFunctions.m	ioPutMultipleInstructions() -> truncated instruction for error message\
+	DPControl.m	-start -> dataPanel order front after [hidesOnDeactivate:NO]\
+\pard\tx1440\tx5400\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li5400\fi-5400\ql\qnatural
+
+\b \cf0 \
+3.20 Beta 29\
+\pard\tx1440\tx5400\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li5400\fi-5400\ql\qnatural
+
+\b0 \cf0 \
+07.02.00	apXyz.m	-getXYZBounds -> pointWithNum instead getPoint:\
+	e2Output.m	-optimizeMoves -> start at origin instead of 0/0\
+	DPPosition.m	-init -> [NSMutableArray new] statt alloc...\
+		-addPositionWithName:... -> new\
+		-newPosition -> calls addPosition:...\
+		-gotoParkingPosition -> new\
+		-load -> move parking position to the end of list\
+	DPPosition.h	-addPositionWithName:... -> new\
+	messages.h	POSITIONTYPEINUSE_STRING, POSITIONPARKING_STRING -> new\
+	Localized.strings	added Position Messages\
+	DPControl.m	-subProcessTerminated -> gotoParkingPosition instead of goHome\
+		-setOrigin: -> new\
+	PPControl.m, h\
+	PPControl.nib	parkingPosition instead of finishAtHome\
+\
+\pard\tx1440\tx5400\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li5400\fi-5400\ql\qnatural
+
+\b \cf0 3.20 Beta 30\
+\pard\tx1440\tx5400\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li5400\fi-5400\ql\qnatural
+
+\b0 \cf0 \
+12.02.00	Editor2DView.m	-scaleG:: -> undo added\
+	LocalizedStringsForGraphicsUndo.h SCALE_OP -> new\
+	ChangeDetail.m, h	ScaleChangeDetail, RadiusDetail, AngleDetail, LockDetail -> new\
+	ScaleGraphicsChange.m, h	new\
+	drawundo.h	#import "ScaleGraphicsChange", #import "RadiusGraphicsChange", #import "AngleGraphicsChange"\
+	Operations.strings	Scale, Radius, Angle added\
+	RadiusGraphicsChange.m, h	new\
+	e2Undo.m	takeRadius: -> new, added setDirty for -take*\
+	Editor2DView.h	takeRadius: -> new, takeAngle: -> new\
+	Graphic.m, h	-radius, -setRadius: -> new\
+	IPArc.m	-setRadius: -> calls -takeRadius now\
+	AngleGraphicsChange.m, h	new\
+	LockGraphicsChange.m, h	new\
+	IPBasicLevel.m	added undo\
+	Images	converted to 8 or 24 Bit \
+13.02.00	drawundo.h	MirrorGraphicChange, PunchGraphicChange, MixGraphicChange ContourGraphicChange added, sorted\
+	MirrorGraphicChange.m, h	new\
+	ChangeDetail.m	MirrorChangeDetail -> new\
+	Editor2DView.m	-mirror:, -punch:, -buildContour: -> undo added\
+	LocalizedStringsForGraphicsUndo.h MIRROR_OP, PUNCH_OP, MIX_OP, CONTOUR_OP -> new, sorted alphabetically\
+	Operations.strings	Mirror, Punch, Align, Contour added\
+	PunchGraphicChange.m, h	new\
+	TPAlign.m	-align: -> undo added\
+	AlignGraphicChange.m, h	new\
+	TPMix.m	-mix: -> undo added\
+	MixGraphicChange.m, h	new\
+	Editor2DView.m	-punch: select objects after punch\
+	TextGraphic.m	-textDidEndEditing: -> undo added\
+		-dealloc -> data released\
+		-initWithCoder: -encodeWithCoder: -> removed length\
+		-bounds, setBounds -> new\
+		-setRichTextData: -> release instead of autorelease\
+	EndEditingGraphicsChange.m, h new\
+	StartEditingChange.m, h	removed\
+\
+\pard\tx1440\tx5400\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li5400\fi-5400\ql\qnatural
+
+\b \cf0 3.20 Beta 31\
+\pard\tx1440\tx5400\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li5400\fi-5400\ql\qnatural
+
+\b0 \cf0 \
+21.02.00	Arc.m	-intersectLine: -> set tolerance to 0.005 and 0.01, because of problems in -subPathInsidePath\
+23.02.00	DPLayer.m	-cellDidChangeSide: -> switch off output for pick out\
+	e2Output.m	-controlPassiveLayers -> Passive layer wasn't created any more\
+28.02.00	PPControl.nib	useBitmapSwitch added\
+	PPControl.m, h	useBitmap added\
+	Path.m	-contour -> contourWithPixel: called\
+\pard\tx1440\tx5400\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li5400\fi-5400\ql\qnatural
+
+\b \cf0 3.20 Beta 32\
+\pard\tx1440\tx5400\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li5400\fi-5400\ql\qnatural
+
+\b0 \cf0 \
+29.02.00	Path.m	-contourWithPixel, -pickOutWithTipAngle, -buildCFillUPath -> Berechnungsobjekt autoreleased\
+\
+\pard\tx1440\tx5400\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li5400\fi-5400\ql\qnatural
+
+\b \cf0 3.20 Beta 33\
+}

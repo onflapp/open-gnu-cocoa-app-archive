@@ -1,0 +1,49 @@
+"DrawApp" = {
+    ACTIONS = {
+        "help:" = id; 
+        "info:" = id; 
+        "new:" = id; 
+        "open:" = id; 
+        "orderFrontInspectorPanel:" = id; 
+        "setCurrentGraphic:" = id; 
+    }; 
+    OUTLETS = {faxCoverSheetMenu = id; tools = id; }; 
+    SUPERCLASS = NSApplication; 
+};
+"FirstResponder" = {
+    ACTIONS = {
+        "align:" = id; 
+        "alignToGrid:" = id; 
+        "bringToFront:" = id; 
+        "changeAspectRatio:" = id; 
+        "changeGrid:" = id; 
+        "changeLayout:" = id; 
+        "close:" = id; 
+        "deselectAll:" = id; 
+        "enableGrid:" = id; 
+        "group:" = id; 
+        "hideGrid:" = id; 
+        "hideRuler:" = id; 
+        "link:" = id; 
+        "lockGraphic:" = id; 
+        "pasteAndLink:" = id; 
+        "printDocument:" = id; 
+        "redoChange:" = id; 
+        "revertToSaved:" = id; 
+        "save:" = id; 
+        "saveAll:" = id; 
+        "saveAs:" = id; 
+        "saveLink:" = id; 
+        "saveTo:" = id; 
+        "sendToBack:" = id; 
+        "showHideRulers:" = id; 
+        "showLinks:" = id; 
+        "sizeToGrid:" = id; 
+        "undoChange:" = id; 
+        "undoOrRedoChange:" = id; 
+        "ungroup:" = id; 
+        "unlockGraphic:" = id; 
+    }; 
+    CATEGORY = LocalActions; 
+    OUTLETS = {}; 
+};

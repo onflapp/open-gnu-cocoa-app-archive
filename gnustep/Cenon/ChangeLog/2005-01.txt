@@ -1,0 +1,93 @@
+Cenon Change Log - January 2005
+
+2005-01-04 Georg Fleischmann
+	* IPImage.m (-init): set action to -setCompressionType: not setFileType !
+	* PSImport.m (-importPS:, -importPDFFromFile:): put filename in quotes to allow names with space
+	* App.m (-loadModules:): load modules from system library too
+	  functions.m, h (systemBundlePath()): new
+	  functions.m (localLibrary()): return system library or local libray, whichever exists
+	  vhfCommmonFunctions.m (vhfLocalLibrary()): return system library or local libray, whichever exists
+
+2005-01-06 Georg Fleischmann
+	* PSImport.m (-importPS:): Apple: convert string to ASCII, if it contains special characters
+	  For Apple, import of EPS files with special characters is possible now
+	* PSImport.m (-gsPath): new, returns complete path to gs
+	  PSImport.m (-importPDFFromFile:, -importPS:): use [self gsPath] and don't add 'gs'
+	  gs is now searched in /usr/local/bin and /usr/bin on OpenStep and Apple
+	* PSImport.h, HPGLImport.h, DXFImport.h, Type1Import.h (DEFAULT_FONT): removed
+	  PSImportSub.m, HPGLImportSub.m, DXFImportSub.m, Type1ImportSub.m (-addText:...):
+	                 use [NSFont userFixedPitchFontOfSize:size] instead of DEFAULT_FONT
+	  DXFImport.m (getGraphicFromData:): pass string Courier directly
+	  On Apple the default font was unknown, so this change allows default fonts on Apple
+
+2005-01-07 Ilonka Fleischmann
+	* VGroup.h (fill variables) variablen för eine Föllung/Color eingebaut
+	  VGroup.h (-setColorNew) new
+	* VGroup.m (-setFillColor: -setEndColor: -setGraduateAngle: -setStepWidth: -setRadialCenter) new
+	  VGroup.m (-encodeWithCoder: -initWithCoder:)
+	  VGroup.m (-propertyList: initFromPropertyList:...): fillcolors new, ruft setColorNew auf
+	  VGroup.m (+initialize): new, [VGroup setVersion:2]
+	  VGroup.m (-init): + fillcolors
+	  VGroup.m (-copy): new
+	  VGroup.h (-setColorNew) new
+	  VGroup.m (-initWithList:): ruft setColorNew auf
+	  VGroup.m (-setList:): ruft setColorNew auf
+	  VGroup.m (-setWidth) new
+	* IPAllStrokeWidth.m (-update:): Gruppe wie normale Grafik behandelt + kl. Umstellungen
+	* IPAllFilling.m (-update:): Gruppe wie normale Grafik behandelt
+	* VText.h (-radialCenter, -setRadialCenter, radialCenter) new
+	* VText.m (-radialCenter, -setRadialCenter) new
+	  VText.m (-encodeWithCoder: -initWithCoder:)
+	  VText.m (-propertyList: initFromPropertyList:...): radialCenter new
+	* VTextPath.h (-radialCenter, -setRadialCenter) new
+	* VTextPath.m (-radialCenter, -setRadialCenter) new
+	* PasteGraphicsChange.m (-redoDetails) [layer addObject:..] instead of [layer insertObject:.. atIndex:0]
+	* ChangeDetail.m (ChangeDetail -initGraphic:change:) VGroup kram einkommentiert
+	  ChangeDetail.m (ChangeDetail -initGraphic:change:) [changeDetail release]; after addObject:changeDetail];
+	* GraphicsChange.m (-saveBeforeChange:) [changeDetail release]; after addObject:changeDetail];
+
+	With this groups now support stroke and fill colors and color shading
+
+2005-01-10  Georg Fleischmann
+	* Document.m (-setName:andDirectory:): use stringByAppendingFormat
+	                                       use [NSString length] instead of [NSString isEqual:@""]
+	* App.m (-currentDirectory): use [NSString length] instead of -isEqual:
+	                             double check for nil path -> return vhfHomeDirectory()
+	* Apple, Main Menu: Translate German Cenon menu, and 'Print' entry
+
+2005-01-11 Ilonka Fleischmann
+	* ChangeDetail.m (-initGraphic:change:):
+	     VGroup ChangeDetail only add if changeExpected of changeDetail
+	  FillChangeDetail, ColorChangeDetail, LengthChangeDetail,
+	  StepwidthChangeDetail, RadialCenterChangeDetail (-personalChangeExpected):
+	     check if graphic change fits !! return NO if not
+
+2005-01-11 Ilonka Fleischmann
+	* VText.m (-init): radialCenter = NSMakePoint(0.5, 0.5);
+	  VText.m (-propertyList): fill Zeugs nur speichern wenn von default abweichend
+	  VText.m (-initFromPropertyList:inDirectory:): fill Zeugs auf default setzten wenn nicht geladen
+	* VPolyLine.m (-propertyList): fill Zeugs nur speichern wenn von default abweichend
+	  VPolyLine.m (-initFromPropertyList:inDirectory:): fill Zeugs auf default setzten wenn nicht geladen
+	* VPath.m (-propertyList): fill Zeugs nur speichern wenn von default abweichend
+	  VPath.m (-initFromPropertyList:inDirectory:): fill Zeugs auf default setzten wenn nicht geladen
+	* VGroup.m (-propertyList): fill Zeugs nur speichern wenn von default abweichend
+	  VGroup.m (-initFromPropertyList:inDirectory:): fill Zeugs auf default setzten wenn nicht geladen
+	* VRectangle.m (-propertyList): fill Zeugs nur speichern wenn von default abweichend ++ radius + rotAngle
+	  VRectangle.m (-initFromPropertyList:inDirectory:): fill Zeugs auf default setzten wenn nicht geladen
+	  VRectangle.m (-pathRepresentation:): kein Cornerradius wenn rectangle zu klein
+
+Cenon 3.67
+
+2005-01-13  Georg Fleischmann
+	* VLine.m (-setLength:, -setAngle:): check for sqrt(0)
+	* PSImport.m (-importPS:): check for !data before [self interpret:data]
+	* DocView.m (-setList:): if color == nil use black
+
+Apple: Cenon 3.67-2
+
+2005-01-21  Georg Fleischmann
+	* VGroup.m (-setColorNew:): check for empty group
+2005-01-26  Georg Fleischmann
+	* VGroup.m (-setUniColoringNew:): check for empty group
+
+next Cenon 3.70

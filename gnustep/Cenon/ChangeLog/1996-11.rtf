@@ -1,0 +1,46 @@
+{\rtf0\ansi{\fonttbl\f0\fmodern Courier;}
+\pard\tx1440\tx2700\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li2700\fi-2700\ql\qnatural
+
+\f0\b\fs24 \cf0 …nderungen för November 1996\
+
+\b0 \
+22.11.96	Cenon\
+\
+\pard\tx1440\tx4320\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li4320\fi-4320\ql\qnatural
+\cf0 Datum	Datei	VerÙndert\
+------------------------------------------------------------------------------------------------\
+08.11.96	IPArc.nib	Fill-Button hinzugefögt\
+	IPArc.m, h	-setFill und fillSwitch: neu\
+	Arc.m	-getBounds: -> 270 degree || statt && eingebaut\
+		-pathRepresentation -> neu\
+		-draw -> -pathRepresentation wird aufgerufen, wenn Arc geföllt ist\
+		//-setFilled: -> filled=flag\
+		//-contour -> Geföllt-Teil ruft jetzt -pathRepresentation auf\
+		-read, -write um filled erweitert\
+		+initialize -> neu, Version auf 1 gesetzt\
+	Arc.h	#import "Path.h" -> hinzugefögt\
+		-pathRepresentation -> neu\
+	Editor2DView.m	-mouseDown -> Select-Test (we don't hit...) nur auf editierbare Lagen\
+		-draw: -> Lagen werden jetzt in der richtigen Reihenfolge aufgebaut\
+\pard\tx1440\tx4320\tx5040\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li4320\fi-4320\ql\qnatural
+\cf0 		- read -> tools för LayerObjects werden wieder gesetzt\
+\pard\tx1440\tx4320\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li4320\fi-4320\ql\qnatural
+\cf0 	DPLayer.m	-setTool: -> if(!strcmp([[moveMatrix selectedCell] stringValue] war totaler Quatsch\
+	Spiral.m	+initialize -> neu, Version auf 1 gesetzt\
+		-read, -write -> neu\
+		zOffset -> neu\
+	Spiral.h	zOffset -> neu\
+	IPSpiral.nib	zOffset -> neu\
+	DPControl.m	-buildOutputPathAndExecute -> noch mehr Speicher för Spirale geholt\
+09.11.96	Editor2DDocument.m	-loadDocument:frameString: -> update wird an magazin geschickt\
+	Arc.m	distancePointArc() -> negative Winkel ergaben bei 360 deg. Arc ba = ea\
+	English.lproj/help	um Gewindeschneiden erweitert\
+18.11.96	Path.m	putFillUPath: 2 x  if( (SqrDistPoints(lastPoint, pl0)... -> Klammer gesetzt\
+		              2 x  p.x = (pl0.x + lastPoint.x)/2.0; ... lastPoint statt pl1\
+		              p0.y = p1.y = y + (float)i*50.0*TOLERANCE; -> vorher 100\
+21.11.96	Editor2DDocument.m\
+	App.m\
+	DPControl.m	[[NXApp keyPanel] isDemo] verteilt\
+	Main.nib	Demo-Button eingebaut\
+22.11.96	buildShip	German nibs aus subproj fehlten\
+}

@@ -1,0 +1,66 @@
+Cenon Change Log - January 2006
+
+2006-01-06 Georg Fleischmann
+	* Document.m (-setTemporaryTitle:): use NSHomeDirectory()
+	  App.m (-currentDirectory:): use NSHomeDirectory()
+
+2006-01-11 Georg Fleischmann
+	* German.lproj/Operations.strings: "Add vertex", "Remove vertex" translation added
+
+2006-01-11 Ilonka Fleischmann
+	/* saubere Objekt/Selektierpunkt Selektierung */
+	* DocView.m (-moveObject:::): call hitEdge instead of hitControl (2x)
+	  -> this will select only the object itself (no control point)
+	  VRectangle.m (-hitEdge:fuzz:::):
+	  ClipRectangle.m (-hitEdge:fuzz:::):
+	  VLine.m (-hitEdge:fuzz:::):
+	  VArc.m (-hitEdge:fuzz:::):
+	  VImage.m (-hitEdge:fuzz:::): don't set selectedKnob any more, this does -hitControl
+	  -> now the first click to an object will never select a control point
+	* VPath.m (-uniteWith:): remove processed endPairs from arrays (endPts[] endIs[], ePairsCnts[])
+	  -> weniger Berechnungsfehler beim vereinigen / PCB
+
+2006-01-13 Georg Fleischmann
+	* IPAllLayers.m (-setLayerList:): setAllowEmptySelection:YES before renewing rows
+	  -> this avoids a crash with the Layer-Inspector
+	     (also fixed in GNUstep [NSMatrix -deselectAllCells])
+
+2006-01-16 Georg Fleischmann
+	* DocView.m (-dragSelect:): set linewidth with 1.0/scale, use NSBezierPath
+	  DocView.m (-draw:): set default line width of NSBezierPath = 1.0/scale
+	  DocView.m (-draw:): draw tile rects with width 1.0/scale, use NSBezierPath
+	  DocView.m (-dragMagnify:): set default line width of NSBezierPath = 1.0/scale, use NSBezierPath
+	  -> GNUstep: one point lines for drag selection, tile rectangles, and dragMagnify at any scale
+	* VCurve.m (-drawControls:): 1.0/scale
+	  VCurve.m, VPolyLine.m, VLine.m, VWeb.m (-drawAtAngle:): 1.0/[view scaleFactor]
+	  -> GNUstep: this gives one point lines for curve controls and curve rotation
+
+2006-01-17 Georg Fleischmann
+	* VLine.m,  VLine3D.m, VRectangle.m, VClipRectangle.m (-drawWithPrincipal:):
+	  save/restore default linewidth, use default for zero line widths
+	  VMark.m, VWeb.m (-drawWithPrincipal:): don't set line width = use default
+	  -> GNUStep: this draws zero line width correctly with one point at any scale
+	* ProgressIndicator.m, h: new
+
+2006-01-25 Ilonka Fleischmann
+	* DocView.m (-redrawObject:::): path snap also to own point
+	  -> VPath / VArc snap to own points
+	* DocView.m (-joinSelection:with:): bei zwei VPolyLines auch [change notePathBefore:obj1] & [change notePath:obj1]
+	  -> join Undo bei zwei polylines tut damit
+	* DocView.m (-joinSelection:with:): zwei VPolyLines checken ob beide closed - complex = YES
+	  -> join mit zwei geschlossenen polylines funktioniertdann richtig
+	* VPath.m (-intersectionsForPtInside:with::::): gb Kind of VRectangle in j schleife auch j nehmen nicht i
+	  -> crash fixed (PCB, rechteck in Pfad)
+	* VLine.m (-hitEdge:fuzz::::):
+	  VCurve.m (-hitEdge:fuzz::::):
+	  VRectangle.m (-hitEdge:fuzz::::):
+	  VArc.m (-hitEdge:fuzz::::): don't snap to selectedKnob
+	  -> VPath / VArc snap to own points
+	* VArc.m (-movePoint:by:): case PT_START (!control) if ( angle*a <= 0.0 .. instead < 0.0
+	  VArc.m (-movePoint:by:): case default (!control) if ( angle*a <= 0.0 .. instead < 0.0
+	  -> arc movePoint öber nullpunkt - besser
+
+2006-01-26 Georg Fleischmann
+	* VHFPopUpButtonAdditions.m, h (-replaceItemsFromArray:fromIndex:) new
+
+next Cenon 3.81

@@ -1,0 +1,13 @@
+{
+    IBClasses = (
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {set = id; }; 
+            CLASS = LayerDetailsController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {batchSwitch = id; nameField = id; panel = id; typePopup = id; }; 
+            SUPERCLASS = NSObject; 
+        }
+    ); 
+    IBVersion = 1; 
+}

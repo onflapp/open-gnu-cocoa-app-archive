@@ -1,0 +1,24 @@
+{
+    IBClasses = (
+        {
+            CLASS = App; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {workingAreaPanel = id; }; 
+            SUPERCLASS = NSApplication; 
+        }, 
+        {
+            ACTIONS = {orderFrontNXColorPanel = id; }; 
+            CLASS = FirstResponder; 
+            LANGUAGE = ObjC; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            ACTIONS = {setWorkingArea = id; }; 
+            CLASS = WorkingAreaPanel; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {sizeMatrix = id; }; 
+            SUPERCLASS = NSPanel; 
+        }
+    ); 
+    IBVersion = 1; 
+}

@@ -1,0 +1,83 @@
+{\rtf0\ansi{\fonttbl\f0\fmodern Courier;\f1\fmodern Ohlfs;}
+\paperw18160
+\paperh14940
+\margl120
+\margr120
+{\colortbl;\red0\green0\blue0;}
+\pard\tx1440\tx2700\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\f0\b\i0\ulnone\fs24\fi-2700\li2700\fc0\cf0 …nderungen för September 1996\
+
+\b0 \
+30.09.96	Cenon\
+\
+
+\pard\tx1440\tx4320\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\fi-4320\li4320\fc0\cf0 Datum	Datei	VerÙndert\
+----------------------------------------------------------------------------------------------------------------------------\
+
+\pard\tx1440\tx4320\tx5040\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\fi-4320\li4320\fc0\cf0 22.09.96	path.m	- subPathInsidePath:: -> if(!leftCnt || leftCnt == iCnt) -> NO alle rechts/links von beg\
+			-> SIDESTEP eingebaut falls waagerechte linie oder iCnt(SchnittCount) ungerade\
+			-> test mit punkt mittig von erster subpath graphic statt mit start/ende dieser\
+		- removeIntersectionsInSubpaths::: -> fast neu (alternativen auskommentiert)\
+		- contour -> einfacher mit abschaltern von removeIntersectionsInSubpaths::: (alter ausk.)\
+		- getIntersections:with: -> in Schleife  if( gp == g ) continue; eingebaut !!!\
+	Graphic.h,m\
+	Line.h,m\
+	Arc.h,m\
+	Curve.m,h	- getPointBeside: -> neu gibt punkt mittig seitlich zuröck\
+
+\fc1\cf1 22.09.96	Path.m	- contour -> Meldung von Null-LÙnge auskommentiert\
+	Curve.m	- intersectLine:: -> zweimal if( Diff(dx, 0) > TOLERANCE ) för vertikale Linie (vorher 0.2 statt TOLERANCE)\
+	LayerObject.m, h	- setDirty: contour: -> neu\
+	e2DOutput.m	- Verhalten beim Neuberechnen verÙndert, Meldung kommt nur noch, wenn Lage verÙndert wurde\
+	Editor2DView.m	- mouseDown -> create nur noch, wenn eine Lage editierbar ist\
+		- insertObject -> ruft [.. setDirty:YES contour:NO] auf\
+		- scrollPointToVisible() -> Toleranz ZoomabhÙngig gemacht\
+23.09.96	Path.m	- contour -> [NXApp removeLoops] wird aufgerufen\
+	App.h\
+	apPrefs.m	- removeLoops -> neu\
+	Prefs.nib	removeLoops -> neu\
+24.09.96	Curve.m	intersectCurves() -> vhfIntersectsRect statt NXIntersectsRect aufruf\
+26.09.96	App.m	- init -> magazine und positions aus locations.h\
+		.dir.tiff wird in Jobs-Ordner kopiert\
+	locations.h\
+	DPMagazine.h	MAGAZINENAME nach locations verlegt\
+	DPPositions.h	POSITIONNAME nach locations verlegt\
+	apPrefs.m	setAllLayerDirty Aufrufe, damit beim Umschalten die Grafik neu berechnet wird.\
+	Editor2DView.h\
+	e2Output.m	- setAllLayerDirty -> neu\
+	DataPanel.nib	Position auf Platz 5 eingetragen\
+	LayerObject.m	- init -> liste wird angelegt, nicht mehr dirty nach init\
+	Path.m	- clipListFromRect -> Föllung wird jetzt auch geclippt\
+	Editor2DView.m	- delete -> clipObject wird auch entfernt, wenn nur ein object in der slist ist\
+27.09.96	Graphic.h,m	- identicalWith: -> neu Yes falls identisch mit öbergebener graphic\
+		- uniteWith: -> neu united die graphics falls mğglich\
+	Line.h,m	- identicalWith: -> neu Yes falls identisch mit öbergebener graphic\
+	Curve.h,m	- identicalWith: -> neu Yes falls identisch mit öbergebener graphic\
+	Arc.h,m	- identicalWith: -> neu Yes falls identisch mit öbergebener graphic\
+		- uniteWith: -> neu united die graphics falls mğglich\
+		- isPointInside ->€implementiert\
+	Path.h,m	- uniteWith: -> neu united die graphics falls mğglich\
+		- isPointInside ->€implementiert\
+		- getListOfObjectsSplittedFrom -> implementiert\
+		- contour -> subpath etc initialisiert\
+	e2HiddenArea.m	-> neue Datei !!!\
+	Editor2DView.h	- removeHiddenAreas:(List*) (element 0 liegt ganz unten !!!)\
+		- uniteAreas: (funktioniert nicht innerhalb eines paths !!!)\
+		- removeGraphics: inside: (wird von path/arc gebraucht) -> neu\
+	Main.nib	Punch bzw. Ausstanzen eingebaut\
+	Editor2DWindow.h, m\
+	Editor2DView.h, m	- punch: -> neu\
+	Curve.m	- mirrorAround -> Absturz, wenn p Null war\
+
+28.09.96	Editor2DView.m	- setList -> free auf liste wird nicht mehr gemacht\
+
+\pard\tx1440\tx4320\tx5040\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\fi-4320\li4320\fc1\cf1 30.09.96	LayerObject.m	- init -> flatness = 0.3\
+	Path.m	- putFillUPath -> sortPointArray() aus der Schleife rausgelegt (schneller)\
+	DPLayer.m	- toolChanged -> Abfrage nach currentDocument, da sonst Absturz\
+	DPControl.m	- buildOutputPathAndExecute -> settlepath hatte noch zu wenig Speicherplatz\
+		Out of Range Abfrage för clipgrafik\
+	messages.h	CLIPOUTOFRANGE_STRING -> neu\
+		OUTOFRANGE_STRING -> verÙndert\
+	Curve.m	- getFlattenedObject -> flatness minimal auf 0.02\
+	Arc.m	- getBounds:withKnobs: -> šberstrichene Winkel wurden falsch abgefragt\
+
+}

@@ -1,0 +1,174 @@
+2004-12-09  Fabien VALLON  <fabien.vallon@fr.alcove.com>
+
+	* PXAppDelegate: add color Palettes subdirectory creation
+	* PXPaletteSwitcher : Clean up remove harcode path
+
+2004-12-07  Fabien VALLON  <fabien.vallon@fr.alcove.com>
+
+	* PXAboutController.m : init make it a real singleton.
+	Change the way of loading the nib. It should probably work with OSX (TODO: test)
+	* PXAboutController.m : Clean Up
+	* PXAppDelegate.m : _createApplicationSupportSubdirectories: new private method.
+	Create Directory structure to store Backgrounds & ColorsPalettes
+	applicationDidFinishLaunching: : Call _createApplicationSupportSubdirectories
+	* PXCanvasController.m : awakeFromNib : setting zoomPercentageBox ( workaround )
+	- backgroundController changes : call the accessor method to get the panel.
+	- showBackgroundInfo: Ditto
+	- import math.h & NSArray_DeepMutableCopy
+	- toolbar:itemForItemIdentifier: willBeInsertedIntoToolbar: : Remove unneed condition 
+	( Localizable.strings was added into GNUMakefile ) 
+	- setMainBackground: remove condition ( ifdef __COCOA__ )
+	- setAlternateBackground : Ditto
+	- prompter:aPrompter didFinishWithSize: Ditto
+	* PXBackgroundController.m :
+	- Move the class as NSObject subclass
+	- add 	BACKGROUNDPRESET as static NSString (this the path form User library Domain) for Cocoa / GNUstep
+	- defaultsBackgrounds is now implement as static function
+	- Add Private Categories : with  _populatePopup: withDefaultBackgroundsUsingSelectionAction: , 
+	_populatePopup: withUserBackgroundsUsingSelectionAction:; _populateMenu:  selectionAction:, _populateMenus;
+	_setUsesAlternateBackground:,_setDefaultBackgroundsFor:,_setMainBackground:,_setAlternateBackground: methods.
+	_populateMenus* methods : Add target for items ( don't know why it is not need for Cocoa ) 
+	_populateMenus* methods : Remove harcode path, use of NSSearchPathForDirectoriesInDomains and thed defined 
+	BACKGROUNDPRESET string instead
+        - Split the main implementation : add  NamePrompterDelegate Categories to help the reading
+	prompter didFinishWithName context: Replace hardcode paths
+	- init: use NSBundle to load the nib, clean up
+	- deleteCurrentConfiguration : Remove hardcode paths, 
+	- saveCurrentConfiguration : Ditto
+	 - Add types for parameters and return values for most of the methods
+	- Add backgroundPanel: as accessor methods 
+	* PXCanvasView.m : include math.h
+	- setupScaleTransform: Workaround , Force zoomPercentage to 600 for GNUstep
+	- mouseDown: forward event to NSApp keyWindow for GNUstep
+	* PXCheckeredBackground.m : drawRect: use 	backWell color 
+	* PXLassoTool.m : import NSArray_DeepMutableCopy
+	* PXLayerController.m : selectRow: workaround for selectRowIndexes: (implementation seems differents)
+	* PXLayerDetailsView.m: import PXLayerDetailsSubView, initWithLayer: workaround to
+	include PXLayerDetailsSubView
+	- updatePreview:notification condition for isHiden 
+	- shouldRedraw :  condition for NSIsEmptyRect (workaround)
+	- isHidden: always return NO for GNUstep
+	- setHidden: unused for GNUstep
+	* PXMonotoneBackground.m : drawRect: use 	[backWell color] and [colorWell color]
+	* PXMonotoneBackground.m : Ditto
+	* PXNamePrompter.m: This class is now a NSObject subclass
+	init: use NSBundle to load NibNamed
+	- namePrompterPanel 
+	* PXPaletteSwitcher.m:
+	- add 	COLORPALETTESPRESET static NSString (this the path form User library Domain) for Cocoa / GNUstep
+	- populatePopup:aPopup withUserPalettesUsingSelectionAction: rewrite hardcode path
+	- TODO finish !!!
+	* Add type for parameters and return value in lot of classes  &	clean up the  coding style.
+        * Add PXPrefrences  gorm file
+        * Add PXLayerDetailView gorm file
+        * Switch to NSObject subclass for PXBackgroundController.nib & PXNamePrompter.nib ( for English/French)
+	* Update lot of gorm files & some nibs (switch NSWindowController => NSObject) stuff
+        * PXPaletteManager.h : move <Cocoa/Cocoa.h> into <AppKit/AppKit.h>
+	
+	
+	
+2004-10-06  Fabien VALLON  <fabien@sonappart.net>
+
+	* PXCanvasController.m : change panel/palettes methods call, remove zoom view for GNUstep,
+	call setTarget: method for toolbaritems, small change for labels (GNUstep only)...
+	remove debug messages
+
+	* PXCanvas: clean up
+
+	* PXToolPaletteController, PXColorController, PXInfoPanelController and
+	PXToolPropertiesController are cleaner.
+	They use all the same way of implement it : singleton, put some method
+	private, subclass of NSObject...
+	I use sharedColorPanel, sharedToolPanel, sharedProperties.. to call the
+	singleton, and colorPanel, toolPanel for accessors methods.
+	I also remove NSUserDefaults stuff that manage isOpen (or not) panel) see
+	PXAppDelegate
+
+	* PXAppDelegate : Clean the startup and the terminate application delegate
+	methods,  specially to manage / open (or not) the {color,info,Tool..}
+	palettes. That will solve some bugs (some panel was open & close
+	immediatly) and remove some code from *PaletteController(s)...
+
+  	* PXToolMatrix : update method call for palettes/panels ...
+
+	* KTMatrix [imp]/KTMatrix.m : isEqual: use NO instead of false
+
+	* Update most of the gorms files ...
+
+	* Add PixenINfo.plist
+	
+
+2004-09-30  Fabien VALLON  <fabien@sonappart.net>
+
+	* *Update Headers for correct compilation on GNUstep remove lot of conditionals, replace __APPLE__ by
+	__COCOA__:  UKUpdateChecker.h,UKPrefsPanel.h,UKFeedbackProvider.h,SBCenteringClipView.h,
+	  PXZoomTool.h,PXWelcomeController.h,PXToolPropertiesController.h,PXToolPaletteController.h,PXToolMatrix.h,
+	PXTool.h,PXScaleAlgorithm.h,PXPreviewResizeSizeView.h,PXPreviewController.h,PXPoint.h,PXPaletteSwitcher.h,
+	PXPalette.h,PXNamePrompter.h,PXMonotoneBackground.h,PXLayerDetailsView.h,PXLayer.h,PXImageView.h,PXImageSizePrompter.h,
+	PXGradientBuilderController.h,PXFilterController.h,PXFilter.h,PXEmptyPropertiesView.h,PXColorWellCell.h,
+	,PXColorWell.h,PXColorPaletteMatrix.h,PXColorPaletteController.h,PXCanvasResizePrompter.h,PXCanvasController.h,
+	PXCanvas.h,PXBackgroundController.h,PXBackground.h,PXAboutPanel.h,MyDocument.h
+
+	* PXToolSwitcher.h : clean up: includes,move _color,_tool and _lastTool as private ivars
+	add typing for most methods (code is quite hard to read without declaration of the type of parameters and the type 
+	of the return)
+
+        * Update includes
+	main.m : use NSApplication.h instead of AppKit.h
+
+	* use __COCOA__ instead of __APPLE__ , add some warning for GNUstep
+	PXToolPropertiesController.m,PXScaleController.m,PXPreviewResizeSizeView.m,PXPixel.,m,PXHotkeyFormatter.m,
+	PXGrid.m,PXFilterController.m,PXCrosshair.m,PXColorPaletteController.m,PXCanvasController.m,
+	PXPreviewController.m,PXCanvas.m,PXBackgroundController.m,PXAppDelegate.m,PXAboutController.m,
+	MyDocument.m,KTMatrix.m,
+
+	* PXToolSwitcher.m : rename with color,tools,lastools (private ivars), add some comments
+
+	* new gorm files : PXRectangleToolPropertesView, PXAbout PXEllipseToolPropertiesView,PXMonotoneBackgroundConfigurator;
+
+	* Update MainMenu gorm and PXToolPalette gorm file
+
+	* Add Pixen.tiff
+
+	* Update GNUMakefile
+	
+2004-09-28  Fabien  <fabien@sonappart.net>
+
+	* New gorm files
+	* PXAppDelegate.h : Clean up header
+	* PXAppDelegate.m : Clean up
+	    - move _checkForUncleanCrash into private category,  use block (gcc-2.95 should not like 
+	     declarations wich is not at the beginning of a block), use 2 ( in a condition when assigning a var
+            - Group Delegate methods & Actions methods
+            - remove init and move it to applicationDidFinishLaunching:
+	* Bug repport : PXWelcomeController could be call twice 
+
+	
+	
+
+2004-09-03  Fabien VALLON  <fabien@sonappart.net>
+
+	* Add GNUmakefile
+	* MyDocument.h,PXAppDelegate,PXBackgroundController.h, PXCanvas.h
+	  PXCanvasController.h, PXCanvasResizePrompter.h , PXColorPaletteController.h
+	  PXColorPaletteMatrix.h, PXColorWell.h, PXColorWellCell.h,PXGradientBuilderController.h
+	  PXImageSizePrompter.h, PXImageView.h,PXLayer.h,PXLayerDetailsView.h,PXMonotoneBackground.h
+	  PXNamePrompter.h,PXPalette.h,PXPaletteSwitcher.h,PXPoint.h,
+	  PXPreviewController.h, PXPreviewResizeSizeView.h,PXScaleAlgorithm.h
+	  PXToolMatrix.h,PXToolPaletteController.h,PXToolSwitcher.h,PXWelcomeController.h
+	  PXZoomTool.h,UKFeedbackProvider.h,UKPrefsPanel.h,UKUpdateChecker.h  : 
+	  Use <AppKit/AppKit.h> instead of <Cocoa.Cocoa.h>
+
+	* MyDocument.m : include tgmath (not sure) & NSAlert.h
+	* PXAppDelegate.m: include NSAlert
+	* PXAboutController.m : include NSNib
+	* PXAboutPanel.h : include NSPanel
+	* PXCrosshair.m : include NSGraphicsContext NSBezierPath NSColor
+	* PXEmptyPropertiesView.h : include PXToolPropertiesView
+	* PXGrid.m: include NSGraphicsContext NSBezierPath
+	* PXLinearTool.m: in objC BOOL are YES or NO (not TRUE/FALSE)
+	* PXPixel.m: include GNUstepGUI/GSFusedSilica.h for extention
+	* PXPreviewResizeSizeView.h : NSShadow not implemented in GNUstep
+	* UKFeedbackProvider.{m,h}: Do not use NSMailDelivery.h (what is it ? )
+	* Add English.lproj/MainMenu.gorm English.lproj/MyDocument.gorm English.lproj/PXBackgroundController.gorm English.lproj/PXColorPalette.gorm English.lproj/PXDiscoverPixen.gorm
+English.lproj/PXGradientBuilder.gorm English.lproj/PXGridSettingsPrompter.gorm English.lproj/PXInfoPanel.gorm English.lproj/PXLayerController.gorm English.lproj/PXToolPalette.gorm English.lproj/PXToolProperties.gorm

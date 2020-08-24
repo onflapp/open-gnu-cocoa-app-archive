@@ -1,0 +1,29 @@
+{
+    IBClasses = (
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {CLASS = NSObject; LANGUAGE = ObjC; }, 
+        {CLASS = PXToolMatrix; LANGUAGE = ObjC; SUPERCLASS = NSMatrix; }, 
+        {
+            ACTIONS = {disclosureClicked = id; }; 
+            CLASS = PXToolPaletteController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                leftSwitcher = PXToolSwitcher; 
+                minimalView = id; 
+                panel = NSPanel; 
+                rightSwitchView = id; 
+                rightSwitcher = PXToolSwitcher; 
+                triangle = NSButton; 
+            }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            ACTIONS = {colorChanged = id; toolClicked = id; }; 
+            CLASS = PXToolSwitcher; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {color = id; colorWell = NSColorWell; tools = id; toolsMatrix = id; }; 
+            SUPERCLASS = NSObject; 
+        }
+    ); 
+    IBVersion = 1; 
+}

@@ -1,0 +1,191 @@
+{\rtf0\ansi{\fonttbl\f0\fnil Times-Roman;\f1\fnil Courier;}
+\paperw12300\paperh14020
+\pard\tx1140\tx2300\tx3440\tx4600\tx5760\tx6900\tx8060\tx9200\tx10360\tx11520\ql\qnatural
+
+\f0\fs36 \cf0 About Undo in Draw\
+\
+
+\fs28 This new version of Draw implements a multi-level undo feature. The purpose of this example is to demonstrate how to add undo to an already existing application. We've designed the undo code so that the parts not directly concerned with Draw can be easily incorporated into your application. This document focuses on the Draw specific details of the undo code, rather than the reusable undo components. Before reading this document you should read the more general Undo documentation and maybe look over the reference documentation for the Change and ChangeManager classes. If you are not already familiar with the Draw example you will probably also want to read the more general Draw README document before diving in here.\
+\
+
+\b Structure\
+
+\b0 This example is broken up into one main project and three subprojects, as follows:\
+\pard\tx3600\tx4600\tx5760\tx5780\tx5820\tx6900\tx8060\tx9200\tx10360\tx11520\li3580\fi-3040\ql\qnatural
+\cf0 Draw project	The original Draw example classes, slightly modified to work with the undo system.\
+undo.subproj	The reusable Change and ChangeManager classes.\
+graphicsUndo.subproj	The custom subclasses of Change created for Draw specific changes such as resizing a graphic.\
+\pard\tx1740\tx2300\tx3440\tx4600\tx5760\tx6900\tx8060\tx9200\tx10360\tx11520\li540\ql\qnatural
+\cf0  \
+\pard\tx1140\tx2300\tx3440\tx4600\tx5760\tx6900\tx8060\tx9200\tx10360\tx11520\ql\qnatural
+\cf0 This example is broken up into one main project and three subprojects.\
+ \
+
+\b Classes in the Draw project\
+\pard\tx1140\tx2300\tx3440\tx4600\tx5760\tx6900\tx8060\tx9200\tx10360\tx11520\li540\ql\qnatural
+
+\f1\b0\fs24 \cf0 Responder\
+    Application\
+        DrawApp		\
+    PageLayout\
+        DrawPageLayout\
+    View\
+	    GraphicView	\
+	    GridView\
+	    Ruler\
+	    ScrollView\
+	        SyncScrollView\
+\
+Responder\
+    ChangeManager\
+        DrawDocument 		\
+\
+Inspector\
+Graphic			\
+    Circle\
+    Group\
+    Image\
+    PSGraphic\
+    Rectangle\
+    TextGraphic\
+    Tiff\
+    Scribble\
+        Polygon\
+    Line\
+        Curve\
+	\
+\pard\tx1140\tx2300\tx3440\tx4600\tx5760\tx6900\tx8060\tx9200\tx10360\tx11520\ql\qnatural
+
+\f0\b\fs28 \cf0 Classes in undo.subproj\
+\pard\tx1140\tx2300\tx3440\tx4600\tx5760\tx6900\tx8060\tx9200\tx10360\tx11520\li540\ql\qnatural
+
+\f1\b0\fs24 \cf0 Change\
+	MultipleChange\
+Responder\
+    ChangeManager\
+\
+\pard\tx1140\tx2300\tx3440\tx4600\tx5760\tx6900\tx8060\tx9200\tx10360\tx11520\ql\qnatural
+
+\f0\b\fs28 \cf0 Classes in graphicsUndo.subproj\
+\pard\tx6140\tx6900\tx8060\tx9200\tx10360\tx11500\tx11520\tx11520\tx11540\tx11560\li540\ql\qnatural
+
+\f1\b0\fs24 \cf0 Change\
+    CreateGraphicsChange\
+    EndEditingGraphicsChange\
+    GridChange\
+    PerformTextGraphicsChange\
+    StartEditingGraphicsChange\
+    UngroupGraphicsChange	-- uses OrderChangeDetail\
+    GraphicsChange\
+        DeleteGraphicsChange	-- uses OrderChangeDetail\
+            CutGraphicsChange	-- uses OrderChangeDetail\
+        GroupGraphicsChange	-- uses OrderChangeDetail\
+        LockGraphicsChange\
+        PasteGraphicsChange\
+        ReorderGraphicsChange	-- uses OrderChangeDetail\
+            BringToFrontGraphicsChange	-- uses OrderChangeDetail\
+            SendToBackGraphicsChange	-- uses OrderChangeDetail\
+        ResizeGraphicsChange\
+        UnlockGraphicsChange\
+        SimpleGraphicsChange\
+            AlignGraphicsChange	-- uses DimensionsChangeDetail\
+            AspectRatioGraphicsChange	-- uses DimensionsChangeDetail\
+            DimensionsGraphicsChange	-- uses DimensionsChangeDetail\
+            MoveGraphicsChange	-- uses MoveChangeDetail\
+            ArrowGraphicsChange	-- uses ArrowChangeDetail\
+            FillGraphicsChange	-- uses FillChangeDetail\
+            LineCapGraphicsChange	-- uses LineCapChangeDetail\
+            LineColorGraphicsChange	-- uses LineColorChangeDetail\
+            LineJoinGraphicsChange	-- uses LineJoinChangeDetail\
+            LineWidthGraphicsChange	-- uses LineWidthChangeDetail\
+            TextColorGraphicsChange	-- uses TextColorChangeDetail\
+	\
+ChangeDetail\
+    ArrowChangeDetail	-- uses hierarchical ChangeDetails\
+    DimensionsChangeDetail\
+    FillChangeDetail	-- uses hierarchical ChangeDetails\
+    LineCapChangeDetail	-- uses hierarchical ChangeDetails\
+    LineColorChangeDetail	-- uses hierarchical ChangeDetails\
+    LineJoinChangeDetail	-- uses hierarchical ChangeDetails\
+    LineWidthChangeDetail	-- uses hierarchical ChangeDetails\
+    MoveChangeDetail\
+    OrderChangeDetail\
+    TextColorChangeDetail	-- uses hierarchical ChangeDetails\
+\
+\pard\tx1140\tx2300\tx3440\tx4600\tx5760\tx6900\tx8060\tx9200\tx10360\tx11520\ql\qnatural
+
+\f0\b\fs28 \cf0 The graphicsUndo subproject\
+
+\b0 The remainder of this document focuses on the undoing graphics changes. As we mentioned, the original Draw classes and the reusable undo classes are discussed in other documents. \
+\
+The graphicsUndo subproject contains a couple dozen subclasses of Change which together undo almost everything that a user can do to the graphics in DrawÐthings like grouping graphics and changing their fill color. They don't undo things that the user does to documents, windows, or the applicationÐthings like bringing up the inspector, changing the page layout, changing the contents of the pasteboard, or showing the ruler. In general the things that users do to the graphics change their state and irreversible without an undo feature, whereas actions like showing the ruler are easily reversible anyway. \
+\
+One common action which is not undoable is changing which graphics are selected. We decided not to make this action undoable because it happens so frequently, is non-destructive, and the user probably wouldn't want to have to explicitly undo it in order to undo other ªrealº changes. In hindsight the undo code might have been somewhat shorter and simpler if we had made selection actions undoable. As it is we must always explicitly record the graphics that were currently selected when an action was performed, whereas if selections changes were undoable we would always be able to simply act on the current selection when undoing and redoing changes. A general rule of thumb is that your code will be simpler if you make 
+\i everything
+\i0  undoable so that you don't have to worry about side effects caused by changes in state in the application since the change was originally done.\
+\
+
+\b The graphics changes\
+
+\b0 Most of the undoable user actions have their own special subclass of Change. For instance the FillColorGraphicsChange class does nothing but handle changes to the fill color of the currently selected graphics. A few of the classes are more general. For instance DeleteGraphicsChange handles explicit user deletions but is also used by ServicesGraphicsChange when a services call results in the deletion of the currently selected graphics. \
+\
+
+\b GraphicsChange and ChangeDetail\
+
+\b0 Most of the classes that handle graphics changes are subclasses of the abstract superclass GraphicsChange. GraphicsChange works hand in hand with the ChangeDetail class. GraphicsChange assumes that the change may need to keep track of state information for each and every graphic involved in the change. For example, if the user changes the fill color of a selection of graphics then every graphic involved will need an instance of ChangeDetail to remember what its color was before the change. Just as there is a particular subclass of GraphicsChange that knows about fill color changes (FillColorGraphicsChange) there is also a particular subclass of ChangeDetail that knows about fill color changes (FillColorChangeDetail). \
+\
+GraphicsChange provides a few basic services to its subclasses. It maintains a list of the graphics involved in the change and a list of the changeDetails associated with these graphics. The GraphicsChange 
+\b saveBeforeChange
+\b0  method creates the list of graphics and initializes its contents to match the GraphicView's slist. The 
+\b saveBeforeChange
+\b0  method creates the list of changeDetails and inserts one newly created ChangeDetail for each graphic in the graphics list. The particular subclass of ChangeDetail that's instantiated is chosen using [self changeDetailClass], so that FillColorGraphicsChange can override 
+\b changeDetailClass
+\b0  to specify that it wants to use FillColorChangeDetail instances.\
+ \
+The default 
+\b undoChange
+\b0  method will work for most subclasses of GraphicsChange. The 
+\b undoChange
+\b0  method notes the bounds of the graphics before and after the change is actually undone and then redisplays the affected bounds and updates the inspector. To actually undo the change the 
+\b undoChange
+\b0  method calls the 
+\b undoDetails
+\b0  method, which subclasses must override to restore the state of the graphics and the graphicView. The default 
+\b redoChange
+\b0  method is identical to the 
+\b undoChange
+\b0  method except that it calls 
+\b redoDetails
+\b0  instead of 
+\b undoDetails
+\b0 .\
+\
+
+\b SimpleGraphicsChange\
+
+\b0 Many of the graphics change classes are derived from the SimpleGraphicsChange class. SimpleGraphicsChange is a subclass of GraphicsChange, which provides a 
+\b saveBeforeChange
+\b0  method to initialize the change with a set of graphics and changeDetails, and provides 
+\b undoChange
+\b0  and 
+\b redoChange
+\b0  methods that handle redisplaying the affected graphics. For many changes all that remains is to simply record the state of each graphic before the change and then toggle the state of each graphic with every undo and redo. The methods in SimpleGraphicsChange do just that. The 
+\b saveBeforeChange
+\b0  method gives every changeDetail a chance to record the state of its graphic before the change. The 
+\b undoDetails
+\b0  and 
+\b redoDetails
+\b0  methods are called by the GraphicsChange 
+\b undoChange
+\b0  and 
+\b redoChange
+\b0  methods and they simply tell every changeDetail to toggle the state of its graphic. The subclasses of SimpleGraphicsChange can be alarmingly short. See ArrowGraphicsChange for typical example.\
+\
+
+\b Diving in\
+
+\b0 You should now have enough background to be comfortable diving into the source. We suggest starting with ArrowGraphicsChange because it's a simple, representative change. Have a look at the ArrowGraphicsChange class, its superclasses SimpleGraphicsChange and GraphicsChange, and its ChangeDetail class ArrowChangeDetail. You may then want to move on to the change classes that don't descend from GraphicsChange. They're more complicated but demonstrate the use of features like the 
+\b incorporateChange:
+\b0  and 
+\b subsumeChange:
+\b0  methods. Good luck!}

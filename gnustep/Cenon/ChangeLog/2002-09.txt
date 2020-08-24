@@ -1,0 +1,15 @@
+Cenon Change Log - September 2002
+
+2002-09-09  Ilonka Fleischmann
+	* VImage.m (-compositeInRect:toPoint:withScale:): Fix: lx muss planar beröcksichtigen !
+	  VImage.m (-thumbnailImage:): xf/yf etwas anders berechnet
+	* DocView.m (-mouseDown:): (!camModul && ![[layerList objectAtIndex:l] editable])
+	  DocView.m (-dragSelect:): + || (!camModul && ![layerObject editable]) -> continue
+	  DocView.m (-selectAll:redraw:) || (!camModul && ![[layerList objectAtIndex:l] editable])
+	  DocView.m (-sendBackward:): new - only one backward
+	  DocView.m (-bringForward:): new - only one forward
+	  DocView.m (-validateMenuItem:): + -sendBackward and -bringForward
+	* Main.nib Bring To Front 8 , Bring Forward ( , Send To Back 9 , Send Backward )
+	* IPAllFilling.m (-update:): selector(fillColor) instead of selector(fillColor:)
+	* IPAllStrokeWidth.m (-setStrokeState:): selector(fillColor) instead of selector(fillColor:)
+	* IPImage.nib JPG raus

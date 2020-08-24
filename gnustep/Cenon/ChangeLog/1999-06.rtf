@@ -1,0 +1,77 @@
+{\rtf0\ansi{\fonttbl\f0\fmodern Courier;}
+\pard\tx1440\tx2700\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li2700\fi-2700\ql\qnatural
+
+\f0\b\fs24 \cf0 …nderungen för Juni 1999\
+
+\b0 \
+30.06.99	Cenon\
+\
+\pard\tx1440\tx4320\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li4320\fi-4320\ql\qnatural
+\cf0 Datum	Datei	VerÙndert\
+----------------------------------------------------------------------------------------------\
+08.06.99	Xyz.h	ops -> getStatus, activeBit hinzugefögt\
+	Xyz.m	-xyzLoadParams -> getStatus, activeBit geladen\
+		-xyzGetStatus -> new\
+		-executeVector -> status abgefragt\
+		-initXYZ.m -> Return-Werte entfernt för getStatus\
+		-executeUPath -> vor Start alle return-Werte entfernt\
+11.06.99	ToolObject.m	-addToArray: -> auf NSString umgestellt, da NSNumber ein Float falsch speichern kann (zOffset = 1.490116e-09;)!\
+12.06.99	Editor2DView.m	-importASCII: -> ' ' aus Skipped Characters entfernt\
+		sortPosition() -> Rechts nach Links sortierung\
+	main.nib	neues Icon URLL ergÙnzt\
+14.06.99	Xyz.m	-executeVector: -> Stepwise Fehler behoben för Mittelschritte\
+		Statusabfrage\
+	Editor2DView.m	-importASCII: -> y Reihenfolge umgedreht\
+
+\b 3.20 Beta 8\
+
+\b0 \
+15.06.99	Ilonka:\
+	Rectangle.m,h	- setFillUPath: -> neu Kopiert von Arc\
+		- buildCFillUPath: -> wie buildFillUPath - Kopiert von Path\
+		- putCFillUPath: -> neu mach Contour Fill von rectangle\
+		- pathRepresentation autoreleased\
+	Arc.m,h	- buildCFillUPath: -> neu Kopiert von Path - ...\
+		- putCFillUPath: -> neu nach Contour Fill von rectangle\
+		- pathRepresentation autoreleased\
+	Path.m,h	- buildCFillUPath: -> neu\
+		#import "PathCFill.h"\
+	PathCFill.m.h	Neue Class för den ContourFill (wie PickOut.m)\
+\
+	PPMisc.m, h, nib	contourFill eingebaut\
+	e2Output.m	contourFill eingebaut\
+	Path.m	-dealloc -> ops statt num_ops för fillPath abgefragt\
+	ioFunctions.m	ioInputInstruction() -> hex eingelesen för status byte\
+	Group.m	buildCFillUPath -> neu\
+
+\b 3.20 Beta 9\
+
+\b0 \
+18.06.99	TextGraphic.m	-setLineHeight: -> length von string abgefragt\
+21.06.99	Editor2DView.m	-importASCII:sort: -> [array count] abgefragt\
+	vhfCommonFunctions.m, h\
+		stringWithConvertedChars(), dictionaryFromFolder(), fillPopup() -> neu\
+	Main.nib	PopupMenu för ASCII-Import hinzugefögt\
+	App.m	-importASCII -> Unterstötzung der Char-Convertierung\
+	TextGraphic.m	-getFlattenedObjectAt:withOffset: -> verticalCenter eingebaut\
+	Editor2DWindow.m	-windowDidResignKey -> calcOutput nicht, wenn geclosed wird\
+	Editor2DDocument.m	-save -> backupFilename gelðscht\
+
+\b 3.20 Beta 10\
+\
+
+\b0 	Image.m	-dealloc -> images nicht mehr von Disk gelðscht\
+24.06.99	Xyz.m, h	switches um ein Eintrag erweitert\
+		setAutoSwitches bei begExec und endExec aufgerufen\
+	*.dev	angepasst (TurboLibrary fehlt noch!)\
+
+\b 3.20 Beta 10\
+
+\b0 \
+29.06.99	TextGraphic.m	-replaceTextWithString: -> [self kernToFitHorizontal] hinzugefögt\
+	Editor2DView.m	sortPosition() -> TOLERANCE rausgenommen, scheint nicht zu tun
+\b \
+3.20 Beta 11\
+\
+next 3.20 Beta 12\
+}

@@ -1,0 +1,49 @@
+Cenon Change Log - February 2004
+
+2004-02-13 Georg Fleischmann
+	* DocView.m (-split:): removed * before layerList
+	* App.m (-saveAsPanel, -openPanel): no static variable for openPanel and savePanel !
+	  App.m (-init): savePanel workaround removed
+	* Source package: COPYRIGHT, CharConversion, SinkingMetrics added
+	* All plattforms: FontListNoFill removed from project
+	* Apple: nonexisting BUGS file removed from project
+	Thanks to Adam Maxwell for pointing to all this!
+
+2004-02-14 Georg Fleischmann
+	* VHFImport/README: new, short overview how to write a new import class
+
+2004-02-24 Georg Fleischmann
+	* VText.m (-getFlattenedObjectAt:withOffset:): [pathG setWidth:0.0];
+
+2004-02-25 Georg Fleischmann
+	* DocView.m, h (-statusDict): new
+	* App.m (-applicationDidFinishLaunching): don't create Jobs and System folders any more
+	* Library Source Package: Devices/xyz removed, .dir.tiff added
+
+2004-02-26 Georg Fleischmann
+	* dvGrid.m (-drawGrid): set defaultLineWidth = 0.3/scale (instead of 0),
+	                        looks better with anti aliasing
+
+2004-02-28 Ilonka Fleischmann
+	* VLine.m (-intersectLine:::): if lines are parallel check corrected
+	  VLine.m (-getListOfObjectsSplittedFromGraphic:): removePointWithToleranceFromArray() with 5.0*TOL.. instead removePointFromArray()
+	* VArc.m (-intersectLine:::): in .. more horicontal if(!underTheSqrt) + NSPointInRect()
+	  VArc.m (-intersectLine:::): in .. tangent SqrDistPoints() instead DiffPoints & <= 10.0*TOL.. instead 100.0*...
+	  VArc.m (-getListOfOjbectsSplittedFromGraphic:): remove s/e pt Max5.0*TOLERANCE, radius/10000.0) instead 10.0*TOLERANCE
+	  VArc.m (-getListOfOjbectsSplittedFrom::): remove s/e pt Max5.0*TOLERANCE, radius/10000.0) instead 10.0*TOLERANCE
+	  VArc.m (-uniteWith:): new
+	* HiddenArea.m (-removeSingleGraphicsInList::): NSInsetRect() -5.0*TOL.. instead of 40.0*TOL..
+	* HiddenArea.m (-removeSingleGraphicsInList::): NSPointInRect(s1, rect)... instead of NSPointInRect(s1, tRect)
+	  HiddenArea.m (-removeSingleGraphicsInList::): singleDist (5.0*TOLER.) instead CLOSETOLERANCE
+	  HiddenArea.m (-uniteAreas:): set all cColors new when we unite cg with og !!! (crashed if cg removed in uniteWith)
+	  HiddenArea.m (-uniteAreas:): use optimizeList of VPath instead of self !
+	* VPath.m (-uniteWith:): new
+	  VPath.m (-optimizeList:): new
+	  VPath.m (-isPointInsideOrOn:dist:): if ( i == 2 && cnt == -2 ) return 1 // on
+	  VPath.m (-intersectionsForPtInside:with:): horicontals & tangents auf on getested
+	  VPath.m (-addToClosestEnd:): Abs([obj angle]) >= 360.0 instead of [obj angle] >= 360.0
+	  VPath.m (-removeFaultGraphicsInSubpaths:): else [g setSelected:NO];
+	* VRectangle.m (-uniteWith:): new
+	* VPolyLine.m (-uniteWith:): new
+
+Cenon 3.60 beta 10

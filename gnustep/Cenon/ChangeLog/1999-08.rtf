@@ -1,0 +1,41 @@
+{\rtf0\ansi{\fonttbl\f0\fmodern Courier;}
+\pard\tx1440\tx2700\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li2700\fi-2700\ql\qnatural
+
+\f0\b\fs24 \cf0 …nderungen för August 1999\
+
+\b0 \
+19.08.99	Cenon\
+\
+\pard\tx1440\tx4320\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li4320\fi-4320\ql\qnatural
+\cf0 Datum	Datei	VerÙndert\
+----------------------------------------------------------------------------------------------\
+02.08.99	DPMagazine.m	-setMagazineName: -> String in Item gesetzt ohne replacement\
+04.08.99	XYZ.m, h	ops.type -> neu\
+		prioritySetSpeed -> neu\
+		changeVDraw:.. -> för CNC750 ausgegeben\
+		-executeVector -> timer = nil\
+	vhf2DFunctions.m	doUserPath -> if( opsNumber >= 8000 ) -> 1000\
+05.08.99	Path.m	buildCFillUPath:: -> fillUPath.pts = malloc((cnt*8) * sizeof(float));\
+\pard\tx1440\tx4320\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li4320\fi-4320\ql\qnatural
+
+\b \cf0 3.20 Beta 15\
+\pard\tx1440\tx4320\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li4320\fi-4320\ql\qnatural
+
+\b0 \cf0 \
+07.08.99	Xyz.m	changeVDraw:: -> ops.prioritySpeed abgefragt\
+	undo.subproj	eingehÙngt\
+12.08.99	*.m, h	moveAll: -> moveBy:\
+	graphicsUndo.subproj	eingehÙngt\
+19.08.99	Graphic.m, h	extendedBounds, bounds -> neu\
+	e2Undo.m	neu\
+	Editor2DGraphic.h	e2Undo eingebaut\
+	Editor2DGraphic.m, h	-cache: -> neu\
+		-validateMenuItems -> aufruf in document\
+	IP*.m	-setColor: -> -takeColorFrom aufgerufen\
+	Main.nib	undo, redo\
+	Editor2DDocument.m	subclass of ChangeManager\
+\
+\pard\tx1440\tx4320\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li4320\fi-4320\ql\qnatural
+
+\b \cf0 next 3.20 Beta 16\
+}

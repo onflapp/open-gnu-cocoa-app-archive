@@ -1,0 +1,76 @@
+Cenon Change Log - July 2005
+
+2005-07-09 Georg Fleischmann
+	* DocView.m (createBuffer()): [window setReleasedWhenClosed:NO]
+	                              avoids release of cache and crash in terminate
+
+2005-07-20 Ilonka Fleischmann
+	* VPath.m (-contourOpen:) if (!w etc) return copy
+	  VPath.m (-uniteWith:) if (!removedFromNg || !removedFromUg) bei uStartIs auch subpaths rausschmeissen
+	  VPath.m (-optimizeSubPathsToClosedPath:::): (Diff(n, o) > 1 || (Diff(n, o) == 1 && o > n)) instead of Diff(n, 0) >= 1
+	  fixes some problems with contour calculation
+
+2005-07-22 Georg Fleischmann
+	* App.m (+initialize): snap default = 2 (was off)
+
+2005-07-28 Ilonka Fleischmann
+	* DocView.m (-flatten:) GroupGraphicsChange eingebaut
+	  adds Undo to flatten text
+	* VText.m (-getFlattenedObjectAt:withOffset::): [group addObject:pathG] instead of
+	                                                [[group list] addObject:..]
+	  damit bekommt auch die Group eine Farbe beim ConvertToPath
+
+2005-07-28 Ilonka Fleischmann
+	This adds functionality to add and remove a vertex to Path or PolyLine:
+	* ToolPanel.nib: toolAddPt added
+	  Project: toolAddPt.tiff added
+	* DocView.m (-mouseDown:) case TOOL2D_ADDPOINT: hinzu, ruft addPointTo:atPoint:redraw auf
+	  DocView.h (-addPointTo:atPoint:redraw) new added point to graphic (path polyline)
+	* DocView.m (-delete:) för VPath auch removen von selectierten punkten mðglich 2 geteilt !!! för undo !!
+	* dvUndo.m (-addPointTo:atPoint:redraw) new added point to graphic (path, polyline)
+	* App.h: #define TOOL2D_ADDPOINT	3
+	* VPath.m, h (-addPointAt:) new add a point (split this element to twice) to polygon at given point
+	  VPath.m, h (-nearestPointOnObject:distance:toPoint:) new needed also for undo - addPointAt:
+	  VPath.m (-getListOfObjectsSplittedAtPoint:) ruft -nearestPointOnObject:distance:toPoint: auf
+	  VPath.m (-addPointAt:) ruft -nearestPointOnObject:distance:toPoint: auf
+	  VPath.m, h (-removeGraphicsAroundPoint:) new need for undo of -addPointAt:
+	* VPath.m, h (-removePointWithNum:) new remove a point (remove mostly an element) from path at given number
+	  VPath.m, h (-changedValuesForRemovePointUndo:::) new needed for undo of -removePoint
+	  VPath.m, h (-setBoundsZero) new for correct Drawing RemovePointGraphicsChange Undo
+	* VPolyLine.m, h (-addPointAt:) new add a point to polyLine at given point
+	  VPolyLine.m, h (-addPoint:atNum:) new add given point to polyLine at given pt_num
+	* VPolyLine.m, h (-nearestPointInPtlist:distance:toPoint) new needed also for undo - addPointAt:
+	  VPolyLine.m (-getListOfObjectsSplittedAtPoint:) ruft -nearestPointInPtlist:distance:toPoint: auf
+	  VPolyLine.m (-addPointAt:) ruft -nearestPointInPtlist:distance:toPoint: auf
+	* VPolyLine.m, h (-removePoint:) new needed for undo - addPointAt:
+	  VPolyLine.m (-removePointWithNum:) if ( count <= pt_num ) pt_num = count-1 instead return YES;
+
+	Undo to add/remove vertice:
+	* undo.h: #include "AddPointGraphicsChange.h", #include "RemovePointGraphicsChange.h"
+	  AddPointGraphicsChange.h, m: new
+	  RemovePointGraphicsChange.h, m: new
+	  ChangeDetail.m, h (AddPointChangeDetail, RemovePointChangeDetail): new
+	  LocalizableStringsForGraphicsUndo.h ( ADDPOINT_OP, REMOVEPOINT_OP ): new
+
+	* VPath.m (-contour:inlay:splitCurves:) if ( begIx == endIx ) VPolyLine beröcksichtigen
+	  One bug less in calculation of contours (also important for PCB):
+
+	saves memory:
+	* VPath.m (-getIntersections:with:) len = Min(100, [self numPoints]) instead of [list count] * 9
+	  VPath.m (-intersectionsForPtInside:with) for malloc ptsCnt = Min(100, [self numPoints]) + realloc
+	  VPath.m (-getIntersectionsAndSplittedObjects:with:):
+	          for malloc ptsCnt = Min(100, [self numPoints]) + realloc
+	* VpolyLine.m (-getIntersections:with:): len = Min(count+1, 100) instead of
+	                                         len = count * 9 + realloc Abfrage 
+	  VpolyLine.m (-isPointInside:) för malloc ptsCnt = Min(100, count+1) + realloc for pts
+	  VpolyLine.m (-intersections:withRect:) för malloc ptsCnt = Min(count+1, 100) + realloc for *pArray
+	* VPolyLine.m (-getIntersections:with:) id gp = [VLine line]; only once
+	  VPolyLine.m (-sqrDistanceGraphic:) VLine *line = [VLine line]; only once!
+	  VPolyLine.m (-parallelObject:::) VLine *gThis, gNext, gPrev = [VLine line]; only once!
+	  VPolyLine.m (-contourOpen:) VLine *line = [VLine line]; nur einmal !
+	  VPolyLine.m (-getListOfObjectsSplittedFromGraphic:) VLine *line = [VLine line]; only once, copy if needed
+	  VPolyLine.m (-getListOfObjectsSplittedFrom:) VLine *line = [VLine line]; only once, copy if needed
+	* VPolyLine.m (-uniteWith:) NSLog() VPolyLine instead of VPath
+	* VArc.m (-tangentIntersectionWithPath:) if (cnt) free(pts) vor erstem return NO
+
+next Cenon 3.71

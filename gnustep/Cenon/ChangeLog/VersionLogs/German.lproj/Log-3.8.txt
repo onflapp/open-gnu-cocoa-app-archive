@@ -1,0 +1,116 @@
+Cenon 3.8.3 (01.08.2007):
+
+- Text, Fix: Text editieren funktioniert jetzt auch bei wechselnden Zoomstufen
+- Inspektor (Apple): jetzt Resizable
+- Hilfe (Apple): PDF-Dokumentation ist öber Hilfe-Menu erreichbar
+- Apple: Fenster Hintergrund ist jetzt transparent (nicht mehr weiss wie das
+  Dokument selber)
+- Apple: Speichern von ASCII-Propertylists ist aktiv (Voreinstellungsschalter)
+  ...macht aber nichts, vielleicht spÙter mal? (Apple fragen)
+- Weitere Verbesserungen von Ausstanzen, Vereinigen...
+
+3.8.3 pre 1: (nur Apple)
+
+- Neu: Menupunkt "Anzeige -> Koordinaten an/aus" um die Koordinatenanzeige
+       des Dokuments entfernen zu kðnnen (mehr Platz)
+- Inspektor: Fixieren Schalter för Fadenkreuz
+- Gerber-Export: Verbesserungen mehrlagiger Dateien
+- DXF-Import: Verbesserungen geschlossener Polygone
+- Konturenberechnung verbessert
+- Apple, Fix: Arcs ohne LinienstÙrke werden mit default LinienstÙrke gedruckt
+- Apple, Fix: 'Bilde Kontur' von vertikal zentriertem Text wird richtig
+  positioniert
+- Apple, Fix: Grafikobjekt verschieben mit Cache funktioniert auch skaliert
+  (workaround)
+- Apple, Fix: Stötzpunkte von Grafikobjekten verschieben mit Cache funktioniert
+  auch skaliert (workaround)
+- Apple, Fix: Grafikobjekt drehen mit Cache funktioniert auch skaliert
+  (workaround)
+- Cenon.ph: Neue Domain registriert
+
+
+Cenon 3.82  (02.01.2007):
+
+- Neu: Drucken von Nutzen (Vielfache), einschliesslich Seriennummern
+- Neu: Kontur-Panel:
+  Schalter um Original zu ersetzen oder zu behalten
+  Eigenes Popup-Menu zur Auswahl der Masseinheit
+- Neu: direkte Konvertierung von TextPfad in Pfad
+- Neu, Editieren: mit Strg + Maus kðnnen Kurven-Punkte innerhalb eines Pfades
+  verschoben werden
+- Neu: Kurven-Inspector: Es werden alle Kurvenpunkte angezeigt zum editieren
+- Transform-Panel: jetzt mit schðner Icon-Leiste
+- Undo: Anzahl der Undo-Schritte auf 25 erhðht (bisher 10)
+- DIN-Import: im Excellon-Format werden die Werkzeuge jetzt aus der Datei
+  gelesen
+- Fix, HPGL-Import: Labels korrigiert
+- Fix, Vereinigen:
+  Zwei Pfade werden in der richtigen Reihenfolge vereinigt
+  Undo mit zwei geschlossenen Pfaden verbessert
+- Fix, Pfad: Undo funktioniert richtig, wenn mehrere Punkte hintereinander
+  verschoben wurden
+- Fix, Arc: 360 Grad Schnappen verbessert
+- Fix, Snap: Rasten auf den eigenen Punkt entfernt
+- Fix, Selektieren: Die Selektierung eines einzelnen Stötzpunktes erzeugt
+  keinen Verschiebe Undo-Schritt mehr
+- Fix, Ausstanzen: Undo för Gruppen hinzugefögt
+- Fix, Ausstanzen: Undo ohne Crash
+- Fix, Inspektor: VerÙnderung der Farben von nicht-editierbaren Lagen,
+  hinterlÙsst dass Color-Well mit richtiger Farbe
+- Fix, Lagen-Inspektor: Lage wird sofort dargestellt, wenn von nicht-editierbar
+  und unsichtbar auf editierbar geschaltet wird.
+- Fix, Text: Editieren an der oberen Fensterkante scrollt den Textcursor in
+  den sichtbaren Fenster-Bereich.
+- Fix, DXF-Import: Schliessen von Polygonen funktioniert nun in allen FÙllen
+- Apple, Import: PDF/PS-Import funktionieren wieder
+- Apple: Grafik-Cache ist aktiv als Standardeinstellung
+- GNUstep: Unser Patch zum laden von Images aus Bundles wurde öbernommen
+- Weitere Detailverbesserungen
+
+
+Cenon 3.81:
+
+- Cenon.eu: Neue Domain registriert
+- Pfad, Arc Editieren: Rasten auf eigene Punkte
+- Join Verbesserungen
+- Editieren: Der erste Mausklick auf ein Grafikobjekt selektiert das Objekt
+  aber keinen Stötzpunkt.
+- Gerber-Import: Extrawurst för Eagle-Abweichungen von der Spezifikation
+- PS-Import: glyphshow Operator hinzugefögt
+- Fix, Nutzenfertigung: …nderung der Limits korrigiert
+- Fix, Ausstanzen: Text wird ignoriert
+- Fix, PolyLine föllen: offene PolyLine verliert dabei keinen Stötzpunkt mehr
+- GNUstep: Textzerlegung mit neue GNUstep Bibliotheken funktioniert wieder
+- GNUstep: Verbesserte Darstellung mit Antialiasing
+- GNUstep: einige Fixes
+- Apple: XCode 2.2 Anpassung des Projekts
+         Das bricht RöckwÙrts-KompatibilitÙt des XCode Projektes.
+         Muss Apple wirklich immer soviel im Boden rumröhren?
+- Apple: InstallerPakete angehöbscht
+- Viele weitere Verbesserungen
+
+Cenon 3.80:
+
+- Neu, Import: Import auf bestehende Lage mit gleichem Lagen-Name
+- Neu, Import: Import auf bestehende Lage mit Objekt in Referenzfarbe
+- Voreinstellungen: Neuer Eintrag um Objekte nur am Rand selektieren zu kðnnen
+- Copy/Paste: fixierte Objekte sind nach Kopieren jetzt nicht mehr fixiert
+- Polylinie: Snap auf eigene Stötzpunkte
+- Fix, DXF-Import: Abschluss einer Polylinie mit Arc hinzugefögt
+- Fix, Ausstanzen mit Rechteck:
+  Rechtecke mit runden Ecken werden richtig dargestellt
+- Fix, Apple: Die Kontur von gespiegeltem Text wird richtig plaziert
+- Fix, Radiale Föllung: Das Föllzentrum wird korrekt gespeichert
+- Fix, Radiale Föllung: Das Föllzentrum bleibt beim Drehen in der Box
+- Fix, Gruppe: Gruppieren mit aktivem Farbfeld verÙndert die Farbe nicht mehr
+- Fix, Rechtecke: korrekte Darstellung von Rechtecken mit maximalem Eckenradius
+- Fix, Drehen: prÙzise (Excenter entfernt)
+- Fix, Inspektor: Wechsel von einer Applikation zu Cenon setzt Inhalt des
+  Inspektors richtig
+- Apple, Copy/Paste: PDF Pasteboard Type hinzugefögt
+- Apple: Grafik-Cache ist jetzt (öber Workaround) verfögbar.
+  Der Voreinstellungs-Schalter daför ist aktiv.
+- Apple, Voreinstellungen: Schalter um Antialiasing abzuschalten
+  Auf diese Weise sind auch Single-Line Fonts sichtbar
+- Handbuch aktualisiert
+

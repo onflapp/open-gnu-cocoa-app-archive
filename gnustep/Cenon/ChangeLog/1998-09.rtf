@@ -1,0 +1,66 @@
+{\rtf0\ansi{\fonttbl\f0\fmodern Courier;}
+\pard\tx1440\tx2700\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li2700\fi-2700\ql\qnatural
+
+\f0\b\fs24 \cf0 …nderungen för September 1998\
+
+\b0 \
+28.09.98	Cenon\
+\
+\pard\tx1440\tx4320\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li4320\fi-4320\ql\qnatural
+\cf0 Datum	Datei	VerÙndert\
+----------------------------------------------------------------------------------------------\
+28.08.98	Ilonka:\
+	Path.m	-isPointInside:dist: -> p0.x von line wurde FALSCH gesetzt !!!\
+08.09.98	ToolObject.m	-initWithDictionary -> settlementBefore wurde nicht geladen\
+07.09.98	Ilonka:\
+	PickOut.m	-getStartPixel: -> hole suche nur bei unterschiedlichen dists\
+		-setContourAroundPixel: -> l.3929 oder bei gleichen dists\
+08.09.98	Ilonka:\
+	Editor2DView(Output)	-calcOutputFor: -> wMax bei Pickout aufruf von conical abhÙngig\
+	PickOut.m	-pickOutPathWithTipAngle: -> w und dipMax Berechnung auf ungleiche minW/maxW abgefragt\
+	Xyz.m	stepwise und settlement total umgestellt\
+15.09.98	Path.m	-contour -> Nullelemente entfernen, Toleranz von 100x auf 10x\
+16.09.98	Path.m	-buildFillUPath -> weniger cnt, cnt auf 5000000 limitiert\
+	Curve.m, h	-splittedObjectsAt: -> neu\
+	Path.m	-contour -> curves werden halbiert Position:splittedCurves, sc...\
+16.09.98	Ilonka\
+	Path.m	-removeIntersectionsInSubpaths: -> zweite groûe schleife k=i+1 statt k=0\
+17.09.98	Arc.m, h	-fillCount -> neu\
+	DPControl.m	-fillCount nicht nur för Path aufgerufen\
+18.09.98	->	in hohen Auflðsungen springen die Punkte beim Verschieben\
+	e2Grid.m	-grid -> nur, wenn eingeschaltet, da floor sonst zuschlÙgt\
+	Editor2DView.m	-redrawObject -> snap mit scaleFactor versehen\
+	Curve.m\
+	Line.m	-hit: -> float konstanten statt integer konstanten (NOP)\
+		-hitControl -> scale beröcksichtigt\
+		-constrainPoint... -> scale bei MARGIN beröcksichtigt\
+	Arc.m	-hitControl -> scale beröcksichtigt\
+	Curve.m	-gradientNear -> untere Schleife -= statt =\
+\pard\tx1440\tx4320\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li4320\fi-4320\ql\qnatural
+
+\b \cf0 Beta 19\
+\pard\tx1440\tx4320\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li4320\fi-4320\ql\qnatural
+
+\b0 \cf0 \
+21.09.98	->	Villa Kunterbunt: DPS Client Library Errors in stroke\
+	Line.m\
+	Curve.m	-description -> neu\
+	Curve.m	-calcVerticersFromPointAndCurve... -> len12Old = 0 abgefangen\
+21.09.98	Ilonka\
+	Path.m	- SmallAngle -> kleiner Winkel geht bis 120 grad !\
+		- contour: -> auch gPrev/gNext werden jetzt gesplitted !\
+25.09.98	Editor2DWindows.m\
+	main.nib	-printDocument: -> neu\
+		-changeLayout: -> neu\
+	Editor2DDocument.m	-printDocument: -> neu\
+		- initializePrintInfo -> aktiviert\
+		-changeLayout: -> neu\
+	Editor2DView.m	-draw: -> origin nur för screen\
+	DPControl.m	-setOriginZ: -> Z kann mit Textfeld nicht öber das Limit gesetzt werden\
+28.09.98	Xyz.m	-executeVector -> Bei xyzSetTool: fehlte im Fehlerfall return\
+28.09.98	Ilonka\
+	Path.m	- getIntersections: -> punkt schon in array aber kein Eckpunkt -> add !\
+\pard\tx1440\tx4320\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li4320\fi-4320\ql\qnatural
+
+\b \cf0 Beta 20\
+}

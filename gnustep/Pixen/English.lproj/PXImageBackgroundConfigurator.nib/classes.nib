@@ -1,0 +1,33 @@
+{
+    IBClasses = (
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            CLASS = PXBackground; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {configurator = NSView; }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            ACTIONS = {configuratorBrowseForImageButtonClicked = id; configuratorColorChanged = id; }; 
+            CLASS = PXFlatColorBackground; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {configurator = NSView; imageNameField = id; }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            ACTIONS = {configuratorBrowseForImageButtonClicked = id; }; 
+            CLASS = PXImageBackground; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {browseButton = id; image = id; imageNameField = id; }; 
+            SUPERCLASS = PXMonotoneBackground; 
+        }, 
+        {
+            ACTIONS = {configuratorColorChanged = id; }; 
+            CLASS = PXMonotoneBackground; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {colorWell = NSColorWell; }; 
+            SUPERCLASS = PXBackground; 
+        }
+    ); 
+    IBVersion = 1; 
+}

@@ -1,0 +1,47 @@
+{\rtf0\ansi{\fonttbl\f0\fmodern Courier;}
+\pard\tx1440\tx2700\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li2700\fi-2700\ql\qnatural
+
+\f0\b\fs24 \cf0 …nderungen för Juli 1998\
+
+\b0 \
+31.07.98	Cenon\
+\
+\pard\tx1440\tx4320\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li4320\fi-4320\ql\qnatural
+\cf0 Datum	Datei	VerÙndert\
+----------------------------------------------------------------------------------------------\
+10.07.98	Xyz.m	xyzLoadParms: -> #CON ist jetzt #CNT\
+11.07.98	Path.m	setDirectionCCW: -> if( Even(iCntTot) ) ... break; statt continue\
+		Vergleichspunkt x war falsch, wird nun durch schnitt bestimmt\
+13.07.98	Curve.m	angle -> zusammenfallende Stötzpunkte beröcksichtigt\
+15.07.98	Path.m	contour: -> Nullelemente kðnnen jetzt noch etwas grðûer sein\
+	Rectangle.m	-drawAtAngle, angle, setAngle:, setAngle:withCenter: -> neu\
+		-draw, -getPoint:, -gradientAt: -> rotiert\
+	IPRectangle.nib\
+	IPRectangle.m, h	-setAngle, angleSlider, angleField hinzugefögt\
+	Editor2DView.m	-rotateG -> Inspektor gesetzt\
+	TextGraphic.m	setAngle, setX, setY -> auf dirty gesetzt\
+\pard\tx1440\tx4320\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li4320\fi-4320\ql\qnatural
+
+\b \cf0 Beta 14\
+\pard\tx1440\tx4320\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li4320\fi-4320\ql\qnatural
+
+\b0 \cf0 \
+20.07.98	App.m, h	-listFromPSFile: -> neu\
+	e2Drag.m	-createGraphicForDraggedFile:at: -> importiert ps, eps, ai\
+	Path.m	-addToClosestEnd: -> Circle ohne line angehÙngt\
+21.07.98	ToolObject.m	-initWithDictionary: -> settlement als float gespeichert\
+22.07.98	Xyz.m	-executeVector: -> stop direkt hier hin verlegt\
+23.07.98	DPControl.m	-buildOutputPathAndExecute -> lastSPoint för's Schlichten\
+		Schlichten nur, wenn stList Elemente besitzt (PickOut!)\
+	Xyz.m	-xyzSimulateMove3D::: -> debugged\
+\pard\tx1440\tx4320\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li4320\fi-4320\ql\qnatural
+
+\b \cf0 Beta 15\
+\pard\tx1440\tx4320\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li4320\fi-4320\ql\qnatural
+
+\b0 \cf0 \
+31.07.98	Group.m	-getPoint:: -> gibt auch was zuröck, wenn selectedObject < 0\
+	e2Output.m	-calcOutputFor: -> Optimierung nur för 1. Tile\
+\
+next: Beta 16\
+}

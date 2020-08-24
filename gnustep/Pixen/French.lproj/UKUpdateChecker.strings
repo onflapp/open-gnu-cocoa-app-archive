@@ -1,0 +1,29 @@
+/* A New Version is Available - dialog text */
+"NEW_VERSION_TEXT" = "Il y a une nouvelle version de %@ disponible (%@). Souhaitez-vous la télécharger maintenant ?";
+
+/* A New Version is Available - dialog title */
+"NEW_VERSION_TITLE" = "Une nouvelle version est disponible";
+
+/* When soft is up-to-date - dialog text */
+"UP_TO_DATE_TITLE" = "Vous êtes à jour";
+
+/* When soft is up-to-date - dialog title */
+"UP_TO_DATE_TEXT" = "Votre copie de %@ est la plus récente et ne nécessite pas de mise à jour pour le moment.";
+
+/* When update test failed - dialog title */
+"UPDATE_ERROR_TITLE" = "Une erreur est survenue";
+
+/* When update test failed - dialog text */
+"UPDATE_ERROR_TEXT" = "%@ n'a pas pu vérifier les mises à jour.";
+
+/* Asking whether to check for updates at startup - dialog title */
+"CHECK_FOR_UPDATES_TITLE" = "Vérifier les mises à jour au lancement ?";
+
+/* Asking whether to check for updates at startup - dialog text */
+"CHECK_FOR_UPDATES_TEXT" = "Souhaitez-vous être prévenu au lancement de l'application lorsqu'une nouvelle version est disponible ? Vous pouvez aussi effectuer cette vérification manuellement en cliquant sur \"Vérifier les mises à jour…\" du menu \"%@\" de l'application";
+
+
+"OK" = "OK";
+
+
+"Cancel" = "Annuler";

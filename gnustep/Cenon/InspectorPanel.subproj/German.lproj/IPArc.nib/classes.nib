@@ -1,0 +1,42 @@
+{
+    IBClasses = (
+        {
+            CLASS = App; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {inspectorPanel = id; }; 
+            SUPERCLASS = NSApplication; 
+        }, 
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {
+                setAngle = id; 
+                setBegAngle = id; 
+                setCenterX = id; 
+                setCenterY = id; 
+                setLock = id; 
+                setRadius = id; 
+            }; 
+            CLASS = IPArc; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                angleField = id; 
+                angleSlider = id; 
+                begAngleField = id; 
+                begAngleSlider = id; 
+                centerXField = id; 
+                centerYField = id; 
+                lockSwitch = id; 
+                radiusField = id; 
+            }; 
+            SUPERCLASS = NSPanel; 
+        }, 
+        {
+            CLASS = InspectorPanel; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {arcWindow = id; }; 
+            SUPERCLASS = NSPanel; 
+        }, 
+        {CLASS = SurfaceWell; LANGUAGE = ObjC; SUPERCLASS = NSColorWell; }
+    ); 
+    IBVersion = 1; 
+}

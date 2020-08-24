@@ -1,0 +1,161 @@
+Cenon Change Log - 2009
+
+2009-01-07 Ilonka Fleischmann
+    * VGraphic.m (-propertyList:): if (reliefFlatness != 1.0) 
+    -> Fix ReliefFlattness save: otherwise it will allways be saved
+
+2009-01-12 Ilonka Fleischmann
+    * DocView.m (-selectColor:): 2x VGroup auskommentiert (kann raus) VGroup hat inzwischen eine FillFarbe
+    -> Fix Select: Group can also be selected over the color now
+
+Cenon 3.9.0 pre 8
+
+2009-01-25 Georg Fleischmann
+    * VText.m (-textDidEndEditing:): if text is empty, remove it from GraphicView
+      -> Text: no asterisk "*" any more when clicking around in text mode, text will be removed.
+    * VText.m (-initFromPropertyList:): don't set fillColor, for it destroys colors set in AttributedStream
+      IPAllFilling.m (-update:): if fillColor == nil -> set color well to black
+      -> Fix, Text: multiple color text works again
+
+2009-01-30 Georg Fleischmann
+    * ChangeLog (VersionLogs): added to Project
+
+2009-02-01 Georg Fleischmann
+    * PSImport.m (-importPS:): for GhostScript and DPS remove Corel Draw, Eurocut garbage before %!PS-ADOBE...
+      and after "%%EOF" or "showpage"
+      -> Fix PS-Import: allow import of Corel-Draw and Eurocut PostScript with garbage before data
+
+2009-02-02 Georg Fleischmann
+    * PSImport.m (-importPS:): for GhostScript  flag "-dNOSAFER" added to make sure writing is allowed
+      -> some users reported problems with GhostScript 8.56?, probably this solves this issue
+
+2009-02-06 Georg Fleischmann
+    * dxfOperators.h (ID_EXT_X, Y, Z): IDs for extrusion direction added
+      DXFImport.m (-scanGroup:): group.ext_X, Y, Z added
+
+2009-02-07 Georg Fleischmann
+    * IPAllStrokeWidth.m (-update:): set color to black if g or color = nil
+      -> Fix Prerelease: removes exception, when changing units
+
+2009-02-11 Georg Fleischmann
+    * VText.m (-getFlattenedObjectAt:): set yOffset for mirrored text
+      -> Fix, Apple: position of contour of mirrored text corrected
+    * VSinking.m (-create:): set values in point (not mm)
+      -> Fix, Sinking: initial size now fits the label M4
+    * IPSinking.m (-update:): check for nil-title to please Apple
+      -> Fix, Apple: Custom Sinkings don't log exceptions any more
+
+2009-02-11 Georg Fleischmann
+    * VText.m (-textDidEndEditing:): add correction to height to make text appear safely on Apple
+      -> Fix, Apple: newly created text gets textbox a little heigher to be displayed more safely
+
+2009-02-11 Georg Fleischmann
+    * buildShip.sh: use V_MAJOR for Ship Paths
+
+Cenon 3.9.0 pre 9
+
+2009-02-25 Georg Fleischmann
+    * App.m (-listFromFile:): check extensions in any case
+      -> Fix, Import Files: load Files with extensions in any case (like eps, EPS, Eps)
+
+Cenon 3.9.0 pre 10
+
+2009-03-05 Georg Fleischmann
+    * VText.m (-textDidEndEditing:): if existing text is emptied, we don't remove, we just add "EMPTY TEXT"
+      -> Fix, Text: emptying an existing text will leave "EMPTY TEXT", so the text box can be reused
+
+Cenon 3.9.0 pre 10
+
+2009-02-18 Ilonka Fleischmann
+	* dvUndo.m (-rotate:): drawRect before .. and [self deselectLockedLayers:YES lockedObjects:YES]
+	-> Fix, Rotate Object: skips locked objects now
+
+2009-03-19 Georg Fleischmann
+    * DocView.m (-draw:): set date for template: "#DATE_%Y-%m-%d %H:%M#" etc.
+      DocView.m (-draw:): add non-template elements from template layer to even/odd pages
+      DocView.m (-templateObjectWithName:fromTemplate:): check for layerObjec == nil
+      DocView.m (-drawTemplate:): new method extracted from -draw: to draw contents in the order of the pages
+      MultiPage.cenon: Date explanation added
+      -> Template-Layer: display date of form "#DATE_%Y-%m-%d %H:%M#"
+      -> Template-Layer: also display non-template elements from even and odd template
+      -> Template-Layer: draw template in order of pages (in front or behind elements of the pages)
+
+2009-03-26 Georg Fleischmann
+    * InspectorPanel.m (-sendEvent:): decimal-key on numeric pad is always '.'
+      -> Fix, Apple German: this allows using the decimal pad to enter decimals in inspector
+2009-03-26 Ilonka Fleischmann
+    * App.m (-sendEvent:): decimal-key on numeric pad is always '.'
+      -> Fix, Apple German: this allows using the decimal pad to enter decimals
+
+Cenon 3.9.0 (2009-04-04)
+
+2009-04-18 Georg Fleischmann
+    * VHFDictionaryAdditions.m, h (-v3PointForKey:, -setV3Point:forKey:): added, also #include types.h
+
+2009-04-29 Georg Fleischmann
+    * VSinking.m (-mirrorAround:): added
+      -> Fix, Sinking: mirror of Sinking inside Group makes sense and therefor works now
+
+Cenon 3.9.0 (2009-05-04)
+
+2009-06-19 Georg Fleischmann
+    * *.nib: NIBs converted to format >= 10.2 Text archive to be readable on GNUstep too
+      *.strings: changed to UTF8 encoding to be readable on GNUstep too
+      GNUmakefiles added
+      -> GNUstep: Apple and GNUstep releases now share one source package
+
+Cenon 3.9.0 (2009-06-27)
+
+2009-07-13 Ilonka Fleischmann 
+	* GerberImport.m (-setArc:, -getGraphicFromData::): state.g = 0; commented out
+	  -> Fix GerberImport: graphic state G03 will be kept now
+	* GerberImport.m (-getLayerPolarity:): while ( ... && ![scanner isAtEnd] )
+	  -> Fix GerberImport: else we got an endless loop
+
+2009-09-16 Ilonka Fleischmann
+    * VArc.m (-parallelObject::): if angles get extreme, check radius and s or e switch, return a line from new start to end
+    -> Fix PathContour with arc: check extreme Arcs before we return a line
+
+2009-09-21 Georg Fleischmann
+    * DocView.m (-draw:): use NSAffineTransform to translate coordinate system
+      -> Fix, Batch-Printing: works with window smaller than document now
+
+2009-09-22 Georg Fleischmann
+    * DocView.m (-dragMagnify:): init region.origin
+      TileScrollView.m (-magnifyRegion:): if size is zero, we scale to next scale step only (not 5000)
+      -> Fix, Magnifying Glass: click without drag scales to next zoom step only (not 5000%)
+
+2009-10-11 Georg Fleischmann
+    * DocWindow.m (-setDocument:): coordinate timer uses -setAcceptsMouseMovedEvents: on Apple too,
+      __linux__ replaced by GNUSTEP_BASE_VERSION
+
+2009-10-29 Georg Fleischmann
+    * DocView.m (-draw): cast TileObject to avoid error with gcc 4.2
+
+2009-11-08 Georg Fleischmann
+    * toolPolyLine.tiff: added to project
+
+2009-12-12 Georg Fleischmann
+    * propertyList.m (propertyListFrom...): convert coordinates with 9 digits precision instead of default (6)
+      -> Fix, Saving: save coordinates with higher precision (introduced by Apple changing the defaults)
+    * InspectorPanel.nib: allow size up to 300 x 800
+      -> Allowed size of inspector increased to 300 x 800
+
+2009-12-25 Georg Fleischmann
+    * VCrosshairs.m, VMark.m: -description added
+
+2009-12-25 Georg Fleischmann
+    * vhf2DFunctions.m, h: vhfIntersectCircles() added
+
+2009-12-27 Georg Fleischmann
+    * Info.nib -> Info.xib
+    * some clean-ups of new Compiler Warnings
+    
+Cenon 3.9.1 pre 1
+
+
+2009-12-29 Georg Fleischmann
+    * VText.m (-drawWithPrincipal:): for GNUstep renew drawText after a -setFrameRotation: with an angle not 0
+      -> Fix, GNUstep: Workaround to make documents with rotated text work
+
+next 3.9.1

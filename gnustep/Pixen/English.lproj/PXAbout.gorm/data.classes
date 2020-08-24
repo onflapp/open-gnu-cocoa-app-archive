@@ -1,0 +1,26 @@
+{
+    "## Comment" = "Do NOT change this file, Gorm maintains it";
+    FirstResponder = {
+	Actions = (
+	    "cut:",
+	    "indent:",
+	    "moveToBeginningOfLine:",
+	    "orderFront:",
+	    "performZoom:",
+	    "selectAll:",
+	    "takeDoubleValueFrom:",
+	    "underline:"
+	);
+	Super = NSObject;
+    };
+    PXAboutController = {
+	Actions = (
+	);
+	Outlets = (
+	    credits,
+	    panelInNib,
+	    version
+	);
+	Super = NSResponder;
+    };
+}

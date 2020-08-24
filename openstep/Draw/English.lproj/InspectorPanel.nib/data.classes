@@ -1,0 +1,50 @@
+"DrawApp" = {
+    ACTIONS = (
+        "activateDocument:", 
+        "appDidInit:", 
+        "new:", 
+        "open:", 
+        "setCurrentGraphic:", 
+        "terminate:"
+    ); 
+    OUTLETS = (
+        activateMenu, 
+        currentGraphic, 
+        gridInspector, 
+        inspectorPanel, 
+        savePanelAccessory, 
+        spamatrix, 
+        tools
+    ); 
+    SUPERCLASS = NSApplication; 
+};
+"InspectorPanel" = {SUPERCLASS = NSPanel; };
+"Inspector" = {
+    ACTIONS = ("changeDimensions:", "changeFillColor:", "changeLineWidth:"); 
+    OUTLETS = (
+        arrows, 
+        fillColor, 
+        filled, 
+        formEntry, 
+        height, 
+        lineCap, 
+        lineColor, 
+        lineJoin, 
+        lineWidthField, 
+        lineWidthSlider, 
+        textColor, 
+        width
+    ); 
+    SUPERCLASS = Object; 
+};
+"FirstResponder" = {
+    ACTIONS = (
+        "takeFillValueFrom:", 
+        "takeFromEntryStatusFrom:", 
+        "takeLineArrowFrom:", 
+        "takeLineCapFrom:", 
+        "takeLineColorFrom:", 
+        "takeLineJoinFrom:"
+    ); 
+    CATEGORY = LocalActions; 
+};

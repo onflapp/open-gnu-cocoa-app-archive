@@ -1,0 +1,46 @@
+Cenon Change Log - March 2002
+
+2002-03-01  Georg Fleischmann
+	* Xyz.m (-xyzLoadParms:): complete device when containing a wildcard (Apple)
+	* VHFStringAdditions.m (-rangeOfSequence:options:range: wildcards:): allow skipAll at end (string*)
+	* Xyz.m (-initXYZ:, -initFile:): 'device string' added for Alert Panel to fix crash
+
+2002-03-08  Georg Fleischmann
+	* ToolObject.m (-loweringSpeed): return cuttingSpeed for thread cutters
+	* DocView.m (-cacheDirect:): new as a workaround for a bug on Apple
+	  DocView.m (-cache:): changes for Apple only
+	* VText.m (-getFlattenedObjectAt:): -rotAngle for Apple
+	* VPath.m (-contour:inlay:removeLoops:): single arc != 360 degree -> nothing
+
+Cenon 3.50 beta 14
+
+2002-03-16  Ilonka Fleischmann
+	* toolThread.tiff: much better
+
+2002-03-20  Georg Fleischmann
+	* VImage.m, h (-initWithRepresentations): new
+	  VImage.m (-initWithFile): call -initWithRepresentations
+	  VImage.m (-drawWithPrincipal:): don't draw background for opaque image
+
+2002-03-23  Ilonka Fleischmann
+	* VImage.m (-compositeAntialiased:toPoint:): new
+	  VImage (-drawWithPrincipal:): -compositeAntialiased for OpenStep and GNUstep
+
+2002-03-26  Ilonka Fleischmann
+	* VImage.m (-compositeAntialiased:toPoint:) (sumScale-floor(sumScale)) < TOLERANCE antialias only even values
+	  VImage.m (-relief:withDip:) w < 1 -> wurde zu 0 convertiert
+
+2002-03-28  Georg Fleischmann
+	* DXFImportSub.m (-setBounds:): log number of removed objects
+
+2002-03-08  Ilonka Fleischmann
+	* VCurve.m (-changeDirection) -> [self buildUPath]; !!!
+	* VPolyLine.m (-addPoint) 0.000001 instead of 10.0*TOLERANCE 2x
+	* VArc.m (distancePointCurveIsRadius()) bounds.w, h > 300.0*tol + getrennt
+	  VArc.m (distancePointCurveIsRadius()) nur 1 iPts mit kleinster dist
+	  VArc.m () Makro TOLERANCE50 WHTOL - instead calculation 10000 times
+	  VArc.m (-tangentIntersectionCurve:) dists[2] wird öbergeben an
+		distancePointCurveIsRadius()
+	  VArc.m (-tangentIntersectionWith:) iPts[2] instead of 40
+
+next Cenon 3.50 beta 15

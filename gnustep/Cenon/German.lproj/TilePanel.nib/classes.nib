@@ -1,0 +1,31 @@
+{
+    IBClasses = (
+        {
+            CLASS = App; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {tilePanel = id; }; 
+            SUPERCLASS = NSApplication; 
+        }, 
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {
+                buildCopies = id; 
+                removeTiles = id; 
+                set = id; 
+                setDistancePopup = id; 
+                updatePanel = id; 
+            }; 
+            CLASS = TilePanel; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                distPopup = id; 
+                distanceMatrix = id; 
+                limitsMatrix = id; 
+                limitsPopUp = id; 
+                originSwitch = id; 
+            }; 
+            SUPERCLASS = NSPanel; 
+        }
+    ); 
+    IBVersion = 1; 
+}

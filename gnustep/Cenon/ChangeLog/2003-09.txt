@@ -1,0 +1,23 @@
+Cenon Change Log - September 2003
+
+2003-09-01 Ilonka Fleischmann
+	* type1Funs.m (getOtherSubrs()): ++ if (*cp != '[') cp += strcspn(cp, "[");
+	  type1Funs.m (decryptCharString()): malloc(len-4*sizeof(Proc)) instead of ..len*..
+	* Type1Font.m (setFontPrivateSubrs:): encryptCharString gleich wieder !
+	  Type1Font.m (update:): privateDict.subrs werden hier nicht mehr encryptCharString ed
+	  Type1Font.m (fontPrivateSubrs:): memcopy ohne +4
+	* VPath.m (drawRadialWithPrincipal:): overlap klein geschrieben
+	  VPath.m (drawRadialWithPrincipal:): graduate hack auskommentiert
+	  VPath.m (-scale::withCenter:): width *= (x+y)/2.0;
+
+Cenon 3.60 beta 4
+
+2003-09-11 Ilonka Fleischmann
+	* VCurveOutput.m (-createOutput:tools:):[self contour:MMToInternal(w)] indstead of [self contour:w]
+
+Cenon 3.60 beta 5
+
+2003-09-24 Ilonka Fleischmann
+	* toolArc.tiff: new tool icon for Arcs
+
+next Cenon 3.60 beta 6

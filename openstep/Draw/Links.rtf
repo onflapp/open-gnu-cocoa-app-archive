@@ -1,0 +1,655 @@
+{\rtf0\ansi{\fonttbl\f0\fnil Helvetica;\f1\fnil Courier;\f2\fnil Times-Roman;
+}
+\paperw11340\paperh8400
+\pard\tx520\tx1060\tx1600\tx2120\tx2660\tx3200\tx3720\tx4260\tx4800\tx5320\ql\qnatural
+
+\f0\fs48 \cf0 Object Links for Draw (file: 
+\f1 gvLinks.m
+\f0 )
+\fs24 \
+\
+
+\f2\fs28 Object Links are not currently a part of the OpenStep specification, so the implementation that is Draw has not been debugged or tested in any way to work.  This documentation may also refer to methods, etc., that have been renamed in OpenStep.  Despite that, the code and this documentation is left here for reference.\
+\
+There are a number of things you have to do to implement Object Links in an application.  Many of them are optional (depending on the level of functionality you want or are able to provide), but Draw does them ALL, so this should be a good reference point for you.\
+\
+Please refer to the documentation in the system about Object Links to get an overall background in place before reading this document.\
+\
+
+\f0\fs36 DrawDocument\
+
+\f2\fs28 \
+Note first that Object Links only works on a document basis, so the 
+\f1\b GraphicView
+\f2\b0  object cannot do links on its own.  Only the 
+\f1\b DrawDocument
+\f2\b0  object knows the name of the file, for example, and this is crucial to making links work.  So, even though most of the implementation of Object Links in Draw is in 
+\f1\b GraphicView
+\f2\b0  (actually, a category thereof found in 
+\f1\b gvLinks.m
+\f2\b0 ), you'll notice that it is the 
+\f1\b DrawDocument
+\f2\b0  which creates (and is the delegate of) the 
+\f1\b NXDataLinkManager
+\f2\b0 , etc.  However, it usually forwards most of the messages it gets from the 
+\f1\b NXDataLinkManager
+\f2\b0  onto the 
+\f1\b GraphicView
+\f2\b0 .\
+\
+Note also that a significant part of making Object Links work in Draw is all the messages that 
+\f1\b DrawDocument
+\f2\b0  sends TO the 
+\f1\b NXDataLinkManager
+\f2\b0  (grep for ``
+\f1\b [linkManager
+\f2\b0 '' in 
+\f1\b DrawDocument.m
+\f2\b0  to find all those calls).  
+\f1\b DrawDocument
+\f2\b0  is responsible for letting the system know when something about the document changes (e.g. the document is saved or closed or reverted to saved or whatever).\
+\
+The ``Publish'' aspect of Draw is done via the 
+\f1\b saveLink:
+\f2\b0  method in 
+\f1\b DrawDocument
+\f2\b0 .  You should be able to understand the implementation of this method after reading all the description of how Object Links works below.\
+\
+It also calls 
+\f1\b updateLinksPanel
+\f2\b0  from its 
+\f1\b windowDidUpdate:
+\f2\b0  method to keep the Link Inspector panel up to date.\
+\
+Now let's dive into how Draw actually implements the Object Links mechanism ...\
+\
+
+\f0\fs36 Selections\
+
+\f2\fs28 \
+The most important part of participating in Object Links is also the part that requires the most thought.  It is the process of representing a ``selection'' in your document.  It is appropriate that this be the most ``difficult'' thing to do in Object Links because it is the part of the Object Links mechanism that is purely application-dependent.  NeXTSTEP tries to do as much of the Object Links functionality for you, but it cannot do the things that are dependent upon what your application does for a living.\
+\
+\pard\tx520\tx1060\tx1600\tx2120\tx2660\tx3200\tx3720\tx4260\tx4800\tx5320\ql\qnatural
+
+\f0\b A ``linked-to
+\f2\b0 ''
+\f0\b  selection (``source
+\f2\b0 ''
+\f0\b  selections):\
+\pard\tx520\tx1060\tx1600\tx2120\tx2660\tx3200\tx3720\tx4260\tx4800\tx5320\ql\qnatural
+
+\f2\b0 \
+If you want people to link to documents in your application, you must be able to describe a selection that the user makes and then copies and pastes (and links) into another document in another application.  This selection description can be anything you want (it's a ``bag o' bits''), but it must survive and make sense no matter what happens to the source document (unless, of course, the items in the selection the user originally made eventually get deleted, but even that case you must detect).\
+\
+How you represent this selection is really something you must think about carefully.  Draw actually has more than one way of representing the selection (this may well be true in the case of your application too).  Draw's selection-representation choice is purely for example purposes and you should, by no means, draw the conclusion that Draw's way is the only way (or even the best way) to represent a selection in an application that manipulates graphical elements (and obviously, Draw's way is not appropriate for text manipulation, spreadsheets, and other kinds of applications).\
+\
+Okay, now that the disclaimer is out of the way, let's talk about how Draw represents selections that it exports to other applications.  First, note that you can get the ``selection'' that the user has made in a 
+\f1\b GraphicView
+\f2\b0  at any time by calling the 
+\f1\b currentSelection
+\f2\b0  method defined in this file.  It returns an 
+\f1\b NXSelection
+\f2\b0  object (the bag o' bits mentioned above) representing the current selection.\
+\
+So, how does Draw represent is current selection?\
+\
+1. 
+\f1\b [NXSelection allSelection]
+\f2\b0 \
+\
+This is the selection that is created when the user does 
+\f0\fs24 Select All
+\f2\fs28  (and only in that case).  The 
+\f1\b allSelection
+\f2\b0  method of 
+\f1\b NXSelection
+\f2\b0  returns a ``special'' selection that Draw just chooses to know how to interpret.  Most applications will want to handle this special-case of 
+\f1\b allSelection
+\f2\b0 .\
+\
+2. Drag-Selection\
+\
+When the user drags out a box to make a selection in Draw, the 
+\f1\b NXSelection
+\f2\b0  that Draw uses to represent that state is the rectangle the user dragged out.  Then, whenever Draw is asked about this 
+\f1\b NXSelection
+\f2\b0 , it just intersects that rectangle with the current state of the 
+\f1\b Graphic
+\f2\b0 's in the view.\
+\
+This is a particularly questionable type of selection because the user often ends up with ``not quite what she expected.''  On the other hand, it is a bit more accurate than selection type #3 below because it remembers a bit more of the semantics of what the user selected.  In any case, I have included it to show you what an alternative selection mechanism might be like and how to handle it.\
+\
+The 
+\f1\b getRect:forSelection:
+\f2\b0  method returns 
+\f1\b YES
+\f2\b0  if the 
+\f1\b NXSelection
+\f2\b0  passed to it is of the drag-select type (and, obviously, the ``rect'' that it ``gets'' is the rect the user dragged out to make her original selection).\
+\
+3. Individual 
+\f1\b Graphic
+\f2\b0  Selection\
+\
+In this case, Draw just remembers the unique identifiers of each of the 
+\f1\b Graphic
+\f2\b0 's in the selection.  Then, when the system asks Draw about a selection of this kind, it looks in the current state of the Draw document for all of these items.  Note that it also includes any 
+\f1\b Group
+\f2\b0  objects which include one of the 
+\f1\b Graphic
+\f2\b0 's in the original selection.  Users can use this to, for example, have a background which they include in the original copy/paste link and then group whatever image they want to be the ``currently exported thing'' with that background.\
+\
+The best selection mechanism would probably be some mixture of #2 and #3 (and perhaps some other types of selection mechanisms).  I've chosen these two because they are easy to understand.\
+\
+The 
+\f1\b findGraphicsInSelection:
+\f2\b0  method returns a 
+\f1\b List
+\f2\b0  object with all the 
+\f1\b Graphic
+\f2\b0 's in the current document represented by the 
+\f1\b NXSelection
+\f2\b0  passed to it.  This method can handle all three sorts of ``source'' selections (i.e. #1, #2, and #3 above).  This method calls the above-mentioned 
+\f1\b getRect:forSelection:
+\f2\b0  method to handle case #2.\
+\
+\pard\tx520\tx1060\tx1600\tx2120\tx2660\tx3200\tx3720\tx4260\tx4800\tx5320\ql\qnatural
+
+\f0\b A ``linked-from'' selection (``destination'' selections):\
+\pard\tx520\tx1060\tx1600\tx2120\tx2660\tx3200\tx3720\tx4260\tx4800\tx5320\ql\qnatural
+
+\f2\b0 \
+If you allow the user to copy something from another application and 
+\f0\fs24 Paste and Link
+\f2\fs28  it into the documents your application edits, you must be able to describe where in your document the thing was 
+\f0\fs24 Paste and Link
+\f2\fs28 'ed.  This, too, is just a description of a selection in your document.\
+\
+Since Draw only allows PostScript and TIFF (i.e. 
+\f1\b NXImage
+\f2\b0 -handled data types) and RTF and ASCII (i.e. 
+\f1 Text
+\f2  object-handled data types) to be 
+\f0\fs24 Paste and Link
+\f2\fs28 'ed in (of course, these are the only types Draw allows to be normal-pasted in as well!), Draw represents this sort of ``destination'' selection by just remembering which 
+\f1\b Image
+\f2\b0  or 
+\f1\b TextGraphic
+\f2\b0  was created to import the data (since all objects in Draw have a unique identifier associated with them, this is an easy task).\
+\
+There is a method implemented in the 
+\f1\b Graphic
+\f2\b0  base class called ``selection'' which returns an 
+\f1\b NXSelection
+\f2\b0  which describes the 
+\f1\b Graphic
+\f2\b0  you sent the message to in terms of its unique identifier (i.e., it creates an 
+\f1\b NXSelection
+\f2\b0  and tosses the unique identifier of the receiving 
+\f1\b Graphic
+\f2\b0  into the bag o' bits and returns it to you).  The 
+\f1\b findGraphicInSelection:
+\f2\b0  method in this file searches through the document to find the 
+\f1\b Graphic
+\f2\b0  with the corresponding unique identifier extracted from the 
+\f1\b NXSelection
+\f2\b0  passed to it.\
+\
+
+\f0\fs36 Importing/Exporting Link Data\
+
+\f2\fs28 \
+Okay, so now you understand how Draw creates an 
+\f1\b NXSelection
+\f2\b0  object to represent either a selection made in a Draw document which is going to be exported to another application via 
+\f0\fs24 Copy/Paste and Link
+\f2\fs28  and also how it represents a selection which describes which 
+\f1\b Graphic
+\f2\b0  is the receiving end of an Object Link.  Let's quickly talk about how Draw exports a link and how it imports a link.\
+\
+\pard\tx520\tx1060\tx1600\tx2120\tx2660\tx3200\tx3720\tx4260\tx4800\tx5320\ql\qnatural
+
+\f0\b Exporting:\
+\pard\tx520\tx1060\tx1600\tx2120\tx2660\tx3200\tx3720\tx4260\tx4800\tx5320\ql\qnatural
+
+\f2\b0 \
+It exports a link via the method 
+\f1\b writeLinkToPasteboard:types:
+\f2\b0 .  This is a very simple method, but very important to the Object Links mechanism.  It does two distinct things:\
+\
+1. It creates and writes an 
+\f1\b NXDataLink
+\f2\b0  object to the 
+\f1\b Pasteboard
+\f2\b0  which includes all the stuff another application would need to know to create an Object Link to the current selection the user has made in Draw (primarily just the 
+\f1\b currentSelection
+\f2\b0  itself and the data types Draw will export (e.g. PostScript and TIFF)).  This is the most important thing this method does.\
+\
+2. It writes all of the links in the 
+\f1\b GraphicView
+\f2\b0  to the 
+\f1\b Pasteboard
+\f2\b0 .\
+\
+Why, you may ask, does it do this?  Well, if you copy an 
+\f1\b Image
+\f2\b0  in Draw which is actually the destination of an Object Link (not the source of a link, but the DESTINATION), then if you pasted that 
+\f1\b Image
+\f2\b0  into another Draw document, you want it to keep its ``linkness'', i.e., you want the thing you pasted to also get updates when the source of that 
+\f1\b Image
+\f2\b0  gets updated.  Simple, huh?\
+\
+Which brings us to the 
+\f1\b readLinkForGraphic:fromPasteboard:useNewIdentifier:
+\f2\b0  method.  It's the thing that is called every time you paste a 
+\f1\b Graphic
+\f2\b0  into Draw to get that pasted 
+\f1\b Graphic
+\f2\b0  properly linked up with the 
+\f1\b NXDataLinkManager
+\f2\b0  in the Draw document you paste it into.\
+\
+It is implemented by calling the 
+\f1\b addLinkPreviouslyAt:fromPasteboard:at:
+\f2\b0  method in 
+\f1\b NXDataLinkManager
+\f2\b0  which simply reestablishes the link that 
+\f1\b Image
+\f2\b0  has to another document (that was at 
+\i oldSelection
+\i0  in the old document) by setting the destination selection of the link to the selection which represents the 
+\f1\b Image
+\f2\b0 's location in the new document (
+\f1\b [graphic selection]
+\f2\b0 ).\
+\
+The 
+\i useNewIdentifier
+\i0  thing is so that if you copy and immediately paste back into the same document, no actual change occurs (this is important in case someone else is linked to something that is in turn linked to something else--just trust me, you want copy/paste from/to the same document to be a net ``no-change'' in the document as far as links are concerned).\
+\
+\pard\tx520\tx1060\tx1600\tx2120\tx2660\tx3200\tx3720\tx4260\tx4800\tx5320\ql\qnatural
+
+\f0\b Importing:\
+\pard\tx520\tx1060\tx1600\tx2120\tx2660\tx3200\tx3720\tx4260\tx4800\tx5320\ql\qnatural
+
+\f2\b0 \
+Importing a linked thing happens 
+\b only
+\b0  via the 
+\f1\b addLink:toGraphic:at:update:
+\f2\b0  method.  No where else in Draw is a linked thing added to the document (except, of course in 
+\f1\b readLinkForGraphic:fromPasteboard:useNewIdentifier:
+\f2\b0 , but that's a special case).\
+\
+Let's quickly summarize how this method works:\
+\
+The arguments are simple.  The 
+\i link
+\i0  is an 
+\f1\b NXDataLink
+\f2\b0  gotten either from a file (
+\f1\b .objlink
+\f2\b0 ) or from a 
+\f1\b Pasteboard
+\f2\b0  (during 
+\f0\fs24 Paste and Link
+\f2\fs28 ) or was alloc/init'ed pointing to a file.  See the callers of 
+\f1\b addLink:
+\f2 ...
+\b0  to see about that.  The 
+\i graphic
+\i0  is just an 
+\f1\b Image
+\f2\b0  or 
+\f1\b TextGraphic
+\f2\b0  created from the same 
+\f1\b Pasteboard
+\f2\b0  we got the 
+\i link
+\i0  out of or from the file that we alloc/init'ed the 
+\i link
+\i0  to point to.  If 
+\i graphic
+\i0  
+\f1\b nil
+\f2\b0 , then we probably got the 
+\i link
+\i0  from a 
+\f1\b .objlink
+\f2\b0  file, so we don't actually know what kind of data we're talking about yet.  We take care of that first thing in this method (see the next paragraph).  The 
+\i update
+\i0  argument is used to describe whether this is a normal link, or a link which is never updated (link buttons and links to files represented by the file's icon are the classic examples of these) or a link which must be updated immediately because we don't yet have any data for it (again, see the next paragraph).\
+\
+The first if-statement handles the case of pasting or dragging in an 
+\f1\b NXDataLink
+\f2\b0  without any corresponding data (i.e. no PostScript or TIFF to go with it).  This is always the case for a 
+\f1\b .objlink
+\f2\b0  file, and could conceivably be the case for a 
+\f0\fs24 Copy/Paste and Link
+\f2\fs28  if the app that copied the stuff in only copied the 
+\f1\b NXDataLink
+\f2\b0  and forgot to (or chose not to for some reason) put the thing being linked to itself in the 
+\f1\b Pasteboard
+\f2\b0 .  Anyway, what that first if-statement does is figure out what data types the 
+\f1\b NXDataLink
+\f2\b0  deals in (again, e.g., PostScript or RTF or some such) and creates an ``empty'' 
+\f1\b Graphic
+\f2\b0  (an 
+\f1\b Image
+\f2\b0  or 
+\f1\b TextGraphic
+\f2\b0 ) which will be filled in immediately when, later in the method, we force an 
+\f1\b updateDestination
+\f2\b0  to occur (setting the update mode to 
+\f1\b UPDATE_IMMEDIATELY
+\f2\b0  is what does this).\
+\
+The second if-statement is what's doing all the work, of course.  First, it asks the 
+\f1\b Graphic
+\f2\b0  which is going to be the destination of this Object Link (it'll be an 
+\f1\b Image
+\f2\b0  or 
+\f1\b TextGraphic
+\f2\b0 ) for an 
+\f1\b NXSelection
+\f2\b0  object which represents it.  Then it ``adds'' the link to the 
+\f1\b NXDataLinkManager
+\f2\b0 .    If the link is successfully added, then we let the 
+\f1\b Image
+\f2\b0  or 
+\f1\b TextGraphic
+\f2\b0  know about the link to it (only so that we can ask for it back later, the 
+\f1\b Image
+\f2\b0  and 
+\f1\b TextGraphic
+\f2\b0 's never actually do anything themselves with the link).  Next, we put the 
+\f1\b Graphic
+\f2\b0  into the document using the standard 
+\f1\b placeGraphic:at:
+\f2\b0  method that we always use to add foreign data to the view (see 
+\f1\b gvPasteboard.m
+\f2\b0 ).\
+\
+Finally, if we need to update the link immediately because we have no data, we do so by calling 
+\f1\b updateDestination
+\f2\b0 , then ensuring that the update actually caused some data to flow over by seeing if the 
+\f1\b Graphic
+\f2\b0  
+\f1\b isValid
+\f2\b0 .  This works well for 
+\f1\b Image
+\f2\b0 's, but not so well for 
+\f1\b TextGraphic
+\f2\b0 's, I'm afraid (they always say they are valid!).  Anyway, it's better than nothing.\
+\
+That's it for exporting and importing links.  Not so bad, is it?\
+\
+
+\f0\fs36 Updating Links\
+
+\f2\fs28 \
+Now, how do we actually update links (in either direction)?  This, too, is simple.  Whenever NeXTSTEP wants you to update someone else who is linked to you, it sends you the message 
+\f1\b copyToPasteboard:at:cheapCopyAllowed:
+\f2\b0 .  Whenever NeXTSTEP asks someone else to update something that is linked into your document, it sends you the message 
+\f1\b pasteFromPasteboard:at:
+\f2\b0  (or 
+\f1\b importFile:at:
+\f2\b0  if it's a whole file).  All you have to do is to responds to these messages sensibly (you should assume that they can be called at any time).  Return 
+\f1\b nil
+\f2\b0  from these methods if the 
+\f1\b NXSelection
+\f2\b0 's in question no longer exist (in their entirety).\
+\
+Draw's implementation of these methods is very straightforward (these methods are almost always really easy to implement if you already implement 
+\f0\fs24 Copy/Paste
+\f2\fs28  or 
+\f0\fs24 Services
+\f2\fs28 ).\
+\
+In 
+\f1\b pasteFromPasteboard:at:
+\f2\b0 , it just finds the 
+\f1\b Image
+\f2\b0  or 
+\f1\b TextGraphic
+\f2\b0  represented by the 
+\f1\b NXSelection
+\f2\b0  passed to it (see 
+\f1\b findGraphicInSelection:
+\f2\b0 ), then sends a message to that 
+\f1\b Graphic
+\f2\b0  to reinitialize itself with the data in the 
+\f1\b Pasteboard
+\f2\b0  passed to it.  It then updates the view and marks the view as edited.\
+\
+The method 
+\f1\b importFile:at:
+\f2\b0  is just like 
+\f1\b pasteFromPasteboard:at:
+\f2\b0 , except that the source of the data comes out of a file instead of from a 
+\f1\b Pasteboard
+\f2\b0 .  This happens when you create an Object Link to a whole file without involving the application that knows how to edit that file (see 
+\f1\b gvDrag.m
+\f2\b0  and the stuff where we drag a file into Draw with the Control key down (which means create a link to this file)).\
+\
+In 
+\f1\b copyToPasteboard:at:cheapCopyAllowed:
+\f2\b0 , there are basically two paths that can be taken depending on whether 
+\i cheapCopyAllowed
+\i0  is true.  
+\i cheapCopyAllowed
+\i0  just means that you can use the lazy pasteboard mechanism to the fullest because NeXTSTEP guarantees that no changes to your document can occur between the time this method is called and the time the lazy 
+\f1\b provideData:
+\f2\b0  is called.  In other words, when 
+\i cheapCopyAllowed
+\i0  is true, we don't actually have to write the Draw objects in the selection to the pasteboard by value, we can simply write a reference to them.\
+\
+So, in Draw, when 
+\i cheapCopyAllowed
+\i0  is true, we just declare that we can provide PostScript and TIFF, but write neither to the 
+\f1\b Pasteboard
+\f2\b0  (we'll provide it lazily).  Of course, when the lazy 
+\f1\b provideData:
+\f2\b0  is called, we have to know what part of our document to put into the 
+\f1\b Pasteboard
+\f2\b0 , so we simply drop in the 
+\f1\b NXSelection
+\f2\b0  that we were asked to 
+\f1\b copyToPasteboard:
+\f2\b0 .\
+\
+Thus, in the 
+\i cheapCopyAllowed
+\i0  case, the actual work of putting the data in is done in the INSTANCE method 
+\f1\b pasteboard:provideData:
+\f2\b0 !  It is okay to use the instance as the owner of the 
+\f1\b Pasteboard
+\f2\b0  because the system has guaranteed us that our document would not be changed (especially not FREED!).  The implementation of 
+\f1\b provideData:
+\f2\b0  is really simple since we already had methods lying around that could write the PostScript or TIFF for a list of 
+\f1\b Graphic
+\f2\b0 's into a stream (
+\f1\b write
+\f2 \{
+\f1 PS
+\f2 ,
+\f1 TIFF
+\f2 \}
+\f1 ToStream:usingList:
+\f2\b0 ).  We get the list of 
+\f1\b Graphic
+\f2\b0 's to write from the 
+\f1\b NXSelection
+\f2\b0  we put in there (see how this all just dovetails together? Idn it great?).\
+\
+When 
+\i cheapCopyAllowed
+\i0  is not true, then we just do what we normally do when the user hits 
+\f0\fs24 Copy
+\f2\fs28 , we just do it with the 
+\f1\b Graphic
+\f2\b0 's that are in the passed 
+\f1\b NXSelection
+\f2\b0  instead of the ones in the current selection.  We plop the list of 
+\f1\b Graphic
+\f2\b0 's into the 
+\f1\b Pasteboard
+\f2\b0  and let the normal lazy 
+\f1\b Pasteboard
+\f2\b0  stuff take care of the rest (the CLASS method 
+\f1\b pasteboard:provideData:
+\f2\b0  in this case, see 
+\f1\b gvPasteboard.m
+\f2\b0 ).\
+\
+
+\f0\fs36 Miscellaneous methods.\
+
+\f2\fs28 \
+There's a few other little methods you may want to implement.\
+\
+You'll probably want something akin to 
+\f1\b updateLinksPanel
+\f2\b0  which just keeps the Link Inspector panel up to date (it is called from 
+\f1\b windowDidUpdate:
+\f2\b0  in 
+\f1\b DrawDocument
+\f2\b0 ).\
+\
+The 
+\f1\b showSelection:
+\f2\b0  method in 
+\f1\b gvLinks.m
+\f2\b0  (the actual names of some of these methods is different, see 
+\f1\b DrawDocument.m
+\f2\b0  which forwards them onto 
+\f1\b GraphicView
+\f2\b0 ) is sent by NeXTSTEP when the user asks to show the source of an Object Link that comes from your document.  It is very nice to respond properly to this message (the user will certainly be expecting this to work in your application).  It is very easy for Draw to get the bounding box of the 
+\f1\b Graphic
+\f2\b0 's in the passed selection (it even draws the little drag-selection rectangle if that's the kind of 
+\f1\b NXSelection
+\f2\b0  it is) since we already have methods lying around that, given a list of 
+\f1\b Graphic
+\f2\b0 's can find their bounding box.\
+\
+There is one notable thing that Draw does when showing source selections.  It uses the fact that all the drawing done in a Draw document is actually done in an off-screen cache and composited to the screen.  When Draw shows a source selection, it draws them directly to the on-screen window, then remembers the areas in which it draw (this is the 
+\f1\b invalidRect
+\f2\b0 ).  Then, it leaves the source selection showing until the user touches the view (see 
+\f1\b drawSelf::
+\f2\b0 ) at which point, it just blows the 
+\f1\b invalidRect
+\f2\b0  away by copying that rectangle from the off-screen cache.  If you do double-buffering like this in your application, this trick is easy and effective.\
+\
+The 
+\f1\b breakLinkAndRedrawOutlines:
+\f2\b0  method in Draw is what keeps the link outlines up-to-date.  When the user chooses 
+\f0\fs24 Show Links
+\f2\fs28  from the menu, all things that are linked into your document should show a border around them (there is a NeXTSTEP function to draw this border).  These borders are kind of the opposite of what the 
+\f1\b showSelection:
+\f2\b0  method draws (i.e. 
+\f1\b showSelection:
+\f2\b0  shows what Object Links originate in your document, and 
+\f0\fs24 Show Links
+\f2\fs28  shows the Object Links that are linked into your document from somewhere else).  The argument to 
+\f1\b breakLinkAndRedrawOutlines:
+\f2\b0  is a 
+\i link
+\i0  that was recently broken by NeXTSTEP (this method is called from 
+\b DrawDocument
+\b0 's 
+\f1\b dataLinkManager:didBreakLink:
+\f2\b0  and 
+\f1\b dataLinkManagerRedrawLinkOutlines:
+\f2\b0  methods which are sent by NeXTSTEP).\
+\
+If the 
+\i link
+\i0  argument is 
+\f1\b nil
+\f2\b0 , it means that no link was broken, so Draw just redraws 
+\b all
+\b0  the link outlines.  If the argument is not 
+\f1\b nil
+\f2\b0 , then the method searches for the 
+\f1\b Graphic
+\f2\b0  which held that 
+\i link
+\i0  and redraws it so that it's outline goes away.  Furthermore, if it was a link that didn't show the source data (i.e. it was a link button or file icon or something), that 
+\f1\b Graphic
+\f2\b0  is removed from the document (since it is now disconnected and useless--don't we all feel that way sometimes?).\
+\
+
+\f0\fs36 Tracking Links\
+
+\f2\fs28 \
+Finally, there is the task of tracking the sources of links.  This is optional behaviour but is really a must if you want to implement 
+\f0\fs24 Continually
+\f2\fs28  updating links.  The idea here is that you tell NeXTSTEP when a selection which is the source of a link which you export has changed.  Otherwise, NeXTSTEP has to assume that every time your document is edited that all the links that you export have changed.  In other words, this is a performance optimization, but a valuable one.\
+\
+Note that you don't have to track 
+\b all
+\b0  your links, only the ones that are showing up in other documents that are on the screen at the same time.  NeXTSTEP (through the 
+\f1\b NXDataLinkManager
+\f2\b0 ) will tell you when to start and stop tracking links (NeXTSTEP is such a polite entity, is it not?).\
+\
+Draw tracks links very easily by making the assumption that if any region of the Draw document which is redrawn overlaps the source of a link, that link must have changed and needs to be updated.  Since Draw has a nice knothole through which all updates to the document go (
+\f1\b cache:
+\f2\b0 ), this is a mere matter of keeping track of the boundaries of the sources of links which Draw exports.\
+\
+Draw does this by keeping a 
+\f1\b Storage
+\f2\b0  object which a struct in it that has three pieces of information.\
+\
+1. The rectangle which encloses the source of the link.\
+2. The link in question.\
+3. What type of selection is involved (all, drag or normal).\
+\
+Almost every time 
+\f1\b cache:
+\f2\b0  is called (sometimes 
+\f1\b cache:andUpdateLinks:
+\f2\b0  is called with 
+\f1 NO
+\f2  as its argument, but not very often, grep the code and you find out the times when that is necessary) the method 
+\f1 updateTrackedLinks:
+\f2  is called.  This method has a two-fold purpose:\
+\
+1. Notify the 
+\f1\b NXDataLinkManager
+\f2\b0  if any of the currently-being-tracked links intersects the area which was just 
+\f1\b cache:
+\f2\b0 'ed.\
+2. Reevaluate the bounds of any of the source selections that intersects the area which was just 
+\f1\b cache:
+\f2\b0 'ed.\
+\
+We must do step #2, because the thing that might have caused 
+\f1\b cache:
+\f2\b0  to get called could have been that the user resized one of the objects which are linked to.  Thus, step #2 is not necessary for the drag-selection (since that originally dragged-out box can never ``change size'') and 
+\f1\b allSelection
+\f2\b0  cases.  Step #2 is implemented simply by getting the 
+\f1\b NXSelection
+\f2\b0  from the link, calling 
+\f1\b findGraphicsInSelection:
+\f2\b0 , then calling the already-existing 
+\f1\b getBBox:of:
+\f2\b0  method.\
+\
+All we do in 
+\f1\b startTrackingLinks:
+\f2\b0  and 
+\f1\b stopTrackingLinks:
+\f2\b0  is add/remove structs from the 
+\f1\b Storage
+\f2\b0  object.\
+\
+
+\f0\fs36 Summary\
+
+\f2\fs28 \
+Well, that's all there is about links and Draw.  I hope this document is illuminating.  The take-home messages should be that Object Links should be simple to implement if you already implement 
+\f0\fs24 Copy/Paste
+\f2\fs28  and/or 
+\f0\fs24 Services
+\f2\fs28 .  The only ``hard part'' might be figuring out how to represent a selection in your document.  Good luck with that part. :-)\
+}

@@ -1,0 +1,49 @@
+Cenon Change Log - April 2002
+
+2002-04-01  Georg Fleischmann
+	* VPath.m (-pointWithNum:): cleanup
+	  VPath.m (-movePoint:to:): move connected point too
+	* DocView.m (-drawRect:): if rect = zero rect -> use bounds
+
+2002-04-13  Ilonka Fleischmann
+	* PathContour.m (-contourPath:, -contourPath:) -> apple extra !!
+	  PathContour.m (-contourPath:, -contourPath:) rect.origin = NSZeroPoint
+	  PathContour.m (-contourPath:, -contourPath:) init direct hinter alloc
+	* PathCFillBitmap.m (-contourFillPath:) -> apple extra !!
+	* PickOut.m (-pickOutPath..:, -pickOutImage..:) -> apple extra !!
+	  PickOut.m (-pickOutPath..:, -pickOutImage..:) init direct hinter alloc
+	  PickOut.m (-pickOutPath..:, -pickOutImage..:) rect.origin = NSZeroPoint
+	* VImage.m (-relief:withDip:) -> apple extra !!
+	  VImage.m (-relief:withDip:) init direct hinter alloc
+	  VImage.m (-relief:withDip:) rect.origin = NSZeroPoint
+	* PathCFillBitmap.m,h (-contourFillImage:inset:offset:): new
+	* VImage.m (-createOutput:tools:): Filling bei Contour !
+	* VPolyLine.m (-addPoint:) -> 0.001*TOLERANCE instead of 10.0*TOLERANCE
+
+Cenon 3.50 beta 15
+
+2002-04-14  Ilonka Fleischmann
+	* VImage.m (-createOutput:tools:): Filling mit BitmapAllgorithmus
+	  VImage.m, h (-fillContourStreamWithInset:inset:offset:): new
+	  VImage.m #import "PathCFillBitmap.h"
+	* PathCFillBitmap.m (-contourFillImage:::): [oPathCopy release] raus !
+	* PathContour.m (-optimizePath::) schliessen verbessert
+
+2002-04-16  Georg Fleischmann
+	* VHFCompatibility.h (PSWait()): same as Apple for GNUstep
+	* Nib2gmodel run
+
+2002-04-17  Georg Fleischmann
+	* DocView.m (-deselectAll:redraw:): only redraw if selection has been changed
+	  DocView.m (-dragSelect:): redraw only, if drawRect is not zero
+	* DataPanel.m (-setLevelAt:): for GNUstep selectTabViewItem:nil
+
+2002-04-20  Georg Fleischmann
+	* KeyPanel.m (-setLicensorString:, -licensorString):
+	  vhfLockFunctions.m (-readKey(), writeKey()): write to Home Library not Home directory
+
+2002-04-20  Georg Fleischmann
+	* vhfCommonFunctions.m (fillPopup()): check for double entries (GNUstep)
+	  vhfCommonFunctions.m (fillPopup()): use removeAllItems
+
+next Cenon 3.50 beta 16

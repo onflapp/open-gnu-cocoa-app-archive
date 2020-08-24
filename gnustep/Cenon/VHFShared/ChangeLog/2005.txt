@@ -1,0 +1,18 @@
+Change Log - 2005
+
+2005-01-04  Georg Fleischmann
+	* vhfCommmonFunctions.m (vhfLocalLibrary()):
+	  return system library or local libray, whichever exists
+
+2005-06-10  Georg Fleischmann
+	* vhfCommmonFunctions.m: #include VHFScannerAdditions.h removed
+
+2005-10-23 Ilonka Fleischmann
+	* vhf2DFunctions.m, h (distancePointArc()): new
+
+2005-11-09 Georg Fleischmann
+	* vhfCompatibility.h (VHFShouldAntialias()): new,
+	  added antialias Macros for GNUstep too
+
+2005-11-13 Georg Fleischmann
+	* vhfCommonFunctions.m, h (vhfPathWithPathComponents()): new

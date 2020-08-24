@@ -1,0 +1,35 @@
+{
+    IBClasses = (
+        {
+            ACTIONS = {setUnit = id; }; 
+            CLASS = DocWindow; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                coordBox = id; 
+                hCoord = id; 
+                tileScrollView = id; 
+                unitPopup = id; 
+                wCoord = id; 
+                xCoord = id; 
+                yCoord = id; 
+            }; 
+            SUPERCLASS = NSWindow; 
+        }, 
+        {
+            CLASS = Document; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {scrollView = id; window = id; }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {CLASS = PSText; LANGUAGE = ObjC; SUPERCLASS = NSCStringText; }, 
+        {
+            ACTIONS = {changeScale = id; magnify = id; zoomIn = id; zoomOut = id; }; 
+            CLASS = TileScrollView; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {box = id; resPopupListButton = id; }; 
+            SUPERCLASS = NSScrollView; 
+        }
+    ); 
+    IBVersion = 1; 
+}

@@ -1,0 +1,73 @@
+{\rtf0\ansi{\fonttbl\f0\fmodern Courier;\f1\ftech Symbol;}
+\pard\tx1440\tx5400\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li5400\fi-5400\ql\qnatural
+
+\f0\b\fs24 \cf0 …nderungen för Januar 2000\
+\pard\tx1440\tx5400\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li5400\fi-5400\ql\qnatural
+
+\b0 \cf0 \
+31.01.00	Cenon\
+\
+Datum	Datei	VerÙndert\
+----------------------------------------------------------------------------------------------\
+14.01.00	ioFunctions.m	ioPutInstructions() nur letzten return value abgeholt. Damit wird die Ausgabe bei einem Lookahead von 10 schneller, wird irgendwann langsamer, bleibt aber im Bahnverlauf.\
+\
+\pard\tx1440\tx5400\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li5400\fi-5400\ql\qnatural
+
+\b \cf0 3.20 Beta 24\
+\pard\tx1440\tx5400\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li5400\fi-5400\ql\qnatural
+
+\b0 \cf0 \
+19.01.00	Path.m	- makro SmallAngle() för - contour um 10
+\f1 °
+\f0  erweitert\
+		(sollte kein problem sein)\
+28.01.00	Xyz.m	-xyzLoadParms -> ops.speedMove = [ops.speed retain];\
+	ToolObject.h	#define LIMITDIAMETER	20\
+\
+\pard\tx1440\tx5400\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li5400\fi-5400\ql\qnatural
+
+\b \cf0 3.20 Beta 25\
+\pard\tx1440\tx5400\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li5400\fi-5400\ql\qnatural
+
+\b0 \cf0 \
+29.01.00	App.m	-display2DToolPanel -> flag == NO part auskommentiert\
+		-showDataPanel -> floatingPanel, keyOnlyIfNeeded, nur orderFront\
+	DataPanel.nib	hide on deactivate\
+	PPControl.nib	displayDiameter -> new\
+	PPControl.m, h	displayDiameter -> new\
+	Editor2DView.m	-draw: -> draw des output mit tool diameter eingebaut\
+	Graphic/*.m	-draw -> -(void)draw, -drawWithWidth: -> new\
+	LayerObject.m, h	+setDefaultFlatness: -> new\
+	Xyz.m, h	-xyzDefaults, XyzDefaults, xyzDefaults -> neu\
+		-xyzLoadParms -> #FLT -> neu\
+	apXyz.m	xyzDefaults -> new\
+		-loadParms: -> xyzDefaults abgeholt\
+30.01.00	App.m\
+	vhfCommonFunctions.m\
+	DPBasicLevel.m	doppelter / nach vhfHomeDirectory() entfernt\
+	Path.m	//-buildCFillUPath -> flatten curves if desired\
+	PathCFill.m	if( Prefs_FlattenCurves ) -> new\
+31.01.00	DPLayer.m	-update -> add clipping layer\
+		-removeLayer -> don't remove clipping layer\
+		-setPopup -> tool popup disabled for clipping layer\
+		-clickLayer: -> diöDepthField enabled or disabled\
+	Editor2DView.m	-clipObject -> changed completely\
+		-mouseDown -> clipObject, -delete, -dealloc -> clipObject removed\
+		+initialize -> version = 4\
+		-initWithCoder -> clipRectangle moved to clipping layer\
+		-getSelection -> slist now autoreleased!\
+	Editor2DView.h	clipObject, -setClipObject -> removed\
+	e2Pasteboard.m	-copy: -> clipObject removed\
+	Rectangle.m, h	-clip: -> new\
+	Editor2DTools.nib	clip tool removed\
+	DPControl.m	-buildOutputPathAndExecute -> clipObject is Rectangle\
+	e2Output.m	-calcOutputFor -> clipRectangle removed, checked for clipping layer\
+	InspectorPanel.m, h	ClipRectangle removed\
+	IPClipRectangle.m, h	removed\
+	Rectangle.m, h	+rectangle -> new\
+	LayerCell.m	-drawInteriorWithFrame -> no dipping depth for clipping layer\
+\
+\pard\tx1440\tx5400\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li5400\fi-5400\ql\qnatural
+
+\b \cf0 3.20 Beta 26\
+}

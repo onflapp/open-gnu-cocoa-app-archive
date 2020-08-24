@@ -1,0 +1,46 @@
+{
+    DYNAMIC_CODE_GEN = YES; 
+    FILESTABLE = {
+        CLASSES = (
+            VHFArrayAdditions.m, 
+            VHFDictionaryAdditions.m, 
+            VHFPopUpButtonAdditions.m, 
+            VHFScannerAdditions.m, 
+            VHFStringAdditions.m, 
+            VHFSystemAdditions.m
+        ); 
+        H_FILES = (
+            types.h, 
+            vhf2DFunctions.h, 
+            VHFArrayAdditions.h, 
+            vhfCommonFunctions.h, 
+            vhfCompatibility.h, 
+            VHFDictionaryAdditions.h, 
+            vhfMath.h, 
+            VHFPopUpButtonAdditions.h, 
+            VHFScannerAdditions.h, 
+            vhfSoundFunctions.h, 
+            VHFStringAdditions.h, 
+            VHFSystemAdditions.h, 
+            vhfCFGFunctions.h
+        ); 
+        OTHER_LINKED = (
+            vhf2DFunctions.m, 
+            vhfCFGFunctions.m, 
+            vhfCommonFunctions.m, 
+            vhfMath.m, 
+            vhfSoundFunctions.m
+        ); 
+        OTHER_SOURCES = (Makefile.preamble, Makefile, Makefile.postamble); 
+        SUBPROJECTS = (); 
+    }; 
+    LANGUAGE = English; 
+    LOCALIZABLE_FILES = {}; 
+    MAKEFILEDIR = "$(NEXT_ROOT)/NextDeveloper/Makefiles/pb_makefiles"; 
+    NEXTSTEP_BUILDTOOL = /bin/gnumake; 
+    PDO_UNIX_BUILDTOOL = $NEXT_ROOT/NextDeveloper/bin/make; 
+    PROJECTNAME = VHFShared; 
+    PROJECTTYPE = Component; 
+    PROJECTVERSION = 2.6; 
+    WINDOWS_BUILDTOOL = $NEXT_ROOT/NextDeveloper/Executables/make; 
+}

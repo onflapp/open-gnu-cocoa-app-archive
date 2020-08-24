@@ -1,0 +1,217 @@
+Cenon - News
+
+2012-07-19
+
+TODO: 3.9.1 - 3.9.6, 4.0.0
+(see ChangeLog/English/Log-x.x.txt)
+
+Version 3.9.0
++ New, Images: save as BMP, GIF, JPG, PNG (saves a lot of diskspace)
++ New, ProjectSettings: Units of measure for the document
++ New, Inspector: Inspector Accessory, replacing the Text item
++ Groups can be selected by "Select equal Color" (menu item: Edit -> Select Color)
++ LayerDetails: new switch to tell a layer whether to be used for
+  batch production.
++ Image: selection handling improved
+  - select at border or inside according to preferences setting
+  - for clipped images: select at or inside clipped area
++ Empty text will be removed, no asterisk '*' when clicking around in text mode
++ Fix, pasting of several layers to one layer keeps order of graphics elements
++ Fix, Image: splitting of clipped image keeps image behind path
++ Fix, Text: creating a text at the right border of the document,
+  now sets the correct text box in all zoom steps
++ Fix, Text with Paragraph/Character-Colors is working again
++ Fix, Text: improvements of redisplay after editing text
++ Build Contour: Text offset Y fixed again for vertical centered text
++ Cosmetics in Inspectors, Knobs, etc.
++ Fix, Apple: scrolling without clutter
++ PS-Import: error-tolerant import of PostScript from Windows applications
+  like Corel-Draw, Eurocut, etc., that often contain garbage before data.
++ Fix, PS-Import via GhostScript: imported objects get a default color
++ Fix, PS-Import: issues with GhostScript 8.56 and above hopefully solved
+  (not tested yet)
++ Fix, Gerber-Export: small fixes like export of open Paths
++ Fix, Apple: position of the contour of mirrored text corrected
++ Fix, Apple: newly created text gets textbox a little heigher to
+  be displayed more safely
++ Fix, Apple: workaround - finally it's now possible to save Cenon
+  documents compatible with OpenStep and GNUstep
++ Fix, Apple: workaround - it's now possible to save 4 bit images on Apple
++ Fix, Apple: workaround for new color spaces added in OS X >= 10.4
+  Some colors turned to black on saving.
++ Apple: search of Cenon files in Library/Application Support/Cenon added
++ Documentation updated
+
+Version 3.83
+- Documentation: online documentation support added
+  Library/Cenon/Docu/LANGUAGE.lproj/Cenon.pdf
+- Text, Fix: text editing in changing scales works now
+- New menu item "Display -> Show/Hide Coordinates" to toggle the presence
+  of the coordinate box of document
+- Inspector: Lock switch for crosshairs
+- Gerber-Export: improved
+- DXF-Import: improved
+- Apple, Inspector Panel: now resizable
+- Apple, Document Window: area outside document is now transparent (Window color)
+- Apple, Fix: arcs with zero line width are printed with default line width
+- Apple, Fix: Build Contour of vertical centered Text positions result correctly
+- Apple, Fix: move graphic objects with cache, scaled           (Apple workaround)
+- Apple, Fix: move vortex of graphic objects with cache, scaled (Apple workaround)
+- Apple, Fix: rotate graphic objects with cache, scaled         (Apple workaround)
+- Apple, Fix: Window Title (Filename) is now updated for all save As (workaround)
+
+Version 3.82
+- New: Batch printing (Multiples) added, including serial numbers
+- New: Contour-Panel:
+       switch, whether to replace the source graphics (or keep it)
+       Panel has now it's own Unit Popup
+- New: convert TextPath to Path
+- New, Editing: with Control + Mouse you can drag Curve points within a path
+- TransformPanel: now with a nice bar of Icons to look better
+- Undo: number of undos increased to 25 instead of 10
+- DIN-Import: for Excellon, the tools can be defined within the file
+- Fix, Curve-Inspector: display correct points for selected handles
+- Fix, HPGL-Import: Labels fixed
+- Fix, Join:
+       two paths or polylines are joined by keeping the order
+       Undo with two closed paths corrected
+- Fix, Path: Makes Undo work for moving several points in a path
+- Fix, Arc: 360 degree snap works better now
+- Fix, Snap: snapping on itself removed
+- Fix, Select: Selecting a point no longer creates a move point undo step
+- Fix, Punch: Undo added for groups
+- Fix, Punch: Undo without crash
+- Fix, Inspector: changing color on non-editable layer leaves color well
+       with correct color
+- Fix, Layer-Inspector: display Layer, if non-visible layer is turned on
+       editable
+- Fix, Text: editing at the top of a window now scrolls the text to visibility
+- Fix, DXF-Import: close of polylines corrected to work in all cases
+- Apple, PDF-Import: dynamic linking of import libraries works on OS X 10.4.7
+- Apple: graphics cache is on as default
+- GNUstep: Our patch for loading images from a bundle has been applied
+
+Version 3.81
+- Selection: the first click on an object now selects the entire object.
+  A click on an edge of a selected object will select the control point.
+- Fix, GNUstep: crash with Layer-Inspector is fixed
+- Fix, GNUstep: correct defaults for zero line widths, drag boxes, ...
+- New Domain Cenon.eu registered
+
+Version 3.80
+- New, Import: Import to existing layers by comparing layer names
+- New, Import: Import to existing layers by comparing colors with
+  objects on the layer
+- Preferences: New entry "Select by border" to select filled objects
+  at border only
+- Copy/Paste: lock is not copied
+- PolyLine: allows snap to own points
+- Fix, DXF-Import: closing of a PolyLine with an arc added
+- Fix, DXF-Import: fill color of stroked objects now defaults to stroke color
+- Fix, Punch with Rectangle: rectangles with rounded corners are
+  displayed correctly
+- Fix, Apple: Contour of mirrored text is now placed correctly
+- Apple: Graphics cache is now available (Preferences switch is active)
+- Apple: Preferences switch to turn off Antialiasing activated
+- Copy/Paste: PDF Pasteboard Type added for Apple
+- Fix, Radial Fill: fill center is saved correctly
+- Fix, Radial Fill: center stays inside box, when object is rotated
+- Fix, Group: grouping with activate color well keeps color
+- Fix, Rectangle: correct display of rectangles with maximum edge radius
+- Fix, Rotate: more precise
+- Fix, Inspector: change from other App to Cenon keeps Inspector contents
+- Fix: Start of Cenon by double click on a document file allows
+  modules to load their stuff
+
+Version 3.71
+- New: Multi page documents (basic handling of pages + printing)
+       Template layers for even, odd and all pages with
+       wildcards for page number #PAGENUM# and page count #PAGECNT#
+- New: new editing Tool to add a vertex to Paths and PolyLines
+- New: removing of a vertex from Path and PolyLine
+- Punch: punch with Groups and Rectangles added
+- Undo for flatten text added
+- Optimization of memory usage
+- Fix: crash removed on Quit
+- Fix: several bug fixes for calculating contours of objects
+- Fix, Gerber-Export: Filled PolyLines are now filled
+                      don't export empty layers any more
+- Fix, many bug fixes
+
+Version 3.70
+- Layer Inspector: direct adding of a layer with the given name
+- Punch: it is now possible to punch with an unfilled object
+- Ungroup: in mixed selection the groups can be ungrouped
+- Join: better closing (fill) of open paths
+- Printing: print always 100%
+- Fix, Printing: Print-Panel settings are stored
+- Gerber-Import: improved import of polygons
+- Gerber-Import: Arc angles close to 360 degree improved
+- Gerber-Export: output of complex paths improved
+- PostScript-Import: better support of CMYK color space
+- Display: better performance with many objects in groups or paths
+- Fix: loading of an empty group works
+- Fix, Contour: large images don't crash with contour fill and image contour
+- Fix for PolyLines within Paths
+- Antialiasing fixes for Apple and GNUstep
+- more bug fixes
+
+Version 3.67
+- Groups: Allow change of stroke width and filling
+- PS-Import: support filenames with blanks
+- Debian: use system library if available and local library is empty
+- Apple: Allow more than a single new document on some Apple systems (workaround)
+- Apple, PS-Import: search gs in /usr/bin and /usr/local/bin
+- Apple, PS-Import: allow import of PS-Files which contain special characters
+- Apple, PS-Import: use an available font as default
+- Apple: Cenon-Menu translated to German
+
+Version 3.66
+- Drag: Dragging of EPS files into a Cenon document now imports vector data
+
+Version 3.65
+- DXF-Import: use default layer, if no layer is provided
+- DXF-Import: correct arc bounds for polyline and vertex
+- several minor bug fixes
+
+Version 3.64
+- save of images changed to allow later extension to non-TIFF formats
+- GNUstep: Printing of Images fixed
+- Bug fixes
+
+Version 3.63
+- New: Copy and Paste of PostScript to other applications
+- New: Preferences option to set line width
+- document size on disk reduced
+- faster document loading
+- faster batch copying
+- GNUstep: simpler printing code to allow printing
+- several bug fixes
+- clean ups
+
+Version 3.62
+- Fix, Text: fixed small memory leak with text
+- DXF, HPGL-Import: ignore Arc center for graphic bounds
+- Fix, Preferences: Defaults now exist for new setups
+- Fix, Save-As: allow saving fonts again
+- GNUstep, install: automatically install the minimum library coming
+  with the source. This makes Cenon run without the big library package
+
+Version 3.61
+- Font-Editing: allow characters with more elements
+
+Version 3.60
+- it's all new :-)
+  Now, after a lot of work, Cenon has evolved into a publishing program (DTP)
+  with all the needed features (hopefully).
+- Clipping of Images
+- Color shading (graduate, radial and axial)
+- Color separation
+- Project Information (Notes, Version, Author...)
+- improved editing functions
+- enhanced Graphics Inspector
+- modular architecture
+- for Mac OS-X and GNUstep
+
+
+Cenon - www.cenon.info

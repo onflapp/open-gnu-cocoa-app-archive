@@ -1,0 +1,3 @@
+# undochange.p: undochange.h
+
+undochange.h: Change.h MultipleChange.h ChangeManager.h

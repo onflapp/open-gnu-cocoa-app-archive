@@ -1,0 +1,14 @@
+{
+    IBClasses = (
+        {CLASS = DragMatrix; LANGUAGE = ObjC; SUPERCLASS = NSMatrix; }, 
+        {
+            ACTIONS = {set = id; }; 
+            CLASS = ExportController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {box = id; dxfResField = id; switchMatrix = id; }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }
+    ); 
+    IBVersion = 1; 
+}

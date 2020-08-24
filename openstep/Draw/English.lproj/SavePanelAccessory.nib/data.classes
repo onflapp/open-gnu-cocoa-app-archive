@@ -1,0 +1,6 @@
+"DrawApp" = {
+    ACTIONS = {"changeSaveType:" = id; }; 
+    OUTLETS = {savePanelAccessory = id; spamatrix = id; }; 
+    SUPERCLASS = NSApplication; 
+};
+"FirstResponder" = {ACTIONS = {"changeSaveType:" = id; }; CATEGORY = LocalActions; OUTLETS = {}; };

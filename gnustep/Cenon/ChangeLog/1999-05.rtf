@@ -1,0 +1,48 @@
+{\rtf0\ansi{\fonttbl\f0\fmodern Courier;}
+\pard\tx1440\tx2700\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li2700\fi-2700\ql\qnatural
+
+\f0\b\fs24 \cf0 …nderungen för Mai 1999\
+
+\b0 \
+29.05.99	Cenon\
+\
+\pard\tx1440\tx4320\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li4320\fi-4320\ql\qnatural
+\cf0 Datum	Datei	VerÙndert\
+----------------------------------------------------------------------------------------------\
+03.05.99	Editor2DView.m	mouseDown: -> created\
+	Web.m, h	neu\
+	Editor2DTools.nib	Web hinzugefögt\
+	toolWeb.tiff	neu\
+	App.m, h	TOOL2DWEB hinzugefögt\
+	Graphic.m, h	setColor -> neu\
+	IPWeb.m, h, nib	neu\
+	InspectorPanel.m, h	webWindow -> neu\
+	e2Output.m	calcOutputFor: -> memberOfClass statt kindOfClass för Mark, Web wird nicht ausgegeben\
+04.05.99	Graphic.m, h	objectsOfClass:... -> neu\
+	e2Output.m	calcOutputFor: -> objectsOfClass: aufgerufen\
+		spareWebs: aufgerufen\
+	Grafikobjecte	pointWithNum: -> neu und ersetzt getPoint::\
+	Path.m	getListOfObjectsSplittedFrom:: -> spList autoreleased\
+		spareWebs: -> neu\
+06.05.99	Editor2DWindow.m	displayCoordinate: -> Einheitenumrechnung vom Window verwendet\
+	Arc.m	-spareWebs:: -> neu\
+07.05.99	Editor2DView.h	webOutputList -> neu\
+	DPControl.m	buildOutputPathAndExecute -> web hinzugefögt\
+	Xyz.m, h	webPath -> neu\
+		-executePath: -> webs hinzugefögt\
+		-executeVector -> webs hinzugefögt, opp -> neu\
+	e2Output.m	-webList -> neu\
+		-writeOutput:, readOutput: -> webs hinzugefögt\
+		-freeOutputLists -> webs released\
+09.05.99	Xyz.m	executeVector -> komplett umgebaut\
+12.05.99	Xyz.m, h\
+	DPControl.m	buildOutputPathAndExecute -> settlement in ToolInfo jetzt BOOL\
+14.05.99	ToolObject.m	addToArray: -> settleBefore wurde nicht gespeichert\
+	DPToolParms.m	-setStepwise:, -setSettlementBefore: -> recalculation\
+	Xyz.m	executeVector -> settlePath wird als letztes ausgegeben bei settleBefore\
+16.05.99	Xyz.m	-outputOp:... -> kein moveto för drills\
+28.05.99	Xyz.m	-executeVector -> outputStatus==2 -> <= TOLERANCE statt < 0.0\
+29.05.99	Arc.m	-parallelObject:... -> arc autoreleased, Abfrage för Division durch Null verbessert\
+\
+next 3.20 Beta 7\
+}

@@ -1,0 +1,26 @@
+{
+    IBClasses = (
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {
+                cancel = id; 
+                scale = id; 
+                setAlgorithm = id; 
+                synchronizeForms = id; 
+                updateToScalePropotionally = id; 
+            }; 
+            CLASS = PXScaleController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                algorithmButton = NSPopUpButton; 
+                algorithmInfoView = NSTextView; 
+                newHeightForm = NSForm; 
+                newWidthForm = NSForm; 
+                scaleParameterView = NSBox; 
+                scaleProportionallyCheckbox = NSButton; 
+            }; 
+            SUPERCLASS = NSWindowController; 
+        }
+    ); 
+    IBVersion = 1; 
+}

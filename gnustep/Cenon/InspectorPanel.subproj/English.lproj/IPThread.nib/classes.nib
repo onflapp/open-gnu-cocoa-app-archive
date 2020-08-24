@@ -1,0 +1,42 @@
+{
+    IBClasses = (
+        {
+            CLASS = App; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {inspectorPanel = id; }; 
+            SUPERCLASS = NSApplication; 
+        }, 
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {
+                setCenterX = id; 
+                setCenterY = id; 
+                setDiameter = id; 
+                setExternal = id; 
+                setLeftTurn = id; 
+                setLock = id; 
+                setPitch = id; 
+            }; 
+            CLASS = IPThread; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                centerXField = id; 
+                centerYField = id; 
+                diameterField = id; 
+                externalSwitch = id; 
+                leftTurnSwitch = id; 
+                lockSwitch = id; 
+                pitchField = id; 
+            }; 
+            SUPERCLASS = NSPanel; 
+        }, 
+        {
+            CLASS = InspectorPanel; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {threadWindow = id; }; 
+            SUPERCLASS = NSPanel; 
+        }, 
+        {CLASS = SurfaceWell; LANGUAGE = ObjC; SUPERCLASS = NSColorWell; }
+    ); 
+    IBVersion = 1; 
+}

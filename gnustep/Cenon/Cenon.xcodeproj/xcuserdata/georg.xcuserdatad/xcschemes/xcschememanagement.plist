@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>Cenon (Application).xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>0</integer>
+		</dict>
+		<key>Export.prefs.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
+		<key>General.prefs.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+		<key>Import.prefs.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+		<key>VHFExport.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>5</integer>
+		</dict>
+		<key>VHFImport.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>56158A290997B6F7003130B4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>561593610997B759003130B4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>561593860997B759003130B4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5615939D0997B759003130B4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>561593AE0997B759003130B4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>561593BE0997B759003130B4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>

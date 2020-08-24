@@ -1,0 +1,80 @@
+{\rtf0\ansi{\fonttbl\f0\fmodern Courier;}
+\pard\tx1440\tx2700\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li2700\fi-2700\ql\qnatural
+
+\f0\b\fs24 \cf0 …nderungen för August 1998\
+
+\b0 \
+27.08.98	Cenon\
+\
+\pard\tx1440\tx4320\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li4320\fi-4320\ql\qnatural
+\cf0 Datum	Datei	VerÙndert\
+----------------------------------------------------------------------------------------------\
+06.08.98	->	Beim Start von Cenon durch doppleklick auf Datei ist nur das erste Werkzeug da\
+	App.m	-application:openFile: -> dataPanel geladen\
+	->	Exception: "index beyond bounds" bei Dateien in denen der settlepfad weniger elemente hat als der output pfad. Scheint mðglich zu sein!\
+07.08.98	DPControl.m	-buildOutputPathAndExecute -> [stList count] > i abgefragt\
+10.08.98	e2Output.m, h	-setLayerOfObject:dirty: -> neu\
+	TextGraphic.m	-textDidEndEditing -> layer des Objektes dirty gesetzt\
+11.08.98	TextGraphic.m	-setAngle: -> auf -360 - 360 Grad limitiert\
+12.08.98	Xyz.m	-xyzLoadParams -> ops.init released\
+	vhfCFGFunctions.m	vhfGetStringFromData() -> Sonderzeichen in Schleife ersetzt\
+	TextGraphic.m	-movePoint:by: -> stimmt jetzt auch för gedrehte Textbox\
+13.08.98	e2Output.m	-calcOutputFor: -> settlement för innenkorrektur abgezogen\
+	DPToolParms.m	-setType: -> bei Drill wird settlement auf 0 gesetzt\
+\pard\tx1440\tx4320\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li4320\fi-4320\ql\qnatural
+
+\b \cf0 Beta 16\
+\pard\tx1440\tx4320\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li4320\fi-4320\ql\qnatural
+
+\b0 \cf0 \
+15.08.98	Path.m	-getIntersections:with: -> Gleiche Punkte im neuen Array werden nicht hinzugenommen\
+19.08.98	LayerObject.m	flatness = 0.15;\
+	DPControl.m	-buildOutputPathAndExecute -> l--\
+	Crosshairs.m	-init origin auf 10.0 mm gesetzt\
+20.08.98	App.m	-openDocument: -> Pfad wird gemerkt\
+	Editor2DDocument.m	-saveOutput: -> Pfad wird gemerkt\
+21.08.98	e2Output.m	-calcOutputFor: -> w för konische FrÙser nach Eintauchtiefe berechnet\
+	DPLayer.m	-setDipDepth: -> wenn tool-type=konisch, dann wird lage dirty\
+	LayerObject.h	ToolObject *tool und Header importiert\
+24.08.98	apPrefs.m, h\
+	Prefs.nib	finishAtStartSwitch, colorsToLayersSwitch -> neu\
+	DPControl.m	-subProcessTerminated -> startposition wird gesetzt\
+	App.m	+initialize -> defaults för finishAtStart, colorsToLayers gesetzt\
+	Arc.m	-intersectCurve() -> boundsvergleich um center in cBounds erweitert\
+25.08.98	Editor2DView.m	-setList -> um Farbseparation erweitert\
+		colorLayer() -> neu\
+25.08.98	Ilonka:\
+	Curve.m	- angle -> zusatzabfrage för einen Fall extremer curve\
+	Line.m	- intersectLine: -> parallele linien abfrage ob linien nebeneinander\
+		- getListOfObjectsSplittedFrom: -> Abfrage ob punkte auf linie besser\
+	Path.m	- removeIntersectionsInSubpaths: -> 1.Teil: punkt neben linie mit etwas grðûerem Abstand 2.Teil(neu): ob die subpaths sich untereinander schneiden ...\
+		- getIntersections:-> if( !pointInArray(pts[j], *ppArray, oldCnt) )!!\
+\pard\tx1440\tx4320\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li4320\fi-4320\ql\qnatural
+
+\b \cf0 Beta 17\
+\pard\tx1440\tx4320\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li4320\fi-4320\ql\qnatural
+
+\b0 \cf0 \
+26.08.98	->	Fontsize im Inspektor an X-Grðûe orientieren\
+	TextGraphic.m	-setFontSize -> capHeigth statt pointSize, lineHeight bleibt nicht mehr gleich\
+		-fontSize -> capHeigth statt pointSize\
+	->	Line-Height mit Fontsize Ùndern\
+	IPText.m	-setFontSize -> lineHeight im Inspector wird upgedated\
+27.08.98	Editor2DView.m	-setList -> slayList bekam eine Lage zuviel\
+		-calcOutputFor: -> Nutzen, olist auf Inhalt abgefragt vor dem kopieren\
+	->	Bei Bohrungen werden zuviele Objekte im Fahrweg generiert\
+	e2Output.m	calcOutputFor: -> för Nutzen werden die indexe der objekte in list und olist gesammelt und nur die objekte in der Sammlung kopiert. olist kann bei drills weniger objekte enthalten als die liste!\
+	Path.m	-optimize -> neu\
+		-join, -setList:, -addList:at:, setFilled: -> ruft optimize auf\
+\pard\tx1440\tx4320\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li4320\fi-4320\ql\qnatural
+
+\b \cf0 Beta 18\
+\pard\tx1440\tx4320\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li4320\fi-4320\ql\qnatural
+
+\b0 \cf0 \
+28.08.98	Editor2DView.nib	neu gemacht, damit circle1-Meldung verschwindet\
+28.08.98	Path.m	- removeIntersectionsInSubpaths: -> 2.Teil(neuer): hatte noch einen Fehler\
+31.308.98	e2Output.m	-calcOutputFor: -> beim Nutzen wird jetzt auch die stList kopiert.\
+\
+next: Beta 19\
+}

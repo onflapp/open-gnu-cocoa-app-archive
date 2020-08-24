@@ -1,0 +1,23 @@
+Cenon Change Log - May 2005
+
+2005-05-06 Ilonka Fleischmann
+	* Document.m (-printDocument:) setzt printInfo komplett neu wie eingestellt
+
+2005-05-12 Ilonka Fleischmann
+	* VPath.m (-uniteWith:) arrays der s/ePunkte und cnts von 100/50 auf 1000/500 erhðht
+	  VPath.m (-intersectionsForPtInside:) auch polyLines werden jetzt auf horizontale Teilstöcke getestet
+	* VPolyLine.m (-uniteWith:) arrays der s/ePunkte und cnts von 100/50 auf 1000/500 erhðht
+	* VArc.m (-uniteWith:) arrays der s/ePunkte und cnts von 100/50 auf 1000/500 erhðht
+	* VRectangle.m (-uniteWith:) arrays der s/ePunkte und cnts von 100/50 auf 1000/500 erhðht
+	* GerberImport.m (-setLine:) [ addLine: :] nur wenn SqrDistPoints(p0, p1) > TOLERANCE*TOLERANCE
+	  GerberImport.m (-getGraphicFromData::) state.lightCode is case 2: if (state.path) [ setLine::]
+	  GerberImport.m (-setArc:) angle auf 0 oder 360 grad nÙhe abgefragt, wenn ja +-360 gesetzt
+	* GerberExport.m, h (-writeLayerPolarityMode:) new
+	* GerberExportSub.m (-exportPath:) Ausgabe sortiert för LayerPolarity
+	  GerberExportSub.m (-exportPath:) Ausgabe sortiert för LayerPolarity
+	  GerberExportSub.m (-exportToFile:) Ausgabe sortiert för LayerPolarity
+
+2005-05-19 Georg Fleischmann
+	* dvGrid.m (-drawGrid): lineWidth = 1 point to work with antialising
+
+next Cenon 3.70

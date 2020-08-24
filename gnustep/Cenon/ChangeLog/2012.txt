@@ -1,0 +1,475 @@
+Cenon Change Log - 2012
+
+2012-01-04 Georg Fleischmann
+    * DocView.m (-moveObject:::): no beep, when locked object is beeing selected
+      -> Fix, Select: no annoying beep when locked object is being selected
+    * VText.m (-textDidEndEditing:): if locked, don't change size of text box
+      -> Fix, Text: editing a locked Text will not adjust the size of the text box any more
+
+2012-01-04 Georg Fleischmann
+    * XCode Project: Menu Project -> Set Active SDK to "Base SDK" (was 10.4 !)
+      DEBUG Configuration:
+        Architectures = Native Architecture of Build Machine ($NATIVE_ARCH)
+        Base SDK = 10.5 (10.4)
+        Compiler = GCC 4.2 (4.0)
+        Deployment Target = 10.5 (10.4)
+
+2012-01-05 Georg Fleischmann
+    * App.m (-compileDate): m is NSUInteger, not int, to allow comparison with NSNotFound
+      Multiple methods warnings removed
+    * lots of cString -> UTF8String
+      SVGImport.m: -scanFloat: into NSPoint -> [scanner scanDouble:&d]; point.x = d;
+    * Vectorizer.m (-set:): cast cell to NSCell to know which state method is needed
+    * SVGImport.m: cast list and g to remove warnings
+                   scanFloat: into NSPoint -> [scanner scanDouble:&d]; point.x = d;
+    * HPGLImport.m (-getLabelSize:): scanDouble:d and make it work with all sizes of NSSize
+    * DXFImport.m (-addLayer:): stringWithUTF8String:
+    * GerberImportSub.m, HPGLImportSub.m
+    * dvUndo.m (-takeFillFrom:): rewritten to use setFilled: directly
+    * ...
+
+2012-01-08 Georg Fleischmann
+    * VText.m       (-encodeWithCoder:, -initWithCoder:): use -encodeRect:bounds, bounds = decodeRect
+      and -encodePoint:radialCenter, radialCenter = decodePoint, to make it work with 64 bit too
+      VSinking.m    (-encodeWithCoder:, -initWithCoder:): encodePoint:origin, origin = decodePoint
+      VPath.m       (-encodeWithCoder:, -initWithCoder:): encodePoint:radialCenter, radialCenter = decodePoint
+      VMark.m       (-encodeWithCoder:, -initWithCoder:): origin
+      VLine.m       (-encodeWithCoder:, -initWithCoder:): p0, p1
+      VPolyLine.m   (-encodeWithCoder:, -initWithCoder:): radialCenter
+      VRectangle.m  (-encodeWithCoder:, -initWithCoder:): origin, size, radialCenter
+      VImage.m      (-encodeWithCoder:, -initWithCoder:): origin, size, originalSize
+      VGroup.m      (-encodeWithCoder:, -initWithCoder:): radialCenter
+      VArc.m        (-encodeWithCoder:, -initWithCoder:): center, start, (angle), radialCenter
+      VCrosshairs.m (-encodeWithCoder:, -initWithCoder:): origin
+      VCurve.m      (-encodeWithCoder:, -initWithCoder:): p0, p1, p2, p3
+      - Fix, 64-bit: fix 64 bit issues
+
+2012-01-15 Georg Fleischmann
+    * XCode Project: Release Configuration: compile 3-way universal binary
+        ARCHS = x86_64 i386 ppc
+        SDKROOT            = macosx10.5
+        SDKROOT[arch=ppc]  = macosx10.4
+        SDKROOT[arch=i386] = macosx10.4
+        GCC_VERSION                  = 4.2
+        GCC_VERSION [sdk=macosx10.4] = 4.0
+        MACOSX_DEPLOYMENT_TARGET            = 10.5
+        MACOSX_DEPLOYMENT_TARGET[arch=ppc]  = 10.4
+        MACOSX_DEPLOYMENT_TARGET[arch=i386] = 10.4
+    * *Import.m, h (): addList:(NSArray*)aList toList:(NSMutableArray*)bList;
+
+2012-01-16 Georg Fleischmann
+    * XCode Project: Application Target: GCC 4.2: GCC_SYMBOLS_PRIVATE_EXTERN = NO
+      -> this makes symbols survive strip, otherwise everything is stripped, no matter what
+
+2012-01-18 Georg Fleischmann
+    * VLine.m (-initWithCoder:): get version from VLine class !
+
+2012-01-19 Georg Fleischmann
+    * VPath.m (-contour:inlay:splitCurves:): simplified sc cases to:
+        gPrev = [splittedCurves objectAtIndex:sc-1]; // sc = 1 - 4
+        gPrev = [splittedCurves objectAtIndex:sc+1]; // sc = 0 - 3
+2012-01-20 Georg Fleischmann
+    * VArc.m (-intersectArc::::): use angular tolerance, tolAng = TOLERANCE_DEG
+      types.h: TOLERANCE_DEG = 0.0036 added for angular comparisons
+      -> Fix, Arc Contour: fixed issues with contour of not precicely connected arcs
+
+2012-01-23 Georg Fleischmann
+    * VPath.m (-contour:inlay:splitCurves:): gNext fixed, when curves are splitted [done: 2012-01-19]
+    * DocView.m (-knowsPageRange:): new, -knowsFirst:last: is long deprecated and now removed
+
+2012-01-24 Ilonka Fleischmann
+	* LayerObject.m (-stepsForDip:): dip instead dippingDepth !
+	* VPath.m (-splitTo:): -getLastObjectOfSubPath2: instead -getLastObjectOfSubPath:  2x
+	  -> Fix Split: Open paths splitted faster
+	* VPath.m (-setDirectionCCW:): do not change direction for open paths - always wrong !
+	  -> Fix Contour: do not Change Direction of open Paths anymore
+	* VPath.m (-contour:inlay:splitCurves:): line, linePrev, lineNext [VLine line] instead new
+	  VPath.m (-contour:inlay:splitCurves:): work with pathcopy - to not disturb path and add AutorelasePool
+	  VPath.m (-contour:inlay:splitCurves:): some <= instead <  in ( needArc )
+	  -> Fix Leak: little memory leak in Contour calculation
+
+2012-01-25 Ilonka Fleischmann
+	* DocView.m (-draw:): 2x do not draw passive Layers LAYER_PASSIVE
+      FIXME: this is not good, we should add methods in LayerObject (-drawLayer, -setDrawLayer:)
+    * vhf2DFunctions.m, h (-vhfConvert3DLineToLines()): new
+2011-07-11 Ilonka Fleischmann
+	* VLine.m  (-sqrDistanceGraphic:::, -sqrDistanceGraphic:): all new Graphics recognized
+	* VArc.m   (-sqrDistanceGraphic:::, -sqrDistanceGraphic:): all new Graphics recognized
+	  VArc.m   (-getPointOnArcClosestToPoint:intersection:):   fixed - for all possible cases
+	  VArc.m   (-sqrDistanceLine::,     -sqrDistanceLine::::): fixed - for all possible cases
+	  VArc.m   (-sqrDistanceArc:::,     -sqrDistanceArc:):   fixed - for all possible cases
+	  VArc.m   (-sqrDistanceCurve:::,   -sqrDistanceCurve:): fixed - for all possible cases
+	* VCurve.m (-sqrDistanceGraphic:::, -sqrDistanceGraphic:): all new Graphics recognized
+	  VCurve.m (-sqrDistanceGraphic:::): new
+	  VCurve.m (pointOnCurveNextToPoint()): 100 instead 20
+	  VCurve.m (-sqrDistanceLine::,  -sqrDistanceLine::::): new
+	  VCurve.m (-sqrDistanceCurve::, -sqrDistanceCurve::::): new
+	-> Fix Distance Methods: now we have exact distance Methods
+
+2012-01-25 Georg Fleischmann
+    * WorkingAreaPanel.m (-awakeFromNib:): make cells respond to Tab
+      -> Working Area Panel: changes are accepted by pressing Tab key (as well as Enter)
+
+2011-12-25 Ilonka Fleischmann
+	* DocView.m (-draw:): [layerObject invisible] == YES continue 2x
+	  LayerObject.m,h (-setInvisible:, -invisible, invisible): invisible Flag new
+	  LayerObject.m (-init, -initFromPropertyList:, -propertyList, initWithCoder:): invisible added
+	  -> Passive Layer drawing: corrected now
+
+2012-01-25 Georg Fleischmann
+    * App.m (-loadModules): CAM module is loaded just like any other modules
+
+2012-01-30 Georg Fleischmann
+    * VImage.m (drawWithPrincipal:): if principal = nil, set scale to 1.0
+      -> Fix, TIFF-Export: save images
+
+2012-02-04 Georg Fleischmann
+    * types.h: V3Point uses VFloat instead of float, VFloat = CGFloat
+    * DXFImport.m: InternalToDeviceRes(), DeviceResToInternal(): float -> double
+      DXFImport.m (-scanGroup:): transform coordinates from OCS to WCS, if necessary
+      DXFImport.m (transformOCS(), scaleToUnit(), crossProduct()): new
+      -> Fix, DXF-Import: added transformation of coordinates from Object- to World-coordinate system
+
+2012-02-06 Georg Fleischmann
+    * vhfCommonFunctions.m, h (vhfUserDocuments()): added
+      functions.m (systemLibray()): return nil on Apple
+      App.m (-loadModules:): check for path == nil
+    * Packages: "/Library" -> "/Library/Application Support"
+
+2012-02-07 Georg Fleischmann
+    * App.m (restoreSnapshot): if file is not at path, try loading by adding last path component of Library Path
+      -> Apple, keep things working through transition to "Library/Application Support" location
+    * PSImport.m (-tmpPath): new with path from NSTemporaryDirectory
+      PSImport.m (-importPS:): App-Name added to output path, fileName in psImport.prolog replaced
+      PSImport.m: include VHFStringAdditions.h to have a writeToFile:... on OS X < 10.5
+      VHFStringAdditions.m, h (-writeToFile:...encoding:error:): added for backward compatibility
+    * DXFExport.m
+      GerberExport.m
+      HPGLExport.m (-saveToFile:): use writeToFile:...encoding:error:
+      EPSExport.m (-writeToFile:): use writeToFile:...encoding:error:
+    * UpdateController.m (-install:): use NSTemporaryDirectory() as 2nd choice after Downloads folder
+    * UpdateController.m (-connectionDidFinishLoading:): use writeToFile:...encoding:error:
+
+2012-02-10 Georg Fleischmann
+    * XCode: always use default compiler, except with 10.4 SDK in all projects
+             "Default" compile target removed in all projects
+             "Fix & Continue" settings removed in all projects
+             use XCode 3.1 format to have support for conditional SDK settings in all projects
+             double header in copy headers removed
+             "Symbols Hidden by Default" for Cenon App and Debug removed
+    * NotificationNames.h was in Preferences and ProjectSettings, removed in ProjectSettings
+
+2012-02-13 Georg Fleischmann
+    * DocView.m (-hitEdge:..., -moveObject:..., -redrawObject:...):
+      VGroup.m, VPolyLine.m (-hitEdge:...): get closest point, not first one
+      -> Fix, Editing, Snap: address issue where snap to point skips some points
+    * dvGrid.m (-drawGrid): every 10th line is drawn thicker
+      -> Grid: every tenth line is drawn thicker for better overview
+    * DocView.m (-dragSelect:): make sure we are dealing with Path-Objects before taking the distance
+      -> Fix, Drag-Select: avoid logs for Text Graphics
+    * DocView.m (-drawRect:): centerScanRect removed, as it does harm instead of help
+                              instead we round the rectangle to sit on full point coordinates
+      -> Fix, Redraw: redraw after zoom will not move cache window (especially grid) around
+
+2012-02-13 Ilonka Fleischmann
+	* ICUTImport.m (-getGraphicFromData:): in ops.lineto also ops.cutcontour like ops.corner
+	  ICUTImport.m (-getGraphicFromData:): letzten else Zweige: state.path = 0 sonst schleife
+	  -> ICUT Import: some fixes
+
+2012-02-13 Georg Fleischmann
+    * DocView.m (-setList:): keep order, when separating color to layers
+      -> Fix, Import: keep order of imported elements when separation of "Color to Layers" is active
+
+2012-02-28 Georg Fleischmann
+    * VText.m (-setAngle:): prevent rotAngle >= 360
+      -> Fix, Text angle: these would be displayed as 360 in inspector, which is wrong
+    * VText.m (-drawWithPrincipal:): setFrame of drawText twice to make mirrored text visible on Apple
+      -> Fix, Text, Apple: workaround added to make mirrored text visible
+    * vhfCommonFunctions.m, h (vhfModulo()): new
+      IPText.m, IPRectangle.m (-update:): display modulo of rotAngle
+      IPText.m, IPRectangle.m, IPLine.m (-setAngle:): set modulo of angle
+      IPArc.m (-setBegAngle:): allow entering negative angle
+      IPLine.m (-setAngle:): set angle in steps of 1.0/5.0 degree (not 0.1/1.0)
+      -> Fix, Inspector: improve setting of angles
+    * functions.h (CenonUnit): UNIT_NONE = -1 added, this fixes a 64 bit issue with -1 turning into unsigned int
+
+2012-02-29 Ilonka Fleischmann
+	* SplitGraphicsChange.m,h (-noteList:, -redoChange, -undoChange, -init, -dealloc): add splitList
+	  SplitGraphicsChange.m (-redoChange): [graphicView removeGraphic: instead of [layer removeObject:
+	  JoinGraphicsChange.m (-notePathBefore:): keine copy
+	  JoinGraphicsChange.m (-undoDetails:, -redoDetails:, -correctDirectionOfGraphic:, -correctDirectionOfPath): correct directions
+	  DocView.m (-joinSelection:message:): new Object (copy) for obj1
+	  -> Fix Split/Join Undo: now it works fine
+
+2012-02-29 Ilonka Fleischmann
+	* ICUTImport.m (-getGraphicFromData:): vorletzter else Zweig: KEIN state.path = 0 sonst werden es keine Pfade
+	  -> ICUT Import: one fix
+
+2012-02-28 Georg Fleischmann
+    * propertyList.m: %.9g -> %.12g
+      -> save with higher precision
+    * VPolyLine.m (-propertyList): allways save fillColor, for it's just tooo screwed up.
+      save compared to Black instead of color, but comparison was just with "!=", not isEqual: and failed too
+      -> Fix, PolyLine: correct color in case stroke is not black and fill is Black,
+         but happens only sometimes because of != comparison of objects
+
+2012-03-06 Georg Fleischmann
+    * VGroup.m (-coordBounds): skip elements with zero size
+    * VText.m (-getFlattenedObjectAt:...): test for [pathG count] before inserting path
+      -> Fix, Flatten Text: avoid empty path in flattened text
+
+2012-03-07 Ilonka Fleischmann
+	* IPLine.xib (German): "Ausschliessen" instead of "exclude";
+      IPLine.xib: connection of lockSwitch added for German, French, Danish
+
+2012-03-08 Georg Fleischmann
+    //* VPath.m (-drawRadialWithPrincipal:): if fillCOlor or endColor == nil, use black
+    //  -> SVG-Import can create fillColor = nil, probably other stuff too
+    * DocView.m (-drawRect:): tried to find redraw performance problem without cache.
+      If cache is off and there are text objects and/or other items, then sometimes,
+      needsDisplay == YES, probably from text drawing.
+      But no matter what, I can't set needsDisplay = NO ! With cache everything works.
+
+2012-03-09 Georg Fleischmann
+    * VPath.m (-setFillColor:, setEndColor:): if col == nil, set to blackColor
+      SVG-Import was creating fillColor = nil, drawRadialWithPrincipal can't handle this
+    * App.m (-applicationDidFinishLaunching:): move User-Library to "Application Support"
+      Localizable.strings (German): 2 new translations for "Cenon User--Library"
+      -> Apple: move Cenon User-Library from old location to new location in "Library/Application Support"
+    * functions.m, h (fillPopup()): flag searchSubFolders added to allow loading of sub-folders
+      App.m, ImportController.m (): calls of fillPopup() changed to support sub-path flag
+
+2012-03-11 Ilonka Fleischmann
+    * InspectorPanel.xib
+      IPCurve.xib, IPSinking.xib: exclude switch added, resized to fit exclude switch
+
+2012-03-12 Georg Fleischmann
+    * Cenon 3.10.0 pre 4
+
+Cenon 3.10.0 pre 4
+
+2012-03-13 Georg Fleischmann
+    * Main.xib (Accessories): openAccessory added
+      App.m (-openDocument:): set open panel accessory view with location switches
+      App.m (-changeOpenLocation:): new
+      -> New: Open-Panel: Buttons to jump to locations of Cenon-Library, Cenon User-Library, and Cenon Documents
+
+2012-03-15 Georg Fleischmann
+    * Cenon 3.10.0 pre 4
+
+Cenon 3.10.0 pre 4
+
+2012-03-21 Georg Fleischmann
+    * DocWindow.m (-close:) end editing of text
+      -> Fix, Revert to saved: also works when called while editing text
+
+2012-04-05 Ilonka Fleischmann
+	* VLine (-initFromPropertyList:inDirectory:): [self setParameter] added
+	  -> Fix, Snap: Snap on Lines work after opening document
+
+2012-04-09 Georg Fleischmann
+    * dvGrid.m (-drawGrid): bigGridSpacing with resolution
+      -> Fix 3.10, Grid: fit grid for other than point resolution
+
+2012-04-12 Georg+Ilonka Fleischmann
+	* DocView.m (-redrawObject:): centerScanRect on rect_draw_apple to have it in destination of copy
+                (-drawRect:): mit centerScanRect ist es viel besser ! (nur 125% tun noch nicht)
+      -> Fix, Move and Move Vertex: better re-drawing without dirt
+
+2012-04-13 Ilonka Fleischmann
+	//* DocView.m (-moveObject:): scroll_rect = NSInsetRect(rect_scroll , rect_scroll.size.width * val , rect_scroll.size.height * val);
+    //  alternative solution, less good
+	* DocView.m (-moveObject:): scroll_rect = pt +- min rect_vis.size / 5.0;
+	  -> Scrollen fix: Scrollen geht jetzt viel besser
+
+2012-04-23 German Arias
+    * App.m (-applicationDidFinishLaunching:): open a new document to reach a menu in window
+      In this way Cenon can be used on Gnome, KDE, ... or even on Windows.
+      -> Fix, GnuStep: menu in window support for KDE, Gnome, Windows
+
+2012-04-23 Ilonka Fleischmann
+	* VGroup.m (-coordBounds): skip elements with zero width and height only
+	  -> Fix, Group: now the bounds are calculated correctly [bug introduced 3.10, 2012-03-06]
+
+2012-04-24 Ilonka Fleischmann
+	* OutputStreamDrawing.m (-drawWithStart…): small curves were displayed as line in -curveToPoint:..
+	  -> Fix, CurveDraw: displayed correctly now with 3.10 [bug introduced 3.10]
+	* VCurve.m (-length): without shortcut SqrDistPoints(p0, p3)
+	  -> Fix, Curve length: more correct now
+	* VCurve.m (-sqrDistanceLine:, -sqrDistanceLine::::) checked for !n1
+	  -> Fix, Curve dragSelect: extreme curves with P0 and P3 in one point work too
+
+2012-04-24 Georg Fleischmann
+    * 3.10.0 -> 4.0.0
+
+2012-05-16 Georg Fleischmann
+    * psImport.prolog: xshow, yshow, xyshow added, show extended to handle displacement
+                       with flatten displacement is handled correctly
+                       example: xshow.eps, yshow.eps, xyshow.eps, xshowLogo.eps
+      -> PS-Import: PostScript Operators for character displacement added (xshow, yshow, xyshow).
+         When keeping texts editable (no flatten text), the displacement will be ignored.
+
+2012-05-21 Georg Fleischmann
+    * SVGImport.m (coordFromString()): new
+      SVGImport.m (-parser:): use coordFromString() for width and height to recognize unit
+      SVGImport.m (-importSVG:): scale only once, either on the fly or after import
+      -> Fix, SVG-Import: import with correct scaling (since 3.10 pre 1)
+
+2012-06-11 - 2012-06-12 Georg Fleischmann
+    * Cenon Manual: Version 4.0, fixes of Kenn added (English),
+      new screenshot of Save-Panel, Project-Info (English)
+      Library paths updated
+      SVG-icon and extension added
+      Vectorizing added, also description of Menu-Entry
+      Cenon-Menu, Windows-Menu, Help-Menu added
+      Display-Menu: Coordinates added
+      all Menu images replaced
+      Grid-Panel updated, Grid image added
+      Update-Panel added
+      Templates: description for date template added
+
+2012-06-13 Georg Fleischmann
+    * Document.m (-printDocument:): for cancel we don't do [op runOperation],
+      for this deletes a file saved from a previous operation !
+      -> Fix, Printing: Cancel in a print-Panel will not delete file saved from previous print
+
+2012-06-12 Ilonka Fleischmann
+	* VPath.m (-pointWithNumBecomeStartPoint:): open paths only start/end points
+	  -> Fix, Set start point: start point of open paths can only be set at start/end [since 3.10]
+	* VPath.m (-optimizePath:): for open paths corrected
+	  VPath.m (-closeGapBetween:and:): fixed for two not horicontal/vertical lines
+	  -> Fix, Join: open paths can be joined correctly
+
+2012-06-17 Georg Fleischmann
+    * GridPanel.m (-update:): "####.###" number format to allow fractions again
+      -> GridPanel: allow fractions of units (ex. 1/10 Inch)
+
+2012-06-18 Georg Fleischmann
+    * DINImport.h: interface variable tz added
+      DINImport.m (-init): tz = YES;
+                  (-loadExcellonApertures:): LZ added
+                  (-getGraphicFromData:): leading zeros (!tz) added for X, Y, R
+      -> DINImport: missing trailing zeros supported
+
+2012-06-22 Georg Fleischmann
+    * vhfCommonFunctions.m, h (vhfFilePathForNamesInPaths()): new
+      vhfCommonFunctions.m, h (vhfBundleLibrary()): new
+
+2012-06-26 Georg Fleischmann
+    * dvGrid.m (-drawGrid, -resetGrid): check for *n for both grids, *1 check moved to *1 grid drawing
+      -> display x10 grid even if x1 grid becomes too small
+
+2012-06-22 Ilonka Fleischmann
+	* App.m (-openFile:): no special treatement for icut
+	  ICUTImport.m, h (-getGraphicFromData:, -setPath:, ...): we generate a list with LayerObjects now
+	  ICUTImportSub.m, h (-layerArrayWithName:, -addLine::toLayer:, …): new
+	  -> New i-cut Import: Shape, and different Layers are possible now
+
+2012-06-29 Ilonka Fleischmann
+	* DocView.m (-reverse:, -pathSetStartPoint:): [[layerList objectAtIndex:l] updateObject:g] added
+	  -> Fix, Change Direction, set Start Point: re-calculate output of graphics object immediately
+
+2012-06-29 Ilonka Fleischmann
+	* App.m (-terminate:): terminate modules if they can
+	  CAMPrincipal.m (-terminate): new - call -quitXyzSubProcess and release CameraController/FlexibleAutomation
+      -> Fix, Quit: terminate modules
+
+2012-07-06 Georg Fleischmann
+    * IntersectionPanel.m (-create:): check isCnt before freeing pts
+      -> Fix, Intersection-Panel: Crash when replacing single Marks
+2012-07-07 Georg Fleischmann
+    * IntersectionPanel.m (-create:): create objects from single point objects (Marc, Thread, Web, Sinking)
+      -> Intersection-Panel: create objects from single point objects
+
+Cenon 4.0.0 pre 5
+
+2012-07-17 Ilonka Fleischmann
+	* VPath.m (-isPointInsideOrOn:dist:, -isPointInsideOrOn:dist:subPath::): pts=NULL initialized
+	  VPath.m (-setDirectionCCW:, -getIntersection:with:, -getIntersectionsAndSplittedObjects::with:): pts=NULL initialized
+	  VPath.m (-intersectionsForPtInside:with:, -intersectionsForPtInside:with::subPath::): pts=NULL initialized
+	  VPath.m (-contour:inlay:removeLoops:): iPts=NULL initialized
+	  VPolyLine.m (-getIntersection:with:): pts=NULL initialized
+	  VPolyLine.m (-parallelObject::::): iPts=NULL initialized
+	  VGroup.m (-getIntersection:with:, -uniteWith:): pts=NULL iPts=NULL initialized
+	  VGroup.m (-clipImage:withPath:scale:): pts=NULL initialized
+	  dvHiddenArea.m (-removePartsOf:hiddenBy:): free(iPts) memory leak closed
+	  -> Fix Calculation: possible Crash
+
+Cenon 4.0.0
+
+2012-08-12 Georg Fleischmann
+    * VGroup.m (-setSize:): use coordBounds for a correct scale
+      -> Fix, set size of group with stroke width fixed
+    * VGroup.m (-setList:): passed array is NSMutableArray
+    * ChangeDetails.m, h (DimensionsChangeDetail): oldWidth, newWidth added
+      -> Fix, Undo: Scale To undos stroke width
+    * DocView.m, h (-scaleCacheWindow:): pass NSSize instead of floats
+      DocView.m (-scaleUnitSquareToSize:, -scaleCacheWindow:): realign at 100% to avoid rounding shit
+      -> Fix, Zoom to 150%: redraw improved at 100%
+
+2012-08-13 Georg Fleischmann
+    * Document.m, h (-scale:): pass scaleSize instead of x and y
+      TileScrollView.h: oldScaleFactor -> VFloat instead of float
+      TileScrollView.m (): all calls to [document scale:...] changed to NSSize, scaleFactor, scale -> VFloat
+      -> Fix, Zoom works on 64 bit without pixel glitches
+
+2012-08-15 Georg Fleischmann
+    * XCode-Project: use 3.2 format
+      XCode 4: Preferences -> Locations -> Advanced -> Locations specified by Target
+
+2012-09-04 Georg Fleischmann
+    * App.m (-takeSnapShot, -restoreSnapshot): prefer Defaults-file over System-Defaults,
+        don't save to System-Defaults any more,
+        close Windows that are not in snap-shot, test for dirty windows before closing
+      -> Snapshots: close documents before opening snapshot
+    * App.h (MENU_INFO, ...): enum instead of #defines, MENU_WINDOWS -> MENU_WINDOW
+
+2012-09-24 Georg Fleischmann
+    * UpdatePanel.m (-checkForUpdateAndDisplayPanel): check prices with installed version (not update version)
+      -> Fix, UpdatePanel: prices were always 0
+    * UpdatePanel.m (-downloadDidFinish:): after download delte tar-files but not flat packages (pkg)
+      -> Fix, UpdatePanel: plain pkg files were deleted before installation
+
+2012-09-13 Ilonka Fleischmann
+	* DXFImport.m (buildArc()): if ( Diff(l, 0.0) < 0.0000001 ) else Division by null
+	  -> Fix, DXF-Import: Vertex Arcs with no length are possible
+	* EPSExport.m (-writeToFile:): bRect.size *= scaleFactor -> keep scaleFactor >= 1.0
+	  -> Fix, EPS-Export: workaround for Mac OS bug to prevent clipping of scaled down graphics
+
+2012-08-14 Ilonka Fleischmann
+	* VPath.m (-subPathInsidePath:): testelement bnds.height > on break, bnds.width<bnds.height
+	  VPath.m (-subPathInsidePath:): tol without sqr, on 100.0*TOLERANCE instead 2.0*, !on break;
+	  VPath.m (-subPathInsidePath:): check lEnd.y to gBnds.size.height instead to curRect, and instead to spRect.size.height to tol
+	* VPath.m (-contourWithPixel:) NSUnarchiver tsu added - no Warning
+
+2012-10-25 Ilonka Fleischmann
+	* VPath.m (-optimizePath:): change position of inserted line after one -closeGapBetween::
+	  -> Fix, Join: optimization bug corrected
+
+2012-11-09 Georg Fleischmann
+    * Intel + PPC SDK = 10.5 (was 10.4)
+      -> Makes Release compilable with XCode 4
+
+2012-11-11 Georg Fleischmann
+    * buildShip.sh: code signing added
+      -> Code-Signing for GateKeeper / Mountain Lion added
+
+2012-11-15 Ilonka Fleischmann
+	* DocView.m (-dragSelect:): check distance for group, not only bounds
+	  -> Fix, Drag-Select: selection of groups improved
+
+next Cenon 4.0.1
+
+2012-12-10 Georg Fleischmann
+    * InspectorPanel.m (-setLevelAt:): alpha enabled for ColorPanel
+      -> Transparency available in Color-Panel
+2012-12-12 Georg Fleischmann
+    * VPath.m (-drawGraduatedWithPrincipal:): alpha added, float -> double
+      -> Fix: alpha for graduate fill added
+      -> FIXME: there is a solid border between graduate steps, which is a rounding issue,
+                and additionally maybe the w = 0.1 in -drawWithPrincipal: => better to use method without stroke
+
+next Cenon 4.0.2
+
+2012-12-30 Georg Fleischmann
+    * Document.xib: key equiv assigned (Cmd- / Cmd+)

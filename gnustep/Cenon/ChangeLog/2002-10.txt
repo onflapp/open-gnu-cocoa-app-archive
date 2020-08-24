@@ -1,0 +1,76 @@
+Cenon Change Log - October 2002
+
+2002-10-05  Georg Fleischmann
+	* IPLayerCell.m, h: new
+	  IPAllLayers.nib, m, h: content added
+
+2002-10-07  Georg Fleischmann
+	* DocView.m (-scaleG:): updateObject in performance map
+	* IPLayerCell.m, h: import from ../ instead of ../../
+
+2002-10-08  Georg Fleischmann
+	* DXFImport.m: recursive INSERTS work now
+	* DPLayer.m, DPLayerDetails.m (-setDipDepth:): use z-size as limit for dipping depth, but allow at least 10 mm
+
+2002-10-09  Georg Fleischmann
+	* VText.m (-setRichTextData:): get attributed string directly without drawText
+	* VText.m (-renewSharedText, initClassVars()): don't set text selectable = NO or editable = NO (new GNUstep bug)
+
+2002-10-10  Georg Fleischmann
+	* App.m (-displayToolPanel:): save frame as "ToolPanel"
+	  App.m (-showTilePanel:): save frame as "TilePanel"
+	  App.m (-runGridPanel:): save frame as "GridPanel"
+	  App.m (-showWorkingAreaPanel:): save frame as WorkingAreaPanel
+
+2002-10-15  Georg Fleischmann
+	* ImportController.m (-update:): set set: as action method
+
+2002-10-17  Georg Fleischmann
+	* VText.m (initClassVars(), -renewSharedText): setEditable:NO, setSelectable:NO removed for GNUstep only
+
+2002-10-18  Georg Fleischmann
+	* vhfCompatibility.h: include <AppKit/psops.h> removed
+
+2002-10-19  Georg Fleischmann
+	* vhfCompatibility.h: include <NSBezierPath.h> to make it loadable from all subdirectories
+	* CAM: include from ../../Cenon folder instead of ../../
+	* InspectorPanel.m (-loadGraphic:): tpWindow = nil
+
+2002-10-25  Georg Fleischmann
+	* Type1Import.h:make fontObject of type Type1Font instead of id
+	* App.m (-listFromFile:): retain/autorelease list to make it survive the release of the import object
+	* PreferencesMacros.h (Prefs_Chamfering): new
+	* CAMController.m, h, nib: chamfering added
+
+2002-10-25  Ilonka Fleischmann
+	* GerberImport.m (-setPad): bei makros state.point.x, y = state.x, y setzen !
+	  GerberImport.m (-getGraphicFromData:): getLayerPolarity -> LPC "gleich" berechnen !
+	* PCBContour.m (-burr:): new
+	  PCBContour.m (-pcbContourWith..:...:): if (..&& ![[ng list] count]) remove and continue
+	* DocView.m (-validateMenuItem:): displayToolDiameter - calcOutput instead of calcOutput:
+	* Graphic.h, m (-sqrDistanceGraphic:::): new needed for PCBContour burr
+	* VArc.m, h (pointOnArcClosestToPoint()): new needed for PCBContour burr
+	  VArc.m (-sqrDistanceGraphic:::): new needed for PCBContour burr
+	  VArc.m (-sqrDistanceLine:::): new needed for PCBContour burr
+	  VArc.m (-sqrDistanceArc:::): new needed for PCBContour burr
+	  VArc.m (-getListOfObjectsSplittedFrom:::): split full arc ohne start bei 0 grad
+	  VArc.m (-getListOfObjectsSplittedFromGraphic:): split full arc ohne start bei 0 grad
+	  VArc.m (-getListOfObjectsSplittedFromGraphic:): sort out double intersection points
+	  VArc.m (-getIntersectionsAndSplittedObjects:::): split full arc ohne start bei 0 grad
+	  VArc.m (-intersectLine:): if (!underTheSqrt) check if inside lBounds !
+	* Line.m (-sqrDistanceGraphic:::): new needed for PCBContour burr
+	  Line.m (-sqrDistanceLine:::): new needed for PCBContour burr
+	* Rectangle.m (-sqrDistanceGraphic:::): new needed for PCBContour burr
+	* HiddenArea.m (-removePartsOf:hiddenBy:): nothing split -> polyline fehlte
+
+2002-10-26  Georg Fleischmann
+	* App.m (-listFromFile:): retain/autorelease optimized
+	* *ImportSub.m, h: free software header added
+	* VHFStringAdditions.m (rangeOfSequence:...): allow missing wildcards in the dictionary of wildcards
+
+2002-10-27  Georg Fleischmann
+	* VText.m (-getFlattenedObjectAt:withOffset:): retain/release psImport to comply to changes
+
+2002-10-28  Georg Fleischmann
+	* VText.m (-font): check for length, instead of just nil
+	* PCBContour.m (-createOutputWithList:...): burrList = nil

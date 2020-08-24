@@ -1,0 +1,569 @@
+{\rtf0\ansi{\fonttbl\f5\fnil Times-Roman;\f1\ftech Symbol;\f0\fswiss Helvetica;\f3\fmodern Courier;\f2\fmodern Ohlfs;}
+\paperw16220
+\paperh18960
+\margl120
+\margr0
+{\colortbl;\red0\green0\blue0;}
+\f5\b0\i0\ulnone\ql\fs24\fi0\li0\gray0\fc0\cf0\up0\dn0 Copyright 
+\f1 ã
+\f5 1992-2004 by vhf interservice GmbH.  All Rights Reserved.\
+\
+
+{\pard\tx3600\tx3980\tx4340\f0\b\fs56\li1500\fc0\cf0{\NeXTHelpMarker70 \markername NS_DEV_DOCFOR:objc_class:ButtonCell;}
+,}\pard\tx3600\tx3980\tx4340\f0\b\i0\ulnone\fs56\li1500\fc0\cf0 DXFExport\
+
+\f5\b0\fs80 \
+
+\pard\tx4220\f0\b\fs28\fi-2720\li4220\fc0\cf0 Inherits From:	
+\f5\b0 Object\
+
+\fs20 \
+
+\f0\b\fs28 Declared In:	
+\f5\b0 DXFExport.h\
+
+\fs20 \
+
+\pard\tx4220\f0\b\fs52\fi-2720\li4220\fc0\cf0 \
+
+\pard\fs36\fi-1020\li1200\fc0\cf0 Class Description\
+
+\fs14\fi0\li1360 \
+
+\pard\tx3600\tx3980\tx4340\f5\b0\fs28\li1500\fc0\cf0 The DXFExport class provides the programmatic interface to export the DXF vector graphics format. The DXF export is usually implemented via a sub class (ex DXFExportSub), which is implementing the methods needed to export the graphics data of a specific application.\
+
+\pard\tx3600\tx3980\tx4340\li1500\fc0\cf0 DXFExport's 
+\b write
+\b0  methods are used to write graphic elements to a data stream. The finished data stream is finally written to disk by using 
+\b saveToFile:
+\b0 . You create a new DXFExport instance by sending the class an 
+\b alloc
+\b0  or 
+\b new
+\b0  method. You initialize an instance received from the alloc class method, by sending it an 
+\b init
+\b0  method.\
+
+\pard\tx2480\tx2860\tx3240\fs14\li2100\fc0\cf0 \
+
+\pard\tx3600\tx3980\tx4340\f3\fs24\li1500\fc1\cf1 \{   DXFExport  *dxfExport = [[DXFExport alloc] init];\
+    NSPoint    p0, p1, point;\
+    NSPoint    center, startPt, endPt;\
+    float      startAngle, endAngle, radius, width;\
+    float      rotAngle = 0.0, italicAngle = 0.0, textHeight;\
+    NSString   *fileName, *string;\
+    NSColor    *color;\
+    int        layerAttribute = 64, closed = 1;\
+\
+    [dxfExport setRes:25.4];\
+    [dxfExport addLayer:@"Layer name" :color :layerAttribute];\
+\
+    [dxfExport setColor:color];\
+\
+    [dxfExport writeArc:center :radius :startAngle :endAngle :width];\
+    [dxfExport writeCircle:center :radius :width];\
+    [dxfExport writeLine:p0 :p1 :width];\
+    [dxfExport writeText:point :textHeight :rotAngle :italicAngle :string :width];\
+\
+    [dxfExport writePolyLineMode:YES :width :closed];\
+    [dxfExport writeLineVertex:point];\
+    [dxfExport writeArcVertex:point :angle :center :radius];\
+    [dxfExport writePolyLineMode:NO :width :closed];\
+\
+    [dxfExport saveToFile:fileName];\
+    [dxfExport release];\
+\}\
+
+\f5\fs14 \
+
+\fs28 The parameters in the example (p0, p1, center, startPt, endPt, angle, radius, fileName) need to be set as needed.\
+
+\fs14 \
+
+\fs28 For an actual example of implementation see the Cenon source codes (http://www.cenon.info). Take a look at the Classes DXFExport, DXFExportSub and Document.
+\f3\fs24 \
+
+\f5\fs14\fc0\cf0 \
+
+\f0\b\fs56 \
+
+\pard\fs36\fi-1020\li1200\fc0\cf0 Method Types\
+
+\fs14\fi0\li1360 \
+
+\pard\tx6080\tx11280\f5\b0\fs28\fi-4840\li6320\fc0\cf0 Creating an DXFExport	
+\fc1\cf1 + alloc
+\fc0\cf0 \
+
+	
+\f1\fc1\cf1 -
+\f5  init
+\fc0\cf0 \
+
+\fs10\fc1\cf1 \
+
+\fs28\fc0\cf0 Export	
+\f1\fc1\cf1 -
+\f5\fc0\cf0  addLayer:::\
+
+\f1 	-
+\f5  
+\fc1\cf1 setCurColor
+\fc0\cf0 :\
+
+\pard\tx6140\tx9660\tx10180\f1\li6140\fc1\cf1 -
+\f5\fc0\cf0  setRes:\
+
+\f1 -
+\f5  
+\fi-4040\fc1\cf1 writeArc
+\fc0\cf0 ::::
+\fi0 :\
+
+\pard\tx9660\tx10180\f1\fi-520\li6640\fc0\cf0 -
+\f5  writeCircle:::\
+
+\pard\tx9660\tx10180\f1\fi-520\li6640\fc0\cf0 -
+\f5  writeLine:::\
+
+\pard\tx9660\tx10180\f1\fi-520\li6640\fc0\cf0 -
+\f5  writePolyLineMode:::\
+
+\pard\tx6140\tx9660\tx10180\f1\li6140\fc0\cf0 -
+\f5  
+\fi-4040\fc1\cf1 writeArc
+\fi0 Vortex
+\fi-4040\fc0\cf0 ::::
+\fi0 \
+
+\pard\tx9660\tx10180\f1\fi-520\li6640\fc0\cf0 -
+\f5  writeLineVertex:\
+
+\pard\tx9660\tx10180\f1\fi-520\li6640\fc0\cf0 -
+\f5  writeText::::::
+\pard\tx9660\tx10180\fi-520\li6640\fc0\cf0 \
+
+\pard\tx6140\tx9660\tx10180\fs10\fi-4040\li6140\fc0\cf0 \
+
+\pard\tx6080\tx11280\fs28\fi-4840\li6320\fc0\cf0 Writing to a file	
+\f1 -
+\f5  saveToFile:\
+
+\pard\f0\b\fs70\li1360\fc0\cf0 \
+
+\fs36\fi-1020\li1200 Instance Methods\
+
+\fs14\fi0\li1360 \
+
+\pard\tx1500\tx8260\f5\fs28\fi-520\li1500\fc0\cf0 init:
+\f0 \
+
+\pard\fs6\fi-380\li2480\fc0\cf0 \
+
+\f5\b0\fs28\fi-620\li2520 - (self)
+\b init
+\b0 \
+
+\pard\tx2480\tx2860\tx3240\fs14\li2100\fc0\cf0 \
+
+\pard\tx3600\tx3980\tx4340\fs28\li1500\fc0\cf0 Initializes a newly created DXFExport object. The object provides an empty data stream, ready to be filled by using the addLayer and write methods.\
+
+\fs14 \
+
+\pard\tx2780\tx3280\tx3760\f0\b\fs24\fi-1300\li2800\fc1\cf1 See also:  -addLayer:::, -setCurColor:, - writeCircle::, - writeCircle::, - writeLine::\
+
+\pard\tx2480\tx2860\tx3240\f5\fs14\li2100\fc0\cf0 \
+
+\pard\tx6080\tx11280\f0\fs52\fi-4840\li6320\fc1\cf1 \
+
+\pard\tx1500\tx8260\f5\fs28\fi-520\li1500\fc0\cf0 addLayer:::
+\f0 \
+
+\pard\fs6\fi-380\li2480\fc0\cf0 \
+
+\f5\b0\fs28\fi-620\li2520 - (void)
+\b\fc1\cf1 addLayer
+\b0 :(NSString*)
+\i name
+\i0  :(NSColor*)
+\i color
+\i0  :(int)
+\i attributes
+\i0\fc0\cf0 \
+
+\pard\tx2480\tx2860\tx3240\fs14\li2100\fc0\cf0 \
+
+\pard\tx3600\tx3980\tx4340\fs28\li1500\fc0\cf0 Adds a new layer to the DXF data with the name 
+\i name
+\i0 , the color 
+\i color
+\i0  and the layer attributes in 
+\i attributes
+\i0 .\
+
+The layer attributes are the DXF ones composited from bits:\
+
+	1	not editable\
+
+	5	not editable and not visible (4 + 1)\
+
+	64	default\
+
+\fs14 \
+
+\pard\tx6080\tx11280\f0\b\fs52\fi-4840\li6320\fc1\cf1 \
+
+\pard\tx1500\tx8260\f5\fs28\fi-520\li1500\fc0\cf0 setCurColor:
+\f0 \
+
+\pard\fs6\fi-380\li2480\fc0\cf0 \
+
+\f5\b0\fs28\fi-760\li3240 - (void)
+\b\fc1\cf1 setCurColor
+\b0 :(NSColor*)
+\i color
+\i0\fc0\cf0 \
+
+\pard\tx2480\tx2860\tx3240\fs14\li2100\fc0\cf0 \
+
+\pard\tx3600\tx3980\tx4340\fs28\li1500\fc0\cf0 Sets the current color in the outpur stream to 
+\i color
+\i0 .\
+
+\fs14 \
+
+\pard\tx6080\tx11280\f0\b\fs52\fi-4840\li6320\fc1\cf1 \
+
+\pard\tx1500\tx8260\f5\fs28\fi-520\li1500\fc0\cf0 setRes:
+\f0 \
+
+\pard\fs6\fi-380\li2480\fc0\cf0 \
+
+\f5\b0\fs28\fi-620\li2520 - (void)
+\b\fc1\cf1 setRes
+\b0 :(float)
+\i res
+\i0\fc0\cf0 \
+
+\fs14 \
+
+\pard\tx3600\tx3980\tx4340\fs28\li1500\fc0\cf0 Sets the resolution of the written data to 
+\i res
+\i0 . The resolution is given in the unit dots per inch. Default is 25.4.\
+
+All internal unit measurement is defined by the Macro INCH which defaults to 72.0 (1/72 inch).\
+
+\fs14 \
+
+\pard\tx6080\tx11280\f0\b\fs52\fi-4840\li6320\fc1\cf1 \
+
+\pard\tx1500\tx8260\f5\fs28\fi-520\li1500\fc0\cf0 writeArc::::
+\f0 \
+
+\pard\fs6\fi-380\li2480\fc0\cf0 \
+
+\f5\b0\fs28\fi-620\li2520 - (void)
+\b writeArc:
+\b0 (NSPoint)
+\i center
+\i0  :(float)radius 
+\b :
+\b0 (float)
+\i startAngle 
+\b\i0 :
+\b0 (float)
+\i endAngle 
+\b\i0 :
+\b0 (float)
+\i width
+\i0 \
+
+\fs14 \
+
+\pard\tx3600\tx3980\tx4340\fs28\li1500\fc0\cf0 Adds a single arc to the DXF data stream. The arc is defined with its 
+\i center
+\i0 , 
+\i radius
+\i0 , the start angle 
+\i startAngle
+\i0 , the end angle 
+\i endAngle
+\i0  and it's 
+\i width.
+\i0  All angles are measured in mathematic positive sense (ccw).\
+
+\fs14 \
+
+\pard\tx2780\tx3280\tx3760\f0\b\fs24\fi-1300\li2800\fc1\cf1 See also:  
+\f1\b0\fs28 -
+\f0\b\fs24  writeCircle:::, 
+\f1\b0\fs28 -
+\f0\b\fs24  writeLine:::\
+
+\pard\tx2480\tx2860\tx3240\f5\fs14\li2100\fc0\cf0 \
+
+\pard\tx6080\tx11280\f0\fs52\fi-4840\li6320\fc1\cf1 \
+
+{\pard\tx1500\tx8260\fs28\fi-520\li1500\fc0\cf0{\NeXTHelpMarker3601 \markername NS_DEV_DOCFOR:objc_method:[ButtonCell-altIcon];}
+,}{\pard\tx1500\tx8260\f0\b\i0\ulnone\fs28\fi-520\li1500\fc0\cf0{\NeXTHelpMarker3602 \markername NS_DEV_DOCFOR:objc_method:[ButtonCell-altImage];}
+,}{\pard\tx1500\tx8260\f0\b\i0\ulnone\fs28\fi-520\li1500\fc0\cf0{\NeXTHelpMarker3603 \markername NS_DEV_DOCFOR:objc_method:[ButtonCell-setIconPosition:];}
+,}\pard\tx1500\tx8260\f0\b\i0\ulnone\fs28\fi-520\li1500\fc0\cf0 writeCircle:::\
+
+\pard\fs6\fi-380\li2480\fc0\cf0 \
+
+\f1\b0\fs28\fi-620\li2520 -
+\f5  
+\b writeCircle:
+\b0 (NSPoint)
+\i center
+\i0  
+\b :
+\b0 (float)
+\i radius
+\i0  :(float)
+\i width\
+
+\i0\fs14 \
+
+\pard\tx3600\tx3980\tx4340\fs28\li1500\fc0\cf0 Adds a circle to the DXF data stream. The circle is defined with its 
+\i center
+\i0 ,
+\i  radius 
+\i0 and
+\i  width.
+\i0 \
+
+\fs14 \
+
+\pard\tx2780\tx3280\tx3760\f0\b\fs24\fi-1300\li2800\fc1\cf1 See also:  
+\f1\b0\fs28 -
+\f0\b\fs24  writeArc:::::, 
+\f1\b0\fs28 -
+\f0\b\fs24  writeLine:::\
+
+\pard\tx2480\tx2860\tx3240\f5\b0\fs14\li2100\fc0\cf0 \
+
+\pard\tx6080\tx11280\f0\b\fs52\fi-4840\li6320\fc0\cf0 \
+
+\pard\tx1500\tx8260\f5\fs28\fi-520\li1500\fc0\cf0 writeLine::
+\f0 \
+
+\pard\fs6\fi-380\li2480\fc0\cf0 \
+
+\f5\b0\fs28\fi-620\li2520 - (void)
+\b writeLine:
+\b0 (NSPoint)
+\i startPt
+\i0  
+\b :
+\b0 (NSPoint)
+\i endPt
+\i0\fc1\cf1  :(float)
+\i\fc0\cf0 width
+\i0 \
+
+\fs14 \
+
+\pard\tx3600\tx3980\tx4340\fs28\li1500\fc0\cf0 Adds a single line to the DXF data stream. The line is defined by a start point 
+\i startPt
+\i0  and an end point 
+\i endPt
+\i0  and its 
+\i width
+\i0 .\
+
+\fs14 \
+
+\pard\tx2780\tx3280\tx3760\f0\b\fs24\fi-1300\li2800\fc1\cf1 See also:  
+\f1\b0\fs28 -
+\f0\b\fs24  writeArc:::::, 
+\f1\b0\fs28 -
+\f0\b\fs24  writeCircle:::\
+
+\pard\tx2480\tx2860\tx3240\f5\fs14\li2100\fc0\cf0 \
+
+\pard\tx6080\tx11280\f0\fs52\fi-4840\li6320\fc0\cf0 \
+
+\pard\tx1500\tx8260\f5\fs28\fi-520\li1500\fc0\cf0 writePolyLineMode:::
+\f0 \
+
+\pard\fs6\fi-380\li2480\fc0\cf0 \
+
+\f5\b0\fs28\fi-620\li2520 - (void)
+\b writePolyLineMode:
+\b0 (BOOL)
+\i mode
+\i0  
+\b :
+\b0 (float)
+\i width
+\i0\fc1\cf1  :(int)
+\i\fc0\cf0 closed
+\i0 \
+
+\fs14 \
+
+\pard\tx3600\tx3980\tx4340\fs28\li1500\fc0\cf0 Adds a poly line to the DXF data stream. A polyline line is started by a call of this method with 
+\i mode
+\i0  = YES. The poly line uses 
+\i width
+\i0  as it's width and will be closed and filled if 
+\i closed
+\i0  = 1, otherwise 0;\
+
+Following this call any number of the methods writePolyLineVertex, writeArcVertex, or writeLineVertex can follow.\
+After the polygon is completed, call this method again with 
+\i mode
+\i0  = NO, which will finish the output of the poly line.\
+
+\pard\tx2480\tx2860\tx3240\fs14\li2100\fc0\cf0 \
+
+\pard\tx2780\tx3280\tx3760\f0\b\fs24\fi-1300\li2800\fc1\cf1 See also:  
+\f1\b0\fs28 -
+\f0\b\fs24  writeArcVertex:, 
+\f1\b0\fs28 -
+\f0\b\fs24  writeLineVertex:\
+
+\pard\tx2480\tx2860\tx3240\f5\fs14\li2100\fc0\cf0 \
+
+\pard\tx6080\tx11280\f0\fs52\fi-4840\li6320\fc0\cf0 \
+
+\pard\tx1500\tx8260\f5\fs28\fi-520\li1500\fc0\cf0 writeArcVertex:
+\f0 \
+
+\pard\fs6\fi-380\li2480\fc0\cf0 \
+
+\f5\b0\fs28\fi-620\li2520 - (void)
+\b writeArcVertex:
+\b0 (NSPoint)
+\i endPoint
+\i0  :(float)
+\i angle
+\i0  :(NSPoint)
+\i center
+\i0  :(float)
+\i radius
+\i0 \
+
+\fs14 \
+
+\pard\tx3600\tx3980\tx4340\fs28\li1500\fc0\cf0 Appends an arc segment to a polygon. The arc segment is defined by its end point 
+\i endPoint
+\i0 , the 
+\i angle
+\i0 , 
+\i center
+\i0 , and 
+\i radius
+\i0 .\
+
+\fs14 \
+
+\pard\tx2780\tx3280\tx3760\f0\b\fs24\fi-1300\li2800\fc1\cf1 See also:  
+\f1\b0\fs28 -
+\f0\b\fs24  writeArcVertex:, 
+\f1\b0\fs28 -
+\f0\b\fs24  writeLineVertex:, 
+\f1\b0\fs28 -
+\f0\b\fs24  writePolyLineMode:::\
+
+\pard\tx2480\tx2860\tx3240\f5\fs14\li2100\fc0\cf0 \
+
+\pard\tx6080\tx11280\f0\fs52\fi-4840\li6320\fc0\cf0 \
+
+\pard\tx1500\tx8260\f5\fs28\fi-520\li1500\fc0\cf0 writeLineVertex:
+\f0 \
+
+\pard\fs6\fi-380\li2480\fc0\cf0 \
+
+\f5\b0\fs28\fi-620\li2520 - (void)
+\b writeLineVertex:
+\b0 (NSPoint)
+\i point
+\i0 \
+
+\fs14 \
+
+\pard\tx3600\tx3980\tx4340\fs28\li1500\fc0\cf0 Appends a line segment to a polygon. The line segment is defined by its point 
+\i point
+\i0 .\
+
+\fs14 \
+
+\pard\tx2780\tx3280\tx3760\f0\b\fs24\fi-1300\li2800\fc1\cf1 See also:  
+\f1\b0\fs28 -
+\f0\b\fs24  writeArcVertex:, 
+\f1\b0\fs28 -
+\f0\b\fs24  writeLineVertex:, 
+\f1\b0\fs28 -
+\f0\b\fs24  writePolyLineMode:::\
+
+\pard\tx2480\tx2860\tx3240\f5\fs14\li2100\fc0\cf0 \
+
+\pard\tx6080\tx11280\f0\fs52\fi-4840\li6320\fc0\cf0 \
+
+\pard\tx1500\tx8260\f5\fs28\fi-520\li1500\fc0\cf0 writeText::::::
+\f0 \
+
+\pard\fs6\fi-380\li2480\fc0\cf0 \
+
+\f5\b0\fs28\fi-620\li2520 - (void)
+\b writeText:
+\b0 (NSPoint)
+\i origin
+\i0  
+\b :
+\b0 (float)
+\i height
+\i0\fc1\cf1  :(float)
+\i\fc0\cf0 angle :(float)iAngle :(NSString*)string :(float)width
+\i0 \
+
+\fs14 \
+
+\pard\tx3600\tx3980\tx4340\fs28\li1500\fc0\cf0 Adds a text to the DXF data stream. The text is defined by it's origin 
+\i origin
+\i0 , the text height 
+\i height
+\i0 , the rotation angle 
+\i angle
+\i0  (in degree of arc), the italic angle 
+\i iAngle (degree)
+\i0 , the text 
+\i string
+\i0 , and finally the text width 
+\i width
+\i0 .\
+
+\fs14 \
+
+\pard\tx2780\tx3280\tx3760\f0\b\fs24\fi-1300\li2800\fc1\cf1 See also:  
+\f1\b0\fs28 -
+\f0\b\fs24  writeArc:::::, 
+\f1\b0\fs28 -
+\f0\b\fs24  writeCircle:::\
+
+\pard\tx2480\tx2860\tx3240\f5\fs14\li2100\fc0\cf0 \
+
+\pard\tx6080\tx11280\f0\fs52\fi-4840\li6320\fc0\cf0 \
+
+\pard\tx1500\tx8260\f5\fs28\fi-520\li1500\fc0\cf0 saveToFile:
+\f0 \
+
+\pard\fs6\fi-380\li2480\fc0\cf0 \
+
+\f5\b0\fs28\fi-620\li2520 - (void)
+\b saveToFile:
+\b0 (NSString*)
+\i filename
+\i0 \
+
+\fs14 \
+
+\pard\tx3600\tx3980\tx4340\fs28\li1500\fc0\cf0 Writes the data stream to a DXF file to the directory and name given in 
+\i fileName
+\i0 .\
+
+\fs14 \
+
+}

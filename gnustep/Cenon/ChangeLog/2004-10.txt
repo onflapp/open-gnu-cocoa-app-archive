@@ -1,0 +1,48 @@
+Cenon Change Log - Oktober 2004
+
+2004-10-05  Georg Fleischmann
+	* VImage.m (-writesFiles:, -saveToCMYKTiff:):
+	  for GNUstep set compression type to none, if LZW
+	* VImage.m (-writesFiles:):
+	  code added for other file types (disabled)
+	* IPImage.nib: file type popup and compression in separate lines
+	* VImage.h (VImageFileType): new
+	  VImage.m (fileTypeFromVImageType(), propertiesForFileType()): new
+	  VImage.m (tiffCompressionFromVImageType(), fileTypeForTIFFCompression()): new
+	  VImage.m (fileExtensionFromFileType()): new
+
+2004-10-06  Georg Fleischmann
+	* IPImage.nib: VIMageFileType verwendet !
+	  IPImage.m (-init): disable unsupported file types
+	  VImage.m (-propertyList): write "fileType", write compression for JPEG only
+	  VImage.m, h (compressionType, setCompressionType:): VImageFileType instead of int
+	  VImage.m (-initFromPropertyList:): convert "compressionType" to fileType, load fileType
+	  VImage.m (-saveToCMYKTIFF:): convert fileType to tiffCompression
+	  VImage.m (-setParameter): init with fileType = LZW and compression = 0.1
+	  VImage.m (+isAcceptedFileType): new
+	  VIMage.m: compressionType -> fileType, calls in IPImage changed too
+	  VIMage.m: version set to 4
+	* Contour.nib: connection directly to cell !
+	  apContour.m: contourField floatValue again
+
+2004-10-07  Georg Fleischmann
+	* InspectorPanel.nib: set maximum height to height
+	* DocWin.m, h (-coordBoxSize): new
+
+2004-10-10  Georg Fleischmann
+	* VImage.m (-drawWithPrincipal:): gsave/grestore around printing for GNUstep
+
+Cenon 3.64
+
+2004-10-14  Georg Fleischmann
+	* gnumake.postamble: setting of mode to Cenon.* instead Cenon.app
+	                     removed for next version
+	  GNUstep source package: CenonInfo.plist added - arg!
+
+Cenon 3.64 (GNUstep source package)
+
+
+2004-10-31  Georg Fleischmann
+	* VMark.m (-sqrDistanceGraphic:): started, line is implemented
+	  This fixes the drag selection of Marks within Groups - no console warnings any more.
+	* vhf2DFunctions.m, h (vhfSqrDistancePointLine()): new

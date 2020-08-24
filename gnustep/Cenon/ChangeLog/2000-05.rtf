@@ -1,0 +1,131 @@
+{\rtf0\ansi{\fonttbl\f0\fmodern Courier;}
+\pard\tx1440\tx5400\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li5400\fi-5400\ql\qnatural
+
+\f0\b\fs24 \cf0 Changes in May 2000\
+
+\b0 \
+23.05.00	Cenon\
+\
+Datum	Datei	VerÙndert\
+----------------------------------------------------------------------------------------------\
+01.05.00	Editor2DView.m	-selectAll:, -deselectAll:, -selectEqual:, selectColor:, -dragSelect: -> calls cache:\
+		-mouseDown -> if(!shift && !gotHit)... calls deselectAll\
+		-Path, -Group -> -drawKnobs: -> new\
+02.05.00	Editor2DView.m	-showControl: -> new\
+		calls drawControl instead of showFasKnobFills:\
+		controls are outside of cache again\
+	TextGraphic.m	-boundsWithKnobs: -> knobSize / 1.5 instead of 2.0\
+	Graphic.m, h	+scaledMaxKnobSize -> new\
+	GraphicObjects	scaledMaxKnobSize used instead of controlPointSize\
+		-putControlUPath, -putControlLineUPath removed\
+	Editor2DView.m	-moveObject, redrawObject -> not for locked objects\
+	DPToolParms.m	setStepwiseZ: -> values rounded\
+	IPText.m	-setLineHeight:, -setFontSize: -> step: 0.1 (was 0.5)\
+	e2undo.m	-movePoint:to:x:y:all: -> set dirty\
+	e2PasteBoard.m	-pasteFromPasteboard... -> set dirty\
+\
+
+\b 3.20 Beta 40\
+
+\b0 \
+03.05.00	Curve.m	boundsOfCurve() -> size at least 0.1 to avoid problems in NSUnionRect\
+	Editor2DWindow.nib	absRelButton, setAbsRel -> removed\
+	TileScrollView.m	-tile -> if( !box ) return; because of Linux\
+04.05.00	*.m	-encode..., -initWithCoder... -> structures with name\
+	PositionObject.m, h	-encodeWithCoder, -initWithCoder -> removed\
+05.05.00	Graphic.m	-init -> color retained\
+06.05.00	Editor2DView.m	-validateMenuItem: -> [document validate...] removed\
+		-acceptsFirstResponder -> new\
+		-mouseMoved: -> activated (don't work on OpenStep)\
+	Editor2DWindow.m	-coordTimerFired -> display only if mouse has moved\
+	Editor2DDocument.nib	zoom-Popup calls changeScale:\
+07.05.00	Curve.m	-drawWithWidth:, -drawAtAngle: -> use PScurveto... instead of doUserPath\
+	Editor2DDocument.m	-setWindowSize, -sizeWindow: -> disabled\
+		scale::withCenter: -> clean up\
+08.05.00	IPLine.m	-update -> optimized\
+	PreferencesPanel.m, h\
+	TransformPanel.m, h	defaultTite removed\
+	PreferencesPanelTab.nib	new for GNUstep and Mac-OS X\
+	DataPanel.m, h	defaultTitle, -setTitle removed\
+09.05.00	DataPanel.m	clean up\
+	DataPanelTab.nib	new for GNUstep and Mac-OS X\
+	App.m	-sendEvent: -> control panel stuff removed\
+	DPControl.m	-keyDown: -> added, but disabled\
+	DataPanel.m	-sendEvent: -> added, but disabled\
+		-levelIndex -> removed\
+	DPControl.nib	Keyboard equivalents set for arrow buttons\
+	Xyz.m	-executeVector -> case 2: steps -> modified check for limit if( !step || (state.dip...\
+	DataPanel.m, h\
+	PreferencesPanel.m, h	dataView -> removed\
+10.05.00	DPLayer.m	-setLayerList: -> select cell 0 before renewing rows\
+11.05.00	LayerCell.m	-drawnteriorWithFrame:inView: -> lockFocus\
+	MoveMatrixMoveMatrix.m, h	-calcCellSize -> new\
+	DPLayer.m	-setLayerList: -> [moveMatrix calcCellSize] added\
+12.05.00	PPMisc.nib	tidied up\
+\
+
+\b 3.20 Beta 41\
+\
+
+\b0 15.05.00	DPMagazine.m	-setMagazineAt: -> calcCellSize added\
+	TransformPanel.m	-init setTarget:, setAction:\
+	TransformPanel.nib	actions for popup items removed, for popupButton added\
+16.05.00	Editor2DWindow.m	-setUnit: -> calls indexOfSelectedItem instead of selectedRow\
+		-setDocument: -> -setTarget:, -setAction: for unitPopup\
+	Editor2DDocument.nib	actions for popup item removed, for unitPopup added\
+	TileScrollView.m	-changeScale: -> call selectedItem instead of selectedCell\
+		-setDocument: -> set action and target\
+	DataPanel.m\
+	InspectorPanel.m	-canBecomeKeyWindow -> new for Linux\
+	PreferencesPanel.nib\
+	InspectorPanel.nib	no longer resizeable\
+	MoveMatrix.m	-calcCellSize -> use frame of superview\
+17.05.00	DPMagazine.m	-setMagazineAt: -> while(..) remove.. disabled, select 0 like in DPLayer\
+		-currentMagazine -> indexOfSelectedItem instead of title thing\
+		-removeIndex: -> object was released two times\
+	ToolCell.m	-drawInteriorWithFrame -> lockFocus, string drawing without PostScript like in LayerCell\
+	DPLayer.m\
+	DPMagazine.m	-init -> [self setDelegate:self] removed\
+	DataPanel.m, h	setSubLevel -> new\
+		windowAt: -> subLevel contentViews with extra retain\
+	DataPanel.nib\
+	DP*.nib	resized to tabView-Size = 464 x 216\
+18.05.00	Curve.m	-hit: -> use line intersection instead of PSW function\
+	GraphicViewWraps.psw	everything disabled except PSWHitXYInPath\
+	TextGraphic.m, h	-incrementSerialNumberBy: -> new\
+		-setSerialTextFor:... -> ability to set data added\
+	e2Tile.m	-buildTileCopies: -> increment serial number\
+19.05.00	Arc.m	-getFlattenedObject -> all double, a directly DegToRad\
+	Editor2DView.m	-initWithCoder:, encodeWithCoder: -> \{ff\} -> \{NSPoint=ff\}\
+		+initialize -> version = 5\
+	Editor2DDocument.m	-save -> handler:nil instead of [self class]\
+	vhfDPSFunctions.m, h	vhfDoUserPath -> removed\
+		doUserPath for Linux added\
+20.05.00	TileScrollView.m	+frameSizeForContentSize, +contentSizeForFrameSize disabled, because it makes things worse\
+	InspectorPanel.nib\
+	IP*.nib	öberarbeitet\
+22.05.00	Rectangle.m	-mirrorAround: -> new\
+23.05.00	e2HiddenArea.m	-removePartsOf: -> checked for filled Rectangle\
+	Arc.m\
+	Curve.m\
+	Line.m	getIntersections:with: -> Rectangle added\
+	Rectangle.m	-isPointInside -> new\
+	DataPanel.m	-controlTextDidEndEditing: -> new\
+	DPPositions.m	-setName: -> without removing any item, returns void, check if name really changed\
+		-load -> sort positions\
+	PositionObject.m, h	-compare: -> new\
+	DPLayerDetails.nib\
+	DPLayerLeveling.nib\
+	DPControl.nib\
+	DPPositions.nib\
+	DPToolParms.nib	DataPanel as delegate for NSForms\
+
+\b 3.20 Beta 42\
+
+\b0 \
+23.05.00	Editor2DView.m	-dragSelect -> region width/height >= 1.0\
+	Rectangle.m	-drawWithWidth: -> PSrectstroke size >= 1.0\
+\
+
+\b next 3.20 Beta 42\
+}

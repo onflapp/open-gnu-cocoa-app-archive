@@ -1,0 +1,134 @@
+{
+    Author = "Georg Fleischmann"; 
+    Comment = ""; 
+    Copyright = "1993, Free"; 
+    CreationDate = "2003-03-28 00:45"; 
+    Creator = Cenon; 
+    Data = {
+        gridSpacing = 0; 
+        gridUnit = 0; 
+        layerList = (
+            {
+                Class = LayerObject; 
+                approachAngle = 0; 
+                dippingDepth = 0; 
+                editable = YES; 
+                fillDirection = 0; 
+                fillOverlap = 0.25; 
+                flatness = 0.15; 
+                levelingLimits = "2 2"; 
+                likeOtherLayers = YES; 
+                list = (
+                    {
+                        Class = VPath; 
+                        ccw = 1; 
+                        color = {A = 1; B = 0; G = 0; R = 1; s = CalRGB; }; 
+                        endColor = {A = 1; B = 0; G = 0; R = 0.518797; s = CalRGB; }; 
+                        fillColor = {A = 1; B = 0; G = 0.075188; R = 1; s = CalRGB; }; 
+                        filled = 2; 
+                        graduateAngle = 0; 
+                        list = (
+                            {
+                                Class = VCurve; 
+                                color = {A = 1; B = 0; G = 0; R = 1; s = CalRGB; }; 
+                                p0 = "133.849487 33.799469"; 
+                                p1 = "267.197998 106.25"; 
+                                p2 = "207.17395 244.5"; 
+                                p3 = "133.849487 156.299988"; 
+                                width = 1; 
+                            }, 
+                            {
+                                Class = VCurve; 
+                                color = {A = 1; B = 0; G = 0; R = 1; s = CalRGB; }; 
+                                p0 = "133.849487 156.299988"; 
+                                p1 = "60.524475 244.5"; 
+                                p2 = "0.5 106.25"; 
+                                p3 = "133.849487 33.799469"; 
+                                width = 1; 
+                            }
+                        ); 
+                        radialCenter = "0.5 0.5"; 
+                        stepWidth = 1; 
+                        width = 0; 
+                    }, 
+                    {
+                        Class = VLine; 
+                        color = {A = 1; B = 0.3684; G = 0.3684; R = 1; s = CalRGB; }; 
+                        p0 = "125.092987 156.039978"; 
+                        p1 = "143.093018 138.039978"; 
+                        width = 1; 
+                    }, 
+                    {
+                        Class = VLine; 
+                        color = {A = 1; B = 0.3684; G = 0.3684; R = 1; s = CalRGB; }; 
+                        p0 = "143.093018 156.039978"; 
+                        p1 = "125.092987 138.039978"; 
+                        width = 1; 
+                    }
+                ); 
+                numSteps = 0; 
+                removeLoops = YES; 
+                settle = 0; 
+                side = 2; 
+                state = 1; 
+                step0 = 0; 
+                step1 = 0; 
+                step2 = 0; 
+                string = Heart; 
+                tag = 0; 
+                toolIndex = "-1"; 
+                toolString = ""; 
+                type = 0; 
+                useForTile = YES; 
+                v = 4; 
+            }, 
+            {
+                Class = LayerObject; 
+                approachAngle = 0; 
+                dippingDepth = 0; 
+                fillDirection = 0; 
+                fillOverlap = 0.25; 
+                flatness = 0.15; 
+                levelingLimits = "2 2"; 
+                list = (); 
+                numSteps = 0; 
+                removeLoops = YES; 
+                settle = 0; 
+                side = 2; 
+                state = 1; 
+                step0 = 0; 
+                step1 = 0; 
+                step2 = 0; 
+                string = Clipping; 
+                tag = 0; 
+                toolIndex = "-1"; 
+                toolString = ""; 
+                type = 2; 
+                v = 4; 
+            }
+        ); 
+        origin = {
+            Class = VCrosshairs; 
+            ccw = 1; 
+            color = {A = 1; W = 0; s = CalWhite; }; 
+            origin = "0 0"; 
+            width = 0; 
+        }; 
+        tileDistance = "0 0"; 
+        tileLimits = "0 0"; 
+    }; 
+    DocVersion = 1.0; 
+    MagazineIndex = 0; 
+    PrintInfo = {
+        bottomMargin = 0; 
+        leftMargin = 0; 
+        orientation = 0; 
+        paperName = A4; 
+        paperSize = "595 842"; 
+        rightMargin = 0; 
+        topMargin = 0; 
+    }; 
+    Version = 102; 
+    ViewSize = "0 0 283.464569 255.118103"; 
+    WindowFrame = "166 417 305 339 0 0 1532 1200 "; 
+}

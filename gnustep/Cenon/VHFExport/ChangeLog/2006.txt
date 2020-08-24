@@ -1,0 +1,6 @@
+VHFExport Library Change Log - 2006
+
+
+2006-02-08  Georg Fleischmann
+	* DXFExport.m (-addLayer:): use lossyCString to remove all special
+                                    characters from name

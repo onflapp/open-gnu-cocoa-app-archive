@@ -1,0 +1,297 @@
+Cenon Change Log - 2011
+
+2011-01-01 Cenon 3.9.3
+
+Cenon 3.9.3
+
+2011-01-10  Georg Fleischmann
+    * IPAllLayers.m (-clickLayer:): endEditing of text
+      -> Fix, Text: changing layers in Inspector ends editing of text
+
+2011-02-14  Georg Fleischmann
+    * UpdateController.m, h: isAutoCheck flag added, we don't allow skipping manual update check
+
+2011-02-22  Georg Fleischmann
+    * UpdateController.m (): if uninstalled, show price to buy @""
+                             don't offer update for uninstalled versions
+      -> Fix, Update-Panel: don't offer update to modules which are not installed
+
+2011-02-25  Georg Fleischmann
+    * UpdatePanel.xib: increase version field from 60 to 80, has to hold "3.9.3 / 1.1.6"
+      -> Fix, Update-Panel: version field increased in size to display module version too
+    * UpdateController.m (-checkForUpdateAndDisplayPanel): be tolerant with old-style version numbers
+      -> Fix, Update-Panel: handle old-style two field version numbers like "1.11"
+    * UpdateController.m (-checkForUpdateAndDisplayPanel): all compare: use option:NSNumericSearch
+      -> Fix, Update-Panel: compare "3.10.0" and "3.9.0" correctly
+
+2011-02-25  Georg Fleischmann
+    * MoveMatrix.m (-mouseDown:): disable double click, which actually is a fast single click
+      -> Fix, Layer-Inspector: Fast on/off of a layer doesn't open the Layer-Details Panel any more
+
+2011-02-26  Ilonka Fleischmann
+    * DXFImport.m (-init): initialize group.handle, state.color, blockScanner, rable, vivibleList
+
+2011-02-28 Ilonka Fleischmann
+	* VImage (-drawWithPrincipal:): line: 1295 draw without Cache: rect = NSIntersectionRect(bounds, [principal visibleRect]); allways !
+	-> Fix: Documents can be scaled now also with big images or lots of them
+
+2011-03-03  Georg Fleischmann
+    * VGraphic.m (-size, -setSize:): default implementation added to make dimension undo work for all objects
+    * TPScale.xib: popup added (rel / abs), tool tips added
+      TPScale.m, h: scalePopup
+      DocView.m, h (scaleGTo::): new
+      -> New, TransformPanel: absolute scale
+
+2011-03-06  Georg Fleischmann
+    * App.m (-applicationDidFinishLaunching:): automatically check for updates
+      UpdateController.m (-checkForUpdate:): get installed modules after setting isAutoCheck to avoid printfs
+      UpdateController.m (-checkForUpdateAndDisplayPanel): don't print versions on automatic check,
+      with automatic check don't display Update-Panel, if there is no update available
+      -> New: automatically check for updates if Cenon is started
+    * Main.xib: Menu-Item for "Import ASCII" removed
+      App.m (-importASCII:): disabled
+      App.m (-validateMenuItem:): importASCII: removed
+      -> Import ASCII moved to CAM module
+    * App.m, h (-toolPanel): new (but not used)
+      App.m (-showToolPanel:): post ToolPanelWillDisplay notification
+      ToolPanel.xib: toolThread, toolSinking, toolWeb without image and disabled
+                     toolWeb and toolMark changed position and tag
+      App.h: TOOL2D_WEB -> 6, TOOL2D_MARK -> 13
+      -> Tool Panel: special CAM icons removed
+
+2011-03-08  Georg Fleischmann
+    * ToolPanel.xib: width = 70, tool tips
+
+2011-03-11 Georg Fleischmann
+    * Menu.xib (English, German): Edit-Menu: tool-tips added
+    * UpdateController.m (-checkForUpdate:): add skipVersion "&sk=#.#.#"
+    * VArc.m, VCurve.m, VPath.m (-contour): build contour with stroke with alone, no need for distance
+      -> Fix, Build Contour: works with stroked objects, even with a distance of zero
+
+2011-03-11 Georg Fleischmann
+    * UpdateController.m (-checkForUpdate:): check for update once a week only
+
+2011-03-29 Georg Fleischmann
+    * VPath.m, VPolyLine.m, VRectangle.m (-drawWithPrincipal:): stroke width for filled objects without
+      stroke width is 0.1 now (1 pt was too much)
+      -> Fix, default stroke width (on screen) for filled objects is 1/10 of a point now (was 1 pt)
+
+2011-03-30 Georg Fleischmann
+    * General.xib: switch added to turn off automatic update checks
+      GeneralController.h: SWITCH_DISABLEAUTOUPDATE added
+      GeneralController.m (-update:, -set:): SWITCH_DISABLEAUTOUPDATE added
+      PreferenceMacros.h: Prefs_DisableAutoUpdate added, clean-up
+      UpdateController.m (-checkForUpdates:): test for Prefs_DisableAutoUpdate, include PreferencesMacros.h
+      -> Preferences-Switch to disable automatic check for updates
+    * Document.m, h (exportLock, -exportLock, -setExportLock:): new
+      Document.m (-newFromFile:, -save): load and save exportLock
+      Document.m (-saveAs:): check for exportLock and pop-up Alert
+      messages.h: EXPORTLOCK_STRING added
+      Localized.strings: "This document is not supposed to be exported..." added
+      -> encourage people to value other peoples copyright on their hard work
+
+2011-04-04 Georg Fleischmann
+    * dxfOperators.h: 3DLINE, 3DFACE added
+      DXFImport.h (DXFGroup): group.z0 - z3 coordinates added, ID_Z0 - ID_Z3 added, IDXYZ* disabled
+      DXFImport.m (-getGraphicFromData:): place and TODO-Logs added for 3D-Elements
+      DXFImport.m (-scanGroup:): group.z0 - z3 added
+      DXFImport.m (-get3DLine:, -addLine3D:..., -get3DFace:, -add3DFace:): new
+      DXFImportSub.m (-addLine3D:..., -add3DFace:...): new
+      VLine3D.m, h (+line3DWithPoints:, -setVertices3D:) new
+      -> DXF-Import: import 3D Lines and 3D Face
+    * VCurveFitCurve.m: new
+
+2011-04-05 Georg Fleischmann
+    * GraphicObjects.subproj/VCurveFit.m, h: new
+      DocView.m (-buildContour:): /*for images call [VCurveFit fitGraphic:],*/ include VCurveFit.h
+      -> New, Vectorization of Images creates nice Curves
+    * Contour.xib: default distance = 0, prototype of text-field removed, scale added
+
+2011-04-06 Georg Fleischmann
+    * Main.xib: "Tools -> Vectorize Images..." added
+      Vectorizer.m, h, xib: new
+      App.m, h (-showVectorizer:): added
+      DocView.m, h (-vectorizeWithTolerance:...): new
+      ContourGraphicsChange.m, h (-setRemoveSource:): added
+      -> New: Vectoriing Images. New panel in Tools -> Vectorizer
+    * DocView.m (-buildContour:): really select path [path setSelected:YES] , not just added to slist
+      [change setRemoveSource:] added, fitGraphic: added
+      -> Fix, Build Contour: created graphics will be selected
+
+2011-04-06 Ilonka Fleischmann
+	* PathContour.m (-contourImage:width:): whiteStop added
+	  -> Fix ImageContour: we let a bit tolerance in White
+
+2011-04-06 Ilonka Fleischmann
+    * VPath.m (-pointWithNumBecomeStartPoint:): new
+      VPath.m (-drawWithPrincipal:): call -drawStartAtScale: instead of -drawDirectionAtScale:
+      VGraphic.h.m (-drawStartAtScale:): new, called from VPath drawWithPincipal to draw the start point
+      DocView.h, m (-validateMenuItem:, -pathSetStartPoint:): entsprechend
+      Main.xib: new menu item "Edit -> Set Start" "Y", connected to -pathSetStart:
+      -> New, Set starting point of a selected Path
+              1. select a point of a Path
+              2. chose "Set Start" from the edit menu
+    * VPath.h.m (-removePointWithNum:): [self deselectAll];
+      -> Fix Path Remove Point of Path: no other Point is shown selected after removing
+         (es wird damit so dargestellt wie es stattfindet, anschliessend wird das Objekt geloescht)
+    * VPath.h.m (-join:): getDirection if ![list count] etc.
+      -> so we can force start and Direction of simple complex Paths
+
+2011-04-14 Ilonka Fleischmann
+	* VPath.m (-contour:inlay:splitCurves:): calc with lines if Curve pts inside start/end of curve
+	  -> Contour: more flexible if both curve pts are inside start/end of curve
+
+2011-05-05 Ilonka Fleischmann
+	* VPath.m (-contour:inlay:splitCurves:): calc parallel points always with cut if possible
+	  -> Fix Contour: better outline, less bugs
+
+2011-05-10 Georg Fleischmann
+    * Cenon 3.9.4
+
+2011-05-28 Georg Fleischmann
+    * VGraphics.h (excluded, -sExcluded, -setExcluded:): new
+      VGraphics.m (-isExcluded, -setExcluded:): new, added where needed
+                  in propertyList and encoder, version = 5
+      ChangeDetail.m, h (ExcludeChangeDetail): added
+      ExcludeGraphicsChange.m, h: new
+      LocalizableStringsForGraphicsUndo.h: EXCLUDE_OP added
+      undo.h: ExcludeGraphicsChange.h added
+      Operations.strings: "Exclude/Include" added in all languages
+      GNUMakefile: ExcludeGraphicsChange added
+      English: IPLine.xib, IPText.xib, IPTextPath.xib:
+        excludeSwitch added, connected to -setExclude:
+      -> this can be used to allow inactive elements on a layer that are excluded from processing
+    * Operations.string: French added, "Lock/Unlock" added for Danish and English
+      -> Fix: French Operations added, Danish "Lock/Unlock" added
+
+2011-05-30/31 Georg Fleischmann
+    * NameGraphicsChange.m, h -> LabelGraphicsChange.m, h
+      undo.h: #include "LabelGraphicsChange.h", NameGraphicsChange.h removed
+      ChangeDetail.m, h: LabelChangeDetail added
+      LocalizableStringsForGraphicsUndo.h: NAME_OP -> LABEL_OP
+      IPBasicLevel.m, h: labelField, -setLabel: added
+      IPMark.m, h: use -label, -setLabel methods, instead of special VMark methods
+      GNUMakefile: NameGraphicsChange.m, h -> LabelGraphicsChange.m, h
+    * VImage.m (-setName:): set label from this name, but without extension,
+                            -useStringWithString: to copy into imageFile
+      VImage.m (-initFromPropertyList:): set label from imageFile by removing path extension
+      IPImage.m (-setName:): don't add extension
+    * VTextPath.m (-setLabel:, -label): subclassed to forward to path object
+    * IPMark.m (-setPointZ:): check for zSwitch sender in matrix
+      cell spacing of switch matrix = 0, cell height = 18, y = 8 !
+      IPArc.xib:        excludeSwitch added, switches grouped in matrix
+      IPCrosshairs.xib: lock switch moved to fit other object
+      IPCurve.xib:      excludeSwitch added, switches grouped in matrix, y = 4 here !!!
+      IPGroup.xib:      excludeSwitch added, Label-Field added
+      IPImage.xib:      excludeSwitch added, Tool-Tips for switches (English, German)
+      IPLine.xib:       excludeSwitch added, Label-Field added,
+                        switches grouped in matrix, tool-tips (English, German)
+      IPMark.xib:       excludeSwitch added, label connected to labelField/-setLabel: (not nameField),
+                        tool-tips for switches (English, German)
+      IPPath.xib:       excludeSwitch added, Label-Field added
+      IPPolyLine.xib:   excludeSwitch added, Label-Field added
+      IPRectangle.xib:  excludeSwitch added, Label-Field added
+      IPText.xib:       excludeSwitch added, Label-Field added,
+                        switches grouped in matrix, tool-tips (English, German)
+      IPTextPath.xib:   excludeSwitch added, switches grouped in matrix, tool-tips (English, German)
+      IPSinking.xib:    switch grouped in matrix
+      IPThread.xib:     excludeSwitch added, switches grouped in matrix, Label-Field added
+      IPWeb.xib:        excludeSwitch added, switches grouped in matrix, Label-Field added
+
+2011-05-31 Georg Fleischmann
+    * VText.m (-kernToFitHorizontal): use pointSize of font to determine the lines to make it work
+      -> Fix, Apple: Fit Horizontal improved
+    * Vectorizer.m, xib: allow values from 0 to 20 and divide by 4 to make it finer
+      CurveFit.m (-fitGraphic:): p1 fixed, didn't find any lines and in turn left all lines
+    * VTextPath.m (-respondsTo:, -methodSignatureForSelector:, -forwardInvocation:):
+      added to allow flexible forwarding of methods to path and text from now on.
+
+2011-06-06 Georg Fleischmann
+    * VImage.m (-initFromPropertyList:): retain label
+
+2011-06-08 Georg Fleischmnn
+    * App.m (-loadModules): add CAM.bundle to loadedFiles to avboid duplicate loading
+
+2011-06-30 Georg Fleischmann
+    * IPImage.m (-update:, -setCompressionType:): use label for name to avoid extension
+
+2011-07-05 Georg Fleischmann
+    * App.m (-importPS:): check, if gs is installed
+      messages.h (PSIMPORT_INSTALLGS_STRING): Import, "You need to install GhostScript..." added
+      -> Import PDF/PS: Alert if GhostScript is not installed
+    * *.lproj/Localizable.strings: Import, "DXF File exceeds maximum size!..." fixed
+      -> [3.9.5] Fix, DXF-Import: Size alert was not translated
+    * IPImage.m (-update:): check, if label == nil
+      VImage.m (-setParameter): set label
+      VImage.m (-init): call [super init] first, not last
+      -> Fix, Image-Import: no exception, if label happens to be nil, set label for images dragged into document
+
+2011-07-19 Georg Fleischmann
+    * VImage.m (-setName:): retain to imageFile added
+
+
+2011-08-25 Ilonka Fleischmann
+	* VPath.m (NeedArc(), SmallAngle(), AngleNotSmallEnough()): w >= 0 instead of w > 0
+	  VPath.m (-contour:inlay:splitCurves:): if ( needArc ) >= and <= to so w == 0 also korrekt
+	  VPolyLine.m (-contour:inlay:splitCurves:): (w == 0.0 && width == 0.0) instead of !w
+	  -> Fix Contour: No correction, and object has a width, corrected
+	* VPath.m (-contour:inlay:splitCurves:): work with pathCopy = [[self copy] autorelease]
+	  -> Contour: We lost the close Path - Displaying will destroy (no Tolerance on Apple)
+	* VPath.m (-contour:inlay:splitCurves:): autorelease pool
+	  VPath.m (-intersectionsForPtInside:with: -intersectionsForPtInside:with:subPath:): free(aPts)
+	  VPath.m (-subPathInsidePath::): free(iPts) and spIpts
+	  -> Fix: Memory Leak in Contour Calculation
+	* Type1ImportSub.m (-addStrokeList:toList:): without sortList !!!
+
+2011-08-26 Georg Fleischmann
+    * App.m (-applicationDidFinishLaunching:): Update-Panel only for Apple
+    * Cenon_main.m (main()): "cenon.tiff" -> "Cenon.tiff" (wrong since 2002-07)
+
+2011-09-01 Georg Fleischmann
+    * GNUstep, CenonInfo.plist: NSExecutable, NSMainNibFile, NSPrincipalClass added
+      Copyright added
+      For Cenon file type: NSHumanReadableName added
+      For file types:      NSRole = NSApplication; NSRole = Viewer;
+    * GNUstep, Cenon_main.m: call NSApplicationMain(), standard behaviour now
+    * Apple, VHFStringAdditions.m: +stringWithContentsOfFile: added with flexible loading of string file
+             it's deprecated since Mac OS 10.5 and we want to keep it
+
+2011-09-01 Ilonka Fleischmann
+	* locations.h (SERIAL_EXT): added
+	  VRectangle.h (-setDirectionCCW:): added
+	  IPArc.xib: label fields added
+	  DocView.m,h (-insertLayerWithName:..) to place Layers we need 
+
+2011-09-03 Georg Fleischmann
+    * PSImport.m (-importPS:): let OS find encoding, if it fails try NextSTEP-Encoding and Latin encoding
+      -> Fix, PS-Import: fix import of special characters (Example: Ducks.ai)
+    * Apple, VHFStringAdditions.m: +stringWithContentsOfFile: added more flexible loading,
+      if Apples flexible method fails (ex. NextStep Encoding)
+
+2011-12-02 Ilonka Fleischmann
+	* ICUTImport.m,h: new
+	  App.m (-openFile:): icut format special treatment
+	  App.m (-listFromFile:): icut format added
+	  App.m (-import:, -openDocument:): cut, icut format added
+	  App.m (-initialize:): icut defaults added
+	  locations.h (CUT_EXT): added
+	  Info-Cenon__Application.plist
+	  /Source/Cenon/Icons/typeICut.icns
+2011-12-03 Georg Fleischmann
+      GNUmakefile: ICUTImportSub.m, h added
+      VHFImport/GNUmakefile: ICUTImport.m, h added
+
+2011-12-03 Georg Fleischmann
+    * EPS.icns, PDF.icns, SVG.icns added to Icons folder and Project
+
+2011-12-03 Georg Fleischmann
+    * Fix, PS-Import: 1. try to determine encoding, 2. Latin Encoding, 3. Next Encoding (Example file)
+
+2011-12-06 Ilonka Fleischmann
+	* dvTile.m (-setTileWithLimits:, -buildTileCopies:): sequence from down to up to down to up
+      -> Batch: sort columns more effective, 1. upwards, 2. downwards, 3. upwards, ...
+
+2011-12-07 Ilonka Fleischmann
+	* PreferencesPanel.m,h (-update:): new
+
+next Cenon 3.10.0

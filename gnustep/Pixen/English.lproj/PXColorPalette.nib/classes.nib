@@ -1,0 +1,34 @@
+{
+    IBClasses = (
+        {
+            CLASS = FMOtherWellController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {leftColorWell = id; rightColorWell = id; }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            CLASS = PXColorPaletteController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                canvas = id; 
+                leftMatrixWell = id; 
+                matrix = NSMatrix; 
+                palette = id; 
+                panel = NSPanel; 
+                rightMatrixWell = id; 
+                scrollView = NSScrollView; 
+                switcher = id; 
+            }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {CLASS = PXColorWell; LANGUAGE = ObjC; SUPERCLASS = NSColorWell; }, 
+        {
+            CLASS = PXPaletteSwitcher; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {delegate = id; paletteChooser = id; }; 
+            SUPERCLASS = NSObject; 
+        }
+    ); 
+    IBVersion = 1; 
+}

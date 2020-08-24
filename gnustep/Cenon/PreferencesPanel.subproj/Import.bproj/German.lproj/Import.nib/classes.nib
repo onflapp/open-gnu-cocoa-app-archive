@@ -1,0 +1,23 @@
+{
+    IBClasses = (
+        {CLASS = DragMatrix; LANGUAGE = ObjC; SUPERCLASS = NSMatrix; }, 
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {set = id; }; 
+            CLASS = ImportController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                box = id; 
+                dinPopup = id; 
+                dxfResField = id; 
+                gerberPopup = id; 
+                hpglPopup = id; 
+                psFlattenTextSwitch = id; 
+                psPreferArcsSwitch = id; 
+                switchMatrix = id; 
+            }; 
+            SUPERCLASS = NSObject; 
+        }
+    ); 
+    IBVersion = 1; 
+}

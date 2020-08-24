@@ -1,0 +1,9 @@
+draw.h: Graphic.h Circle.h Rectangle.h Line.h Curve.h Image.h TextGraphic.h Scribble.h Polygon.h Group.h GraphicView.h GridView.h DrawPageLayout.h Inspector.h SyncScrollView.h Ruler.h undo.subproj/undochange.h graphicsUndo.subproj/drawundo.h DrawDocument.h DrawApp.h
+
+ifneq "$(NOT_EXAMPLE)" "YES"
+after_install::
+	-$(CHMOD) -R +w $(DSTROOT)/NextDeveloper/Examples/AppKit/$(NAME)
+	$(RM) -rf $(DSTROOT)/NextDeveloper/Examples/AppKit/$(NAME)
+	$(MAKE) installsrc SRCROOT=$(DSTROOT)/NextDeveloper/Examples/AppKit/$(NAME)
+	-$(CHOWN) -R root.wheel $(DSTROOT)/NextDeveloper/Examples/AppKit/$(NAME)
+endif

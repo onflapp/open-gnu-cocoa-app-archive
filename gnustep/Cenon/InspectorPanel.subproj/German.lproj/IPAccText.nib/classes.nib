@@ -1,0 +1,33 @@
+{
+    IBClasses = (
+        {
+            CLASS = App; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {inspectorPanel = id; }; 
+            SUPERCLASS = NSApplication; 
+        }, 
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {setFontSize = id; setLineHeight = id; }; 
+            CLASS = IPAccText; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                fontButtonLeft = id; 
+                fontButtonRight = id; 
+                fontSizeField = id; 
+                lineButtonLeft = id; 
+                lineButtonRight = id; 
+                lineHeightField = id; 
+            }; 
+            SUPERCLASS = NSPanel; 
+        }, 
+        {
+            CLASS = IPAllAcc; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {accTextWindow = id; }; 
+            SUPERCLASS = NSPanel; 
+        }, 
+        {CLASS = SurfaceWell; LANGUAGE = ObjC; SUPERCLASS = NSColorWell; }
+    ); 
+    IBVersion = 1; 
+}

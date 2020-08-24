@@ -1,0 +1,24 @@
+Cenon Change Log - May 2001
+
+
+2001-05-06  Ilonka Fleischmann
+	* Arc.m,h (-parallelObject:): center calculation if(s == e) return nil if was falsch 
+
+3.40 beta 15a
+
+2001-05-22  Georg Fleischmann
+	* TextGraphic.m (-lineHeight): don't get attributes for NULL string
+	* DocView.m (-importASCII:sort:): if TAB is in string use TAB as skip character, otherwise space
+	  DocView.m (-importASCII:sort:): allow TABs with \t
+
+2001-05-28  Georg Fleischmann
+	* vhf2DFunctions.m, h (vhfContainsRect()): new
+	* vhf2DFunctions.m, h (vhf IntersectsRect()): use rect directly (no pointer)
+	* Curve.m (intersectCurves()): use vhfntersectsRect without pointers. This leaves 0-bounds unmodified!
+	* DXFImportSub.m (setBounds:): remove objects out of bounds
+	* DXFImportSub.m (createLayers:): create single layer, if no layer table was found
+	* Document.m (nmewFromList:): add origin to frame size
+	* Xyz.m (startLeveling:): do not return before we are finished
+
+2001-05-29  Georg Fleischmann
+	* DPToolParms.m (-selectTool:): moveto start position before changing tool

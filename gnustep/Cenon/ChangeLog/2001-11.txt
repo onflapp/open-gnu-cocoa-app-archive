@@ -1,0 +1,204 @@
+Cenon Change Log - November 2001
+
+2001-11-03  Georg Fleischmann
+	* App.m (-saveAsPanel): set popup to cenon too
+	* Document.m (-saveAs:): set file type for font
+	* e2Pasteboard.m (-pasteFromPasteboard:andLink:): keep on grid when moving inside bounds
+	  e2Pasteboard.m (-paste:andLink:): keep inside visible rect for 1st paste
+	* DocView.m (-mouseDown:): if we hit a selected object we leave both loops (l = 0; break;)
+	* DocView.m, h (-deselectLockedLayers:lockedObjects:): new
+	  DocView.m (-moveObject:): deselect locked layers before moving
+	* Path (-drawWithPrincipal:): draw width for filled objects
+
+2001-11-03  Georg Fleischmann
+	* DocView.m, h (setBackgroundColor:): new
+	  DocView.m (draw:): draw background if set
+
+2001-11-08  Ilonka Fleischmann
+	* Graphic.h, m (-sqrDistanceGraphic: -distanceGraphic:) -> new
+  	* Line.m (-getListOfObjectsSplittedFrom:): pointOnLineClosestToPoint() statt mamut-steigungsvergleich
+	  Line.m (-getListOfObjectsSplittedFrom:) cnt = vhfFilterPoints() -> cnt = fehlte !
+  	  Line.m (-getListOfObjectsSplittedFrom:): pool
+  	  Line.m (-getListOfObjectsSplittedFrom:): free(ps) for return nil;
+  	  Line.m (-getIntersections:with:): Rectangle direct ohne pathRepresentation
+  	  Line.m (-sqrDistanceGraphic: -distanceGraphic -sqrDistanceLine:): new
+  	* Curve.m (-sqrDistanceGraphic: -distanceGraphic -sqrDistanceLine:  -sqrDistanceCurve): new
+  	  Curve.m (-getListOfObjectsSplittedFrom:): pool
+  	  Curve.m (-getListOfObjectsSplittedFrom:): free(ps), free(tValues) for return nil;
+  	  Curve.m (-getIntersections:with:): Rectangle direct ohne pathRepresentation
+  	* Group.m (-sqrDistanceGraphic: -distanceGraphic): new
+  	  Group.m (-uniteWith:): removing identical graphics in [ng list] faster
+  	  Group.m (-uniteWith:): -removeSingleGraphicsInList: mit rect
+  	  Group.m (-uniteWith:): pool
+  	* Rectangle.m (-uniteWith:): removing identical graphics in [ng list] faster
+  	  Rectangle.m (-uniteWith:): pool
+  	  Rectangle.m (-uniteWith:): -removeSingleGraphicsInList: mit rect
+	  Rectangle.m (-sqrDistanceLine:) new
+	* Arc.m (-getListOfObjectsSplittedFrom:) vor malloc / angle<0 -> if (!cnt) return nil; !
+  	  Arc.m (-getListOfObjectsSplittedFrom:): pool
+  	  Arc.m (-getListOfObjectsSplittedFrom:): free(ps), free(angles) for return nil;
+  	  Arc.m (-intersectArc:): arcs with same centers ! eingebaut !
+  	  Arc.m (-getIntersections:with:): Rectangle direct ohne pathRepresentation
+  	  Arc.m (-uniteWith:): removing identical graphics in [ng list] faster
+  	  Arc.m (-uniteWith:): pool
+  	  Arc.m (-uniteWith:): -removeSingleGraphicsInList: mit rect
+  	  Arc.m,h (-sqrDistanceGraphic: -distanceGraphic -sqrDistanceLine:  -sqrDistanceArc: -sqrDistanceCurve:): new
+	* HiddenArea.m (-removeGraphics:inside: -optimizeList) alle getPoint:: durch pointWithNum: ersetzt (ERSETZT!)
+	  HiddenArea.m (-removePartsOf:hiddenBy:) free(iPts) mehrmals !
+	  HiddenArea.m (-removePartsOf:hiddenBy:) -removeSingleGraphicsInList mit rect
+	  HiddenArea.m, h (-removeSingleGraphicsInList:) bekommt rect öbergeben ! -> abfage damit
+	  HiddenArea.m, h (-removeSingleGraphicsInList:) pool
+	  HiddenArea.m (-removeGraphics:inside:) pool
+  	* PerformanceMap.m (-addObjectsInIntersectionRect:inList:): if([aList indexOfObject:object] == NSNotFound) add
+	  PerformanceMap.m, h (-removeObjectFromPM:) new
+	  PerformanceMap.m (-isObjectInside:) -sqrDistanceGraphic instead of [g intersectsRect:bounds]
+	* DocView.m, h (-dragSelect:) -sqrDistanceGraphic instead of [g intersectsRect:region]
+	* PickOutAri.m (angleBetweenGraphicsInEnd()): pointWithNum:MAXINT instead of getPoint:3
+	  PickOutAri.m (pickOutPath:withTipAngle:::()): pointWithNum:MAXINT instead of pointWithNum:3
+  	* PCBContour.m (-clearListForPCBContour:): remove short graphics inside polygon TOLERANCE*15.0 instead 10.0
+  	  PCBContour.m (-rubOut:): -removeSingleGraphicsInPath instead of -removeSingleGraphicsInList -> with performance free(iPts) woanders
+  	  PCBContour.m (-pcbContourWithList:::): -sqrDistanceGraphic instead of -graphicTouchGraphic
+	* PCBContour.m () um PolyLine erweitert
+	  PCBContour.m (-createOutputWithList:) [pcbList release] + pool
+	  PCBContour.m (-rubOut) free(iPts) + -removeSingleGraphicsInList: mit rect
+	  PCBContour.m (-buildRectanglesFromList) polyline to rect -> setFilled:[gr filled] instead NO ! & i--
+	  PCBContour.m (-buildRectanglesFromList) if (path) [list removeObjectAtIndex:i+1] nach if( [(Path*)gr filled] )..
+	  PCBContour.m (-clearListForPCBContour) ( [pGr length] < TOLERANCE*15.0 ) instead of ..*10.0
+	* PolyLine.m,h (-pointWithNum) ++ pointWithNum:MAXINT instead of getPoint:3
+	  PolyLine.m,h (-isPathObject) added !
+	  PolyLine.m,h (-parallelObject:) , bAngle = 180.0, eAngle = 180.0 initializiert
+	  PolyLine.m (-pathRepresentaion:) if (!filled) raus !
+  	  PolyLine.m (-sqrDistanceGraphic: -distanceGraphic): new
+	  PolyLine.m (-addPoint) zu dichte punkte werden nicht addiert - ausgenommen erster und letzter !
+  	  PolyLine.m (-openContour): NSAutoreleasePool
+  	  PolyLine.m (-contour:inlay:removeLoops:): removePoints with no length raus ! (-addPoint)
+	  PolyLine.m (-contour:) umgestellt // aufruf bei not filled mit pathRepresentation
+	  PolyLine.m (-uniteWith) remove identical gr faster
+	  PolyLine.m (-uniteWith) pool
+  	  PolyLine.m (-uniteWith:): -removeSingleGraphicsInList: mit rect
+  	  PolyLine.m (-setFilled:): if (flag && count) instead of if (flag)
+	  PolyLine.m (-getIntersectionsAndSplittedObjects:) aurorelease pool
+	* Path.m () alle getPoint:: durch pointWithNum: ersetzt - code verkörzt wenn mðglich (graphic unterscheidungen)
+	  Path.m (-getEndPoints:): auf MAXINT fuer -pointWithNum: umgestellt
+	  Path.m (-getLastObjectOfSubPath:): (TOLERANCE*15)*(TOLERANCE*15) instead TOLERANCE*TOLERANCE
+	  Path.m (-pointWithNum:) auf MAXINT för ende umgestellt
+	  Path.m (-intersectionsForPtInside:with:) gibt bei -1 2 punkte zuröck för -isPointInsideOrOn 
+	  Path.m (-intersectionsForPtInside:with:) point on edge -> 10.0*TOLERANCE instead of 20.0*TOLERANCE
+	  Path.m (-intersectionsForPtInside:with:) point on edge -> + polyline
+  	  Path.m (-intersectionsForPtInside::): free(pts)  ! ! ! for return -1 and so on
+	  Path.m (-isPointInsideOrOn:) if -1 && ++ (tangentintersection) -> und punkt on this graphic -> on
+	  Path.m (-uniteWith:) um PolyLine erweitert
+  	  Path.m (-uniteWith:): pool + removing identical graphics in [ng list] faster !
+	  Path.m (-uniteWith:) -removeSingleGraphicsInList -> bekommt [ug bounds]
+	  Path.m (-getListOfObjectsSplittedFrom:) pool
+	  Path.m (-getIntersections:with:) pool
+  	  Path.m (-getIntersectionsAndSplittedObjects:): point on edge -> 10.0*TOLERANCE instead of 20.0*TOLERANCE
+	  Path.m (-getIntersectionsAndSplittedObjects:) pool
+  	  Path.m (-sqrDistanceGraphic: -distanceGraphic): new
+	  Path.m (-drawWithPrincipal:) get memory more exact
+	* GerberImportSub.m (-addLine:): Polyline wenn mðglich
+	  GerberImportSub.m (-addStrokeList: -addFillList: -addFillPath:): nur eine graphic in liste -> die adden !
+	* GerberImport.m (-getMacroRect:-getMacroRectCenter:): wenn rotation -> c gesetzt
+	* DINImport.m (-loadExcellonApertures:): ![scanner scanInt:&value], ![scanner scanFloat:&dia] -> continue
+	  DINImport.m (-loadExcellonApertures:): tool suche statt break -> scanner einen weiter setzen !
+	* PolyLine.m (-create:): working again
+
+2001-11-10  Georg Fleischmann
+	* Type1Font.m (-getCharStringFromList:...): closechar only if codelen > 0
+	  Type1Font.m (-getFontState): if leftPoint is not set, we set it to origin.x
+
+2001-11-10  Ilonka Fleischmann
+	* Path.m (-contourOpen:) remove graphics with nearly no length !
+	* PolyLine.m (-addPoint:) remove second point if distance to first is too small (count == 3)
+
+Cenon 3.50 beta 12
+
+2001-11-23  Georg Fleischmann
+	* vhfDPSFunctions.m, h: removed
+	  vhfCompatibiliy.m, h: new
+	* NSBezierPath.m, h: new
+	  GSArray.h: new
+	  GSUnion.h: new
+	* BuildLinks.sh: link vhfCompatibility, NSBezierPath.m, h, GSIArray.h, GSUnion.h
+	* Path.m, PolyLine.m, OutputStream.m, Crosshairs.m: PSsetrgbColor() -> [NSColor set]
+	* Line.m (-contour:): if dx and dy == 0 then set dx to 1.0 to prevent division by zero
+	* OutputStream.m: import Foundation only, drawWithStart:... removed
+	  OutputStreamDrawing.m, h: new
+	  Graphic.m:
+	  DocView.m: import OutputStreamDrawing.h
+	* Path.m (drawWithPrincipal:): use NSBezierPath for drawing
+	  Graphic.h: import vhfCompatibility.h
+	  Line.m, h, Arc.m, h, PolyLine.m, h, Rectangle.m, h, Curve.m, h: -appendToBezierPath:currentPoint: new
+	  Line.m, h, Arc.m, h, PolyLine.m, h, Rectangle.m, h, Curve.m, h: -putUPath removed
+	* vhf2DFunction.m, Curve.m, h: clean up
+	* DPLayer.m (-addLayerWithName:...): check for [layerList count] == 0
+	* Web.m (-drawWithPrincipal:): NSRectFill() instead of PSrectfill()
+	* Xyz.m: import vhfDPSFunctions removed
+	  BuildLinks.sh: vhfDPSFunctions.h removed
+	* PathCFill.m, PathContour.m, PickOut.m: PSrectfill() replaced
+	* Rectangle.m (-boundsAtAngle:): use vhfPointRotatedAroundCenter(), check for rotAngle
+
+2001-11-24  Georg Fleischmann
+	* *.m: PSrectstroke() replaced with NSFrameRectWithWidth() or [NSBezierPath strokeRect:]
+	* DocView.m (-layerOfGraphic:): return nil for crosshairs
+	* PolyLine.m, Line.m, Arc.m, Curve.m (-drawWithPrincipal:, -drawAtAngle:): use NSBezierPath
+	* Crosshairs.m (-draw): use NSBezierPath
+	* Graphics.m (-setAngle:, -drawAtAngle:): use vhfRotatedPoint...
+
+2001-11-25  Georg Fleischmann
+	* locations.h: Mac OS X Library paths added
+
+2001-11-26  Georg Fleischmann
+	* Info.nib: Lizenznehmer entfernt
+	* App.m, h (displayInfo): licensor, licensedTo removed
+	* Type1Font.h: FontInfo -> T1FontInfo
+
+2001-11-26  Ilonka Fleischmann
+
+	* Path.m (-contour:inlay:removeLoops:) needArc==2 : width && ..
+	  -> newA umdrehen !
+	  Path.m (-removeIntersectionsInSubpaths:) check neighbour graphics
+	  if one close the gap + TOLERANCE*20.0 instead of *15.0
+	  Path.m (-removeIntersectionsInSubpaths:) Abfrage ob graphic zu Schleife
+	  gehðrt erweitert för w<0 && width
+	  Path.m (-subPathInsidePath:) edge pts und horicontale/tangenten
+	  abgefangen statt alle doppelten punkte raus
+	* DINImport.h ops.offset, state.offset -> new (M50)
+	  DINImport.h ops.coordR instead of ops.coordA
+	* DINImport.m ops.offset, state.offset implementiert
+	  DINImport.m (-loadSM3000Apertures) decimal dot implementiert
+	  DINImport.m (-setMark) offset beröcksichtigt
+	  DINImport.m (-getGraphicFromData:) move + state.g=0 wenn kein tool
+	  bei selectTool
+	  DINImport.m (-setDefaultParameter) ops.coordR instead of ops.coordA
+	  DINImport.m (-init) parameterLoaded = 0; und [self setDefaultParameter]
+	  DINImport.m (-toolFromString:) gibt -2 bei T(move) zuröck
+	  DINImport.m (-getTool:) bei -2 nur return NO
+	  DINImport.m line (G1) implementiert
+	* DINImportSub.m (-layerListFromGraphicList:) [layer setString:.. graphic
+	  art abgefragt zum setzen des bohrdurchmessers
+	  DINImportSub.m (sortLayer()) graphic art abgefragt
+
+2001-11-29  Georg Fleischmann
+	* Line, Line3D, Arc, Curve, Rectangle, Thread, Sinking, Web, Mark -> V*
+	  TextGraphic -> VText
+	* PropertyList.m, h:
+	  TextPath.m:
+	  DocView.m: new function newClassName() to convert class names
+	* DocWindow.m (-close): update Data Panel with nil
+	* DPLayer.m (-setLayerList:): update with nil removes entries from MoveMatrix
+
+2001-11-30  Georg Fleischmann
+	* undo.h: import of NSDataLink.h removed
+	* MoveMatrix.m (-drawRect:)
+	  LayerCell.m, ToolCell (-drawInteriorWithFrame:)
+	  VImage.m (-drawWithPrincipal:)
+	  VGraphic.m (-showFastKnobFills)
+	  DocView.m (-moveObject:): PSsetgray() replaced
+	* Document.m (-initWindow, +newFromList:): DocView, DocWindow, TileScrollView instead of id
+	* vhfCompatibility.h: vhfIsDrawingToScreen added for Apple
+	* *.m: -makeObjectsPerform: -> -makeObjectsPerformSelector:
+	* PathCFill.m (-drawBlackArcInDataAt:radius:): Arc42Cnt instead of Arc40Cnt
+	* undochange.h: import AppKit.h
+	* VCurve.m (-setParameter:, -dealloc): path.ops removed
+	  VCurve.m (intersectCurves()): static int instead of static

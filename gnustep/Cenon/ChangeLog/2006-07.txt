@@ -1,0 +1,24 @@
+Cenon CAM Change Log - July 2006
+
+2006-07-03 Georg Fleischmann
+	* messages.h, Localizable.strings: "DXF file exceeds..." not extends
+
+2006-07-12 Ilonka Fleischmann
+	* DocView.m (-mouseDown:): drawRect = NSZeroRect inituialized
+	  -> this fixes the selection with drag select (batch worked, without didn't)
+	* DocView.m (-drawSelect:): return drawRect
+	  DocView.m (-mouseDown:): get drawRect from dragSelect
+
+2006-07-26
+	* Apple: Prefs-Bundles added to Binary and Source package
+	* Apple: DocView Selection Bug (2006-07-12) fixed
+	* New 3.81 Bugfix-Packages for Apple !
+
+Cenon 3.81 (Apple)
+
+
+2006-07-28 Georg Fleischmann
+	* DocView.m (-draw:): serial number added for batch printing
+
+
+next Cenon 3.82

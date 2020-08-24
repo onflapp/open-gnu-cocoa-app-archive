@@ -1,0 +1,364 @@
+Cenon Change Log - 2010
+
+Cenon 3.9.1 pre 1
+
+2010-01-12 Georg Fleischmann
+    * DocWindow.m (-windowWillResize:..., -constrainFrameRect:): added to move and size window within grid
+      PreferencesMacros.h: Prefs_WindowGrid added
+      GeneralController.nib -> GeneralController.xib
+      GeneralController.h: windowGridField added
+      GeneralController.m (-set:, -update:): windowGrid added
+      -> Positioning and Resizing of windows within a grid for easier alignment of windows
+    * Main.nib -> Main.xib
+      Main.xib: added menuitems "Take Snapshot / Restore Snapshot"
+      App.m, h (-takeSnapshot:, -restoreSnapshot:, -appDidFinishLunching:):
+       code added to save snapshot to defaults and restore it at start
+      -> Two new menu items (Window->Take Snapshot and Window->Restore Snapshot)
+         to make a snapshot of all open documents and their screen locations.
+
+2010-01-17 Georg Fleischmann
+    * InspectorPanel.m (-windowWillResize:..., -constrainFrameRect:): added
+      to move and size window within grid
+    * Inspector automatically removes Scroller, if not needed
+
+2010-01-17 Georg Fleischmann
+    * DocWindow.m (-windowDidBecomeMain:) don't display tool panel
+    * vhfCommonFunctions.m (buildRoundedString()): round value
+
+2010-01-21 Georg Fleischmann
+    * typeEPS.tiff, typePS.tiff, typeDrill.tiff: added to XCode project
+    * Import.nib -> Import.xib: Icons needed scaling with IB/XCode 3
+
+2010-01-29 Georg Fleischmann
+    * VImage.m (-writeFilesToDirectory:): modified type conversion to work with Mac OS 10.6
+               we are using the instance method now, the class method doesn't work
+      -> Fix, Apple 10.6: saving of images in formats other than TIFF modified
+         to work on Mac OS 10.6
+
+2010-02-09 Erik Richard Sorensen
+    * *.nib/xib: Danish localization added.
+        Thanks goes to Erik Richard Sorensen (mac-dane@stofanet.dk) for the translation !
+
+2010-02-13  Georg Fleischmann
+    * vhfCompatibility.h: NSAppKitVersionNumber##_# added for Apple
+    * VText.m (-drawWithPrincipal:...): draw Single Line Text without antialiasing
+      -> this is a workaround to make Single Line Fonts display - fixed in Mac OS 10.6
+
+2010-02-18  Georg Fleischmann
+    * App.m (-sendEvent:): exit editing modes with right mouse click
+    * VLine.m, VCurve.m, VPolyLine.m (-create:): exit editing with right mouse click
+      -> Editing: exit editing mode with right mouse click
+
+2010-02-24  Georg Fleischmann
+    * App.m (-import, -openDocument): "tif, png, jpeg added to allowed extensions
+      App-Property: jpg, png added to Extensions that can be dragged to the application
+      -> Image-Formats: Extensions for opening jpg, jpeg, gif, png, tif, jpeg added
+2010-02-25  Georg Fleischmann
+    * VImage.m (- initWithRepresentations:): added workaround for Mac OS 10.6
+      -> Apple 10.6: workaround for certain images where size is given smaller than the true size of the image. They were loaded as thumbnail images.
+
+2010-02-26  Georg Fleischmann
+    * IP*.nib: most converted to XIB
+      IP*.xib: added missing delegates and nextKeyViews, and resizing for IPPath and IPText
+      -> this makes the Inspector modify values with Tab, jump to next key view, and resize
+
+2010-03-09  Georg Fleischmann
+    * Document.m (+newFromFile:): notification from before -setDocumentView: to after -setName:
+      DocView.m (-statusDict): create statusDict, if it doesn't exist yet
+
+2010-03-10  Georg Fleischmann
+    * VImage.m (-writeFilesToDirectory:): convert non-NSBitmapImageReps to NSBitmapImageRep
+      before saving to non-TIFF
+
+2010-03-11  Ilonka Fleischmann
+	* VRectangle.m (-contour:): if ( s.x < 0.0 || s.y < 0.0 ) return nil
+	  VRectangle.m (-pathRepresentation:): edgeRadius building - r instead of radius
+	  -> Fix Rectangle Contour/Drawing: prevent snap-over of corner radius
+	* VPath.m (-copy): setDirectionCCW:isDirectionCCW
+	  VPath.m (-contour:inlay:splitCurves:): path setDirectionCCW:isDirectionCCW
+	  VPathContour.m (-contourPath:width:): path setDirectionCCW:[oPath isDirectionCCW] at end
+	  -> Fix Contour: correct Directions
+
+Cenon 3.9.1 pre 2
+
+2010-04-03  Georg Fleischmann
+    * DXFExportSub.m (-exportArc:): export -360 angle correctly (not 0)
+    * DXFImport.m (-getArc:): negative 360 deg arcs have special case now
+    * DXFImport.m (buildArc()): dx == 0.0 case added to get angle more exact
+    -> Fix, DXFImport/DXFExport: circles with negative angle work now in import and export
+    
+2010-04-04  Georg Fleischmann
+    * VHFImport-Subproject: get file vhfCFGFunctions.m, h from VHFShared folder,
+      for file in VHFImport folder will not be packed to source package
+
+2010-04-10  Georg Fleischmann
+    * App.m (-displayInfo): get version from plist and compile date from __DATE__
+
+2010-04-14  Georg Fleischmann
+    * VImage.m (-initWithRepresentations:): Mac OS 10.6: keep image size despite using rep size
+
+Cenon 3.9.1 pre 3
+
+2010-04-18  Georg Fleischmann
+    * DocWindow.m (-sendEvent:): double click to window title bar, reduces window to title bar
+      DocWindow.h (unfoldedHeight): new
+      DocWindow.m, h (-unfoldedHeight, -setUnfoldedHeight:, -isFolded): new
+      Document.m (-save, +newFromFile:): save "WindowUnfoldedHeight"
+      App.m (-takeSnapshot:): save size too
+    -> Apple, Window-Handling: double click to window title bar, reduces window to title bar
+
+2010-04-22  Georg Fleischmann
+    * App.m (-takeSnapshot:, -restoreSnapshot:): allow saving and opening from file
+    -> Snapshots: allow opening and saving Snapshots to file, Default will open on start
+
+Cenon 3.9.1
+
+2010-05-07  Georg Fleischmann
+    * VHFDictionaryAdditions.m, h: -boolForKey: added
+
+2010-05-19  Georg Fleischmann
+    * Main.xib: Help -> Web Sites and eMail added
+      App.m, h (-showWebSite:): new
+      Localizable.strings: "http://cenon.info..." added
+      -> Links to Product Page, FAQ, Release Notes, eMail added
+
+2010-05-28  Georg Fleischmann
+    * App.m, h (-compileDate): new
+      App.m (-displayInfo:): use compileDate method
+    * UpdateController.m, h: new
+      UpdatePanel.xib: new
+
+2010-05-29  Ilonka Fleischmann
+    * Arc.m (-parallelObject:::): c calculation, cast float to double to make it work on Apple
+      -> Fix, Arc: wrong calculation of contour fixed on Apple
+         (float is not as good as it used to be on other plattforms)
+
+2010-06-02  Georg Fleischmann
+    * CenonModuleMethods (-compileDate, -version): added
+
+2010-06-11 Ilonka Fleischmann
+	* VArc.m (-getListOfObjectsSplittedFrom::): radius/3000.0 instead of /10000.0
+	  VArc.m (-intersectLine:::): (dx=((double)pl0.x-(double)center.x)) dy the same
+	  VArc.m (-intersectLine:::): (underTheSqrt = ((double)radius*(double)radius) - (dx*dx), 0.0) 2x
+	  vhf2DFunctions.h (SqrDistPoints(), SqrPoints()): (double) - casted to double
+      -> Fix Contour: More precision to arcs
+
+2010-06-13 Georg Fleischmann
+    * DocView.m (-addLink:): new
+      DocView.m (-validateMenuItem:): code for addLink added
+      Main.xib: "Format/Test/Add Link" added
+      -> New, Text-Editing: Links can be added to a selected Text with "Format/Text Add Link"
+    * Document.m (-windowDidResignMain:): end editing of text
+      DocWindow.m (-windowDidResignKey:): don't end editing of text
+      -> Fix, Text-Editing: allow editing of Links and Drag&Drop of characters from Character-Panel
+
+2010-06-11 Ilonka Fleischmann
+	* DXFImport.m (-buildArc:): 360 - acos(cn)
+	  -> Fix DXF Import: Arcs imported correct Know
+
+2010-06-19 Georg Fleischmann
+    * vhfCommonFunctions.m (buildDecimalString(), buildRoundedString(),
+                            vhfStringWithFloat(), vhfStringWithDouble()):
+      VHFStringAdditions.m (+stringWithFloat:, +stringWithFloat:decimals:):
+      OpenStep workaround with NSDecimal Separator disabled for Apple and GNUstep
+    * VHFStringAdditions.m, h (stringWithContensOfFile): replace deprecated method to load strings
+    * App.m (-sendEvent: return from Inspector Keys 1-5 to avoid failure noise
+      -> Fix, Inspector: Key-switches work without failure sound
+    * Document.m (-windowShouldClose:): end editing of text
+      -> Fix, crash fixed, when closing window without ending an open editing session of text before
+
+2010-06-29 Ilonka Fleischmann
+	* App.m (-changeSaveType:): at case 7: TIFF_EXT added
+	  Document.m (-saveTiff:): new
+	  Document.m (-saveAs:): -saveTiff: added
+	  locations.h (TIFF_EXT): #define TIFF_EXT	@"tiff"
+	  Main.xib: (Accessories): Tiff (.tiff) with tag: 5 added (German, English, Danish)
+	  -> New: Tiff Export (Will be saved Allways with 100% - and antialias from Preferences)
+
+2010-07-02 Georg Fleischmann
+    * Document.m (-setDocument:): init unit-Popup from Preferences
+      -> Coordinate-Units: start with units from Preferences
+
+2010-07-04 Georg Fleischmann
+    * App.m (-openDocument:, -import:): extension for @"svg" added
+      Info-Cenon.plist: svg added
+      App.m (-listFromFile:): svg import added
+      SVGImportSub.m, h: new
+      SVGImport.m, h: new
+      -> New: SVG-Import (good beginning, many things work already)
+
+2010-07-08 Georg Fleischmann
+    * VPath.m (-scale::withCenter:): keep width positive
+      -> Fix, Path: keep width positive when scaling negativ
+
+2010-07-09 Georg Fleischmann
+    * VGraphics.m, h (-transform:): method added to transform with NSAffineTransform
+      VGroup.m, VPath.m, VLine.m, VCurve.m
+
+2010-07-08 Ilonka Fleischmann
+	* VSinking (-drawAtAngle:withCenter:in:, -setAngle:withCenter:): new
+	  -> Fix Sinking: a Sinking in a group is now being rotated with the group
+
+2010-07-14 Georg Fleischmann
+    * UpdatePanel.m (): continued
+      CenonModuleMethods.h (-serialNo) added
+
+2010-07-16 Georg Fleischmann
+    * GridPanel.m (-update:): NSNumberFormatter added to set decimal to "."
+
+2010-07-17 Georg Fleischmann
+    * GNUstep, CenonInfo.plist: NSVersion added, some extensions added
+    * Library/Cenon/Examples/SVG added
+    * UpdatePanel.m: several fixes
+    * buildShip.sh: don't do this with Debug configuration
+    * VRectangle.m (-transform): added
+      VRectangle.m (-scale:): scale width, origin and size correctly with flipped scale
+      SVGImport.m, h: restore style and ctm, rectangle added
+      SVGImportSub.m: 
+
+2010-07-18 Georg Fleischmann
+    * SVGImport.m, h: ArcTo implemented, order of elements fixed, Circle-Element implemented
+                      Color of style: rgb(Red, Green, Blue) added
+      VArc.m (-transform): added
+      VArc.m (-scale:): scale width, origin and size correctly with flipped scale
+
+2010-07-19 Georg Fleischmann
+    * SVGImport.m, SVGImportSub.m: gradient fills partly implemented
+2010-07-22 Georg Fleischmann
+    * SVGImport.m, SVGImportSub.m: Line, Polygon, Text added
+      VPolyLine: (-scale, transform:): -scale of width fixed, -transform added
+
+2010-07-28 Georg Fleischmann
+    * VGraphics.m, h (label, -setLabel, -label): new
+      VGraphics.m (-init*, -encode, -propertyList, -dealloc, -version, -description): label added
+      VMark.m, h (-name, setName:, -initFromPropertyList:): use label, name ivar removed
+
+2010-07-29 Georg Fleischmann
+    * SVGImport.m (-parsePath:): smooth curve added
+    * VText.m (-drawWithPrincipal:...) move -setTextContainerInset: before -setFrame to
+      make mirrored text visible on Mac OS 10.5 and 10.6
+      -> Fix, Text: workaround to make mirror work again with Mac OS 10.5 and 10.6 (10.4 worked)
+
+2010-08-07 Georg Fleischmann
+    * SVGImport.m: support elements starting with "svg:" (ReligiosSymbols work)
+      SVGImport.m: recursive defs go in top-layer (so top layer will not be destroyed) (VaticalCity)
+      SVGImport.m: rectangles are imported as Polygons to allow transformation (VaticanCity)
+      SVGImportSub.m: don't optimize paths when filled
+      SVGImport.m (-parsePath:): read z (again) to close path
+      SVGImport.m (colorWithXMLString()): "#RGB" color support added
+      SVGImport.m: transform width of circle
+      SVGImport.m: support of Alpha channel for graduates in import, but not in Cenon yet (VaticanCity)
+
+2010-08-08 Georg Fleischmann
+    * VPath.m, VArc.m, VRectangle.m: if no fill color saved, load black as default (not copy of color)
+      -> Fix, Fill color: if fill color is black and stroke color is not, we now keep the correct fill color
+    * SVGImport.m: don't import empty paths and groups
+      SVGImportSub.m (-setBounds:): move by height to keep positive after flip, not flipHeight
+      SVGImport.m: get style of group
+      SVGImport.m: update bounds for line, polygon, rect, circle too
+
+2010-08-18 Georg Fleischmann
+    * VHFSoundFunctions.m (vhfPlaySound()): sound enabled for Apple
+      -> Sound feedbacks enabled for Apple
+      NSBeep() used instead of vhfPLaySound(@"ping")
+
+2010-08-23  Miguel Saro
+    * *.NIB/XIB: French Translation
+        Thanks goes to Miguel Saro (@free.fr) for the translation !
+
+2010-08-23 Georg Fleischmann
+    * Main.xib: Help -> Links+Updates added to French translation
+      *.nib: all NIB converted to XIB, some size issues resolved
+
+2010-09-03 Georg Fleischmann
+    * Main.xib: Format -> Text -> "Add Link" added to Danish and Frensh
+
+2010-09-05 Georg Fleischmann
+    * Main.xib: French translation of missing texts (Miguel Saro)
+      UpdatePanel.xib: french translation added (Miguel Saro)
+      TPMix.xib: melanger instead of fusioner
+
+2010-09-10 Georg Fleischmann
+    * GNUmakefile: VERSION = 3.9.2
+    * App.m (-listFromFile:): set HPGL, Gerber device, if defaults are not set
+      -> Fix, GNUstep: load HPGL and Gerber files without explicitly setting Preferences Popup.
+              Workaround for GNUstep issue to have an import device for HPGL and Gerber,
+              even if defaults are not registered.
+
+2010-09-11 Georg Fleischmann
+    * GNUstep-Status: Zoom works with latest GUI 0.21.0, crash in Project Info is gone
+                      closing a window crashes now
+    * GNUmakefile: SVGImportSub added
+      VHFImport/SVGImport added
+    * DXFImport.m (-importDXF:): try UTF8 and Latin encodings (GNUstep fails to load wrong encoding)
+      -> Fix DXF-Import, GNUstep: load of DXF files with special characters improved.
+         We try UTF8 and Latin encoding, Bleistift.dxf example works with that
+    * GNUstep ([NSView -releaseGState]): fix crash when closing window in Cenon by checking for _window != nil
+      -> Fix, GNUstep: crash when closing a window in Cenon, needs a GNUstep GUI after 0.21.0
+
+2010-09-12 Georg Fleischmann
+    * SVGImport.m (-parser:didStartElement:...): init pathList = nil
+
+2010-09-20 Georg Fleischmann
+    * UpdateController.m (-download:didFailWithError:): crash fixed, if package download failed
+      UpdateController.m (-install:): use Download or Desktop path, if we are OS X >= 10.5
+      UpdateController.m (-downloadDidFinish:): get path not array to delete TAR archive
+      UpdateController.m (-install:): open Download-Oath and Package in Finder, if method is available
+
+2010-09-22 Georg Fleischmann
+    * UpdateController.m (-checkForUpdateAndDisplayPanel): no URL -> don't add install checkmark
+      enable install button only, if there is something to install
+      -> this allows us to announce an Update that shouldn't be installed by the User
+
+2010-09-24 Georg Fleischmann
+    * SVGImport.m (-parsePath:): reflectedCurveP = NSZeroPoint
+      VPath.m (-optimizeSubPathsToClosePath:::): oStartPt = NSZeroPoint
+
+2010-09-25 Georg Fleischmann
+    * Cenon*.pkg: without relocation flag, script to remove old Examples and Receipts
+
+2010-09-26 Georg Fleischmann
+    * SVG stuff removed from 3.9.2 code
+
+Cenon 3.9.2 pre 1
+
+2010-10-01 Georg Fleischmann
+    * Cenon.at registered
+
+2010-10-31 Ilonka Fleischmann
+	* DXFImport (buildArc()): dx, dy need double and calculated with double values (m, beg)
+	-> Fix DXFImport: exact Arc import especially big arcs
+
+Cenon 3.9.2
+
+2010-11-13/14 Georg Fleischmann
+    * TileScrollView.m (-setDocument:): workaround GNUstep: select 100 % item
+    * InspectorPanel.h (viewDict): added
+      InspectorPanel.m (-init, -loadGraphics:, -windowAt:): get content views and set them
+      InspectorPanel.m (-loadGraphic:): never call -setContentView: with the contentView !
+      -> Fix, GNUstep: workaround to make sure that the contentView survives.
+         GNUstep reacts destructive, if the contentView is set to nil or if the same contentView is set twice.
+
+Cenon 3.9.2 (Linux)
+
+2010-11-26 Ilonka Fleischmann
+	* Document.m (-saveTiff:): simpler like OpenStep, so text work
+	  -> Fix save TIFF: text is working now
+
+2010-12-01 Georg Fleischmann
+    * Document.m (-save): log exception during save
+      VImage.m (-writeFileToDirectory:): test for array contents in reps before getting the first representation
+      -> Fix Save: fixed "Can't save" situation when saving missing images
+
+2010-12-18 Georg Fleischmann
+    * App.m, DocView.m (-validateMenuItem): (id <NSMenuItem>)anItem -> (NSMenuItem*)anItem
+
+2010-12-22 Cenon 3.9.3
+
+2010-12-30 Ilonka Fleischmann
+	* GerberImport.m (-getGraphicFromData:): consider state.zeros for x, y, i, j coord
+	  -> Fix, Gerber Import: Trailing Zeros work now (Osmond PCB)
+
+2011-01-01 Cenon 3.9.3
+
+Cenon 3.9.3

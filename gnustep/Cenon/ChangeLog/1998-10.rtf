@@ -1,0 +1,57 @@
+{\rtf0\ansi{\fonttbl\f0\fmodern Courier;}
+\pard\tx1440\tx2700\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li2700\fi-2700\ql\qnatural
+
+\f0\b\fs24 \cf0 …nderungen för Oktober 1998\
+
+\b0 \
+28.10.98	Cenon\
+\
+\pard\tx1440\tx4320\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li4320\fi-4320\ql\qnatural
+\cf0 Datum	Datei	VerÙndert\
+----------------------------------------------------------------------------------------------\
+12.10.98	Curve.m	-center -> neu\
+	Editor2DView.m	-rotateObject: -> startAngle -> neu, winkel zum center, delta zum startwinkel\
+	Arc.m	-center -> neu\
+		-drawAtAngle:withCenter: -> a statt angle för center drehung\
+	Graphic.m, h\
+	IPRectangle.m\
+	Rectangle.m\
+	Text.m\
+	DXFImportSub.m\
+	HPGLImportSub.m\
+	PSImportSub.m	-setAngle: -> rotate: umbenannt\
+		-angle -> rotAngle umbenannt\
+	Graphic.m, h	-angle -> neu\
+16.10.98	Path.m	-directionOfSubPath -> arc angle an Konvention angepasst\
+17.10.98	DPToolParms.m	-updateUnits -> maxDiameterField fehlte\
+18.10.98	apPrefs.m, h\
+	Prefs.nib	finishAtStart ist jetzt finishAtHome\
+	DPControl.m	-subProcessTerminated -> fisishAtHome macht goHome, sonst atPosition\
+		-setAdjust: -> Beim Einschalten Wert auf 0.0 gesetzt\
+	DPControl.m, h\
+	DPPosition.m	-setOrigin:zDown: -> p wird nicht mehr als Pointer öbergeben\
+	Graphic.m	-init -> isDirectionCCW = YES\
+	Editor2DView.m	-setDirectionForLayer -> ccw = YES\
+	e2Tile.m	-buildTileCopies -> auf jeweilige Lage inserted\
+20.10.98	Editor2DView.m	-group -> inspektor gesetzt\
+	DPToolParms.m	-setStepwiseZ, -update -> settlementBeforSwitch bei Bedarf disabled und Haken entfernt\
+	DPLayer.m	-displayChanged -> abgeschaltete selektierte Lagen werden deselektiert\
+	DPControl.m	-subProcessTerminated -> bei Startposition z erst angehoben\
+	Arc.m	-putUPath -> Föllung zuerst\
+	InspectorPanel.m	-loadGraphic -> isVisible abgefragt bevor Fenster dargestellt wird\
+	App.m	-showDataPanel, -showTransformPanel -> Default unter DataPanel gespeichert\
+20.10.98	Ilonka\
+	Image.m,h	- copy: -> neu Kopiert Image\
+		- setImage: -> setzt image(NSImage) in Image\
+		- invert: -> invertiert image\
+	PickOut.m	- pickOutImageWithTipAngle: -> data wird invertiert\
+21.10.98	vhfLockFunctionss.m, h KEYNAME in Header ausgelagert\
+	KeyPanel.m	-okButton: -> Schreibzugriff abgefragt\
+	messages.h	LOGINASROOT -> neu\
+	Localizable.strings	auf Deutsch\
+	Xyz.m, h	currentLayer -> neu\
+		-changeRev, -changeSpeed -> setzt alle gleichen Werkzeuge\
+28.10.98	Group.m	-add: -> loop andersherum\
+\
+next: 3.10\
+}

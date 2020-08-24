@@ -1,0 +1,68 @@
+Cenon Change Log - Mai 2003
+
+2003-05-04 Georg Fleischmann
+	* dvPasteboard.m (-pasteFromPasteboard:...): l>= [layerList count] || added to layer-check to avoid exception
+
+2003-05-07 Georg Fleischmann
+	* DocView.m (-mirror:): update performance map
+	* PerformanceMap.m (-isObjectInside:): test for VImage added (segment inside bounds of image)
+
+2003-05-08 Georg Fleischmann
+	* VPath.m (-join:): add filled objects to the end of list
+	                    do not handle Polyline the same way as path (exception)
+	* Contour.nib: default = 0, Text field longer
+
+2003-05-08 Ilonka Fleischmann
+	* VPath.m (-drawGraduatedWithPrincipal:): mit fillColor malen wenn unbekannter ColorSpace
+	  VPath.m (-drawRadialWithPrincipal:): mit fillColor malen wenn unbekannter ColorSpace
+	  VPath.m (-drawAxialWithPrincipal:): mit fillColor malen wenn unbekannter ColorSpace
+	  VPath.m (-drawWithPrincipal:): draw graduateList von 0 - ende !
+	* VArc.m (-drawWithPrincipal:): draw graduateList von 0 - ende !
+	* VRectangle.m (-drawWithPrincipal:): draw graduateList von 0 - ende !
+	* VPolyLine.m (-drawWithPrincipal:): draw graduateList von 0 - ende !
+	* PCBContour.m (-createOutputWithList::): 2x toolDia conisch anstatt [tool diameter]
+	  PCBContour.m (-createRubOutputWithList::): 3x toolDia conisch anstatt [.. diameter]
+	* VPathOutput.m (-createOutput:tools:): tipAngle OHNE MMToInternal !!!!!
+	  VPathOutput.m (-createOutput:tools:): [tool maxDiameter] instead of [tool diameterForDippingDepth:dip]
+	* IPAllFilling.m (-setStepWidth:): min ist jetzt 0.1 ab 1.0 in 0.1er Schritten
+
+2003-05-11 Georg Fleischmann
+	* Main.nib: Gitter-Panel kann mit Alt-Shift-# geðffnet werden
+
+2003-05-14 Georg Fleischmann
+	* functions.m, h (vhfRGBColorFromString(), -vhfStringFromRGBColor()): new
+
+2003-05-15 Ilonka Fleischmann
+	* VPath.m (-drawRadialWithPrincipal:): Overlap = 0.1 instead of 2.0
+	* VImageOutput.m (-relief:withDip:): um senkrechte Verfahrwege erweitert
+	  VImageOutput.m (-buildPath:): um senkrecht erweitert
+
+2003-05-14 Georg Fleischmann
+	* Document.m (-printDocument:): to make Apple run we setCurrentOperation, retain accessory
+
+2003-05-20 Ilonka Fleischmann
+	* leftup.cenon, rightup.cenon: PolyLine ssaved as string for Apple
+
+2003-05-21 Ilonka Fleischmann
+	* Document.m (-printSeparation:): docView drawAndDisplay
+	* VImage.m (-writeFilesToDirectory:): sourcePath wird immer neu gesetzt wenn image gespeichert
+	  VImage.m (-writeFilesToDirectory:): renamed image und thumbnail tut jetzt auch !
+
+2003-05-22 Georg Fleischmann
+	* dvTile.m (-buildTileCopies:): first move graphic, than add graphic to layer
+
+2003-05-22 Georg Fleischmann
+	* VPath.m (-setDirectionCCW:): stepWi not smaller than TOLERANCE, otherwise this can go endless because of float tolerances
+	* VPath.m (-removeIntersectionsInSubpaths:): iArray[spCnt*2] instead of +2
+
+2003-05-31 Ilonka Fleischmann
+	* VPath.m (-drawRadialWithPrincipal:): maximum color steps are 1000
+	  VPath.m (-drawRadialWithPrincipal:): colStep maximum 6 hinterkommastellen
+	  VPath.m (-drawRadialWithPrincipal:): colStep verwirrSpiel eingebaut
+	  VPath.m (-drawGraduatedWithPrincipal:): maximum color steps are 1000
+	  VPath.m (-drawGraduatedWithPrincipal:): colStep maximum 6 hinterkommastellen
+	  VPath.m (-drawAxialWithPrincipal:): maximum color steps are 1000
+	  VPath.m (-drawAxialWithPrincipal:): colStep maximum 6 hinterkommastellen
+	  VPath.m (-drawAxialWithPrincipal:): force bounds = ZeroRect when we change cakePath !
+
+next Cenon 3.60 beta 3

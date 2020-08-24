@@ -1,0 +1,24 @@
+{
+    IBClasses = (
+        {
+            ACTIONS = {doContourPanel = id; okContourPanel = id; setUnit = id; }; 
+            CLASS = App; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                contourField = id; 
+                contourPanel = id; 
+                contourSlider = id; 
+                contourSwitchMatrix = id; 
+                contourUnitPopup = id; 
+            }; 
+            SUPERCLASS = NSApplication; 
+        }, 
+        {
+            ACTIONS = {orderFrontNXColorPanel = id; }; 
+            CLASS = FirstResponder; 
+            LANGUAGE = ObjC; 
+            SUPERCLASS = NSObject; 
+        }
+    ); 
+    IBVersion = 1; 
+}

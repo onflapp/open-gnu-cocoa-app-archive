@@ -1,0 +1,245 @@
+{\rtf1\mac\ansicpg10000\cocoartf102
+{\fonttbl\f0\fswiss\fcharset77 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\ql\qnatural
+
+\f0\fs24 \cf0 Release Notes\
+\
+Release 2, Version 4:\
+	Added Bicubic and scale2x scaling algorithms.\
+	Added a "Gradient Builder" to the palette chooser.\
+	Fixed layers so that copy and paste between two differently-sized images works.\
+	Fixed a bug with Merge Down on a selection layer.\
+	Added tool tips to the color palette.\
+	Basic filter support (note: we need to write some actual filters to go here)\
+	You can switch between layers using command-\} and command-\{ (cmd-shift-] and cmd-shift-])\
+	New, prettier look for the color palette.\
+	Improved palette swapping speed.\
+	Fixed the preview window to work correctly on images where the width is greater than the height.\
+	Added a pattern drawing function to the pencil, line, and eraser tools.\
+	Added another property panel for the right tool.\
+	Added a hex color code in the info panel.\
+	Fixed the line tool so that you can use the eyedropper when pressing option, instead of it locking to center.\
+	Fixed the feedback window so that you can't send empty messages.\
+	Added a "set this palette as default" option, so you can use a default palette other than "Crayons."\
+	Optimized drawing some more.\
+	Fabien Vallon had gotten it to compile under GNUstep at one point; it might not anymore, however.\
+Release 2, Version 3:\
+	Added info panel.\
+	Added a French localization.\
+	Added a spiffy about panel.\
+	Added a donation link to the menu(hint!).\
+	Fixed the bug where linear tools would mistakenly try to draw when the mouse was up in the toolbar(see Brent Gulanowski's e-mail).\
+	Fixed a couple of other miscellaneous bugs(Preview not updating correctly, image backgrounds not accepting all valid types).\
+	Fixed a few critical leaks (the whole canvas and the palette were leaking!)\
+	Fixed the resize sheet so that the numbers are always visible\
+	Added a dragging difference display to the info panel\
+	Made the about panel have a cool fading effect\
+	Added a contextual menu for normal (non-selection) layers\
+	Restructured a few methods to allow the contextual menu to work properly\
+	Fixed autosave for real! (at least, I'm 99.9% sure... >_<)\
+	Made palette chooser popup menu disabled until document is opened\
+	Fixed a small visual bug where trying to delete an palette item that was not delete-able would leave the menu selecting the "Delete..." item, which isn't correct\
+	Added all system palettes to the palette menu.\
+	Added a disabled menu item marking when no user palettes are defined, instead of two separators right next to each other.\
+	Fixed the tooltips on the tool palette so that they don't say the key shortcut, which could be wrong if the user changed it from the default value.\
+	The option key will now make any linear tool(Line, Rectangle, Ellipse) draw centered on its origin, rather than with the origin in the corner.\
+	Set the View menu to autodisable its items, which fixed a lot of the menu disabling bugs.\
+	Turned off the crosshair when we're tiling, since it just generates artifacts in that mode.\
+	Changed the preferences for autosave to be less stupid.\
+	Numerous small changes, such as fixing the size of the tool palette by one pixel in height so it doesn't change position when you expand the right tool picker.\
+	Fixed a bug in bringing forward the about panel and some graphical glitches with rectangular selection updating.\
+	Vastly improved the speed of selections, especially rectangular selections.  Fixed a small bug or two as well.\
+	Improved the appearance of the Layers drawer.\
+	Made some speed improvements to moving selections.  It's not fast yet, but it's faster.  \
+	Fixed a bug where, while one mouse button is held down, the other could be pressed and would trigger a tool, causing an inconsistent state in the undo manager.  Now, the bug is just that if the one mouse button is pressed and unpressed while the other is being used, both will become unpressed.  There seems to be no side effect and no bug besides the inconvenient and obvious one(that is to say, the undo manager is fine).\
+	Fixed the bug where the layer drawer would steal focus away from the main window.\
+	Fixed a hack in PXImageBackground where the file types were hard-coded; now I'm reading them from the mainBundle's infoDictionary\
+	Added Game of Life document support (this is mostly for me, but it might be useful to somebody else)\
+	Made some more graphical changes to the resize view.\
+	Added a "Grayscale" built-in palette with gray shades and some useful dithering alpha colors (calculated using log2)\
+	Made the preview window not steal focus.\
+	Fixed the Scale Panel to be more awesome.  Now there are concurrently updating scale percentages and pixel values, with an option to scale proportionally.\
+	The project is also updated for Xcode 1.5 (as a side effect).\
+	\
+\
+Release 2, Version 2:\
+	Fixed a bug wherein ellipses could only have odd width and height.\
+	Fixed a bug wherein dragging with the right mouse button would not update the crosshairs.\
+	Fixed a bug wherein if one filled on a pixel that was the same color as your selected color, Pixen would hang.\
+	Fixed a bug wherein running multiple documents would sometimes cause them to be composited.\
+	Fixed a bug wherein auto-backup would tell the user that there were unsaved changes when there weren't.\
+	Fixed a bug with the preview window where it would freak out if one resized it smaller than the image size.\
+	Fixed a bug wherein the "scale image" panel would not display.\
+\
+	Added a cool fading scale percentage meter to the preview window.\
+	Removed the 100% increment preview locking preference and made holding shift lock to 100% instead.\
+	Added Photoshop-like shift-click line drawing with the pencil tool.\
+	Added palette-sensitive GIF export support.\
+	Added support for printing.\
+	Added "save copy as" functionality.\
+	Added "new from copy" functionality.\
+\
+Release 2, Version 1:\
+	\ul New Features\
+\ulnone 		Added support for multiple selection via shift (add) and alt (subtract).\
+		Added lasso tool.\
+		Added magic wand tool.\
+		Added a customizable toolbar.\
+		Added 3x3 image tiling editing mode.\
+		Added configurable alignment crosshairs.\
+		Added horizontal and vertical layer flipping.\
+		Added modular image scaling with "nearest neighbor" default module.\
+		Added "Discover Pixen" first-time instructional panel.\ul \
+\ulnone 		Added isometric line locking.\
+		Added support for BMP files.\
+		Added read-only support for GIF and JPEG files.\
+		Added a customizable auto-backup and recovery feature.\
+		Added a form for sending suggestions, bug reports, and general feedback.\
+		Pixen can now automatically detect when it has been updated.\
+		Added duplicate layer functionality.\
+		Added a pretty, dynamic preferences pane.\
+		Added a configurator in which the user may select hotkeys for each tool.\
+		Added a menu item and shortcut keys for quickly increasing and decreasing the opacity of the primary color.\
+		Added a Pixen document icon.\
+		Added powerful palette controls, including:\
+			A palette of up to 320 colors, default 16 visible (make the window larger to show more).\
+			Switching between palette colors in this fashion:\
+				Number keys 1-8: Select the corresponding color in the first row.\
+				Shift + above: Select the corresponding color in the second row.\
+				Option + Shift + above: Select the corresponding color in the third row.\
+				Control + any of the above: Select the corresponding color in the corresponding row for the right mouse button\
+				Alternately, you can left-click on a color to select it for the left tool, and right-click for the right tool.\
+			Colors added to the image are automatically added to a generated palette.\
+			Single-color replacement by modifying a swatch in the palette with the "Smart Palette" feature.\
+			Palette swapping through the "Smart Palette" feature.\
+			Ability to save and load palettes in the Application Support directory and to generate a palette from the image itself.\
+			Creating a palette named "Default" will cause Pixen to use it automatically as the default palette for new documents.\
+\ul \
+	Enhancements\
+\ulnone 		Tremendous speed improvements throughout the entire program.\ul \
+\ulnone 		Pixen's license is now MIT.\
+		Added PICT writing support to the existing read-only support.\
+		Windows now remember their positions and presence.\
+		Layer thumbnails now update only once every second or so during heavy drawing.\
+		Vastly improved canvas resize with a widget that helps the user visually select offsets for the original image.\
+		The preview window can now be resized proportionately and optionally locked to 100% increments.\
+		Creating or opening large images now displays a warning to the user.\
+		Made undo work for Cmd+D deselect\
+		Moved all the .nibs into English.lproj for localization.\
+		Pasting from other applications now supports alpha.\
+		New application icon; thanks to Miguel "ndeal" Estupi\'96an.\
+		Pixen will no longer silently crash on systems before Panther.\
+\ul \
+	Bug Fixes\ulnone \
+		Fixed a drawing bug that occurred with images that are taller than they are wide.\
+		Fixed a number of bugs with copy and paste.\
+		Fixed a bug wherein the program would crash if the user unchecked a selection layer.\
+		Fixed a bug wherein the program would crash if the user hit the forward-delete key.\
+		Fixed a bug with ellipse filling.\
+		Fixed a bug in alternate background drawing wherein it would sometimes ignore the user's settings.\
+		Fixed a bug wherein layers would not retain their opacity and visibility after selection had been made.\
+		Fixed a bug wherein the remove layer button would only remove the topmost layer.\
+		Fixed a bug wherein the active layer would not be properly set upon loading of an image.\
+		Fixed a bug wherein irregular grid sizes would cause the grid not to be displayed.\
+		Fixed a bug wherein the fill tool would hang if the target pixel's color was the same as the current color.\
+		Fixed a large memory leak.\
+		Dozens more.\
+\
+Release 1:\
+	Version 1.  \
+		The following tools are implemented:\
+			Pencil\
+			Eraser\
+			Eyedropper\
+			Zoom\
+		All document activities are implemented and tested(printing is not tested, however).\
+		Bugs exist in centering of the view and background drawing in oddly-shaped images.\
+		There is a bug in the pencil tool involving near-vertical lines.\
+	Version 2.\
+		Pencil bug fixed.\
+	Version 3.\
+		Centering and background-drawing bugs fixed.  \
+		Zoom-to-fit implemented.\
+	Version 4.\
+		Background switches to alternate when mouse is moved from it.\
+		Zooming behavior improved.\
+		Another pencil bug fixed(top edge of image is hard to draw on).\
+		You can now configure the default backgrounds to any particular color combination.\
+	Version 5.\
+		Fixed some crashing bugs.\
+		You can now change the main and alternate backgrounds in addition to configuring their parameters.\
+		Added two new background types, PXCheckeredBackground and PXImageBackground.\
+		PXImageBackgrounds can be created out of any image format that Pixen understands.  Stencils, templates, and other things are all possible with this background type.\
+		You can save a particular configuration of a PXBackground as a new background preset. (in ~/Library/Application Support/Pixen/Backgrounds/)\
+		You can set the default backgrounds that a new PXCanvas will start with.\
+		Background choices persist between openings of a document; if the needed backgrounds don't exist on the host computer, however, the 'default defaults'(slashed background for main, flat white for alternate) will be used.\
+	Version 6.\
+		Fixed more minor bugs.\
+		Flood fill(Paint Bucket) tool added.\
+		The 'background color' of a PXImageBackground will now draw over the image at a fraction of opacity(30%) as well as under it at full opacity.  It also now defaults to blue.\
+		PXImageBackground now scales its image to fill the image being drawn into.  This behavior may be toggle-able in the future, if anyone prefers the old behavior.\
+		Big internal changes to PXImage that greatly increase speed across the board.  Backwards compatibility retained!\
+		Added right-click tool feature.\
+                	Prettified background names.\
+	Version 7.\
+             	Added a Preview window.\
+                	Future releases will tend to be this small.\
+	Version 8.\
+		Usability improvements to the Preview and Tool Palette windows, as well as to launch and dock-clicking behavior(you now must use cmd-n or 'New' from the File menu to make a new image).\
+		Line tool added thanks to Ian Henderson.\
+		Fixed an infinite looping bug and got rid of some code.\
+                	Improved the line-drawing algorithm so that pencil and line tools will draw lines that are closer to what was expected.\
+                        Zooming behavior improved.\
+                        Added limited support for EPS (Encapsulated PostScript) format.\
+	Version 8-2.\
+		Fixed an unarchiving bug.\
+		Fixed a backgrounds bug.\
+	Version 9.\
+		Added support for selections, cut, copy, and paste.\
+		Added Rectangular Selection tool.\
+		Added tooltips for each tool that show the tool's name and its key switching shortcut.\
+		Fixed bugs in archiving, backgrounds, and the preview window.\
+		Added basic framework for Forms architecture.\
+		Known bugs:\
+			There may be occasional data loss or graphical glitches with selection manipulation.  If you suddenly lose pixels, Undo until they come back.  Sorry for the inconvenience; we're working on this problem.\
+			If you see any saving/loading bugs, or can tell us the exact steps you took to produce a selection-related bug, please e-mail Joe right away at joie@opensword.org.\
+	Version 9-2\
+		Fixed a crashing bug having to do with selections, added cmd-a(select all) and delete-key('delete' menu item) functionality, and fixed a major unarchiving bug.  Phew!\
+	Version 10\
+		Extensive performance improvements and bug fixes to selections.\
+		Deselect menu item and shortcut(cmd-d) added.\
+		Background defaults bug fixes.\
+	Version 11\
+		Minor bug fixes in dozens of places.\
+		Major bug fix regarding selection drawing outside the canvas.\
+		Support for layers added with:\
+			A management drawer with thumbnails\
+			Add/remove\
+			Reorder\
+			Merge Down\
+			Promote Selection\
+			Layer-specific opacity\
+		Added a move tool that works on both selections and layers\
+		New documents appear zoomed to fit.\
+		Backwards compatibility retained!\
+	Version 12\
+		Added AppleScript support\
+		Added rectangle and ellipse tools\
+		Added canvas resize\
+		New layers are automatically selected\
+		Sped up loaded images\
+		Added PICT support\
+		Fixed zoom artifact bug\
+		Fixed layers thumbnail fill undo bug\
+		Added 45\'bc locking to the line tool\
+		Fixed NaN retention bug\
+		Fixed distortions at high magnification\
+		Added a tool properties panel for configuration\
+		Added configurators for pencil, eraser, line, rectangle, and ellipse tools\
+		Added support for NSImage pasting\
+		Added a file-dependent customizable grid\
+		Fixed color panel crashing bug\
+		Fixed zooming to 0% bug\
+		Optimized preview window drawing and added a delay time\
+		Fixed layer thumbnail bug}

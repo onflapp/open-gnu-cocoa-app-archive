@@ -1,0 +1,73 @@
+"name" = "HP 7550 Color";
+"baudrate" = "9600";	/* 0 = paralell */
+"handshake" = 1;		/*  (0=none, 1=XON/XOFF, 2=RTS/CTS) */
+
+"xMax" = "401"		/* (mm) */
+"yMax" = "274";	/* (mm) */
+
+"resolution" = "1021";	/* (points/inch) */
+
+"pens" = "8";			/* number of pens */
+"vMin" = "3";			/* minimum velocity (mm/s) */
+"vMax" = "381";			/* maximum velocity (mm/s) */
+
+"penWidth 1" = "250";	/* pen width (unit: 1/1000 mm)  0.25 mm */
+"penWidth 2" = "250";
+"penWidth 3" = "250";
+"penWidth 4" = "250";
+"penWidth 5" = "250";
+"penWidth 6" = "250";
+"penWidth 7" = "250";
+"penWidth 8" = "250";
+
+"penColor 1" = "   0    0    0";	/* pen color (0 - 1000, rgb)  black */
+"penColor 2" = "1000    0    0";	/* pen color (0 - 1000, rgb)  red */
+"penColor 3" = "   0 1000    0";	/* pen color (0 - 1000, rgb)  green */
+"penColor 4" = "   0    0 1000";	/* pen color (0 - 1000, rgb)  blue */
+"penColor 5" = "1000 1000    0";	/* pen color (0 - 1000, rgb)  yellow */
+"penColor 6" = "1000    0 1000";	/* pen color (0 - 1000, rgb)  magenta */
+"penColor 7" = " 500  333    0";	/* pen color (0 - 1000, rgb)  brown */
+"penColor 8" = "1000  500    0";	/* pen color (0 - 1000, rgb)  orange */
+
+/* for output only
+ */
+
+/* special characters in command strings:
+ * linefeed                  \n
+ * escape                    \e
+ * carriage Return           \r
+ * quotationmarks            \"
+ * parameters will be inserted at %f (%d, %x, %ld, %e)
+ */
+
+"selectPen"  = "SP%d;\n";
+"v"          = "VS%d;\n";			/* velocity */
+"initialize" = "\e.N;19:\r\e.I;;17:\rIN;PA;CS33;\nVS35;";
+"start"      = "RO90;";				/* send before every start of output */
+"end"        = "PG;";				/* send after every output */
+"reset"      = "PU;SP;\n";
+"moveAbs"    = "PU%.0f,%.0f;\n";
+"drawAbs"    = "PD%.0f,%.0f;\n";
+"circle"     = "CI%.0f;\n";			/* (radius) */
+"arc"        = "PDAA%.0f,%.0f,%.0f,15;\n";	/* (xm,ym,arc angle) */
+
+/* for interpreter only
+ */
+"iPolygonDefinition"       = "PM";		/* (PM 0; PM 1; PM 2;) */
+"iSelectPen"               = "SP";
+"iMove"                    = "PU";
+"iAbsolut"                 = "PA";
+"iRelativ"                 = "PR";
+"iCircle"                  = "CI";
+"iArcAbsolute"             = "AA";
+"iArcRelative"             = "AR";
+"iInputWindow"             = "IW";
+"iPenWidth"                = "PW";
+"iLineType"                = "LT";
+"iInputP1P2"               = "IP";
+"iTerminator"              = ";\n\r";
+"iLabel"                   = "LB";
+"iLabelDirection"          = "DI";
+"iLabelSize"               = "SI";
+"iLabelSlant"              = "SL";
+"iLabelDefaultTerminators" = ";\r\n";

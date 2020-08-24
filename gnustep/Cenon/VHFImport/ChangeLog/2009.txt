@@ -1,0 +1,8 @@
+VHFImport Library Change Log - 2009
+
+
+2009-01-26 Georg Fleischmann
+    * PSImport.m (-importPS:): for GhostScript, remove Corel Draw garbage
+                               before "%!PS-ADOBE..."
+      -> Fix PS-Import: allow import of Corel-Draw PostScript with garbage
+         before data.

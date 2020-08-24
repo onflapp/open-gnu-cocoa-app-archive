@@ -1,0 +1,141 @@
+Cenon 3.9.7  (2012-07-07):
+
++ Fix, Text: editing a locked Text will not adjust the size of the text box any more
++ Fix, Text, Apple: workaround added to make mirrored text visible
++ Fix, Intersection-Panel: crash fixed if there are no intersections
+
+Cenon 3.9.6  (2012-02-04):
+
++ DXF-Import: added transformation of coordinates from Object- to World-coordinate system
++ Fix, PS-Import: files with special characters improved
++ Fix, TIFF-Export: save images
+
+Cenon 3.9.5  (2011-08-30):
+
++ Fix, Translations: French translations for Operations included, Danish "Lock/Unlock",
+       DXF-Import: Size alert was not translated, more fixes in translations
++ Fix, GNUstep: source package compiles again
+
+Cenon 3.9.4  (2011-03-30):
+
++ New, Update-Panel: once a week at start of Cenon we automatically check for update
+       this can be turned off in Preferences
++ Fix, Text: changing layers in Inspector ends editing of text
++ Fix, Update-Panel: never skip versions in manual check for Updates
++ Fix, Build Contour: works with all stroked objects, even with a distance of zero
++ Fix, Look: default stroke width (on screen) for filled objects is 1/10 pt now (was 1 pt)
+
+Cenon 3.9.3  (2011-01-01):
+
++ Fix Export TIFF: export of documents containing text is working now
++ Fix Save: documents with a missing image can be saved
++ Fix Gerber-Import: Trailing Zeros work now (Osmond PCB)
+
+Cenon 3.9.2 (2010-09-26)
+
++ New: French translation of user interface (thank you goes to Miguel Saro)
++ New, Text-Editing: Links can be added to a selected Text with
+       "Format -> Text -> Add Link"
++ New: TIFF Export: the document will be saved as TIFF image (100% scale),
+       antialiasing is added if enabled in preferences setting
++ New: Help menu now offers items with convenient links to Web-Site, FAQ, etc.
++ New: Check for Update. The menu "Help -> Check for Updates" checks whether
+       updates for Cenon are available.
+       If updates are available it announces them and if offered allows selection
+       and download of the packages. The downloaded packages are opened in the Installer.
++ Document-Window: Units of coordinate display start with units from Preferences (not mm)
++ Sound-feedback enabled for editing functions
++ Fix, Text-Editing: allow editing of Links and Drag&Drop of characters from Character-Panel
++ Fix, crash fixed, when closing window without ending an open editing session of text
++ Fix, Inspector: Key-switches work without failure sound
++ Fix, Fill color: if fill color is black and stroke color is not, we now keep the correct fill color
++ Fix, Text, Apple: workaround to make mirror work again with Mac OS 10.5 and 10.6 (10.4 worked)
++ Fix, Apple: German Menu Format->Schrift->Ligaturen added
++ Fix, Apple: Relocation Flag in packages removed
++ Fix, GNUstep: load HPGL and Gerber files without explicitly setting Preferences Popup.
+       Workaround for GNUstep issue to have a default import device for HPGL and Gerber,
+       even if defaults are not being registered.
++ Fix, DXF-Import, GNUstep: load of DXF files with special characters improved.
+       We try UTF8 and Latin encoding, Bleistift.dxf example works with that
+
+Cenon 3.9.1 (2010-04-03)
+
++ Two new menu items in the Window menu (Take Snapshot and Restore Snapshot) to make a
+  snapshot of all open documents and their screen locations.
++ Preferences: Window Grid for easier positioning and resizing of windows within a grid
++ Tool-Panel: will not be force to be displayed when Document is clicked
++ Inspector automatically removes Scroller if not needed
++ Editing: right mouse click ends editing and exits editing mode
++ Danish Interface added. Thanks goes to Erik Richard Sorensen !
++ Fix, Inspector:
+  - resizing of fields added for Path and Text-Inspector
+  - Tab works on all inspector fields now
++ Fix, Image-Formats:
+  - Extensions added to open images of kind: jpg, jpeg, gif, png, tif with open panel
+  - Mac OS 10.6: Extensions added to allow dragging of jpg, gif, png into Cenon
+    (worked < 10.6)
++ Fix, Precision: Files are saved with double precision now (1000 times higher resolution)
++ Fix, Batch-Printing: works with window smaller than document now
++ Fix, Magnifying Glass: click without drag scales to next zoom step only (not 5000%)
++ Fix, DXF-Import/DXF-Export: circles with negative angle work now in import and export
++ Fix, DXF-Import: precision of vertical arc-segments improved
++ Fix, Gerber-Import: G03 issue fixed, possible endless loop fixed
++ Fix, PathContour with arc: handling of extreme Arcs improved
++ Fix, PathContour: path direction corrected
++ Fix, Rectangle Contour: snapping over of corner radius prevented
++ Fix, GNUstep: Workaround to make documents with rotated text work
++ Fix, Apple 10.6: workaround for importing certain images where size is given smaller
+  than the true size of the image. They were loaded as thumbnail images.
++ Fix, Apple 10.6: workarounds to allow saving of images in formats other than TIFF
+  on Snow Leopard
++ Fix, Apple 10.6: Icons in some windows are displayed correctly again (not zoomed)
++ Fix, Apple <10.6: display Single Line Fonts without antialiasing to make them visible
+  on Mac OS < 10.6
+
+
+Cenon 3.9.0  (2009-06-19):
+
++ New: Project-Settings: settings like unit of measurement for each document.
++ New: more Image Formats can be used with Cenon, if supported
+  by the system, ex. JPG, GIF, PNG, ... (saves a lot of disk space!)
++ Template-Layer:
+  - display date mask of form "#DATE_%Y-%m-%d %H:%M#". See the MultiPage.cenon
+    example for details.
+  - also display non-template elements from even and odd template
+  - draw templates in order of pages (in front or behind elements of the pages)
++ LayerDetails: new switch to exclude layers from batch printing/production
++ Image: selection handling improved
+  - select at border or inside according to preferences setting
+  - for clipped images: select at or inside clipped area
++ Text: New empty text is removed, no asterisk '*' when clicking around in text mode.
+        Emptying an existing text will leave "EMPTY TEXT", so the text box can be reused.
++ Fix, pasting of several layers to one layer keeps order of graphics
++ Fix, Image: splitting of clipped image keeps image behind path
++ Fix, Text: creating a text at the right border of the document,
+  now sets the correct text box in all zoom steps
++ Fix, Text with Paragraph/Character-Colors is working again
++ Fix, Text: improvements of redisplay after editing text
++ Build Contour: Text offset Y fixed again for vertical centered text
++ Cosmetics in Inspectors, Knobs, Working-Area Panel, etc.
++ Groups can now be selected by "Select Color"
++ Filling: Axial Filling faster and better
++ Unfilled paths are now drawn with Stroke Color
++ Fix, Apple: scrolling without clutter
++ Fix, Rotate Object: skips locked objects now
++ Import: load Files with extensions in any case (like eps, EPS, Eps)
++ PS-Import: error-tolerant import of PostScript from Windows applications
+  like Corel-Draw, Eurocut, etc., that often contain garbage before data.
++ Fix, PS-Import via GhostScript: imported objects get a default color
++ Fix, Gerber-Export: small fixes like export of open Paths
++ Fix, Apple: position of the contour of mirrored text corrected
++ Fix, Apple: newly created text gets textbox a little heigher to be displayed more safely
++ Fix, Apple: workaround - finally it's now possible to save Cenon
+              documents compatible with OpenStep and GNUstep
++ Fix, Apple: workaround - it's now possible to save 4 bit images on Apple
++ Fix, Apple: workaround for new color spaces added in OS X >= 10.4
+  The new colors turned to black on saving.
++ Fix, Apple, German: The Decimal Separator on the numeric keypad creates a Decimal Point now
++ Apple: search of Cenon files in Library/Application Support/Cenon added
++ GNUstep: Apple and GNUstep releases now share one source package
++ Documentation updated
++ many many more improvements

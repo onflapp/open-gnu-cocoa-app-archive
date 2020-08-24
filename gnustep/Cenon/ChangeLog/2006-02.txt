@@ -1,0 +1,54 @@
+Cenon CAM Change Log - February 2006
+
+2006-02-01 Georg Fleischmann
+	* Localizable.strings (VHFLocalCAMString()): added, strings from this file are used now
+	  messages.h -> camMessages.h: everything renamed to CAM_*
+	  *.m: all string renamend to CAM_*
+
+2006-02-06 Georg Fleischmann
+	* *.m, h: warnings with new Mac OS 10.4 compiler removed
+	* Type1Font.m, h (code, nocurrentpoint, curPoint): now interface variables (not global!)
+	  Type1Font.m (-dealloc): free(code)
+	  Type1Font.m (fontState, vStems[], hStems[], vCnt, hCnt): now static, at least
+	  Type1Font.m: some castings to char*/unsigned char for encryptEexec() and -stringWithCString:
+	  Type1Import.m, type1Funs.m: char/unsigned castings to remove all warnings
+	* VPolyLine.m (-nearestPoint:, -uniteWith:): initialized uninitialized variables (cpt, epts[2])
+
+2006-02-08 Georg Fleischmann
+	* v3pointFromPropertyList(): return V3ZeroPoint on error (not undefined content)
+	* DXFExport.m (-addLayer:): use lossyCString to remove special characters from name
+
+2006-02-16 Ilonka Fleischmann
+	* VGraphic.m (+fastKnobFill:isBlack:): else if ( blackRectCount >= blackRectSize ) instead else
+	  VGraphic.m (+fastKnobFill:isBlack:): else if ( dkgrayRectCount >= dkgrayRectSize ) instead else
+	-> damit nicht x1000 mal NSZoneRealloc()
+
+	* DocView.m (-mouseDown:): if (!redraw) [self drawRect:drawRect]; raus nach moveObject
+	  DocView.m (-dragSelect:): only select elements, if region size is > 0
+	  DocView.m (-dragSelect:): if (drawRect.size.... > 0) [self flatRedraw:drawRect] auskommentiert
+	-> sonst werden die Controls || Graphics 2x gemalt
+
+2006-02-21 Ilonka Fleischmann
+	* Path.m (-contour:inlay:splitCurves:): (Diff(w, 0.0) < 0.0001 &&  ...) instead ohne ...
+	  Path.m (-contourWithPixel:): if ( !(w+width) ) instead of if ( !w )
+	-> hier wird die Width der Grafik jetzt mit eingeplant
+	* PathContour.h,m (-contourPath:width:): die width des Pfades wird jetzt auch beröcksichtigt maxBytes erhðht etc diverses
+	  PathContour.h,m (-contourList:width:): new build the Raster contour over a list
+	  PathContour.h,m (-contourList:width:): new build the Raster contour over a list
+	  PathContour.h,m (-rubOut::::): new build the Raster RubOut
+	  PathContour.h,m (-fillRubOut::::inset:offset:): new build the Raster fill lines for RubOut
+	  PathContour.m (-optimizePath::): null linien werden aussortiert und einzelne linien auch
+
+2006-02-24 Georg Fleischmann
+	* VHFStringAdditions.m, h (+stringWithFloat:, +stringWithFloat:decimals:): new
+	* GeneralController.m,
+	  ImportController.m (-update, -set:): use [NSString +stringWithFloat:]
+
+2006-02-26 Georg Fleischmann
+	* DocView.m (vhfUpdateMenuItem()): moved to functions.m, h
+
+2006-02-28 Georg Fleischmann
+	* VText.m (setString:lineHeight:): check, if attributedString exists
+	  -> workaround for Apple bug
+
+next Cenon 3.81

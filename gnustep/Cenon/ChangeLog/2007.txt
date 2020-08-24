@@ -1,0 +1,141 @@
+Cenon CAM Change Log - 2007
+
+2007-01-30 Ilonka Fleischmann
+	* VPath.m (-subPathInsidePath::): wenn ein edgepoint getroffen wird wird jetzt auch ein sidestep gemacht!
+	-> Fix: Contourberechnung, Richtungsbestimmung bei gejointen Pfaden tut jetzt wieder
+	* DXFImport.m (-getGraphicFromData::): case MODE_VERTEX bei GRPSEQEND
+	  make sure that start and end point differ befor creating a close element.
+	-> Fix: DXFImport already closed Polylines work now
+
+2007-04-09 Ilonka Fleischmann
+	* DocView.m (-buildContour:): [layer insertObject:path atIndex:... +1];
+	  DocView.m (-buildContour:): bei useraster, so dass pro slist object ein pfad entsteht
+	-> BuildContour: damit wird der erzeugte contour Pfad vor die Graphic gelegt, damit man sie auch sieht
+	-> BuildContour UseRaster: bei mehreren Objekten wird jetzt pro pfad ein neuer generiert, nicht mehr nur einer
+
+2007-04-09 Ilonka Fleischmann
+	* GerberExportSub.m (-exportToFile:): Objekte aller Lagen werden erst
+	  in eine Liste gepackt und dann ausgegeben
+	-> Gerberexport: för mehrlagige Dateien verbessert
+	* VCurve.m (-intersectLine:::): vertical line Abfrage toleranter und genauer
+	-> Konturberechnung: fast senkrechte Linien an Kurven angrenzend werden
+	   jetzt richtig berechnet
+
+2007-04-09 Ilonka Fleischmann
+	* IPCrosshairs.nib de, gb(): um LockSwitch und setLock: erweitert
+	* IPBasicLevel.m (): #include "IPCrosshairs.h"
+	* IPBasicLevel.m (setLock:): Crosshair kann man jetzt auch locken
+	* IPCrosshairs.m (-update:): [super update:sender]
+	-> Crosshair hat jetzt auch einen LockSwitch 
+
+2007-04-20 Georg Fleischmann
+	* VArc.m (-drawWithPrincipal:): use defaultWidth if width == 0
+	  -> this allows printing of Arcs without line width on Apple
+
+2007-05-04 Georg Fleischmann
+	* Main.nib (-toggleCoordDisplay:): menu item to toggle coordinate display added
+	  Document.m (+newFromFile:, -save): "hasCoordBox" added
+	  DocView.m (-validateMenuItem): menu item for coordinate display added
+	  DocWindow.m, h (-hasCoordDisplay): added
+	  messages.h: SHOW_COORDS, HIDE_COORDS: added
+	  Apple, Document.nib: tileScrollView and coordBox added
+	  -> this allows turning on and off the coordinate display to have more space
+
+2007-05-08 Georg Fleischmann
+	* Apple, VHFImport-Framework: vhf2DFunctions.m added to project to avoid crash without modules
+	-> prevents a crash without modules loaded
+	* Apple, DocView.m (-redrawObject:, -moveObject:, rotateObject:): scale source rectanle for NSCopyBits
+	-> move/move vertex/rotate of graphics with scaled cache works properly
+	* Apple, VText.m (-getFlattenedObjectAt:withOffset:): yOffset for Apple added used for vertical centered text
+	-> build contour of vertical centered text are placed correctly
+	-> CenonCAM: tracks of vertical centered text are placed correctly
+
+2007-07-12 Ilonka Fleischmann
+	* VPath.m (-uniteWith:): uStartIs[i] statt j sonst arrayabfrage falsch
+	-> Fix: Punch/Vereinigen/GerberImport
+	* VPath.m (-optimizeSubPathsToClosedPath:): NSLog Ausgabe verringert
+	* VPath.m (-fillStreamWithInset:offset:): NSLogs Ausgabe verringert
+	* VPath.m (-fillStreamWithInset:offset:angle): NSLogs Ausgabe verringert
+	-> damit nur 1x eine NSLog ausgegeben wird
+
+	* DXFImportSub.m (-setBounds:): continue nur wenn object ausserhalb removed wird
+	-> damit gibt es keinen Versatz mehr zu den Objekten ausserhalb des Sichtbaren Bereichs
+
+2007-07-14 Georg Fleischmann
+	* VPath.m (-optimizeSubPathsToClosedPath): noticeJ = -1, noticeK = -1 initialized
+	* Info.nib, App.h: infoVersionNo added
+	* TileScrollView.m (-initWithFrame): for Apple, explicitly do not draw background
+	  -> with this the draw area is identifyable on a larger window background
+	* DocView.m (-scaleUnitSquareToSize): setFrame of editView = DocView again
+	  -> this fixes that editing of text in changing scales sometimes didn't work
+
+2007-07-16 Georg Fleischmann
+    * Apple, Document.m (-setName:andDirectory:): for Apple setTitle, otherwise it doesn't work for long
+    * Apple, Document.m (-save:): added save as ASCII Property list... but doesn't work as promised (yet?)
+
+2007-07-17 Georg Fleischmann
+    * Apple, Inspector.nib: now resizable
+      IP*.nib: all inspector panels resizing mask set
+
+2007-07-19 Georg Fleischmann
+    * App.h: MENU_HELP added
+      App.m: -showHelp: added, loads PDF files from .../Docu/LANGUAGE.lproj/Cenon.pdf
+
+Cenon 3.83
+
+
+2007-08-08 Georg Fleischmann
+    * LayerDetailsController.m, h, LayerDetails.nib: batchSwitch added
+      -> tell the layer weather to be used for batch production
+
+2007-08-08 Georg Fleischmann
+    * German.lproj/Main.nib: Hilfe-Menu added (grrr)
+    * again, Apple Version 3.83
+
+Cenon 3.83-1 (Apple)
+
+
+2007-08-31 Georg Fleischmann
+    * LayerObject.h (CAM_CutType): now enum (was #define)
+      LayerObject.h (LAYER_CAMERA): added for Camera gauging in CAM module (has to go to CAM module!)
+
+2007-09-18 Georg Fleischmann
+	* Apple, VText.m (-getFlattenedObjectAt:withOffset:): yOffset removed for versions before 824.42,
+          as Apple fixed the bug in 10.4.10 or earlier.
+
+Cenon 3.83-2 (Apple)
+
+2007-09-21 Georg Fleischmann
+	* vhf2DFunctionas.m, h (-convertCurveToLines()): new
+
+2007-09-22 Georg Fleischmann
+	* vhf2DFunctionas.m, h (-convertArcsToLines()): new
+
+2007-09-23 Georg Fleischmann
+        * DocWindow.m (-windowDidBecomeMain:): set active window
+          DocWindow.m (-close:): remove active window
+          App.m, h (-setActiveDocWindow:, activeWindow): new
+          App.m (-currentDocument:): return activeWindow if mainWindow fails
+
+2007-10-26 Georg Fleischmann
+	* Apple, VText.m (-getFlattenedObjectAt:withOffset:):
+        - yOffset for vertical centered text only (my fault to miss that),
+          no version check, because now everything is totally confused.
+        - aspectRatio is now calculated with '/1.0' from top of textbox,
+          (with older OS X '/2.0' may have worked (center of textbox), but no older OS X available to find out).
+	-> Text-Contour: normal text works, vertical centered works, aspect ratio text works,
+                     aspect ratio + vertical centered fits too (but FIXME: the text itself is totally off!)
+    * IPAllText.m (-setLineHeight:, -setFontSize:): setDocument and layer dirty
+    -> Output will be calculated, Documents wants to be saved for changes of line-height and font size
+
+2007-11-07 Georg Fleischmann
+    * DocView.m (-createEditView): no setAutoresizeMask for editView
+      DocView.m (-scaleUnitSquareToSize:): don't change the size of editView,
+      and if it is ripped apart by unknown forces, we log this event bring it back to 100%
+    -> this allows editing of text in all scales and zooming up and down and text can
+       still be created close to the right border of the document.
+
+2007-11-20 Georg Fleischmann
+    * VMark (-drawWithPrincipal:): set linewidth for printing to 0.5 pt, otherwise default
+
+next 3.84

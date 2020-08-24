@@ -1,0 +1,10 @@
+Cenon Change Log - February 2005
+
+2005-02-11 Ilonka Fleischmann
+	* VPathContour.m (-contourPath:width:): if ( wi*s > 11000 || h*s > 11000 ) break
+	  large images don't crash with contour fill and image contour
+
+2005-02-23 Georg Fleischmann
+	* IPAllLayers.m (-newLayer:): use name from field, if usable
+
+next Cenon 3.70

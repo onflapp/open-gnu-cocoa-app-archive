@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>GSMenuBarHeight</key>
+    <string>24</string>
+
+    <key>NSMenuFontSize</key>
+    <string>14</string>
+
+    <key>GSMenuSeparatorHeight</key>
+    <string>10</string>
+
+    <key>GSScrollViewNoInnerBorder</key>
+    <string>YES</string>
+
+    <key>windowBackgroundColor</key>
+    <string>0.82 0.82 0.82</string>
+
+    <key>controlBackgroundColor</key>
+    <string>0.94 0.94 0.94</string>
+
+    <key>controlShadowColor</key>
+    <string>0.69 0.69 0.69</string>
+
+    <key>controlDarkShadowColor</key>
+    <string>0.24 0.24 0.24</string>
+
+    <key>controlColor</key>
+    <string>0.94 0.94 0.94</string>
+
+    <key>selectedControlColor</key>
+    <string>0.72 0.72 0.72</string>
+
+    <key>disabledControlTextColor</key>
+    <string>0.62 0.62 0.62</string>
+
+    <key>scrollBarColor</key>
+    <string>0.53 0.53 0.53</string>
+
+    <key>selectedMenuItemColor</key>
+    <string>0.58 0.58 0.58</string>
+
+    <key>selectedMenuItemTextColor</key>
+    <string>1.0 1.0 1.0</string>
+
+    <key>selectedTextBackgroundColor</key>
+    <string>0.7 0.84 1.0</string>
+
+    <key>PPBoldMenuTextColorWhiteValue</key>
+    <string>0.20</string>
+</dict>
+</plist>
+

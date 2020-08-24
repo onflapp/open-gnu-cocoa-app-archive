@@ -1,0 +1,31 @@
+device name                                  #DEV "Sieb & Meyer 1000"
+
+baudrate (0=parallel)                        #BAU 9600
+handshake (0=none, 1=XON/XOFF, 2=RTS/CTS)    #HSK 1
+
+special characters in command strings:
+linefeed                  \n
+escape                    \e
+carriage Return           \r
+quotationmarks            \"
+parameters will be inserted at %f (%d, %x, %ld, %e)
+
+XY-maximum in mm                             #MAX 1000 1000
+resolution in points/inch	             #RES 25400
+
+for output only:
+initialize                                   #INI "%%1000\n"
+X-coordinate                                 #XPO "X%.0f"
+Y-coordinate                                 #YPO "Y%.0f"
+select tool                                  #TNR "T%d*"
+parameter                                    #PAR "$"
+terminator                                   #TRM "\n"
+reset                                        #RST ""
+
+for interpreter only:
+start                                        #IST "%%1000"
+parameter                                    #IPA "$"
+select tool                                  #ITL "T"
+X                                            #IXP "X"
+Y                                            #IYP "Y"
+terminator                                   #ITM "\n"

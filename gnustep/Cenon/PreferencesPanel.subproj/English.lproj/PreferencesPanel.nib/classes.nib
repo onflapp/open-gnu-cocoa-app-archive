@@ -1,0 +1,20 @@
+{
+    IBClasses = (
+        {
+            CLASS = App; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {preferencesPanel = id; }; 
+            SUPERCLASS = NSApplication; 
+        }, 
+        {CLASS = DragMatrix; LANGUAGE = ObjC; SUPERCLASS = NSMatrix; }, 
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {setModule = id; }; 
+            CLASS = PreferencesPanel; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {iconMatrix = id; moduleView = id; }; 
+            SUPERCLASS = NSPanel; 
+        }
+    ); 
+    IBVersion = 1; 
+}

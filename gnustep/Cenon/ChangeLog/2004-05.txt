@@ -1,0 +1,12 @@
+Cenon Change Log - May 2004
+
+2004-05-18  Georg Fleischmann
+	* VText.m (-setRichTextData:): autorelease attributedString
+	* VHFStringAdditions (-countOfCharacter:inRange:): new
+
+2004-05-27  Georg Fleischmann
+	* DXFImport.m  (-getArc:...): the arc center is no longer added to the bounds
+	* HPGLImport.m (-getArc:...): the arc center is no longer added to the bounds
+
+2004-05-31  Georg Fleischmann
+	* VImage.m (setImage:): retain for nImage

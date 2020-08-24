@@ -1,0 +1,130 @@
+Cenon Change Log - December 2002
+
+2002-12-04  Ilonka Fleischmann
+	* dvUndo.m (-splitObject:atPoint::): change und redraw/cache
+	* VPath.m (-getListOfObjectsSplittedAtPoint:): new
+	  VPath.m (-setAngle:withCenter:): if (filled) rotate filling too
+	  VPath.m (-drawGraduatedWithPrincipal:): while ( steps && ...
+	* VArc.m (-setAngle:withCenter:): if (filled) rotate filling too
+	* VRectangle.m (-getListOfObjectsSplittedAtPoint:): new
+	  VRectangle.m (-setAngle:withCenter:): if (filled) rotate filling too
+	  VRectangle.m (-pathRepresentation:): graduateAngle/radialCenter nach rotAngle setzen !
+	* VPolyLine.m (-setAngle:withCenter:): if (filled) rotate filling too
+	* VText.m (-setAngle:withCenter:): if (filled) rotate filling too
+	* VGraphic.m (-getListOfObjectsSplittedAtPoint:): new
+
+OpenStep Cenon 3.60 beta 1
+
+2002-12-04  Georg Fleischmann
+	* vhfLockFunctions.m, h (expirationDateFromKey()): return NSCalendarDate instead of NSDate
+	* LayerCell.m, IPLayerCell.m: declare NSImages as NSImages not just ids
+	* PickOutAri.m(-pickOutPath:...): make linePtEt a VLine instead of 3D line
+	* IPLine.m (): 'v = v +=' changed to 'v +='
+
+2002-12-11  Georg Fleischmann
+	* DocView.m (-moveObject:): autodisplay = NO activated
+	  DocWindow.m (-displayCoordinate:): display coordBox if autodisplay == NO
+	* Document.m (-initWindow, +newFromFile:, +newFromList:): set typeCenon as miniWindow icon
+
+2002-12-12  Georg Fleischmann
+	* dvPasteboard.m (-pasteFromPasteboard:): paste on 1st editable layer, if we can't paste 1:1
+
+2002-12-17  Ilonka Fleischmann
+	* VArc.m (-getListOfObjectsSplittedFrom::): start/end nur bei angle != 360.0
+	  VArc.m (-getListOfObjectsSplittedFromGraphic:): start/end nur bei angle != 360.0
+	  VArc.m (-clilppedFrom:): nothingRemoved wie bei uniteWith:
+	* VPath.m (-drawRadialWithPrincipal:): FarbabstÙnde stimmen jetzt besser
+	  VPath.m (-drawGraduatedWithPrincipal:): FarbabstÙnde stimmen jetzt besser
+	  VPath.m (-clilppedFrom:): nothingRemoved wie bei uniteWith:
+	* DocView.m (-moveObject:::): moveGraphicsBy:delta andDraw:NO] instead of YES
+	  DocView.m (-mouseDown:): if (![self rotateObject:) redraw = NO
+	  DocView.m (-mouseDown:): if (![self moveObject:) redraw = NO
+	  DocView.m (-rotateObject:): if (!angle) return NO
+	  DocView.m, h (-redrawObject:): if (![self redrawObject:) redraw = NO -> BOOL statt void
+	  DocView.m (-moveObject:, redrawObject:...?): [window setAutodisplay:NO] (YES at end)
+
+2002-12-25  Georg Fleischmann
+	* TPMove.m (-set:): move in units
+
+2002-12-26  Ilonka Fleischmann
+	* VArc.m (-getListOfObjectsSplittedFromGraphic:): free(iPts) 3x
+
+2002-12-28  Ilonka Fleischmann
+	* DocView.m (-group:): group in reihenfolge von layer list
+	  DocView.m (-placeGraphic:at:): [self deselectAll:self]
+	  DocView.m (-mouseDown:): if ( displayGraphic && !gotHit ) deselect Obj from not editable layer !
+	  DocView.m (-moveObject:::): bei liste auch deselectierten bereich neu malen !
+	  DocView.m (-moveObject:::): rect_scroll.size == 0 wird auf 1.0 gesetzt
+	* VCurve.m (-getListOfObjectsSplittedFrom::): width und color gesetzt
+	  VCurve.m (-scale:withCenter:): width wird auch scaliert
+	* VArc.m (-getListOfObjectsSplittedAtPoint:): width und color gesetzt
+	  VArc.m (-scale:withCenter:): width wird auch scaliert
+	* VLine.m (-scale:withCenter:): width wird auch scaliert
+	* VPolyLine.m (-scale:withCenter:): width wird auch scaliert
+	* VRectangle.m (-scale:withCenter:): width wird auch scaliert
+
+2002-12-31  Ilonka Fleischmann
+	* VRectangle.h (): coordBounds
+	  VRectangle.m (-init): coordBounds = NSZeroRect;
+	  VRectangle.m (-coordBounds): berechnet nur bei widht && height == 0.0 neu
+	  VRectangle.m (-setVertices::): coordBounds = NSZeroRect;
+	  VRectangle.m (-setRotAngle:, -setRadius:, setSize:): coordBounds = NSZeroRect;
+	  VRectangle.m (-scale:withCenter:): coordBounds = NSZeroRect;
+	  VRectangle.m (-mirrorAround:): coordBounds = NSZeroRect;
+	  VRectangle.m (-setAngle:withCenter:): coordBounds = NSZeroRect;
+	  VRectangle.m (-movePoint:by:, -moveBy:): coordBounds = NSZeroRect;
+	* VArc.h (): coordBounds
+	  VArc.m (-bounds): aus coordBounds um center erweitert
+	  VArc.m (-init): coordBounds = NSZeroRect;
+	  VArc.m (-coordBounds): berechnet nur bei widht && height == 0.0 neu
+	  VArc.m (-setFullArcWithCenter:radius:): coordBounds = NSZeroRect;
+	  VArc.m (-setCenter:start:angle:, -setRadius:): coordBounds = NSZeroRect;
+	  VArc.m (-setBegAngle:, -setAngle:): coordBounds = NSZeroRect;
+	  VArc.m (-setAngle:withCenter:): coordBounds = NSZeroRect;
+	  VArc.m (-scale:withCenter:): coordBounds = NSZeroRect;
+	  VArc.m (-mirrorAround:, -movePoint:by:control:): coordBounds = NSZeroRect;
+	  VArc.m (-movePoint:by:, -moveBy:): coordBounds = NSZeroRect;
+	* VCurve.h (): coordBounds
+	  VCurve.m (-bounds): aus coordBounds um p1/p2 erweitert
+	  VCurve.m (-setParameter): coordBounds = NSZeroRect;
+	  VCurve.m (-coordBounds): berechnet nur bei widht && height == 0.0 neu
+	  VCurve.m (-setVertices::::): coordBounds = NSZeroRect;
+	  VCurve.m (-setAngle:withCenter:): coordBounds = NSZeroRect;
+	  VCurve.m (-scale:withCenter:): coordBounds = NSZeroRect;
+	  VCurve.m (-mirrorAround:, -changePoint::): coordBounds = NSZeroRect;
+	* VPath.h (): coordBounds
+	  VPath.m (-size:, -setSize:): variable bounds durch bRect ersetzt
+	  VPath.m (-subPathInsidePath:: beide varianten): variable bounds durch bRect ersetzt
+	  VPath.m (-init): coordBounds = bounds = NSZeroRect;
+	  VPath.m (-coordBounds): berechnet nur bei widht && height == 0.0 neu
+	  VPath.m (-bounds): berechnet nur bei widht && height == 0.0 neu
+	  VPath.m (-extendedBoundsWithScale): auskommentiert damit wie in VGraphic !
+	  VPath.m (-setList:optimize:): coordBounds = bounds = NSZeroRect;
+	  VPath.m (-addList:at:): coordBounds = bounds = NSZeroRect;
+	  VPath.m (-join:, -complexJoin:distance:, -moveBy:): coordBounds = bounds = NSZeroRect;
+	  VPath.m (-movePoint:to:, -movePoint:to:control:): coordBounds = bounds = NSZeroRect;
+	  VPath.m (-mirrorAround:, -setAngle:withCenter:): coordBounds = bounds = NSZeroRect;
+	  VPath.m (-scale:withCenter:): coordBounds = bounds = NSZeroRect;
+	* VPolyLine.h (): coordBounds
+	  VPolyLine.m (-init): coordBounds = NSZeroRect;
+	  VPolyLine.m (-coordBounds): berechnet nur bei widht && height == 0.0 neu
+	  VPolyLine.m (-addPoint:, removePointWithNum:): coordBounds = NSZeroRect;
+	  VPolyLine.m (-mirrorAround:, -setAngle:withCenter:): coordBounds = NSZeroRect;
+	  VPolyLine.m (-scale:withCenter:, -changePoint::): coordBounds = NSZeroRect;
+	* VGroup.h (): coordBounds, bounds
+	  VGroup.m (-size:, -setSize:): variable bounds durch bRect ersetzt
+	  VGroup.m (-coordBounds): berechnet nur bei widht && height == 0.0 neu
+	  VGroup.m (-bounds): berechnet nur bei widht && height == 0.0 neu
+	  VGroup.m (-extendedBoundsWithScale): auskommentiert damit wie in VGraphic !
+	  VGroup.m (-init, -setList, -addObject, -add:): coordBounds = bounds = NSZeroRect;
+	  VGroup.m (-init): coordBounds = bounds = NSZeroRect;
+	  VGroup.m (-movePoint:to:, -movePoint:to:control:): coordBounds = bounds = NSZeroRect;
+	  VGroup.m (-movePoint:by:, -moveBy:): coordBounds = bounds = NSZeroRect;
+	  VGroup.m (-mirrorAround:, -setAngle:withCenter:): coordBounds = bounds = NSZeroRect;
+	  VGroup.m (-scale:withCenter:): coordBounds = bounds = NSZeroRect;
+	* DocView.m (-moveObject:): boundsOfArray:withKnobs:NO instead of coordBoundsOf..
+
+next
+OpenStep Cenon 3.60 beta 2
+Apple Cenon 3.60 beta 2
+GNUstep: Cenon 3.60 beta2-1

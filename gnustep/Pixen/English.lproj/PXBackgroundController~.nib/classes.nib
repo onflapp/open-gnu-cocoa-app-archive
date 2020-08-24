@@ -1,0 +1,29 @@
+{
+    IBClasses = (
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {CLASS = NSObject; LANGUAGE = ObjC; }, 
+        {
+            ACTIONS = {
+                selectAlternateBackground = id; 
+                selectMainBackground = id; 
+                useAlternateBackgroundCheckboxClicked = id; 
+                useCurrentBackgroundsAsDefaults = id; 
+            }; 
+            CLASS = PXBackgroundController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                alternateBackground = id; 
+                alternateCheckbox = NSButton; 
+                alternateConfigurator = NSView; 
+                alternateMenu = NSPopUpButton; 
+                delegate = id; 
+                mainBackground = id; 
+                mainConfigurator = NSView; 
+                mainMenu = NSPopUpButton; 
+                namePrompter = id; 
+            }; 
+            SUPERCLASS = NSWindowController; 
+        }
+    ); 
+    IBVersion = 1; 
+}

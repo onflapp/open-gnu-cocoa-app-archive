@@ -1,0 +1,85 @@
+{\rtf0\ansi{\fonttbl\f0\fmodern Courier;}
+\pard\tx1440\tx2700\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li2700\fi-2700\ql\qnatural
+
+\f0\b\fs24 \cf0 …nderungen för November 1997\
+
+\b0 \
+19.11.97	Cenon\
+\
+\pard\tx1440\tx4320\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li4320\fi-4320\ql\qnatural
+\cf0 Datum	Datei	VerÙndert\
+----------------------------------------------------------------------------------------------\
+04.11.97	Editor2DView.m	-mouseDown -> Text editieren auch mit mehr als 2-fach Klick\
+		-changeFont -> Layer wird dirty gesetzt\
+	TextGraphic.m	-getFlattenedObjectAt, -drawSerialNumberAt -> scale röckgÙngig gemacht\
+05.11.97	Editor2DView.m	-draw -> drawPale wird gesetzt, wenn Fahrwege angezeigt werden\
+	Editor2DView.h	mustDrawPale, -mustDrawPale -> new\
+	e2Output.m	-mustDrawPale -> new\
+	Graphic.m	-draw -> mustDrawPale\
+	Curve.m\
+	Path.m	-draw -> ruft super statt color zum setzen der Color\
+	TextGraphic.m	-draw -> mustDrawPale\
+		-textDidEndEditing -> graphicView wird aus editView geholt\
+	e2Grid.m\
+	apGrid.m	neu\
+	Editor2DView.m	-validateMenuItems -> toggleGrid -> hinzugefögt\
+		-updateMenuItems -> new\
+	Editor2DView.h	alles mit Grid neu\
+06.11.97	Editor2DWindows.m, h	-toggleGrid: -> neu\
+		-draw: -> grid wird dargestellt\
+		-redrawObject: -> grid: eingebaut\
+		-moveObject: -> grid: eingebaut\
+	Line.m\
+	Arc.m\
+	Path.m\
+	ClipRectangle.m\
+	Curve.m\
+	TextGraphic.m	-createIn: -> grid aktiviert\
+08.11.97	Editor2DDocument.m	-scale::withCenter: -> resetGUP\
+	Editor2DView.m	-dealloc -> gup freigegeben\
+		-encodeWithCoder:, -initWithCoder: -> grid wird geladen\
+		-setFrameSize: -> resetGUP\
+	App.m	-windowShouldClose -> stopModal\
+10.11.97	e2Output.m	-calcOutputFor -> update von slayList\
+13.11.97	Mark.nib	neu\
+	IPMark.m, h	neu\
+	Mark.m, h	neu\
+	e2Output.m	mark hinzugefögt\
+	E2DGraphics.h	Mark hinzugefögt\
+	Editor2DTools.nib	Mark hinzugefögt\
+	App.h	TOOL2D_MARK hinzugefögt\
+	App.m	-setCurrent2DTool -> mark hinzugefögt\
+	Editor2DView.m	-mouseDown -> Mark hinzugefögt\
+14.11.97	IPRectangle.nib	neu\
+	IPRectanle.m, h	neu\
+	E2DGraphics.h	Rectangle hinzugefögt\
+	App.h	TOOL2D_PATH hinzugefögt, TOOL2D_RECT andere #\
+	App.m	-setCurrent2DTool -> TOOL2D_PATH hinzugefögt\
+	InspectorPanel.h	IP_ auskommentiert, da nicht verwendet\
+		markWindow, rectanleWindow hinzugefögt\
+	InspectorPanel.m	-loadGraphic -> mark und rectangle hinzugefögt\
+	Graphic.m, h	+graphic -> return autoreleased object\
+	DPControl.m	-clip gibt NSArray zuröck, Array wird nicht mehr geleert\
+	all Graphic.m	-clipListFromRect: gibt autoreleased NSArray zuröck, copies von objekten innerhalb sind auch autoreleased\
+	Editor2DView.m	-flatten -> ruft pathRepresentation statt flattenedObject\
+	TextGraphic.m, h	-pathRepresentation -> neu\
+17.11.97	Editor2DView.m	-dragSelect -> region.origin mit 0.0 initialisiert\
+	IPGroup.nib	origin, size eingebaut\
+	IPGroup.m, h	origin setzt layer dirty\
+		setWidth, setHeight hinzugefögt\
+	Group.m, h	-setSize -> neu\
+	Arc.m	-scale::withCenter: -> totaler Quatsch\
+	App.m	-display2DToolPanel -> setBecomesKeyOnlyIfNeeded:YES\
+	TextGraphic.m	-setLineHeight, lineHeight -> setzen hight im Text\
+		-setFontSize, fontSize -> neu\
+	IPText.h	fontSizeField -> neu\
+	IPText.m, h	-setFontSize -> neu\
+		-encodeWithCoder, decodeWithCoder -> lineHeigth entfernt\
+		lineHeight ist keine Class variable mehr\
+18.11.97	KeyPanel.m, h	auf neue Keys umgestellt\
+	App.m	-appDidFinishLaunching -> ruft verifyKey\
+	VHFLock.m, h	neu\
+	vhfLockFunctions.m, h neu\
+19.11.97	DPLayerDetails.m	-update -> Limitierung för Pick Out eingebaut\
+	LayerCell.m	-trackMouse:InRect: -> Limitierung för pick out eingebaut\
+	}

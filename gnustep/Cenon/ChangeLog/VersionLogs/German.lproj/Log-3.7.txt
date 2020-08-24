@@ -1,0 +1,39 @@
+
+Cenon 3.71:
+
+- Neu: Mehrseitige Dokumente (Handhabung von Seiten + Drucken).
+       Maskenlagen för gerade, ungerade und alle Seiten mit
+       Platzhaltern för Seitennummer #PAGENUM# und Seitenanzahl #PAGECNT#
+       Beispiel-Dokument: MultiPage.cenon
+- Neu: Neues Editierwerkzeug um Stötzpunkte för Pfade und Polylinien
+       hinzuzufögen.
+- Neu: Entfernen von Stötzpunkten aus Pfaden und Polylinien
+- Ausstanzen: Ausstanzen mit Gruppen und Rechtecken hinzugefögt
+- Undo för Text zu Pfad-Umwandlung hinzugefögt
+- Optimierung des Speicherverbrauchs
+- Fix: Absturz beim Beenden des Programms entfernt
+- Fix: einige Bug Fixes för Konturberechnungen auf Grafikobjekte
+- Fix, Gerber-Export: Geföllte Polylinien sind jetzt geföllt.
+                      Leere Lagen werden nicht exportiert.
+- Weitere Bug Fixes, sowie kosmetische Verbesserungen
+- Handbuch aktualisiert
+
+Cenon 3.70:
+
+- Lagen Inspektor: direktes Anlegen einer Lage mit eingegebenem Namen
+- Ausstanzen: Es kann mit einem ungeföllten Objekt ausgestanzt werden
+- Ungroup: Auch bei gemischter Selektierung kðnnen Gruppen zerlegt werden
+- Join: Verbessertes schliessen (Föllen) offener Pfade
+- Drucken: es wird nun immer mit 100% gedruckt
+- Fix, Drucken: Die Einstellungen des Drucken-Panel werden gemerkt
+- Gerber-Import: Besserer Import von Polygonen
+- Gerber-Import: Kreisbðgen mit Winkel nahe 360 Grad verbessert
+- Gerber-Export: Ausgabe komplexer Polygone verbessert
+- PostScript-Import: Bessere Unterstötzung des CMYK Farbraums
+- Darstellung: Verbesserte Performance mit vielen Objekten in Gruppen/Pfaden
+- Fix: Laden von leeren Gruppen funktioniert
+- Fix, Kontur: Grosse Rasterbilder störzen nicht mehr ab bei der Konturbildung
+- Fix bei PolyLinien in Pfaden
+- Antialiasing Verbesserungen för Apple and GNUstep
+- Apple: Compilierte Version unter Panther (Mac OS 10.3)
+- weitere Verbesserungen

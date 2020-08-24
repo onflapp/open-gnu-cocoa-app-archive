@@ -1,0 +1,82 @@
+{
+    IBClasses = (
+        {
+            ACTIONS = {
+                changeSaveType = id; 
+                importASCII = id; 
+                new = id; 
+                openDocument = id; 
+                runGridPanel = id; 
+                showDataPanel = id; 
+                showInfo = id; 
+                showInspectorPanel = id; 
+                showIntersectionPanel = id; 
+                showKeyPanel = id; 
+                showPrefsPanel = id; 
+                showProjectSettingsPanel = id; 
+                showTilePanel = id; 
+                showToolPanel = id; 
+                showTransformPanel = id; 
+                showWorkingAreaPanel = id; 
+            }; 
+            CLASS = App; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                iaPopup = id; 
+                iaaPopup = id; 
+                iaaRadio = id; 
+                importASCIIAccessory = id; 
+                importAccessory = id; 
+                savePanelAccessory = id; 
+                spaFormatPopUp = id; 
+            }; 
+            SUPERCLASS = NSApplication; 
+        }, 
+        {
+            ACTIONS = {
+                bindTextToPath = id; 
+                bringForward = id; 
+                bringToFront = id; 
+                buildContour = id; 
+                changeLayout = id; 
+                changeSaveType = id; 
+                close = id; 
+                displayDirections = id; 
+                draw = id; 
+                enterSelection = id; 
+                execute = id; 
+                flatten = id; 
+                group = id; 
+                import = id; 
+                join = id; 
+                mirror = id; 
+                myAction = id; 
+                performResize = id; 
+                printDocument = id; 
+                punch = id; 
+                redoChange = id; 
+                reverse = id; 
+                revertToSaved = id; 
+                rotateG = id; 
+                save = id; 
+                saveAs = id; 
+                selectColor = id; 
+                selectEqual = id; 
+                sendBackward = id; 
+                sendToBack = id; 
+                setWidth = id; 
+                split = id; 
+                toggleCoordDisplay = id; 
+                toggleGrid = id; 
+                undoChange = id; 
+                ungroup = id; 
+                zoomIn = id; 
+                zoomOut = id; 
+            }; 
+            CLASS = FirstResponder; 
+            LANGUAGE = ObjC; 
+            SUPERCLASS = NSObject; 
+        }
+    ); 
+    IBVersion = 1; 
+}

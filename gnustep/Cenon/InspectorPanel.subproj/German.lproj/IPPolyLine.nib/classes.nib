@@ -1,0 +1,34 @@
+{
+    IBClasses = (
+        {
+            CLASS = App; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {inspectorPanel = id; }; 
+            SUPERCLASS = NSApplication; 
+        }, 
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {setLock = id; setPointX = id; setPointY = id; }; 
+            CLASS = IPPolyLine; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                lockSwitch = id; 
+                xButtonLeft = id; 
+                xButtonRight = id; 
+                xField = id; 
+                yButtonLeft = id; 
+                yButtonRight = id; 
+                yField = id; 
+            }; 
+            SUPERCLASS = NSPanel; 
+        }, 
+        {
+            CLASS = InspectorPanel; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {polyLineWindow = id; }; 
+            SUPERCLASS = NSPanel; 
+        }, 
+        {CLASS = SurfaceWell; LANGUAGE = ObjC; SUPERCLASS = NSColorWell; }
+    ); 
+    IBVersion = 1; 
+}

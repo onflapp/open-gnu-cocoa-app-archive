@@ -1,0 +1,15 @@
+Cenon Change Log - December 2003
+
+2003-12-30 Ilonka Fleischmann
+	* vhf2DFunctions.m (pointInArray(), pointWithToleranceInArray()): andere Abfrage !!!
+	  vhf2DFunctions.m (removePointFromArray()): < 2.0*TOLERANCE instead of TOLERANCE
+	* VLine.m (-getListOfObjectsSplittedFrom:): removePointWithToleranceFromArray() start/end with 5.0*TOLERANCE
+	* VCurve.m (intersectCurves()): 1. check um endPoints verÙnderte abfrage (genauer !!!)
+	* VArc.m (-getListOfObjectsSplittedFrom:): point center Diff > Max(3.5*TOLERANCE, radius/10000.0)
+	  VArc.m (-getListOfObjectsSplittedFrom:): removePointWithTole.() s/e with Max(5.0*TOLERANCE, radius/10000.0)
+	  VArc.m (-getListOfObjectsSplittedFrom:): angle Tolerance +- 4.5*TOLERANCE !!!!!!!
+	  VArc.m (-tangentIntersectionArc::::): d>radius+radius1-+tol (2.0*TOLERANCE) instead of +5.0*TOLERANCE
+	* VPolyLine.h, m (-contour:inlay:removeLoops:): heisst jetzt -contour:inlay:splitCurves:
+	* VPath.h, m (-contour:inlay:removeLoops:): heisst jetzt -contour:inlay:splitCurves:
+
+next Cenon 3.60 beta 9

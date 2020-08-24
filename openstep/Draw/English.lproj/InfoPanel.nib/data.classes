@@ -1,0 +1,6 @@
+"DrawApp" = {
+    ACTIONS = {}; 
+    OUTLETS = {infoPanel = id; version = id; }; 
+    SUPERCLASS = NSApplication; 
+};
+"FirstResponder" = {ACTIONS = {}; CATEGORY = LocalActions; OUTLETS = {}; };

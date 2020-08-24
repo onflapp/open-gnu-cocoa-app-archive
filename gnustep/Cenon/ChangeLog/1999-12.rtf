@@ -1,0 +1,94 @@
+{\rtf0\ansi{\fonttbl\f0\fmodern Courier;}
+\pard\tx1440\tx5400\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li5400\fi-5400\ql\qnatural
+
+\f0\b\fs24 \cf0 …nderungen för November 1999\
+\pard\tx1440\tx5400\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li5400\fi-5400\ql\qnatural
+
+\b0 \cf0 \
+11.12.99	Cenon\
+\
+Datum	Datei	VerÙndert\
+----------------------------------------------------------------------------------------------\
+07.12.99	Xyz.m	-initXYZ -> bei ioTestAndRemoveByte() nur, wenn Röckgaben nicht mit TerminatorzÙhlung entfernt wird.\
+	LayerObject.m,h	type, LAYER_* -> new\
+		-passive, -setPassive, passive entfernt\
+		+initialize -> version = 3\
+		-encodeWithCoder -> type statt passive\
+		-decodeWithCoder -> type statt passive, neue version\
+	e2Output.m	-controlPassiveLayers -> setType statt setPassive\
+	LayerCell.m	Icons för entsprechende Layer types ausgeblendet\
+	DPLayer.m	passive durch type ersetzt\
+	DPControl.m	passive durch type ersetzt\
+		-update -> new\
+		-start: -> vermessungslage gecheckt, leveling:\
+		-buildOutputPathAndExecute -> skip leveling und clipping layer\
+	Xyz.m, h	ops.leveling -> new\
+		-xyzLoadParams: -> ops.leveling -> new\
+		-(BOOL)leveling -> new\
+	LayerObject.m, h	-layerObject -> new\
+		-addLayerWithName:type: -> new\
+	messages.h	NAMEINUSE_STRING mit Platzhalter för name\
+		LAYERTYPEINUSE_STRING -> new\
+		LAYERLEVELING_STRING, LAYERCLIPPING_STRING, LAYERONLYFORRECTANGLE_STRING -> new\
+	DPPositions.m\
+	DPLayer.m\
+	DPMagazine.m	NAMEINUSE_STRING -> Parameter name öbergeben\
+	Localizable.strings	Translation för NAMEINUSE_STRING, LAYERTYPEINUSE_STRING, LAYERLEVELING_STRING, LAYERCLIPPING_STRING, LAYERONLYFORRECTANGLE_STRING hinzugefögt\
+	apXyz.m\
+	App.h	-leveling -> new\
+	DPLayer.m	-update: -> addLayer... hinzugefögt\
+	DataPanel.m	-update: -> controlWindow update hinzugefögt\
+	ToolObject.m, h	TOOL_ZSENSOR, -levelingTool -> new\
+	Xyz.m	-executeVector -> leveling abgefangen\
+		-xyzLeveling -> new\
+		begExec, endExec -> mit fprintf ausgegeben damit return values mit Terminator richtig funktioniert\
+08.12.99	DPLayer.m	-matrixDidShuffleCellFrom -> count von output lists abgefragt, da nach Lage hinzufögen output list nicht up to date sein muss.\
+	Xyz.m	-initXYZ, begExec, endExec -> putMultipleInstructions() aufgerufen\
+	ioFunctions.c, h	putMultipleInstructions() -> new\
+11.12.99	DPControl.m	-start: -> för LAYER_LEVELING keine Neuberechnung\
+		levelingPointsX, levelingPointsY verwendet\
+	DPLayerLeveling.m, h, nib	new\
+	LayerObject.m, h	levelingX, levelingY, setLevelingX:y: -> new\
+	DPLayer.m, h	-currentLayerList -> gibt NSMutableArray zuröck\
+		-currentLayerObject -> ruft DPLayerLeveling för leveling layer\
+	DataPanel.m, h	DP_LAYERLEVELING, layerLevelingWindow -> new\
+	Xyz.m, h	-leveling um x, y erweitert\
+\pard\tx1440\tx5400\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li5400\fi-5400\ql\qnatural
+
+\b \cf0 3.20 Beta 22\
+\
+\pard\tx1440\tx5400\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li5400\fi-5400\ql\qnatural
+
+\b0 \cf0 12.12.99	Xyz.m	-xyzLoadParms -> added #SFM, #SFG, #SFH\
+	Xyz.h	parms.sfcSensorHeight -> new\
+		ops.sfcMeasure, ops.sfcGetPosition -> new\
+	Xyz.m, h	-canMeasureSurfacePosition -> new\
+		-measureSurface -> new\
+	App.h	-canMeasureSurfacePosition -> new\
+	apXyz.m	-canMeasureSurfacePosition -> new und bei Xyz aufgerufen\
+	DPToolParms.m	-measureSurface aufgerufen und auskommentiert\
+		#import messages.h -> new\
+	DPControl.m	-setOriginZDown -> -measureSurface aufgerufen\
+		-update -> originZDownField, buttonUp enabled/disabled\
+13.12.99	ioFunctions.m, h	-ioInputInstruction() -> komplett öberarbeitet\
+	Xyz.m, h	-measureSurface -> gibt jetzt Hðhe zuröck\
+		cncType -> new\
+	DPControl.nib	zScrapButtonUp -> new\
+	DPControl.m, h	xyzControlEnabled -> new\
+		-setOriginZDown -> Röckgabewert verwertet\
+		-init -> new\
+\pard\tx1440\tx5400\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li5400\fi-5400\ql\qnatural
+
+\b \cf0 3.20 Beta 23\
+\pard\tx1440\tx5400\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li5400\fi-5400\ql\qnatural
+
+\b0 \cf0 \
+14.12.99	ioFunctions.m, h	ioPutMultipleInstructions() mit timeout\
+	Xyz.m	ioPutMultipleInstructions() bei init mit Timeout\
+	DPControl.m	-update -> continous för Down-Button abgeschaltet\
+	DPControl.nib	zDownButtonUp, zDownButtonDown\
+\
+\pard\tx1440\tx5400\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li5400\fi-5400\ql\qnatural
+
+\b \cf0 3.20 Beta 23\
+}

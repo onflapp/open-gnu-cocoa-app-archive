@@ -1,0 +1,8 @@
+VHFExport Library Change Log - June 2003
+
+
+2003-06-20  Georg Fleischmann
+	* created subproject for OpenStep
+
+2003-06-26  Georg Fleischmann
+	* Export, Import: clean up to remove Linux warnings

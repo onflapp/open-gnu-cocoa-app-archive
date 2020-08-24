@@ -1,0 +1,14 @@
+Summary: Cenon - Graphics Software with Style for vector design and publishing
+Release: 1
+Vendor: vhf interservice GmbH
+License: vhf interservice GmbH (vhfPL)
+Group: Applications/Productivity
+Source: http://www.cenon.info/download/source/%{gs_name}-%{gs_version}.tar.bz2
+URL: http://www.cenon.info
+
+%description
+This package contains Cenon. Cenon is a graphical tool for vector design and publishing. Cenon can be extended by additional modules to become an industrial strength manufacturing software or an astrology program.
+
+%post
+
+%postun

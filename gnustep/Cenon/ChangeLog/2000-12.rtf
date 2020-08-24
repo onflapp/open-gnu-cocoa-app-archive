@@ -1,0 +1,98 @@
+{\rtf0\ansi{\fonttbl\f0\fmodern Courier;}
+\pard\tx1440\tx5400\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li5400\fi-5400\ql\qnatural
+
+\f0\b\fs24 \cf0 Cenon Changes in December 2000\
+
+\b0 \
+2000-12-15\
+\
+\
+Date	File	Modification\
+----------------------------------------------------------------------------------------------\
+02.12.00	German/Localized.strings	Positionierwege instead of Fahrwege\
+03.12.00	ioFunctions.m	ioPutInstruction() -> remove return values if !lookAhead\
+	Xyz.m	-wait -> call ioPutInstruction without look ahead\
+		-xyzMeasureToolOffset: -> lift z all the way up\
+		ZOriginPosition() -> tool offset added\
+	DPLayerDetails.nib	number of steps field allows two digits\
+	PPControl.nib	'Optimize Moves' -> new\
+	PPControl.m, h	optimize moves stuff -> new\
+	Editor2DView.m	-displayMoves: -> moves optimized\
+		-validateMenuItem -> -bringToFront:, -sendToBack: -> disabled if Prefs_OptimizeMoves\
+	PSImport.m	-interpret -> read space inside () correctly\
+	Sinking.m	-createOutput: -> remove outputStream on error\
+\
+
+\b 3.40 beta 2\
+
+\b0 \
+04.12.00	DPLayerDetails.m	-update -> use SWITCH_INLAY for inlay not SWITCH_REVERTDIR\
+		-setSwitches: -> changeDir to know when we have to change the direction\
+	Main.nib	Positionierwege instead of Fahrwege\
+	Line.m	realBounds added\
+	Curve.m	realBounds can return 0 for width or height\
+	Editor2DView.m\
+	DPControl.m	VHFUnionRect() instead of NSUnionRect()\
+	types.h	VHFUnionRect() -> new\
+	e2Tile.m	-incrementSerialNumbers -> get serial number\
+		-incrementSerialNumbers -> only increment if pref switch is enabled\
+	TextGraphic.m	-createOutput: -> autorelease pool for serial number\
+		-createOutput: -> no retain for outputStream in serialStreams\
+	DPToolParms.m	-selectTool: -> activate Cenon afterwards\
+	DPBasicLevel.m, h	-isActive -> new\
+	DataPanel.m, h	-activeWindow -> new\
+	DPLayer.m	-setToolAt: -> set tool in magazine only if layer is active\
+	e2Tile.m	-setTileWithLimits: -> dirty when x or y changed\
+		-setTileWithLimits:, -buildTileCopies: -> increase size if larger as working area\
+	DPPosition.m	-sort -> new\
+		-load:, setName: -> call -sort\
+	IPPath.nib, m, h	originXField, originYField, sizeWidthField, sizeHeightField, -setOriginX:, -setOriginY:, setSizeWidth:, -setSizeHeight: -> new\
+	Path.m, h	-size, -setSize: -> new\
+\
+
+\b 3.40 beta 3\
+
+\b0 \
+	TextGraphic.m, h	-boundingRectAtIndex: -> new\
+		-edit:in: -> setTextContainerInset: only if fe responds to\
+	TextPath.m	-drawWithPrincipal:, -flattenedObject... -> add 1/2 char width to character position\
+14.12.00	locations.h	FONT_EXT ... -> font\
+	Editor2DDocument.h,m	-saveFont -> new\
+	Type1Import.m,h	fehler rausgemacht\
+	Type1ImportSub.m,h	??\
+	standardEncoding.h	\
+	Font.m,h	fehler rausgemacht\
+	App.m, h	-openfile -> font added\
+		-listFromFile: -> font added, return id\
+		-saveAsPanel -> savePanelAccessory new\
+		-setSaveType: -> new\
+	Editor2DGraphic.m	-getSelection -> create new slaylist\
+	Editor2DView.h,m	-addLayerWithName... -> new\
+	LayerObject.m, h	-setTag:, -tag -> new\
+	Main.nib	savePanelAccessory -> new\
+
+\b 	Directory structure changed to Projects/Cenon/Source !!!!\
+
+\b0 	Font.m, h	-saveAs: -> -writeToFile:\
+	Font.m	*backupFilename = [filename stringByAppendingString:@"~"];\
+	Editor2DDocument.m	*backupFilename = [filename stringByAppendingString:@"~"];\
+17.12.00	Font.m	-updateFontMetrics -> gridRect nur in y um 0.5*gridOffset\
+		-getCharStringFromList -> gridRect nur in y um 0.5*gridOffset\
+		-viele: alle Werte floor(VAL*scale) !!!!!\
+	Type1Import.m	-createFontGrid -> grid links raus kleiner\
+	Type1ImportSub.m	-setBounds: -> p auf x=0 und y 0.5*gridOffset gesetzt\
+	Curve.m	-hitEdge auch p1 und p2\
+		-scrollRect: -> else added\
+	Path.m	-scrollRect: -> code for selected object added\
+18.12.00	Editor2DDocument.m	+new, +newFromFile:, +newFromList: -> release view\
+		-windowDidResignMain -> update data panel\
+	Editor2DView.m	createBuffer() -> release all the stuff\
+		-dealloc -> release cacheWindow\
+		-initView -> call addLayer of view\
+	Editor2DWindow.m	-close -> new, stops timer\
+		-windowDidResignKey: -> data panel update removed\
+	DPLayer.m	-addLayerWithName:.. -> set layerObject for all cells\
+\
+
+\b next 3.40 beta 4\
+}

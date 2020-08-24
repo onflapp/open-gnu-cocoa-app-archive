@@ -1,0 +1,42 @@
+{\rtf0\ansi{\fonttbl\f0\fmodern Courier;}
+\pard\tx1440\tx2700\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li2700\fi-2700\ql\qnatural
+
+\f0\b\fs24 \cf0 …nderungen för Oktober 1997\
+
+\b0 \
+24.10.97	Cenon\
+\
+\pard\tx1440\tx4320\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li4320\fi-4320\ql\qnatural
+\cf0 Datum	Datei	VerÙndert\
+----------------------------------------------------------------------------------------------\
+16.10.97	TextGraphic.m	-setSerialTextFor:offset: -> i == 0 zÙhlt ohne prefix hoch\
+	e2Output.m	-calcOutputFor: -> /* copy contour for tiling */ -> Föllung ergÙnzt\
+	Group.m	-buildFillUPath -> -buildFillUPath der objekte wird nicht nur bei geföllten objekten aufgerufen\
+18.10.97	Path.m	-draw -> es wird doUserPath auch för Kontur aufgerufen\
+\
+\pard\tx1440\tx4320\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li4320\fi-4320\ql\qnatural
+
+\b \cf0 3.07\
+\pard\tx1440\tx4320\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li4320\fi-4320\ql\qnatural
+
+\b0 \cf0 \
+23.10.97	Line3D.m	-putUPath -> neu\
+	Xyz.m	-executeVector -> 3D line eingebaut, verwendet nachfolgenden rmoveto (x = z start, y = z end)\
+		-xyz3DMoveTo:, -xyz3DLineTo:, -xyzMoveXYZ::: -> neu\
+		-xyzLoadParams -> um move3D erweitert\
+	Xyz.h	move3D zu Parametern hinzugefögt\
+	DPToolParms.nib	conical Cutter, tip angle, max diameter -> neu\
+	DPToolParms.m, h	-setTipAngle, -setMaxDiameter -> neu\
+		-tipAngleField, maxDiameter -> neu\
+	DataPanel.nib	Fenster ist jetzt 40 Pixel hğher\
+	ToolObject.m, h	tipAngle, maxDiameter hinzugefögt\
+		-addToArray, -initWithDictionary -> neu\
+	DPMagazine.m	-save, -load neues magazin-Format wird unterstötzt\
+	ToolMagazine.m	-addToArray, -initWithArray -> neu\
+24.10.97	contourPickOut.tiff	neu\
+	LayerCell.m,h	pickOut ergÙnzt\
+	DPLayerDetails.nib	"Pick Out" bzw. "Ausspitzen" im Popup ergÙnzt\
+	LayerObject.m, h	-setPassive, -passive -> neu\
+	DPLayer.m	-setLayerList -> setzen, wenn count verÙndert\
+	vhf_....dev	move absolut (x,y,z) #M3D "MA%.0f,%.0f,%.0f;" hinzugefögt\
+}

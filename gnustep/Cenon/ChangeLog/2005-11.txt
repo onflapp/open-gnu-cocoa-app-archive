@@ -1,0 +1,106 @@
+Cenon Change Log - November 2005
+
+2005-11-02  Ilonka Fleischmann
+	* VPath.m (-subPathInsidePath::): polyline in horizontal test auch mitaufgenommen
+	  VPath.m (-subPathInsidePath::): umgestellt, damit (teilweise) ON liegende subPaths auch klappen
+	  -> ist för die Richtungsbestimmung sehr wichtig
+	  VPath.m (-setWidth:): eingebaut damit die Bounds vom Pfad auch mit Width zuröckkommen !
+	  -> das mösste auch manches Darstellungsproblem lðsen
+
+2005-11-06  Georg Fleischmann
+	* Project-Info.nib: resizing of comment field
+	* LayerObject.m, h (uniqueId, -uniqueId, -setUniqueId:): new, for use with multi layer group
+	* Document.h: units added, include of functions.h added for CenonUnitx
+	  functions.h(UNIT_): enum instead of defines for UNIT_*
+
+2005-11-09 Ilonka Fleischmann
+	* VPath.m (-intersectionsForPtInside:with::): realloc för ppArray ist jetzt an der richtigen stelle !
+	  -> removed crash in a PCB
+
+2005-11-09 Georg Fleischmann
+	* PreferencesMacros.h (Prefs_Antialias): added
+	  DocView(-draw:): VHFSetAntialiasing(Prefs_Antialias)
+	  vhfCompatibility.h (VHFShouldAntialias()): new, antialias Macros for GNUstep too
+	  *.m: check for antialiasing (antialias = VHFAntialiasing()) and restore state after changes
+	  -> This activates the preference switch on Apple
+	* vhfCompatibility.h: antialias Macros for GNUstep = Apple
+	  -> This disables antialiasing for fillings on GNustep too (not implemented on GNUstep yet ?)
+
+2005-11-10 Georg Fleischmann
+	* DocView.m (-setCaching:): simpler
+
+2005-11-11 Georg Fleischmann
+	* GeneralController.h: use enum instead of defines for switches
+	* DocView.m (-scaleCacheWindow:, -sizeCacheWindow:): on Apple, turn cache off for scales != 100%
+	  GeneralController.m: cache switch activated for Apple
+
+2005-11-13 Georg Fleischmann
+	* locations.h (HOMELIBRARY, LOCALLIBRARY): removed for GNUstep and Apple
+	  locations.h (SUBPROCESS): removed, never used
+	* vhfCommonFunctions.m, h (vhfPathWithPathComponents()): new
+	  vhfCommonFunctions.m (vhfUserLibrary()): use vhfPathWithPathComponents() and NSHomeLibrary()
+
+2005-11-14 Georg Fleischmann
+	* DXFImportSub.m (-addStrokeList:): set fill color for stroked object
+	  -> if user fills the object, it will be filled in the same color
+	* DocView.m (-scaleCacheWindow:, -sizeCacheWindow:): back to original (no apple stuff)
+	  DocView.m (-drawRect:): Apple workaround to fix composite (scale source rectangle)
+	* functions.m (dictionaryFromFolder()): use vhfPathWithPathComponents()
+	  functions.m (dictionaryFromFolder()): search conversion dicts in resourcePath not bundlePath
+	* functions.m (userBundlePath(), userLibrary(), localBundlePath()): use vhfPathWithPathComponents()
+	* Type1Font.m (-updateFontMetrics): use vhfPathWithPathComponents()
+	  The file doesn't exist ! What is it used for ?
+	* VImage.m (-saveToCMYKTiff:): use vhfPathWithPathComponents()
+
+2005-11-15 Georg Fleischmann
+	* App.m (-validateMenuItem:): saveOutput removed
+
+2005-11-16 Ilonka Fleischmann
+	* VArc.m (-getListOfObjectsSplittedFrom::): radius/1000.0 instead of radius/10000.0 (3x)
+	  VArc.m (-getListOfObjectsSplittedFromGraphic:): radius/1000.0 instead of radius/10000.0 (2x)
+
+2005-11-16 Georg Fleischmann
+	* functions.m (fillPopup()): use -stringByAppendingPathComponent:
+	  functions.m (localBundlePath(), systemBundlePath()): use vhfPathWithPathComponents()
+
+2005-11-19 Georg Fleischmann
+	* App.m (-listFromFile:, -openFile:): use vhfPathWithPathComponents()
+	  Document.m (-printSeparation:): use vhfPathWithPathComponents(), cropPath separated
+	* PSImport.m (): use vhfPathWithPathComponents(), use PS_TMPPATH macro as temporary directory
+	  PSImport.h: PS_TMPPATH added
+
+2005-11-20 Georg Fleischmann
+	* Document.m (+new): new variable 'newDocument' to avoid warnings on Apple
+
+2005-11-22 Georg Fleischmann
+	* VRectangle.m (-pathRepresentation): set too large radi to 1/2 size (not 0)
+	                                      don't add zero lines
+	  -> this shows the rounded edges for extreme radi + correct display of maximum radius
+
+2005-11-23 Ilonka Fleischmann
+	* Type1Font.m (-init): hier wird jetzt afmNoPlace allociert und initializiert (fest) nicht mehr aus Datei
+	* Type1Font.m (-dealloc): [afmNoPlace release]
+	* Type1Font.m (-updateFontMetrics): hier wird nichts mehr initializiert
+
+2005-11-23 Georg Fleischmann
+	* DXFImport.m (-getVisibleListFromData:): check for EOF to avoid warning message for double newline
+
+2005-11-28 Ilonka Fleischmann
+	* dvUndo.m (-rotate): use bounds without knobs to calculate center
+	  -> this makes rotation precise
+	* DocView.m (-mirror:): drawRect mit boundsOfArray (with knobs) geholt
+	  DocView.m (-scaleG:): scaleCenter mit boundsOfArray: withKnobs:NO instead with Knobs
+	  DocView.m (-placeList:at:): bbox för offset berechng mit boundsOfArray: withKnobs:NO instead with YES
+	* Document.m (-printSeparation:): boundsOfArray: withKnobs:NO instead with Knobs (4x) för die marks berechng
+	* BarcodeController.m (-set:): use [view boundsOfArray:withKnobs:NO]
+
+2005-11-28 Georg Fleischmann
+	* InspectorPanel.m (-documentHasChanged:): temporary set view
+	  InspectorPanel.m, h (-setDocView:, -docView): new to set temporary document view
+	  IPBasicLevel.m, h (-view): call [window docView]
+	  IPAllLayers.m (-update): use [window docView]
+	  -> change from other application to Cenon keeps Inspector contents correct
+	* App.m (-openFile:): load modules before opening a file
+	  -> this allows modules to load their stuff, if Cenon is started by double click on a file
+
+next Cenon 3.80

@@ -1,0 +1,41 @@
+Cenon Change Log - 2013
+
+next Cenon 4.0.2
+
+2013-01-02 Georg Fleischmann
+    * vhfCompatibility.h: NSAppKitVersionNumber10_7, NSAppKitVersionNumber10_8 added
+    * Document.m (-printDocument:): call cleanUpOperation, use newer -setShowsPrintPanel: method (not -setShowPanel:)
+      Document.m (-printDocument:): translate view and reduce view frame to counter act paper margins
+      -> Workaround Mac OS 10.8: counter-measure to remove paper margins
+
+2013-01-24 Georg Fleischmann
+    * psImportAI3.prolog, psImportAI3.trailer: Adobe_pattern_AI3 added
+    * vhfCompatibility.h (VHFSelectorIsEqual(a, b)): use sel_isEqual(a, b) instead of sel_eq()
+      -> Fix, GNUstep: compatibility issues
+
+2013-02-01 Georg Fleischmann (thank goes to to Fred Kiefer)
+    * VHFPopUpButtonAdditions.h (): #include "vhfCompatibility.h", not <VHFShared/...>
+      -> Fix, GNUstep: compatibility issues
+
+2013-02-09 Georg Fleischmann
+    * Document.m (-windowShouldClose:): use [self save:nil] (not save)
+      -> Fix, Close Window: allow setting the file, when document isn't saved yet
+
+2013-02-13 Georg Fleischmann (thank goes to to Fred Kiefer)
+    * GNUmakefile: Vectorizer.m added
+    * DocView.m: include header VCurveFit.h from GraphicObjects.subproj
+    * types.h: define MAXFLOAT if not defined (64 Bit Linux)
+
+2013-03-21 Georg Fleischmann
+    * Main.xml: Format->Grid uses Cmd-* (On/Off), CMD-Alt-* (Panel), and Cmd-Shift-* (Align to Grid)
+     -> Grid: the Menu Format->Grid has assigned new key shortcuts:
+        Cmd-* (On/Off), CMD-Alt-* (Panel), and Cmd-Shift-* (Align to Grid)
+
+2013-04-10 Georg Fleischmann
+    * GNUstep fixes
+      CenonInfo.plist: current version number
+      GNUMakefile: Main.nib -> xib, Info.nib -> xib, ToolPanel.nib -> xib
+      compatibility.h (VHFIsDrawingToScreen()): workaround for GNUstep Cairo backend
+      -> GNUstep fixes
+2013-04-11 Georg Fleischmann
+    * PreferencesPanel.subproj/GNUMakefile: PreferencesPanel.nib -> xib

@@ -1,0 +1,71 @@
+Cenon Change Log - September 2001
+
+2001-09-01  Georg Fleischmann
+	* DocView.m (-rotateObject:): redrawRect corrected
+
+2001-09-03  Georg Fleischmann
+	* Path.m, Rectangle.m, Arc.m, Line.m, Curve.m (-createOutput:tools:): use coordBounds for clipping
+	  Path.m, Rectangle.m (-createOutput:tools:): close = NO for clipping
+	* Path.m (-unnest): check if object is a path
+	* DocView.m (-clipObject): remove object if not a rectangle
+	* DocView.m (-moveSelectionToLayer:): remove first, then add to new layer
+
+Cenon 3.50 beta 9
+
+2001-09-06  Georg Fleischmann
+	* Rectangle.m (-createOutput:): call clipWithRect: instead of clipWithRect:close:
+	* Curve.m (-getTForPointOnCurve:): use pointAt instead of getPointAt:
+	  Curve.m (-getTForPointOnCurve:): check for line more tolerant, reduced to one sqrt
+
+2001-09-07  Ilonka Fleischmann
+	* PolyLine.m (2x draw:) fill und stroke etc
+	  PolyLine.m (-getIntersections:with:) fast wie path
+	* Line.m (-getIntersections:with:) um PolyLine erweitert: || [g isKindOfClass:[PolyLine class]]
+	* Path.m (-join:) um filled PolyLine erweitert (wie path closed)
+	  Path.m (-addToClosestEnd:) um PolyLine erweitert
+	  Path.m (-getIntersections:with:) um PolyLine erweitert
+	  Path.m (-contour:inlay:removeLoops:) parallel g add to subpath -> path abgefragt (PolyLine)
+	* Curve.m (-getIntersections:with:) um PolyLine erweitert: || [g isKindOfClass:[PolyLine class]]
+	* Group.m (-getIntersections:with:) um PolyLine erweitert
+	* Arc.m (-getIntersections:with:) um PolyLine erweitert: || [g isKindOfClass:[PolyLine class]]
+	  Arc.m (-tangentIntersectionWith:) um PolyLine erweitert
+	  Arc.m (-intersectLine:) fast waagerechte linien ungenauigkeit behoben
+	* DocView.m (-joinSelection:messages:) + 3x PolyLine
+	  DocView.m (-delete:) PolyLine + selectedKnob -> remove point only
+
+2001-09-07  Georg Fleischmann
+	* Path.m: all functions are now static
+
+2001-09-09  Ilonka Fleischmann
+	* PolyLine.m,h (-isPointInside: -uniteWith) erweitert ++
+	* Path.m (-uniteWith:) um PolyLine erweitert
+	  Path.m (-uniteWith:) (id) instead of (Arc*)
+	  Path.m (-getIntersectionsAndSplittedObjects:) um PolyLine erweitert
+	* Arc.m (-uniteWith:) um PolyLine erweitert
+	* Rectangle.m (-uniteWith:) um PolyLine erweitert
+	* HiddenAreas.m (-uniteAreas:) um PolyLine erweitert
+	  HiddenAreas.m (-removeSingleGraphicsInList:) um PolyLine erweitert
+	  HiddenAreas.m (-removePartsOf:hiddenBy:) um PolyLine erweitert
+
+2001-09-10  Georg Fleischmann
+	* Rectangle.m, h (+rectangleWithOrigin:size:): new
+	* LayerObject.m (-removeObject:): remove object from list after releasing object stuff
+
+2001-09-12  Georg Fleischmann
+	* DocView.m (-draw:): NSRectClip(rect) to draw the grid correctly
+	* dvGrid.m (-drawGrid): 2nd setGray removed
+
+2001-09-16  Georg Fleischmann
+	* TextGraphic.m (-getFlattnedObjectAt:withOffset:): lockFocus/unlockFocus removed
+
+2001-09-17  Georg Fleischmann
+	* PSImport.m (-importPS:): translate for GNUstep
+	* location.h: define HOMELIBRARY and LOCALLIBRARY dependant on system
+
+Cenon 3.50 beta 10
+
+2001-09-24  Georg Fleischmann
+	* DPLayer.m (-setToolList:): remove last item in list
+	* DPControl.m (-setXYZControlsEnabled:): can measureSurface removed
+
+next Cenon 3.50 beta 11

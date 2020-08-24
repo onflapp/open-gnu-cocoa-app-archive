@@ -1,0 +1,12 @@
+{
+    IBClasses = (
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            CLASS = PXAboutController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {aboutPanel = id; credits = id; panelInNib = id; version = id; }; 
+            SUPERCLASS = NSResponder; 
+        }
+    ); 
+    IBVersion = 1; 
+}

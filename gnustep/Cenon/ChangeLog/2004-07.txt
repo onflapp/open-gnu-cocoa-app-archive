@@ -1,0 +1,21 @@
+Cenon Change Log - July 2004
+
+2004-07-02  Georg Fleischmann
+	* App (-loadModules): load bundles in alphabetical order
+
+2004-07-12  Georg Fleischmann
+	* General.nib: lineWidthField added
+	  GeneralController.m, h: lineWidth added
+	  PreferencesMacros.h (Prefs_LineWidth): new
+	  App.m (+initialize): lineWidth default added
+	  DocView.m (-mouseDown:): setLineWidth:Prefs_LineWidth for path objects
+	* App.m (+initialize): 'removeAllObjects' in the middle of the defaults, removed - arg!
+	                       decimal separator is set only once
+
+2004-07-16  Georg Fleischmann
+	* App.m (+initialize): export preferences added
+	  ExportController.m (+initialize): removed
+	* ImportController.m (-update, set:): use vhfStringForFloat() for dxf resolution to round the value
+
+2004-07-30  Georg Fleischmann
+	* VText.m,h (-replaceCharactersInRange:withString:): new

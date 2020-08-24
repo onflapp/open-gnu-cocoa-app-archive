@@ -1,0 +1,2 @@
+"DrawPageLayout" = {OUTLETS = (accessoryView, sideForm, topBotForm); SUPERCLASS = Object; };
+"FirstResponder" = {CATEGORY = LocalActions; };

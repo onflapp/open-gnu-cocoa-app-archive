@@ -1,0 +1,31 @@
+Cenon Change Log - August 2003
+
+2003-08-06  Georg Fleischmann
+	* Info.nib, App.h: infoVersion added
+
+2003-08-08  Georg Fleischmann
+	* InspectorPanel.m (-documentHasChanged): new
+	  InspectorPanel.m (-init): add observer for DocWindowDidChange
+	* InspectorPanel.m (-loadGraphic:): objectWindow = nil if we have nothing
+	* Image.m (-compositeAntialiased:toPoint:): antialias between factores 2 and 20 (was 2 and 7)
+
+2003-08-08  Georg Fleischmann
+	* vhf2DFunctions.m, h (vhfIsPointInsidePolygon()): new
+	* vhf2DFunctions.m, h (vhfBoundsOfPoints()): new
+	* VPolyLine.m (-isPointInside:): count left points without sorting
+
+2003-08-22 Ilonka Fleischmann
+	* Type1Import.m (-vstem::): 2. line .x += dx*scale.x !
+	* Type1Font.m (getCharFromList()): <= 1.0 instead of <= 0.01
+	  Type1Font.m (-writeToFile:): free(buffer) && free(eExecCStr) !!!
+	  Type1Font.m (-writeToFile:): /Notice (%s) instead of (% %s) !!!
+	  Type1Font.m (-update:): paintType = 0;
+	* VPath.m (-coordBoundsOfSubPath::): VHFUnionRect() instead of NSUnionRect()
+	  VPath.m (-setDirectionCCW:): y=yMin+stepWi instead of y=yMin
+	  VPath.m (-drawRadialWithPrincipal:): if (rStepWidth < 3.0) Overlap = 
+
+2003-08-22  Georg Fleischmann
+	* App.m (-loadModules:): load from Library/Cenon/Bundles without extra 'Cenon'
+
+2003-08-23  Georg Fleischmann
+	* GNUstep, IPAllLayers.m (-setLayerList:): only selectCellAtRow, if there are rows in the matrix

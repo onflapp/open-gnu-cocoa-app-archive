@@ -1,0 +1,46 @@
+{
+    IBClasses = (
+        {
+            CLASS = App; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {inspectorPanel = id; }; 
+            SUPERCLASS = NSApplication; 
+        }, 
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {
+                setCompressionFactor = id; 
+                setCompressionType = id; 
+                setHeight = id; 
+                setLock = id; 
+                setName = id; 
+                setThumbnail = id; 
+                setWidth = id; 
+                setX = id; 
+                setY = id; 
+            }; 
+            CLASS = IPImage; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                compPopUp = id; 
+                factorField = id; 
+                heightField = id; 
+                lockSwitch = id; 
+                nameField = id; 
+                thumbSwitch = id; 
+                widthField = id; 
+                xField = id; 
+                yField = id; 
+            }; 
+            SUPERCLASS = NSPanel; 
+        }, 
+        {
+            CLASS = InspectorPanel; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {imageWindow = id; }; 
+            SUPERCLASS = NSPanel; 
+        }, 
+        {CLASS = SurfaceWell; LANGUAGE = ObjC; SUPERCLASS = NSColorWell; }
+    ); 
+    IBVersion = 1; 
+}

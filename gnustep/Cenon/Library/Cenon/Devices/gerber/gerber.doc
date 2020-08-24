@@ -1,0 +1,456 @@
+
+
+
+
+
+
+                                               PHOTOPLOTTING PRINCIPLES
+     Copyright (C) GraphiCode Inc 1990,1994 All Rights Reserved
+
+
+       What's a Photoplotter?
+
+
+      A photoplotter is just what the name implies: an plotter that
+      writes using light.  A plotter has to be told:
+
+        Which tool to use.
+        When to use the tool, and when not to.
+        Where to go next.
+        Whether to go there in a straight line or along an arc.
+
+      For a photoplotter, "tool" means specially shaped apertures
+      through which light passes to create a given shape on film.  An
+      aperture can be used without movement to make a shape (a "flash")
+      or with movement to make a line or an arc.
+
+      There are two major types of photoplotters, "Vector" and "Raster"
+      (or "laser").  Each handles apertures differently.
+
+      Vector Photoplotters
+
+      Very few vector photoplotters are in use any more.  This
+      information is provided primarily as a historical background
+      for understanding laser photoplotter terminology.
+
+      Aperture Wheels
+
+      Traditionally, the photoplotter counterpart to a pen plotter's
+      pen rack has been the aperture wheel.  The aperture wheel is a
+      disk with 24 or 70 apertures arrayed radially along its
+      circumference.
+
+      When the photoplotter selects an aperture, the aperture wheel is
+      rotated to place the desired aperture between the light source
+      and the film.  Apertures are themselves pieces of film and can be
+      made to any shape required, although in practice this is a time-
+      consuming process and there is a physical limitation on size.
+
+      Flash and Draw Apertures
+
+      To achieve constant exposure on a vector photoplotter, apertures
+      used for flashing pads are filtered differently than those used
+      for drawing traces.  Therefore, Flash and Draw apertures cannot
+      be used interchangeably without risk of localized over-exposure
+      and under-exposure.
+
+      Aperture Wheel Setup for Vector Plotters
+
+      The setup of an aperture wheel is an exacting and time consuming
+      process since each aperture in the wheel must be hand-mounted and
+      aligned.  In order to avoid repeated setup costs, designers have
+      the photoplotting vendor keep a wheel on file and are forced to
+      always use that same set of apertures.  This has obvious
+      drawbacks, both in terms of design flexibility and the ease of
+      migration to other vendors.
+
+      RS-274D files were not designed to communicate any information
+      about the apertures in use, only to specify where they are used.
+      This has led to a great deal of confusion between designers and
+      fabricators since designers aren't aware that a Gerber file alone
+      in not sufficient to define the board - an external document
+      describing the apertures is also needed.
+
+      Raster (Laser) Plotters
+
+      Aperture Lists
+
+      Increasingly, vector photoplotters are being replaced by the
+      laser photoplotter, which emulates the older style machine in a
+      raster (bit-map) fashion.  While use of the term "aperture" to
+      describe a pad or trace shape persists, the term "aperture wheel"
+      is now being replaced by "aperture list", which implies the
+      greater flexibility now available to the designer.
+
+      There are four principle advantages with aperture lists on
+      raster plotters:
+
+        1. Aperture shapes can be easily generated in software, thus
+        eliminating the need to design a physical wheel.
+        2. The aperture shapes can be described in the Gerber file,
+        if certain extended-Gerber formats are supported ("RS274X",
+        "MDA FIRE AutoPlot", etc).  This reduces chances of getting the
+        wrong list.
+        3. More apertures can be defined on a list.
+        4. Allowable apertures sizes are typically (but not always)
+        greater than those imposed by the physical dimensions of an
+        aperture wheel.
+
+      Flash and Draw Apertures
+
+      No distinction need be made between Flash and Draw aperture types
+      since the light source intensity is constant.
+
+      Speed Advantage of Laser Plotters
+
+      Laser plotters operate much quicker than vector machines.  A
+      complex plot that required hours on a vector machine can usually
+      be performed in ten minutes or less on a laser photoplotter.
+      This decreases turnaround time and in many markets has driven
+      photoplotting costs down.
+
+      Talking to Photoplotters
+
+      The de facto standard for photoplotter data is the Gerber format,
+      more properly known as RS-274D.  The term Gerber refers to the
+      Gerber Scientific Instrument company, a pioneer and leader in
+      photoplotter manufacturing.  Popular variants include Extended
+      Gerber ("RS274X") and MDA FIRE AutoPlot, both of which embed the
+      aperture list information in the file.
+
+      RS-274D is a variation on traditional Numerical Control (NC)
+      machine tool languages.  It differs from traditional NC formats
+      (i.e. drill data), as far as its use of tool selection codes but
+      is otherwise compatible.
+
+      RS-274D data is organized in "blocks".  A block consists of a
+      combination of codes:
+
+        Tool selection
+        Setup
+        Movement
+        And, an End Of Block (EOB) character, which only follows a
+        combination of the above codes.
+
+      An EOB character is usually an asterisk ('*') or dollar ('$'),
+      optionally followed by a carriage return and line feed.
+
+      An RS-274D code consists of a letter D,G,M,X,Y,I or J followed by
+      a numerical value.  These codes designate the following:
+
+        * - End of Block (end of command)
+
+        D - Select aperture, or set aperture use mode
+
+        X - Move to X value
+
+        Y - Move to Y value
+
+        G - Various setup codes
+
+        M - Various control codes
+
+        I - Relative X location for arc center
+
+        J - Relative Y location for arc center
+
+      D Codes
+
+      D codes have multiple purposes.  The first is to control the
+      state of the light being on or off. Valid codes for light state
+      are D01, D02, and D03.
+
+        D01 - Light on for next move.
+
+        D02 - Light off for next move.
+
+        D03 - Flash (Light On, Light Off) after move (effect is limited
+        to block in which appears, ie non-modal).  You can also think
+        of a D03 as D02, D01, D02 series of commands linked together.
+
+      D codes with values of 10 or greater represent the aperture's
+      position on the list or wheel.  It is very important to
+      understand that there is no universal "D10" or "D30".  Unlike the
+      D01 , D02, and D03 counterparts which have a fixed meaning (draw,
+      move, flash), D10 and higher values have aperture shapes and
+      dimensions assigned to them by each individual user.  Hence, one
+      job's D10 could be a 10 mil Round, when another job's D10 could
+      be a 45 mil Square.
+
+      There are two distinct ways to number an aperture list.  The
+      traditional 24 aperture system started with D10 - D19, jumping
+      suddenly to D70 - D71, then back to D20 - D29, ending with D72 -
+      D73.  This is still a common format for output for CAD packages,
+      and is still mandatory for old 24 aperture Gerber vector
+      photoplotters.
+
+      It is now common to start with D10, then increase numerically in
+      steps of 1 (D10, D11, etc.) continuing up to D70 and beyond,
+      rarely beyond 1000 individual apertures.
+
+      X & Y Codes
+
+      The X & Y values in the Gerber file determine where the aperture
+      shape and dimension will be positioned and drawn.  X & Y values
+      are used as coordinate pairs to determine where the light will be
+      exposed, using the D codes shapes (i.e. D10) and light exposure
+      status (i.e. D01, D02, D03) for drawing lines and arcs, as well
+      as moving between drawing entities.
+
+      Here are a few examples of using X & Y codes with D codes.
+
+        D10*  { Select aperture D10}
+
+        X1000Y1000D02* { The D02 tells us that the light will be off,
+        and we move to coordinate position X1000 and Y1000}
+
+        X2000Y3000D01* { The D01 tells us that we will draw (light on)
+        to coordinate position X2000 and Y3000}
+
+        X5500Y100D03* { The D03 tells us to move to coordinate position
+        X5500 and Y100 with the light off, then flash (turn the light
+        on and off)}
+
+      G Codes
+
+      G codes are used to configure the photoplotter.  Commonly
+      implemented codes include:
+
+        G01 - Future X,Y commands are straightline moves
+
+        G02 - Future X,Y commands are clockwise arcs
+
+        G03 - Future X,Y commands are counterclockwise arcs
+
+        G04 - Ignore the rest of this block (used for Comments)
+
+        G54 - Prepare to change apertures
+
+        G74 - Future arcs are quadrant arcs
+
+        G75 - Future arcs are Full 360 arcs
+
+        G90 - Absolute data
+
+        G91 - Incremental data
+
+
+
+      Typically for laser photoplotters, G54 codes are not
+      necessary.  Older vector plotter controllers may require this
+      preparatory G codes for changing apertures (i.e. G54D10*).
+
+      A common situation where G codes are mandatory for all machines
+      is when the data is switching from vectors to arcs and vice
+      versa.  When switching from drawing vectors (G01) to drawing arc
+      (G02, G03), the controller must be informed of the change of
+      mode.
+
+      Another important case for G codes is when determining if the arc
+      is a quadrant (G74) or Full 360 (G75).  Quadrant arcs never cross
+      quadrant boundaries, because the center coordinate offsets (I,J
+      Codes) are always unsigned (even if they are negative!).
+      Therefore, it requires at least four G74 arcs to draw one
+      complete circle.
+
+      Center coordinate offsets for 360 arcs (G75) can be positive or
+      negative, allowing for a single command to draw a complete
+      circle.
+
+      In either case, the center coordinates are given relative to the
+      start point of the arc.  The most dramatic difference between
+      Quadrant and Full 360 arcs is that a Quadrant arc with identical
+      start and end points has a sweep of 0 degrees, whereas a similar
+      Full 360 arc is a full circle.
+
+      The G90 code tells the machine controller that all data following
+      is absolute data.  Hence, if following X & Y data follows, the
+      controller will move to the absolute value given by the X & Y
+      value.
+
+      G91 tells the machine controller that all data following is
+      incremental data.  The machine will move the data by the amount
+      of the X & Y value, rather than to the absolute coordinate point.
+
+      Example:
+
+        X1000Y1000D02*
+
+        X3000Y3000D01*
+
+
+
+      In absolute mode (G90), the machine will first move to coordinate
+      point X1000 and Y1000 with the light off, then draw a line to
+      coordinate point X3000 and Y3000 with the light on.
+
+      In incremental mode (G91)  the machine will first move to
+      coordinate point X1000 and Y1000 with the light off, then draw a
+      line to coordinate point X4000 and Y4000 with the light on.  This
+      was done by adding X1000 + X3000 = X4000 and Y1000 + Y3000 =
+      Y4000.
+
+      Here are some more examples of G code usage in conjunction with
+      X, Y, and D code values:
+
+        G54D10*      { Prepare to change aperture position (G54), then
+        select aperture D10}
+
+        G01X1000Y1000D02*      { Prepare to draw a vector (G01) then
+        turn off the light (D02) and move to coordinate position X1000
+        and Y1000}
+
+        G90*    { This block (command) and all future commands will be
+        absolute data}
+
+        X2000Y3000D01*    Turn the light on (D01) and move to absolute
+        coordinate position X2000 and Y3000}
+
+        G91*              { The G91 command tells the controller that
+        this command and all future commands that the data is
+        incremental}
+
+        X5500Y100D03*     { Turn the light off and move incrementally
+        by a value of X5500 and Y100, then flash (D03) (light on and
+        off)}
+
+      M Codes
+
+      M codes are used for machine control.  Here are the most commonly
+      used:
+
+        M00 - Full machine stop.  Commonly ignored by many plotters.
+
+        M01 - Temporary machine stop.  Commonly ignored by many
+        plotters.
+
+        M02 - End of Plot.
+
+      I & J Codes
+
+      When you encounter an I & J code in a Gerber block, you have
+      found an arc command.  Arc commands come in two flavors, Full 360
+      or Quadrant.  The Gerber arc command is very complicated, and
+      this section will only briefly describe usage of the Gerber arc.
+
+      Full 360 arcs allow the plotter to draw a full circle (360
+      degrees of arc) in one single command..
+
+      Quadrant arcs only allow for an arc to be drawn through a maximum
+      of 90 degrees of arc, never crossing a quadrant boundary.  Due to
+      this restriction, I and J arc center offset codes can get away
+      with never having a negative value, even if the offsets are
+      negative!
+
+      When in a Full 360 arc (G75), only one command is required to
+      draw a circle.  In Quadrant mode, the same circle would require
+      at leaset 4 Quadrant arcs (G74), because a circle goes through
+      all four quadrants.
+
+      Quadrant arcs will always have positively signed I and J values,
+      even if the center offset is actually negative.  Full 360 arc
+      center offsets can be signed positively or negatively.  A
+      negative I or J is a sure indicator of Full 360 arcs.
+
+      Modality
+
+      It is often the case with Gerber data that when moving from one
+      XY coordinate point to another XY coordinate point, the X or Y
+      value will not change.  Likewise, it is likely that if the
+      plotter is drawing a line with multiple segments, the segments
+      will be connected and the light stays on from segment to segment.
+
+      In both of these cases, there are redundant commands, making the
+      plot data file larger than necessary.
+
+      RS-274D allows you to omit this redundant data.  This example
+      shows a box being drawn with four corners.
+
+        Non Modal Data         Modal Data
+
+        X0000Y0000D02*         X1000Y1000D02*
+
+        X0000Y1000D01*         Y1000D01*
+
+        X1000Y1000D01*         X1000*
+
+        X1000Y0000D01*         Y0000*
+
+        X0000Y0000D01*         X0000*
+
+      From this example, a large amount of data has not been written,
+      thus reducing the final data file size.
+
+      Establishing the Decimal Point
+
+      A numerical value in RS-274D data has an integer and a decimal
+      part, but the decimal point ('.') is not a valid RS-274D
+      character.  Thus, decimal values are written as a string of
+      integers.  The implicit position of the decimal point is
+      determined by three parameters:
+
+        Number of integer digits (whole digits)
+        Number of decimal digits (precision)
+        Zero suppression.
+
+      For example: In a system with integer digits=n and decimal
+      digits=m (an "n,m" system), a numerical value is written using
+      (n+m) digits.
+
+      For example, in a "2,3" format the value 12.345 is written
+      "12345".  In a "2,4" format, the same value is written "123450".
+
+      Zero suppression comes in three flavors - leading, trailing and
+      none.  The idea of zero suppression is to reduce data file sizes
+      by eliminating unneeded 0 characters.  The simplest and most
+      common form of zero suppression is leading zero suppression.
+
+      In a "2,4" format, with no zero suppression, the value 0.0100
+      would be 00 + 01000, written as "000100", but with leading zero
+      suppression the same value is written as "100".
+
+      With trailing zero suppression the same value 0.0100 would be
+      written as "0001".
+
+      How To Describe Data Formats
+
+      Gerber data and other XY languages use a standard method for
+      describing the data format.  Two examples include:
+        "2,3 leading inch" or "3,3 trailing metric".  The first number
+        specifies the whole digits used.  The second parameter states
+        the precision.  "Leading" and "trailing" pertain to the zero
+        suppression.  And the last part of the description indicates
+        the units.  Refer to the above sections if these concepts seem
+        unclear.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

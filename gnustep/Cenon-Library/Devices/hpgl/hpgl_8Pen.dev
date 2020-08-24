@@ -1,0 +1,76 @@
+device name                                 #DEV "HP 7550 Color"
+baudrate (0=parallel)                       #BAU 9600
+handshake (0=none, 1=XON/XOFF, 2=RTS/CTS)   #HSK 1
+
+X-maximum in mm                             #XMX 401
+Y-maximum in mm                             #YMX 274
+
+resolution in points/inch                   #RES 1021
+
+number of pens                              #NPN 8
+minimum velocity (mm/s)                     #VMI 3
+maximum velocity (mm/s)                     #VMA 381
+
+1. pen width (unit: 1/1000 mm)  0.25 mm	    #PWI 250
+2. pen width (unit: 1/1000 mm)  0.25 mm     #PWI 250
+3. pen width (unit: 1/1000 mm)  0.25 mm     #PWI 250
+4. pen width (unit: 1/1000 mm)  0.25 mm     #PWI 250
+5. pen width (unit: 1/1000 mm)  0.25 mm     #PWI 250
+6. pen width (unit: 1/1000 mm)  0.25 mm     #PWI 250
+7. pen width (unit: 1/1000 mm)  0.25 mm     #PWI 250
+8. pen width (unit: 1/1000 mm)  0.25 mm     #PWI 250
+
+1. pen color (0 - 1000, rgb)  black         #PCO    0    0    0
+2. pen color (0 - 1000, rgb)  red           #PCO 1000    0    0
+3. pen color (0 - 1000, rgb)  green         #PCO    0 1000    0
+4. pen color (0 - 1000, rgb)  blue          #PCO    0    0 1000
+5. pen color (0 - 1000, rgb)  yellow        #PCO 1000 1000    0
+6. pen color (0 - 1000, rgb)  magenta       #PCO 1000    0 1000
+7. pen color (0 - 1000, rgb)  brown         #PCO  500  333    0
+8. pen color (0 - 1000, rgb)  orange        #PCO 1000  500    0
+
+special characters in command strings:
+linefeed                  \n
+escape                    \e
+carriage Return           \r
+quotationmarks            \"
+parameters will be inserted at %f (%d, %x, %ld, %e)
+
+draw                                        #DRW "PD"
+coordinates                                 #COO "%.0f,%.0f"
+seperator                                   #SEP ","
+terminator                                  #TRM ";\n"
+
+select pen                                  #PEN "SP%d;\n"
+plot velocity                               #VPO "VS%d;\n"
+initialize                                  #INI "\e.N;19:\r\e.I;;17:\rIN;PA;CS33;\nVS35;"
+reset                                       #RST "PU;SP;\n"
+move absolut                                #MTO "PU%.0f,%.0f;\n"
+draw absolut                                #LTO "PD%.0f,%.0f;\n"
+circle (radius)                             #CIR "CI%.0f;\n"
+arc (xm,ym,arc angle)                       #ARC "PDAA%.0f,%.0f,%.0f,15;\n"
+
+for -d parameter (e.g. when printing on a NeXT)
+special options after init                  #DBG "RO90;"
+special options before reset                #DED "PG;"
+
+for interpreter only:
+polygon definition (PM 0; PM 1; PM 2;)      #IPO "PM"
+pen                                         #IPN "SP"
+move                                        #MOV "PU"
+absolut                                     #ABS "PA"
+relativ                                     #REL "PR"
+circle                                      #ICI "CI"
+arc absolute                                #IAA "AA"
+arc relative                                #IAR "AR"
+input window                                #WIN "IW"
+pen width                                   #IPW "PW"
+line type                                   #ILT "LT"
+input p1 and p2                             #IIP "IP"
+terminating characters                      #ITR ";\n\r"
+
+label                                       #LBL "LB"
+label direction                             #LDI "DI"
+label size                                  #LSI "SI"
+label slant                                 #LSL "SL"
+label Terminating characters                #LTM ";\r\n"

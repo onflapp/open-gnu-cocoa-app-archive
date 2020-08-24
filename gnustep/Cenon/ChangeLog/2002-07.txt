@@ -1,0 +1,391 @@
+Cenon Change Log - July 2002
+
+2002-07-01  Georg Fleischmann
+	* PreferencesPanel.m, h: changed completely
+	  PreferencesMethods.h: new
+	  NotificationNames.h: new
+	  General.bproj, CAM.bproj, Import.bproj, Export.bproj: new
+	* PreferenceMacros.h: new
+	  PreferencePanels.h: removed
+	* *.m, h: include instead of import
+	  *.m, h: include of Shared headers changed
+	* apXyz.m (-registerClient:): add notification for cam device change
+	  apXyz.m (-camDeviceChanged:): new
+	  apXyz.m (-senderIsInvalid:): remove notifications
+	* DocView.m (-initWithFrame:, -dealloc): notifications added
+	  DocView.m (-allLayersHaveChanged:, -cachingHasChanged:): new
+	* DataPanel.m (-init): notifications added
+	  DataPanel.m (-unitHasChanged:): new
+
+2002-07-02  Ilonka Fleischmann
+	* dvUndo.m (-takeFillFrom:): filled = indexOfSelectedItem] instead state]
+	* VRectangle.m (-sqrDistanceGraphic:): erweitert um VWeb, VSinking, VText, VImage, VTextPath
+	* InspectorPanel: Buttonleiste mit Aufteilung der Inspektoren in Koordinaten, RandstÙrke, Föllung, Text
+
+2002-07-03  Georg Fleischmann
+	* BuildNibCopies.sh: Tiffs for Inspector and Preferences updated
+	* BuildLinks.sh: Links for Inspector and Preferences updated
+	  BuildLinks.sh: Links added to allow debuggin of Bundles (Workaround)
+	* NibTogmodel.sh: Inspector and Preferences updated
+	* InspectorPanel.m (-init:): add observer, so we can update the panel if units change
+	  InspectorPanel.m (-unitHasChanged:): new
+
+2002-07-03  Ilonka Fleischmann
+	* InspectorPanel.m (-loadGraphic:): textPath umgestellt zur Darstellung vom path
+	* IPTextPath.m, h (-pathView:): the view for the path of VTextPath
+	* IPCurve.m, h (-update:, -setControlX:, - setControlY:..): + control Point to selected Point
+	* VTextPath.m (-setLength:, -length): new -> for line
+	* alle InspectorPanel *.nib Dateien (english/german)
+
+2002-07-05  Georg Fleischmann
+	* preferencesPanel.m (-setModuleAt:orderFront:): return if we have no module
+	* functions.m (fillPopup()): use removeAllItems if removeIx == 0
+
+2002-07-05  Georg Fleischmann
+	* DocView.m (-moveObject:): set default of beta to NO, don't set it to in the else part any more
+	  DocView.m (-moveObject:): some old stuff removed
+
+2002-07-07  Georg Fleischmann
+	* Export.nib, m, h: flatten text added
+	* PreferencesMacros.h (Prefs_ExportFlattenText): new
+	* DXFExportSub.m (-exportText:):  check for Prefs_ExportFlattenText
+	* ai.tiff, dxf.tiff, hpgl.tiff, gerber.tiff, drill.tiff -> type*.tiff
+	  DocumentIcon.tiff -> typeCenon.tiff
+	  cenon.tiff -> Cenon.tiff
+	* BuildNibCopies.sh: type-Tiffs copied
+	* Shared.subproj: new link
+	  BuildLinks.sh (VHF*Additions.m, h, vhf*Functions.m, h Xyz.h): removed from Cenon project
+	  Compiler-Flags: '-I.' added to Makefile to allow include of <Shared/*.h>
+	  OpenStep, BuildLinks.sh: create link 'Shared' for includes and Shared.subproj as subproject
+	* *.m, h: #include instead of import, headers updated, headers reentrant safe in many files
+	* standardEncoding.h -> type1Encoding.h
+	* *.subproj: '-I../' added to Compiler Flags
+
+2002-07-08  Ilonka Fleischmann
+	* IPAllFilling.m (-init): new för target action von popup
+	  IPAllFilling.m (-setFillColor: - setEndColor): takeColorFrom: colorNum:
+	  IPAllFilling.m (-update): viel
+	  IPAllFilling.m, h (-setStepWidth): new
+	* IPAllFilling.nib (): + stepWidth
+	* IPAllStrokeWidth.m (-init): new för target action von popup
+	  IPAllStrokeWidth.m (-setStrokeState): popup ob stroked oder nicht
+	  IPAllStrokeWidth.m, h (-update): + graphic umsortiert ohne Group
+	  IPAllStrokeWidth.m (-setColor:): takeColorFrom: colorNum:
+	  IPAllStrokeWidth.m (-setStrokeState:): 0 -> set color to fillColor if filled
+	  IPAllStrokeWidth.m (-setStrokeState:): 1 -> set width if ![g width] !
+	  IPAllStrokeWidth.m (-setWidth:): 0 -> set color to fillColor if filled
+	* IPAllStrokeWidth.nib (): + popup
+	* dvUndo.m (-takeFillColorFrom:, -takeEndColorFrom:): new för target action von popup
+	  dvUndo.m (-takeAngle:angleNum:): erweitert um graduateAngle
+	  dvUndo.m (-takeColorFrom:colorNum:): erweitert um colorNum !!
+	  dvUndo.m (-takeStepWidth:): new
+	* DocView.h (-takeStepWidth:): new
+	* ChangeDetail.m (-Angle alle:): erweitert um graduateAngle
+	  ChangeDetail.m (-Color alle:): like Angle ChangeDetail with colorNum
+	* ColorGraphicsChange.m. h (-alle:): like AngleChangeDetail with colorNum
+	* VPolyLine.m, h (-setFillColor:, -fillColor, -setEndColor:, -endColor): new
+	  VPolyLine.m, h (-setGraduateAngle:, -graduateAngle, -stepWidth, -setStepWidth): new
+	  VPolyLine.m (-setFilled): if (flag && !filled) [self setFillColor:[color copy]] !
+	  VPolyLine.m (-init, -copy, -setParameter): ergÙnzt um fillColor, endColor, graduateAngle
+	  VPolyLine.m (-drawWithPrincipal): fill and stroke if necessary
+	  VPolyLine.m (-propertyList, -initFromPropertyList:): + fillColor, endColor, graduateAngle, stepWidth
+	  VPolyLine.m (+initialize): [VPolyLine setVersion:2] instead of [VPolyLine setVersion:1]
+	  VPolyLine.m (-endcodeWithCoder, -initWithCoder): + fillColor, endColor, graduateAngle, stepWith
+	  VPolyLine.h (filled): int instead of BOOL !
+	  VPolyLine.m (-pathRepresentation): ergÙnzt um fillColor, endColor, graduateAngle, stepWidth
+	* VText.m, h (-setFillColor:, -fillColor, -setEndColor:, -endColor): new
+	  VText.m, h (-setGraduateAngle:, -graduateAngle, -stepWidth, -setStepWidth): new
+	  VText.m (-init): ergÙnzt um fillColor, endColor, graduateAngle
+	  VText.m (+initialize): [VText setVersion:6] instead of [VText setVersion:5]
+	  VText.m (-propertyList, -initFromPropertyList:): + fillColor, endColor, graduateAngle, stepWith
+	  VText.m (-endcodeWithCoder, -initWithCoder): + fillColor, endColor, graduateAngle, stepWith
+	* VTextPath.m, h (-setFillColor:, -fillColor, -setEndColor:, -endColor): new
+	  VTextPath.m, h (-setGraduateAngle:, -graduateAngle, -stepWidth, -setStepWidth): new
+	* VPath.m, h (-setFillColor:, -fillColor, -setEndColor:, -endColor): new
+	  VPath.m, h (-setGraduateAngle:, -graduateAngle, -stepWidth, -setStepWidth): new
+	  VPath.m (-setFilled:optimize:): if (flag && !filled) [self setFillColor:[color copy]] !
+	  VPath.m (-init, -copy): ergÙnzt um fillColor, endColor, graduateAngle, stepWidth
+	  VPath.m (-propertyList, -initFromPropertyList:): + fillColor, endColor, graduateAngle, stepWidth
+	  VPath.m (+initialize): [VPolyLine setVersion:3] instead of [VPolyLine setVersion:2]
+	  VPath.m (-endcodeWithCoder, -initWithCoder): + fillColor, endColor, graduateAngle, stepWith
+	  VPath.m (-drawWithPrincipal): fill and stroke if necessary
+	  VPath.m, h (-drawGraduatedWithPrincipal:): new
+	  VPath.m (-setDirectionCCW, -fillStreamWithInset): stepWidth ersetzt durch stepWi
+	  VPath.h (filled): int instead of BOOL !
+	  VPath.m, h (-clippedfrom:): new
+	* VRectangle.m (+initialize): [VRectangle setVersion:5] instead of [VRectangle setVersion:4]
+	  VRectangle.m, h (-setFillColor:, -fillColor, -setEndColor:, -endColor): new
+	  VRectangle.m, h (-setGraduateAngle:, -graduateAngle, -stepWidth, -setStepWidth): new
+	  VRectangle.m (-setFilled:): if (flag && !filled) [self setFillColor:[color copy]] !
+	  VRectangle.m (-init, -copy): ergÙnzt um fillColor, endColor, graduateAngle, stepWidth
+	  VRectangle.h (filled): int instead of BOOL !
+	  VRectangle.m (-pathRepresentation): ergÙnzt um fillColor, endColor, graduateAngle, stepWidth
+	  VRectangle.m (-propertyList, -initFromPropertyList:): + fillColor, endColor, graduateAngle, stepWidth
+	  VRectangle.m (-endcodeWithCoder, -initWithCoder): + fillColor, endColor, graduateAngle, stepWith
+	  VRectangle.m (-drawWithPrincipal): if ( !radius && !rotAngle && filled < 2 ) ergÙnzt
+	* VArc.m (+initialize): [VRectangle setVersion:5] instead of [VRectangle setVersion:4]
+	  VArc.m, h (-setFillColor:, -fillColor, -setEndColor:, -endColor): new
+	  VArc.m, h (-setGraduateAngle:, -graduateAngle, -stepWidth, -setStepWidth): new
+	  VArc.m (-setFilled:): if (flag && !filled) [self setFillColor:[color copy]] !
+	  VArc.m (-init, -copy): ergÙnzt um fillColor, endColor, graduateAngle, stepWidth
+	  VArc.h (filled): int instead of BOOL !
+	  VArc.m (-pathRepresentation): ergÙnzt um fillColor, endColor, graduateAngle, stepWidth, width
+	  VArc.m (-propertyList, -initFromPropertyList:): + fillColor, endColor, graduateAngle, stepWidth
+	  VArc.m (-endcodeWithCoder, -initWithCoder): + fillColor, endColor, graduateAngle, stepWith
+	* HiddenArea.m (-removeGraphics:outside:): -isPointInsideOrOn: instead of -isPointInside
+
+2002-07-09  Georg Fleischmann
+	* VGraphicOutput.m, h: new, contains all output methods
+	  V*Output.m: new
+	  VGraphic.m, h: output methods removed
+	  V*.m: output methods removed
+	* VPath.m, VRectangle.m, VPolyLine.m (-propertyList, -initWithPropertyList:): fill handled correctly
+
+2002-07-10  Georg Fleischmann
+	* Project, BuildLinks.sh: VHFShared instead of VHFShared.subproj
+
+2002-07-11  Ilonka Fleischmann
+	* VArc.m (-propertyList:): if (filled) -> set filled key in plist
+	  VArc.m (-initFromPropertyList::): altes filled gesondert abfangen
+	  VArc.m, h (-clippedFrom:): new
+	  VArc.m (-getIntersectionsAndSplittedObjects:) new för -clipppedFrom: getListOfObjects.. zu ungeneau
+	  VArc.m (-propertyList:,-initFromPropertyList::): + radialCenter
+	  VArc.m (-endcodeWithCoder, -initWithCoder): + radialCenter
+	  VArc.m, h (-setRadialCenter:, -radialCenter): new
+	  VArc.m, h (radialCenter): new
+	  VArc.m (-init, -copy, -pathRepresentation): + radialCenter
+	* VRectangle.m (-propertyList:): if (filled) -> set filled key in plist
+	  VRectangle.m (-initFromPropertyList::): altes filled gesondert abfangen
+	  VRectangle.m (-propertyList:,-initFromPropertyList::): + radialCenter
+	  VRectangle.m (-endcodeWithCoder, -initWithCoder): + radialCenter
+	  VRectangle.m, h (-setRadialCenter:, -radialCenter): new
+	  VRectangle.m, h (radialCenter): new
+	  VRectangle.m (-init, -copy, -pathRepresentation): + radialCenter
+	* VPolyLine.m (-propertyList:): if (filled) -> set filled key in plist
+	  VPolyLine.m (-initFromPropertyList::): altes filled gesondert abfangen
+	  VPolyLine.m (-propertyList:,-initFromPropertyList::): + radialCenter
+	  VPolyLine.m (-endcodeWithCoder, -initWithCoder): + radialCenter
+	  VPolyLine.m, h (-setRadialCenter:, -radialCenter): new
+	  VPolyLine.m, h (radialCenter): new
+	  VPolyLine.m (-init, -copy, -pathRepresentation): + radialCenter
+	  VPolyLine.m, h (-drawWithPrincipal:): + radial
+	* VPath.m (-propertyList:): if (filled) -> set filled key in plist
+	  VPath.m (-initFromPropertyList::): altes filled gesondert abfangen
+	  VPath.m (-propertyList:,-initFromPropertyList::): + radialCenter
+	  VPath.m (-endcodeWithCoder, -initWithCoder): + radialCenter
+	  VPath.m, h (-drawRadialWithPrincipal:): new
+	  VPath.m, h (-drawWithPrincipal:): + radial
+	  VPath.m, h (-setRadialCenter:, -radialCenter): new
+	  VPath.m, h (radialCenter): new
+	  VPath.m (-init, -copy): + radialCenter
+	* IPAllStrokeWidth.m (-setWidth:): abfrage ob graphic auf -fillColor hðrt -> um farbe anzupassen
+	* dvUndo.m (-takeRadialCenter:): new
+	* DocView.h (-takeRadialCenter:): new header zu dvUndo
+	* IPAllFilling.m, h (-setRadialCenter:, radialView): new
+	* IPAllFilling.nib (): + radial
+	* SliderBox.m, h (): new
+	* VText.m (-propertyList:): if (filled) -> set filled key in plist
+	  VText.m (-initFromPropertyList::): altes filled gesondert abfangen
+
+2002-07-13  Ilonka Fleischmann
+	* VPath.m (-drawGraduatedWithPrincipal:): break; Abfrage in letzter Loop verbessert !
+	  VPath.m (-getListOfObjectsSplittedFromGraphic:): new
+	  VPath.m (-uniteWith:): ruft -getListOfObjectsSplittedFromGraphic auf anstatt öber schnittpunkte
+	  VPath.m (-clippedFrom:): ruft -getListOfObjectsSplittedFromGraphic auf anstatt öber schnittpunkte
+	* VCurve.m (-getListOfObjectsSplittedFromGraphic:): new
+	  VCurve.m (-getListOfObjectsSplittedFrom:): || t > 1.000001
+	  VCurve.m (-getListOfObjectsSplittedFrom:): coordBounds instead of bounds
+	* VArc.m (-getListOfObjectsSplittedFromGraphic:): new
+	  VArc.m (-uniteWith:): ruft -getListOfObjectsSplittedFromGraphic auf anstatt öber schnittpunkte
+	  VArc.m (-clippedFrom:): ruft -getListOfObjectsSplittedFromGraphic auf anstatt öber schnittpunkte
+	* VRectangle.m (-getListOfObjectsSplittedFromGraphic:): new
+	  VRectangle.m (-uniteWith:): ruft -getListOfObjectsSplittedFromGraphic auf anstatt öber schnittpunkte
+	* VPolyLine.m (-getListOfObjectsSplittedFromGraphic:): new
+	  VPolyLine.m (-uniteWith:): ruft -getListOfObjectsSplittedFromGraphic auf anstatt öber schnittpunkte
+	* VLine.m (-getListOfObjectsSplittedFromGraphic:): new
+
+2002-07-13  Georg Fleischmann
+	* DPLayer.m (-init): add observer for DocLayerListHasChanged
+	  DPLayer.m (-layerListHasChanged:): new
+	  DPLayer.h (docView): new
+	* DocView.m (-initWithCoder:): add layer to view and send notification
+	  DocView.m (-addListToLayerAtIndex:): send notification
+	  DocView.h: DocLayerListHasChanged added
+	* DocView.m, h (-layerIndex, -selectLayerAtIndex:): new
+	  DPLayer.m (-clickLayer:): select layer in view
+	  App.m (-import): get layerIndex from view
+	  DPLayer (-setLayerList:): select layer from view
+	  DPLayer.m (-addLayer:, -removeLayer:, -matrixDidShuffleCellFrom:): set selectedLayer in view
+	* DPControl.m, DPPositions.m, DPLayer.m, DPToolParms.m (-*): ask window instead of NSApp for dataPanel
+	* DocView.m (-draw): output drawing moved to dvOutput.m
+	  dvOutput.m (-drawOutput, -drawOutputForBatch): new
+	* dvOutput (-mustDrawPale): moved to DocView.m
+	  DocView.m (-mustDrawPale): new
+
+2002-07-14  Georg Fleischmann
+	* DocView.m (-initWithCoder:, -initFromPropertyList:): don't set tool for layerObject
+	  DPLayer.m (-setDipDepth:): ask magazine for tool, not layerObject
+	  DPLayerDetails.m (-update:, -setDipDepth:, -setSettle:): ask magazine for tool, not layerObject
+	  LayerObject.m, h (tool, -setTool:, -tool): removed
+	  LayerObject.m (-setSettle:): don't check against diameter
+	* DPMagazine.m, h (-toolForLayer:): new
+	  DPLayer.m, DPLayerDetails, DPControl.m, dvOutput.m: use toolForLayer instead of toolFromString
+	* DocWindow.m (-windowDidBecomeMain:, -close): send DocWindowDidChange notification
+	  DocWindow.h (DocWindowDidChange): new
+	  Document.m (-windowDidResignMain:): send DocWindowDidChange notification
+	  DataPanel.m (-init): add observer for DocWindowDidChange
+	  DataPanel.m (-documentHasChanged:): new
+	  dvOutput (-controlPassiveLayers): update with view instead nil
+	  Document.m (+newFromFile:): send DocWindowDidChange notification to update magazine
+	* Document.m, h (-saveOutput:): moved to dvOutput.m
+	  App.m, h (-saveOutput:): removed
+	  dvOutput.m (-saveOutput:): new
+	* Document.m (-save): demo stuff removed
+
+2002-07-13  Ilonka Fleischmann
+	* IPAllStrokeWidth.m (-setStrokeState:): fillColor] copy] autorelease] um autorelease ergÙnzt
+	  IPAllStrokeWidth.m, h (-update:): buttons bekannt gemacht und disabled/enabled
+	* IPAllFilling.m, h (-update:): buttons bekannt gemacht und disabled/enabled
+	* IPAllText.m, h (-update:): buttons bekannt gemacht und disabled/enabled
+	* IPCurve.m, h (-update:): buttons bekannt gemacht und disabled/enabled
+	* IPPolyLine.m, h (-update:): buttons bekannt gemacht und disabled/enabled
+	* GerberImportSub.m (-addFillList:, -addFillPath:, -addRect:, -addCircle:, -addOctagon:, -addObround:,
+					-addPolygon:, -addArc::): [g setFillColor:[[ copy] autorelease]]
+	* DXFImportSub.m (-addFillList:, -addRect:, -addArc:tolist:, -addArc:toLayer:, -addText:):
+					[g setFillColor:[[ copy] autorelease]]
+	* HPGLImportSub.m (-addFillList:, -addArc:, -addText:): [g setFillColor:[[ copy] autorelease]]
+	* PSImportSub.m (-addFillList:, -addArc:, -addText:): [g setFillColor:[[ copy] autorelease]]
+	* Type1ImportSub.m (-addFillList:, -addArc:, -addText:): [g setFillColor:[[ copy] autorelease]]
+	* DINImportSub.m (-addFillList:, -addArc:, -addCircle:): [g setFillColor:[[ copy] autorelease]]
+	* GerberExportSub.m (-exportToFile:): width / tool wird immer gesetzt vor graphic (ausser path)
+	* VPath.m (-setFilled:): autorelease zur copy
+	  VPath.m (-setFillColor:): autorelease zur copy
+	  VPath.m (-dealoc:): [fillColor release]; [endColor release];
+	* VRectangle.m (-setFilled:): autorelease zur copy
+	  VRectangle.m (-setFillColor:): autorelease zur copy
+	  VRectangle.m (-dealoc:): [fillColor release]; [endColor release];
+	* VArc.m (-setFilled:): autorelease zur copy
+	  VArc.m (-setFillColor:): autorelease zur copy
+	  VArc.m (-dealoc:): [fillColor release]; [endColor release];
+	* VPolyLine.m (-setFilled:): autorelease zur copy
+	  VPolyLine.m (-setFillColor:): autorelease zur copy
+	  VPolyLine.m (-dealoc:): [fillColor release]; [endColor release];
+	* VText.m (-setFillColor:): autorelease zur copy
+	  VText.m (-dealoc:): [fillColor release]; [endColor release];
+	* dvUndoe.m (-takeStepWidth:): change aktiviert
+	  dvUndoe.m (-takeRadialCenter:): change aktiviert
+	* ChangeDetail.m, h (StepWidthChangeDetail): new
+	  ChangeDetail.m, h (RadialCenterChangeDetail): new
+	* StepWidthGraphicsChange.m, h (): new
+	* RadialCenterGraphicsChange.m, h (): new
+	* undo.h (): #import "StepWidthGraphicsChange.h"
+	  undo.h (): #import "RadialCenterGraphicsChange.h"
+	* LocalizableStringsForGraphicsUndo.h (STEPWIDTH_OP): new
+	  LocalizableStringsForGraphicsUndo.h (RADIALCENTER_OP): new
+
+2002-07-15  Georg Fleischmann
+	* *ImportSub.h, *ExportSub.h: clean up, use #includes, reentrant safe
+	* Document.m, DocView.m, DocWindow.m: includes of CAM stuff removed
+	* App.m,h (-keyPanel, -showKeyPanel:): moved to apXyz.m, h
+	  App.m: call xyz and keyPanel stuff with selector, some stuff moved to KeyPanel
+	* Info.nib: Class App.h instead of ZenonApp.h, 'No.' removed
+	*.m, h: all imports replaced with include, headers reentrant safe, clean up
+	* Document.m (-initializePrintInfo): set to A4
+	  Document.m (calcFrame()): use machine size, if available
+
+2002-07-16  Georg Fleischmann
+	* App.m (-sendEvent:): set inspector via Command-1 to 5
+	  Main.nib: key shortcut (Alt-I) for Inspector removed
+	* DocView.m (-keyDown:): delete also works with Delete-Key, and on GNUstep
+
+2002-07-17  Ilonka Fleischmann
+	* VArc.m (intersectCurve()): arcTol för radius abstand Vergleich
+	  VArc.m (intersectCurve()): if (stopRecursion) direkt pc[0] pc[3] als linie nehmen !
+	  VArc.m (intersectCurve()): LIMIT 20.0*TOLERANCE instead 10.0* !
+	* VPath.m (-drawRadialWithPrincipal:): endRadius = stepWidth
+	* VCurve.m (-getTForPointOnCurve:): calculate with x or y dependent on side ratio of bounding box
+
+2002-07-18  Georg Fleischmann
+	* UsersGuide.pdf: new, this is the new online help
+	  Help*: removed
+	* CAM: new, contains DataPanel, GraphicsOutput, dvOutput, OutputStream, apXyz, KeyPanel ...
+	  all moved files are modified
+	  App.m, h (-loadModules): new, some other changes for DataPanel and KeyPanel
+	* PathContour.m, h: include less headers
+
+2002-07-19  Georg Fleischmann
+	* apXyz.m, h: now AppCAM.m, h
+	  dvOutput.m: now DocViewOutput.m
+	* App.m, h (-modules): new
+	  App.m (-loadModules): add bundle to modules array
+	  PreferencesPanel.m: load pref-modules from all loaded bundles
+	* functions.m (localLibrary(), userLibrary()): ask for path on GNustep and Apple
+	* *.m, h: clean-up, includes corrected
+
+2002-07-19  Ilonka Fleischmann
+	* VImage.m, h (-join:): path wird gesetzt
+	  VImage.m (-splitTo:): path wird gesetzt
+	  VImage.m (-copy:, -dealloc:, -setParameter): path
+	  VImage.m (-moveBy:): path
+	  VImage.m (-propertyList:, -initFromPropertyList:): path
+	  VImage.m (-encodeWithCoder:, -initWithCoder:): path
+	  VImage.m (+initialize:): [VImage setVersion:3] instead of [VImage setVersion:2]
+	  VImage.m, h (-path:): return the path;
+	  VImage.m, h (-splittedImage:): return the splittedImage;
+	* DocView.m (-joinSelection:message:): image join
+	  DocView.m (-validateMenuItem:): image
+	  DocView.m (-split:): för image umgestellt
+	* SplitGraphicsChange.m (-undoChange:, -redoChange, -saveBeforeChange): image
+
+2002-07-20  Georg Fleischmann
+	* VArcOutput.m, PickOutAri.m, PathCFillBitmap.m, VImageOutput.m, VPathOutput.mm VRectangleOutput.m, AppCAM.m: includes corrected
+	* DocView.m
+	  vhfCompatibility.h: now NSBackspaceCharacter (small s)
+	* PathCFillBitmap.m: double comments corrected (line 2363)
+	* functions.m (localLibrary(), userLibrary()): [] removed for GNUstep/Apple
+	* IP*.h: include IPBasicLevel.h
+	* VArc.m, VRectangle.m, VPath.m, VText.m, VPolyLine.m (-init) colors retained
+
+2002-07-20  Ilonka Fleischmann
+	* VImage.m (-movePoint:by:): clipPath wird mit verÙndert
+
+2002-07-22  Georg Fleischmann
+	* DocView.m, h (-setAllLayerDirty:): new, don't calculate output in this place!
+	  DocViewOutput.m (-setAllLayerDirty:): moved to DocView
+	* Document.m (-save): send notification to write output stuff
+	  Document.h (DocumentHasBeenSaved): new
+	  AppCAM.m (): 
+
+2002-07-24  Georg Fleischmann
+	* VArc.m (-moveBy): new, moves center instead of start point
+	* vhf2DFunctions.m, h (vhfSplitCurveAt()): new
+
+2002-07-25  Georg Fleischmann
+	* dvTile.m (-buildTileCopies:...): add objects to layer not array to be added to performance map
+
+2002-07-27  Ilonka Fleischmann
+	* VImage.m (-drawWithPrincipal:): compositeToPoint:fromRect:..instead compositeToPoint:..
+	  VImage.m (-compositeInRect:toPoint:withScale:): new
+	* VGroup.m (-writeFilesToDirectory:): new för grouped images
+
+2002-07-27  Georg Fleischmann
+	* VImage.m (-encodeWithCoder:): write clipPath even if nil to allow decode
+	* Document.m (-initWindow: +newFromFile:): post DocumentDidOpen notification
+	  AppCAM.m (-xyzInitParameter): addObserver for DocumentDidOpen
+	  AppCAM.m (-documentDidOpen:): new, add view as observer for DocumentHasBeenSaved
+	  DocViewOutput.m (-documentHasBeenSave:): new, writes output stuff
+
+2002-07-27  Georg Fleischmann
+	* AppCAM.m, Document.m (DocumentDidOpen): object = DocView
+	* GNUstep, VImage.m (-writeFilesToDirectory:): write JPEG on GNUstep
+	* DocViewOutput.h: new
+	* DocView.m (-cache, -mouseDown:): use perform for call of -calcOutputFor:
+	  DocView.m (-displayMoves:): use perform for call of -optimizeMoves:
+	  DocView.m (-validateMenuItem:): enable sendToBack/bringToFront if view doesn't respond to optimize
+	  DocView (-validateMenuItem:): disable showMoves and showToolDiameter if we have no methods for them
+	* IPAllFilling.m (-setFillColor:, -setEndColor:): check if graphic responds
+
+2002-07-31  Georg Fleischmann
+	* DocView.m (-flatten:): use layer instead of object-list to have performance map updated
+	* VArc.m, VRectangle.m, VPolyLine.m, VPath.m, VText.m (-set*Color:): color copy removed
+	* PSImportSub.m: color retain removed

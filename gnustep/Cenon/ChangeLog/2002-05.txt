@@ -1,0 +1,90 @@
+Cenon Change Log - May 2002
+
+2002-05-12  Georg Fleischmann
+	* MoveMatrix (-sizeCache:to:): always create new cache on GNUstep (workaround)
+	  MoveMatrix (-mouseDown:): on GNUstep copy entire matrixCache to erase active cell (workaround)
+
+2002-05-15  Georg Fleischmann
+	* App.m (-listFromPSFile:): use dataUsingEncoding: to create data from string
+	* PSImportSub.m (-allocateList): simply [[... alloc] init] to make it work on GNUstep
+
+2002-05-16  Georg Fleischmann
+	* Info.nib: use Helvetica 12pt only
+
+GNUstep: Cenon 3.50 beta 16-2
+
+2002-05-17  Georg Fleischmann
+	* vhfCommmonFunctions.m (-vhfStringWithFloat:, -buildRoundedString:): check for ',' too
+
+2002-05-18  Georg Fleischmann
+	* German/IPPolyLine.nib: new
+
+2002-05-20  Georg Fleischmann
+	* types.h (VHFLimits): new
+	* apXyz.m (-xyzSize, -xyz...): new
+	  apXyz.m (XYZParms): static
+	* App.h (-xyz*): new
+	* App.m (-init): call [self xyzInitParameter]
+	* DPToolParms.m, DPPositions.m, DPControl.m, DPLayerDetails (xyzState.*): replaced with [NSApp xyz*]
+	* Xyz.m, Xyz.h (-xyzSize ...): new
+	* PP*.h, DP*.m: [(App*)NSApp ...]
+
+GNUstep: Cenon 3.50 beta 16-3
+
+2002-05-20  Georg Fleischmann
+	* GNUstep, XYZ/locations.h (LOCALLIBRARY): Library inserted
+	* GNUstep, locations.h: Library inserted, allow update
+	* PPControl.m (-setXYZDevice:): delayed perform for loadParms to have PopUp closed
+	* GNUstep, English/*.strings: content removed to make English Messages visible on GNUstep, allow update
+	* Devices/*Turbo.dev: removed
+	* DPToolParms.nib: action set to typePopup instead of item cells
+	* GNUstep, DPToolParms.m (-init): new to set popup target and action
+	* GNUstep, convertgmodels.plist (DataPanel.subproj/%@DataPanel.gmodel): autoresizingMask added
+	* V*.m (-title): new, to have correct graphics name displayed in edit menu for undo
+	* German/Localized.string: Textpath, Text, Thread, Sinking added/corrected.
+	  some missing substitutes added (eg. for OK)
+	* CAM100S.dev: '"' added at end of init, !E removed at beginning of init
+
+2002-05-22  Georg Fleischmann
+	* GNUstep, ioFunctions.m (-ioOpenPort()): use open(), use functions to set baud rate
+	* ioFunctions (-ioOpenPort()): CRTSCTS added
+	* ioFunctions.m (-ioPutMultipleInstructions...()): log [string substring...] instead of instruction
+
+GNUstep: Cenon 3.50 beta 16-4
+
+2002-05-23  Georg Fleischmann
+	* DINImportSub.m (-layerListFromGraphicList:): ..., g1 = [array objectAtIndex:i]; not 1 !
+2002-05-23  Ilonka Fleischmann
+	* VPath.m (-contour:inlay:..): Abs([(VArc*)gThis angle]) == 360 !
+	* VCurve.m (-identicalWith:): 10.0*TOLERANCE for p1 and p2
+	* PCBContour.m (-clearLIstForPCBContour:): VCurve instead of VLine
+	* PCBContour.m (-clearLIstForPCBContour:): Abs([a angle]) instead [a angle]
+	* PCBContour.m (-clearLIstForPCBContour:): Arc and Polyline -> new
+
+2002-05-24  Georg Fleischmann
+	* Library/Cenon: folder Abplanen removed
+	* App.m: cleanup
+
+2002-05-25  Ilonka Fleischmann
+	* Document.m (-saveGerber:, -saveHPGL:, -saveDXF:): new 4 x
+	* Main.nib (Format PopUp) -> gerber, hpgl, dxf enabled
+	* Document.m #import...
+	* GerberExportSub.m,h -> new
+	* HPGLExportSub.m,h -> new
+	* DXFExportSub.m,h -> new
+2002-05-25  Georg Fleischmann
+	* dxfColorTable.h (colorTable[]): static
+	* OpenStep, VHFFrameworks.pkg: new, contains VHFImport.framework + VHFExport.framework
+
+2002-05-27  Georg Fleischmann
+	* Cenon.cenon: white background pieces joined in one path
+
+2002-05-28  Georg Fleischmann
+	* DPPositions.m (-init): set action of 'New Position' item
+2002-05-28  Ilonka Fleischmann
+	* VArc.m, h (-intersectLine:): tangent (20.0*TOLER..) instead of (15.0*T..)
+	  VArc.m (-intersectLine:) points to start/end < TOLERANCE !
+	* HiddenArea.m, h (-removeSingleGraphics:): #define 50.0* instead 30.0*
+	* VPath.m, h (-isPointInsideOrOn:dist:): sidestep with p.y + .. instead of p0.y + .. !
+
+OpenStep, Cenon 3.50 beta 16

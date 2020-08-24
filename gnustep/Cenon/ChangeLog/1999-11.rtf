@@ -1,0 +1,132 @@
+{\rtf0\ansi{\fonttbl\f0\fmodern Courier;}
+\pard\tx1440\tx5400\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li5400\fi-5400\ql\qnatural
+
+\f0\b\fs24 \cf0 …nderungen för November 1999\
+\pard\tx1440\tx5400\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li5400\fi-5400\ql\qnatural
+
+\b0 \cf0 \
+29.11.99	Cenon\
+\
+Datum	Datei	VerÙndert\
+----------------------------------------------------------------------------------------------\
+01.11.99	Path.m	-getFlattenedObject -> plist = [NSMutableArray array], pathG = [Path path];\
+		-addToClosestEnd -> alle line = [Line line];\
+	vhfLockFunctions.m	unlockString: -> newString autoreleased\
+	Curve.m, h\
+	Arc.m, h\
+	Line.m, h\
+	Path.m, h\
+	TextGraphic.m	+curve, +arc, +line, +path... -> new\
+		getListOfObjectsSplittedFrom -> curve, line... autoreleased\
+	Editor2DView.m	-punch -> [NSMutableArray array]\
+		-group -> [Group group] autoreleased\
+		-initWithCoder: -> slist = [NSMutableArray array] autoreleased\
+		-ungroup -> newslist -> autoreleased, slist nicht mehr releast\
+		initView -> layerObject, slist autoreleased\
+		setList: -> layerObject, slist autoreleased\
+	DPPosition.m	-newPosition -> positionObject autoreleased\
+	TextGraphic.m	-getFlattenedObjectAt: -> group = [Group group];\
+	Group.m	-getFlattenedObject -> [NSMutableArray array]; autoreleased\
+	Path.m	-setRectangle -> [Line line] autoreleased\
+		-closeGapBetween, -closePath -> [Line line] autoreleased\
+		-contour -> arc = [Arc arc] autoreleased\
+	*.m	alle allocs von Graphics durch [Line line], [Curve curve] ersetzt\
+		alle [* copy] autoreleased\
+		alle release temporÙrer Objekte entfernt\
+	e2Output.m	-controlPassiveLayers -> slist autoreleased\
+		-calcOutputFor: -> im Bereich Drills -> 3 x arc autoreleased\
+	Arc.m	-curveRepresentation -> [Curve curve] autoreleased\
+		-uniteWith -> alles autoreleased\
+	DXFImportSub.m\
+	GerberImportSub.m\
+	HPGLImportSub.m\
+	PSImportSub.m	alles autoreleased\
+	e2Drag.m	-createGraphicForDraggedFile -> alles autoreleased\
+	e2HiddenArea.m	-removePartsOf -> ng autoreleased, alle addObject autoreleased\
+	LayerObject.m	[list release] statt removeObjects\
+	DPLayer.m	newLayer -> layerObject, slist autoreleased\
+	DPMagazine.m	newMagazine -> autoreleased\
+		newTool -> toolObject autoreleased\
+	ToolCell.m	setToolObject: -> retained und released\
+	PickOut.m	einige Lines autoreleased\
+	Path.m...	-getListOfObjectsSplittedFrom -> autoreleased, copy entfernt\
+		-unitWith -> alles autoreleased\
+	Curve.m, Line.m, Arc.m	-parallelObject -> curve autoreleased\
+	App.m	-listFromFile -> alle lists autoreleased\
+	Editor2DView.m	-transform hinzugefögt\
+\pard\tx1440\tx5400\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li5400\fi-5400\ql\qnatural
+
+\b \cf0 3.20 Beta 19\
+\
+\pard\tx1440\tx5400\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li5400\fi-5400\ql\qnatural
+
+\b0 \cf0 02.11.99	IPRectangle.m	-takeWidth:Height: statt -takeWidth, height undotauglich\
+	e2Undo.m\
+	Editor2DView.h	-takeWidth:height: -> new\
+		-moveGraphicsTo:draw: -> new\
+	DimensionsGraphicChange.m, h	new\
+	Graphic.m, h	-setSize, -size -> new\
+		-selectedKnobIndex -> new\
+	MovePointGraphicsChange.m, h	new\
+	Editor2DView.m	-redrawObject: -> undo eingebaut\
+	LocalizableStringsForGraphicsUndo.h MOVEPOINT_OP -> new\
+03.11.99	IPLine.m\
+	IPCurve.m\
+	IPRectangle.m\
+	IPArc.m\
+	IPGroup.m\
+	IPClipRectangle.m\
+	IPImage.m\
+	IPMark.m\
+	IPPath.m\
+	IPText.m	Punktverschiebung eingebaut\
+	IPGroup.m\
+	IPImage.m	-takeWidth:Height: eingebaut\
+	Graphics.m, h	moveTo: -> new\
+	e2Undo.m\
+	Editor2DView.h	movePointTo:... -> new\
+	DragPointGraphicsChange.m, h	vorher MovePointGraphicsChange\
+	MovePointGraphicsChange.m, h	new\
+	Rectangle.m	version = 2\
+		-initWithCoder:, -encodeWithCoder: -> rotAngle gespeichert\
+	Path.m	-closePath -> 10*TOLERANCE statt 1*\
+04.11.99	Image.m	-pointWithNum: -> drei return fehlten!\
+		-öberall pointWithNum: statt getPoint:: verwendet\
+	RotateGraphicsChange.m, h	new\
+	drawundo.h	RotateGraphicsChange -> hinzugefögt\
+	ChangeDetail.m, h	RotateChangeDetail -> new\
+	LocalizableStringsForGraphicsUndo.h ROTATE_OP -> new\
+	Editor2DView.m	-rotateG: -> undo\
+		-rotateObject: -> undo\
+05.11.99	IPRectangle.m,\
+	IPText.m	rotate undo eingebaut\
+	XYZ.m, h	invertArc, #INA -> new\
+06.11.99	Xyz.m	-initXYZ, -executeUPath: -> ioClearInputBuffer sobald returnValue oder Abfragen\
+		-executeVector: -> ioClearInputBuffer hinter ops.endExec\
+		ioRemoveNByte -> new\
+	Xyz.h	parms.terminator -> new\
+	ioFunctions.m, h	ioRemoveNByte() -> new\
+\
+\pard\tx1440\tx5400\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li5400\fi-5400\ql\qnatural
+
+\b \cf0 3.20 Beta 20\
+\
+\pard\tx1440\tx5400\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li5400\fi-5400\ql\qnatural
+
+\b0 \cf0 17.11.99	Path.m	-optimize -> 2 x (int)[subPaths count] weil unsigned zuröckkommt\
+	PickOut.m\
+	PathCFill.m\
+	Group.m\
+	Path.m	diverse Stellen dieser Art korrigiert. Alle mit count]-2 und count]-1\
+	DPControl.m	-subProcessTerminated: -> outputToFile abgefragt und gesetzt\
+	App.h	outputToFIle, -outputToFile, -setOutputToFile: -> new\
+	apXyz.m	-outputToFile, -setOutputToFile: -> new\
+	Editor2DView.m	-saveOutput: -> setOutputToFile: -> gesetzt\
+	Xyz.m	-xyzLoadParams: release hatte för fast alle Strings gefehlt\
+		-initXYZ: -> ops.init auf nil abgefragt\
+29.11.99	Editor2DView.m	COLOR_TOLERANCE = 0.1\
+\
+\pard\tx1440\tx5400\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li5400\fi-5400\ql\qnatural
+
+\b \cf0 3.20 Beta 21\
+}

@@ -1,0 +1,99 @@
+{\rtf0\ansi{\fonttbl\f0\fmodern Courier;}
+\pard\tx1440\tx2700\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li2700\fi-2700\ql\qnatural
+
+\f0\b\fs24 \cf0 …nderungen för MÙrz 1998\
+
+\b0 \
+19.03.98	Cenon\
+\
+\pard\tx1440\tx4320\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li4320\fi-4320\ql\qnatural
+\cf0 Datum	Datei	VerÙndert\
+----------------------------------------------------------------------------------------------\
+01.03.98	->	Grid kann nicht mehr ausgeschaltet werden\
+	e2Grid.m	-draw: -> gridIsEnabled abgefragt\
+	->	Wenn Snap aus war konnten Punkte nicht mehr verschoben werden\
+	Editor2DView.m	-redrawObject -> doSnap = NO auch wenn nicht gesnappt wird\
+	->	paste von einer Lage auf eine andere föhrt zum Absturz\
+	e2Pasteboard.m	-pasteFromPasteboard -> \
+		-paste:andLink: -> consecutivePastes++ nur bei geföllter slist\
+	Editor2DView.m	e2DrawPboardType = @"Cenon Graphic List"\
+	->	copy von nicht editierbarer Lage wurde nicht zugelassen\
+	Editor2DView.m	-validateMenuItem -> copy extra und ohne editable Bedingung\
+	->	Speicher leckt beim Berechnen der Fahrwege\
+	Line.m\
+	Arc.m\
+	Curve.m\
+	Group.m\
+	Path.m\
+	TextGraphic.m	-contour: -> alles autorelease\
+		-getFlattenedObjekt -> alles autorelease\
+	e2Output.m	-calcOutput: -> alle if(g!=fg)[g release]; entfernt\
+Beta 06\
+\
+03.03.98	->	Optimieren tut nicht\
+	Path.m	-getPoint:: -> wenn kein Objekt selektiert ist wird jetzt der Start und Endpunkt des Pfades zuröckgegeben\
+	e2Output.m	-optimizeMoves -> von 0/0 aus optimiert, lastDist vor jeder j  loop initialisiert\
+	->	Bounds der Spiral stimmt nicht\
+	Spiral.m	-boundsWithKnobs -> neu\
+Beta 06 (3. MÙrz)\
+\
+16.03.98	Line3D.m	-putUPath -> lastPoint reinitialisiert\
+	DBControl.m	-buildOutputPathAndExecute -> Speicher för 3 Operatoren statt 2\
+17.03.98	e2Output.m	-calcOutput: -> dipMin ist immer 0.0, Eintauchtiefe muû in XYZ hinzugefögt werden\
+	Xyz.m	-xyz3DLineTo, -xyz3DMoveTo -> Z Scrapposition und Eintauchtiefe addiert.\
+18.03.98	LayerObject.m	-initWithCoder, -encodeWithCoder -> passive gespeichert\
+	Xyz.m	-xyzLastPoint -> neu\
+19.03.98	LayerCell.m	-draw... -> Icons för passve Lage entfernt\
+	e2Output.m	-calc... -> if( fillPath!=fg )... entfernt\
+	DPLayerDetails.m, h\
+	LayerObject.m, h	taper ausgebaut\
+		-editable -> Wenn Auge zu ist wird No zuröckgegeben\
+		-state -> Auge zu setzt editable nicht mehr auf NO\
+	Xyz.m	bei 3D wird immmer xyz3DLineTo verwendet\
+	DPLayer.m	-matrixDidShuffleCellFrom -> passive layer auch\
+	MoveMatrix.m	-mouseDown -> dependant cells werden mit verschoben\
+21.03.98	Rectangle.m\
+	ClipRectangle.m	-boundsWithKnobs: -> auch negative size wird korrekt verarbeitet\
+	Xyz.h	parms.busyFlag[2] -> neu\
+	Xyz.m	-xyzLoadParams: -> busyFlag geladen\
+		-setBusy -> neu\
+22.03.98	Path.m	-putUPath:: -> zuerst fill dann contour\
+	DPLayer.m	-removeLayer -> passive auch\
+	Image.m, h	neu\
+	e2Pasteboard.m	Image hinzugefögt\
+	E2DGraphics.h	Image hinzugefögt\
+	e2Drag.m	Image erlaubt\
+23.03.98	Editor2DDocument.m	[NSApp setCurrentDocument:document]\
+	->	Absturz nach einigen leeren Text creates\
+	TextGraphic.m	-textDidEndEditing -> removeObserver\
+	IPImage.nib	neu\
+	IPimage.m, h	neu\
+	IPInspector.m, h	Image hinzugefögt\
+24.03.98	ioFunctions.m	-init... -> B4800\
+Beta 07\
+\
+25.03.98	App.m	sendEvent: -> up und down för Y vertauscht\
+26.03.98	DPLayer.m	-cellDidChangeSide -> neu\
+		-setToolAt -> bei PickOut Aufruf von calculateDipForPa...\
+		-calculateDipForPassiveLayerBehind: -> neu\
+	LayerCell.m, h	-track... -> cellDidChangeSide -> neu\
+	e2Output.m\
+	Editor2DView.h	-controlPassiveLayers -> neu (vorher in calc.. drin)\
+	DPLayerDetails.m	-setSide -> controlPassiveLayers aufgerufen\
+	e2Output.m	Alten Krempel entfernt\
+		Wenn bei normaler contour g=0, dann wird Objekt ignoriert\
+	Image.m	-draw -> scale\
+	Diverse.m	(Editor2DView*) vor origin Aufruf\
+	DPControl.m	-start -> Bounds von passiver Lage werden aus outputList berechnet\
+Beta 08\
+\
+27.03.98	Info.nib	Version: Beta 09\
+	DPLayer.m	-setDipForPassiveLayerOf -> öbergibt nur Tiefe\
+		vorher: calculateDipForPassiveLayerBehind:\
+		-setDipDepth -> setDipForPassiveLayerOf\
+	e2Output.m	-calc... pickOut mit dipMax versehen\
+	magazine	Stichel angepaût\
+31.03.98	Path.m	-getDirectionOfSubPath -> Winkel der Objecte und zwischen Objecten wurden der anderen Summe (lAngle, rAngle) zugeordnet\
+\
+next: Beta 09\
+}

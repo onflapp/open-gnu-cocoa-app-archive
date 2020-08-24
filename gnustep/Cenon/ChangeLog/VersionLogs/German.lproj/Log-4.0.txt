@@ -1,0 +1,43 @@
+Cenon 4.0.1 (2012-11-16)
+
++ Code-Signing fuer GateKeeper / Mountain Lion
++ Paket-Voraussetzungen: >= Mac OS 10.5 (Leopard), Intel Processor
++ Snapshots: offene Dokumente werden vor dem Oeffnen des Snapshots geschlossen
++ Fix, Rahmen-Selektierung: Selektierung von Gruppen verbessert
+
+Cenon 4.0.0 (2012-07-19)
+
++ Neu: Import von Scalable Vector Graphics (SVG)
+       Millionen von Vektordaten direkt aus dem Internet runterladen:
+       Zeichen, Logos, Wappen, Symbole, Icons und mehr, warten auf den
+       Download.
++ Neu: Vektorisierung von Raster-Bildern
+       Ein neuer Menu-Eintrag "Werkzeuge -> Vektorisieren" führt zum
+       Vektorisierungs-Panel. Vektorisierung in Linien und Bezierkurven.
++ New, Apple: 64 bit Applikation für Intel Prozessoren ergänzt
+       3-fach Universal Binary: Intel 64 bit, Intel 32 bit, PPC 32 bit
++ Neu, Transform-Panel: Absolute Skalierung ergänzt
++ Neu, Startpunkt eines Pfades kann gesetzt werden
+       1. gewünschten Startpunkt des Pfades selektieren
+       2. im Menu "Editieren -> Startpunkt festlegen", oder Command-Y
++ Neu im Open-Panel: Knöpfe um zu festen Datei-Positionen von Cenon zu springen:
+       Cenon Beispiele, Cenon User-Library, Cenon User-Dokumente
++ Neu im Schnitt-Panel: Erzeugung von Objekten auf Markierungen, Gewinden, Senkungen, Stegen
++ Nutzen: bessere Sortierung der Spalten: hoch, runter, hoch
++ Bilde Kontur: generierte Grafik wird selektiert
++ Tool-Panel: Hilfe-Texte ergänzt, unnötige Icons entfernt
++ Edit-Menu, Werkzeuge-Menu: Hilfe-Texte ergänzt
++ Import DXF: Importiere 3D-Linien und 3D Flächen (bisher nur Linien)
++ Import PDF/PS: Meldung, wenn kein GhostScript installiert ist
++ Import PS: Import von Operatoren für Zeichen-Versatz (xshow, yshow, xyshow).
+  Ohne Text-Zerlegung in Pfade wird der XY-Versatz ignoriert und
+  ein editierbarer String importiert.
++ Raster: jede zehnte Linie wird dicker gezeichnet zur besseren Übersicht
++ Objekt Selektieren: kein nerviger Piep beim selektieren eines fixierten Grafik-Objekts
++ Text: das Editieren eines fixierten Textes passt die Grösse der Textbox nicht mehr an
++ Arbeitsbereichs-Panel: Eingaben werden jetzt auch mit dem Tab Key übernommen
++ Editieren, Punkte schnappen: manchmal wurden nähere Punkte beim Schnappen übersprungen
++ Inspektor: setzen von Winkel-Werten verbessert
++ Lagen-Inspektor: Schnelles An/Aus-schalten der Lagen öffnet
+  die Lageneinstellungen nicht mehr unbeabsichtigt.
++ Apple: Horizontal Einpassen verbessert

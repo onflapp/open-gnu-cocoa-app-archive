@@ -1,0 +1,117 @@
+Cenon CAM Change Log - November 2006
+
+2006-11-04 Ilonka Fleischmann
+ 	* DINImport.m (-loadParameter): ops.start auf vorhandenen Wert
+	  abgefragt befor default zerstðrt wird
+ 	* DINImport.m (-setDefaultParameter): ops.start = @"%"; initialisiert
+ 	* DINImport.m (-interpret:): if ( fileFormat != DIN_EXCELLON )
+	  auskommentiert
+ 	  DINImport.m (-interpret:): no ops.start found und
+	  ( fileFormat == DIN_EXCELLON ) scanner an startLocation setzten
+	-> BohrdatenImport: jetzt kðnnen die Tools innerhalb der Datei
+	   initialisiert (diameter) werden
+
+2006-11-07 Ilonka Fleischmann
+ 	* PunchGraphicsChange.m,h (new): wie ContourGraphicsChange nur ohne removeSource flag
+	-> kein Absturz mehr beim Punch Undo
+	* ChangeManager.m () #define	N_LEVEL_UNDO 25 instead of 10
+	-> 10 sind sehr wenig wenn man mit beliebig Undo wirbt
+	* HiddenArea.m (-removeHiddenAreas:): Bei Gruppe muss cg fast neu gemacht werden
+	  HiddenArea.m (-removeHiddenAreas:): VTextPath wird auch nicht gepuncht
+	  HiddenArea.m (-uniteAreas:): Bei Gruppe muss cg+og neu copiert werden
+	-> PunchUndo: damit Funktioniert der Undo auch bei Gruppen
+
+2006-11-08 Ilonka Fleischmann
+ 	* IPAllFilling.m (-setFillColor: - setEndColor:)
+	  IPAllFilling.m ( -setRadialCenter: -setAngle: - setStepWidth): [self update:graphic];
+ 	  IPAllStrokeWidth.m (-setColor:): [self update:graphic];
+          // ([self update:graphic];) mösste auch bei den Graphicelementen öberall rein !? - war mir aber zuviel
+	-> Inspector: changing color on non-editable layer leaves color well with correct color
+ 	* IPLayerCell.m (-trackMouse:inRect:ofView:...:):
+	  bei (editImage) displayChanged: nachdem Layer editable gesetzt wurde
+	-> Layer-Inspector: display Layer, if non-visible layer is turned on editable
+
+2006-11-13 Ilonka Fleischmann
+	* TransformPanel.m,h (): levRadio instead of levelPopup, levBox new
+	* TransformPanel.m (): SCALE_STRING etc new
+	  TransformPanel.m (-setLevel:): wie im InspectorPanel
+	  TransformPanel.m (-setLevelAt:): wie im InspectorPanel, [levBox setTitle:SCALE_STRING];
+	* Localizable.strings () "Scale" = "Skalieren"; etc new
+	* TransformPanel.nib, TPScale.nib, TPMove.nib, TPRotate.nib, TPMix.nib verÙndert, angepasst
+	-> TransformPanel beautified with icons
+
+2006-11-21 Ilonka Fleischmann
+	* HPGLImport.m (-interpret): labelTermiSet = 3 instead of ops.termi
+	  HPGLImport.m (-getLabel:): kein String return NO
+	  HPGLImport.m (-getGraphicFromData::):
+	  bei ops.label kein string damit auch kein Text
+	-> HPGLImport: damit werden Labels (Text) richtig eingelesen
+
+2006-11-22 Ilonka Fleischmann
+	* IPCurve.m (-update:):
+	  IPCurve.m (-setPointX:,   -setPointY:):
+	  IPCurve.m (-setControlX:, -setControlY:):
+	  abfragen veraendert damit die richtigen Punkte angezeigt werden
+	-> uses correct points for selected handles
+
+2006-11-23 Ilonka Fleischmann
+	* Contour.nib (): unit Popup + second switch added
+	* apContour.m (-contour): use local unit, useRaster und removeSource
+	  apContour.m (-contourUseRaster): return ob UseRaster gesetzt ist
+	  apContour.m (-contourRemoveSource): return ob removeSource gesetzt ist
+	* DocView.m (-buildContour:): lokale unit, lokales useRaster und removeSource sind hinzugekommen
+	* App.h (App(Contour)): contourUnitPopup, contourSwitchMatrix, -contourUseRaster, -contourRemoveSource
+	* ContourGraphicsChange.m (-saveBeforeChange:): removeSource new
+	  ContourGraphicsChange.m (-dealloc:): [newObjects removeAllObjects];
+	  ContourGraphicsChange.m, h (-undoDetails, -redoDetails:): removeSource new
+	-> build contour Panel erweitert um unit, useRaster, removeSource
+
+2006-11-24 Ilonka Fleischmann
+	* DocView.m (-redrawObject:::): MovePointGraphicsChange bekommt jetzt eine pt_num uebergeben
+	  DocView.m (-redrawObject:::): VCurve kann jetz auch auf eigene Punkte snappen (sinnvolle punkte)
+	* MovePointGraphicsChange.m (-subsumeIdenticalChange:): vergleicht ptNum der changes || ptNum == -1
+	-> Path: Makes Undo work for moving several points
+	* DocView.m (-redrawObject:): change innerhalb ([event type] != NSLeftMouseUp) gesetzt
+	-> Selecting a point no longer creates a move point undo step
+	   (man muss nicht mehr 2x auf undo hauen damit sich was bewegt)
+	* DocView.m (-joinSelection:messages:): change of obj1/obj2 only if obj1 is not of type path or polyline
+	-> join two paths or polylines by keeping their order
+
+2006-11-25 Ilonka Fleischmann
+	* VArc.h (PT_END PT_CENTER): PT_END ist jetzt 2 und PT_CENTER ist jetzt 1 (war umgekehrt)
+	* VCurve.m (-hitControl::controlSize:): mit control wird der Stötzpkt genommen wenn zu s/e fast gleich
+	* VPath.m (-hitControl::controlSize:): nachbar graphic checken wenn ein hit
+	-> Editieren: man kann mit Control gedröckt jetzt die Curve Stötzpunkte im Pfad greifen
+
+	* VArc.m (-hitControl::controlSize:): röckwÙrts for (i=PTS_ARC-1; i>=0; i--) instead i++ etc
+	-> ist beim editieren angenehmer/logischer
+	* VArc.m (-movePoint:by:): case END(default) und control, wie ohne control bei END
+	-> damit tut das zusnappen beim Arc zu 360 grad besser
+
+	* VArc.m (-hitControl::controlSize:): if ( i==PT_START || i==PT_END ) auskommentiert
+	-> sonst snapt der Arc Center auf sich selbst 
+	* VCurve.m (-hitControl::controlSize:): selectedKnob = *pt_num; allways !!
+	  VCurve.m (-hitEdge:fuzz:::): yes possible wenn 0+1 kðnnen auf 2+3 snappen und umgekehrt
+	-> damit kann bei der Curve wieder jeder point selectetKnob sein !!!
+	* VPolyLine.m (-hitControl::controlSize:): wenn aktueller und letzter pt gleich wird der letzte genommen
+	-> snapToPoint curve,PolyLine in Path - ist nicht zu erklÙren
+	* VPath.m (-hitControl::controlSize:): allways deselect selectedObject if != i
+	  VPath.m (-hitEdge:fuzz:::): nachbar graphik miteinbezogen
+	-> snapToPoint korrigiert (snappte stÙndig auf seinen eigenen aktuellen curvestötzpunkt, bewegte sich damit wie auf raster)
+	* VPath.m (-movePoint:to:): do not move connected graphics if curvePt 1 or 2 is moved
+	  VPath.m (-movePoint:to:control:): do not move connected graphics if curvePt 1 or 2 is moved
+	-> movePoint beim Pfad korrigiert damit ein Kurvestötzpunkt keine echten stötzpunkte verschiebt
+
+ 	* VPath.m (-join:): (two paths) [olist removeAllObjects]; raus
+	-> join Undo funktioniert damit auch bei zwei geschlossenen pfaden (einer fehlte sonst nach undo)
+
+2006-11-28 Ilonka Fleischmann
+	* IPCurve.nib (): + 2. Stötzpunkt und Endpunkt und Buttons + namensÙnderungen
+	* IPCurve.h (): + 2. Stötzpunkt und Endpunkt und Buttons + namensÙnderungen
+	* IPCurve.m (-update:): es werden nun immer alle Curvepunkte angezeigt
+	  IPCurve.m (-setStartX: -setStartY: setControl1X: - setControl1Y:): umbenannt
+	  IPCurve.m (-setEndX: -setEndY: setControl2X: - setControl2Y:): new
+	-> Curve Inspector: all Curve Points are displayed at once and can be set directly
+
+
+next Cenon 3.82

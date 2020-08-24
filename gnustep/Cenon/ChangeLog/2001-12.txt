@@ -1,0 +1,45 @@
+Cenon Change Log - December 2001
+
+2001-12-01  Georg Fleischmann
+	* DocView.m (-moveObject:, -rotateObject:): first PScomposite() (cached image to screen) disabled
+	* LayerCell.m (-drawInterriorWithFrame:): PSsetalpha() replaced
+	* FlippedView.m, h: FlippedImage added
+	* MoveMatrix.h, m: matrixCache, cellCache as FlippedImage
+
+2001-12-04  Georg Fleischmann
+	* App.m (-listFromPSFile:): load prolog from Framework bundle for Apple and OpenStep
+	* locations.h: AI_HEADER = psImportAI3.prolog
+	* ai_header, ai_trailer: moved to VHFImport Bundle
+	* DataPanel.m, h: use NSTabView for Apple
+	* PreferencesPanel.m, h: use NSTabView for Apple
+	* PPMisc.nib: Action from PopUpButton instead of items
+	  PreferencesPanel.m (-setUnit:): use NSPopUpButton instead of Matrix
+
+2001-12-05  Georg Fleischmann
+	* KeyPanel.nib: Button settings changed
+	* TilePanel.nib: Button setting changed
+	* DPLayer.m (-setPopup): check for title == nil
+
+2001-12-06  Georg Fleischmann
+	* VText.m (-edit:in:): check for font = nil in setFont:
+	* DataPanel.m (-setLevelAt:): don't set [tabView selectTabViewItem:nil]. Doesn't work on Apple
+	* DPLayerDetails.nib: resizing of Fill Overlap and switches changed
+	* messages.h: TABLAYER_STRING, TABMAGAZINE, TABCONTROL, TABPOSITIONS, TABIMPORT, TABMISC
+	  DataPanel.m (-init): use localized strings
+	  PreferencesPanel.m (-init): use localized strings
+	* locations.h: LOCALLIBRARY for Apple changed
+
+2001-12-10  Georg Fleischmann
+	* DPMagazine.m (-load): don't test for '(' at the beginning of array to allow load of XML
+	* EPSExport.m (-writeToFile:): string released
+	* Type1Import.m (-importType1:): use +alloc instead of +string before initWithData:...
+	* VHFImport changed
+
+2001-12-17  Georg Fleischmann
+	* DocWindow.m (-close): delayed update of DataPanel so window is removed from windowlist first
+
+2001-12-20  Georg Fleischmann
+	* ioFunctions.m: includes corrected for Apple
+	* ioFunctions.m (ioOpenPort()): use speed_t instead of char for baudrate
+	  ioFunctions.m (ioOpenPort()): use fh->fileno for Linux only
+	  ioFunctions.m (ioOpenPort()): use term.c_ispeed, term.c_ospeed directly

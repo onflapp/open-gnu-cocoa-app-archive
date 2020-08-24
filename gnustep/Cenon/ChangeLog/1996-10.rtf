@@ -1,0 +1,87 @@
+{\rtf0\ansi{\fonttbl\f0\fmodern Courier;\f3\ftech Symbol;\f1\fmodern Ohlfs;}
+\paperw18160
+\paperh11220
+\margl120
+\margr120
+\pard\tx1440\tx2700\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\f0\b\i0\ulnone\fs24\fi-2700\li2700\fc0\cf0 …nderungen för Oktober 1996\
+
+\b0 \
+24.10.96	Cenon\
+\
+
+\pard\tx1440\tx4320\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\fi-4320\li4320\fc0\cf0 Datum	Datei	VerÙndert\
+----------------------------------------------------------------------------------------------------------------------------\
+
+\pard\tx1440\tx4320\tx5040\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\fi-4320\li4320\fc0\cf0 02.10.96	Localized.strings\
+	messages.h	CANTLOCATETOOLNAME_STRING -> neu\
+	Editor2DView.m	- read -> tools för LayerObjects werden nicht gesetzt\
+	LayerObject.h, m	removeLoops, - removeLoops, - setRemoveLoops -> neu\
+		taper, - taper, - setTaper -> neu\
+		- init -> removeLoops=YES\
+	DPLayerDetails.nib	removeLoops, taper -> neu\
+	DPLayerDetails.h	removeLoopsSwitch, taperSwitch -> neu\
+	DPLayerDetails.m	- update, - setSwitches -> um removeLoops und taper erweitert\
+	App.h\
+	apPrefs.m\
+	Prefs.nib	removeLoops entfernt\
+	App.m	+ initialize -> removeLoops entfernt\
+	Editor2DWindow.m	- windowWillClose -> layer werden auf dirty=NO gesetzt damit resignKey nicht berechnet\
+	e2Output.m	- calcOutputFor -> In Schleife zuerst dirty Abfrage bevor Values initialisiert werden\
+		- calcOutputFor -> removeLoops wie flatness eingebaut\
+		- calcOutputFor -> Bei Abfrage von 'toolFromString' Meldung eingebaut\
+	Editor2DView.m	- setParameter -> displayOutput = NO\
+		- mouseDown -> editieren nur mðglich, wenn Grafik sichtbar (displayGraphic)\
+		hitEdge: -> Snap wird jetzt entgegen dem Zoom skaliert um den Pixelabstand zu halten\
+	Editor2DView.h\
+	Path.m	- contour -> 'removeLoops' in View statt in NXApp aufgerufen\
+		- join -> [self complexJoin:obj distance:0.1] 0.1 statt 0.5\
+03.10.96	Arc.m	- scale::: -> radius *= (x+y)/2.0; Skalierung des Radius war falsch\
+	Curve.m	- intersectLine -> för Tangentenschnitt werden jetzt zwei Schnittpunkte zuröckgegeben\
+		- getIntersections -> vhfFilterPoints() nur bei curve/curve Schnitt und vor sortPointArray()\
+	Path.m	- pointArrayHitsCorner:: -> neu\
+		- putFillUPath::: -> pointArrayHitsCorner-Aufruf\
+04.10.96	locations.h	#define APP_ID "02" -> neu\
+	KeyPAnel.h	- interpretKey -> -(BOOL)interpretKey\
+	KeyPanel.m	- interpretKey -> APP_ID wird abgefragt\
+		- okButton: -> Bei Fehleingabe wiederholen\
+18.10.96	DPControl.m	- start: -> startposition wird gesetzt, da sie beim Home verloren gehen kann\
+		- setAdjust -> Neu\
+		- setAdjustMode:sender -> verÙndert\
+		- displayWillEnd -> es wird setAdjust statt setAdjustMode aufgerufen\
+	Editor2DView.m	- dragSelect: -> redraw bei jedem Zoom um 1 Pixel grðûer (scale eingerechnet)\
+	Path.m	- splitTo: -> Liste in andere Richtung in neue Liste kopiert\
+	Group.h	- list hat gefehltdirty \
+	Group.m	- init -> liste allociert\
+	TextGraphic.m	- getFlattenedObject -> ruft jetzt getFlattenedObjectAt auf\
+		- getFlattenedObjectAt -> behandelt Zeichen jetzt ân getrennten Pfaden und gibt Gruppe zuröck\
+19.10.96	Path.m	- putFillUPath:: -> p0.x = ... es wurden y Maûe verwendet\
+	App.h	- validateCommand, - menuItemUpdate -> neu\
+	App.m	+ new -> neu wegen autoupdate der Menus\
+		- menuItemUpdate -> neu\
+		initMenu() -> neu\
+		- appDidInit -> initMenu Aufruf hinzugefögt\
+	Editor2DWindow.h, m	- validateCommand: -> neu\
+	Editor2DView.h	- validateCommand: -> neu\
+	Editor2DView.m	- validateCommand: -> neu\
+		- group, - join, - punch -> originalPaste auf 0 gesetzt wegen Absturz beim Paste\
+		- paste:andLink: ->  || !originalPaste hinzugefögt\
+	Main.nib	transform: -> wird statt showTransformPanel aufgerufen\
+	DataPanel.m	- setLevelView -> auf Box als levView umgestellt\
+	DataPanel.nib	TabMatrixPalette verwendet, auf Box als levView umgestellt\
+	DP*.nib	resizeable gemacht\
+23.10.96	DataPanel.h, m	- (int)levelIndex -> neu\
+	DPControl.h, m	- buttonLeft, - buttonRight, - buttonUp, - buttonDown -> neu\
+	DPControl.m	- buildOutputPathAndExecute -> Speicher wird jetzt auch för Gruppen geholt\
+	DPControl.nib	buttonLeft, buttonRight, buttonUp, buttonDown -> neu\
+	App.m	- sendEvent -> Tastaturbedienung för DPControl eingebaut, shift abgefragt\
+	App.h	shift\
+	TextGraphic.m	- setSerialTextFor -> Bei Offset = 0 wird nichts gemacht, bei lentot = 0 auch nicht\
+	e2Tile.m	-setTile: -> dirty ermittelt\
+
+\pard\tx1440\tx4320\tx5040\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\fi-4320\li4320\fc0\cf0 24.10.96	Curve.m	intersectCurves() -> Endpunktabfrage am Anfang nur noch för groûe Curves, LIMIT verdoppelt, da sizes der bounds nach dem Split grðûer waren als davor (vermutlich tile zu ungenau mit float!)\
+
+\pard\tx1440\tx4320\tx5040\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\fi-4320\li4320\fc0\cf0 26.10.96	DPControl.m	- setPosition -> - 2.0 bei Z-Hðhe entfernt, da Schneideplotter sonst 
+\f3 -
+\f0 1 als Position bekommt\
+
+}

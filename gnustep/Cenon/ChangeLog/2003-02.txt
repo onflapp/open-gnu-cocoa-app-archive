@@ -1,0 +1,11 @@
+Cenon Change Log - February 2003
+
+2003-02-24 Ilonka Fleischmann
+	* App.m (-openFile:): document = [Document newFromList:list]; instead [Document newFromList:list];
+	* IPAllStrokeWidth.m (-update:): slaylist auf nur graphicObjecte untersucht ...
+	* DocView.m (-selectAll:redaw:): [[(App*)NSApp inspectorPanel] loadList:slayList];
+	  DocView.m (-selectColor:): um fillColor/endColor erweitert
+	* VPath.m (-drawGraduatedWithPrincipal:): Fix me wegen openstep clip fehler
+
+2003-02-25 Georg Fleischmann
+	* German.lproj/IPAllFilling.nib: connection names for color wells corrected

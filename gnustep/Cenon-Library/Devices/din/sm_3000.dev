@@ -1,0 +1,39 @@
+device name                                  #DEV "Sieb & Meyer 3000"
+
+baudrate (0=parallel)                        #BAU 9600
+handshake (0=none, 1=XON/XOFF, 2=RTS/CTS)    #HSK 1
+
+special characters in command strings:
+linefeed                  \n
+escape                    \e
+carriage Return           \r
+quotationmarks            \"
+parameters will be inserted at %f (%d, %x, %ld, %e)
+
+XY-maximum in mm                             #MAX 1000 1000
+resolution in points/inch                    #RES 25400
+
+for output only:
+initialize                                   #INI "%%3000\n"
+X-coordinate                                 #XPO "X%.0f"
+Y-coordinate                                 #YPO "Y%.0f"
+select tool                                  #TNR "T%d"
+parameter                                    #PAR "$\n"
+diameter of tool                             #TDM "D%.0f"
+revolution                                   #TDZ "S%.0f"
+lowering speed                               #TDN "F%.0f"
+Röckzuggeschwindigkeit                       #TUP "R%.0f"
+Standzeit                                    #TTN "N%.0f"
+Verweilzeit                                  #TSZ "A%.0f"
+number of magazin                            #TMN "M%d"
+terminator                                   #TRM "\n"
+reset                                        #RST ""
+
+for interpreter only:
+start                                        #IST "%%3000"
+parameter                                    #IPA "$"
+select tool                                  #ITL "T"
+X                                            #IXP "X"
+Y                                            #IYP "Y"
+diameter of tool                             #IDM "D"
+terminator                                   #ITM "\n"

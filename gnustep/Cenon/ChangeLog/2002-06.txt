@@ -1,0 +1,205 @@
+Cenon Change Log - June 2002
+
+2002-06-04  Georg Fleischmann
+	* DocView.m (-cache, -cacheDirect): methods clearly separated within #ifdef __APPLE__
+	  DocView.m: some clean up
+	* DocView.m (-validateMenuItem:): compare selectors with VHFSelectorIsEqual
+	* vhfCompatibility.h (VHFSelectorIsEqual()): new
+	* VPath.m (-subPathInsidePath:, -intersectionsForPtInside): 'cnt == 2' ausgeklammert
+	  VPath.m: clean up
+
+2002-06-04  Ilonka Fleischmann
+	* DocView.m (-moveObject:, -rotateObject:): setDirty:YES
+	* WorkingAreaPanel.m (-setWorkingArea:): [[NSApp currentDocument] setDirty:YES]
+	* VPolyLine.m (-create:in:): [self drawWithPrincipal:view] immer
+
+2002-06-08  Ilonka Fleischmann
+	* VLine.m (-create:in:):  = gridPoint = drawPoint = start initialisiert
+	  VLine.m (-create:in:): while ( + (Diff(p0.x, p1.x)<=grid && Diff(p0.y, p1.y)<=grid))
+	  VLine.m (-create:in:): while ( + ..clickCount > 1)
+	  VLine.m (-create:in:): if (.. + p0/p1 Diff > 3.0*grid) dragging = YES
+	  VLine.m (-create:in:): if (!ok) postEvent down and up
+	  VLine.m (-create:in:): grid = 1.0 / scaleFactor
+	  VLine.m (-create:in:): if(!ok) if ([event windowNumber] != windowNum) !
+	* VRectangle.m (-create:in:): if (!ok) postEvent down and up
+	  VRectangle.m (-create:in:): grid = 1.0 / scaleFactor
+	  VRectangle.m (-create:in:): if(+ origin/drawPoint Diff>3.0*grid) dragging = YES
+	  VRectangle.m (-create:in:): if(!ok) if ([event windowNumber] !=windowNum)
+	* VArc.m (-create:in:): if (.. + center/drawPoint Diff > 3) dragging = YES
+	  VArc.m (-create:in:): if (.. + start/drawPoint Diff > 3) dragging = YES
+	  VArc.m (-create:in:): if (!ok) postEvent down and up
+	  VArc.m (-create:in:): grid = TOLERANCE instead of 1.0 initialized
+	  VArc.m (-create:in:): viewBounds = [view bounds] instead of visibleRect
+	  VArc.m (-create:in:): after 1.and 2. part we have to check if arc is inside view bounds !
+	  VArc.m (-create:in:): second part [view scrollPointToVisible:end] instead to drawPoint (is elsewhere)
+	  VArc.m (-create:in:): scrollPointToVisible: we do this allways
+	  VArc.m (-create:in:): if(!ok) if ([event windowNumber] != windowNum) !
+	* VPolyLine.m (-create:in:): grid = TOLERANCE instead of 1.0 initialized
+	  VPolyLine.m (-create:in:): fabs(ptslist[count-1], gridPoint) < grid dont add
+	  VPolyLine.m (-create:in:): if ([event windowNumber] != windowNum) -> postEvent (down/up) allways !
+	  VPolyLine.m (-create:in:): bei return YES kein postEvent för neustart !
+	  VPolyLine.m (-create:in:): if (!ok) postEvent down and up
+	  VPolyLine.m (-create:in:): if (.. + p0/p1 Diff > 3) dragging = YES
+	  VPolyLine.m (-create:in:): dragging wird auch wieder abgeschaltet !
+	  VPolyLine.m (-create:in:): pt nicht in viewBounds -> -1
+	* VCurve.m (-create:in:): if (!ok) postEvent down and up
+	  VCurve.m (-create:in:): grid = TOLERANCE instead of 1.0 initialized
+	  VCurve.m (-create:in:): dragging auch wieder ausschalten ! 3x
+	  VCurve.m (-create:in:): if(!ok) if ([event windowNumber] != windowNum) !
+	  VCurve.m (-create:in:): dragging nur von p0 nach p3 (1.loop)
+	  VCurve.m (-create:in:): nur MouseUp wird akzeptiert alle whiles und ifs
+	* VPath.m (-createOutput:tools:): autorelease pool eingebaut !
+	* DocView.m (-moveObject:): [document setDirty:YES] nach autodisplay !
+	  DocView.m (-mouseDown:): hitControl nur wenn nicht TOOL2D_ROTATE
+	* Document.m (-save:): autorelease pool eingebaut !
+	* OutputStream.m (-increaseSizeOps:pts:): 100/500 statt 1000/5000
+	  OutputStream.m (-init:): 100/500 statt 1000/5000
+	* PSImport.m (-interpret:): autorelease pool alle 100 schritte eingebaut !
+
+2002-06-11  Ilonka Fleischmann
+	* VPolyLine.m (-create:in:): drawSnapLine hinzugefögt
+	  VPolyLine.m (-create:in:): hitPoint, gridPoint snap to nearest 2x
+	  VPolyLine.m (-create:in:): dragging Abfrage abhÙngigkeit umgestellt !!
+	* VLine.m (-create:in:): hitPoint, gridPoint snap to nearest 2x
+	* VRectangle.m (-create:in:): hitPoint, gridPoint snap to nearest 2x
+	* VArc.m (-create:in:): hitPoint, gridPoint snap to nearest 2x
+	* VCurve.m (-create:in:): hitPoint, gridPoint snap to nearest 4x
+
+OpenStep Cenon 3.50 beta 17
+GNUstep: Cenon 3.50 beta 17-1
+
+2002-06-13  Ilonka Fleischmann
+	* VLine.m (-create:in:): if(!ok) close mouseDown event with a mouseUp event
+	* VRectangle.m (-create:in:): if(!ok) close mouseDown event with a mouseUp event
+	  VRectangle.m (-sqrDistanceLine:): distance mit MAXCOORD initialisiert
+	* VCurve.m (-create:in:): if(!ok) close mouseDown event with a mouseUp event
+	  VCurve.m (-sqrDistanceLine:): 1.und 2. pointOnLine..() wurde mit p0, p1 statt
+		mit pl0, pl1 aufgerufen
+	  VCurve.m (-sqrDistanceLine:): + if ([self intersectLine:]) return 0.0
+	  VCurve.m (-movePoint:to:): default; pt_num = 3; 
+	* VGraphic.m (drawKnob()): if(direct) Color gesetzt !
+	* DocView.m (-moveObject:): [window setAutodisplay:.. auskommentiert 2x
+		(coordinaten display, scroll balken malen)
+???	  DocView.m (-moveObject:): scrollPointToVisible instead scrollToRect
+	* VArc.m (-sqrDistanceLine:): + if ([self intersectLine:]) return 0.0
+	  VArc.m (-movePoint:by:): if (control) snapover bei 0 statt 360 grad behoben
+	* VPath.m (-drawControls:..): new (instead of -drawKnobs:.. for curve
+	  VPath.m (-movePoint:to:): nearly new -> look at arcs
+
+2002-06-15  Georg Fleischmann
+	* IntersectionPanel.m (-targetClass): Web added
+	  IntersectionPanel.h: IP_CREATE_WEB added
+	  IntersectionPanel.nib: Web added
+	* Info.nib: beta 18
+
+2002-06-15  Ilonka Fleischmann
+	* VCurve.m (-create:in:): p3HitEdge damit abbruch klappt
+	  VCurve.m (-create:in:): bei p1 und p2 wird hilfslinie von p0/p1.. gemalt
+	  VCurve.m (-create:in:): bei p1 wird curve mit p0 gridPoint p3 p3 gesetzt
+		statt p0 gridPoint gridPoint p3
+	* DocView.m (-redrawObject:): setAutodisplay raus (coord display, scrollbalken)
+	  DocView.m (-redrawObject:): [self drawControls:NSZeroRect] instead only object
+	  DocView.m (-redrawObject:): move all selected points by delta not only the one
+	* VRectangle.m (-movePoint:by:): alle ecken verhalten sich jetzt wie LL
+
+2002-06-16  Ilonka Fleischmann
+	* VPath.m, h (-fillStreamWithInset:offset:angle:): new
+
+2002-06-19  Georg Fleischmann
+	* types.h: IS_NAN() macro added, some cleanup
+
+2002-06-24  Georg Fleischmann
+	* GNUstep, controller.app: Icon for controller sub process
+
+2002-06-24  Ilonka Fleischmann
+	* DocView.m (-redrawObject:): if (pt_num == [obj selectedKnob)
+			MovePointGraphicsChange instead of DragPointGraphicsChange
+			(so all selected points are with undo)
+	  DocView.m (-group:): setSelected:YES
+	  DocView.m (-redrawObject:): move and draw all selected pts
+			nur wenn (pt_num == [obj selectedKnob)
+	* VPath.m (-selectedKnobIndex:): gibt richtigen index zuröck
+	  VPath.m (-pointWithNum:): gibt punkt zum richtigen index zuröck 
+	  VPath.m (-movePoint:by:): an neues punkte system angepasst
+	  VPath.m (-movePoint:to:): an neues punkte system angepasst
+	  VPath.m (-scrollRect:inView:): an neues punkte system angepasst
+	  VPath.m (-constrainPoint:andNumber:toView:): an neues punkte system angepasst
+	  VPath.m (-hitControl:::): an neues punkte system angepasst
+	  VPath.m (-closeGapBetween:and:): movePoint:3 durch MAXINT ersetzt
+	  VPath.m (-movePoint:to:): umgestellt doppelt gemoppel raus +
+		auf Distanzen zu anderen Graphics geachtet ! +
+		subPath tut auch
+	  VPath.m (-getFirstObjectOfSubPath:): new intern
+	  VPath.m (-movePoint:by:): ruft movePoint:to: auf !!!
+	  VPath.m (-movePoint:to:): pt_num < 0 return
+	  VPath.m (-movePoint:to:): g == VArc angrenzende arcs nur if (control)
+	  VPath.m (-hitControl:::): deselect previous selectedObject
+	  VPath.m (-hitControl:::): only new selectedObject if no spezial control pt
+	  VPath.m (-hit:fuzz:): deselect previous selectedObject
+	  VPath.m (-hitControl::): if we hit a control pt [self setSelected:YES] !
+	  VPath.m (-movePoint:to:control): new - control wird öbergeben
+	* VLine.m (-hitControl::): if we hit a control pt [self setSelected:YES] !
+	* VCurve.m (-hitControl::): if we hit a control pt [self setSelected:YES] !
+	  VCurve.m (-hitControl::): nur 0 und 3 werden selectedKnob wenn auch getroffen
+	* VPolyLine.m (-hitControl::): if we hit a control pt [self setSelected:YES] !
+	* VArc.m (-hitControl::): if we hit a control pt [self setSelected:YES] !
+	  VArc.m (-movePoint:by:control): new - control wird öbergeben
+	  VArc.m, h (-movePoint:to:control): new - control wird öbergeben
+	* VRectangle.m (-hitControl::): if we hit a control pt [self setSelected:YES] !
+	  VRectangle.m (-movePoint:by:): contra Ecke wird nicht gemoved !
+	* VGroup.m (-selectedKnobIndex:): wie beim path
+	  VGroup.m (-pointWithNum:): wie beim path 
+	  VGroup.m (-movePoint:by:): wie beim path
+	  VGroup.m (-movePoint:to:): wie beim path
+	  VGroup.m (-scrollRect:inView:): wie beim path
+	  VGroup.m (-constrainPoint:andNumber:toView:): wie beim path
+	  VGroup.m (-hitControl:::): wie beim path
+	  VGroup.m (-numPoints:): new -> wie beim path
+	  VGroup.m (-drawAtAngle:withCenter:in:): drawed mit öbergebenem cp !
+	  VGroup.m (-hit:fuzz:): deselect previous selectedObject
+	  VGroup.m (-hitControl:::): deselect previous selectedObject
+	  VGroup.m (-hitControl:::): only new selectedObject if no spezial control pt
+	  VGroup.m (-movePoint:to:): pt_num < 0 return
+	  VGroup.m (-drawControls::...): new schickt drawControls an alle objekte
+	  VGroup.m (-movePoint:to:control): new - control wird öbergeben
+	* ChangeDetail.m,h (MovePointChangeDetail): control key status merken ...
+	* DragPoinGraphicsChange.m,h (-setPoint:, -undoDetails, -redoDetails): control
+
+2002-06-27  Ilonka Fleischmann
+	* VPolyLine.m (movePoint:to:): if (pt_num >= count) pt_num = count-1;
+	  VPolyLine.m (movePoint:by:): if (pt_num >= count) pt_num = count-1;
+	  VPolyLine.m (changePoint::): if (pt_num >= count) pt_num = count-1;
+	  VPolyLine.m (-initWithCoder:, -encodeWithCoder:): um filled erweitert
+
+2002-06-27  Georg Fleischmann
+	* PathContour.m, PathCFillBitmap.m (-buildPath:::):
+	  'if ( (pts[k].x != stopPt.x || pts[k].y != stopPt.y) &&' -> OR part in parantheses !
+	* PickOutAri.m (-pickOutPath:withTipAngle:...): 'if ( fillGap = -1 )' now 'if ( fillGap == -1 )'
+	* PSImport.m (-interpret): autorelease problem -> return NO removed, instead set ok = NO and break
+	  PSImport.m (-interpret): poolCnt = 0, pool = nil, first pool allocation removed
+	  PSImport.m (-interpret): cList = [NSMutableArray array]; instead of [self allocateList]
+	  PSImport.m (-importPS: (DPS)): enclosed in autorelease pool, release of psContext enabled
+
+OpenStep Cenon 3.50 beta 18
+
+2002-06-29  Georg Fleischmann
+	* BuildLinks.sh: link Shared directory
+	  BuildLinks.sh (vhfLockFunctions.*, VHFLock.*): removed
+	* VHFLock.*, vhfLockFunctions.*: copied to project (no link)
+	* App.h, apXyz.m: ../XYZ/Source.xyz.h
+	  App.m: import "xyz.h" removed
+	* vhfCommonFunctions.m, h (fillPopup, dictionaryFromFolder): moved to functions.m, h
+	* functions.m, h: new, contains functions which need locations.h
+	* PPBasicLevel.m: #include "../functions.h"
+	* App.h: #include for some files
+	* Shared/*.m, h: use #include instead of import
+	  Shared/*.h: reentrant save
+
+GNUstep Cenon 3.50 beta 18-1
+
+2002-06-30  Georg Fleischmann
+	* DPLayerDetails.nib, m, h (fillDirectionField, -setFillDirection:): new
+	  DPLayerDetails.m (-update): set fillDirection
+	* LayerObject.m, h (-fillDirection, -setFillDirection:): new
+	* Path.m (-createOutput:): use fillDirection
+	* Path.h: clean up, define MAX_OBJECTOPS, MAX_OBJECTOPS removed

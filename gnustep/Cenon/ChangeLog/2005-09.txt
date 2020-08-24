@@ -1,0 +1,141 @@
+Cenon Change Log - September 2005
+
+2005-09-01 Georg Fleischmann
+	* DocView.m, h (-isMultiPage, -pageCount, -knowsPagesFirst:, -rectForPage:): new
+	  Document (-print:): multi page printing added
+	  IPAllLayers.m (-displayChanged:): disable other pages
+	  -> Printing of multi page documents
+	* DocView.m (-drawText:): display page number #PAGENUM# and page count #PAGECNT#
+	                          from templates for all, even, and odd page numbers
+	  -> Template for page numbering
+	* VText.m, h (-replaceSubstring:withString:): new
+
+2005-09-02 Ilonka Fleischmann
+	* VPath (-contour:inlay:spliCurves:): iPts = NULL two times, clean-up
+
+2005-09-03 Ilonka Fleischmann
+	* VCurve.m (-hitControl::controlSize:) if ( ...dist <= lastDist...  instead of  dist < lastDist 
+	  -> take p0 or p3 in case a support point (p1 / p2) is placed upon a start/end point (p0 / p3)
+
+2005-09-03 Ilonka Fleischmann
+	* HiddenArea.m (-removePartsOf:hiddenBy:) kindOfClass VRectangle was missing in case without split
+	  HiddenArea.m (-removeSingleGraphicsInList:) g2 instead of g1 in kindOfClass VRectangle in j Schleife
+	  HiddenArea.m (-uniteAreas:): ([og isKindOfClass:[VRectangle class]] && ![og filled]) was missing and for PolyLine ![og filled] !
+	  HiddenArea.m (-uniteAreas:) ([cg isKindOfClass:[VRectangle class]] && ![cg filled]) fehlte
+	  HiddenArea.m (-uniteAreas:)  auskommentiert: if ( [og isKindOfClass:[VGroup class]] ) [self uniteAreas:[(VGroup*)og list]];
+	  HiddenArea.m (-removeHiddenAreas:) verÙndert, damit auch Gruppen gepuncht werden kðnnen
+	  HiddenArea.m (-uniteAreas:)  verÙndert, damit auch Gruppen unitet werden kðnnen
+	* DocView.m (-validateMenuItem:) for punch we also search (recursive) within group for a filled object
+	* VGroup.h, m (-recursiveObjectAtIndex:): new
+	              (-recursiveRemoveObjectAtIndex:): new
+	              (-recursiveInsertObject:atIndex:): new (funktionieren recursive auf die list der Group)
+	* VGroup.m (-countRecursive): the path objects are no longer counted! (wasn't used yet)
+	* VGroup.m (-getIntersectionsAndSplittedObjects:with) auskommentiert
+	  VGroup.m (-getIntersectionsAndSplittedObjects:with) for malloc ptsCnt = Min(100, [self numPoints]) + realloc
+	  VGroup.m (-getIntersections:with:) ptsCnt = Min(100, [self numPoints]) instead of [list count] * 9 + realloc
+	  VGroup.m (-getListOfObjectsSplittedFrom::) auskommentiert
+	  VGroup.m (-getIntersections:with:) auskommentiert
+	  VGroup.m (-uniteWith:) auskommentiert
+	-> damit kann mit Rechtecken / Gruppen gepuncht werden (verdeckte FlÙchen wegrechnen)
+
+2005-09-05 Georg Fleischmann
+	* App.m (-loadModules:): load modules only once, if located in several places
+
+2005-09-07 Ilonka Fleischmann
+	* IPPath.h,m (-update:) links/rechts Buttons hinzugefögt beim enablen/disablen
+	  IPPath.m (-update:)
+	  IPPolyLine.m (-update:) x/y-Fields of selected Point are set always (the fields showed wrong values)
+	  IPPath.nib engl/dtsch : 4x buttons connected und enabled
+
+2005-09-08 Ilonka Fleischmann
+	* GerberExportSub.m (-exportPath:) writeLayerPolarityMode: aufrufe verbessert
+		(Fix: es werden jetzt keine "leeren" Lagen (%LPD* %LPC* %LPD* oder so) mehr geschrieben)
+	* GerberExportSub.m (-exportPolyLine:) wenn geföllt writePolygonMode:YES
+		(Fix: geföllte PolyLines werden jetzt auch geföllt exportiert)
+
+2005-09-08 Ilonka Fleischmann
+		(Fix: jede Menge Berechnungsfehlerchen beim sÙmtlichen Berechnungen (PCB/ GerberImport / Punch ...)
+	* VPath.m (-getLastObjectOfSubPath:) distance zur nÙchsten graphic checken !
+		(Fix: der macht zuviele fehler sonst mit der grossen Toleranz beim contour uniteWith, import, export fast alle Berechnungen)
+	  VPath.m (-intersectionsForPtInside:) pointWithToleranceInArray() with TOLERANCE tolerance instead of pointInArray()
+	  VPath.m (-uniteWith:) if (!removedFromNg || !removedFromUg) bei uStartIs auch subpaths rausschmeissen
+	  VPath.m (-uniteWith:) if (...((i+1 >= listCnt) ? (0) : (i+1)) == startI) instead of i+1 == startI
+	  VPath.m (-uniteWith:) add closed chapes [splitListUg count] checked with uStartIs[] 2 stellen
+	  VPath.m (-uniteWith:) bei uStartIs[] suche distance zur nÙchsten graphic checken
+	  VPath.m (-uniteWith:) nothing splitted abfrage von vorne nach if (!removedFromNg && !removedFromUg) gesetzt ! 
+	  VPath.m (-uniteWith:) correct endIs[eCnt-1] if last object in list (only the index)
+	  VPath.m (-uniteWith:) if ((eptCnt > 1 && (SqrDistPoints(closePt, ePts[1]) < SqrDistPoints(closePt, ePts[0]) zusÙtzlich zu < tol+tol
+	  VPath.m (-uniteWith:) if (sptCnt > 1 && ...  < SqrDistPoints(ej, sPts[0])... zusÙtzlich zu < tol*tol wie oben (för ej und sj hier)
+	* VPath.m (-contourOpen:) (w < 0.0 && Abs(w) >= width) instead of Abs(w) >= width
+		 (Abstand war falsch )
+	* VPath.m (-join:) [self deselectAll] UND selectedObject = -1;
+		(Fix: die SelektierPunkte sind jetzt richtig (nÙmlich keiner mehr) nach dem join zweier objekte)
+	* VPolyLine.m (-pointWithNum:) if(pt_num < 0) return NSMakePoint( 0.0, 0.0)
+	  VPolyLine.m (-getIntersections:with:) if intersection point lays on a peek /\ or \/ we must have two intersectionpoints !!
+	  VPolyLine.m (-uniteWith:) nothing splitted abfrage von vorne nach if (!removedFromNg && !removedFromUg) gesetzt ! 
+	  VPolyLine.m (-uniteWith:) if (!removedFromNg || !removedFromUg) bei uStartIs auch subpaths rausschmeissen
+	  VPolyLine.m (-uniteWith:) if (...((i+1 >= listCnt) ? (0) : (i+1)) == startI) instead of i+1 == startI
+	  VPolyLine.m (-uniteWith:) add closed chapes [splitListUg count] checked with uStartIs[] 2 stellen
+	  VPolyLine.m (-uniteWith:) bei uStartIs[] suche distance zur nÙchsten graphic checken
+	  VPolyLine.m (-uniteWith:) correct endIs[eCnt-1] if last object in list (only the index)
+	  VPolyLine.m (-uniteWith:) if ((eptCnt > 1 && (SqrDistPoints(closePt, ePts[1]) < SqrDistPoints(closePt, ePts[0]) zusÙtzlich zu < tol+tol
+	  VPolyLine.m (-uniteWith:) if (sptCnt > 1 && ...  < SqrDistPoints(ej, sPts[0])... zusÙtzlich zu < tol*tol wie oben (för ej und sj hier)
+	* VArc.m (-uniteWith:) if (!removedFromNg || !removedFromUg) bei uStartIs auch subpaths rausschmeissen
+	  VArc.m (-uniteWith:) if (...((i+1 >= listCnt) ? (0) : (i+1)) == startI) instead of i+1 == startI
+	  VArc.m (-uniteWith:) nothing splitted abfrage von vorne hinter if (!removedFromNg && !removedFromUg) gesetzt!
+	  VArc.m (-uniteWith:) add closed chapes [splitListUg count] checked with uStartIs[] 2 stellen
+	  VArc.m (-uniteWith:) bei uStartIs[] suche distance zur nÙchsten graphic checken
+	  VArc.m (-uniteWith:) correct endIs[eCnt-1] if last object in list (only the index)
+	  VArc.m (-uniteWith:) if ((eptCnt > 1 && (SqrDistPoints(closePt, ePts[1]) < SqrDistPoints(closePt, ePts[0]) zusÙtzlich zu < tol+tol
+	  VArc.m (-uniteWith:) if (sptCnt > 1 && ...  < SqrDistPoints(ej, sPts[0])... zusÙtzlich zu < tol*tol wie oben (för ej und sj hier)
+	  VArc.m (-isPointInsideOrOn:) on test before in test
+	  VArc.m (-intersectArc::::) centers nearly identical < 2.0*TOLERANCE instead of < TOLERANCE
+	  VArc.m (-intersectArc::::) tol = 1.4*TOLERANCE instead of 2.0*TOLERANCE (för at = ..)
+	  VArc.m (-intersectLine:::) if ((an>=ba && an<=ea) || .. < 1.5*TOLERANCE instead of < TOLERANCE 2x
+	* VRectangle.m (-uniteWith:) if (!removedFromNg || !removedFromUg) bei uStartIs auch subpaths rausschmeissen
+	  VRectangle.m (-uniteWith:) if (...((i+1 >= listCnt) ? (0) : (i+1)) == startI) instead of i+1 == startI
+	  VRectangle.m (-uniteWith:) nothing splitted abfrage von vorne hinter if (!removedFromNg && !removedFromUg) gesetzt!
+	  VRectangle.m (-uniteWith:) add closed chapes [splitListUg count] checked with uStartIs[] 2 stellen
+	  VRectangle.m (-uniteWith:) bei uStartIs[] suche distance zur nÙchsten graphic checken
+	  VRectangle.m (-uniteWith:) correct endIs[eCnt-1] if last object in list (only the index)
+	  VRectangle.m (-uniteWith:) if ((eptCnt > 1 && (SqrDistPoints(closePt, ePts[1]) < SqrDistPoints(closePt, ePts[0]) zusÙtzlich zu < tol+tol
+	  VRectangle.m (-uniteWith:) if (sptCnt > 1 && ...  < SqrDistPoints(ej, sPts[0])... zusÙtzlich zu < tol*tol wie oben (för ej und sj hier)
+	* VRectangle.m (-drawWithPrincipal:) Max( 0.01, size.x) instead of Max( 1.0, size.x) 
+		(Fix: Rechtecke werden jetzt auch bis zu einer Grðsse von 0.01 KantenlÙnge richtig gemalt)
+
+2005-09-13 Georg Fleischmann
+	* Cenon 3.71
+
+Cenon 3.71
+
+
+2005-09-17 Georg Fleischmann
+	* DocView.h (DocViewDragSelect): notification name for drag select
+	  DocView.m (-dragSelect:): post notification with "region" in userInfo
+
+2005-09-23 Georg Fleischmann
+	* dvPasteboardType.m (-pasteboard:provideDataForType:): PDF addded, check types using [self e2TypesCenonExports]
+	  dvPasteboardType.m (-copySelectionAsPDF): new
+	  dvPasteboardType.m (-dataForPDFUsingList): new
+	  dvPasteboardType.m (-dataForPDF): new
+	  dvPasteboardType.m: PB_CANSERVER_PDF defined for __APPLE__
+	  dvPasteboardType.m (-copyToPasteboard:types:): PDF added
+	  DocView.m, h: name change to e2CenonPasteType()
+	* VGroup.m (): 4 places corrected (line 176ff, 203ff) returning a value instead void
+	* Clean-Up of titles in many other files
+
+2005-09-25 Georg Fleischmann
+	* DocView.m (-addList:toLayerAtIndex:): add layer as last layer (no offset)
+	* App.m (-import:): import to existing layer added
+	  Main.nib (Import-Accessory): popup item 3 to import to existing layer
+	  DocView.m (-addList:toLayerAtIndex:): import to existing layers by name or color reference
+	  Localization.strings: CREATELAYER_STRING, SKIP_STRING, IMPORTTONOTEXISTINGLAYER_STRING added
+	  Localizable.strings: strings added
+
+2005-09-26 Georg Fleischmann
+	* DXFImport.m (-getGraphicFromData:): added closing of PolyLine with Arc
+
+2005-09-27 Georg Fleischmann
+	* VRectangle.m (-contour): keep direction
+
+next Cenon 3.72

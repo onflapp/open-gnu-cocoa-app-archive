@@ -1,0 +1,489 @@
+{
+    CreationDate = "2003-05-20 00:24"; 
+    Creator = Cenon; 
+    Data = {
+        gridSpacing = 3; 
+        gridUnit = 2; 
+        layerList = (
+            {
+                Class = LayerObject; 
+                approachAngle = 0; 
+                dippingDepth = 0; 
+                editable = YES; 
+                fillDirection = 0; 
+                fillOverlap = 0.25; 
+                flatness = 0.15; 
+                levelingLimits = "2 2"; 
+                likeOtherLayers = YES; 
+                list = (
+                    {
+                        Class = VLine; 
+                        ccw = 1; 
+                        color = {A = 1; B = 1; C = 1; M = 1; Y = 1; s = DevCMYK; }; 
+                        p0 = "120 135"; 
+                        p1 = "156 135"; 
+                        width = 0.25; 
+                    }, 
+                    {
+                        Class = VLine; 
+                        color = {A = 1; B = 1; C = 1; M = 1; Y = 1; s = DevCMYK; }; 
+                        p0 = "111 144"; 
+                        p1 = "111 180"; 
+                        width = 0.25; 
+                    }, 
+                    {
+                        Class = VMark; 
+                        ccw = 1; 
+                        color = {A = 1; W = 0; s = CalWhite; }; 
+                        origin = "111 135"; 
+                        width = 0; 
+                    }, 
+                    {
+                        Class = VGroup; 
+                        ccw = 1; 
+                        color = {A = 1; W = 0; s = CalWhite; }; 
+                        list = (
+                            {
+                                Class = VLine; 
+                                color = {A = 1; B = 1; C = 1; M = 1; Y = 1; s = DevCMYK; }; 
+                                p0 = "129 99"; 
+                                p1 = "129 132"; 
+                                width = 0.25; 
+                            }, 
+                            {
+                                Class = VArc; 
+                                angle = 360; 
+                                ccw = 1; 
+                                center = "129 123"; 
+                                color = {A = 1; B = 1; C = 1; M = 1; Y = 1; s = DevCMYK; }; 
+                                endColor = {A = 1; W = 0; s = CalWhite; }; 
+                                fillColor = {A = 1; B = 1; C = 1; M = 1; Y = 1; s = DevCMYK; }; 
+                                filled = 1; 
+                                graduateAngle = 270; 
+                                radialCenter = "0.5 0.5"; 
+                                start = "129 120"; 
+                                stepWidth = 7; 
+                                width = 0; 
+                            }, 
+                            {
+                                Class = VLine; 
+                                color = {A = 1; B = 1; C = 1; M = 1; Y = 1; s = DevCMYK; }; 
+                                p0 = "120 123"; 
+                                p1 = "147 123"; 
+                                width = 0.25; 
+                            }, 
+                            {
+                                Class = VArc; 
+                                angle = 360; 
+                                center = "129 123"; 
+                                color = {A = 1; B = 1; C = 1; M = 1; Y = 1; s = DevCMYK; }; 
+                                endColor = {A = 1; W = 0; s = CalWhite; }; 
+                                fillColor = {A = 1; W = 0; s = CalWhite; }; 
+                                graduateAngle = 0; 
+                                radialCenter = "0.5 0.5"; 
+                                start = "129 117"; 
+                                stepWidth = 7; 
+                                width = 0.25; 
+                            }, 
+                            {
+                                Class = VLine; 
+                                color = {A = 1; B = 0; C = 0; M = 0; Y = 0; s = DevCMYK; }; 
+                                p0 = "129 120"; 
+                                p1 = "129 126"; 
+                                width = 0.25; 
+                            }, 
+                            {
+                                Class = VLine; 
+                                color = {A = 1; B = 0; C = 0; M = 0; Y = 0; s = DevCMYK; }; 
+                                p0 = "132 123"; 
+                                p1 = "126 123"; 
+                                width = 0.25; 
+                            }
+                        ); 
+                        width = 0; 
+                    }, 
+                    {
+                        Class = VGroup; 
+                        ccw = 1; 
+                        color = {A = 1; W = 0; s = CalWhite; }; 
+                        list = (
+                            {
+                                Class = VLine; 
+                                color = {A = 1; B = 1; C = 1; M = 1; Y = 1; s = DevCMYK; }; 
+                                p0 = "75 153"; 
+                                p1 = "108 153"; 
+                                width = 0.25; 
+                            }, 
+                            {
+                                Class = VArc; 
+                                angle = "-360"; 
+                                center = "99 153"; 
+                                color = {A = 1; B = 1; C = 1; M = 1; Y = 1; s = DevCMYK; }; 
+                                endColor = {A = 1; W = 0; s = CalWhite; }; 
+                                fillColor = {A = 1; B = 1; C = 1; M = 1; Y = 1; s = DevCMYK; }; 
+                                filled = 1; 
+                                graduateAngle = 180; 
+                                radialCenter = "0.5 0.5"; 
+                                start = "96 153"; 
+                                stepWidth = 7; 
+                                width = 0; 
+                            }, 
+                            {
+                                Class = VLine; 
+                                color = {A = 1; B = 1; C = 1; M = 1; Y = 1; s = DevCMYK; }; 
+                                p0 = "99 144"; 
+                                p1 = "99 171"; 
+                                width = 0.25; 
+                            }, 
+                            {
+                                Class = VArc; 
+                                angle = "-360"; 
+                                center = "99 153"; 
+                                color = {A = 1; B = 1; C = 1; M = 1; Y = 1; s = DevCMYK; }; 
+                                endColor = {A = 1; W = 0; s = CalWhite; }; 
+                                fillColor = {A = 1; W = 0; s = CalWhite; }; 
+                                graduateAngle = 0; 
+                                radialCenter = "0.5 0.5"; 
+                                start = "93 153"; 
+                                stepWidth = 7; 
+                                width = 0.25; 
+                            }, 
+                            {
+                                Class = VLine; 
+                                color = {A = 1; B = 0; C = 0; M = 0; Y = 0; s = DevCMYK; }; 
+                                p0 = "96 153"; 
+                                p1 = "102 153"; 
+                                width = 0.25; 
+                            }, 
+                            {
+                                Class = VLine; 
+                                color = {A = 1; B = 0; C = 0; M = 0; Y = 0; s = DevCMYK; }; 
+                                p0 = "99 156"; 
+                                p1 = "99 150"; 
+                                width = 0.25; 
+                            }
+                        ); 
+                        width = 0; 
+                    }, 
+                    {
+                        Class = VGroup; 
+                        ccw = 1; 
+                        color = {A = 1; W = 0; s = CalWhite; }; 
+                        list = (
+                            {
+                                Class = VArc; 
+                                angle = 360; 
+                                ccw = 1; 
+                                center = "129 153"; 
+                                color = {A = 1; B = 1; C = 1; M = 1; Y = 1; s = DevCMYK; }; 
+                                endColor = {A = 1; W = 0; s = CalWhite; }; 
+                                fillColor = {A = 1; W = 0; s = CalWhite; }; 
+                                graduateAngle = 0; 
+                                radialCenter = "0.5 0.5"; 
+                                start = "129 144"; 
+                                stepWidth = 7; 
+                                width = 0.25; 
+                            }, 
+                            {
+                                Class = VArc; 
+                                angle = 360; 
+                                center = "129 153"; 
+                                color = {A = 1; B = 1; C = 1; M = 1; Y = 1; s = DevCMYK; }; 
+                                endColor = {A = 1; W = 0; s = CalWhite; }; 
+                                fillColor = {A = 1; W = 0; s = CalWhite; }; 
+                                graduateAngle = 0; 
+                                radialCenter = "0.5 0.5"; 
+                                start = "129 145"; 
+                                stepWidth = 7; 
+                                width = 0.25; 
+                            }, 
+                            {
+                                Class = VArc; 
+                                angle = 360; 
+                                center = "129 153"; 
+                                color = {A = 1; B = 1; C = 1; M = 1; Y = 1; s = DevCMYK; }; 
+                                endColor = {A = 1; W = 0; s = CalWhite; }; 
+                                fillColor = {A = 1; W = 0; s = CalWhite; }; 
+                                graduateAngle = 0; 
+                                radialCenter = "0.5 0.5"; 
+                                start = "129 144.5"; 
+                                stepWidth = 7; 
+                                width = 0.25; 
+                            }, 
+                            {
+                                Class = VArc; 
+                                angle = 360; 
+                                center = "129 153"; 
+                                color = {A = 1; B = 1; C = 1; M = 1; Y = 1; s = DevCMYK; }; 
+                                endColor = {A = 1; W = 0; s = CalWhite; }; 
+                                fillColor = {A = 1; W = 0; s = CalWhite; }; 
+                                graduateAngle = 0; 
+                                radialCenter = "0.5 0.5"; 
+                                start = "129 145.5"; 
+                                stepWidth = 7; 
+                                width = 0.25; 
+                            }, 
+                            {
+                                Class = VArc; 
+                                angle = 360; 
+                                center = "129 153"; 
+                                color = {A = 1; B = 1; C = 1; M = 1; Y = 1; s = DevCMYK; }; 
+                                endColor = {A = 1; W = 0; s = CalWhite; }; 
+                                fillColor = {A = 1; W = 0; s = CalWhite; }; 
+                                graduateAngle = 0; 
+                                radialCenter = "0.5 0.5"; 
+                                start = "129 146"; 
+                                stepWidth = 7; 
+                                width = 0.25; 
+                            }, 
+                            {
+                                Class = VArc; 
+                                angle = 360; 
+                                center = "129 153"; 
+                                color = {A = 1; B = 1; C = 1; M = 1; Y = 1; s = DevCMYK; }; 
+                                endColor = {A = 1; W = 0; s = CalWhite; }; 
+                                fillColor = {A = 1; W = 0; s = CalWhite; }; 
+                                graduateAngle = 0; 
+                                radialCenter = "0.5 0.5"; 
+                                start = "129 146.5"; 
+                                stepWidth = 7; 
+                                width = 0.25; 
+                            }, 
+                            {
+                                Class = VArc; 
+                                angle = 360; 
+                                center = "129 153"; 
+                                color = {A = 1; B = 1; C = 1; M = 1; Y = 1; s = DevCMYK; }; 
+                                endColor = {A = 1; W = 0; s = CalWhite; }; 
+                                fillColor = {A = 1; W = 0; s = CalWhite; }; 
+                                graduateAngle = 0; 
+                                radialCenter = "0.5 0.5"; 
+                                start = "129 147"; 
+                                stepWidth = 7; 
+                                width = 0.25; 
+                            }, 
+                            {
+                                Class = VArc; 
+                                angle = 360; 
+                                center = "129 153"; 
+                                color = {A = 1; B = 1; C = 1; M = 1; Y = 1; s = DevCMYK; }; 
+                                endColor = {A = 1; W = 0; s = CalWhite; }; 
+                                fillColor = {A = 1; W = 0; s = CalWhite; }; 
+                                graduateAngle = 0; 
+                                radialCenter = "0.5 0.5"; 
+                                start = "129 147.5"; 
+                                stepWidth = 7; 
+                                width = 0.25; 
+                            }, 
+                            {
+                                Class = VArc; 
+                                angle = 360; 
+                                center = "129 153"; 
+                                color = {A = 1; B = 1; C = 1; M = 1; Y = 1; s = DevCMYK; }; 
+                                endColor = {A = 1; W = 0; s = CalWhite; }; 
+                                fillColor = {A = 1; W = 0; s = CalWhite; }; 
+                                graduateAngle = 0; 
+                                radialCenter = "0.5 0.5"; 
+                                start = "129 148"; 
+                                stepWidth = 7; 
+                                width = 0.25; 
+                            }, 
+                            {
+                                Class = VArc; 
+                                angle = 360; 
+                                center = "129 153"; 
+                                color = {A = 1; B = 1; C = 1; M = 1; Y = 1; s = DevCMYK; }; 
+                                endColor = {A = 1; W = 0; s = CalWhite; }; 
+                                fillColor = {A = 1; W = 0; s = CalWhite; }; 
+                                graduateAngle = 0; 
+                                radialCenter = "0.5 0.5"; 
+                                start = "129 148.5"; 
+                                stepWidth = 7; 
+                                width = 0.25; 
+                            }, 
+                            {
+                                Class = VArc; 
+                                angle = 360; 
+                                center = "129 153"; 
+                                color = {A = 1; B = 1; C = 1; M = 1; Y = 1; s = DevCMYK; }; 
+                                endColor = {A = 1; W = 0; s = CalWhite; }; 
+                                fillColor = {A = 1; W = 0; s = CalWhite; }; 
+                                graduateAngle = 0; 
+                                radialCenter = "0.5 0.5"; 
+                                start = "129 149"; 
+                                stepWidth = 7; 
+                                width = 0.25; 
+                            }, 
+                            {
+                                Class = VArc; 
+                                angle = 360; 
+                                center = "129 153"; 
+                                color = {A = 1; B = 1; C = 1; M = 1; Y = 1; s = DevCMYK; }; 
+                                endColor = {A = 1; W = 0; s = CalWhite; }; 
+                                fillColor = {A = 1; W = 0; s = CalWhite; }; 
+                                graduateAngle = 0; 
+                                radialCenter = "0.5 0.5"; 
+                                start = "129 149"; 
+                                stepWidth = 7; 
+                                width = 0.25; 
+                            }, 
+                            {
+                                Class = VArc; 
+                                angle = 360; 
+                                center = "129 153"; 
+                                color = {A = 1; B = 1; C = 1; M = 1; Y = 1; s = DevCMYK; }; 
+                                endColor = {A = 1; W = 0; s = CalWhite; }; 
+                                fillColor = {A = 1; W = 0; s = CalWhite; }; 
+                                graduateAngle = 0; 
+                                radialCenter = "0.5 0.5"; 
+                                start = "129 150"; 
+                                stepWidth = 7; 
+                                width = 0.25; 
+                            }, 
+                            {
+                                Class = VArc; 
+                                angle = 360; 
+                                center = "129 153"; 
+                                color = {A = 1; B = 1; C = 1; M = 1; Y = 1; s = DevCMYK; }; 
+                                endColor = {A = 1; W = 0; s = CalWhite; }; 
+                                fillColor = {A = 1; W = 0; s = CalWhite; }; 
+                                graduateAngle = 0; 
+                                radialCenter = "0.5 0.5"; 
+                                start = "129 149.5"; 
+                                stepWidth = 7; 
+                                width = 0.25; 
+                            }, 
+                            {
+                                Class = VArc; 
+                                angle = 360; 
+                                center = "129 153"; 
+                                color = {A = 1; B = 1; C = 1; M = 1; Y = 1; s = DevCMYK; }; 
+                                endColor = {A = 1; W = 0; s = CalWhite; }; 
+                                fillColor = {A = 1; W = 0; s = CalWhite; }; 
+                                graduateAngle = 0; 
+                                radialCenter = "0.5 0.5"; 
+                                start = "129 150.5"; 
+                                stepWidth = 7; 
+                                width = 0.25; 
+                            }, 
+                            {
+                                Class = VArc; 
+                                angle = 360; 
+                                center = "129 153"; 
+                                color = {A = 1; B = 1; C = 1; M = 1; Y = 1; s = DevCMYK; }; 
+                                endColor = {A = 1; W = 0; s = CalWhite; }; 
+                                fillColor = {A = 1; W = 0; s = CalWhite; }; 
+                                graduateAngle = 0; 
+                                radialCenter = "0.5 0.5"; 
+                                start = "129 151"; 
+                                stepWidth = 7; 
+                                width = 0.25; 
+                            }, 
+                            {
+                                Class = VArc; 
+                                angle = 360; 
+                                center = "129 153"; 
+                                color = {A = 1; B = 1; C = 1; M = 1; Y = 1; s = DevCMYK; }; 
+                                endColor = {A = 1; W = 0; s = CalWhite; }; 
+                                fillColor = {A = 1; W = 0; s = CalWhite; }; 
+                                graduateAngle = 0; 
+                                radialCenter = "0.5 0.5"; 
+                                start = "129 151.5"; 
+                                stepWidth = 7; 
+                                width = 0.25; 
+                            }, 
+                            {
+                                Class = VArc; 
+                                angle = 360; 
+                                center = "129 153"; 
+                                color = {A = 1; B = 1; C = 1; M = 1; Y = 1; s = DevCMYK; }; 
+                                endColor = {A = 1; W = 0; s = CalWhite; }; 
+                                fillColor = {A = 1; W = 0; s = CalWhite; }; 
+                                graduateAngle = 0; 
+                                radialCenter = "0.5 0.5"; 
+                                start = "129 152"; 
+                                stepWidth = 7; 
+                                width = 0.25; 
+                            }, 
+                            {
+                                Class = VArc; 
+                                angle = 360; 
+                                center = "129 153"; 
+                                color = {A = 1; B = 1; C = 1; M = 1; Y = 1; s = DevCMYK; }; 
+                                endColor = {A = 1; W = 0; s = CalWhite; }; 
+                                fillColor = {A = 1; W = 0; s = CalWhite; }; 
+                                graduateAngle = 0; 
+                                radialCenter = "0.5 0.5"; 
+                                start = "129 152.5"; 
+                                stepWidth = 7; 
+                                width = 0.25; 
+                            }
+                        ); 
+                        width = 0; 
+                    }
+                ); 
+                numSteps = 0; 
+                removeLoops = YES; 
+                settle = 0; 
+                side = 2; 
+                state = 1; 
+                step0 = 0; 
+                step1 = 0; 
+                step2 = 0; 
+                string = rightup; 
+                tag = 0; 
+                toolIndex = "-1"; 
+                toolString = ""; 
+                type = 0; 
+                useForTile = YES; 
+                v = 4; 
+            }, 
+            {
+                Class = LayerObject; 
+                approachAngle = 0; 
+                dippingDepth = 0; 
+                fillDirection = 0; 
+                fillOverlap = 0.25; 
+                flatness = 0.15; 
+                levelingLimits = "2 2"; 
+                list = (); 
+                numSteps = 0; 
+                removeLoops = YES; 
+                settle = 0; 
+                side = 2; 
+                state = 1; 
+                step0 = 0; 
+                step1 = 0; 
+                step2 = 0; 
+                string = Clipping; 
+                tag = 0; 
+                toolIndex = "-1"; 
+                toolString = ""; 
+                type = 2; 
+                v = 4; 
+            }
+        ); 
+        origin = {
+            Class = VCrosshairs; 
+            ccw = 1; 
+            color = {A = 1; W = 0; s = CalWhite; }; 
+            origin = "0 0"; 
+            width = 0; 
+        }; 
+        tileDistance = "0 0"; 
+        tileLimits = "0 0"; 
+    }; 
+    MagazineIndex = 0; 
+    PrintInfo = {
+        bottomMargin = 0; 
+        leftMargin = 0; 
+        orientation = 0; 
+        paperName = A4; 
+        paperSize = "595 842"; 
+        rightMargin = 0; 
+        topMargin = 0; 
+    }; 
+    Version = 102; 
+    ViewSize = "0 0 250 250"; 
+    WindowFrame = "426 410 847 723 0 0 1532 1200 "; 
+}

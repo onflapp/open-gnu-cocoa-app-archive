@@ -1,0 +1,46 @@
+{\rtf0\ansi{\fonttbl\f0\fmodern Courier;}
+\pard\tx1440\tx2700\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li2700\fi-2700\ql\qnatural
+
+\f0\b\fs24 \cf0 …nderungen för August 1997\
+
+\b0 \
+16.08.97	Cenon\
+\
+\pard\tx1440\tx4320\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li4320\fi-4320\ql\qnatural
+\cf0 Datum	Datei	VerÙndert\
+----------------------------------------------------------------------------------------------\
+05.07.97	Path.m	-buildFillUPath -> pts number nochmal * 2\
+06.08.97	Curve.m	-angle -> wird jetzt direkt mit Stötzpunkten berechnet\
+	Path.m	-getFlattenedObject -> if(fg) neu\
+08.08.97	DXFImportSub.m	-addFillList, -addStrokeList -> sort eingebaut\
+\pard\tx1440\tx4320\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li4320\fi-4320\ql\qnatural
+
+\b \cf0 3.04\
+\
+\pard\tx1440\tx4320\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li4320\fi-4320\ql\qnatural
+
+\b0 \cf0 14.08.97	DPLayer.m,\
+	DPLayerDetails.m	-setDipDepth -> 40 als Maximum\
+	Path.m	-getDirectionOfSubPath -> lAngle, rAngle för Objektwinkel vertauscht\
+		-buildFillUPath -> maxLineLength wird mit eingerechnet\
+	Curve.m	-angle -> 2*360 - angle\
+	vhf2DFunctions.m	doUserPath() -> wird auf maximal 8000 ops zerhackt\
+15.08.97	vhfCommonFunctions.m	scanUpToSequence() -> if( ![scanner scanUp... return nil;\
+\
+16.08.97	all	OpenStep 4.2\
+	all	\{0, 0, 0, 0\} -> NSMakeRect(0, 0, 0, 0)\
+	vhfGetTypesFromData	radis durch id ersetzt\
+	e2Pasteboard.m	-copy -> if( clipObject ) ...\
+	Editor2DView.m	-dealloc -> removeAllObjects entfernt\
+\pard\tx1440\tx4320\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li4320\fi-4320\ql\qnatural
+
+\b \cf0 3.05
+\b0 \
+\
+30.08.97	DPLayer.m\
+	DPLayerDetails.m	MAXDIPDEPTH 100.0\
+	Path.m	-countRecursive -> geföllte Objekte beröcksichtigt\
+
+\b 3.06
+\b0 \
+}

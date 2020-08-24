@@ -1,0 +1,25 @@
+{
+    IBClasses = (
+        {
+            CLASS = App; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {tilePanel = id; }; 
+            SUPERCLASS = NSApplication; 
+        }, 
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {set = id; }; 
+            CLASS = PSInfo; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                authorForm = id; 
+                commentText = id; 
+                copyrightForm = id; 
+                versionForm = id; 
+                view = id; 
+            }; 
+            SUPERCLASS = NSObject; 
+        }
+    ); 
+    IBVersion = 1; 
+}

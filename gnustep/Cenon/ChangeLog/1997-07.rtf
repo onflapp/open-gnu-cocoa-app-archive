@@ -1,0 +1,78 @@
+{\rtf0\ansi{\fonttbl\f0\fmodern Courier;}
+\pard\tx1440\tx2700\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li2700\fi-2700\ql\qnatural
+
+\f0\b\fs24 \cf0 …nderungen för Juli 1997\
+
+\b0 \
+30.07.97	Cenon\
+\
+\pard\tx1440\tx4320\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li4320\fi-4320\ql\qnatural
+\cf0 Datum	Datei	VerÙndert\
+----------------------------------------------------------------------------------------------\
+02.07.97	DPPositions.m	setName: -> index selectiert\
+	DPControl.m	-start -> Neuberechnen Meldung verwendete cString\
+	DPLayer.m	-setLayerName -> unnðtige cString/object Umwandlung\
+	Editor2DDocument.m	-dealloc -> saveChanges Meldung verwendete cString\
+	e2Output.m	-calculateOutput -> idiot==NO && to Abfrage in Idiotenmeldung\
+03.07.97	Arc.m	-draw -> fillUPath wird ausgegeben\
+		-putUPath -> fillUPath wird ausgegeben\
+	IPLayerDetails	-update, -setSide -> FrÙserradiuskorrektur wird gesetzt\
+	Editor2DDocument.m,h	services Zeug - nicht aktiv\
+	Path.m	-putFillUPath -> yMax += (stepWidth/2.0);\
+		-buildFillUPath:: -> cnt wird mit overlap berechnet\
+	TextGraphic.m	-scale::: -> neu\
+04.07.97	e2Pasteboard.m	-pasteFromPasteboard: -> int fixLayer = -1, cnt =...\
+		-pasteFromPasteboard: -> paste immer in den bounds\
+	Editor2DView.m, h	+boundsOfArray -> NSArray als Parameter\
+	Curve.m	-calcVerticesFromPointsAndParallelCurve -> Division durch 0\
+		-length -> 0/3 == 0.0, dann wird LÙnge 0 zuröckgegeben\
+	messages.h	NODATA_STRING -> neu\
+	DPControl.m	-start -> NODATA_STRING dargestellt\
+	Localizable.strings	"No data to process!" = "Keine Daten auszugeben!"; -> neu\
+	Xyz.m	delay() -> (double)msecs/1000.0\
+	KeyPanel.m, h\
+	App.m	-setLicenseWithKey:(id)mustSetKey -> auf id umgestellt\
+05.07.97	Editor2DView.m, h	-magnify -> neu\
+		-setClipObject: -> retain/release\
+		-initWithCoder -> set clip object\
+		-dealloc -> [clipObject release]\
+		-selectAll -> selektiert nur sichtbare Lagen\
+	TileScrollView.m	-magnify: -> an und ausschalten mðglich\
+	e2Tile.m	-setTile: -> dirty, auch wenn Liste leer ist\
+	DPControl.m	-setAdjust -> beim adjust wird Origin Z und andere disabled\
+		-showPositions -> switch off adjustemtn mode\
+		-buildOutputPathAndExecute -> ClipRectangle *clipObject =...\
+	Xyz.m	SpeedRangeZ() -> neu verwendet in -changeVDraw, -xyzMoveZ\
+		-executeVector -> stepwise drilling took 1st two steps at once\
+	DPLayer.m	-update -> vDraw and rev now set for tool of current layer\
+	ClipRectangle.m	-initWithCoder -> set clipObject never works, now removed\
+	Path.m	-clipListFromRect: returns autoreleased array\
+	IPCrosshairs.nib\
+	IPCrosshairs.m, h	neu\
+	InspectorPanel.m	-loadList -> call loadGraphic:nil when no objects in list\
+		-loadGraphic -> crosshairs\
+	InspectorPanel.h	IP_CROSSHAIRS, crosshairsWindow\
+	TextGraphic.m	edit:in: -> opaque\
+07.07.97	Path.m	orthPointAtBegOrEnd() -> !b abgefangen, för curve 4 stufen\
+		GradientNear() -> neu, öberall statt gradientAt:\
+	Curve.m, h	-gradientNear -> neu\
+12.07.97	Path.m	-putFillUPath -> 0 Intersection are ok, break\
+		-draw -> doUserPath() used as DPS workaround\
+	DPControl.m	-showPosition: -> [self setAdjust:NO] nur, wenn Adjust an\
+	DPPositions.m	-setPositionZ -> zDown wird nicht verÙndert\
+		-setPositionZ, -setPositionZDown -> z statt y maximum\
+	DPControl.nib	Positions-Button entfernt\
+	eps.tiff	neu, Extension aufgenommen\
+	vhf2DFunctions.m, h	doUserPath() -> neu\
+13.07.97	Group.m	ungroupTo: -> We now keep the order of objects\
+	Path.m	-putFillUPath -> lines are trimmed to maxLineLen\
+		-splittedLineto -> new\
+21.07.97	DPLayer.m	-matrixDidShuffleCellFrom:: -> retain/release\
+22.07.97	xyzLinks	link auf German.lproj\
+30.07.97	Editor2DDocument.m	-dealloc -> [window setDocument:nil]\
+	Line.m, Curve.m ...	-boundsWithKnobs -> view wird auf nil getestet\
+	e2Pasteboard.m	-convert -> [array removeAllObjects] entfernt\
+		-paste:andLink: -> [pblist release] entfernt\
+		-pasteFromPasteboard -> pblist = [[NSMutableArray array]...\
+	Editor2DView.m	-placeList -> [alist removeAllObjects] entfernt\
+}

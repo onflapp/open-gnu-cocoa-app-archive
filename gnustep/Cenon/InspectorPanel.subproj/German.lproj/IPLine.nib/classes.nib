@@ -1,0 +1,43 @@
+{
+    IBClasses = (
+        {
+            CLASS = App; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {inspectorPanel = id; }; 
+            SUPERCLASS = NSApplication; 
+        }, 
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {
+                setAngle = id; 
+                setEndX = id; 
+                setEndY = id; 
+                setLength = id; 
+                setLock = id; 
+                setPointX = id; 
+                setPointY = id; 
+            }; 
+            CLASS = IPLine; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                angleField = id; 
+                angleSlider = id; 
+                endXField = id; 
+                endYField = id; 
+                lengthField = id; 
+                lockSwitch = id; 
+                xField = id; 
+                yField = id; 
+            }; 
+            SUPERCLASS = NSPanel; 
+        }, 
+        {
+            CLASS = InspectorPanel; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {lineWindow = id; }; 
+            SUPERCLASS = NSPanel; 
+        }, 
+        {CLASS = SurfaceWell; LANGUAGE = ObjC; SUPERCLASS = NSColorWell; }
+    ); 
+    IBVersion = 1; 
+}

@@ -1,0 +1,52 @@
+device name                                  #DEV "Gerber"
+
+baudrate (0=parallel)                        #BAU 9600
+handshake (0=none, 1=XON/XOFF, 2=RTS/CTS)    #HSK 1
+
+special characters in command strings:
+linefeed                  \n
+escape                    \e
+carriage Return           \r
+quotation marks           \"
+parameters will be inserted at %f (%d, %x, %ld, %e)
+
+X-maximum in mm                              #XMX 1000
+Y-maximum in mm                              #YMX 1000
+resolution in points/inch  	                 #RES 1000
+
+for output only:
+initialize                                   #INI 
+X-coordinate                                 #XPO "X%.0f"
+Y-coordinate                                 #YPO "Y%.0f"
+switch light on (draw)                       #DRW "D1*\n"
+switch light off (move)                      #MOV "D2*"
+flash                                        #FLS "D3*"
+circle (xr,yr,xm,ym)                         #CIR "G75*G02X%.0fY%.0fI%.0fJ0D1*G74*"
+arc (xr,yr,xm,ym)                            #ARC "G75*G02X%.0fY%.0fI%.0fJ%.0fD1*G74*"
+select tool                                  #TNR "D%d*"
+select tool                                  #TNR "DX%d*"
+reset                                        #RST "X0Y0D2*\n"
+
+for interpreter only:
+tool                                         #IT0 "D"
+tool                                         #IT1 "DX"
+X                                            #IXP "X"
+Y                                            #IYP "Y"
+I                                            #IIP "I"
+J                                            #IJP "J"
+draw                                         #IDR "D1"
+move                                         #IMO "D2"
+flash                                        #IFS "D3"
+circle cw                                    #ICI "G75*G02"
+arc											 #IAR "G75"
+terminator								     #ITR "*"
+absolute                                     #ABS "G90"
+relative                                     #REL "G91"
+
+type for aperture table                      #TL  "trace"
+											 #TP  "flash"
+											 #TA  "trace/flash"
+
+form for aperture table                      #FC  "C"
+											 #FR  "R"
+											 #FO  "O"

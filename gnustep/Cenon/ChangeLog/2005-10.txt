@@ -1,0 +1,80 @@
+Cenon Change Log - October 2005
+
+2005-10-13 Georg Fleischmann
+	* VSinking.m (-gradienAt:, -pointAt:): new
+	  VSinking.m (-drawWithPrincipal:): direction arrow added
+	* VSinking.h: #define SINKING_ANGLE -360.0, used instead of 360.0 (direction now inverted)
+
+2005-10-15 Georg Fleischmann
+	* dvTile.h, nib: distancePopup, originSwitch added
+	  dvTile.m (-updatePanel): update limitsPopup
+	  DocView.h (-buildTileCopies:..., -setTileWithLimits:...): moveToOrigin added
+	  DocView.m (-initWithCoder:): -setTileWithLimits:...moveToOrigin:NO added
+	  DocView.m (-draw:): draw serialnumer relative master tile object
+	  -> Batch-Production: the master graphics is moved to crosshair origin (instead of absolute 0/0)
+	  -> Batch-Production: The user can now decide whether to move the master to the origin or not
+	* dvTile.m (-setDistancePopup:, -relativeDistance): new
+	  dvTile.m (-useAbsoluteDistance, -mustMoveMasterToOrigin): new
+	  dvTile.m (-updatePanel:): convert distance to absolute for fields if necessary
+	  -> Batch-Production: new Pop-Up to select between Relative or Absolute Distance
+	* Document.m, DocWindow.m (-windowDidBecomeKey:): update tile panel here not in windowDidBecomeMain
+
+2005-10-18 Ilonka Fleischmann
+	* VRectangle.m (-appendToBezierPath:currentPoint:) support for rounded edges added
+	  -> Punch, Rectangle in Path - rounded edges are displayed
+
+2005-10-21 Georg Fleischmann
+	* VText.m (-getFlattenedObjectAt:...): for Apple, mirror with bRect.origin.y+height (not origin.x)
+
+2005-10-23 Ilonka Fleischmann
+	* VRectangle.m (-hit:fuzz:) if (r) arcs auch testen UND if Filled &6 !Prefs_SelectByBorder abfragen
+	* VRectangle.m (-copy) [rectangle setLocked:NO] instead of isLocked
+	* VRectangle.m (-setAngle:withCenter:) radialCenter Grenzen korrigieren nach drehen !
+	  VRectangle.m (-propertyList:) radialCenter Speicher-Abfrage stimmt jetzt
+	* VArc.m (-copy) [rectangle setLocked:NO] instead of isLocked
+	* VArc.m (distancePointArc()) raus - nach vhf2DFunctions för -hit:fuzz:
+	  VArc.m (-hit:fuzz:) if Filled && !Prefs_SelectByBorder abfragen
+	* VArc.m (-setAngle:withCenter:) radialCenter Grenzen korrigieren nach drehen !
+	  VArc.m (-propertyList:) radialCenter Speicher-Abfrage stimmt jetzt
+	* VLine.m (-copy) [rectangle setLocked:NO] instead of isLocked
+	* VLine3D.m (-copy) [rectangle setLocked:NO] instead of isLocked
+	* VCurve.m (-copy) [rectangle setLocked:NO] instead of isLocked
+	* VPolyLine.m (-copy) [rectangle setLocked:NO] instead of isLocked
+	* VPolyLine.m (-hit:fuzz:) if Filled && !Prefs_SelectByBorder abfragen
+	* VPolyLine.m (-setAngle:withCenter:) radialCenter Grenzen korrigieren nach drehen !
+	  VPolyLine.m (-propertyList:) radialCenter Speicher-Abfrage stimmt jetzt
+	* VPath.m (-copy) [rectangle setLocked:NO] instead of isLocked
+	* VPath.m (-hit:fuzz:) if Filled && !Prefs_SelectByBorder abfragen
+	* VPath.m (-setAngle:withCenter:) radialCenter Grenzen korrigieren nach drehen !
+	  VPath.m (-propertyList:) radialCenter Speicher-Abfrage stimmt jetzt
+	* VGroup.m (-copy) [rectangle setLocked:NO] instead of isLocked
+	* vhf2DFunctions.m, h (distancePointArc()) new kommt von VArc.m för -hit:fuzz: in VRectangle
+	* PreferencesMacros.h () Prefs_SelectByBorder new
+	* GeneralController.h, nib () SWITCH_SELECTBYBORDER... new
+	                              Reihenfolge musste geÙndert werden! damit ohne apple/gnustep es auch tut
+	* GeneralController.m (-set:) SWITCH_SELECTBYBORDER... new
+	  GeneralController.m (-update:) SWITCH_SELECTBYBORDER... new
+	* App.m (-initialize) selectByBorder... new
+	* IPAllFilling.m (-update:) if (graphic != g) [(NSColorWell*)colorWellGraduated deactivate]
+	                            (das fehlte noch !)
+	-> Beim kopieren eines gelockten Objekts ist es dann nicht mehr gelockt
+	-> Selektierung nur am Rand - schaltbar in den Preferences
+
+	* IPAllStrokeWidth.m (-setWidth:) else stroked = 1;
+	  IPAllStrokeWidth.m (-update:) width Fields/Buttons are allways enabled if we have a Graphic with width
+	  -> Objekte werden beim Gruppieren nicht mehr in der Farbe verÙndert (wenn das 2. Color Well aktiv ist)
+
+	* VArc.m (-tangentIntersectionWithPath:) some parts disabled
+	  -> stuff for contour fill (pick out)
+
+next Cenon 3.72
+
+2005-10-26 Georg Fleischmann
+	* TileScrollView.m (-zoomOut:, -changeScale:): OpenStep workarounds - Grrrr !
+
+2005-10-27 Ilonka Fleischmann
+	* DocView.m (-redrawObject:::): polyline snap also to own point
+	* VPolyLine.m (-hitEdge:fuzz::::): don't snap to selectedKnob and don't change selectedKnob
+	  -> snap to point inside PolyLine
+
+3.80 pre 1

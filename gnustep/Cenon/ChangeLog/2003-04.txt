@@ -1,0 +1,134 @@
+Cenon Change Log - April 2003
+
+2003-04-02 Ilonka Fleischmann
+	* DocView.m, h (-selectColor:) we must increase the color counter c !
+	  DocView.m, h (-selectColor:) color abfrage ohne VGroup und ohne width!
+	* Document.m, h (-printSeparation:) + Autorelease loop
+
+2003-04-03 Ilonka Fleischmann
+	* VHFColorAdditions.m, h (-colorUsingColorSpaceName: - ...device:) new !!
+	* VGraphic.m (-drawColorPale:) cmyk -> wird rgb gemalt !
+	* VRectangle.m (-drawWithPrincipal:) cmyk -> wird rgb gemalt !
+	* VPath.m (-drawWithPrincipal:) cmyk -> wird rgb gemalt !
+	* VPolyLine.m (-drawWithPrincipal:) cmyk -> wird rgb gemalt !
+	* VText.m (-drawWithPrincipal:) cmyk -> wird rgb gemalt !
+	* VText.m (-drawWithPrincipal:) ColorSeparation/drawColorPale/(cmyk)
+	  - jede Buchstaben farbfolge wird "einzeln" gesetzt
+	* VText.m (-edit:in:) [fe setTextColor:col] hier darf keine color gesetzt werden !
+	* VText.m (-getFlattendeObjectAt:withOffset:) convert pathGs fillColor to cmyk -
+	  wenn self fillColor cmyk color ist
+
+2003-04-05 Ilonka Fleischmann
+	* VText.m (-edit:in:) [fe setTextColor:col] aukommentierung umsortiert
+	* VText.m (-drawWithPrincipal:) ColorSeparation.. - ColorAtt abgefragt
+	* VApp.h, m (-ppaRadio): instead of ppaRadioState
+	* Document.m (-printDocument): set the ppaRadio to composite after separation
+
+2003-04-05 Georg Fleischmann
+	* App.h (keyPanel, dataPanel, all xyz-variables): removed
+	  App.m (-dataPanel, -showKeyPanel:, -showDataPanel:): removed
+	  App.m (-loadModules): set instance for CAM controller
+	* Main.nib: "Data Panel ...", "License ..." -> removed
+	* Localized.string: License added
+
+2003-04-06 Georg Fleischmann
+	* Main.nib (Display Moves, Display Tool Diameter): removed
+	* DocView.m, h (-setRedrawEntireView:, -redrawEntireView, BOOL redrawEntireView): new
+	* DocView.m (displayMoves, displayToolDiameter): moved to CAM module
+	  DocView.m (-validateMenuItem:): displayMoves, displayToolDiameter moved to CAM bundle
+	  DocView.h (BOOL showMoves, BOOL showToolDiameter): moved to CAM bundle
+	* DocView.h (statusDict): new
+	  DocView.m (-setParameter): statusDict created
+
+2003-04-07 Georg Fleischmann
+	* Main.nib ("Opimize Moves", "Save Output ..."): removed
+	  Localizable.string ("Opimize Moves", "Save Output ..."): added
+	* DocView.m, h (-validateMenuItem:): docViewUpdateMenuItem added
+
+2003-04-09 Georg Fleischmann
+	* App.m (-applicationDidFinishLaunching): create System folder, xyz/magazine/device moved to CAM module
+	* CenonModuleMethods: new
+	  App.m: include CenonModuleMethods.h
+	* DocView.h, m (-displayOutput, displayOutput): moved to CAM module
+	  DocView.m (-cacheDirect:): moved to CAM module
+	  DocView.m (-cache:): output stuff moved to CAM module
+	  DocView.m (-draw:): DocViewDrawGraphicAdditions notification after graphic has been drawn
+	  DocView.m (-draw:): DocViewDrawBatchAdditions notification after batch rectangles have been drawn
+	  DocView.m (-mouseDown:): use cache to redraw, flushWindow/PSWait removed
+
+2003-04-10 Georg Fleischmann
+	* DocView.m (-drawRect:): DocViewDrawDecoration notification
+	  DocView.h (#define DocViewDrawDecoration): added
+	* DocView.m, h (-flatRedraw:): new
+	  DocView.m: displayOutput stuff for selection replaced with flatRedraw
+	  DocView.h (BOOL displayOutput): removed
+	  DocView.h (BOOL drawPale): new
+	* DocView.m: clean up if () -> if ()
+	* DocView.m (-placeList:, -scaleG:, -buildContour:, -flatten:, -bindTextToPath:): use cache: to redraw
+	* VHFColorAdditions.m: title comments
+	  VHFColorAdditions.m (-colorUsingColorSpaceName:): return self, if we already are in the desired color space
+	* GraphicObjects.subproj/*: Newline after @end
+
+2003-04-12 Ilonka Fleischmann
+	* VText.m (-drawWithPrincipal:) [mas release] 2x
+	  VText.m (-drawWithPrincipal:) if (!colorAtt) fillColor nehmen !
+	* VImage.m (-drawWithPrincipal:) Farbseparation eingebaut
+	  VImage.m (-separateImageWithColor:) Farbseparation new
+	  VImage.m (-initFromPropertyList:..:) [imageFile release] instead of autorelease
+	  VImage.m (-initWithCoder:) [imageFile release] instead of autorelease
+	* propertyList.m (printInfoFromPropertyList()) paperName und orientation gesetzt !
+	* Document.m (-printDocument:) NSPrinter nach printOper. in unserem printInfo notiert!
+	  Document.m (-printSeparation:) text colors extra !
+
+2003-04-12 Georg Fleischmann
+	* LayerObject.m (+layerObjectWithFrame:): autoreleased
+
+2003-04-12 Ilonka Fleischmann
+	* VPolyLine.m (-propertyList): ptsData werden nun als NSString gespeichert
+	  VPolyLine.m (-initFromPropertyList:): ptsData kðnnen auch als NSString geladen werden
+
+2003-04-13 Georg Fleischmann
+	* DocView.m (-flatRedraw:): flush window
+
+2003-04-14 Georg Fleischmann
+	* VArc.m (-copy): alloc [self class] instead of VArc
+	  VThread.m (-copy): new
+
+2003-04-17 Ilonka Fleischmann
+	* Document.m (-printDocument:): setze defaultPrinter wenn keiner in printInfo
+
+2003-04-19 Ilonka Fleischmann
+	* VPath.m (-drawRadialWithPrincipal::): Overlap eingefögt !
+
+2003-04-19 Georg Fleischmann
+	* VPath.m: (App*)NSApp for -inspectorPanel, -control, -alternate
+	* IPLayerCell.m (-drawInteriorWithFrame:): use control colors
+
+2003-04-20  Ilonka Fleischmann
+	* VArc.m (-setAngle:withCenter:): bei graduateList setAngle:a instead of angle !
+	* VPath.m (-drawGraduatedWithPrincipal:):
+	  VPath.m (-drawRadialWithPrincipal:):
+	  VPath.m (-drawAxialWithPrincipal:): unknown ColorSpace return + NSLog
+
+2003-04-22  Georg Fleischmann
+	* DocView.m (-setList:, -initView): don't create clipping layer
+	  IPAllLayers.m (-removeLayer:) allow removal of clipping layer, alert user,
+	                                only 1 layer needs to remain in list
+	  messages.h (REALLYDELETELAYER_STRING): new
+	  Localizable.strings: layer warning added, string for layer type matched to header text
+
+2003-04-25  Georg Fleischmann
+	* PSSettings.nib, h (unitPopup): new, but not used (yet)
+	* PSInfo.h, PSFontInfo.h, PSSettings.h (view): moved to top of list
+	* VPath.m (-optimize): autoreleasepool added
+	* OutputStreamDrawing.m (-drawWithStart:...): set line join
+
+2003-04-25  Ilonka Fleischmann
+	* VPath.m (-contour:): arrays set to size of list count (not 500 fix)
+
+2003-04-26  Georg Fleischmann
+	* ToolCell.m (drawInterior...): use control colors
+	* Apple, DPMagazine.nib, DPLayer.nib: set background color of move matrix = white
+	* Mark.m (-create:in:): prefer hit point before raster point to snap
+
+next Cenon 3.60 beta 3

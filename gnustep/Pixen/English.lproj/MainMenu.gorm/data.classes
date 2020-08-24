@@ -1,0 +1,125 @@
+{
+    "## Comment" = "Do NOT change this file, Gorm maintains it";
+    FirstResponder = {
+	Actions = (
+	    "cut:",
+	    "indent:",
+	    "moveToBeginningOfLine:",
+	    "orderFront:",
+	    "performZoom:",
+	    "selectAll:",
+	    "takeDoubleValueFrom:",
+	    "underline:",
+	    "mergeDown:",
+	    "showBackgroundInfo:",
+	    "showPreviewWindow:",
+	    "toogleFormsDrawer:",
+	    "zoomIn:",
+	    "zoomOut:",
+	    "zoomPercentageChanged:",
+	    "zoomStandard:",
+	    "zoomStepperStepped:",
+	    "zoomToFit:",
+	    "closeFedbackWindow:",
+	    "openURL:",
+	    "sendFeedback:",
+	    "sendFeedBackButtonAction:",
+	    "checkForUpdate:",
+	    "takeBoolFromObject:",
+	    "showInfoPanel:",
+	    "showLeftToolProperties:",
+	    "showColorPalette:",
+	    "showPreferences:",
+	    "donate:",
+	    "discoverPixen:",
+	    "showAboutPanel:",
+	    "newLayer:",
+	    "deleteLayer:",
+	    "promoteSelection:",
+	    "duplicateLayer:",
+	    "nextLayer:",
+	    "previousLayer:"
+	);
+	Super = NSObject;
+    };
+    NewClass = {
+	Actions = (
+	);
+	Outlets = (
+	);
+	Super = NSObject;
+    };
+    PXAppDelegate = {
+	Actions = (
+	    "showInfoPanel:",
+	    "showLeftToolProperties:",
+	    "showColorPalette:",
+	    "showPreferences:",
+	    "donate:",
+	    "discoverPixen:",
+	    "showAboutPanel:",
+	    "showRightToolProperties:"
+	);
+	Outlets = (
+	);
+	Super = NSObject;
+    };
+    PXCanvasController = {
+	Actions = (
+	    "mergeDown:",
+	    "showBackgroundInfo:",
+	    "showPreviewWindow:",
+	    "toogleFormsDrawer:",
+	    "zoomIn:",
+	    "zoomOut:",
+	    "zoomPercentageChanged:",
+	    "zoomStandard:",
+	    "zoomStepperStepped:",
+	    "zoomToFit:"
+	);
+	Outlets = (
+	    canvas,
+	    mergeDowMenuItem,
+	    formController,
+	    paletteController,
+	    previewController,
+	    prompter,
+	    scrollView,
+	    view,
+	    zoomPercentageBox,
+	    zoomStepper
+	);
+	Super = NSWindowController;
+    };
+    PXFilterController = {
+	Actions = (
+	);
+	Outlets = (
+	    filterMenu
+	);
+	Super = NSObject;
+    };
+    UKFeedbackProvider = {
+	Actions = (
+	    "closeFedbackWindow:",
+	    "openURL:",
+	    "sendFeedback:",
+	    "sendFeedBackButtonAction:"
+	);
+	Outlets = (
+	    feedbackWindow,
+	    messageText,
+	    subjectField
+	);
+	Super = NSObject;
+    };
+    UKUpdateChecker = {
+	Actions = (
+	    "checkForUpdate:",
+	    "takeBoolFromObject:"
+	);
+	Outlets = (
+	);
+	Super = NSObject;
+    };
+}

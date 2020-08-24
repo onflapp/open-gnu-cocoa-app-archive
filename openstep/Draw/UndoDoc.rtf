@@ -1,0 +1,273 @@
+{\rtf0\ansi{\fonttbl\f0\fnil Times-Roman;\f1\fnil Courier;}
+\paperw12240\paperh13540
+\pard\tx360\tx6120\ql\qnatural
+
+\f0\fs72 \cf0 Undo
+\fs28 \
+\
+\
+\
+\
+\pard\tx1080\tx6120\ql\qnatural
+U-2	Statement of Purpose\
+U-2	What is Undo?\
+U-2	Change Objects\
+U-3	Implementing a Change Class\
+U-4	Using Change Objects\
+U-6	Change Manager\
+U-7	The Undo/Redo Menu Items\
+U-7	Updating Menu Items\
+U-8	Making Your Application Undoable\
+\
+\
+\pard\tx360\tx6120\ql\qnatural
+
+\b Statement of Purpose
+\b0 \
+\
+The purpose of this chapter is to explain how the undo feature was added to the Draw example application. Our goal is to enable you, an experienced NeXT application developer, to use the ideas presented here to add Undo to your own application. We've designed the Undo code so that the parts not directly concerned with Draw can be easily incorporated into your application.\
+\
+
+\b What is Undo?
+\b0 \
+\
+Undo enables a user to reverse or rollback the effects of previous and potentially destructive operations. This feature is most often used to undo an unintended or unexpected action, but it also lets users experiment with different commands to see how they work. Users can also re-issue an action that was previously undone. This is called ªredo.º\
+\
+The most obvious manifestation of undo capability in Draw are two new menu items in the Edit menu. These menu items contain the name of actions that can be undone and redone. In this case, actions are things like moving a Graphic, deleting a Graphic, or creating a new Graphic. In the version of Draw that we've compiled for you, two menu items implement multiple-undo. Later on we'll show you how to easily implement single-level undo.\
+\
+
+\b Change Objects
+\b0 \
+\
+Before we go on, we should formalize the notion of a user action. There are many different kinds of user actions, but we're only interested in the ones that cause the state of a document or an important part of the application to change. If your application uses documents like Draw, then any operation which would normally cause the document to become ªdirtyº should be undoable. Even if your application doesn't use documents, you can still make the editing in your text fields undoable.\
+\
+From now on, instead of talking about user actions, we'll refer to undoable user actions as ªchanges.º In fact, there's a class called Change that is used to represent changes. Each time the user does something that's undoable, the application will create an instance of a subclass of Change, which we'll call a ªchange object.º\
+\
+Each change object encapsulates all the information necessary to undo and redo its corresponding user action. A simple example is a change that represents a modification to the floating point value of a control. The change object for this action would need to record which view got modified, the value before the change, and the new value after the change. Undoing the change is a simple matter of copying the old value back into the control, while undoing the undo (redo) requires that you re-copy the new value into the control.\
+\
+
+\b Implementing a Change Class
+\b0 \
+\
+To see how this works, lets implement a simple Change class called FloatValueChange. Here's the interface:\
+\
+\pard\tx720\tx6120\fi360\ql\qnatural
+
+\f1\fs24 @interface FloatValueChange : Change\
+\{\
+	id myView;\
+	float oldValue;\
+	float newValue;\
+\}\
+\
+- initView:changedView;\
+- saveBeforeChange;\
+- saveAfterChange;\
+- undoChange;\
+- redoChange;\
+- (const char *)changeName;\
+\
+@end\
+\pard\tx360\tx6120\ql\qnatural
+
+\f0\fs28 \
+As described above, the instance variables record the view which will be modified, the original value and the new value. The 
+\b initView
+\fs24 :
+\b0\fs28  method is the designated initializer for our class, and the following four methods override standard methods found in the Change class. The last method returns a name string that appears in the undo/redo menu items.\
+\
+The 
+\b saveBeforeChange
+\b0  method is used to set the oldValue variable, while 
+\b saveAfterChange
+\b0  sets the newValue. When the user wants to undo this operation, 
+\b undoChange
+\b0  will be called to restore the oldValue. Similarly, 
+\b redoChange
+\b0  copies newValue into myView. Here are the implementations:\
+\
+\pard\tx720\tx6120\fi360\ql\qnatural
+
+\f1\fs24 @implementation FloatValueChange\
+\
+- initView:changedView\
+\{\
+	[super init];\
+	myView = changedView;\
+	return self;\
+\}\
+\
+- saveBeforeChange\
+\{\
+	oldValue = [myView floatValue];\
+	return self;\
+\}\
+\
+- saveAfterChange\
+\{\
+	newValue = [myView floatValue];\
+	return self;\
+\}\
+\
+- undoChange\
+\{\
+	[myView setFloatValue:oldValue];\
+	return self;\
+\}\
+\
+- redoChange\
+\{\
+	[myView setFloatValue:newValue];\
+	return self;\
+\}\
+\
+- (const char *)changeName\
+\{\
+	return("Float");\
+\}\
+\
+@end\
+\pard\tx360\tx6120\ql\qnatural
+
+\f0\fs28 \
+All change classes follow the same pattern as the simple one we just created. The change object is responsible for saving the state of the document, view, or whatever object is about to be modified, before and after the modification. It also needs to be able to restore the state to the way it was either before or after the modification.\
+\
+You might have noticed that FloatValueChange doesn't know what the actual change is. The reason for this is that if the change was a complicated calculation, it could be too expensive or even impossible to duplicate the same calculation twice. So, in general, change objects have no knowledge about how changes are made in the first place, but do understand how to save and restore state information.\
+\
+\pard\tx360\tx6120\ql\qnatural
+
+\b Using Change Objects
+\b0 \
+\
+Obviously, things do change in a running application, so let's examine how modifications are made using change objects. The only method of our undoable control that we need to modify is the one that sets the floatValue. Here it is:\
+\
+\pard\tx720\tx1080\tx6120\fi360\ql\qnatural
+
+\f1\fs24 @implementation MyUndoControl\
+\
+- setFloatValue:(float)value\
+\{\
+	id change;\
+\
+	change = [[FloatValueChange alloc] initView:self];\
+	[change startChange];\
+		floatValue = value;\
+	[change endChange];\
+\
+	return self;\
+\}\
+\
+\pard\tx720\tx6120\fi360\ql\qnatural
+@end\
+\pard\tx360\tx6120\ql\qnatural
+
+\f0\fs28 \
+When 
+\b setFloatValue:
+\b0  is called, we know that some other part of the application wants to update the value of the control. The implementation above first allocates a blank change object and then initializes it. The call to 
+\b startChange
+\b0  lets the change object know that the control is about to modify itself. The call to 
+\b startChange
+\b0  will eventually result in a call to 
+\b saveBeforeChange
+\b0 . We didn't have to implement 
+\b startChange
+\b0  in our change class above because it was inherited from the generic Change class.\
+\
+The next step is to update the internal data structures, with an assignment statement in this case. Finally, we let the change know that we're done by calling 
+\b endChange
+\b0  which ends up calling 
+\b saveAfterChange
+\b0 . This is the basic pattern for any modification to a data structure that should be undoable. Simply create an instance of the appropriate kind of change object and give it control before and after the modification is to be made.\
+\
+You can write your own classes to know about change objects from the start, but it is often more convenient to create a subclass that adds the change object code. This makes it very easy to add undo functionality to an application that already exists, because you only have to think about undo when everything else already works.\
+\pard\tx360\tx6120\ql\qnatural
+
+\b \
+Change Manager
+\b0 \
+\
+Change objects do most of the work for you in terms of implementing undo. However, there's another part to the story. Whenever the 
+\b startChange
+\b0  method of a change object is called, a search is made up the responder chain to find the nearest change manager.\
+\
+A change manager is an object that collects the individual change objects and makes them available to the user via the undo/redo menu items. The change manager is also responsible for freeing change objects when they're no longer needed.\
+\
+As an application runs, its change managers wait for changes to be passed to them via the responder chain. Typically, a view deep in the view hierarchy for a window will create a change object and then call 
+\b startChange
+\b0 . The change object then broadcasts the 
+\b changeInProgress:
+\b0  method on the responder chain. The search up the chain eventually reaches a change manager which replies with a 
+\b saveBeforeChange
+\b0  message.\
+\
+In document oriented applications, like Draw, it is very easy to derive your document class from the ChangeManager class. Since document objects are typically installed as the delegate of their window, the ChangeManager will govern all changes that occur within that particular document.\
+\
+If you would rather implement application-wide undo, simply install a ChangeManager as the delegate of your application, so that all change objects are governed by the same ChangeManager. You can also add ChangeManagers in other places in the responder chain if you need to. However, it might be difficult to determine which ChangeManager should control the undo and redo menu items.\
+\
+
+\b The Undo/Redo Menu Items
+\b0 \
+\
+The ChangeManager class implements three target-action methods that can be connected to menu items. The first, 
+\b undoOrRedoChange:
+\b0  implements single-level undo. This means that only the last change will be undoable, and after it is undone, the menu shows Redo with the same change. For most applications, its just as easy to implement multiple-undo as it is single-undo. \
+\
+You might consider using single-level undo if it greatly simplifies the user interface of your application. Also, if you choose not to make the creation and deletion of objects undoable, then you should consider using single-level undo. The reason for this is if you try to redo a modification to an object that doesn't exist (because it couldn't be re-created), either your application or the user could become very confused.\
+\
+The other two methods, 
+\b undoChange:
+\b0  and 
+\b redoChange:
+\b0  work as a pair. Together these implement multiple-undo. This means that every change going back in time is either undoable or redoable, and there are separate menu items for undo and redo. Connect the undo menu item to
+\b  undoChange:
+\b0  and the redo menu item to 
+\b redoChange:
+\b0 .\
+\
+Multiple-undo is much nicer for the user, and you should implement it if you can. You'll need to make the creation and deletion of objects undoable for the reasons mentioned above. You should also make sure that none of your change objects depend on global variables that might be modified between the time the change object was created than the time the user wants to undo or redo a change.\
+\
+The file ChangeManager.m defines a constant N_LEVEL_UNDO which tells the ChangeManager how many levels of changes to keep track of. To get single-level undo simply set this constant to 1. For multiple-undo set it to any number you like, but give some thought to how large your change objects are likely to be and how much memory you can afford to spend on your undo history.\
+\
+
+\b Updating the Menu Items
+\b0 \
+\
+The ChangeManager class supports the 
+\b validateMenuItem:
+\b0  method to automatically update the undo menu items after each change. This method is passed the id of the menu item to be validate. It examines the action field of the menu item to determine which menu item is being validated and will update the title of the menu item to reflect the name of the change to be undone or redone.\
+\
+The title of the menu cells are calculated from the 
+\b changeName
+\b0  method of the change objects. The ChangeManager prepends either ªUndoº or ªRedoº as appropriate.\
+\
+
+\b Making your Application Undoable
+\b0 \
+
+\b \
+\pard\tx360\tx6120\ql\qnatural
+
+\b0 Once you understand how the undo mechanism works, it's straightforward to make your application undoable. Here are the steps involved:\
+\
+\pard\tx360\tx6120\li360\fi-360\ql\qnatural
+	1) Examine your application and determine which modifications should be undoable. Then create your subclasses of Change to represent these changes.\
+\
+	2) Decide where your ChangeManagers should be located. For document-level undo, make them delegates of your document objects or derive your document class from ChangeManager. For application-wide undo, put a ChangeManager behind the application object. The important thing is to make sure each ChangeManager is located on the responder chain above any views where change objects will be created.\
+\
+	3) Modify your existing code to create change objects for each user action to be undoable. The easiest way to do this may be to create an undoable subclass of each view that causes changes. Then you can simply override the methods that update data structures to be like 
+\b setFloatValue:
+\b0  above. Another option is to add change code directly to each view class, which is what we did with GraphicView in the Draw example. \
+\
+	4) Decide whether you want single-level undo or multiple-undo. For single-level, add one new menu item and connect it to your ChangeManager with the 
+\b undoOrRedoChange:
+\b0  method. Do this in Interface Builder. If you want multiple-undo, create two new menu items that are connected to the 
+\b undoChange:
+\b0  and 
+\b redoChange:
+\b0  methods. Make sure that the update actions of these menu items are set to 
+\b validateMenuItem:
+\b0 .\
+\
+	5) Make sure that the Change and ChangeManager classes along with all your new change classes are linked into the application. After you recompile, you application will have undo!\
+}

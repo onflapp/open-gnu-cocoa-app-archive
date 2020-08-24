@@ -1,0 +1,100 @@
+%!PS-Adobe-3.0
+%%Creator: Altsys Virtuoso 2.0 rc1
+%%Title: (10x10x10.vrt)
+%%CreationDate: (Thu Mar 16 19:52:46 MET 1995)
+%%DocumentProcessColors: Black
+%%DocumentNeededResources: procset Adobe_packedarray 2.0 0
+%%+ procset Adobe_cmykcolor 1.1 0
+%%+ procset Adobe_cshow 1.1 0
+%%+ procset Adobe_customcolor 1.0 0
+%%+ procset Adobe_typography_AI3 1.0 0
+%%+ procset Adobe_IllustratorA_AI3 1.0 0
+%%BoundingBox: 39 74 357 356 
+%AI3_TemplateBox: 306 396 306 396 
+%AI3_TileBox: 30 31 582 761 
+%AI3_DocumentPreview: None
+%%PageOrigin:0 0
+%%AI3_PaperRect:0 425 425 0
+%%AI3_Margin:0 0 0 0 
+%%ColorUsage: Color
+%%DocumentProcessColors: Cyan Magenta Yellow Black
+%%DocumentFonts: Symbol
+%%DocumentNeededFonts: Symbol
+%%EndComments
+%%BeginProlog
+%%IncludeResource: procset Adobe_packedarray 2.0 0
+Adobe_packedarray /initialize get exec
+%%IncludeResource: procset Adobe_cmykcolor 1.1 0
+%%IncludeResource: procset Adobe_cshow 1.1 0
+%%IncludeResource: procset Adobe_customcolor 1.0 0
+%%IncludeResource: procset Adobe_typography_AI3 1.0 0
+%%IncludeResource: procset Adobe_IllustratorA_AI3 1.0 0
+%%EndProlog
+%%BeginSetup
+Adobe_cmykcolor /initialize get exec
+Adobe_cshow /initialize get exec
+Adobe_customcolor /initialize get exec
+Adobe_typography_AI3 /initialize get exec
+Adobe_IllustratorA_AI3 /initialize get exec
+%%EndSetup
+[] 0 d
+3.863708 M
+1 w
+0 j
+0 J
+0 i
+0 0 0 1 k
+0 0 0 1 K
+0 A 0 O 0 R
+%%FH3_Note: (Guides) FL
+%%FH3_Note: (Foreground) FL
+u
+0.3333 0.3333 0.3333 0 k
+59.6703 74.6215 m
+41.6139 74.6215 33.8417 88.0834 42.8699 103.7206 C
+181.1996 343.3153 L
+190.2278 358.9526 205.7722 358.9526 214.8004 343.3153 C
+353.13 103.7213 L
+362.1582 88.0841 354.386 74.6222 336.3296 74.6222 c
+59.6703 74.6215 l
+f
+*u
+0 0 0 1 k
+77.1552 94.3085 m
+67.9209 94.3085 63.9459 101.1932 68.5631 109.1904 C
+189.4078 318.5002 L
+194.025 326.4974 201.9747 326.4974 206.5919 318.5002 C
+327.4366 109.191 L
+332.0538 101.1938 328.0789 94.3091 318.8446 94.3091 c
+77.1552 94.3085 l
+f
+94.3398 114.15 m
+301.6599 114.15 L
+197.9999 293.6949 L
+94.3398 114.15 L
+f
+*U
+185.8595 247.9998 m
+209.8595 247.9998 L
+173.8595 184.9998 L
+216.3595 199.9998 L
+186.3595 138.9998 L
+197.3605 140.7669 L
+177.3595 122.4998 L
+174.8595 147.4998 L
+181.8595 140.4998 L
+198.3595 184.4998 L
+161.3595 172.9998 L
+185.8595 247.9998 L
+f
+U
+%%PageTrailer
+gsave annotatepage grestore showpage
+%%Trailer
+Adobe_IllustratorA_AI3 /terminate get exec
+Adobe_typography_AI3 /terminate get exec
+Adobe_customcolor /terminate get exec
+Adobe_cshow /terminate get exec
+Adobe_cmykcolor /terminate get exec
+Adobe_packedarray /terminate get exec
+%%EOF

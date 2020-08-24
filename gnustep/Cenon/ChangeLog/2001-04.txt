@@ -1,0 +1,99 @@
+Cenon Change Log - April 2001
+
+
+2001-04-03  Georg Fleischmann
+	* Arc.m (intersectArc::::): use double where possible
+	* Arc.m (getListOfObjectsSplittedFrom::): TOLERANCE*1.5
+	  This is necessary because casts from double to float are crap !!!
+
+3.40 beta 12
+
+2001-04-06  Georg Fleischmann
+	* Xyz.m (-curve2D:::::): return YES for zero curves
+	* DPToolParms.m (-setType:): inform LayerPanel about change of tool
+
+2001-04-06  Ilonka Fleischmann
+	* Curve.m (-intersectLine:): SqrDistPoints(*pp, p0123) < TOLERANCE*TOLERANCE ! ! !
+	  Curve.m (-intersectLine:): SqrDistPoints(pArray[i], pArray[j]) < TOLERANCE*TOLERANCE ?
+	  Curve.m (-getListOfObjectsSplittedFrom:): removePointWithToleranceFromArray(p0 and p3) - 5.0*TOLERANCE
+	  Curve.m (-getListOfObjectsSplittedFrom:): no double points for splitting !pointInArray(pArray[i], ps, cnt)
+	  Curve.m (-getListOfObjectsSplittedFrom:): if( !cnt ) after we take the ts -> return nil - Speed
+
+2001-04-08  Georg Fleischmann
+	* PPMisc.h: Prefs_Caching -> new
+	* PPMisc.m (-okPanel:): update caching of views
+	* DocView.m (-setParameter): doCaching = Prefs_Caching; create cache only if wanted
+	  DocView.m (-redrawRect:): redraw r instaed of rect if we don't cache
+	  DocView.m (-moveObjects:): scrolling = NO, setAutoDisplay = NO for loop
+	* Document.m (-initWindow, +newFromFile:, +newFromList:): draw only if caching activated
+	* Xyz.m (-selectTool:): enforce setting of speed
+	* type1Funs.c: include needed stuff
+	* Document.m, h
+	  standardEncoding.h
+	  Type1Font.m, h: Type1Font instead of Font
+
+2001-04-10  Georg Fleischmann
+	* Xyz.m (-outputOp:) wait for CNC before tool change
+
+3.40 beta 13
+
+2001-04-10  Georg Fleischmann
+	* Document.m (-windowShouldClose:): [window setDocument:nil]
+
+2001-04-10  Ilonka Fleischmann
+	* Path.m (-pointArrayHitsCorner:): 0.003 tolerance öbergeben
+	  Path.m (-fillStreamWithinset:offset:): Sidestep kleiner gemacht !! 0.5 instead of 10.0*TOLERANCE
+	* Arc.m	(-intersectLine:) underTheSqrt < TOLERANCE/100.0 statt 2.0*TOLERANCE 3x
+
+2001-04-12  Ilonka Fleischmann
+	* Arc.m (-intersectLine:): tangenten Abfrage TOLERANCE*TOLERANCE statt 10.0*TOLERANCE
+	  Arc.m (-realBounds:): new
+	* Path.m (-getIntersections:with:): Edge Abfrage > 10.0*TOLERANCE statt 20.0*TOLERANCE
+
+2001-04-16  Georg Fleischmann
+	* Editor2DDocument -> Document
+	* Editor2DWindow -> DocWindow
+	* Editor2DView -> DocView
+	* e2* -> dv*
+	* E2Graphics -> Graphics
+	* Editor2DTools -> ToolPanel
+	* E2DGraphicObjects -> GraphicObjects
+	* App.m (-loadListFromFile:): Load Images in Mutable Array
+	* DocView.m (joinAndFillLayers): now fillObjects and it only fills objects
+
+2001-04-18  Georg Fleischmann
+	* Path.m (-contour:inlay:removeLoops:): check for arc != nil
+
+2001-04-18  Ilonka Fleischmann
+	* Arc.m (-getListOfObjectsSplittedFrom:): TOLERANCE*2.0 instead of 1.5
+
+2001-04-20  Ilonka Fleischmann
+	* Arc.m (-intersectLine:): tangenten check > (5.0*TOLERANCE)*(5.0*TOLERANCE) instead > TOLERANCE*TOLERANCE
+	  Arc.m (-parallelObject:): newBeg == newEnd -> return nil
+	* Path.m (-contour:inlay:removeLoops:): if( parallelObject != nil ) -> add to subPath
+	  Path.m (-contour:inlay:removeLoops:): bei allen parallelObject checken ob nicht nil
+
+3.40 beta 14
+
+2001-04-22  Georg Fleischmann
+	* diverse.m, h removed
+	* InspectorPanel.m
+	  App.m
+	  Document.m: #import diverse.h removed
+
+2001-04-25  Georg Fleischmann
+	* CNC750 devs: Arc with .1f
+
+2001-04-20  Ilonka Fleischmann
+	* Arc.m (-intersectLine:): tangenten check if(.. > (5.0*TOLERANCE)*..) war doppelt eingebaut !!
+	  Arc.m (-intersectLine:): tangenten check > (15.0*TOLERANCE)*(15.0*TOLERANCE) instead > (5.0*TOLERANCE)*(5.0*TOLERANCE)
+
+2001-04-28  Georg Fleischmann
+	* apXyz.m (-startXYZSubProcess:): return NO, if registration fails, the connection is now local
+	* apXyz.m (-register...): use the connection from here as xyzConnection
+	* apXyz.m (-quitXyzSubProcess:): remove xyzConnection
+
+2001-04-30  Georg Fleischmann
+	* drawundo.h -> renamed to undo.h
+
+3.40 beta 15

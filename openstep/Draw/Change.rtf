@@ -1,0 +1,612 @@
+{\rtf0\ansi{\fonttbl\f0\fnil Times-Roman;\f2\ftech Symbol;\f1\fmodern Courier;}
+\paperw12380
+\paperh13060
+\margl120
+\margr120
+{\colortbl\red0\green0\blue0;}
+\f0\b0\i0\ul0\ql\fs24\fi0\li0\gray0\up0\dn0 \
+
+\pard\tx3120\tx3620\tx4120\fs16\li2620 \
+
+\fs28 \
+
+\fs16 \
+
+\fs28 \
+
+\fs16 \
+
+\pard\b\li1100 \
+\
+\
+\
+
+\fs36 Change \
+
+\fs16 \
+
+\pard\tx7140\b0\fs28\li2100 INHERITS FROM	Object\
+
+\fs16 \
+
+\fs28 DECLARED IN	Change.h\
+
+\fs16 \
+\
+\
+
+\fs28 CLASS DESCRIPTION\
+
+\fs16 \
+
+\pard\tx3120\tx3620\tx4120\fs28\li2620 The Change class is an abstract superclass that is part of the undo mechanism. Create subclasses of Change to represent user actions that should be undoable. Each time the user performs one of these actions, your application should create a change object (an instance of a subclass of Change).\
+
+\fs16 \
+
+\pard\tx7140\li2100 \
+\
+
+\fs28 INSTANCE VARIABLES\
+
+\fs16 \
+
+\pard\tx7140\tx10180\tx10680\i\fs28\fi-5040\li7660 Inherited from Object
+\i0 	Class	isa;\
+
+\fs16 \
+
+\pard\tx6140\tx8920\tx9420\i\fs28\fi-3540\li6140 Declared in Change
+\i0 	
+\pard\tx8920\tx8920\tx8920\tx8920\tx8920\tx9420\tx9420\tx9420\tx9420\tx9420\fi-520\li6640 struct \{\
+
+\fi0 unsigned int		disabled:1;\
+unsigned int		hasBeenDone:1;\
+unsigned int		changeInProgress:1;\
+unsigned int		padding:29;\
+
+\pard\tx8920\tx8920\tx8920\tx8920\tx8920\tx8920\tx9420\tx9420\tx9420\tx9420\tx9420\tx9420\fi-520\li6640 \}	_changeFlags;\
+id	_changeManager;\
+
+\pard\tx7140\tx10180\tx10680\fi-5040\li7660 \
+
+\fs16 \
+
+\fs28 _changeFlags.disabled 	YES if this change should not be remembered.\
+\
+_changeFlags.hasBeenDone	YES after the change has been originally made or redone.\
+\
+_changeFlags.changeInProgress	YES if the change has not yet been done the first time.\
+\
+_changeManager	The id of the ChangeManager that owns this change.\
+
+\fs16 \
+
+\pard\tx7140\li2100 \
+\
+
+\fs28 METHOD TYPES\
+
+\fs16 \
+
+\pard\tx7140\tx10180\tx10680\fs28\fi-5040\li7660 Initializing a Change	
+\f2 - 
+\f0 init\
+\
+Called by application code	± startChange\
+	± startChangeIn:\
+	± endChange\
+	± changeManager\
+\
+Called by ChangeManager	± disable\
+	± disabled\
+	± hasBeenDone\
+	± changeInProgress\
+	± changeName\
+\
+Used exclusively by ChangeManager	± saveBeforeChange\
+	± saveAfterChange\
+	± undoChange\
+	± redoChange\
+	± subsumeChange:\
+	± incorporateChange:\
+	± finishChange\
+	
+\pard\tx7140\fs16\li2100 \
+\
+
+\fs28 INSTANCE METHODS\
+
+\fs16 \
+
+\b \
+
+\fs28 changeInProgress\
+
+\pard\f2\b0\fi-1020\li3620 - 
+\f0 (BOOL)
+\b changeInProgress
+\b0\i \
+
+\fs16 \
+
+\pard\tx3120\tx3620\tx4120\i0\fs28\li2620 Returns YES if the receiving Change has been sent a 
+\b startChange
+\b0  or 
+\b startChangeIn:
+\b0  message but has not yet received an 
+\b endChange
+\b0  message. You should not need to override this method.\
+
+\fs16 \
+
+\fs28 See also:  
+\b ± startChange, ± endChange
+\b0\i \
+
+\fs16 \
+
+\pard\tx7140\b\i0\li2100 \
+
+\fs28 changeManager\
+
+\pard\f2\b0\fi-1020\li3620 - 
+\f0\b changeManager
+\b0\i \
+
+\fs16 \
+
+\pard\tx3120\tx3620\tx4120\i0\fs28\li2620 Returns the ChangeManager responsible for handling the receiving Change. This
+\pard\tx1140\tx2300\tx3440\tx4600\tx5760\tx6900\tx8060\tx9200\tx10360\tx11520\fc0  
+\pard\tx3120\tx3620\tx4120\li2620 method will return 
+\b nil
+\b0  until either a 
+\b startChange
+\b0  or 
+\b startChangeIn:
+\b0  message has been sent to the Change, at which point the Change will find the responsible ChangeManager by searching up the responder chain for the nearest ChangeManager. You should not need to override this method.\
+
+\fs16 \
+
+\fs28 See also:  
+\b ± startChange
+\b0\i \
+
+\fs16 \
+
+\pard\tx7140\b\i0\li2100 \
+
+\fs28 changeName\
+
+\pard\f2\b0\fi-1020\li3620 - 
+\f0 (const char *)
+\b changeName
+\b0\i \
+
+\fs16 \
+
+\pard\tx3120\tx3620\tx4120\i0\fs28\li2620 Override this method to return the name to be used by the ChangeManager in the Undo and Redo menu items.
+\pard\tx1140\tx2300\tx3440\tx4600\tx5760\tx6900\tx8060\tx9200\tx10360\tx11520\i\fc0  
+\pard\tx3120\tx3620\tx4120\i0\li2620 This method is called by 
+\b validateCommand:
+\b0  in the ChangeManager class.\
+
+\fs16 \
+
+\fs28 See also:  
+\b ± validateCommand: 
+\b0 (ChangeManager)
+\i \
+
+\fs16 \
+
+\pard\tx7140\b\i0\li2100 \
+
+\fs28 disable\
+
+\pard\f2\b0\fi-1020\li3620 - 
+\f0\b disable
+\b0\i \
+
+\fs16 \
+
+\pard\tx3120\tx3620\tx4120\i0\fs28\li2620 This method is called to tell the receiving Change that it won't be recorded as an explicit change, and won't ever be asked to 
+\b undoChange
+\b0  or 
+\b redoChange
+\b0 . The actual changes represented by the change object will still take place, but the ChangeManager won't record them as a 
+\pard\tx1140\tx2300\tx3440\tx4600\tx5760\tx6900\tx8060\tx9200\tx10360\tx11520\fc0 separate
+\pard\tx3120\tx3620\tx4120\li2620  action. ChangeManager does not send 
+\b saveBeforeChange
+\b0  and 
+\b saveAfterChange
+\b0  messages to disabled Change objects. A Change object will be disabled by its ChangeManager if any of the following conditions are true: changes have been explicitly disabled in the ChangeManager; the Change was initiated while another Change was already in progress and the Change in progress declined to 
+\b incorporateChange:
+\b0  the new change; or the previous (complete) Change elects to 
+\b subsumeChange:
+\b0  the new Change. You should not need to override this method.\
+
+\fs16 \
+
+\fs28 See also:  
+\b ± saveBeforeChange, ± saveAfterChange, ± incorporateChange:, ± subsumeChange:, ± disableChanges: 
+\b0 (ChangeManager)\
+
+\fs16 \
+
+\pard\tx7140\b\li2100 \
+
+\fs28 disabled\
+
+\pard\f2\b0\fi-1020\li3620 - 
+\f0 (BOOL)
+\b disabled\
+
+\fs16 \
+
+\pard\tx3120\tx3620\tx4120\b0\fs28\li2620 Returns YES if the change object has received a 
+\b disable
+\b0  message.\
+
+\fs16 \
+
+\fs28 See also:  
+\b ± disable
+\b0\fs16 \
+
+\pard\tx7140\b\li2100 \
+\
+
+\fs28 endChange\
+
+\pard\f2\b0\fi-1020\li3620 - 
+\f0\b endChange\
+
+\fs16 \
+
+\pard\tx3120\tx3620\tx4120\b0\fs28\li2620 Signals that a change is complete. This method should be called after the 
+\b startChange 
+\b0 method or 
+\b startChangeIn:
+\b0  method has been sent to the same Change. If the receiver has not been disabled, the 
+\b endChange
+\b0  method will send a 
+\b changeComplete:
+\b0  message to the receiver's ChangeManager. Before this method returns, the ChangeManager will send a 
+\b saveAfterChange
+\b0  message back to the Change. If the receiver has been disabled or was unable to find a ChangeManager when it started then 
+\b endChange
+\b0  will cause the receiver to free itself. You should not need to override this method.\
+
+\fs16 \
+
+\fs28 See also:  
+\b ± saveAfterChange
+\b0 , 
+\b ± startChange, ± changeComplete: 
+\b0 (ChangeManager)\
+
+\fs16 \
+\
+
+\pard\tx7140\b\fs28\li2100 finishChange\
+
+\pard\f2\b0\fi-1020\li3620 - 
+\f0\b finishChange\
+
+\b0\i\fs16 \
+
+\pard\tx3120\tx3620\tx4120\i0\fs28\li2620 The vast majority of all subclasses of Change will not need to use this method. The 
+\b finishChange
+\b0  method is intended to be overridden only in subclasses who's instances subsume other Change instances, and only then by subclasses that need to perform some special action after the last subsumable Change has been subsumed. ChangeManager sends 
+\b finishChange
+\b0  just before the receiving Change is asked to 
+\b undoChange
+\b0  or just after the receiving Change declines to 
+\b subsumeChange:
+\b0  another Change. If a change is repeatedly undone and redone, the ChangeManager will repeatedly send the 
+\b finishChange
+\b0  message to the same Change, so it is important that the Change keep track of whether this method has already been called.\
+
+\fs16 \
+
+\fs28 See also:  
+\b ± subsumeChange:
+\b0 \
+
+\pard\tx7140\b\li2100 \
+hasBeenDone\
+
+\pard\f2\b0\fi-1020\li3620 - 
+\f0 (BOOL)
+\b hasBeenDone\
+
+\fs16 \
+
+\pard\tx3120\tx3620\tx4120\b0\fs28\li2620 Returns YES if the Change has been done for the first time or if the change has been redone. Specifically, 
+\b hasBeenDone
+\b0  returns NO if the receiver has never been sent an 
+\b endChange
+\b0  message or if the receiver has been sent an 
+\b undoChange
+\b0  message more recently than a 
+\b redoChange
+\b0  message.\
+
+\fs16 \
+
+\pard\tx7140\b\li2100 \
+
+\fs28 incorporateChange:\
+
+\pard\f2\b0\fi-1020\li3620 - (
+\f0 BOOL
+\f2 )
+\f0\b incorporateChange:
+\b0\i change\
+
+\fs16\fi0 \
+
+\pard\tx3120\tx3620\tx4120\i0\fs28\li2620 The 
+\b incorporateChange:
+\b0  method is called by the ChangeManager if the receiving Change is in progress when a new 
+\i change
+\i0  is initiated. The receiving Change is given the opportunity to incorporate the new 
+\i change
+\i0 . This mechanism can be used when one user action would create multiple Change objects. For example, a paste command might 
+\pard\tx1140\tx2300\tx3440\tx4600\tx5760\tx6900\tx8060\tx9200\tx10360\tx11520\fc0 implemented
+\pard\tx3120\tx3620\tx4120\li2620  using two independent, Change producing methods, one for deleting the current selection and one for creating the new selection. In this case, both the deletion Change and the creation Change should really be part of a single paste Change, which will incorporate them as sub-changes. Unlike 
+\b subsumeChange:
+\b0 , this method is called only when a Change is in progress. \
+\
+Most subclasses of Change will not need to use this method. You should never need to call this method directly, although you may occasionally want to override it.
+\fc0  Your implementation should return YES if the 
+\pard\tx1140\tx2300\tx3440\tx4600\tx5760\tx6900\tx8060\tx9200\tx10360\tx11520\fc0 specified
+\pard\tx3120\tx3620\tx4120\li2620\fc0  
+\i change
+\i0  should be incorporated into the receiving Change. By returning YES, the receiving Change accepts responsibility for the incorporated 
+\i change
+\i0 , and the ChangeManager will not keep track of it nor free it. Your implementation should return NO when 
+\i change
+\i0  can't or shouldn't be incorporated in the receiving Change. In this case, 
+\i change
+\i0  will be disabled and ignored. The default implementation always returns NO. Note that in either case the receiving Change must still be able to undo any changes in state that happen from the time it receives a 
+\b startChange
+\b0  message until it receives an 
+\b endChange
+\b0  message. 
+\fs16 \
+
+\fs28 See also:  
+\b ± disable, ± subsumeChange:
+\b0\fs16 \
+
+\pard\tx7140\b\li2100 \
+\
+
+\fs28 init\
+
+\pard\f2\b0\fi-1020\li3620 - 
+\f0\b init\
+
+\fs16 \
+
+\pard\tx3120\tx3620\tx4120\b0\fs28\li2620 Initializes the receiver, a newly allocated Change object.\
+
+\pard\tx7140\b\fs16\li2100 \
+\
+
+\fs28 redoChange\
+
+\pard\f2\b0\fi-1020\li3620 - 
+\f0\b redoChange
+\b0\i \
+
+\fs16 \
+
+\pard\tx3120\tx3620\tx4120\i0\fs28\li2620 Called by the change manager to re-issue a change after it has been undone. This is accomplished by restoring the state of the application using the state information recorded by 
+\b saveAfterChange
+\b0 . You should not need to call this method directly. When overriding this method you should end your method with ªreturn [super 
+\b redoChange
+\b0 ]º.\
+
+\fs16 \
+
+\fs28 See also:  
+\b ± undoChange, ± saveAfterChange\
+
+\fs16 \
+
+\pard\tx7140\li2100 \
+
+\fs28 saveAfterChange\
+
+\pard\f2\b0\fi-1020\li3620 - 
+\f0\b saveAfterChange
+\b0\i \
+
+\fs16 \
+
+\pard\tx3120\tx3620\tx4120\i0\fs28\li2620 Called by the ChangeManager after the receiving Change is sent an 
+\b endChange
+\b0  message, provided the Change is not disabled. Override this method to save any state information modified during the course of the change. This state information can be used by the 
+\b redoChange
+\b0  method to redo a change after it has been undone. You should not need to call this method directly. \
+
+\fs16 \
+
+\fs28 See also:  
+\b ± saveBeforeChange, ± redoChange
+\b0 \
+
+\fs16 \
+
+\pard\tx7140\b\li2100 \
+
+\fs28 saveBeforeChange\
+
+\pard\f2\b0\fi-1020\li3620 - 
+\f0\b saveBeforeChange\
+
+\b0\i\fs16 \
+
+\pard\tx3120\tx3620\tx4120\i0\fs28\li2620 Called by the ChangeManager after the receiving Change is sent a 
+\b startChange
+\b0  or 
+\b startChangeIn:
+\b0  message, provided the Change is not disabled. Override this method to save any state information necessary to undo the change later on. For example, if a change causes a variable to be updated, the 
+\b saveBeforeChange
+\b0  method could save the current value of the variable for later use by 
+\b undoChange
+\b0 . You should not need to call this method directly.\
+
+\fs16 \
+
+\fs28 See also:  
+\b ± saveAfterChange, ± undoChange
+\b0 \
+
+\fs16 \
+
+\pard\tx7140\b\li2100 \
+
+\fs28 startChange\
+
+\pard\f2\b0\fi-1020\li3620 - 
+\f0\b startChange\
+
+\fs16 \
+
+\pard\tx3120\tx3620\tx4120\b0\fs28\li2620 This method, or its sibling method 
+\b startChangeIn:
+\b0 , is called once per Change by your application code to signal that a change is about to take place. The Change will open a connection to the nearest ChangeManager on the responder chain. The id of this ChangeManager will be saved in the changeManager instance variable. If the application is not active 
+\b startChange
+\b0  will fail to find a ChangeManager. Use 
+\b startChangeIn:
+\b0  instead of 
+\b startChange
+\b0  if the application is not active. The 
+\b startChange 
+\b0 method will return 
+\b nil
+\b0  if no ChangeManager is found. If a ChangeManager is found, it will be sent a 
+\b\fc0 changeInProgress:
+\b0  message and it will either send the Change either a 
+\b disable
+\b0  message or a 
+\b saveBeforeChange
+\b0  message before 
+\b startChange
+\b0  returns. The code for causing the change should follow a call to 
+\b startChange
+\b0  and should be followed directly by a call to 
+\b endChange
+\b0 . You should not need to override this method.\
+
+\fs16 \
+
+\fs28 See also:  
+\b ± endChange, ± saveBeforeChange, ± startChangeIn:, ± isActive 
+\b0 (Application)
+\b \
+
+\fs16 \
+
+\pard\tx7140\li2100 \
+
+\fs28 startChangeIn:\
+
+\pard\f2\b0\fi-1020\li3620 - 
+\f0\b startChangeIn:
+\b0\i aView
+\b\i0 \
+
+\fs16 \
+
+\pard\tx3120\tx3620\tx4120\b0\fs28\li2620 This method is identical to the 
+\b startChange
+\b0  method, except that 
+\b startChangeIn:
+\b0  may successfully locate a ChangeManager even if the application is not the active application, which 
+\b startChange
+\b0  will not. In order to find a ChangeManager 
+\b startChangeIn:
+\b0  must be passed 
+\i aView
+\i0  in which the change is 
+\fc0 occurring, which it will use to find the beginning of the responder chain. You should not need to override this method.\
+
+\fs16 \
+
+\fs28 See also:  
+\b ± endChange, ± saveBeforeChange, ± startChange, ± isActive 
+\b0 (Application)
+\b \
+
+\fs16 \
+
+\pard\tx7140\li2100 \
+
+\fs28 subsumeChange:\
+
+\pard\f2\b0\fi-1020\li3620 - (
+\f0 BOOL
+\f2 )
+\f0\b subsumeChange:
+\b0\i change\
+
+\fs16 \
+
+\pard\tx3120\tx3620\tx4120\i0\fs28\li2620 This method is called by the ChangeManager to offer the receiver (which is the last completed Change) the opportunity to subsume the next Change about to be performed by the application. Override this method when you want to coalesce a series of similar Changes into one large Change. For example, a series of cursor movements could be collapsed into a single Change. The first Change created by cursor movement would subsume all cursor Changes following it directly. The ChangeManager only calls this method on completed Changes.\
+\
+Most subclasses of Change will not need to use this method. You should never need to call this method directly, although you may occasionally want to override it. Your implementation should return YES if you wish to signal that 
+\i change
+\i0  should be subsumed. In this case, 
+\i change
+\i0  will be disabled and will be freed as soon as it receives an 
+\b endChange
+\b0  message. Note that the current change is expected to be able to undo any changes in state that occur before 
+\i change 
+\i0 receives the 
+\b endChange
+\b0  message. You should return NO when 
+\i change
+\i0  cannot be subsumed by the current change. When this happens, the ChangeManager will send the receiver a 
+\b finishChange
+\b0  message and then record 
+\i change
+\i0  as an independent change The default implementation always returns NO.
+\fs16 \
+
+\pard\tx7140\b\li2100 \
+
+\pard\tx3120\tx3620\tx4120\b0\fs28\li2620 See also:  
+\b ± disable, ± incorporateChange:\
+
+\b0\fs16 \
+
+\pard\tx7140\b\li2100 \
+
+\fs28 undoChange\
+
+\pard\f2\b0\fi-1020\li3620 - 
+\f0\b undoChange
+\b0\i \
+
+\fs16 \
+
+\pard\tx3120\tx3620\tx4120\i0\fs28\li2620 This method tells the receiving Change to restore the state information first saved when 
+\b saveBeforeChange
+\b0  was called. This information should be sufficient to restore the state of the application to the way it was before the change took place. This method may either be called to undo the Change after the first time the Change was made, or after a Change has been redone. You should not need to call this method directly. When overriding this method you should end your method with ªreturn [super 
+\b undoChange
+\b0 ]º.\
+
+\fs16 \
+
+\fs28 See also:  ± 
+\b redoChange
+\b0 , 
+\b ± saveBeforeChange\
+
+\fs16 \
+
+}

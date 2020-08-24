@@ -1,0 +1,82 @@
+Cenon Change Log - August 2001
+
+
+2001-08-11  Georg Fleischmann
+	* DocView.m (-moveObject:): added workaround for slow GNUstep image processing
+
+2001-08-16  Georg Fleischmann
+	* DPControl.m (-setOriginZ:): measure surface only with adjust mode enabled
+	  DPControl (-update:): measureSurface only with adjust mode enabled
+	  DPControl.m (-setAdjustZ:): call update to enable/disable stuff
+
+Cenon 3.50 beta 7
+
+2001-08-17  Georg Fleischmann
+	* Graphic.m (-extendedBounds): new to calculate bounds with width
+	  Graphic.m (-extendedBoundsWithScale:): call extendedBounds
+	* PerformanceMap.m, h: new
+
+2001-08-18  Georg Fleischmann
+	* LayerObject.m, h (-layerObjectWithBounds:, -initWithBounds): new
+	* Graphic.h: import LayerObject.h removed, more comments
+	  Graphic.h: lastDrawn added
+	* Graphic.m, h (-setDrawTime:, drawTime): new
+	* Arc.h: header documented
+	* GraphicObjects/*.m, h (-hitControl:): scaleFactor removed
+	  GraphicObjects/*.m, h (-hit:scale:): now -hit:fuzz:
+	* DINImportSub.m: import LayerObject.h
+	* App.m (setCurrent2DTool:): initialize cursors with nil
+	* DocView.m (mouseDown:): -hit:fuzz: instead of -hit: scale:
+	* Sinking.m (drawWithPrinzipal:): set line width = 0
+	* Graphic.m (-intersectsRect): line width added
+
+2001-08-19  Georg Fleischmann
+	* Rectangle.m, Path.m (-intersectLine:::): new
+	* Graphic.m, Line.m, Arc.m, Curve.m, Path.m (-isPathObject): new
+	* Graphic.m (-intersectsRect:): support for non path objects added
+	* Line.m, h (lineWithPoints::): new
+	* DocView.m (-dragSelect:): check realBounds, test for line, arc, curve removed
+	* LayerObject.m, h (-addObject:, -addObjectsFromArray:, -removeObject:, -draw:inView:): new
+	* Graphic.m, h (-bounds): replaces -extendedBounds, -extendedRealBounds, -fastBounds
+	* Graphic.m, h (-coordBounds): was realBounds
+
+2001-08-20  Georg Fleischmann
+	* Line.m (-contour:): return line only if w = 0 and width = 0
+	* *.m: everything going oin list of layerObject now directly uses layerObject
+	* DocView.m (-group): collect from slist
+	* TPMix.m: mix from l1
+
+2001-08-21  Georg Fleischmann
+	* DocView.m (-dragSelect:): removed minimum size = 1 for region
+	  DocView.m (-rotateObject:): now works without cache
+	* *.m: added undoObject: for all edit and undo functions, some clean up
+
+2001-08-22  Georg Fleischmann
+	* DPControl (-start:): levelingRect = [g coordBounds]
+	* TextGraphic.m (-setString:): removed reinit of drawText in font part
+	* DocView.m: MAXCACHEAREA reduced to 5000000
+
+Cenon 3.50 beta 8
+
+2001-08-28  Georg Fleischmann
+	* Type1Font.m (setFontInfo:): release obejcts, use stringForKey:
+	  Type1Font.m (-setFontPrivate:): use stringForKey:
+	* Graphic.m (-description): new
+	* PerformanceMap.m, h: keep graphicList in parent segments, and draw parent if possible, clip output
+	* LayerObject.m (-draw:inView:): if rect is empty draw map bounds
+
+2001-08-29  Georg Fleischmann
+	* DPControl.m (-setOriginZ:): after measurement switch off adjust mode
+	* Graphic.m, h (-drawTime, setDrawTime:): removed
+	* PerformanceMap.m, h (-drawInRect:principal:timer:): now -drawInRect:principal:
+
+2001-08-30  Ilonka Fleischmann
+	* Line.m (-getListOfObjectsSplittedFrom:) [line setWidth:width];+[line setColor:color];
+	* PolyLine.m hits create:in:...
+	* App.m, h (setCurrent2DTool:): TOOL2D_POLYLINE
+	* DocView.m (mouseDown:): TOOL2D_POLYLINE
+	* toolPolyLine.tiff -> new
+	* InspectorPanel.h polyLineWindow added
+	* InspectorPanel.m (loadGraphic:): polyLine added
+	* IPPolyLine.m, h -> new
+	* IPPolyLine.nib -> new

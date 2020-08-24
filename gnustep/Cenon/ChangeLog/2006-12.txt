@@ -1,0 +1,18 @@
+Cenon CAM Change Log - December 2006
+
+2006-12-08 Georg Fleischmann
+	* IPCurve.nib, h, m: methods are now -setPointX/Y: and -setControlX/Y:
+	                     xc1Button* and xeButton* removed, unused
+
+2006-12-11 Georg Fleischmann
+	* App.m (+initialize): default for doCaching = YES
+	* DXFImportSub.m (-setBounds:): 10000 limit for OpenStep only
+
+2006-12-13 Georg Fleischmann
+	* dvPasteboardType (e2CenonPasteType()):
+	  TIFF removed, TIFF needs to be implemented first
+
+Cenon 3.82
+
+2006-12-29 Georg Fleischmann
+	* Cenon 3.82 new packages for Apple, PDF-Import without modules

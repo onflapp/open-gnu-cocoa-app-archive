@@ -1,0 +1,106 @@
+Cenon 3.8.3  (2007-08-01)
+
+- Text, Fix: editing text now works in changing scales
+- Inspector (Apple): Inspector now resizable
+- Help (Apple): PDF-Documentation is available via the Help Menu
+- Apple: Window background is transparent now (not white like document)
+- Apple: Saving Cenon documents as ASCII-Propertylists is active now
+  (Preferences Switch) ...but does nothing.. maybe later? (ask Apple)
+- Improvements of Punch, Join, ...
+
+3.8.3 pre 1: (Apple only)
+
+- New: menu item "Display -> Show/Hide Coordinates" to toggle the presence of
+       the coordinate box of document (more space)
+- Inspector: Lock switch for crosshairs
+- Gerber-Export: improvements with multiple layers
+- DXF-Import: improvements with closed Polygons
+- Contour calculation improved
+- Apple, Fix: arcs with zero line width are printed with default line width
+- Apple, Fix: Build Contour of vertical centered Text is placed correctly
+- Apple, Fix: move graphic objects with cache works scaled now (workaround)
+- Apple, Fix: move vortex of graphic objects with cache works scaled now
+  (workaround)
+- Apple, Fix: rotate graphic objects with cache works scaled now (workaround)
+- Cenon.ph: New Domain registered
+
+
+Cenon 3.82  (2007-01-02):
+
+- New: Batch printing (Multiples) added, including serial numbers
+- New: Contour-Panel:
+  switch, whether to replace the source graphics (or keep it)
+  Panel has now it's own Unit Popup
+- New: convert TextPath to Path
+- New, Editing: with Control + Mouse you can drag Curve points within a path
+- New: Curve Inspector: all Curve Points are displayed at once and can be set
+  directly
+- TransformPanel: now with a nice bar of Icons to look better
+- Undo: number of undos increased to 25 instead of 10
+- DIN-Import: for Excellon, the tools can be defined within the file
+- Fix, HPGL-Import: Labels fixed
+- Fix, Join:
+  two paths or polylines are joined by keeping the order
+  Undo with two closed paths corrected
+- Fix, Path: Undo works when moving several points in a path
+- Fix, Arc: 360 degree snap works better now
+- Fix, Snap: snapping to itself removed
+- Fix, Select: Selecting a point no longer creates a move point undo step
+- Fix, Punch: Undo added for groups
+- Fix, Punch: Undo without crash
+- Fix, Inspector: changing color on non-editable layer leaves color well with
+  correct color
+- Fix, Layer-Inspector: redraw Layer, if non-editable and visible layer is
+  turned to editable
+- Fix, Text: editing at the top of a window now scrolls the text to visibility
+- Fix, DXF-Import: close of polylines corrected to work in all cases
+- Apple, Import: PDF/PS-Import now work on Power PC with OS X >= 10.4.7
+- Apple: graphics cache is on as default
+- GNUstep: Our patch for loading images from it's bundle has been applied
+- More details
+
+
+Cenon 3.81:
+
+- Cenon.eu: new domain registered
+- Path, Arc Editing: Snap to own points implemented
+- Join Improvements and fixes
+- Editing: The first click to an object will select the object but not the
+           control point
+- PS-Import: glyphshow operator added
+- Gerber-Import: special treatment of Eagle deviation from specifications
+- Fix, Batch production: change of limits repaired
+- Fix, Punch: ignore text
+- Fix, Fill PolyLine: open PolyLine is closed without loosing the last point
+- GNUstep: Flatten text works again with new GNUstep libraries
+- GNUstep: Improved display with antialiasing
+- GNUstep: some fixes
+- Apple: Make project conforming to XCode 2.2
+         This breaks backward compatibility of the XCode project.
+         Does Apple really need to stir the soil so much ?
+- Apple: Installer Packages beautified
+- many more improvements
+
+Cenon 3.80:
+
+- New, Import: Import to existing layer by comparing layer names
+- New, Import: Import to existing layer by comparing colors with objects on
+  the layer
+- Preferences: New entry "Select by border" to select filled objects at
+  border only
+- Copy/Paste: lock is not copied
+- PolyLine: allows snap to own points
+- Fix, DXF-Import: closing of a PolyLine with an arc added
+- Fix, DXF-Import: fill color of stroked objects now defaults to stroke color
+- Fix, Punch with Rectangle: rectangles with rounded corners are displayed
+  correctly
+- Fix, Rotate: more precise (excenter removed)
+- Fix, Apple: Contour of mirrored text is now placed correctly
+- Apple: Graphics cache is now available (Preferences switch is active)
+- Apple: Preferences switch to turn off Antialiasing activated
+- Fix, Radial Fill: fill center is saved correctly
+- Fix, Radial Fill: center stays inside box, when object is rotated
+- Fix, Group: grouping with activated color well doesn't change color
+- Copy/Paste: PDF Pasteboard Type added for Apple
+
+- Documentation updated

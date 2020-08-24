@@ -1,0 +1,724 @@
+{
+    CreationDate = "2003-05-20 00:25"; 
+    Creator = Cenon; 
+    Data = {
+        gridSpacing = 0.5; 
+        gridUnit = 2; 
+        layerList = (
+            {
+                Class = LayerObject; 
+                approachAngle = 0; 
+                dippingDepth = 0; 
+                editable = YES; 
+                fillDirection = 0; 
+                fillOverlap = 0.25; 
+                flatness = 0.15; 
+                levelingLimits = "2 2"; 
+                likeOtherLayers = YES; 
+                list = (
+                    {
+                        Class = VLine; 
+                        ccw = 1; 
+                        color = {A = 1; B = 1; C = 1; M = 1; Y = 1; s = DevCMYK; }; 
+                        p0 = "120 144"; 
+                        p1 = "120 180"; 
+                        width = 0.25; 
+                    }, 
+                    {
+                        Class = VLine; 
+                        color = {A = 1; B = 1; C = 1; M = 1; Y = 1; s = DevCMYK; }; 
+                        p0 = "111 135"; 
+                        p1 = "75 135"; 
+                        width = 0.25; 
+                    }, 
+                    {
+                        Class = VMark; 
+                        ccw = 1; 
+                        color = {A = 1; W = 0; s = CalWhite; }; 
+                        origin = "120 135"; 
+                        width = 0; 
+                    }, 
+                    {
+                        Class = VGroup; 
+                        ccw = 1; 
+                        color = {A = 1; W = 0; s = CalWhite; }; 
+                        list = (
+                            {
+                                Class = VPolyLine; 
+                                color = {A = 1; B = 1; C = 1; M = 1; Y = 1; s = DevCMYK; }; 
+                                count = 4; 
+                                endColor = {A = 1; W = 0; s = CalWhite; }; 
+                                fillColor = {A = 1; B = 1; C = 1; M = 1; Y = 1; s = DevCMYK; }; 
+                                filled = 1; 
+                                graduateAngle = 10; 
+                                ptsData = "102.000000 153.000000 110.314919 156.444138 110.583450 155.706345 102.000000 153.000000"; 
+                                radialCenter = "0.5 0.5"; 
+                                stepWidth = 7; 
+                                width = 0; 
+                            }, 
+                            {
+                                Class = VArc; 
+                                angle = 360; 
+                                ccw = 1; 
+                                center = "102 153"; 
+                                color = {A = 1; B = 1; C = 1; M = 1; Y = 1; s = DevCMYK; }; 
+                                endColor = {A = 1; W = 0; s = CalWhite; }; 
+                                fillColor = {A = 1; W = 0; s = CalWhite; }; 
+                                graduateAngle = 0; 
+                                radialCenter = "0.5 0.5"; 
+                                start = "111 153"; 
+                                stepWidth = 7; 
+                                width = 0.25; 
+                            }, 
+                            {
+                                Class = VPolyLine; 
+                                ccw = 1; 
+                                color = {A = 1; B = 1; C = 1; M = 1; Y = 1; s = DevCMYK; }; 
+                                count = 4; 
+                                endColor = {A = 1; W = 0; s = CalWhite; }; 
+                                fillColor = {A = 1; B = 1; C = 1; M = 1; Y = 1; s = DevCMYK; }; 
+                                filled = 1; 
+                                graduateAngle = 0; 
+                                ptsData = "102.000000 153.000000 110.991432 152.607422 110.991432 153.392578 102.000000 153.000000"; 
+                                radialCenter = "0.5 0.5"; 
+                                stepWidth = 7; 
+                                width = 0; 
+                            }, 
+                            {
+                                Class = VPolyLine; 
+                                color = {A = 1; B = 1; C = 1; M = 1; Y = 1; s = DevCMYK; }; 
+                                count = 4; 
+                                endColor = {A = 1; W = 0; s = CalWhite; }; 
+                                fillColor = {A = 1; B = 1; C = 1; M = 1; Y = 1; s = DevCMYK; }; 
+                                filled = 1; 
+                                graduateAngle = 0; 
+                                ptsData = "102.000000 153.000000 110.786667 154.947952 110.923004 154.174728 102.000000 153.000000"; 
+                                radialCenter = "0.5 0.5"; 
+                                stepWidth = 7; 
+                                width = 0; 
+                            }, 
+                            {
+                                Class = VPolyLine; 
+                                color = {A = 1; B = 1; C = 1; M = 1; Y = 1; s = DevCMYK; }; 
+                                count = 4; 
+                                endColor = {A = 1; W = 0; s = CalWhite; }; 
+                                fillColor = {A = 1; B = 1; C = 1; M = 1; Y = 1; s = DevCMYK; }; 
+                                filled = 1; 
+                                graduateAngle = 20; 
+                                ptsData = "102.000000 153.000000 109.590523 157.835678 109.983093 157.155731 102.000000 153.000000"; 
+                                radialCenter = "0.5 0.5"; 
+                                stepWidth = 7; 
+                                width = 0; 
+                            }, 
+                            {
+                                Class = VPolyLine; 
+                                color = {A = 1; B = 1; C = 1; M = 1; Y = 1; s = DevCMYK; }; 
+                                count = 4; 
+                                endColor = {A = 1; W = 0; s = CalWhite; }; 
+                                fillColor = {A = 1; B = 1; C = 1; M = 1; Y = 1; s = DevCMYK; }; 
+                                filled = 1; 
+                                graduateAngle = 30; 
+                                ptsData = "102.000000 153.000000 108.635498 159.080292 109.140175 158.478851 102.000000 153.000000"; 
+                                radialCenter = "0.5 0.5"; 
+                                stepWidth = 7; 
+                                width = 0; 
+                            }, 
+                            {
+                                Class = VPolyLine; 
+                                color = {A = 1; B = 1; C = 1; M = 1; Y = 1; s = DevCMYK; }; 
+                                count = 4; 
+                                endColor = {A = 1; W = 0; s = CalWhite; }; 
+                                fillColor = {A = 1; B = 1; C = 1; M = 1; Y = 1; s = DevCMYK; }; 
+                                filled = 1; 
+                                graduateAngle = 60; 
+                                ptsData = "102.000000 153.000000 104.706360 161.583450 105.444145 161.314911 102.000000 153.000000"; 
+                                radialCenter = "0.5 0.5"; 
+                                stepWidth = 7; 
+                                width = 0; 
+                            }, 
+                            {
+                                Class = VPolyLine; 
+                                color = {A = 1; B = 1; C = 1; M = 1; Y = 1; s = DevCMYK; }; 
+                                count = 4; 
+                                endColor = {A = 1; W = 0; s = CalWhite; }; 
+                                fillColor = {A = 1; B = 1; C = 1; M = 1; Y = 1; s = DevCMYK; }; 
+                                filled = 1; 
+                                graduateAngle = 50; 
+                                ptsData = "102.000000 153.000000 108.080322 159.635498 107.478851 160.140182 102.000000 153.000000"; 
+                                radialCenter = "0.5 0.5"; 
+                                stepWidth = 7; 
+                                width = 0; 
+                            }, 
+                            {
+                                Class = VPolyLine; 
+                                color = {A = 1; B = 1; C = 1; M = 1; Y = 1; s = DevCMYK; }; 
+                                count = 4; 
+                                endColor = {A = 1; W = 0; s = CalWhite; }; 
+                                fillColor = {A = 1; B = 1; C = 1; M = 1; Y = 1; s = DevCMYK; }; 
+                                filled = 1; 
+                                graduateAngle = 50; 
+                                ptsData = "102.000000 153.000000 106.155739 160.983109 106.835701 160.590530 102.000000 153.000000"; 
+                                radialCenter = "0.5 0.5"; 
+                                stepWidth = 7; 
+                                width = 0; 
+                            }, 
+                            {
+                                Class = VPolyLine; 
+                                color = {A = 1; B = 1; C = 1; M = 1; Y = 1; s = DevCMYK; }; 
+                                count = 4; 
+                                endColor = {A = 1; W = 0; s = CalWhite; }; 
+                                fillColor = {A = 1; B = 1; C = 1; M = 1; Y = 1; s = DevCMYK; }; 
+                                filled = 1; 
+                                graduateAngle = 80; 
+                                ptsData = "102.000000 153.000000 101.607445 161.991425 102.392570 161.991440 102.000000 153.000000"; 
+                                radialCenter = "0.5 0.5"; 
+                                stepWidth = 7; 
+                                width = 0; 
+                            }, 
+                            {
+                                Class = VPolyLine; 
+                                color = {A = 1; B = 1; C = 1; M = 1; Y = 1; s = DevCMYK; }; 
+                                count = 4; 
+                                endColor = {A = 1; W = 0; s = CalWhite; }; 
+                                fillColor = {A = 1; B = 1; C = 1; M = 1; Y = 1; s = DevCMYK; }; 
+                                filled = 1; 
+                                graduateAngle = 70; 
+                                ptsData = "102.000000 153.000000 103.174751 161.922989 103.947952 161.786682 102.000000 153.000000"; 
+                                radialCenter = "0.5 0.5"; 
+                                stepWidth = 7; 
+                                width = 0; 
+                            }, 
+                            {
+                                Class = VPolyLine; 
+                                color = {A = 1; B = 1; C = 1; M = 1; Y = 1; s = DevCMYK; }; 
+                                count = 4; 
+                                endColor = {A = 1; W = 0; s = CalWhite; }; 
+                                fillColor = {A = 1; B = 1; C = 1; M = 1; Y = 1; s = DevCMYK; }; 
+                                filled = 1; 
+                                graduateAngle = 100; 
+                                ptsData = "102.000000 153.000000 98.555855 161.314911 99.293648 161.583450 102.000000 153.000000"; 
+                                radialCenter = "0.5 0.5"; 
+                                stepWidth = 7; 
+                                width = 0; 
+                            }, 
+                            {
+                                Class = VPolyLine; 
+                                color = {A = 1; B = 1; C = 1; M = 1; Y = 1; s = DevCMYK; }; 
+                                count = 4; 
+                                endColor = {A = 1; W = 0; s = CalWhite; }; 
+                                fillColor = {A = 1; B = 1; C = 1; M = 1; Y = 1; s = DevCMYK; }; 
+                                filled = 1; 
+                                graduateAngle = 90; 
+                                ptsData = "102.000000 153.000000 100.052040 161.786667 100.825264 161.923004 102.000000 153.000000"; 
+                                radialCenter = "0.5 0.5"; 
+                                stepWidth = 7; 
+                                width = 0; 
+                            }, 
+                            {
+                                Class = VPolyLine; 
+                                color = {A = 1; B = 1; C = 1; M = 1; Y = 1; s = DevCMYK; }; 
+                                count = 4; 
+                                endColor = {A = 1; W = 0; s = CalWhite; }; 
+                                fillColor = {A = 1; B = 1; C = 1; M = 1; Y = 1; s = DevCMYK; }; 
+                                filled = 1; 
+                                graduateAngle = 110; 
+                                ptsData = "102.000000 153.000000 97.164322 160.590515 97.844261 160.983093 102.000000 153.000000"; 
+                                radialCenter = "0.5 0.5"; 
+                                stepWidth = 7; 
+                                width = 0; 
+                            }, 
+                            {
+                                Class = VPolyLine; 
+                                color = {A = 1; B = 1; C = 1; M = 1; Y = 1; s = DevCMYK; }; 
+                                count = 4; 
+                                endColor = {A = 1; W = 0; s = CalWhite; }; 
+                                fillColor = {A = 1; B = 1; C = 1; M = 1; Y = 1; s = DevCMYK; }; 
+                                filled = 1; 
+                                graduateAngle = 120; 
+                                ptsData = "102.000000 153.000000 95.919708 159.635498 96.521149 160.140167 102.000000 153.000000"; 
+                                radialCenter = "0.5 0.5"; 
+                                stepWidth = 7; 
+                                width = 0; 
+                            }, 
+                            {
+                                Class = VPolyLine; 
+                                color = {A = 1; B = 1; C = 1; M = 1; Y = 1; s = DevCMYK; }; 
+                                count = 4; 
+                                endColor = {A = 1; W = 0; s = CalWhite; }; 
+                                fillColor = {A = 1; B = 1; C = 1; M = 1; Y = 1; s = DevCMYK; }; 
+                                filled = 1; 
+                                graduateAngle = 150; 
+                                ptsData = "102.000000 153.000000 93.416542 155.706360 93.685081 156.444138 102.000000 153.000000"; 
+                                radialCenter = "0.5 0.5"; 
+                                stepWidth = 7; 
+                                width = 0; 
+                            }, 
+                            {
+                                Class = VPolyLine; 
+                                color = {A = 1; B = 1; C = 1; M = 1; Y = 1; s = DevCMYK; }; 
+                                count = 4; 
+                                endColor = {A = 1; W = 0; s = CalWhite; }; 
+                                fillColor = {A = 1; B = 1; C = 1; M = 1; Y = 1; s = DevCMYK; }; 
+                                filled = 1; 
+                                graduateAngle = 140; 
+                                ptsData = "102.000000 153.000000 95.364494 159.080322 94.859818 158.478851 102.000000 153.000000"; 
+                                radialCenter = "0.5 0.5"; 
+                                stepWidth = 7; 
+                                width = 0; 
+                            }, 
+                            {
+                                Class = VPolyLine; 
+                                color = {A = 1; B = 1; C = 1; M = 1; Y = 1; s = DevCMYK; }; 
+                                count = 4; 
+                                endColor = {A = 1; W = 0; s = CalWhite; }; 
+                                fillColor = {A = 1; B = 1; C = 1; M = 1; Y = 1; s = DevCMYK; }; 
+                                filled = 1; 
+                                graduateAngle = 140; 
+                                ptsData = "102.000000 153.000000 94.016884 157.155731 94.409462 157.835693 102.000000 153.000000"; 
+                                radialCenter = "0.5 0.5"; 
+                                stepWidth = 7; 
+                                width = 0; 
+                            }, 
+                            {
+                                Class = VPolyLine; 
+                                color = {A = 1; B = 1; C = 1; M = 1; Y = 1; s = DevCMYK; }; 
+                                count = 4; 
+                                endColor = {A = 1; W = 0; s = CalWhite; }; 
+                                fillColor = {A = 1; B = 1; C = 1; M = 1; Y = 1; s = DevCMYK; }; 
+                                filled = 1; 
+                                graduateAngle = 170; 
+                                ptsData = "102.000000 153.000000 93.008575 152.607437 93.008553 153.392563 102.000000 153.000000"; 
+                                radialCenter = "0.5 0.5"; 
+                                stepWidth = 7; 
+                                width = 0; 
+                            }, 
+                            {
+                                Class = VPolyLine; 
+                                color = {A = 1; B = 1; C = 1; M = 1; Y = 1; s = DevCMYK; }; 
+                                count = 4; 
+                                endColor = {A = 1; W = 0; s = CalWhite; }; 
+                                fillColor = {A = 1; B = 1; C = 1; M = 1; Y = 1; s = DevCMYK; }; 
+                                filled = 1; 
+                                graduateAngle = 160; 
+                                ptsData = "102.000000 153.000000 93.077011 154.174744 93.213310 154.947952 102.000000 153.000000"; 
+                                radialCenter = "0.5 0.5"; 
+                                stepWidth = 7; 
+                                width = 0; 
+                            }, 
+                            {
+                                Class = VPolyLine; 
+                                color = {A = 1; B = 1; C = 1; M = 1; Y = 1; s = DevCMYK; }; 
+                                count = 4; 
+                                endColor = {A = 1; W = 0; s = CalWhite; }; 
+                                fillColor = {A = 1; B = 1; C = 1; M = 1; Y = 1; s = DevCMYK; }; 
+                                filled = 1; 
+                                graduateAngle = 190; 
+                                ptsData = "102.000000 153.000000 93.685089 149.555862 93.416557 150.293640 102.000000 153.000000"; 
+                                radialCenter = "0.5 0.5"; 
+                                stepWidth = 7; 
+                                width = 0; 
+                            }, 
+                            {
+                                Class = VPolyLine; 
+                                color = {A = 1; B = 1; C = 1; M = 1; Y = 1; s = DevCMYK; }; 
+                                count = 4; 
+                                endColor = {A = 1; W = 0; s = CalWhite; }; 
+                                fillColor = {A = 1; B = 1; C = 1; M = 1; Y = 1; s = DevCMYK; }; 
+                                filled = 1; 
+                                graduateAngle = 180; 
+                                ptsData = "102.000000 153.000000 93.213341 151.052048 93.076996 151.825256 102.000000 153.000000"; 
+                                radialCenter = "0.5 0.5"; 
+                                stepWidth = 7; 
+                                width = 0; 
+                            }, 
+                            {
+                                Class = VPolyLine; 
+                                color = {A = 1; B = 1; C = 1; M = 1; Y = 1; s = DevCMYK; }; 
+                                count = 4; 
+                                endColor = {A = 1; W = 0; s = CalWhite; }; 
+                                fillColor = {A = 1; B = 1; C = 1; M = 1; Y = 1; s = DevCMYK; }; 
+                                filled = 1; 
+                                graduateAngle = 200; 
+                                ptsData = "102.000000 153.000000 94.409485 148.164322 94.016907 148.844254 102.000000 153.000000"; 
+                                radialCenter = "0.5 0.5"; 
+                                stepWidth = 7; 
+                                width = 0; 
+                            }, 
+                            {
+                                Class = VPolyLine; 
+                                color = {A = 1; B = 1; C = 1; M = 1; Y = 1; s = DevCMYK; }; 
+                                count = 4; 
+                                endColor = {A = 1; W = 0; s = CalWhite; }; 
+                                fillColor = {A = 1; B = 1; C = 1; M = 1; Y = 1; s = DevCMYK; }; 
+                                filled = 1; 
+                                graduateAngle = 210; 
+                                ptsData = "102.000000 153.000000 95.364502 146.919708 94.859833 147.521149 102.000000 153.000000"; 
+                                radialCenter = "0.5 0.5"; 
+                                stepWidth = 7; 
+                                width = 0; 
+                            }, 
+                            {
+                                Class = VPolyLine; 
+                                color = {A = 1; B = 1; C = 1; M = 1; Y = 1; s = DevCMYK; }; 
+                                count = 4; 
+                                endColor = {A = 1; W = 0; s = CalWhite; }; 
+                                fillColor = {A = 1; B = 1; C = 1; M = 1; Y = 1; s = DevCMYK; }; 
+                                filled = 1; 
+                                graduateAngle = 240; 
+                                ptsData = "102.000000 153.000000 99.293640 144.416550 98.555862 144.685074 102.000000 153.000000"; 
+                                radialCenter = "0.5 0.5"; 
+                                stepWidth = 7; 
+                                width = 0; 
+                            }, 
+                            {
+                                Class = VPolyLine; 
+                                color = {A = 1; B = 1; C = 1; M = 1; Y = 1; s = DevCMYK; }; 
+                                count = 4; 
+                                endColor = {A = 1; W = 0; s = CalWhite; }; 
+                                fillColor = {A = 1; B = 1; C = 1; M = 1; Y = 1; s = DevCMYK; }; 
+                                filled = 1; 
+                                graduateAngle = 230; 
+                                ptsData = "102.000000 153.000000 95.919685 146.364487 96.521156 145.859818 102.000000 153.000000"; 
+                                radialCenter = "0.5 0.5"; 
+                                stepWidth = 7; 
+                                width = 0; 
+                            }, 
+                            {
+                                Class = VPolyLine; 
+                                color = {A = 1; B = 1; C = 1; M = 1; Y = 1; s = DevCMYK; }; 
+                                count = 4; 
+                                endColor = {A = 1; W = 0; s = CalWhite; }; 
+                                fillColor = {A = 1; B = 1; C = 1; M = 1; Y = 1; s = DevCMYK; }; 
+                                filled = 1; 
+                                graduateAngle = 230; 
+                                ptsData = "102.000000 153.000000 97.844276 145.016876 97.164307 145.409470 102.000000 153.000000"; 
+                                radialCenter = "0.5 0.5"; 
+                                stepWidth = 7; 
+                                width = 0; 
+                            }, 
+                            {
+                                Class = VPolyLine; 
+                                color = {A = 1; B = 1; C = 1; M = 1; Y = 1; s = DevCMYK; }; 
+                                count = 4; 
+                                endColor = {A = 1; W = 0; s = CalWhite; }; 
+                                fillColor = {A = 1; B = 1; C = 1; M = 1; Y = 1; s = DevCMYK; }; 
+                                filled = 1; 
+                                graduateAngle = 260; 
+                                ptsData = "102.000000 153.000000 102.392563 144.008575 101.607430 144.008560 102.000000 153.000000"; 
+                                radialCenter = "0.5 0.5"; 
+                                stepWidth = 7; 
+                                width = 0; 
+                            }, 
+                            {
+                                Class = VPolyLine; 
+                                color = {A = 1; B = 1; C = 1; M = 1; Y = 1; s = DevCMYK; }; 
+                                count = 4; 
+                                endColor = {A = 1; W = 0; s = CalWhite; }; 
+                                fillColor = {A = 1; B = 1; C = 1; M = 1; Y = 1; s = DevCMYK; }; 
+                                filled = 1; 
+                                graduateAngle = 250; 
+                                ptsData = "102.000000 153.000000 100.825256 144.077011 100.052055 144.213303 102.000000 153.000000"; 
+                                radialCenter = "0.5 0.5"; 
+                                stepWidth = 7; 
+                                width = 0; 
+                            }, 
+                            {
+                                Class = VPolyLine; 
+                                color = {A = 1; B = 1; C = 1; M = 1; Y = 1; s = DevCMYK; }; 
+                                count = 4; 
+                                endColor = {A = 1; W = 0; s = CalWhite; }; 
+                                fillColor = {A = 1; B = 1; C = 1; M = 1; Y = 1; s = DevCMYK; }; 
+                                filled = 1; 
+                                graduateAngle = 280; 
+                                ptsData = "102.000000 153.000000 105.444145 144.685089 104.706367 144.416550 102.000000 153.000000"; 
+                                radialCenter = "0.5 0.5"; 
+                                stepWidth = 7; 
+                                width = 0; 
+                            }, 
+                            {
+                                Class = VPolyLine; 
+                                color = {A = 1; B = 1; C = 1; M = 1; Y = 1; s = DevCMYK; }; 
+                                count = 4; 
+                                endColor = {A = 1; W = 0; s = CalWhite; }; 
+                                fillColor = {A = 1; B = 1; C = 1; M = 1; Y = 1; s = DevCMYK; }; 
+                                filled = 1; 
+                                graduateAngle = 270; 
+                                ptsData = "102.000000 153.000000 103.947968 144.213333 103.174751 144.076996 102.000000 153.000000"; 
+                                radialCenter = "0.5 0.5"; 
+                                stepWidth = 7; 
+                                width = 0; 
+                            }, 
+                            {
+                                Class = VPolyLine; 
+                                color = {A = 1; B = 1; C = 1; M = 1; Y = 1; s = DevCMYK; }; 
+                                count = 4; 
+                                endColor = {A = 1; W = 0; s = CalWhite; }; 
+                                fillColor = {A = 1; B = 1; C = 1; M = 1; Y = 1; s = DevCMYK; }; 
+                                filled = 1; 
+                                graduateAngle = 290; 
+                                ptsData = "102.000000 153.000000 106.835678 145.409485 106.155754 145.016907 102.000000 153.000000"; 
+                                radialCenter = "0.5 0.5"; 
+                                stepWidth = 7; 
+                                width = 0; 
+                            }, 
+                            {
+                                Class = VPolyLine; 
+                                color = {A = 1; B = 1; C = 1; M = 1; Y = 1; s = DevCMYK; }; 
+                                count = 4; 
+                                endColor = {A = 1; W = 0; s = CalWhite; }; 
+                                fillColor = {A = 1; B = 1; C = 1; M = 1; Y = 1; s = DevCMYK; }; 
+                                filled = 1; 
+                                graduateAngle = 300; 
+                                ptsData = "102.000000 153.000000 108.080292 146.364502 107.478859 145.859833 102.000000 153.000000"; 
+                                radialCenter = "0.5 0.5"; 
+                                stepWidth = 7; 
+                                width = 0; 
+                            }, 
+                            {
+                                Class = VPolyLine; 
+                                color = {A = 1; B = 1; C = 1; M = 1; Y = 1; s = DevCMYK; }; 
+                                count = 4; 
+                                endColor = {A = 1; W = 0; s = CalWhite; }; 
+                                fillColor = {A = 1; B = 1; C = 1; M = 1; Y = 1; s = DevCMYK; }; 
+                                filled = 1; 
+                                graduateAngle = 330; 
+                                ptsData = "102.000000 153.000000 110.583458 150.293640 110.314934 149.555862 102.000000 153.000000"; 
+                                radialCenter = "0.5 0.5"; 
+                                stepWidth = 7; 
+                                width = 0; 
+                            }, 
+                            {
+                                Class = VPolyLine; 
+                                color = {A = 1; B = 1; C = 1; M = 1; Y = 1; s = DevCMYK; }; 
+                                count = 4; 
+                                endColor = {A = 1; W = 0; s = CalWhite; }; 
+                                fillColor = {A = 1; B = 1; C = 1; M = 1; Y = 1; s = DevCMYK; }; 
+                                filled = 1; 
+                                graduateAngle = 320; 
+                                ptsData = "102.000000 153.000000 108.635521 146.919693 109.140190 147.521164 102.000000 153.000000"; 
+                                radialCenter = "0.5 0.5"; 
+                                stepWidth = 7; 
+                                width = 0; 
+                            }, 
+                            {
+                                Class = VPolyLine; 
+                                color = {A = 1; B = 1; C = 1; M = 1; Y = 1; s = DevCMYK; }; 
+                                count = 4; 
+                                endColor = {A = 1; W = 0; s = CalWhite; }; 
+                                fillColor = {A = 1; B = 1; C = 1; M = 1; Y = 1; s = DevCMYK; }; 
+                                filled = 1; 
+                                graduateAngle = 320; 
+                                ptsData = "102.000000 153.000000 109.983131 148.844284 109.590538 148.164322 102.000000 153.000000"; 
+                                radialCenter = "0.5 0.5"; 
+                                stepWidth = 7; 
+                                width = 0; 
+                            }, 
+                            {
+                                Class = VPolyLine; 
+                                color = {A = 1; B = 1; C = 1; M = 1; Y = 1; s = DevCMYK; }; 
+                                count = 4; 
+                                endColor = {A = 1; W = 0; s = CalWhite; }; 
+                                fillColor = {A = 1; B = 1; C = 1; M = 1; Y = 1; s = DevCMYK; }; 
+                                filled = 1; 
+                                graduateAngle = 340; 
+                                ptsData = "102.000000 153.000000 110.922997 151.825256 110.786705 151.052063 102.000000 153.000000"; 
+                                radialCenter = "0.5 0.5"; 
+                                stepWidth = 7; 
+                                width = 0; 
+                            }
+                        ); 
+                        width = 0; 
+                    }, 
+                    {
+                        Class = VGroup; 
+                        ccw = 1; 
+                        color = {A = 1; W = 0; s = CalWhite; }; 
+                        list = (
+                            {
+                                Class = VLine; 
+                                color = {A = 1; B = 1; C = 1; M = 1; Y = 1; s = DevCMYK; }; 
+                                p0 = "102 99"; 
+                                p1 = "102 132"; 
+                                width = 0.25; 
+                            }, 
+                            {
+                                Class = VArc; 
+                                angle = "-360"; 
+                                center = "102 123"; 
+                                color = {A = 1; B = 1; C = 1; M = 1; Y = 1; s = DevCMYK; }; 
+                                endColor = {A = 1; W = 0; s = CalWhite; }; 
+                                fillColor = {A = 1; B = 1; C = 1; M = 1; Y = 1; s = DevCMYK; }; 
+                                filled = 1; 
+                                graduateAngle = 270; 
+                                radialCenter = "0.5 0.5"; 
+                                start = "102 120"; 
+                                stepWidth = 7; 
+                                width = 0; 
+                            }, 
+                            {
+                                Class = VLine; 
+                                color = {A = 1; B = 1; C = 1; M = 1; Y = 1; s = DevCMYK; }; 
+                                p0 = "111 123"; 
+                                p1 = "84 123"; 
+                                width = 0.25; 
+                            }, 
+                            {
+                                Class = VArc; 
+                                angle = "-360"; 
+                                center = "102 123"; 
+                                color = {A = 1; B = 1; C = 1; M = 1; Y = 1; s = DevCMYK; }; 
+                                endColor = {A = 1; W = 0; s = CalWhite; }; 
+                                fillColor = {A = 1; W = 0; s = CalWhite; }; 
+                                graduateAngle = 0; 
+                                radialCenter = "0.5 0.5"; 
+                                start = "102 117"; 
+                                stepWidth = 7; 
+                                width = 0.25; 
+                            }, 
+                            {
+                                Class = VLine; 
+                                color = {A = 1; B = 0; C = 0; M = 0; Y = 0; s = DevCMYK; }; 
+                                p0 = "102 120"; 
+                                p1 = "102 126"; 
+                                width = 0.25; 
+                            }, 
+                            {
+                                Class = VLine; 
+                                color = {A = 1; B = 0; C = 0; M = 0; Y = 0; s = DevCMYK; }; 
+                                p0 = "99 123"; 
+                                p1 = "105 123"; 
+                                width = 0.25; 
+                            }
+                        ); 
+                        width = 0; 
+                    }, 
+                    {
+                        Class = VGroup; 
+                        ccw = 1; 
+                        color = {A = 1; W = 0; s = CalWhite; }; 
+                        list = (
+                            {
+                                Class = VLine; 
+                                color = {A = 1; B = 1; C = 1; M = 1; Y = 1; s = DevCMYK; }; 
+                                p0 = "156 153"; 
+                                p1 = "123 153"; 
+                                width = 0.25; 
+                            }, 
+                            {
+                                Class = VArc; 
+                                angle = 360; 
+                                ccw = 1; 
+                                center = "132 153"; 
+                                color = {A = 1; B = 1; C = 1; M = 1; Y = 1; s = DevCMYK; }; 
+                                endColor = {A = 1; W = 0; s = CalWhite; }; 
+                                fillColor = {A = 1; B = 1; C = 1; M = 1; Y = 1; s = DevCMYK; }; 
+                                filled = 1; 
+                                graduateAngle = 0; 
+                                radialCenter = "0.5 0.5"; 
+                                start = "135 153"; 
+                                stepWidth = 7; 
+                                width = 0; 
+                            }, 
+                            {
+                                Class = VLine; 
+                                color = {A = 1; B = 1; C = 1; M = 1; Y = 1; s = DevCMYK; }; 
+                                p0 = "132 144"; 
+                                p1 = "132 171"; 
+                                width = 0.25; 
+                            }, 
+                            {
+                                Class = VArc; 
+                                angle = 360; 
+                                center = "132 153"; 
+                                color = {A = 1; B = 1; C = 1; M = 1; Y = 1; s = DevCMYK; }; 
+                                endColor = {A = 1; W = 0; s = CalWhite; }; 
+                                fillColor = {A = 1; W = 0; s = CalWhite; }; 
+                                graduateAngle = 0; 
+                                radialCenter = "0.5 0.5"; 
+                                start = "138 153"; 
+                                stepWidth = 7; 
+                                width = 0.25; 
+                            }, 
+                            {
+                                Class = VLine; 
+                                color = {A = 1; B = 0; C = 0; M = 0; Y = 0; s = DevCMYK; }; 
+                                p0 = "135 153"; 
+                                p1 = "129 153"; 
+                                width = 0.25; 
+                            }, 
+                            {
+                                Class = VLine; 
+                                color = {A = 1; B = 0; C = 0; M = 0; Y = 0; s = DevCMYK; }; 
+                                p0 = "132 156"; 
+                                p1 = "132 150"; 
+                                width = 0.25; 
+                            }
+                        ); 
+                        width = 0; 
+                    }
+                ); 
+                numSteps = 0; 
+                removeLoops = YES; 
+                settle = 0; 
+                side = 2; 
+                state = 1; 
+                step0 = 0; 
+                step1 = 0; 
+                step2 = 0; 
+                string = leftup; 
+                tag = 0; 
+                toolIndex = "-1"; 
+                toolString = ""; 
+                type = 0; 
+                useForTile = YES; 
+                v = 4; 
+            }, 
+            {
+                Class = LayerObject; 
+                approachAngle = 0; 
+                dippingDepth = 0; 
+                fillDirection = 0; 
+                fillOverlap = 0.25; 
+                flatness = 0.15; 
+                levelingLimits = "2 2"; 
+                list = (); 
+                numSteps = 0; 
+                removeLoops = YES; 
+                settle = 0; 
+                side = 2; 
+                state = 1; 
+                step0 = 0; 
+                step1 = 0; 
+                step2 = 0; 
+                string = Clipping; 
+                tag = 0; 
+                toolIndex = "-1"; 
+                toolString = ""; 
+                type = 2; 
+                v = 4; 
+            }
+        ); 
+        origin = {
+            Class = VCrosshairs; 
+            ccw = 1; 
+            color = {A = 1; W = 0; s = CalWhite; }; 
+            origin = "0 0"; 
+            width = 0; 
+        }; 
+        tileDistance = "0 0"; 
+        tileLimits = "0 0"; 
+    }; 
+    MagazineIndex = 0; 
+    PrintInfo = {
+        bottomMargin = 0; 
+        leftMargin = 0; 
+        orientation = 0; 
+        paperName = A4; 
+        paperSize = "595 842"; 
+        rightMargin = 0; 
+        topMargin = 0; 
+    }; 
+    Version = 102; 
+    ViewSize = "0 0 250 250"; 
+    WindowFrame = "426 410 847 723 0 0 1532 1200 "; 
+}

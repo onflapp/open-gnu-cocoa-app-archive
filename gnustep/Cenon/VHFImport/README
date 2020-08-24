@@ -1,0 +1,24 @@
+How to write an import class?
+General Overview
+
+This is a short overview explaining how to write an import class for Cenon to import files of type TYPE. We discuss in short all the source files which need to be created or modified.
+
+
+TYPEImport.m, TYPEImport.h
+
+First of all you have to create a Class like TYPEImport in the subproject folder VHFImport. This Class ist doing all the parsing.
+
+
+TYPEImportSub.m, (TYPEImportSub.h)
+
+The parser class needs a Super Class like TYPEImportSub in the main project which contains the application dependant stuff.
+This object builds up and returns an NSArray with a list of Cenon objects (or a list of layers with objects in the case of DXF).
+
+You should take a look at the header files of the import classes (e.g. HPGLImport or DXFImport). There are some comments above the set of methods explaining the methods.
+
+
+App.m
+
+The import of a file is started in App.m in the method [App -listFromFile:]. Here the file extension is checked and a few lines of code create the needed import object and return the received list of objects.
+
+To make the file type known to Cenon, you have to add the file extension to [App -openDocument:].

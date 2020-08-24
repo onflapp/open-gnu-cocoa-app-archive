@@ -1,0 +1,101 @@
+{\rtf0\ansi{\fonttbl\f0\fmodern Courier;}
+\pard\tx1440\tx2700\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li2700\fi-2700\ql\qnatural
+
+\f0\b\fs24 \cf0 …nderungen för April 1998\
+
+\b0 \
+27.04.98	Cenon\
+\
+\pard\tx1440\tx4320\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li4320\fi-4320\ql\qnatural
+\cf0 Datum	Datei	VerÙndert\
+----------------------------------------------------------------------------------------------\
+02.04.98	DPLayerDetails.nib	removeLoops aus Matrix rausgenommen\
+	Path.m, h	-setDirectionCCW: -> neu\
+	Graphic.m, h	-drawDirection, -gradientAt -> neu\
+	*	-hitEdge:spare: es wurde kein Pointer öbergeben, also passierte gar nichts\
+	Editor2DView.m	-validateMenuItem -> displayDirection hinzugefögt\
+	Editor2DView.h	showDirection, -showDirection -> neu\
+	Localizable.strings	HIDE_DIRECTION, SHOW_DIRECTION\
+	Editor2DWindow.m	-showDirection fehlte\
+	Line.m	getFlattenedObject -> Schleife fing bei 0 an, dadurch Null-Stöck am Anfang\
+05.04.98	Path.m	-closePath -> closed subpath wurde mit zusÙtzlicher Linie ausgestattet\
+		-getDirectionOfSubPath heiût jetzt directionOfSubPath\
+	Arc.m,\
+	Line.m,\
+	Rectangle.m	-draw -> [self drawDirection] aufgerufen\
+06.04.98	DPLayerDetails.nib	revertDirection Knopf eingebaut\
+	Editor2DView.m, h	setDirectionForLayer: -> neu\
+	Graphic.m, h	isDirectionCCW -> neu\
+	e2Output.m, h	removeLoops, -removeLoops ist jetzt BOOL\
+07.04.98	DPLayerDetails.m, h	-update, -setSwitches -> revertDirection... eingebaut\
+	LayerObject.m, h	revertDirection, -revertDirection, -setRevertDirection eingebaut\
+		-setSide, setSwitches -> [view setDirectionForLayer:] aufgerufen\
+		version = 2, revertDirection gespeichert/geladen\
+	DPLayer.m	-cellDidChangeSide -> [view setDirectionForLayer:] aufgerufen\
+	Curve.m	-angle -> 720- entfernt da Winkel sonst falsch\
+	Graphic.m	-drawDirection -> Pfeile gegenskaliert\
+	Editor2DView.m	-drawRect: -> centerScanRect war ohne Funktion\
+	Arc.m	-setDirectionCCW:, isDirectionCCW -> neu\
+		-pathRepresentation -> if( abs(angle)>360 ), direction des Pfades gesetzt\
+	Rectangle.m	-setDirectionCCW: -> neu\
+		-pathRepresentation -> direction beröcksichtigt\
+		-gradientAt: -> direction beröcksichtigt\
+		+initialize -> neu, version=1\
+		isDirectionCCW wird gespeichert und geladen\
+	Path.m	version=1\
+		isDirectionCCW wird gespeichert und geladen\
+		-closePath -> if( /*iCnt==1 ||*/...\
+		-getPoint:At: -> wenn liste leer, wird 0 zuröckgegeben\
+	Editor2DDocument.m	+newFromFile -> 2 x [newDocument->window ... vor view init\
+	e2Tile.m	-setTile -> bei negativer WindowNumber nicht darstellen\
+Beta 09\
+\
+09.04.98	Group.m	-putControlUPath:forRect: -> UPath resized\
+	DPLayer.m	-setDipDepth: -> layerObject bei Ausspitzen auf dirty gesetzt\
+11.04.98	->	Deutsche OberflÙche tut nicht\
+	LocalizedString.strings Direction String waren als defines drin\
+Beta 10\
+\
+12.04.98	Path.m\
+	Image.m	-pickOutWithTipAngle: -> Berechnung der width raus\
+	PickOut.m,h	-pickOutPathWithTipAngle:\
+		-pickOutImageWithTipAngle: -> Berechnung der width jetzt hier (maxDip wird öbergeben)\
+13.04.98	Xyz.m	-xyzLoadParms -> switches initialisiert\
+		-xyzSetPort... -> port < 0 wird nicht gesetzt\
+	Xyz.h	state.port[3]\
+14.04.98	Xyz.m	-xyzSetTool -> busy abgeschaltet\
+		//-home, -adjustment -> busy (schaltet gleich wieder ab wegen CNC450 Bug)\
+		//-setOriginX -> busy bei groûen Wegen (schaltet gleich wieder ab wegen CNC450 Bug)\
+	TextGraphic.m	-contour -> neu\
+	e2Output.m	-calc... -> extra Textbehandlung nur noch för Seriennummer\
+		-beim pickOut wird in internal gewandelt\
+	Path.m	-putFillUPath... -> Andere Meldung\
+	Editor2DView.m	-moveObject: -> dirty nur för besetzte Lagen\
+Beta 11\
+\
+	Xyz.m	-xyz3DMoveTo, -xyz3DLineTo -> dip entfernt\
+	e2Output.m	-beim pickOut wird in internal gewandelt\
+	Arc.m	-contour -> Vollkreis Fahrweg ging immer CCW\
+	Rectangle.m	-pathRepresentation -> radius wurde komplett falsch behandelt\
+	Path.m	-directionOfSubPath -> negative Winkel bleiben jetzt negativ\
+	->	Ein Dokument ist nach einem Drag mehreren Fenstern zugeordnet\
+	e2Drag.m	-createGraphicForDraggedFile -> fixedDocument wurde nicht mehr auf nil gesetzt\
+Beta 12\
+\
+	types.h	MAXINT aufgenommen, da Rhapsody das nicht kennt\
+	UITabActionCell	makefile.postamble, makefile.preamble hinzugefögt\
+23.04.98	Path.m,h\
+	Image.m,h	-pickOutWithTipAngle: -> Flag positive dazu\
+	Image.m,h	-image: neu -> gibt NSimage von Image zuröck\
+	PickOut.m,h	-pickOutPathWithTipAngle:\
+		-pickOutImageWithTipAngle: -> mit Flag positive\
+		schneller, besser\
+26.04.98	->	Fahrwege von Rechtecken sind falschrum bei ccw\
+	Rectangle.m	-pathRepresentation -> [path setDirection:ccw]\
+	DPLayer.m	-cellDidChangeSide -> setDirection an erste Stelle gesetzt\
+	LayerCell.m	-trackMouse:... -> cellDidChangeSide als erstes\
+	Path.m	-directionOfSubPath -> alle Winkel wie beim Arc\
+	Editor2DView.m	-setDirectionForLayer -> ccw/cw vertauscht\
+\
+next: Beta 13\
+}

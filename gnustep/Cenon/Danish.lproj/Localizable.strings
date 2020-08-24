@@ -1,0 +1,101 @@
+/* Localized String for Cenon: Danish
+ *
+ * created:  2010-02-09 by Erik Richard Sørensen
+ * modified: 2011-07-05 (Import: "You need to install GhostScript..." added, "DXF File exceeds maximum size!..." fixed)
+ *           2011-03-30
+ */
+
+/* Menu Display */
+"Turn Grid Off" = "Slå net fra";
+"Turn Grid On" = "Slå net til";
+"Hide Directions" = "Skjul retning";
+"Show Directions" = "Vis retning";
+"Hide Coordinates" = "Skjul Koordinater";
+"Show Coordinates" = "Vis Koordinater";
+"Hide Moves" = "Skjul flytning";
+"Show Moves" = "Vis flytning";
+"Hide Tool Diameter" = "Skjul værktøjsdiameter";
+"Show Tool Diameter" = "Vis værktøjsdiameter";
+
+/* */
+"Select two objects for joining!" = "Vælg to objekter til sammenføjning.";
+"Can't create backup file. File not saved!" = "Kan ikke oprette backup fil. Filen er ikke arkiveret!";
+"Can't remove backup file." = "Kan ikke fjerne backup fil.";
+"UNTITLED" = "Uden navn";
+"Can't save file." = "Filen kan ikke arkiveres.";
+
+/* Buttons */
+"OK" = "OK";
+"Cancel" = "Annullere";
+"Delete" = "Slet";
+"Modify" = "Modificer";
+"Keep" = "Behold";
+"Skip" = "Spring over";
+
+/* */
+"Could not start module." = "Modulet kunne ikke åbnes.";
+"Could not open file." = "Filen kunne ikke åbnes.";
+"Could not open file\n%@." = "Kunne ikke åbne filen\n%@";
+"Could not open file\n%@. \nUsing Default." = "Kunne ikke åbne filen\n%@. \nBruger.";
+"You have unsaved documents." = "Der er ikke-arkiverede dokumenter åbne!";
+"Review Unsaved" = "Gennemse ikke-arkiverede";
+"Quit Anyway" = "Afslut alligevel";
+"Quit" = "Afslut";
+"Default" = "Standard";
+"Can't write file." = "Kan ikke skrive til filen.";
+"Graphic has zero size." = "Grafik har størrelsen nul (0).";
+"%@ has changes. Save them?" = "%@ har ændringer. Skal de arkiveres?";
+"Close" = "Luk";
+"Save" = "Arkiver";
+"Do you want to revert to: %@ ?" = "Vil du vende tilbage til %@ ?";
+"Don't Save" = "Arkiver ikke";
+"The margins or paper size specified are invalid." = "De valgte margen- eller papirindstillinger er ugyldige.";
+"The contour will be calculated know! You may want to stop this operation to calculate on a later time." = "Kontur bliver beregnet nu! Du ønsker måske at standse denne handling for at kunne beregne det senere.";
+"Calculate" = "Beregn";
+"Abort" = "Afbryd";
+"mm" = "mm";
+"inch" = "tommer";
+"pt" = "pkt";
+"Name '%@' allready in use!" = "Navnet '%@' bruges allerede!";
+"You need to install the Cenon Library!" = "Det er nødvendigt at installere Cenon Library!";
+
+"Do you really want to remove layer '%@' ?" = "Vil du virkelig fjerne laget '%@'?";
+"Only one layer of this kind allowed!" = "Kun ét lag af denne type er tilladt!";
+"Clipping" = "Udklip";
+
+/* import messages */
+"DXF File extends maximum size!\nPlease increase the DXF resolution in the Preferences." = "DXF filen er større end maksimumstørrelse!\nForøg DXF opløsningen i Indstillinger.";
+"Bore %.1f mm" = "Boring %.Hvis mm";
+"Some Objects are exceeding drawing bounds!" = "Nogle objekter går ud over tegnearealets kanter!";
+"No layer available with name/color '%@'!" = "Ingen lag med navn/farve '%@' tilgængelige!";
+"Create Layer" = "Opret lag";
+
+"Layer is not editable!" = "Laget kan ikke redigeres!";
+"Continue" = "Fortsæt";
+"Stop work?" = "Afbryd arbejdet?";
+"Clipped graphic out of range!" = "Grafik udklip er uden for område!";
+"DXF File exceeds maximum size!\nPlease increase the DXF resolution in the Preferences." = "DXF data overskrider maksimal størrelse!\nSæt venligst DXF opløsning op i Indstillinger.";
+"You need to install GhostScript (gs) to import PDF or PostScript!" = "You need to install GhostScript (gs) to import PDF or PostScript!";
+
+/* Graphic Objects */
+"Line" = "Linie";
+"Arc" = "Bue";
+"Curve" = "Kurve";
+"Rectangle" = "Rektangel";
+"Clip Rectangle" = "Udklipsrektangel";
+"Path" = "Sti";
+"Web" = "Web";
+"Mark" = "Mærke";
+"Text" = "Tekst";
+"Textpath" = "Sti til tekst";
+"Thread" = "Tråd";
+"Spiral" = "Spiral";
+"Sinking" = "Sænkning";
+"Image" = "Billede";
+
+/* TransformPanel */
+"Scale" = "Skalere";
+"Move" = "Flytte";
+"Align" = "Justere";
+"Rotate" = "Rotere";
+"Mix" = "Blande";

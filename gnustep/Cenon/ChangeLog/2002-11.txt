@@ -1,0 +1,66 @@
+Cenon Change Log - November 2002
+
+2002-11-01  Georg Fleischmann
+	* DocView.m: window = [self window] casted to (DocWindow*) on 4 appearances
+	* HPGLImportSub.m (addText:...): [VText graphic] casted to (VText*)
+	* Graphic.m (+currentView, +currentWindow): [NSApp mainWindow] casted to (DocWindow*)
+	* Document.m (+new): cast self to Document
+
+2002-11-03  Georg Fleischmann
+	* TeachInPanel.nib: new
+	  Nib2gmodel.sh: teach-in nib added
+	  TeachInController.m, h: new
+	  AppCAM.m (-xyzInitParameter): create teach in controller
+	* VMark.m: version = 3
+	  VMark.m: z, is3D added
+	  IPMark.m, h, nib: z added
+	* Main.nib: tags added to menu items
+	  App.h: menu tags (MENU_*) added
+	* VLine.m (-lineWithPoints): use [self class] instead of VLine to make it work with VLine3D
+	* ipLine3D: copy of ipLine added
+
+2002-11-20  Georg Fleischmann
+	* TPMove.nib, m, h: new
+	  TransformPanel.m, h: TPMove added
+	  Nib2gmodel.sh, nib2gmodel.plist: TPMove added
+	* dvUndo.m (-graphicsPerform:): set affected area of source (Redraw Fix)
+
+2002-11-22  Georg Fleischmann
+	* DPLayerDetails.nib: approachAngleField added
+	  DataPanel.nib: y size of subviews increased to 235
+	  LayerObject.m, h: approachAngle added, methods sorted (general, CAM)
+	  VGraphicOutput.m, h (-appendToStream:z:approachAngle:): new
+	  VArcOutput.m (-createOutput:tools:): approachAngle added
+	  VArcOutput.m (-appendToStream:z:approachAngle:): new
+	  VGroupOutput.m (-appendToStream:z:approachAngle:): new
+	* OutputStream.m (-appendHelix...): current point for z wasn't set
+
+2002-11-26  Georg Fleischmann
+	* ToolPanel.nib: knife activated
+	  App.m (-setCurrent2DTool:): set spot of scissor tool to NSZeroPoint, spot replaced with NSMakePoint()
+	  DocView.m (-mouseDown:): TOOL2D_SCISSOR added
+	  dvUndo.m (-splitObjectAtPoint:redraw:): new
+
+2002-11-26  Ilonka Fleischmann
+	* PerformanceMap.m (-isObjectInside:): for group/path case return NO, if not YES
+	  return NO, if object bounds are entirely outside segment
+
+2002-11-29  Georg Fleischmann
+	* App.m, h: projectSettingsPanel added
+	* ProjectSettings.subproj: new
+	* Document.m, h (-docVersion, -docAuthor, -docCopyright, -docComment, -setDoc*:): new
+	  Document.m (+newFromFile:): read Version, Author, Copyright, Comment
+	  Document.m (-save): write Version, Author, Copyright, Comment
+
+2002-11-30  Ilonka Fleischmann
+	* dvUndo.m (-splitObject:atPoint:redraw): ergÙnzt
+	* VGraphic.h (-getListOfObjectsSplittedAt:): new
+	* VLine.m (-getListOfObjectsSplittedAt:): new
+	* VCurve.m (-getListOfObjectsSplittedAt:): new
+	* VArc.m (-getListOfObjectsSplittedAt:): new
+	* VPolyLine.m (-getListOfObjectsSplittedAt:): new
+
+next
+OpenStep Cenon 3.60 beta 1
+Apple Cenon 3.60 beta 1
+GNUstep: Cenon 3.60 beta1-1

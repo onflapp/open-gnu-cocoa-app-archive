@@ -1,0 +1,20 @@
+{
+    IBClasses = (
+        {CLASS = DragMatrix; LANGUAGE = ObjC; SUPERCLASS = NSMatrix; }, 
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {set = id; }; 
+            CLASS = TPMove; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {popUp = id; xField = id; yField = id; }; 
+            SUPERCLASS = NSPanel; 
+        }, 
+        {
+            CLASS = TransformPanel; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {movePanel = id; }; 
+            SUPERCLASS = NSPanel; 
+        }
+    ); 
+    IBVersion = 1; 
+}

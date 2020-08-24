@@ -1,0 +1,202 @@
+"FEEDBACK_EMAIL" = "opensword@opensword.org";
+"FEEDBACK_SUBJECT_PREFIX" = "[Pixen Feedback] ";
+"FEEDBACK_URL" = "mailto:opensword@opensword.org?subject=[Pixen%20Feedback]%20";
+
+/* Background Label */
+"BACKGROUND_LABEL" = "Fond";
+/* Background Tooltip */
+"BACKGROUND_TOOLTIP" = "Ouvrir les réglages du fond";
+
+/* Layers Label */
+"LAYERS_LABEL" = "Calques";
+/* Layers Tooltip */
+"LAYERS_TOOLTIP" = "Afficher/masquer les calques";
+
+/* Preview Label */
+"PREVIEW_LABEL" = "Aperçu";
+/* Preview Tooltip */
+"PREVIEW_TOOLTIP" = "Afficher/masquer la fenêtre de prévisualisation";
+
+/* Tool Properties Label */
+"TOOL_PROPERTIES_LABEL" = "Réglages des outils";
+/* Tool Properties Tooltip */
+"TOOL_PROPERTIES_TOOLTIP" = "Afficher/masquer la fenêtre de réglage des outils";
+
+/* Grid Label */
+"GRID_LABEL" = "Grille";
+/* Grid Tooltip */
+"GRID_TOOLTIP" = "Afficher les réglages de la grille";
+
+/* Color Palette Label */
+"COLOR_PALETTE_LABEL" = "Palette";
+/* Color Palette Tooltip */
+"COLOR_PALETTE_TOOLTIP" = "Afficher/masquer la palette des couleurs";
+
+/* Zoom Fit Label */
+"ZOOM_FIT_LABEL" = "Ajuster";
+/* Zoom Fit Tooltip */
+"ZOOM_FIT_TOOLTIP" = "Zoome dans le document afin qu'il remplisse la fenêtre";
+
+/* Zoom Actual Label */
+"ZOOM_ACTUAL_LABEL" = "Taille réelle";
+/* Zoom Actual Tooltip */
+"ZOOM_ACTUAL_TOOLTIP" = "Zoome à la taille réelle de l'image";
+
+/* Scale Label */
+"SCALE_LABEL" = "Taille de l'image";
+/* Scale Tooltip */
+"SCALE_TOOLTIP" = "Redimensionner l'image";
+
+/* Resize Label */
+"RESIZE_LABEL" = "Taille du doc.";
+/* Resize Tooltip */
+"RESIZE_TOOLTIP" = "Redimensionner le document";
+
+/* Feedback Label */
+"FEEDBACK_LABEL" = "Commentaires";
+/* Feedback Tooltip */
+"FEEDBACK_TOOLTIP" = "Envoyez vos demandes de fonctionnalités, rapports de bogues, et autres commentaires";
+
+/* Zoom Label */
+"ZOOM_LABEL" = "Zoom";
+/* Zoom Tooltip */
+"ZOOM_TOOLTIP" = "Modifie le taux d'agrandissement";
+
+/* Backgrounds Save As */
+"BACKGROUNDS_SAVE_AS" = "Enregistrer comme nouvelle configuration…";
+/* Backgrounds Delete */
+"BACKGROUNDS_DELETE" = "Supprimer la configuration courante";
+
+/* Flat Background */
+"FLAT_BACKGROUND" = "Fond uni";
+/* Image Background */
+"IMAGE_BACKGROUND" = "Fond image";
+/* Checkered Background */
+"CHECKERED_BACKGROUND" = "Fond à damier";
+/* Slashed Background */
+"SLASHED_BACKGROUND" = "Fond rayé";
+
+/* Palette Save As */
+"PALETTE_SAVE_AS" = "Enregistrer comme nouvelle palette…";
+/* Palette Set Default */
+"PALETTE_SET_DEFAULT" = "Utiliser cette palette par défaut";
+/* Palette Delete */
+"PALETTE_DELETE" = "Supprimer la palette courante";
+/* Palette Make Gradient */
+"PALETTE_MAKE_GRADIENT" = "Faire une palette de dégradé…";
+/* Generated Palette */
+"GENERATED_PALETTE" = "Palette générée";
+/* Crayons */
+"CRAYONS" = "Crayons";
+/* Web Safe Colors */
+"WEB_SAFE_COLORS" = "Couleurs Web Safe";
+/* Grayscale */
+"GRAYSCALE" = "Échelle de gris";
+/* No User Palettes */
+"NO_USER_PALETTES" = "Pas de palette utilisateur";
+/* New Palette Prompt */
+"NEW_PALETTE_PROMPT" = "Veuillez nommer la nouvelle palette.";
+
+/* Crash Recovery */
+"CRASH_RECOVERY" = "Récupération après plantage";
+/* Crash Text */
+"CRASH_TEXT" = "Pixen semble avoir planté avant l'enregistrement de certaines données. Les sauvegardes des documents affectés ont été ouverts pour vous. Si vous désirez remplacer les fichiers originaux avec ceux-ci, il vous faudra faire \"Enregistrer sous…\" et les écraser.";
+
+/* Width */
+"WIDTH" = "Largeur";
+/* Height */
+"HEIGHT" = "Hauteur";
+
+/* Red */
+"RED" = "Rouge";
+/* Green */
+"GREEN" = "Vert";
+/* Blue */
+"BLUE" = "Bleu";
+/* Alpha */
+"ALPHA" = "Alpha";
+
+/* Properties */
+"PROPERTIES" = "Propriétés";
+/* Left */
+"LEFT" = "Gauche";
+/* Right */
+"RIGHT" = "Droite";
+
+/* Modify Pattern… */
+"MODIFY_PATTERN" = "Modifier le motif…";
+/* Set Pattern… */
+"SET_PATTERN" = "Choisir le motif…";
+
+/* Bicubic Info */
+"BICUBIC_INFO" = "Pour chaque pixel de la nouvelle image, il fera la moyenne des 16 pixels les plus proches à l'aide d'une fonction B-spline. C'est un très bon algorithme si vous souhaitez agrandir ou réduire avec anti-aliasing; pour du dessin au pixel en revanche, cette fonction est peu adaptée, du fait qu'elle ne respecte pas la palette.";
+/* Nearest Neighbor Info */
+"NEAREST_NEIGHBOR_INFO" = "Pour chaque pixel de la nouvelle image, il recherche le pixel le plus proche dans l'ancienne image, et utilise cette couleur. Il en résulte une image avec perte, si vous ne mettez pas à l'échelle avec une puissance de 2 (2x, 4x, 8x, 16x, etc.). Si vous voulez une image plus grande qui ait l'air identique à l'image courante, c'est l'algorithme qu'il vous faut.";
+/* Scale2x Info */
+"SCALE2X_INFO" = "Ceci est l'algorithme Scale2x décrit ici : http://scale2x.sourceforge.net/algorithm.html (en anglais). Cet algorithme ne peut être utilisé que pour des puissances de 2.";
+
+
+/* --------------- TOOLS --------------- */
+
+/* Pencil Name */
+"PENCIL_NAME" = "Crayon";
+/* Pencil Action */
+"PENCIL_ACTION" = "dessiner";
+
+/* Line Name */
+"LINE_NAME" = "Outil ligne";
+/* Line Action */
+"LINE_ACTION" = "tracer ligne";
+
+/* Eraser Name */
+"ERASER_NAME" = "Gomme";
+/* Eraser Action */
+"ERASER_ACTION" = "effacer";
+
+/* Fill Name */
+"FILL_NAME" = "Outil remplissage";
+/* Fill Action */
+"FILL_ACTION" = "le remplissage";
+
+/* Eyedropper Name */
+"EYEDROPPER_NAME" = "Pipette";
+/* Eyedropper Action */
+/* This is unimplemented until we get to palette undo */
+
+/* Zoom Name */
+"ZOOM_NAME" = "Loupe";
+/* Zoom Action */
+/* No undo for Zoom, so no point in having this */
+
+/* Rectangular Selection Name */
+"RECTANGULARSELECTION_NAME" = "Sélection rectangulaire";
+/* Rectangular Selection Action */
+"RECTANGULARSELECTION_ACTION" = "sélectionner";
+
+/* Move Name */
+"MOVE_NAME" = "Outil déplacement";
+/* Move Action */
+"MOVE_ACTION" = "le déplacement";
+
+/* Rectangle Name */
+"RECTANGLE_NAME" = "Rectangle";
+/* Rectangle Action */
+"RECTANGLE_ACTION" = "tracer le rectangle";
+
+/* Ellipse Name */
+"ELLIPSE_NAME" = "Cercle";
+/* Ellipse Action */
+"ELLIPSE_ACTION" = "tracer le cercle";
+
+/* Magic Wand Name */
+"MAGICWAND_NAME" = "Baguette magique";
+/* Magic Wand Action */
+"MAGICWAND_ACTION" = "la sélection";
+
+/* Lasso Name */
+"LASSO_NAME" = "Lasso";
+/* Lasso Action */
+"LASSO_ACTION" = "la sélection";
+
+/* Close */
+"Close" = "Fermer";

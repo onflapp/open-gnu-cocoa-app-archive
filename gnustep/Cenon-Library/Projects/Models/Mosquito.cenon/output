@@ -1,0 +1,17 @@
+{
+    Version = 1; 
+    layer0 = (
+        {
+            Class = OutputStream; 
+            bounds = "0 0 85 79"; 
+            currentPoint = "0 0 -1.1"; 
+            currentTool = 15; 
+            numOps = 6; 
+            numPts = 17; 
+            opsData = <01030505 0505>; 
+            ptsData = <00007041 0000803f 00000000 00000000 cdcc8cbf 0000aa42 00000000 cdcc8cbf 0000aa42 00009e42 cdcc8cbf 00000000 00009e42 cdcc8cbf 00000000 00000000 cdcc8cbf >; 
+        }
+    ); 
+    layer1 = (); 
+    layer2 = (); 
+}

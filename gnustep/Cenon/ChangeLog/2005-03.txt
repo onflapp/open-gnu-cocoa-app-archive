@@ -1,0 +1,23 @@
+Cenon Change Log - March 2005
+
+2005-03-11 Ilonka Fleischmann
+	* PerformanceMap.h (borderObjectCnt) borderObjectCnt new instance variable
+	  PerformanceMap.h (-sortNewInFrame:initWithList): new
+	* PerformanceMap.m (-initWithFrame:): borderObjectCnt = 0;
+	  PerformanceMap.m (-isObjectInside:): here we count borderObjectCnt
+	  PerformanceMap.m (-splitSegmentInTryNumber:withReferenceList:): we check borderObjectCnt before we split 
+	  PerformanceMap.m (-sortNewInFrame:initWithList): new
+	* DocView.m (-group:): Neuaufbau der performanceMap (-sortNewInFrame:) der layer nach removen
+	  DocView.m (-joinSelection:messages:): 2x Neuaufbau der performanceMap der layer nach removen if (complex)
+
+2005-03-29 Ilonka Fleischmann
+	* DocView.m (-validateMenuItem:): punch reichen ein gefölltes objects instead 2
+	* DocView.m (-validateMenuItem:): in mixed selection the groups can be ungrouped
+	* DocView.m (-join:): bei area setFillColor: von obj1
+	* Document.m (-printSeparation:)
+	  Document.m (-printDocument:) scale to 1.0 before printing/separation, rescale after
+	* VPath.m (-optimizeSubPathsToClosedPath:::): Diff(n, 0) >= 1 instead of Diff(n, 0) > 1
+	* VPath.m (-addToClosestEnd:): nur mit Linie schliessen, wenn abstand kleiner 100xTOLERANCE
+	* PSImport.m (-interpret:) k-c[cCnt-5] instead of (1.0-c[cCnt-5])*k also -4, -3
+
+next Cenon 3.70

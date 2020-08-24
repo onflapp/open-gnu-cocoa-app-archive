@@ -1,0 +1,57 @@
+Cenon Change Log - March 2003
+
+2003-03-05  Georg Fleischmann
+	* Cenon_main.m: GNUstep main integrated
+
+2003-03-15  Georg Fleischmann
+	* VLine.m (-angle): check for vertical lines to avoid devision by zero in Asin()
+
+2003-03-21  Georg Fleischmann
+	* PSInfo.nib: Comments without Background
+	* PSBasicLevel.m, h: removed
+
+2003-03-22  Georg Fleischmann
+	* VText.m (-setAttributedString:): copy instead of retain for Apple
+	* vhfCompatibility.h (VHFSetAntialiasing(f)): new
+	* VPath.m (-drawWith...:, -drawGratuated...:, -drawRadial...:, drawAxial...:): VHFSetAntialiasing(f) to switch off antialiasing for color shading
+
+Cenon 3.60 beta 2
+
+
+2003-03-27  Georg Fleischmann
+	* VRectangle.m, VArc.m, VPolyLine.m (-drawWithPrincipal:): switch off antialias for color shading
+	* VImage.m (-drawWithPrincipal:): composite position for Apple is bounds.origin not visible origin
+
+2003-03-29  Georg Fleischmann
+	* App.m (-loadModules): load available modules from library paths too
+
+2003-03-30  Georg Fleischmann
+	* locations.h (CHARCONV_FOLDER, MAGAZINENAME, POSITIONNAME): 'System/' added
+	  IPSinking.h (SINKINGMETRICS_NAME): 'System/' added
+	  LocalLibrary: new System folder
+	* App.m (-loadBundles): load from System/Bundles folder
+	* *.m: all "model file" -> "interface file"
+
+2003-03-30 Ilonka Fleischmann
+	* location.h (CROPMARK_FOLDER) new
+	* Document.m (-printDocument:): umgestellt -> colorSeparation !!
+	  Document.m (-printSeparation): new
+	* App.m, h (printPanelAccessory, ppaRadio): new
+	  App.m, h (-printPanelAccessory, -ppaRadioState): new
+	* DocView.m, h (separationColor): new
+	  DocView.m, h (-setSeparationColor:, -separationColor): new
+	* VGraphic.h, m (-separationColor:) new
+	* VLine.m (-drawWithPrincipal:) + color separation
+	* VRectangle.m (-drawWithPrincipal:) + color separation
+	* VCurve.m (-drawWithPrincipal:) + color separation
+	* VPolyLine.m (-drawWithPrincipal:) + color separation
+	* VText.m (-drawWithPrincipal:) + color separation
+	* VArc.m (-drawWithPrincipal:) + color separation
+	* VPath.m (-drawWithPrincipal:) + color separation
+	  VPath.m (-drawGraduatedWithPrincipal:) calculate with greatest possible colorspace
+	  VPath.m (-drawRadialWithPrincipal:) calculate with greatest possible colorspace
+	  VPath.m (-drawAxialWithPrincipal:) calculate with greatest possible colorspace
+	* PrintPanelAccessory.nib: new
+	* CropMarks: new
+
+next Cenon 3.60 beta 3

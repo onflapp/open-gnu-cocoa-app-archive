@@ -1,0 +1,20 @@
+{
+    IBClasses = (
+        {CLASS = DragMatrix; LANGUAGE = ObjC; SUPERCLASS = NSMatrix; }, 
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {set = id; setUnit = id; }; 
+            CLASS = GeneralController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                box = id; 
+                lineWidthField = id; 
+                snapRadio = id; 
+                switchMatrix = id; 
+                unitPopup = id; 
+            }; 
+            SUPERCLASS = NSObject; 
+        }
+    ); 
+    IBVersion = 1; 
+}

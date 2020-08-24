@@ -1,0 +1,3 @@
+after-all::
+	./fix_GNUstep_PP_desktop_file.sh
+

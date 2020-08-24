@@ -1,0 +1,47 @@
+{
+    IBClasses = (
+        {
+            CLASS = App; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {inspectorPanel = id; }; 
+            SUPERCLASS = NSApplication; 
+        }, 
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {
+                setAngle = id; 
+                setCenterVertical = id; 
+                setFitHorizontal = id; 
+                setLock = id; 
+                setPointX = id; 
+                setPointY = id; 
+                setSerialNumber = id; 
+                setSizeHeight = id; 
+                setSizeWidth = id; 
+            }; 
+            CLASS = IPText; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                angleField = id; 
+                angleSlider = id; 
+                centerVerticalSwitch = id; 
+                fitHorizontalSwitch = id; 
+                lockSwitch = id; 
+                serialNumberSwitch = id; 
+                sizeHeightField = id; 
+                sizeWidthField = id; 
+                xField = id; 
+                yField = id; 
+            }; 
+            SUPERCLASS = NSPanel; 
+        }, 
+        {
+            CLASS = InspectorPanel; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {textWindow = id; }; 
+            SUPERCLASS = NSPanel; 
+        }, 
+        {CLASS = SurfaceWell; LANGUAGE = ObjC; SUPERCLASS = NSColorWell; }
+    ); 
+    IBVersion = 1; 
+}

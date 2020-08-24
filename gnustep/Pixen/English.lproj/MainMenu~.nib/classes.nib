@@ -1,0 +1,62 @@
+{
+    IBClasses = (
+        {
+            ACTIONS = {
+                deleteLayer = id; 
+                mergeDown = id; 
+                newLayer = id; 
+                promoteSelection = id; 
+                resizeCanvas = id; 
+                selectNone = id; 
+                showBackgroundInfo = id; 
+                showColorPalette = id; 
+                showGridSettingsPrompter = id; 
+                showPreferences = id; 
+                showPreviewWindow = id; 
+                showToolPalette = id; 
+                showToolProperties = id; 
+                toggleLayersDrawer = id; 
+                zoomIn = id; 
+                zoomOut = id; 
+                zoomStandard = id; 
+                zoomToFit = id; 
+            }; 
+            CLASS = FirstResponder; 
+            LANGUAGE = ObjC; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {CLASS = PXAppDelegate; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {
+                mergeDown = id; 
+                showBackgroundInfo = id; 
+                showPreviewWindow = id; 
+                showToolPalette = id; 
+                toggleFormsDrawer = id; 
+                zoomIn = id; 
+                zoomOut = id; 
+                zoomPercentageChanged = id; 
+                zoomStandard = id; 
+                zoomStepperStepped = id; 
+                zoomToFit = id; 
+            }; 
+            CLASS = PXCanvasController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                backgroundController = id; 
+                canvas = id; 
+                formController = id; 
+                mergeDownMenuItem = id; 
+                paletteController = id; 
+                previewController = id; 
+                prompter = id; 
+                scrollView = id; 
+                view = id; 
+                zoomPercentageBox = id; 
+                zoomStepper = id; 
+            }; 
+            SUPERCLASS = NSWindowController; 
+        }
+    ); 
+    IBVersion = 1; 
+}

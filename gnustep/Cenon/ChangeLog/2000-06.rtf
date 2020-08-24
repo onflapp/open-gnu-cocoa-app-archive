@@ -1,0 +1,75 @@
+{\rtf0\ansi{\fonttbl\f0\fmodern Courier;}
+\pard\tx1440\tx5400\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li5400\fi-5400\ql\qnatural
+
+\f0\b\fs24 \cf0 Changes in June 2000\
+
+\b0 \
+27.06.00	Cenon\
+\
+Datum	Datei	VerÙndert\
+----------------------------------------------------------------------------------------------\
+06.06.00	Xyz.m, h	ops.type -> ops.cnc\
+		#CNC -> new\
+	CNC750*.dev\
+	CAM2000*.dev	#TYP -> #CNC\
+	DataPanel.m, h	-sendEvent:, -controlTextDidEndEditing: -> tabEvent -> new\
+	Group.m	-contour -> skip nil elements like Mark, Drill\
+	Mark.m	-contour -> new\
+	DPLayer.m	-addLayerWithName: -> pass view\
+	Editor2DView.m	-addLayerWithName: pass view\
+08.06.00	Editor2DView.m	-joinAndFillLayers -> no redraw inside selectAll, deselectAll added to avoid DPS errors\
+		-selectAll:redraw:, -deselectAll:redraw: -> new\
+09.08.00	DPControl.nib	selection activated again\
+		setOutputType: -> new\
+	DPControl.m	-buildOutputPathAndExecute -> put complete outputlist, also for selection\
+		outputType -> new\
+		-setOutputType: -> new\
+	Editor2DView.m	-mouseDown:, -selectAll:, deselectAll:, dragSelect:, selectEqual:, selectColor: -> set layerObject dirty for selection output\
+	DPLayer.m	-displayChanged: -> set layerObject dirty for selection output\
+\
+
+\b 3.20 Beta 44\
+
+\b0 \
+14.06.00	e2Drag.m	-createGraphicForDraggedFile: reset currentDocument later for App\
+	App.m	-listFromFile: -> raster images added\
+		-openDocument: -> allows extions: tiff, jpg, gif\
+	e2Output.m	-calcOutputFor: -> Mark inside group creates drill mark\
+	App.m	-openFile: -> reset currentDocument for 2nd case\
+	Editor2DDocument.m	-newFromList: -> set currentDocument in App\
+	Editor2DWindow.m	-coordTimerFired: -> only for main window\
+	Rectangle.m	-movePoint:to: -> like in TextGraphic.m\
+		-movePoint:by: -> like in TextGraphic with correct rotation\
+	*.m, h	vhfRotatePointAroundCenter() -> center as NSPoint\
+	Rectangle.m\
+	TextGraphic.m	-mirrorAround: -> fixed\
+15.06.00	Xyz.m	-xyzLiftZ -> lifted check with point instead of mPoint\
+		-initXyz -> pass handshake\
+	ioFunctions.m, h	ioOpenPort() -> handshake added, POSIX stuff modified\
+19.06.00	vhfLockFunctions.m	NS_DURING, NS_HANDLER removed\
+	Xyz.m	executeVector: -> skip empty layers\
+	LayerCell.m	drawInteriorWithFrame:inView: -> unlockFocus instead of another lockFocus at the end\
+	DeleteGraphicsChange.m	undoDetails: -> set layer dirty\
+\
+
+\b 3.20 Beta 45\
+\
+
+\b0 25.06.00	Rectangle.m	-moveBy: -> move origin direct\
+	IP*.nib	delegates for Text Matrixes set\
+	InspectorPanel.m, h	-sendEvent:, -controlTextDidEndEditing: -> new\
+	DataPanel.m	-sendEvent: -> for all windows, not only controlPanel\
+	TransformPanel.m, h	TPRotate added\
+	TPRotate.m, h, nib	new\
+	Editor2DView.m	-rotateG: -> call [self rotate:90.0]\
+\
+
+\b 3.20 Beta 46\
+
+\b0 \
+26.06.00	apXyz.m	-senderIsInvalid: -> xyz = nil;\
+	ioFunctions.m	improved error messages\
+27.06.00	DPToolParms.m, h	-setName: returns void\
+	DPPositions.m\
+	DPMagazine.m	-load -> workaround for GNUstep\
+}

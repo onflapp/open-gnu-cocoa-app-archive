@@ -1,0 +1,201 @@
+"FEEDBACK_EMAIL" = "opensword@opensword.org";
+"FEEDBACK_SUBJECT_PREFIX" = "[Pixen Feedback] ";
+"FEEDBACK_URL" = "mailto:opensword@opensword.org?subject=[Pixen%20Feedback]%20";
+
+/* Background Label */
+"BACKGROUND_LABEL" = "Background";
+/* Background Tooltip */
+"BACKGROUND_TOOLTIP" = "Open background configurator";
+
+/* Layers Label */
+"LAYERS_LABEL" = "Layers";
+/* Layers Tooltip */
+"LAYERS_TOOLTIP" = "Open and close the layer view drawer";
+
+/* Preview Label */
+"PREVIEW_LABEL" = "Preview";
+/* Preview Tooltip */
+"PREVIEW_TOOLTIP" = "Open and close the preview panel";
+
+/* Tool Properties Label */
+"TOOL_PROPERTIES_LABEL" = "Tool Properties";
+/* Tool Properties Tooltip */
+"TOOL_PROPERTIES_TOOLTIP" = "Open and close the tool properties panel";
+
+/* Grid Label */
+"GRID_LABEL" = "Grid";
+/* Grid Tooltip */
+"GRID_TOOLTIP" = "Show the grid settings";
+
+/* Color Palette Label */
+"COLOR_PALETTE_LABEL" = "Palette";
+/* Color Palette Tooltip */
+"COLOR_PALETTE_TOOLTIP" = "Open and close the color palette";
+
+/* Zoom Fit Label */
+"ZOOM_FIT_LABEL" = "Zoom Fit";
+/* Zoom Fit Tooltip */
+"ZOOM_FIT_TOOLTIP" = "Zoom the canvas to fit the window";
+
+/* Zoom Actual Label */
+"ZOOM_ACTUAL_LABEL" = "Actual Size";
+/* Zoom Actual Tooltip */
+"ZOOM_ACTUAL_TOOLTIP" = "Zoom to the actual size of the image";
+
+/* Scale Label */
+"SCALE_LABEL" = "Scale";
+/* Scale Tooltip */
+"SCALE_TOOLTIP" = "Scale the image";
+
+/* Resize Label */
+"RESIZE_LABEL" = "Resize";
+/* Resize Tooltip */
+"RESIZE_TOOLTIP" = "Resize the canvas";
+
+/* Feedback Label */
+"FEEDBACK_LABEL" = "Feedback";
+/* Feedback Tooltip */
+"FEEDBACK_TOOLTIP" = "Send feature requests, bug reports, and general feedback";
+
+/* Zoom Label */
+"ZOOM_LABEL" = "Zoom";
+/* Zoom Tooltip */
+"ZOOM_TOOLTIP" = "Modify the zoom percentage of the zoom";
+
+/* Backgrounds Save As */
+"BACKGROUNDS_SAVE_AS" = "Save as new configuration…";
+/* Backgrounds Delete */
+"BACKGROUNDS_DELETE" = "Delete current configuration";
+
+/* Flat Background */
+"FLAT_BACKGROUND" = "Flat Background";
+/* Image Background */
+"IMAGE_BACKGROUND" = "Image Background";
+/* Checkered Background */
+"CHECKERED_BACKGROUND" = "Checkered Background";
+/* Slashed Background */
+"SLASHED_BACKGROUND" = "Slashed Background";
+
+/* Palette Save As */
+"PALETTE_SAVE_AS" = "Save as new palette…";
+/* Palette Set Default */
+"PALETTE_SET_DEFAULT" = "Set this palette as default";
+/* Palette Delete */
+"PALETTE_DELETE" = "Delete current palette";
+/* Palette Make Gradient */
+"PALETTE_MAKE_GRADIENT" = "Make gradient palette…";
+/* Generated Palette */
+"GENERATED_PALETTE" = "Generated Palette";
+/* Crayons */
+"CRAYONS" = "Crayons";
+/* Web Safe Colors */
+"WEB_SAFE_COLORS" = "Web Safe Colors";
+/* Grayscale */
+"GRAYSCALE" = "Grayscale";
+/* No User Palettes */
+"NO_USER_PALETTES" = "No User Palettes";
+/* New Palette Prompt */
+"NEW_PALETTE_PROMPT" = "Please name the new palette.";
+/* Change Palette Color */
+"Change Palette Color" = "Change Palette Color";
+/* Change Palette */
+"Change Palette" = "Change Palette";
+/* Crash Recovery */
+"CRASH_RECOVERY" = "Crash Recovery";
+/* Crash Text */
+"CRASH_TEXT" = "Pixen appears to have crashed with unsaved changes the last time it was run.  The affected files' backups have been opened for you.  If you would like to save them over the original files, you'll have to use \"Save As…\" and overwrite them.";
+
+/* Width */
+"WIDTH" = "Width";
+/* Height */
+"HEIGHT" = "Height";
+
+/* Red */
+"RED" = "Red";
+/* Green */
+"GREEN" = "Green";
+/* Blue */
+"BLUE" = "Blue";
+/* Alpha */
+"ALPHA" = "Alpha";
+
+/* Properties */
+"PROPERTIES" = "Properties";
+/* Left */
+"LEFT" = "Left";
+/* Right */
+"RIGHT" = "Right";
+
+/* Modify Pattern… */
+"MODIFY_PATTERN" = "Modify Pattern…";
+/* Set Pattern… */
+"SET_PATTERN" = "Set Pattern…";
+
+/* Bicubic Info */
+"BICUBIC_INFO" = "For every pixel in the new image, it will average the closest 16 pixels, weighted using a B-spline function.  This is a very good algorithm to use if you want to scale up or down with anti-aliasing; for pixel art, however, this function may be sub-optimal, due to its disrespect of the palette.";
+/* Nearest Neighbor Info */
+"NEAREST_NEIGHBOR_INFO" = "For every pixel in the new image, it finds the closest pixel in the old image and uses that color.  This results in a lossy image if you're not scaling up by a power of two (2x, 4x, 8x, 16x, etc.).  If you want a larger image that looks identical to the current image, however, this is the algorithm to use.";
+/* Scale2x Info */
+"SCALE2X_INFO" = "This is the scale2x algorithm described here: http://scale2x.sourceforge.net/algorithm.html  This algorithm may only be used to scale up by powers of two.";
+
+/* --------------- TOOLS --------------- */
+
+/* Pencil Name */
+"PENCIL_NAME" = "Pencil Tool";
+/* Pencil Action */
+"PENCIL_ACTION" = "Drawing";
+
+/* Line Name */
+"LINE_NAME" = "Line Tool";
+/* Line Action */
+"LINE_ACTION" = "Drawing Line";
+
+/* Eraser Name */
+"ERASER_NAME" = "Eraser Tool";
+/* Eraser Action */
+"ERASER_ACTION" = "Erasure";
+
+/* Fill Name */
+"FILL_NAME" = "Fill Tool";
+/* Fill Action */
+"FILL_ACTION" = "Fill";
+
+/* Eyedropper Name */
+"EYEDROPPER_NAME" = "Eyedropper Tool";
+/* Eyedropper Action */
+/* This is unimplemented until we get to palette undo */
+
+/* Zoom Name */
+"ZOOM_NAME" = "Zoom Tool";
+/* Zoom Action */
+/* No undo for Zoom, so no point in having this */
+
+/* Rectangular Selection Name */
+"RECTANGULARSELECTION_NAME" = "Rectangular Selection Tool";
+/* Rectangular Selection Action */
+"RECTANGULARSELECTION_ACTION" = "Selection";
+
+/* Move Name */
+"MOVE_NAME" = "Move Tool";
+/* Move Action */
+"MOVE_ACTION" = "Move";
+
+/* Rectangle Name */
+"RECTANGLE_NAME" = "Rectangle Tool";
+/* Rectangle Action */
+"RECTANGLE_ACTION" = "Drawing Rectangle";
+
+/* Ellipse Name */
+"ELLIPSE_NAME" = "Ellipse Tool";
+/* Ellipse Action */
+"ELLIPSE_ACTION" = "Drawing Ellipse";
+
+/* Magic Wand Name */
+"MAGICWAND_NAME" = "Magic Wand Tool";
+/* Magic Wand Action */
+"MAGICWAND_ACTION" = "Selection";
+
+/* Lasso Name */
+"LASSO_NAME" = "Lasso Tool";
+/* Lasso Action */
+"LASSO_ACTION" = "Selection";

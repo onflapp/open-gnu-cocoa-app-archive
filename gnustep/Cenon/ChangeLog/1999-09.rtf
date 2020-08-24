@@ -1,0 +1,50 @@
+{\rtf0\ansi{\fonttbl\f0\fmodern Courier;}
+\pard\tx1440\tx2700\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li2700\fi-2700\ql\qnatural
+
+\f0\b\fs24 \cf0 …nderungen för September 1999\
+
+\b0 \
+30.09.99	Cenon\
+\
+\pard\tx1440\tx4320\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li4320\fi-4320\ql\qnatural
+\cf0 Datum	Datei	VerÙndert\
+----------------------------------------------------------------------------------------------\
+23.09.99	Editor2DDocument.m	setFirstResponder: auf view gesetzt\
+		+newFromList:\
+		+newFromFile: -> delegate auf Document gesetzt\
+		-initWindow -> delegate auf Document gesetzt\
+		static NSMutableArray *zoneList\
+	DPPosition.h	NSMutableArray *positionList;\
+	Path.h	-(NSMutableArray)list;\
+	Group.m	-(NSMutableArray)list;\
+	App.m	-openFile: -> Editor2DDocument *docu...\
+	Editor2DView.m	-redrawObject: -> [window setAutodisplay:NO] entfernt, das hindert die Koordinatenanzeige am Redraw\
+	drawundo.h\
+	undochange.h	objcList.h entfernt\
+27.09.99	GraphicsChange.m	-undoChange, redoChange -> redraw verÙndert\
+29.09.99	Undo	color Undo\
+	e2Undo.m	-takeFillFrom: -> new\
+	E2GraphicView.h	take*: -> new\
+	IPArc.m\
+	IPRectangle.m\
+	IPPath.m	-setFill: -> takeFillFrom: aufgerufen\
+	IPArc.m\
+	IPRectangle.m\
+	IPPath.m\
+	IPLine.m\
+	IPGroup.m\
+	IPCurve.m\
+	IPWeb.m	-setWidth: -> takeWidth: aufgerufen\
+	Graphic.m	-setLock:(BOOL), - (BOOL)islocked -> von float auf BOOL\
+30.09.99	Editor2DGraphic.m	-moveObject: -> moveBy ersetzt durch [self moveGraphicsBy...]\
+		-sendToBack:, -bringToFront: -> Undo eingebaut\
+		drawundo.h hinzugefögt\
+	Graphic.m, h	-moveBy_ptr: -> neu\
+		-setWidth_ptr -> neu\
+	e2Undo.m	-moveGraphicsBy... -> neu\
+	ChangeDetail.m	-redoDetail: -> ruft redoVector statt undoVector\
+	ReorderGraphicsChange.m -saveBeforeChange: -> slayList öbergeben\
+		-undoDetails: -> auf Lagen umgestellt\
+	ChangeDetail.m, h	-recordGraphicPositionIn -> auf Lagen umgestellt\
+		int layer hinzugefögt\
+}

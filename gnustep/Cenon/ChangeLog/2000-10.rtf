@@ -1,0 +1,65 @@
+{\rtf0\ansi{\fonttbl\f0\fmodern Courier;}
+\pard\tx1440\tx5400\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li5400\fi-5400\ql\qnatural
+
+\f0\b\fs24 \cf0 Cenon Changes in October 2000\
+
+\b0 \
+2000-10-29\
+\
+\
+Datum	Datei	VerÙndert\
+----------------------------------------------------------------------------------------------\
+17.10.00	Xyz.m, h\
+	apXyz.m	xyzDefaults -> removed\
+	Xyz.m, h	#ZUP, upDown -> removed\
+18.10.00	Xyz.m	#MLN, maximum length of lines -> new\
+		#CV3, 3D curve -> new\
+	types.h	CenterPoint(), CenterPoint3D() -> new\
+19.10.00	DPControl.m, h, nib	Origin-Z is surface position\
+		Move Height instead of Z-Down offset\
+		secure switch for XY moves above surface\
+21.10.00	DPPositions.m, h, nib\
+	PositionObject.m, h	moveHeight statt zDown\
+25.10.00	Image.m,h	- relief:withDip: -> berechnet relief of 8 bit image\
+		- buildPath: -> new zu -relief:withDip:\
+		#IdenticalGradients -> new, zu relief:withDip:\
+	*.m	z inverted -> z < 0 = below surface\
+28.10.00	DPLayerDetails.m	setting correction works for pick out\
+	PPMisc.m	activating contour fill sets all layer dirty\
+	PPControl.m, nib	flatten arcs, flatten curves removed\
+	PathCFill.m	Prefs_FlattenCurves() removed\
+	Curve.m	Prefs_NeedToFlatten() removed\
+	Arc.m	Prefs_NeedToFlatten() removed\
+	e2Output.m	-setAllLayerDirty:, -setLayerOfObject: -> no calculation for each layer!\
+	LayerObject.m	-setDirty:calculate: -> nur, wenn dirty sich verÙndert\
+	DataPanel.m	-update: -> update layerPanel after updating magazine\
+	Editor2DView.m	-mouseDown: -> call -calcOutput for create\
+	e2Pasteboard.m	paste setzt richtige Lage dirty\
+29.10.00	types.h\
+	Curve.m\
+	Arc.m	EnlargeRect -> EnlargedRect\
+	Editor2DView.m	-group:, -ungroup: -> set layer dirty\
+	PPControl.m, h, nib	display tool diameter removes\
+	Main.nib\
+	Editor2DView.m\
+	messages.h\
+	Localizable.strings	displayMoves, displayToolDiameter added\
+	Key mapping	set grid without key mapping\
+		tool panel without key mapping\
+		D = show Directions\
+		M = show Moves\
+		T = show Tool diameter	\
+	PPMisc.m	-update -> pickout set correctly\
+	Path.m	-hitControl: -> object don't have to be selected\
+	Editor2DView.m	-moveObject: -> snap selected point to grid or point\
+30.10.00	Group.m	-hitControl: -> object don't have to be selected\
+	Editor2DView.m	MAXCACHESIZE -> doubled\
+	e2Undo.m	-performSelector: -> affectedBounds corrected\
+31.10.00	IntersectionPanel.m	new\
+	App.m, h	intersectionPanel added\
+	Main.nib	moved 'Transform Panel' from Edit- to Tool-Menu\
+		Tool-Menu: added 'Intersection Panel'\
+	Editor2DView.m, h	-transform: removed\
+\
+next 3.40 beta 1\
+}

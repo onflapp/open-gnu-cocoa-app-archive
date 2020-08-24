@@ -1,0 +1,18 @@
+{
+    IBClasses = (
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            CLASS = PXNearestNeighborScaleAlgorithm; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {scaleHeightField = NSTextField; scaleWidthField = NSTextField; }; 
+            SUPERCLASS = PXScaleAlgorithm; 
+        }, 
+        {
+            CLASS = PXScaleAlgorithm; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {parameterView = NSView; }; 
+            SUPERCLASS = NSObject; 
+        }
+    ); 
+    IBVersion = 1; 
+}

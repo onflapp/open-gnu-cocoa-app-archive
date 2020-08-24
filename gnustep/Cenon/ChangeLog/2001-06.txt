@@ -1,0 +1,189 @@
+Cenon Change Log - June 2001
+
+
+2001-06-05  Ilonka Fleischmann
+	* vhf2DFunctions.m (vhfIntersectVectors()): horicontal/vertical parallelen -> muss 0 zuröckgeben !
+ 	  vhf2DFunctions.m (-pointInArray:): < 10.0*TOLERANCE instead < 20.0 *TOLERANCE
+ 	  vhf2DFunctions.m (vhfIntersectsRect()): eigene !!!!!!!!!!!!!!!
+	* Line.m (-intersectLine:): parallel abfragen brauchen eine TOLERANCE
+	  Line.m (-bounds:): 0.001 statt 0.01
+	* HiddenArea.m (-removeSingleGraphicsInList:): #define CLOSETOLERANCE 0.0009 -> 0.03*0.03
+	  HiddenArea.m,h (-removeSingleGraphicsInList:) in .h declared now
+	  HiddenArea.m,h (removeGraphics:outside) in .h declared now
+	  HiddenArea.m,h (removePartsOf:) in .h declared now
+	* Path.m (-pickOutWithTipAngle:): Aufruf von neuem PickOut
+	  Path.m: #import "PickOutAri.h"
+	  Path.m (-createOutput:) contour nicht zum outputStream adden !
+	  Path.m (-removeIntersectionsInSubpath:): new algorithm - with tangentIntersection test
+	  Path.m (-begEndPairTwiceInArray) new
+	  Path.m (-removeSingleGraphicsAtEnd) new
+	  Path.m (-getLastObjectOfSubPath:tolerance:) new mit kleinerer Toleranz !!!!!!!!!!
+	  Path.m (-isShortGraphic) new
+	  Path.m (-isPointInside:dist:): last check if Diff(point.y, bRect.y+bRect.height) <= dist*1.5
+	  Path.m (-isPointInside:dist:): go up and down with horicontal line
+	  Path.m (-isPointInside): sidestep + TOLERANCE/2.0 instead + TOLERANCE*10.0
+	  Path.m (-isPointInside:dist:): ON check beröcksichtigt sidestep falls einer gemacht wurde
+	  Path.m (-intersectionsForPtInside:with:): own intersection for check of tangential parallel/parallel intersection
+	  Path.m (parallelPointbetweenObjects()): double statt float -> gab zwar keine Verbesserung aber mh
+	  Path.m (-contour:inlay:removeloops:): Macro AngleNotSmallEnough new (angle smaller 150)
+	  Path.m (-contour:inlay:removeloops:): calculation point if(!AngleNotSmallEnough) cut parallel graphics instead parallelPointbetweenObjects()
+	  Path.m,h (-getLastObjectOfSubPath:) Bekanntmachung von .m nach .h -> PickOutAri
+	  Path.m,h (-directionOfSubPath::) Bekanntmachung von .m nach .h -> PickOutAri
+	  Path.m,h (-subPathInsidePath::) Bekanntmachung von .m nach .h -> PickOutAri
+	  Path.m (-uniteWith:) intersect and splitt in one part (for self)
+	  Path.m (-uniteWith:) remove single graphics after unite 
+	  Path.m (-getIntersectionsAndSplittedObjects:) new
+	  Path.m #import "HiddenArea.h"
+	* Arc.m (-intersectArc:): calculation of ba/ea and ba1/ea1 with TOLERANCE*5.0 instead of 0.1 !
+	  Arc.m (-intersectArc:): at statt a; else if( cnt && Diff(at, 0.0) < TOLERANCE/100.0 ) cnt = 2; // Tangente
+	  Arc.m (-getListOfObjectsSplittedFrom:): distance to center > 3.5*TOL.. instead of 2.0
+	  Arc.m (-identicalWith:): arc gleich aber in andere Richtung ? 15.0*TOLERANCE beim angle
+	  Arc.m (-identicalWith:): ArcAngleTolerance bei angle vergleich
+	  Arc.m,h (-tangentIntersectionWithPath:): new
+	  Arc.m (-tangentIntersectionWith:): new
+	  Arc.m (-tangentIntersectionLine:): new
+	  Arc.m (-tangentIntersectionArc:): new
+	  Arc.m (-tangentIntersectionCurve:): new
+	  Arc.m (intersectCurveT()): new
+	  Arc.m,h (-setFullArcWithCenter:radius:): new
+	  Arc.m,h (-init:): ohne wurzeln etc -> setzt full arc
+	  Arc.m,h (-setFullArcWithCenter:): new ohne sin cos etc 
+	  Arc.m,h (-tangentIntersections....!!!!!!!!!!!!:): new 
+	  Arc.m #import "../vhf2DFunctions.h"
+	  Arc.h: (-tangentIntersectionWithPath:): - new
+	  Arc.m,h (-setFullArcWithCenter::): new speed for PickOut
+	* Curve.m, h (pointOnCurveNextToPoint()..) now declared in .h needed in PCBContour
+	* PickOutAri.m,h new
+	* PCBContour.m,h new
+	* PathCFill.m (-uniteLinesWithSameGradient2:) if( [[path list] count] > 1 ) return FALSCH -> < 2 instead
+
+2001-06-05  Georg Fleischmann
+	* LayerObject.m, h (-mirrored, -setMirrored:): new, added in places where needed
+	  LayerObject.m, h (-isFillable, -hasDip, -isPassive): new
+	* App.m, h (-import:): new
+	* Main.nib: importAccessory added
+	* DocView.m, h (-addList:toLayerAtIndex:): new
+2001-06-06  Georg Fleischmann
+	* App.m (validateMenuItem): disable document menu items, if no document exist
+	* DINImportSub.m, h (+layerListFromGraphicList:): new
+2001-06-07  Georg Fleischmann
+	* TPAlign.nib: alignLayerSwitch -> new
+	* TPAlign.m, h (-alignLayer:): new
+2001-06-08  Georg Fleischmann
+	* ToolObject.m, h: settlement, steps removed
+	* dvOutput.m (-calcOutputForLayer:): calculate isolation of PCB
+2001-06-09  Georg Fleischmann
+	* DPLayerDetails.m, h, nib (switchMatrix1, layerTypePopup, -setLayerType): new, changes where needed
+	* dvOutput.m (-calcOutputForLayer:): blow up and rub out added
+	* PCBContour (+createOutputWithList..., +createRubOutputWithList...): new
+2001-06-11  Georg Fleischmann
+	* LayerCell.m (-drawInteriorWithFrame...): use hasDip, isFillable, fastSideSelection from layerObject
+	* DPLayerDetails.m (-setLayetType:): only one layer allowed for some types
+	* types.h (VHFLine, VHFMakeLine(), VHFZeroLine): new
+	* Mark.m, h (-origin): new
+	* DPControl.m (-buildOutputAndExecute:): mirror with Mark objects from fitting layer
+	* vhf2DFunctions.m, h (pointMirroedAtAxis()): new
+	  vhf2DFunctions.m, h (pointOnLineClosestToPoint()): no pointers as parameters
+	* Arc.m: use pointOnLineClosestToPoint() without pointers
+	* PCBContour.m: use pointOnLineClosestToPoint() without pointers
+	* OutputStream.m, h (-appendStream...): mirroring added
+	* messages.h (LAYERNOTEDITABLE_STRING): new
+	* German/Localizable.strings (LAYERNOTEDITABLE_STRING): new
+	* App.m (import:): import to selected layer instead to first editable layer
+2001-06-12  Ilonka Fleischmann
+	* Path.m (-getLastObjectOfSubPath): TOLERANCE instead TOLERANCE*10.0
+	  Path.m (-contour:) Aufruf von contour:inlay:removeLoops: mit NO YES statt NO NO
+	* PCBContour.m (-rubOut): oldFillStyle bleibt in rubOut liste erhalten !!
+2001-06-13  Ilonka Fleischmann
+	* Path.m (-contourOpen:): new
+	  Path.m (-contour): Abfrage ob closed -> Verteilung nach contour:inlay:: oder contourOpen
+	* PCBContour.m (-pcbContourWithList:::): Farbverteilung isPointInside nur wenn path closed
+	  PCBContour.m (-pcbContourWithList:::): Farbverteilung vhfIntersectionsRect() statt !NSIsEmptyRect(NSIntersectio..
+2001-06-13  Georg Fleischmann
+	* DocView.m (-initWithCoder): if tileLimits=0 set tile = NO
+	* dvTile.m (-setTileWithLimits): if tileLimits = 0 set tileOriginList = nil
+2001-06-14  Georg Fleischmann
+	* dvOutput.m (-calcOutputForLayer): set BlowUp dirty if isolation object is dirty
+2001-06-14  Ilonka Fleischmann
+	* PCBContour.m (-pcbContourWithList:::): Group wird aufgelðst in listCopy copiert
+	* Group.m,h (-ungroupRecursiveTo:with:): new
+	* Path.m (-uniteWith:): 1. Abfrage auch auf Group
+	  Path.m (-uniteWith:): ug not splitted and no Path AND no Group
+	* PCBContour.m (-graphicTouchGraphic:): [g1 isKindOfClass:Path] || Group !
+	* Group.m,h (-getIntersections:with:): new wie beim Path
+	  Group.m,h (-uniteWith:): new wie beim Path
+	  Group.h (-setFilled:): new
+	  Group.m,h (-isPointInside:): new
+	  Group.m,h (-getListOfObjectsSplittedFrom:): new wie beim Path
+	  Group.m (-getIntersectionsAndSplittedObjects::with): new wie beim Path
+	  Group.m (-contour:): color wird wie original gesetzt !
+	  Group.m #import "HiddenArea.h"
+	* Line.m (-getIntersections:with:): Group wie Path
+	* Curve.m (-getIntersections:with:): Group wie Path
+	* Arc.m (-getIntersections:with:): Group wie Path
+	  Arc.m (-uniteWith:): 1. Abfrage auch auf Group
+	* Rectangle.m (-uniteWith:): 1. Abfrage auch auf Group
+	* HiddenArea.m (-removeGraphics:inside:) -> Group beröcksichtigen
+	  HiddenArea.m (-removeGraphics:outside:) -> Group beröcksichtigen
+	  HiddenArea.m (-uniteAreas:) -> cg oder og ist Group -> diese in sich (list) uniten
+
+Cenon 3.50 beta 1
+
+2001-06-16  Georg Fleischmann
+	* Graphic.m (-propertyList, initFromPropertyList:): ccw instead of isDirectionCCW, 1 instead of YES
+	* propertyList.m (-colorFromPropertyList, -propertyListFromNSColor:): shorter keys
+2001-06-17  Georg Fleischmann
+	* DINImporSub.m (+sortLayer:): convert diameter to mm
+	* DocView.m (draw:): draw output starting with last layer
+2001-06-18  Georg Fleischmann
+	* Path.m (-contour:): check for filled instead of closed
+
+Cenon 3.50 beta 2
+
+2001-06-19  Georg Fleischmann
+	* PCBContour.m (+createRubOutputWithList:, +createOutputWithList:): remove output if we have no tool
+	* DPLayer.m (-update:): call -setLayerList with currectLayerList instead of nil
+	  DPLayer.m (-setLayerList:): allow to set layerList = nil
+	  DPLayer.m (-setLayerList:): check if layerObject is in LayerList before setting name. If not update move matrix
+	* LayerCell.m (-dealloc): new
+	  LayerCell.m (-setLayerObject:): retain/release
+2001-06-20  Georg Fleischmann
+	* TextGraphic.m, h (-setString:font:color:): new
+	  TextGraphic.m (-setString:): set lineHeight for font
+2001-06-21  Georg Fleischmann
+	* PCBContour.m (+createRubOutputWithList:, +createOutputWithList:): set negative dip
+	* DPLayerDetails.m (setSwitches:): use switchMatrix1
+	* vhf2DFunctions.m (pointMirroredAtAxis()): Verwndung von Vektor statt Linie
+2001-06-22  Georg Fleischmann
+	* PCBContour.m (+createRubOutputWithList:, +createOutputWithList:): remove output if we have no tool
+2001-06-22  Ilonka Fleischmann
+	* PCBContour.m (-buildRectanglesFromList): nicht default filled ! nur wenn polygon auch filled !
+	* DINImport.m (-checkFileFormat:): alles was nicht sm ist ist excellon
+	  DINImport.m (-loadExcellonApertures:): viel Umgestellt (mm/inch för tools und inch/mm för bohrungen mðglich, Toolsuche bricht nicht ab wenn kein C gefunden - sucht weiter, res Korrektur nach Toolsuche)
+
+Cenon 3.50 beta 3
+
+2001-06-24  Ilonka Fleischmann
+	* Arc.m (-realBounds): MAX(ur.x - ll.x, 0.001) instead MAX(ur.x - ll.x, 1.0)
+	  !!! auch Arc.m (-bounds): MAX(ur.x - ll.x, 0.001) instead MAX(ur.x - ll.x, 1.0)
+	  Arc.m,h (-isPointInsideOrOn:): new - war isPointInside
+	  Arc.m (-isPointInside:): ruft -isPointInsideOrOn auf
+	* Rectangle.m,h (-isPointInsideOrOn:): new - war isPointInside - erweitert um ON
+	  Rectangle.m (-isPointInside:): ruft -isPointInsideOrOn auf
+	* PCBContour.m (-clearListForPCBContour): stroked Path elements will be tested if IN or ON Polygon !
+	  PCBContour.m (-clearListForPCBContour): width compare tolerance 250.0*TOLERANCE instead 10.0*TOLERANCE
+	  PCBContour.m (-clearListForPCBContour): isPointInsideOrOn instead of isPointInside
+	* Path.m,h (-isPointInsideOrOn:): new - war isPointInside:dist - erweitert um ON
+	  Path.m (-isPointInside:): ruft -isPointInsideOrOn:dist auf
+	  Path.m (): if(!NSPointInRect()) raus -> beröcksichtigt ON nicht
+	* DINImport.m (-setLine:): no tools -> state.width = state.tool
+	  DINImport.m (-setMark:): no tools -> state.width = state.tool
+	  DINImport.m (-importDIN:): if( ![tools count]) nur Meldung kein return !
+	  DINImport.m (-getTool:): indirekt state.tool zugewiesen - damit ohne tool verschiedene toolstÙrken
+2001-06-26  Ilonka Fleischmann
+	* Line.m (-getListOfObjectsSplittedFrom:): bei horiz./vert. linien werden die Schnittpunkte jeweilig "korrigiert"
+
+Cenon 3.50 beta 4
+
+2001-06-27  Georg Fleischmann
+	* OutputStream.m (-drawWithStart:showMoves:): no output for arcs with radius == 0.0

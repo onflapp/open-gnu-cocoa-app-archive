@@ -1,0 +1,20 @@
+{
+    IBClasses = (
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {switchAutoupdate = id; switchCrosshair = id; updateAutoupdate = id; }; 
+            CLASS = PXPreferencesController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {autoupdateFrequency = id; crosshairColor = id; form = id; }; 
+            SUPERCLASS = NSWindowController; 
+        }, 
+        {
+            ACTIONS = {changePanes = id; orderFrontPrefsPanel = id; }; 
+            CLASS = UKPrefsPanel; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {tabView = NSTabView; windowController = id; }; 
+            SUPERCLASS = NSObject; 
+        }
+    ); 
+    IBVersion = 1; 
+}

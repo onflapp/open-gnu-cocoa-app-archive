@@ -1,0 +1,205 @@
+{
+    Author = "Georg Fleischmann"; 
+    Comment = ""; 
+    Copyright = "1996, Free"; 
+    CreationDate = "2003-03-28 00:17"; 
+    Creator = Cenon; 
+    Data = {
+        gridSpacing = 0; 
+        gridUnit = 0; 
+        layerList = (
+            {
+                Class = LayerObject; 
+                approachAngle = 0; 
+                dippingDepth = 0; 
+                editable = YES; 
+                fillDirection = 0; 
+                fillOverlap = 0.25; 
+                flatness = 0.15; 
+                levelingLimits = "2 2"; 
+                likeOtherLayers = YES; 
+                list = (
+                    {
+                        Class = VPath; 
+                        ccw = 1; 
+                        color = {A = 1; B = 0; G = 0.7218045; R = 1; s = CalRGB; }; 
+                        endColor = {A = 1; W = 0; s = CalWhite; }; 
+                        fillColor = {A = 1; B = 0; G = 0.7218045; R = 1; s = CalRGB; }; 
+                        filled = 1; 
+                        graduateAngle = 0; 
+                        list = (
+                            {
+                                Class = VArc; 
+                                angle = "-360"; 
+                                center = "188 131.704926"; 
+                                color = {A = 1; W = 0; s = CalWhite; }; 
+                                endColor = {A = 1; W = 0; s = CalWhite; }; 
+                                fillColor = {A = 1; W = 0; s = CalWhite; }; 
+                                graduateAngle = 0; 
+                                radialCenter = "0 0"; 
+                                start = "199.338577 131.704926"; 
+                                stepWidth = 0; 
+                                width = 0; 
+                            }, 
+                            {
+                                Class = VArc; 
+                                angle = 312.871307; 
+                                center = "188 131.704926"; 
+                                color = {A = 1; W = 0; s = CalWhite; }; 
+                                endColor = {A = 1; W = 0; s = CalWhite; }; 
+                                fillColor = {A = 1; W = 0; s = CalWhite; }; 
+                                graduateAngle = 0; 
+                                radialCenter = "0 0"; 
+                                start = "155.38147 117.916351"; 
+                                stepWidth = 0; 
+                                width = 0; 
+                            }, 
+                            {
+                                Class = VLine; 
+                                color = {A = 1; B = 0.5; G = 0.5; R = 0.5; s = CalRGB; }; 
+                                p0 = "155.702438 146.229401"; 
+                                p1 = "60.916382 146.261322"; 
+                                width = 0; 
+                            }, 
+                            {
+                                Class = VLine; 
+                                color = {A = 1; B = 0.5; G = 0.5; R = 0.5; s = CalRGB; }; 
+                                p0 = "60.916382 146.261322"; 
+                                p1 = "61.036377 117.916351"; 
+                                width = 0; 
+                            }, 
+                            {
+                                Class = VLine; 
+                                color = {A = 1; B = 0.5; G = 0.5; R = 0.5; s = CalRGB; }; 
+                                p0 = "61.036377 117.916351"; 
+                                p1 = "73.151489 117.916351"; 
+                                width = 0; 
+                            }, 
+                            {
+                                Class = VLine; 
+                                color = {A = 1; B = 0.5; G = 0.5; R = 0.5; s = CalRGB; }; 
+                                p0 = "73.151489 117.916351"; 
+                                p1 = "73.231445 108.826385"; 
+                                width = 0; 
+                            }, 
+                            {
+                                Class = VLine; 
+                                color = {A = 1; B = 0.5; G = 0.5; R = 0.5; s = CalRGB; }; 
+                                p0 = "73.231445 108.826385"; 
+                                p1 = "81.85144 108.826385"; 
+                                width = 0; 
+                            }, 
+                            {
+                                Class = VLine; 
+                                color = {A = 1; B = 0.5; G = 0.5; R = 0.5; s = CalRGB; }; 
+                                p0 = "81.85144 108.826385"; 
+                                p1 = "81.85144 102.666351"; 
+                                width = 0; 
+                            }, 
+                            {
+                                Class = VLine; 
+                                color = {A = 1; B = 0.5; G = 0.5; R = 0.5; s = CalRGB; }; 
+                                p0 = "81.85144 102.666351"; 
+                                p1 = "94.416382 102.666351"; 
+                                width = 0; 
+                            }, 
+                            {
+                                Class = VLine; 
+                                color = {A = 1; B = 0.5; G = 0.5; R = 0.5; s = CalRGB; }; 
+                                p0 = "94.416382 102.666351"; 
+                                p1 = "94.416382 111.286346"; 
+                                width = 0; 
+                            }, 
+                            {
+                                Class = VLine; 
+                                color = {A = 1; B = 0.5; G = 0.5; R = 0.5; s = CalRGB; }; 
+                                p0 = "94.416382 111.286346"; 
+                                p1 = "103.776489 111.536346"; 
+                                width = 0; 
+                            }, 
+                            {
+                                Class = VLine; 
+                                color = {A = 1; B = 0.5; G = 0.5; R = 0.5; s = CalRGB; }; 
+                                p0 = "103.776489 111.536346"; 
+                                p1 = "103.896484 117.916351"; 
+                                width = 0; 
+                            }, 
+                            {
+                                Class = VLine; 
+                                color = {A = 1; B = 0.5; G = 0.5; R = 0.5; s = CalRGB; }; 
+                                p0 = "103.896484 117.916351"; 
+                                p1 = "155.38147 117.916351"; 
+                                width = 0; 
+                            }
+                        ); 
+                        radialCenter = "0 0"; 
+                        stepWidth = 0; 
+                        width = 0; 
+                    }
+                ); 
+                numSteps = 0; 
+                removeLoops = YES; 
+                settle = 0; 
+                side = 2; 
+                state = 1; 
+                step0 = 0; 
+                step1 = 0; 
+                step2 = 0; 
+                string = Key; 
+                tag = 0; 
+                toolIndex = "-1"; 
+                toolString = ""; 
+                type = 0; 
+                useForTile = YES; 
+                v = 4; 
+            }, 
+            {
+                Class = LayerObject; 
+                approachAngle = 0; 
+                dippingDepth = 0; 
+                fillDirection = 0; 
+                fillOverlap = 0.25; 
+                flatness = 0.15; 
+                levelingLimits = "2 2"; 
+                list = (); 
+                numSteps = 0; 
+                removeLoops = YES; 
+                settle = 0; 
+                side = 2; 
+                state = 1; 
+                step0 = 0; 
+                step1 = 0; 
+                step2 = 0; 
+                string = Clipping; 
+                tag = 0; 
+                toolIndex = "-1"; 
+                toolString = ""; 
+                type = 2; 
+                v = 4; 
+            }
+        ); 
+        origin = {
+            Class = VCrosshairs; 
+            ccw = 1; 
+            color = {A = 1; W = 0; s = CalWhite; }; 
+            origin = "0 0"; 
+            width = 0; 
+        }; 
+        tileDistance = "0 0"; 
+        tileLimits = "0 0"; 
+    }; 
+    DocVersion = 1.0; 
+    MagazineIndex = 0; 
+    PrintInfo = {
+        bottomMargin = 0; 
+        leftMargin = 0; 
+        orientation = 0; 
+        paperName = A4; 
+        paperSize = "595 842"; 
+        rightMargin = 0; 
+        topMargin = 0; 
+    }; 
+    Version = 102; 
+    ViewSize = "0 0 283.464569 255.118103"; 
+    WindowFrame = "76 384 305 339 0 0 1532 1200 "; 
+}

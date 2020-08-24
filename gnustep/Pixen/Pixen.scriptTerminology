@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Classes</key>
+	<dict>
+		<key>PXDocument</key>
+		<dict>
+			<key>Description</key>
+			<string>The document containing a canvas.</string>
+			<key>Name</key>
+			<string>document</string>
+			<key>PluralName</key>
+			<string>documents</string>
+			<key>ToOneRelationships</key>
+			<dict>
+				<key>canvas</key>
+				<dict>
+					<key>Description</key>
+					<string>The canvas.</string>
+					<key>Name</key>
+					<string>canvas</string>
+				</dict>
+			</dict>
+		</dict>
+		<key>PXCanvas</key>
+		<dict>
+			<key>Attributes</key>
+			<dict>
+				<key>activeLayerName</key>
+				<dict>
+					<key>Name</key>
+					<string>active layer name</string>
+				</dict>
+				<key>height</key>
+				<dict>
+					<key>Name</key>
+					<string>height</string>
+				</dict>
+				<key>width</key>
+				<dict>
+					<key>Name</key>
+					<string>width</string>
+				</dict>
+			</dict>
+			<key>Description</key>
+			<string>The Pixen canvas.</string>
+			<key>Name</key>
+			<string>canvas</string>
+			<key>PluralName</key>
+			<string>canvass</string>
+		</dict>
+	</dict>
+	<key>Commands</key>
+	<dict>
+		<key>AddLayer</key>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>layerName</key>
+				<dict>
+					<key>Description</key>
+					<string>The name of the layer to be added.</string>
+					<key>Name</key>
+					<string>named</string>
+				</dict>
+			</dict>
+			<key>Description</key>
+			<string>Adds a new layer to the canvas and activates it.</string>
+			<key>Name</key>
+			<string>addLayer</string>
+		</dict>
+		<key>GetColor</key>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>atX</key>
+				<dict>
+					<key>Name</key>
+					<string>at x</string>
+				</dict>
+				<key>atY</key>
+				<dict>
+					<key>Name</key>
+					<string>at y</string>
+				</dict>
+			</dict>
+			<key>Description</key>
+			<string>Fetches the color at a point.</string>
+			<key>Name</key>
+			<string>getColor</string>
+		</dict>
+		<key>MoveLayer</key>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>atIndex</key>
+				<dict>
+					<key>Description</key>
+					<string>The original index of the layer to move.</string>
+					<key>Name</key>
+					<string>at index</string>
+				</dict>
+				<key>toIndex</key>
+				<dict>
+					<key>Description</key>
+					<string>The new index for the layer.</string>
+					<key>Name</key>
+					<string>to index</string>
+				</dict>
+			</dict>
+			<key>Description</key>
+			<string>Reorders layers in the list.</string>
+			<key>Name</key>
+			<string>moveLayer</string>
+		</dict>
+		<key>RemoveLayer</key>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>layerName</key>
+				<dict>
+					<key>Description</key>
+					<string>The name of the layer to be removed.</string>
+					<key>Name</key>
+					<string>named</string>
+				</dict>
+			</dict>
+			<key>Description</key>
+			<string>Removes a layer from the canvas.</string>
+			<key>Name</key>
+			<string>removeLayer</string>
+		</dict>
+		<key>SetColor</key>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>atX</key>
+				<dict>
+					<key>Name</key>
+					<string>at x</string>
+				</dict>
+				<key>atY</key>
+				<dict>
+					<key>Name</key>
+					<string>at y</string>
+				</dict>
+				<key>toColor</key>
+				<dict>
+					<key>Name</key>
+					<string>toColor</string>
+				</dict>
+			</dict>
+			<key>Description</key>
+			<string>Sets the color at a point.</string>
+			<key>Name</key>
+			<string>setColor</string>
+		</dict>
+	</dict>
+	<key>Description</key>
+	<string>Suite for Pixen canvas manipulation</string>
+	<key>Name</key>
+	<string>Pixen</string>
+</dict>
+</plist>

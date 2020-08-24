@@ -1,0 +1,398 @@
+Cenon CAM Change Log - 2008
+
+2008-01-11 Georg Fleischmann
+    * propertyList.m (propertyListFromNSColor()): Apple 10.4 workaround for NSCustomColorSpace
+      -> we stay compatible with GNUstep, OpenStep, and OS-X before 10.4
+
+2008-01-13 Georg Fleischmann
+    * VPath.m,h (-lengthFrom:to:): new, returns the length of a sub-path
+
+2008-01-19 Georg Fleischmann
+    * VPolyLine.m (-length): add sqrt() instead of returning sqrt() of sum !
+      Fix: correct length of PolyLine
+
+2008-01-22 Georg Fleischmann
+    * types.h (NSPointInternalToMM()): new
+
+Cenon 3.9.0 pre 1
+
+2008-02-05 Ilonka Fleischmann
+	* IPText.m (-setAngle:, -setSizeWidth:, -setSizeHeight:):
+                                                    [[[[self view] layerList] objectAtIndex:l] updateObject:g];
+                                                    [[[self view] document] setDirty:YES];
+	  IPText.m (-setFitHorizontal:, -setCenterVertical:, -setSerialNumber:):
+                                                    [[[[self view] layerList] objectAtIndex:l] setDirty:YES]
+                                                    [[[self view] document] setDirty:YES];
+	  IPTextPath.m (-setSerialNumber:):             [[[[self view] layerList] objectAtIndex:l] setDirty:YES];
+                                                    [[[self view] document] setDirty:YES];
+	  IPALLText.m (-setLineHeight:, -setFontSize:): [[[[self view] layerList] objectAtIndex:l] setDirty:YES];
+	  DocView.m (-changeFont:):                     [[layerList objectAtIndex:l] setDirty:YES];
+	  VText.m (-textDidEndEditing:):                [[graphicView layerOfGraphic:self] updateObject:self];
+                                                    [[[self view] document] setDirty:YES];
+	  IPRectangle.m (-setAngle:):  [[[[self view] layerList] objectAtIndex:l] updateObject:g]
+	-> Fix Text/Rectangle: Ausgabe-Neuberechnung nach Anderung geht nun ohne Sonderaufforderung
+	* VText.m (-setTextBox:): [self kernToFitHorizontal]
+
+Cenon 3.9.0 pre 2
+
+2008-02-06 Ilonka Fleischmann
+	* type1funs.m (decryptCharString()): malloc((len-4)*sizeof(Proc)) instead of malloc(len-4*sizeof(Proc))
+	-> Fix: possible crash
+	* VArc.m (-parallelObject::::): gibt jetzt auch full arc zurück wenn punkte gleich
+	-> Fix: Konturberechnen von Vollkreisen mit kleinen Linienstummeln am start/end punkt tut jetzt
+	* VCurve.m (-angle): bei den ersten beiden if bisle was verbessert
+	-> Fix: Richtungsbestimmung verbessert ??
+	* VCurve.m (-getListOfObjectsSplittedFrom::): pts checken mit pointOnCurveNextToPoint()
+	-> Fix: Punch/Verdeckte areas frei rechnen mit Kurven geht jetzt
+	* VArc.m (-tangentIntersectionArc:::::::): at fast= 0 return T_OTHER nur wenn centers dicht beieinander
+
+	* DocView.m (-drawControls:): ruft drawKnobs und drawControls::: auf
+	* VPath.m (-drawControls:direct:scaleFactor:): ruft drawControls::: auf
+	* VCurve.m (-drawControls:direct:scaleFactor:): ruft drawControls::: auf
+	//* VGroup.m (-drawControls:direct:scaleFactor:): ruft drawControls::: auf // schon drinn
+	* VGraphic.m (): static lgrayRectList etc
+	* VGraphic.m (+fastKKnobFill:isBlack:): int instead BOOL 2 is fill lGray...
+	  VGraphic.m (+showFastKKnobFills): lgrayRectCount, blackRectCount dann dkgrayRectCount
+	* VGraphic.m (drawKnob()): selectedKnob +2 instead of +1
+	  VGraphic.m (drawKnob()): erst light dann black
+	* VGraphic.m (drawControl()): neu malt erst black dann dkGray
+	* VGraphic.m (-drawControls:direct:scaleFactor:): ruft drawControl() auf - malt die Kontrollpunkte
+	* VGraphic.m (-drawKnobs:direct:scaleFactor:):malt nur noch start/endpunkt mit Ausnahmen !
+	-> Knobs are now drawn black with gray border, handles are drawn gray with black border
+
+2008-02-07 Ilonka Fleischmann
+    * VRectangle.m (-pointWithNum:): default changed from upper left (UL) to lower left (LL)
+    -> fix for join
+
+2008-02-08 Ilonka Fleischmann
+	* PathContour.m (-buildPath::::): || s.x > e.x raus bei 1. if // search stop pt ..
+	  PathContour.m (-buildPath::::): ( indexE != -1 || indexS != -1 ) instead 2x indexE
+	* PathContour.m (-contourPath::::),
+	  PathContour.m (-contourImage::::),
+	  PathContour.m (-contourList::::):  ruft buildPath::: nur auf wenn auch punkte gefunden
+	-> Fix: Raster Contour
+
+2008-02-17 Georg Fleischmann
+    * vhf2DFunctions.h (SqrPoint()): new
+
+2008-02-23 Georg Fleischmann
+    * types.h (V3PointMMToInternal(), NSPointMMToInternal()): new
+
+2008-02-25 Ilonka Fleischmann
+	* VGraphic.m (-maxKnobSizeWithScale:): (KNOBSIZE+4.0) instead of (KNOBSIZE+2.0)
+	  -> damit bleiben keine graue linien stehen
+	* VGraphic.m (-drawKnobs:direct:scaleFactor:): knobsize = (selectedKnob) ? KNOBSIZE+3.0 : KNOBSIZE+1;
+	  -> schwarze sind nun gršsser
+	* VGraphic.m (-drawControls:direct:scaleFactor:): VImage Ausnahme
+	  VGraphic.m (-drawKnobs:direct:scaleFactor:): malt nur noch start/endpunkt mit VImage Ausnahme !
+	  -> auch VImage Knobs werden damit richtig/alle schwarz gemalt
+	* VGraphic.m (-drawKnobs:direct:scaleFactor:): isKindOfClass:[VRectangle class] - ==i instead of ==0
+	  -> Fix Knobs: Rechtecke und Text, damit wird nur der einzelne selektierte Knopf angezeigt
+
+	* VCurve.m (-sqrDistanceCurve:): &pc1[0] instead of &pc[0] (also with [3]) - else we check self point
+	* VPath.m (-subPathInsidePath::): wenn !iCnt - nur beim ersten mal (s == 1) - gilt wie bei PathCFill.m
+	* VPath.h (- (id)unnest): aufgenommen in den Header
+	* VPath.h, m (- (int)getLastObjectOfSubPath2:): new - findet auch das ende bei open paths
+    -> several bug fixes that showed up with CAM bundle
+
+	//* VPath.m (-getIntersectionsForFilling:with:): new schiebt start/end punkte von linie weg
+    -> better intersection method, that should be used for point in polygon test (inactive for now)
+
+	* VPath.m, h (-join:): ruft complexJoint mit 1.0 auf statt mit 0.1 - zum Schliessen beim optimieren
+	* VPath.m (-complexJoin:): umgestellt, schliesst jetzt auch kleine Lücken, ruft optimizePath auf zum optimieren
+	* VPath.m, h (-optimizePath:): geht nur auf self ! nicht mehr auf externen Pfad
+	  VPath.m (-optimizePath:): NSLog() instead of return NO - so we close the rest as good as possible
+	  VPath.m (-optimizePath:): we test only on dist or dHalf not on distQuarter
+	  VPath.m (-optimizePath:): search for realy nearest next element now - changed a lot !
+	  VPath.m (-optimizePath:): if d < dist/2.0 close with closeGapBetween
+	* VPath.m (-optimizeSubPathsToClosedPath::): NSLog()s verringert - one continue instead of break
+	* VPath.m, h (-closeGapBetween:and:): ist jetzt BOOL statt void - return YES or NO
+	  VPath.m (-closeGapBetween:and:): horizontale/waagerechte linien werden entsprechend verbunden
+	* VRectangle.m (-pointWithNum:): gibt bei > 3 origin zurück - für closePath - ist auch logischer zu den anderen Grafiken
+	-> Fix: join/Vereinigen - Pfad schliessen ist besser
+
+2008-02-28 Georg Fleischmann
+    * VImage.m (-writeFilesToDirectory:): if saving on Apple fails, we safe uncompressed
+               (4 bit images happen to be not supported here from Apple)
+      -> Fix, Apple: workaround - it's now possible to save 4 bit images on Apple
+
+    * functions.m          (localLibrary(), userLibrary()),
+      vhfCommonFunctions.m (vhfLocalLibrary(), vhfUserLibrary():
+      -> added search in "Library/Application Support" for Apple
+
+Cenon 3.9.0 pre 3
+
+2008-03-09 Georg Fleischmann
+    * Document.m (-save): if Apple fails, we use GSPropertyListSerialization to save as ASCII PropertyLists
+      Apple, GSPropertyListSerialization.m, h: new
+      -> this allows us to save ASCII Property Lists compatible with OpenStep and GNUstep
+         (the Mac OS X class is not working for ASCII Property Lists)
+
+2008-03-13 Georg Fleischmann
+    * IPAllAcc.m, h, nib: new allow modules to add their Accessory views to the Inspector
+2008-03-17 Ilonka Fleischmann
+	* InspektorPanel.h, m (-setLevelAt:, windowAt): IP_ACC instead of IP_TEXT
+	* IPAccText.h, m (): new
+2008-03-17 Georg Fleischmann
+    * IPBasicLevel.m, h (-name): new
+
+2008-03-13 Ilonka Fleischmann
+	* VPath.m (-getLastObjectOfSubPath2:): umgestellt, damits auch richtig ist bei einem letzen einzelnen element
+2008-03-18 Georg Fleischmann
+    * VGraphics.h (relief, reliefType, reliefDirection): added here
+      VGraphics.m (-init, -initWithCoder:, -encodeWithCoder:, propertyList, initFromPropertyList:): relief added
+      VImage.h (relief, reliefType): removed
+      VImage.m (-initWithCoder:, -encodeWithCoder:, propertyList, initFromPropertyList:): relief removed
+      IPImage.m, h, nib: relief variables and methods removed
+
+2008-03-20 Ilonka Fleischmann
+	* IPAllAcc.m (-update:): if (!selectIx) [[accPopup itemAtIndex:0] setEnabled:YES]; einer muss selected sein
+	  IPAllAcc.m (-init): [accPopup setAutoenablesItems:NO]
+	* IPAllFilling.m (-init): [fillPopup setAutoenablesItems:NO]
+	* IPAllStrokeWidth.m (-init): [strokePopup setAutoenablesItems:NO]
+	  IPAllStrokeWidth.m (-update:): Text etc [[strokePopup itemAtIndex:0] setEnabled:YES] instead NO
+	  IPAllStrokeWidth.m (-update:): else [both setEnabled:YES] instead nothing
+	-> PopUp Buttons werden richtig enabled/disabled im Inspektor auf Apple
+
+2008-03-21 Georg Fleischmann
+    * LayerDertailsController.m (-showPabnel:): disable separation, [typePopup setAutoenablesItems:NO] added
+
+2008-04-18 Ilonka Fleischmann
+	* PathContour.m (-optimizePath:): close Paths now !
+	* VPath.h,m (-coordBoundsOfSubPath:startIx:endIx:): in VPath.h aufgenommen
+	* VPath.m (-subPathInsidePath:): Es wird die ganze liste durchgegangen (immer ptAt: 0.4) bis einer ohne iCnt = -1
+	  VPath.m (-subPathInsidePath:): free(pts); pts = NULL 2-3x und iCnt != -1 sonst double free oder fehler
+	  VPath.m (-subPathInsidePath:): spIcnt = 0; init after each sidestep !
+	  VPath.m (-subPathInsidePath:): line must be inside spRect etc
+	  VPath.m (-subPathInsidePath:): SIDESTEP 1.5 instead of 0.3
+	* VPath.m (-directionOfSubPath::): ganz anders - pt re/li der graphic inside oder outside des subPaths
+	  VPath.m (orthPointAt()): new
+	-> Richtung bei Kontur
+
+2008-04-24 Ilonka Fleischmann
+	* VImage.m (-drawWithPrincipal:): if we mustDrawPale we draw a light green rect instead of the Image 2x
+	-> Make something visible upon the image also
+
+2008-04-25 Georg Fleischmann
+      VImage.m methods for relief removed (they are in output category)
+
+2008-04-29 Ilonka Fleischmann
+    * VPath.m (-subPathInsidePath:): if ( (Even(iCnt) && ... rest not needed
+
+2008-04-30 Ilonka Fleischmann
+	* PerformanceMap.m (-drawInRect:principal:): AutoreleasePool ums draw der Graphiken
+	-> verbessert das Speicherverhalten beim Dateioeffnen / wenn alles gemalt wird / beim Malen
+	* DocView.m (-mouseDown::): ganz unten else if ()
+	-> bei NSZeroRect wird nicht gemalt
+
+2008-05-07 Georg Fleischmann
+    * Apple: Cenon 3.9.0 pre 4
+
+Cenon 3.9.0 pre 4
+
+
+2008-06-07 Georg Fleischmann
+    * VImage.h, VRectangle.h, VClipRectangle.h: values of PT_UR/PT_LR exchanged to have them sorted for a loop (ex. hit:fuzz:)
+    * VImage.m (-hit:fuzz:): use preferences to select by border or inside
+      VImage.m (-hit:fuzz:): if image is clipped use clip path for selection
+    -> this allows selection of an image either inside / or at its border, according to preferences
+    -> and selection of a clipped image at the border of the clipping path
+    * VImage.m (-splitTo:): place image behind path to have both visible
+    -> this places the image behind the path for easier handling
+
+2008-06-15 Georg Fleischmann
+    * HPGLImport.m (-getGraphicFromData:): imply a PD command, when we get an AA or AR command
+    -> this makes the HPGL import more tolerant
+
+2008-06-21 Ilonka Fleischmann
+	* GerberExportSup.m (-exportPath:): subPathsInCnt neu - Abfrage hierauf (subPathsInCnt > 1)
+	-> open/unfilled Paths will be exported now
+
+2008-06-21 Georg Fleischmann
+    * GerberExportSub.m (-exportGroup:): check for [list count] > 0 before getting object at index 0
+     -> removes exception when exporting MultiPage_de.cenon example as Gerber
+
+internal Cenon 3.9.0 pre 5
+
+2008-06-27 Georg Fleischmann
+    * Main.nib (Apple): key-shortcut for Grid changes (# is not working on Apple)
+      turn Grid on:  Command +
+      align to Grid: Command Alt +
+      set Grid:      Command Shift + (*)
+    * VImage.m (-hit:fuzz:): call -setFill:optimize: only if clipPath responds to this method
+
+2008-07-14 Ilonka Fleischmann
+	* VPath.m (-contour:inlay:inlay:splitCurves:): 360 arc inside Path - calculate contour with precorrected gThis
+	-> Fix Contour: single 360 Arc inside Path with width work now
+
+2008-07-19 Georg Fleischmann
+    * Document.m, h (-setBaseUnit:, -baseUnit): new to set and ask for Document unit
+      Document.m, h (-convertToUnit:, -convertFrUnit:, -convertMMToUnit:, -convertUnitToMM:): new
+                     replaces the functions of the same name
+      Document.m (+newFromFile:, -save): load/save baseUnit
+      Document.h (baseUnit): new
+      Document.m (-init, +newFromList:): init baseUnit, call init from newFromList (was mssing)
+      PSSettings.m, h, nib: active for the methods using the [Document -convert...] method
+      DocWindow.m (-windowDidBecomeMain:): send notification to update unit
+      IP*.m,
+      TPMove.m,
+      TilePanel.m,
+      WorkingAreaPanel.m (-set:, -update:): call unit methods from Document, some clean-up
+      -> This implements Document Units (Project Settings)
+    * VImage.m (-initFromPropertyList:): case for non-tiff removed (standard loading works for all formats)
+      -> This allows loading of images like JPG, GIF, etc... (only save is missing)
+    * WorkingAreaPanel.m (-awakeFromNib, -unitHasChanged:, -documentHasChanged:, -update:):
+      new, update when Document or Unit changes, we also set the Unit in the Panel
+
+2008-07-20 Georg Fleischmann
+    * VImage.m (-initFromPropertyList:, -propertyList): Thumbnail has always extension "tiff"
+      VImage.m (-initFromPropertyList:, -propertyList): save added for other file formats (GNUstep and Apple)
+      VImage.m, h (+fileExtensionForFileType:): new
+      VImage.m (-setName:, -setType:): set correct file extension for imageName
+      IPImage.m (-setName:, -setCompressionType:): set appropriate file extension
+      IPImage.nib: file types for BMP, GIF, JPG, PNG added
+      -> this implements storing images as BMP, GIF, JPG, PNG (GNUstep, Apple) - as far as supported by system
+
+internal Cenon 3.9.0 pre 5
+
+2008-07-23 Georg Fleischmann
+    * German.lproj/Localizable.strings: localization for Project Settings
+    * ProjectSettings.m, h, nib: ready to recieve additional panes from other modules
+
+2008-07-24 Georg Fleischmann
+    * Document.h (-docSettingsDict, docSettingsDict): new
+      Document.m (-docSettingsDict): new
+      Document.m (-save, -newFromFile:): docSettingsDict added with key "docSettings"
+    * PreferencesMacros.h: Prefs_* for CAM removed
+      dvTile.m (-incrementSerialNumbers): Prefs_IncrementSerial removed here
+2008-07-25 Georg Fleischmann
+    * DocView.m (-validateMenuItem:): queries for OptimizeMove removed
+      -> "Send to Back", "Bring to Front" will not be disabled when OptimizeMoves is activated!
+    * VPath.m (-contour:inlay:splitCurves:): Prefs_UseRaster + [self contourWithPixel:w] removed !
+      VPath.m (-contour:useRaster:, -contour:inlay:splitCurves:useRaster:): new
+
+2008-07-30 Georg Fleischmann
+    * Localized.strings: Project Settings removed
+      PSInfo.m, PSSettings.m, PSFontInfo.m: get name from window title (works because we use a box as view)
+    * ProjectSettingsPanel.m, h (-indexOfItem:): new
+      App.h (-projectSettings.h): new
+      -> this allows querying for the index of an item, and directly selecting it from source
+
+2008-07-31 Georg Fleischmann
+    * IPMark.nib, Apple: Switches connected correctly to -setLock: and -setPointZ:
+
+2008-08-05 Georg Fleischmann
+    * Apple, Main.nib: "Project Settings" moved to "Cenon"-Menu, directly below "Preferences"
+
+2008-08-06 Ilonka Fleischmann
+	* VCurve.m (-getListOfObjectsSplittedFrom::): pts in bounds check with 20*TOLERANCE instead 1* same like in intersectCurves()
+	-> Fix Contour: Curve splitted now if other intersection point is near Start/End point
+
+2008-08-11 Georg Fleischmann
+    * VArc.m (-parallelObject::): if angles get extreme, return a line from new start to end
+    -> this solves the problem of the client-file and looks more promising.
+       do we have to check the radius to be small enough? What is small enough?
+       do we have to check, if s or e was switching the quadrant (s.y > c.y but start.y < center.y)?
+
+2008-08-18 Georg Fleischmann
+    * VHFShared/vhf2DFunctions.m, h (vhfIsIntValueInArray()): new, valueInArray() is deprecated now
+
+2008-08-26 Ilonka Fleischmann
+	* VArc.m (-parallelObject:): radius nearly 0 and s nearly e - line instead of full arc
+	* VPath.m (-drawWithPrincipal:): on Apple allways stroke paths 	  col = (!f || !width) ? fillColor : color;
+	  VPolyLine.m (-drawWithPrincipal:): on Apple allways stroke polyLines    col = (!f || !width) ? fillColor : color;
+	  VRectangle.m (-drawWithPrincipal:): if ( width > 0.0 || !filled || Diff(size.x, 0) < 500*TOLERANCE ...
+	-> Fix draw: We see now everything of each path/polyline/Rectangle
+
+2008-08-27 Georg Fleischmann
+	* VArc.m: clean-up of some special characters
+
+2008-09-08 Ilonka Fleischmann
+	* DocView.m (-moveObject:::): drawing rect_draw_apple instead rect_drawlast
+	-> Fix: Scrolling on Apple is now working fine
+    Note: scrolling on OpenStep with Scale != 1.0 is not working fine
+    (tat vorher schon nicht - pixel versatz (ohne -centerScanRect: gibts es bei 100% keinen Versatz)
+
+2008-08-27 Georg Fleischmann
+    * German Main.nib, Edit-Menu: Reverse Direction translated to German
+
+Cenon 3.9.0 pre 5
+
+2008-09-16 Georg Fleischmann
+    * IPTextPath.nib: set resize mask for pathView box -> makes it look correctly
+    * IPSinking.nib (German): sinking type icons placed better
+
+2008-09-20 Georg Fleischmann
+    * VPath.m     (-drawWithPrincipal:): reverted change from 2008-08-26
+	  VPolyLine.m (-drawWithPrincipal:): reverted change from 2008-08-26
+
+2008-10-02 Ilonka Fleischmann
+	* DocView.m (-addLayerWithName:type:tag:list:editable:): after searching l - if ( l == -1 ) l = 0;
+	-> create new Layer also if no LAYER_STANDARD extists
+
+2008-10-08 Georg Fleischmann
+    * VPath.m     (-drawWithPrincipal:): will be stroked on Apple if filled solid
+	  VPolyLine.m (-drawWithPrincipal:): will be stroked on Apple if filled solid
+      -> this avoids invisible parts
+
+2008-10-11 Georg Fleischmann
+    * VPolyLine.m, h (-closed): new
+    * VPath.m (-changeDirection:): change direction of open paths added
+
+2008-10-16 Ilonka Fleischmann
+	* VPath.m (-uniteWith:): gPrevE define outside of for() line: 8816
+	-> Fix Unite: PCB Calculation and Punch
+
+	* VArc.m (-getListOfObjectsSplittedFrom::): Max(5.0*TOLERANCE, radius/10000.0) instead .../ 1000.0
+	  VArc.m (-getListOfObjectsSplittedFromGraphic:): Max(5.0*TOLERANCE, radius/1000.0)  instead .../ 1000.0
+	  VArc.m (-getListOfObjectsSplittedFrom::): > Max(3.5*TOLERANCE, radius/10000.0) instead > Max(3.5*TOLERANCE, radius/1000.0)
+	-> Fix split Arc: Contour etc.
+
+2008-10-21 Georg Fleischmann
+    * dvPasteborad.m (-pasteFromPasteboard:andLink:at:): when pasting many layers to single layer, keep order
+    -> pasting of several layers to one layer keeps order of graphics elements
+
+Cenon 3.9.0 pre 6
+
+2008-11-12 Georg Fleischmann
+    * LayerObject.m (-propertyList, -initWithPropertyList:): layerDict added
+      LayerObject.h: layerDict added
+    -> this allows to store additional stuff without a subclass
+
+Cenon 3.9.0 pre 7
+
+2008-11-29 Ilonka Fleischmann
+    * PSImport.m (-importPS:): in GhostScript version of -importPS: initialize state.color
+    -> imported objects get a color.
+
+2008-12-01 Ilonka Fleischmann
+	* VGraphic.m, h (-init, -initWithCoder, -encodeWithCoder:, -propertyList:, -initFromPropertyList:inDirectory:): reliefFlatness
+	* VPath.m (-drawAxialWithPrincipal:): correkt start-/endAngle & endAngle instead endAngle-360
+	  -> Fix: Axial Filling faster and better
+	* VPath.m (-drawWithPrincipal:): col = (!f || (!width && filled)) ? fillColor : color; instead col = (!f || !width) ..
+	* VPolyLine.m (-drawWithPrincipal:): col = (!f || (!width && filled)) ? fillColor : color; instead col = (!f || !width) ..
+	-> Fix: unfilled path now drawn with (stroke) color
+
+	* DocView.m (-redrawObject:::): drawing rect_draw_apple instead rect_last
+	-> Fix: Scrolling on Apple is now working nearly fine
+
+2008-12-09 Georg Fleischmann
+    * IPAllAcc.nib, m, h:  created on OpenStep, added to Project
+      IPAccText.nib, m, h: created on OpenStep, added to Project
+      IPImage.nib: Relief stuff removed
+      ipAcc.tiff: added to Project
+      IPAllText.m, h, nib: removed from Project
+      nib2gmodel.plist: line for IPAllAcc and IPAccText added, and line for IPAllText remove
+      Nib2gmodel.sh:    IPAllAcc, IpAccText added, and IPAllText removed
+      -> this adds the Accessory Inspector to OpenStep
+    * WorkingAreaPanel.nib: UNIT added to OpenStep
+    * ProjectSettingsPanel.nib: correct PopUp action to -setLevel:
+      PSSettings.nib: Popup-Menu wired correctly, everything else removed
+
+2008-12-18 Ilonka Fleischmann
+	* DocView.m (-selectColor:): VGroup has fillColor now and can be compared here
+	  -> Fix select: Groups also can be selected by selectColor
+	* VPath.m (-contour:inlay:splitCurves:): if ( [gThis length] < 15.0*TOLERANCE ) instead < 10.0*TOLERANCE
+	  -> Fix Contour: More Tolerance to small lines
+	* GerberExportSub.m (-exportToFile:): break; polygon output if ( b >= maxInside ) instead (drawed == NO)
+	-> Fix Gerber Export: We now also export paths stacked upon each other

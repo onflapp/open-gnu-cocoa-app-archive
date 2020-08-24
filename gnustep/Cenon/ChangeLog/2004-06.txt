@@ -1,0 +1,12 @@
+Cenon Change Log - June 2004
+
+2004-06-02  Georg Fleischmann
+	* VImage.m (-setImage:): set originalSize
+
+2004-06-04  Georg Fleischmann
+	* GNUstep: install mini library on installing Cenon
+
+Cenon 3.62
+
+2004-06-25  Georg Fleischmann
+	* functions.m (vhfRGBColorFromString()): return nil with empty string

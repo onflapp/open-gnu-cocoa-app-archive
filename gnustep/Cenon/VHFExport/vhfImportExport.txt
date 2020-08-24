@@ -1,0 +1,51 @@
+vhf Import / Export library
+2004-09-21
+
+The vhf import/export library is a set of classes which allow the import and
+export of DXF, HPGL, Gerber, DIN, as well as the import of PostScript/PDF
+(using a standard PostScript interpreter like GhostScript or Display
+PostScript).
+
+The library imports primarily two dimensional data, the extension to three
+dimensions (DXF, DIN) is not hard, however.
+
+The library is written in Objective-C.
+So far the library supports the following formats:
+
+Import Formats
+- DIN (Excellon, Sieb&Meyer, etc.)
+  language configuration via configuration files (Device/din/)
+- DXF
+  see supported language features in documentation
+- Gerber
+  language configuration via configuration files (Device/gerber/)
+  (extended Gerber as well as standard Gerber with aperture table)
+- HPGL
+  language configuration via configuration files (Device/hpgl/)
+- PostScript / PDF
+  needs a separate PostScript interpreter like GhostScript or
+  a Display PostScript System installed.
+- Adobe Illustrator
+  support for loading AI prologue files is implemented. All you need
+  are the header files with the prologues of the various AI versions.
+- (Type 1 Fonts)
+
+Export Formats
+- DXF
+- Gerber (RS274X)
+  Export of extended Gerber including complex paths
+- HPGL
+- (Type 1 Fonts)
+- a PostScript export is already part of the Mac-OS X / GNUstep system
+
+Supported plattforms
+- Mac-OS X 
+- GNUstep libraries (Linux and other Unix derivated)
+
+Commercial License
+A commercial license for developers of proprietary software is available
+from vhf interservice for a reasonable one time fee.
+
+
+For more information take a look at the class descriptions and the Appendix
+of the Cenon handbook.

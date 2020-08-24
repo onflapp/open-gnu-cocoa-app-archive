@@ -1,0 +1,183 @@
+Cenon Change Log - Feb 2001
+
+
+2001-02-02  Georg Fleischmann
+	* German.lproj/TransformPanel.nib: Rotate activated
+	* TPAlign.m (-align:): check for empty slist
+
+2001-02-03  Georg Fleischmann
+	* DPControl.m (-setSwitch:): check for tool != nil
+	* XYZ.m (-adjustment): move to 0.0/0.0 instead of stupid position
+
+2001-02-04  Georg Fleischmann
+	* ioFunctions.m (ioFlushReturnValues()): new
+
+2001-02-05  Georg Fleischmann
+	* XYZ.m (-xyzWait, -executeVector): changed to use !H1;
+
+3.40 beta 4
+
+2001-02-09  Georg Fleischmann
+	* Path.m (-contour:): width not used for filled objects
+	* App.m (-saveAsPanel): copied
+	* DocView.m (-redrawObject:, -moveObject:): snap to visible objects instead of editable objects
+	* DPControl.m (-start): check with width or height = 0 works
+
+2001-02-10  Georg Fleischmann
+	* -scrollRect: view passed to get rid of +currentView calls
+	* -hit: now -hit:scale: to get rid of +currentView calls
+	* VText (-hit:scale:): scale distance
+	* -hitControl:: now -hitControl::scale: to get rid of +currentView calls
+	* Xyz.m (-setOriginX:, -setOriginY:): never lower Z, only lift if necessary
+
+2001-02-11  Georg Fleischmann
+	* Undo-, Pasteboard-, Drag-Code: clean up
+	* e2DrawPboardType -> now e2PboardType
+	* propertyList.m (propertyListFromNSPrintInfo()): set margins correctly
+
+2001-02-12  Georg Fleischmann
+	* Xyz.m (-xyzTool:): force setting of position by modifying the current position.
+	* Xyz.m (-setOriginX:, -setOriginY:, -setOrigin::::secure:): lower z after secure positioning
+
+2001-02-12  Ilonka Fleischmann
+	* Path.m (-fillStreamWithInset:offset:):
+	  Abfrage ob linie zu kurz: 1.8*offset >= Diff(.. statt inset >= Diff(..
+
+2001-02-14  Georg Fleischmann
+	* DocView.m (-draw:): erase only if drawing to screen
+	* DocView.m (-addLayerWithName): editable:NO
+	* DocView.m (-dragSelect): don't set layer dirty if output is limited to selected objects
+	* DocView.m (-dragSelect): draw everything, if output is enabled
+	* DocView.m (-mouseDown:): select/deselect parts -> if output is enabled set redraw = YES
+	* DocView.m (-selectAll:redraw:, deselectAll:redraw:, -selectEqual:, -selectColor:):
+	  if output is enabled redraw
+	* DocView.m (-draw): limit drawing to selected objects if output is limited to selected objects
+	* PPControl.m (-update:): optimize moves uses correct switch (not serial). Default = YES
+	* PPControl.m: don't save raster switch
+	* e2Output.m (-calcOutputFor:layer:): optimize moves of layer, if preferences flag is enabled
+	* Xyz.m (-adjustment): use OriginPosition instead of 0 (offset!)
+	* Web.m (-createOutput:tools:): new so we don't create output via superclass
+	* DocView.m (-mirror:): use real bounds, update Inspector
+	* Arc.m (-createOutput:tools:):
+	* Rectangle.m (-createOutput:tools:): contour algorithms only if preferences switch enabled
+	* Document.m (-saveAs:): extension removed
+	* DPControl.m (-setOutputType:): redraw Graphic if necessary
+	* PSImportSub.m (-setBounds:): calculate real bounds
+	* e2Pasteboard.m (-paste:andLink:): update inspector
+
+2001-02-15  Ilonka Fleischmann
+	* Path.m (-uniteWith:): in 'split self' [ng setList:splitListG opt..:NO] instead of copying list
+	  Path.m (-uniteWith:): [ng setFilled:[self filled] optimize:NO] instead of -setFilled:
+	  Path.m (-uniteWith.): check for rectangle too
+	  Path.m (-uniteWith): hidden area release instead of autorelease
+	  Path.m,h (-setList:optimize:): new. setFilled: calls -setFilled:optimize:
+	  Path.m (-copy): new
+	  Path.m (-contour:inlay:remove:): at '( begIx == endIx )' check for arc and rectangle
+	* Arc.m	(-getListOfObjectsSplittedFrom): check for double points
+	  Arc.m (-uniteWith:): in 'split self' [ng setList:splitListG opt..:NO] instead of copying list
+	  Arc.m (-uniteWith:): [ng setFilled:[self filled] optimize:NO] instead of -setFilled:
+	  Arc.m (-uniteWith.): check for rectangle too
+	  Arc.m (-uniteWith): hidden area release instead of autorelease
+	  Arc.m (-pathRepresentation): add to path list directly without extra plist
+	  Arc.m (-pathRepresentation): [pathG setFilled:filled optimize:NO] is schon optimiert
+	* Rectangle.m (-uniteWith): new
+	  Rectangle.m (-contour): if(!radius && filled) contour gibt rectangle zuröck - kein Path
+	  Rectangle.m: #import "HiddenArea.h"
+	  Rectangle.m,h (-putUPath): new
+	  Rectangle.m (-pathRepresentation): add to path list directly without extra plist
+	  Rectangle.m (-pathRepresentation): [pathG setFilled:filled optimize:NO] is schon optimiert
+	  Rectangle.m (-identicalWith:): new
+	  Rectangle.m,h: (-isPointInside): new
+	  Rectangle.m (-copy): new
+	* Line.m (-getListOfObjectsSplittedFrom:): realBounds instead of bounds
+	  Line.m (-copy): new
+	* Line3D.m (-copy): new
+	* Curve.m (-copy): isLocked added and setDirty:YES added
+	* HiddenArea.m (-uniteWith:): in 'split self' [ng setList:splitList opt..:NO] instead of copying list
+	  HiddenArea.m (-uniteWith:): [ng setFilled:[self filled] optimize:NO] instead of -setFilled:
+	* vhf2DFunctions.m (removePointFromArray): TOLERANCE*TOLERANCE instead of TOLERANCE
+
+3.40 beta 5
+
+2001-02-16  Ilonka Fleischmann
+	* Path.m (-directionOfSubPath:): angle of object only for arcs and curves
+
+2001-02-17  Georg Fleischmann
+	* VText.m (-getFlattenedObjectAt:): if editView already exists, use it
+	  VText.m (-drawWithPrincipal:): use principal to get window, aquire editView so we have it for flatten objects
+
+2001-02-18  Georg Fleischmann
+	* Arc.m	(-movePoint:by:): check for c == 0.0
+	  Arc.m (-contour:): tolerance for 360 degree check
+	* Rectangle.m (-contour:): rotate origin
+	  Rectangle.m (-appendToStream:z:): rotate rectangle
+
+2001-02-19  Georg Fleischmann
+	* DPControl.m, h, nib (-adjustZ:, adjustZSwitch...) new
+	* Rectangle.m (-length): new
+	* Document.m: Editor2D_VERSION = 102
+	* LayerObject.m (-initFromPropertyList:inDirectory:): invert fillOverlap for versions 3.30 - 3.31
+	  LayerObject.m (-propertyList): set version
+	* Path.m (-createOutput:tools:): 4. contour = settleContour added
+	* DPLayer.m (-setLayerList:): redraw superview of moveMatrix
+	  DPLayer.m (-update:): redraw of moveMatrix removed
+
+2001-02-20  Georg Fleischmann
+	* Xyz.m (-xyzWait): call clearInputBuffer() to remove '!' in case of error
+	* CNC750 Devs: minimum speed = 300
+	  CNC750 Devs: dummy revolution for configurations without spindle
+	* Arc.m (-createOutputStream:tools:): use path representation if we have to deal with webs
+	* Rectangle.m (-createOutputStream:tools:): use path representation if we have to deal with webs
+
+2001-02-21  Georg Fleischmann
+	* HPGL-Devs: z axis added to Grapftec Devs, clean up
+	* Xyz.m (-selectTool:, xyzTool:): lift to z-Up only if below z-Up, lift z before automatic tool change
+
+3.40 beta 6
+
+2001-02-22  Georg Fleischmann
+	* DocView.m (-moveSelectionToLayer:): set objects dirty, move only from and to editable layers
+	* Rectangle.m, Group.m (-setFilled:): dirty = YES
+	* e2Pasetboard.m (-paste:andLink:): limit smart paste to bounds
+	* Xyz.m, h (-busy): new
+	  Xyz.m (-xyzTool:): calls selectTool:
+	* Arc.m, Rectangle.m (-createOutputStream:tools:): dirty = NO for calculation as path representation
+
+2001-02-23  Georg Fleischmann
+	* DXFImportSub.m (-add...toLayer, -createLayers:): new
+	  DXFImportSub.m (-setBounds:): layer support added
+	* App.m (-listFromFile:): DXF-Import without autorelease
+	* DocView.m (-setLiost:): support for layerList added
+
+2001-02-24  Georg Fleischmann
+	* e2Drag.m (-singleList:): new
+	  e2Drag.m (-createGraphicForDraggedFile:): -singleList called to flatten possible layerList
+	* DPControl.m (-update:): only enable/disable knobs when !xyzInAction
+	* DocWindow.m (-setUnit:): set first responder back to document view
+	* TileScrollView.m (-zoomIn:, -zoomOut:, -changeScale): set first responder back to document view
+	  TileScrollView.m (-magnifyRegion): use visibleRect instead of bounds
+	* Document.m (+newFromFile:, +newFromList:): set first responder after makeKeyAndOrderFront
+	* Xyz.m (-changeRev:): don't set tool for rev = 0.0
+
+2001-02-24  Ilonka Fleischmann
+	* Arc.m (putUPath:): <= 0.08 instead of <= 0.01 -> move = NO
+	  Arc.m	(-parallelObject:): direction change -> new Angle <-> and 360 - new angle ?
+	  Arc.m (-getListOfObjectsSplittedFrom:): removePointWithToleranceFromArray() use TOLERANCE*10.0
+	* Path.m (-setDirectionCCW:): if( begIx == endIx && !arc ) continue
+	* PathContour.m (contourPath:, contourImage:): befor optimizePath remove nothing from list !
+	* GerberImportSub.m (-addFillList:toList:): setWidth:0.0 instead of state.width -> polygon have no width !
+
+2001-02-27 Georg Fleischmann
+	* German.lproj/DPControl.nib: adjustZ: instead of setAdjustZ:
+	* DPLayerDetails.nib: resizing changed
+	* Xyz.m (move2D:::): compare x/y with tolerance
+	* Arc.m (hit:scale:): hitsetting = 4.0 / scaleFactor
+	* Curve.m (hit:scale:): intersection with arc instead of two lines
+
+2001-02-28 Georg Fleischmann
+	* Arc.m (-createOutput:tools:): if the tool is a drill we drill
+	* Mark.m (+markWithOrigin:diameter:): new
+	* DPControl.nib: Z-Adjust Button resize corrected
+	* Xyz.m (-xyzLoadParms:): flatness limit = 0.0001 mm
+	  Xyz.m (-arc:::addToStream:): calculate chord angle from flatness
+3.40 beta 7

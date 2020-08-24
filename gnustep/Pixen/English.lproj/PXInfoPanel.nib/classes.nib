@@ -1,0 +1,29 @@
+{
+    IBClasses = (
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            CLASS = PXInfoPanelController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                alpha = NSTextField; 
+                blue = NSTextField; 
+                cursorX = NSTextField; 
+                cursorY = NSTextField; 
+                green = NSTextField; 
+                height = NSTextField; 
+                panel = NSPanel; 
+                red = NSTextField; 
+                teensyHexView = id; 
+                width = NSTextField; 
+            }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            CLASS = PXTeensyHexView; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {color = id; }; 
+            SUPERCLASS = NSView; 
+        }
+    ); 
+    IBVersion = 1; 
+}

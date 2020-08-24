@@ -1,0 +1,15 @@
+{
+    IBClasses = (
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {CLASS = NSObject; LANGUAGE = ObjC; }, 
+        {
+            ACTIONS = {cancel = id; updateSize = id; useEnteredFrame = id; }; 
+            CLASS = PXCanvasResizePrompter; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {delegate = id; resizeView = PXCanvasResizeView; sizeForm = NSForm; }; 
+            SUPERCLASS = NSWindowController; 
+        }, 
+        {CLASS = PXCanvasResizeView; LANGUAGE = ObjC; SUPERCLASS = NSView; }
+    ); 
+    IBVersion = 1; 
+}

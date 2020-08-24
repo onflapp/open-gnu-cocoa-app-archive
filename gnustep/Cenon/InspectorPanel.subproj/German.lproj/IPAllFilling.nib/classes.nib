@@ -1,0 +1,47 @@
+{
+    IBClasses = (
+        {
+            CLASS = App; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {inspectorPanel = id; }; 
+            SUPERCLASS = NSApplication; 
+        }, 
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {
+                setAngle = id; 
+                setEndColor = id; 
+                setFillColor = id; 
+                setFillState = id; 
+                setRadialCenter = id; 
+                setStepWidth = id; 
+            }; 
+            CLASS = IPAllFilling; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                angleButtonLeft = id; 
+                angleButtonRight = id; 
+                angleField = id; 
+                angleSlider = id; 
+                colorWell = id; 
+                colorWellGraduated = id; 
+                fillPopup = id; 
+                radialCenterText = id; 
+                sliderBox = id; 
+                stepButtonLeft = id; 
+                stepButtonRight = id; 
+                stepForm = id; 
+            }; 
+            SUPERCLASS = NSPanel; 
+        }, 
+        {
+            CLASS = InspectorPanel; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {allFillingWindow = id; }; 
+            SUPERCLASS = NSPanel; 
+        }, 
+        {CLASS = SliderBox; LANGUAGE = ObjC; SUPERCLASS = NSView; }, 
+        {CLASS = SurfaceWell; LANGUAGE = ObjC; SUPERCLASS = NSColorWell; }
+    ); 
+    IBVersion = 1; 
+}

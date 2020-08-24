@@ -1,0 +1,22 @@
+Cenon Change Log - December 2005
+
+2005-12-02 Georg Fleischmann
+	* Document.m (+newFromFile:): set document to not dirty
+
+2005-12-09 Georg Fleischmann
+	* Cenon 3.80
+
+Cenon 3.80
+
+
+2005-12-19 Georg Fleischmann
+	* psi.psw, psImport.prolog (/glyphshow): new
+	  -> this implements glyphshow and makes flatten text work again with GNUstep
+
+next Cenon 3.81
+
+2005-12-21 Georg Fleischmann
+	* functions.h (fillPopup()): header equal to implementation to avoid XCode 2.2 Error on Apple
+	  vhfCommonFunctions.h (sortPopup()): header equal to implementation to avoid XCode 2.2 Error on Apple
+	  vhfCommonFunctions.h: include AppKit for NSPopUpButton
+	  Thank's to Brent Fulgham

@@ -1,0 +1,15 @@
+Cenon Change Log - June 2005
+
+2005-06-10 Georg Fleischmann
+	* Cenon 3.70
+
+2005-06-10 Ilonka Fleischmann
+	* propertyList.m (-propertyListFromNSColor:): vhfStringWithFloat(för color components) instead NSNumber
+	  propertyList.m: #include <VHFShared/vhfCommonFunctions.h>
+
+2005-06-10 Ilonka Fleischmann
+	* VText.m (-setColor:): ruft nur setFillColor auf !
+	  VText.m (-setFillColor:): setzt jetzt farbe des attributedString & ruft super setColor auf
+	  VText.m (-setString:font:lineHeight:color:): [self setColor:color] instead of [super setColor:]
+
+Cenon 3.70

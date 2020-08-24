@@ -1,0 +1,133 @@
+Cenon 3.9.6  (2012-02-04):
+
++ DXF-Import: Transformation von Object- nach Welt-Koordinatensystem hinzugefügt
++ Fix, PS-Import: Import von Dateien mit Sonderzeichen verbessert
++ Fix, TIFF-Export: auch Bilder werden gespeichert
+
+Cenon 3.9.5  (2011-08-30):
+
++ Fix, Übersetzungen: Französische Strings für Operationen eingebunden,
+       Dänisches "Lock/Unlock" ergänzt, weitere Fixes in Übersetzungen
++ Fix, GNUstep: Source-Pakete compilieren wieder
+
+Cenon 3.9.4  (2011-05-12):
+
++ New, Update-Panel: einmal pro Woche wird beim Start von Cenon automatisch auf
+       verfügbare Updates gecheckt.
+       Das kann in den Voreinstellungen abgeschaltet werden.
++ Fix, Text: Wechseln der Lage im Inspektor beendet Editiermodus
++ Fix, Update-Panel: manualler Check auf Updates wird auch bei gewünschtem
+       Überspringen der Version ausgeführt.
++ Fix, Build Contour: funktioniert für gestrokte Elemente auch mit Distanz gleich Null
++ Fix, Darstellung: Default Liniendicke (nur Bildschirm) für gefüllte Objekte ist 1/10 pt (war 1 pt)
+
+Cenon 3.9.3  (2011-01-01):
+
++ Fix TIFF-Export: Export von Dokumenten mit Text funktioniert jetzt
++ Fix Speichern: Dokumente mit fehlendem Image können jetzt gespeichert werden
++ Fix Gerber-Import: Folgende Nullen (Trailing Zeros) funktionieren (Osmond PCB)
+
+Cenon 3.9.2 (2010-09-26)
+
++ Neu: Französische Übersetzung des Interface (Dank an Miguel Saro)
++ Neu, Text-Editieren: dem selektierten Text kann ein Link zugeordnet werden mit
+       "Format -> Text -> Link hinzufügen"
++ Neu: TIFF Export: Das Dokument wird als TIFF Bild exportiert (mit 100% Zoom)
+       Antialiasing kann in den Voreinstellungen aktiviert werden und wird dann verwendet.
++ Neu: Hilfe Menu bietet jetzt hilfreiche Links auf die Web-Seite, FAQ, etc.
++ Neu: Check auf Updates. Das menu "Hilfe -> Updates" überprüft, ob updates für Cenon verfügbar sind.
+       Wenn Updates verfügbar sind, werden diese angekündigt und, sofern vorgesehen,
+       kann eine Auswahl getroffen und die Updates daraufhin runtergeladen werden.
+       Die runtergeladenen Pakete werden in einem Installer-Fenster geöffnet.
+       Aktuell findet noch keine automatische Installation der Pakete statt.
++ Grafik-Fenster: Einheit der Koordinatenanzeige beginnt mit Voreinstellungen (bisher mm)
++ Akustische Rückmeldung der Editier-Funktionen aktiviert
++ Fix, Text-Editieren: Editieren von Links und Drag&Drop von Zeichen aus dem Character-Panel
++ Fix, Absturz behoben beim Schliessen eines Grafik-Fensters ohne zuvor das Editieren
+       eines Textes abgeschlossen zu haben.
++ Fix, Inspektor: Tastatur-Kommandos Command-1 - Command-5 erzeugen keinen Fehler-Beep mehr
++ Fix, Füllfarbe: Bei schwarzer Füll-Farbe und andersfarbiger Stroke-Farbe,
+       wird jetzt die richtige Füllfarbe erhalten
++ Fix, Text, Apple: Workaround für gespiegelten Text mit Mac OS 10.5 und 10.6 (10.4 funktionierte)
++ Fix, Apple: Deutsches Menu Format->Schrift->Ligaturen hinzugefügt
++ Fix, Apple: Relocation Flag in Paketen entfernt
++ Fix, GNUstep: HPGL und Gerber Dateien werden richtig geladen, auch ohne Voreinstellungen
+       explizit setzen zu müssen.
++ Fix, DXF-Import, GNUstep: Import von DXF Dateien mit Umlauten verbessert.
+       Zuerst wird UTF-8, dann Latin Encoding versucht, Das Bleistift.dxf example funktioniert damit
+
+Cenon 3.9.1 (2010-04-03)
+
++ Zwei neue Menupunkte (Schnappschuss, Schnappschuss restaurieren) um die Dokumente und
+  Positionen auf dem Bildschirm zu speichern und beim Neustart wieder zu restaurieren.
++ Voreinstellungen: Raster für Fenster zum Leichteren Plazieren und Anreihen von Fenstern.
++ Editier-Funktionen: rechter Mausklick beendet Editieren und verlässt Editiermodus.
++ Neu: Dänisches Interface. Der Dank geht an Erik Richard Sorensen !
++ Inspektor entfernt Scroll-Balken wenn nicht benoetigt
++ Werkzeug-Palette: Klick in Dokumenten zwingt das Panel nicht mehr auf den Bildschirm
++ Fix, Inspektor:
+  - Grössenanpassung von Feldern für Text und Pfad verbessert
+  - TAB-Taste funktioniert jetzt in allen Inspektoren
++ Fix, Image-Formate:
+  - Extensions ergänzt im Open-Panel für: jpg, jpeg, gif, png, tif
+  - Mac OS 10.6: Extensions ergänzt für Drag&Drop auf Programm Icon für: jpg, gif, png
+    (worked < 10.6)
++ Fix Präzision: Koordinaten werden mit doppelter Anzahl Nachkommastellen gespeichert
++ Fix Nutzen-Drucken funktioniert jetzt mit Fenster kleiner Dokument
++ Fix Zoom: Mausclick ohne Drag, skaliert nur zur nächst grösseren Auflösungsstufe
+  (nicht mehr 5000%)
++ Fix, DXF-Import/DXF-Export: Kreise mit negativem Winkel funktionieren im Export und Import
++ Fix, DXF-Import: Präzision vertikaler Arc-Segmente verbessert
++ Fix Gerber-Import: G03 Problem behoben, mögliche Endlosschleife behoben
++ Fix Pfad-Kontur mit Arc: Handhabung von extremen Arcs verbessert, Pfad-Richtung korrigiert
++ Fix, Rechteck Kontur: überschnappen des Eckenradius verhindert
++ Fix, GNUstep: Workaround für gedrehten Text
++ Fix, Apple 10.6: Workaround für Bilder mit angegebene Grösse kleiner der Pixelgrösse.
+  Sie wurden auf Snow Leopard nur noch als winziges Thumbnail importiert.
++ Fix, Apple 10.6: Workarounds um Speichern von Bildformaten ungleich TIFF auch mit
+  Snow Leopard zu ermöglichen.
++ Fix, Apple 10.6: Icons in einigen Fenstern werden wieder korrekt (nicht skaliert)
+  dargestellt
++ Fix, Apple <10.6: vhf Single Line Fonts werden ohne Antialiasing dargestellt um sichtbar
+  zu werden auf Systemen bis Leopard.
+
+Cenon 3.9.0  (2009-06-19):
+
++ Neu: Projekt-Einstellungen: Einstellungen wie Mass-Einheit pro Dokument.
++ Neu: weitere Bild-Formate können gespeichert werden (wenn vom System unterstützt).
+  z.B: JPG, GIF, PNG, ... (spart enorm Plattenplatz!)
++ Masken-Lage:
+  - Datum-Platzhalter im Format "#DATE_%Y-%m-%d %H:%M#" wird dargestellt. Siehe MultiPage.cenon für eine Beschreibung.
+  - Auch nicht-Masken-Elemente auf den Maskenlagen der geraden/ungeraden Seiten werden dargestellt
+  - Darstellung er Masken in der Reihenfolge der Lagen (vor oder hinter den Elementen der Seite)
++ Lagen-Details: neuer Schalter zum ausschliessen einzelner Lagen aus einem Nutzen (Drucken, Fertigung)
++ Image: Handhabung verbessert
+  - Selektierung am Bildrand oder innerhalb der Fläche, abhängig von den Voreinstellungen
+  - bei geclippten Bildern: Selektierung am oder innerhalb des geclippten Randes
++ Text: Neuer Leerer Text wird entfernt, kein Sternchen '*' beim Rumklicken im Text-Modus.
+        Leeren eines bestehenden Textes schreibt "EMPTY TEXT", um ein Wiederverwenden der Textbox zu erlauben.
++ Fix, Einfügen mehrerer Lagen auf eine Lage, behält Reihenfolge der Grafiken bei
++ Fix, Image: Auflösung von Image und Pfad behält Pfad sichtbar vor dem Bild.
++ Fix, Text: Plazierung eines Textes am rechten Bildrand, setzt jetzt in allen Zoom-Stufen die richtige Text-Box.
++ Fix, Text mit Paragraphen/Zeichen-Farben funktioniert wieder
++ Fix, Text: Verbesserung der Darstellung nach dem Editieren von Text
++ Kontour Bilden: Text-Offset nochmal verbessert für vertikal zentrierten Text.
++ Kosmetische Verbesserungen für Inspektoren, Knöpfe, Arbeitsbereich-Panel, etc.
++ Füllung: Axiale Füllung schneller und besser
++ Ungefüllte Objekte werden jetzt mit Stroke-Farbe gezeichnet
++ Fix, Apple: Scrolling ohne Futzel
++ Fix, Objekt Drehen: fixierte Elemente werden jetzt ausgelassen
++ Import: Dateien werden mit Extension in Gross- und Kleinschreibung geladene (z.B. eps, EPS, Eps)
++ PS-Import: Fehlertoleranter Import von PostScript aus Windows-Programmen
+  wie Corel-Draw, Eurocut, etc. mit Bildkennsatz ("Müll" vor/hinter den Daten).
++ Fix, Gerber-Export: kleine Verbesserungen wie Export von offenen Pfaden
++ Fix, Apple: Position der Kontur von gespiegeltem Text korrigiert
++ Fix, Apple: neuer Text hat etwas höhere Textbox um sicher dargestellt zu werden
++ Fix, Apple: Workaround - endlich ist es gelungen Cenon-Dokumente kompatibel zu OpenStep/GNUstep zu speichern (ASCII Property-List).
++ Fix, Apple: Workaround - Speichern von 4-Bit Images ist nun möglich auf Apple
++ Fix, Apple: Workaround für die neuen Color-Spaces in Mac OS X >= 10.4 (einige Farben wurden beim Speichern schwarz).
++ Fix, Apple, German: Das Dezimal-Zeichen auf der Numerischen Tastatur erzeugt jetzt einen Dezimalpunkt
++ Apple: Suche nach Cenon Dateien auch in Library/Application Support/Cenon
++ GNUstep: Apple und GNUstep Releases teilen sich nun ein Source-Paket
++ Dokumentation aktualisiert
++ viele weitere kleine Verbesserungen

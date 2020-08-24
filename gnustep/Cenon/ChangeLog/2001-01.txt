@@ -1,0 +1,64 @@
+Cenon Change Log - Jan 2001
+
+
+2001-01-09  Ilonka Fleischmann
+	* Document.m (-saveEPS:): new
+
+2001-01-09  Georg Fleischmann
+	* Document.m: #import "EPSExport.h", -saveEPS: added to private method definition
+	  Document.m (-saveAs:): save EPS added
+
+2001-01-19  Ilonka Fleischmann
+	* Font.m (-getCharStringFromList:): init von fontState.leftPoint korrigiert
+	  Font.m (-updateFontMetrics:): 1. if auskommentiert ???
+	* GerberImport.m,h: extended Gerber eingebaut
+	* GerberImportSub.m,h: extended Gerber eingebaut
+	* HiddenArea.m,h: jetzt eigenes Object
+	* DocView.m: removeHiddenArea Aufruf entsprechend
+	* App.m (-listFromFile:): gerber part erweitert auf extended Gerber
+	* Arc.m (-uniteWith:): Aufruf -removeGraphics:inside: (2 x) entsprechend HiddenArea
+	  Arc.m (-getListOfObjectsSplittedFrom:): pts auf Abstand zum center pröfen !
+	* Path.m (-uniteWith:): Aufruf -removeGraphics:inside: (2 x) entsprechend HiddenArea
+	  Path.m (-isPointInside:): -isPointInside:dist: Aufruf mit TOLERANCE statt 0.0
+	  Path.m (-isPointInside:dist:): <= dist statt < dist
+	  Path.m (-setDirectionCCW): in while Schleife if( begIx==endIx ) break;
+	  Path.m (optimizeOutputToSingleLine:): new
+
+2001-01-19	Georg Fleischmann
+	* Document.m (-dealloc): save changes query removed
+
+2001-01-20  Ilonka Fleischmann
+	* GerberImport.m,h (-setDefaultParameter): new
+	  GerberImport.m,h (-getGraphicFromData)
+	  GerberImport.m (-setDefaultParameter,-loadParameter:): ops.circle und ops.arc auskommentiert
+	* App.m (-listFromFile:): Aufruf -setDefaultParameter
+	  App.m (-listFromFile:): umgestellt, damit auch einfache Gerber mit FormatStatment funktionieren
+
+2001-01-21  Ilonka Fleischmann
+	* GerberImport.m,h (-loadRS274XAperture): bekommt NSData und lÙdt auch die Parameter (name ???)
+	  GerberImport.m,h (-loadParameter): raus
+	* App.m (-listFromFile:): umgestellt, durch s.o. etwas öberschaubarer
+
+2001-01-27  Ilonka Fleischmann
+	* Mark.m,h (-setDiameter, -diameter): new
+	  Mark.m,h (-setOrigin): new
+	  Mark.h; neue variable -> diameter
+	* App.m (-listFromFile): .drl,.din -> DINImport neu
+	  App.m: #import "DINImportSub.h"
+	* locations.h: DINPATH @"Devices/din" -> neu
+	* DINImport.m,h: neu
+	* DINImportSub.m,h: neu
+	* DINImport.h: an sÙmtlichen VHFImport/Header stellen hinzufögen VHFImport/VHFImport.framework, ... ???
+	* neue Device Dateien: sm_1000.dev, sm_3000.dev, excellon.dev
+
+2001-01-30 Georg Fleischmann
+	* PPImport.m, h, nib: DIN device support added
+	* PP*.nib: resized to fit all devices
+	* App.m (-listFromFile:): path == nildoesn't load device file
+
+2001-01-30  Ilonka Fleischmann
+	* DINImport.h (-checkFileFormat:): raus
+	  DINImport.h: neue Variablen: parameterLoaded und ops.mm
+	* DINImport.m (-checkFileFormat:): bekommt NSString statt NSData öbergeben
+	  DINImport.m (-loadParameter:): setzt ops.mm, setzt flag parameterLoaded, ist fileFormat unabhÙngig
+	  DINImport.m (-importDIN:): ruft checkFileFormat auf ruft jetzt if(!parameterLoaded) -setDefaultParameter auf

@@ -1,0 +1,50 @@
+{
+    IBClasses = (
+        {
+            CLASS = App; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {inspectorPanel = id; }; 
+            SUPERCLASS = NSApplication; 
+        }, 
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {
+                setControlX = id; 
+                setControlY = id; 
+                setLock = id; 
+                setPointX = id; 
+                setPointY = id; 
+            }; 
+            CLASS = IPCurve; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                lockSwitch = id; 
+                xButtonLeft = id; 
+                xButtonRight = id; 
+                xField = id; 
+                xc1ButtonLeft = id; 
+                xc1ButtonRight = id; 
+                xc1Field = id; 
+                xc2Field = id; 
+                xeField = id; 
+                yButtonLeft = id; 
+                yButtonRight = id; 
+                yField = id; 
+                yc1ButtonLeft = id; 
+                yc1ButtonRight = id; 
+                yc1Field = id; 
+                yc2Field = id; 
+                yeField = id; 
+            }; 
+            SUPERCLASS = NSPanel; 
+        }, 
+        {
+            CLASS = InspectorPanel; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {curveWindow = id; }; 
+            SUPERCLASS = NSPanel; 
+        }, 
+        {CLASS = SurfaceWell; LANGUAGE = ObjC; SUPERCLASS = NSColorWell; }
+    ); 
+    IBVersion = 1; 
+}

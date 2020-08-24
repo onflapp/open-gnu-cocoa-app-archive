@@ -1,0 +1,57 @@
+{\rtf0\ansi{\fonttbl\f0\fmodern Courier;}
+\pard\tx1440\tx2700\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li2700\fi-2700\ql\qnatural
+
+\f0\b\fs24 \cf0 …nderungen för MÙrz 1999\
+
+\b0 \
+30.03.99	Cenon\
+\
+\pard\tx1440\tx4320\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li4320\fi-4320\ql\qnatural
+\cf0 Datum	Datei	VerÙndert\
+----------------------------------------------------------------------------------------------\
+03.03.99	App.m\
+	apPrefs.m	/ nach LOCALLIBRARY und HOMELIBRARY\
+	Xyz.m	toolInfo.name als Objekt released\
+		totalDip, outputPath etc. mit realloc verwaltet\
+3.14\
+\
+10.03.99	TextGraphic.m	-centerVertical, -setCenterVertical -> neu\
+		-draw: -> centerVertical eingebaut\
+	IPText.nib	Switch för center vertical\
+	IPText.m, h	-setCenterVertical -> neu\
+	IP*.nib	"Inspector" aus Titel entfernt\
+11.03.99	DataPanel.m	-setLevelAt: -> [self level] -> [levelk intValue]\
+	TransformPanel.m, h	Align -> neu\
+	TPAlign.nib, m, h	neu\
+12.03.99	e2Pasteboard.m	paste:andLink -> grid aktiviert\
+	e2Grid.m, h	grid -> neu\
+	App.m, h	-importASCII: -> neu\
+	Main.nib	import ASCII neu\
+	Editor2DView.m, h	-importASCII, sortPosition() -> neu\
+	TextGraphic.m, h	replaceTextWithString: -> neu\
+\
+3.20 Beta 1\
+\
+15.03.99	*	Preferences in Subprojekt ausgelagert\
+17.03.99	e2Tile.m	-buildTileCopies -> Objecte in richtiger Reihenfolge kopiert\
+\
+3.20 Beta 2\
+\
+	TextGraphic.m	-edit:in: -> ruler aktiviert\
+	Editor2DView.m	-ImportASCII -> Leerfeld, \\n, Sort\
+	App.m, h, nib	ImportASCIIAccessory eingebaut\
+\
+3.20 Beta 3\
+3.20 Beta 4\
+\
+27.03.99	Editor2DView.m	-setWindowSize, -resetScrollers -> TileScrollView verwendet\
+27.03.99	TileScrollView.m	+frameSizeForContentSize -> neu\
+28.03.99	TextGraphic.m	-setFont -> data initialisiert und damit lineHight gesetzt\
+29.03.99	Image.m	-dealloc -> Image wird von Disk gelğscht\
+30.03.99	TPMix.nib, m, h	neu\
+	IP*.nib	lockSwitch, setLock -> neu\
+	Graphic.m, h	lock, setLock -> neu, version=2,\
+		-initWithCoder, -encodeWithCoder -> lock dazu, isSelect raus\
+	IPBasicLevel.m, h	-setLock -> neu, -update: -> lockSwitch gesetzt\
+	IP*.m	-update: -> [super update:super] hinzugefögt\
+}

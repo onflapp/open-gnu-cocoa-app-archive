@@ -1,0 +1,73 @@
+Cenon 3.67:
+
+- Apple (3.67-2): Line-Inspector now supports Lines with 90 degree angle
+- Apple (3.67-2): Separation of colors to layers now works correctly
+- Groups: Allow change of stroke width and filling
+- PS-Import: support filenames with blanks
+- Debian: use system library if available and local library is empty
+- Apple: Allow more than a single new document on some Apple systems
+  (workaround)
+- Apple, PS-Import: search gs in /usr/bin and /usr/local/bin
+- Apple, PS-Import: allow import of PS-Files which contain special characters
+- Apple, PS-Import: use an available font as default
+- Apple: Cenon-Menu translated to German
+- more details and bug fixes
+
+Cenon 3.66:
+
+- Drag: Dragging of EPS files into a Cenon document now imports vector data 
+
+Cenon 3.65:
+
+- DXF-Import: use default layer, if no layer is provided
+- DXF-Import: correct arc bounds for polyline and vertex
+- several minor bug fixes
+
+Cenon 3.64:
+
+- GNUstep: Printing of documents with images fixed
+- some changes for GNUstep version 0.9.4
+- some more details
+
+Cenon 3.63:
+
+- New: Copy and Paste of PostScript to other applications
+- New: Preferences option to set line width
+- document size on disk reduced
+- faster document loading
+- faster batch copying
+- GNUstep: simpler printing code to allow printing
+- DXF-Import: set correct Arc bounds
+- some more bug fixes
+- code clean ups
+
+Cenon 3.62
+
+- Import: HPGL-Import and DXF-Import leave arc centers outside of
+  working area.
+- Fix, Text: Memory leak fixed
+- Fix, Save: Saving of fonts works again
+- Fix, Preferences have defaults for new installations (since 3.60b1)
+- some more fixes
+
+Cenon 3.61:
+
+- Type-1 Fonts allow editing of larger fonts
+
+Cenon 3.60:
+
+- Images can handle CMYK-Images now
+- Fix, ASCII-Import: Conversions are loaded again (since 3.60 beta 9)
+- several minor bug fixes
+- GNUstep/Apple: get library paths dynamically
+- Fix, Split: Potential crash fixed for Edit->Split
+- Apple: Crash fixed for multiple 'Save As'
+- Text Contour: Set line width to 0 (important for stroked fonts like
+  engraving fonts)
+- Grid: The grid is drawn thinner with Anti-Aliasing (e.g. Art-Backend)
+- Cenon Source:
+  * Source-Package: CharConversion, SinkingMetrics.plist, COPYRIGHT added
+  * FontListNoFill removed from project
+  * Apple: nonexisting BUGS-file removed from project
+  * VHFImport: README added providing an overview of the import
+  * GNUstep-Package: Apple-nibs are now complete

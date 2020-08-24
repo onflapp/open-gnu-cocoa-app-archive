@@ -1,0 +1,77 @@
+Cenon - Installation
+2012-07-19
+
+
+This file describes the installation process of Cenon from source code
+for various platforms. You may download Cenon in binary form, if a
+binary distribution is available for your hardware platform.
+
+After installing the Cenon Application you have to install the Cenon
+Library. Go to the end of this file to read how to do this.
+
+
+GNUstep
+-----------------------------------------------------------------------
+
+Requirements: GNUstep libraries (http://www.gnustep.org)
+              and GNUstep runtime environment
+
+Get the Cenon sources Cenon-?.?.?.tar.bz2 either on CD or download.
+tar fvxz Cenon-?.?.?.tar.bz2
+cd to the Source directory
+
+to compile (and install) Cenon:
+    make
+    make install
+
+to run Cenon:
+    openapp Cenon.app
+
+
+Apple Mac OS-X
+-----------------------------------------------------------------------
+
+Get the Cenon sources Cenon-?.?.?.tar.bz2 either on CD or via download.
+cd ~/Downloads (or whereever the tar archive resides)
+tar -jxvf Cenon-?.??.tar.bz2
+
+Start XCode. Open ~/Downloads/Cenon/Cenon.xcodeproj
+From the Target-Popup select "Cenon" (you must have the checkmark
+beside the target name)
+Make sure you compile "Release"
+Select Build from the menu "Build" (or click the hammer icon).
+
+Copy the application Cenon.app from the build directory to the desired
+Application folder.
+
+
+OpenStep 4.2 (DEPRECATED)
+-----------------------------------------------------------------------
+
+Get the Cenon sources Cenon-3.?.?.tar.gz either on CD or download.
+cd ~/ (or whereever the tar archive resides)
+gnutar -zxvf Cenon-?.?.?.tar.gz
+
+Start Project Builder by double clicking on ~/Cenon/PB.project.
+Click the hammer icon in the top toolbar.
+
+Copy Cenon.app to the desired App folder (usually /LocalApps).
+
+
+
+Installing the Cenon Library
+-----------------------------------------------------------------------
+
+Get the Cenon Graphics Library CenonLibrary-?.?.?.tar.bz2 either on CD
+or via download.
+Copy the archive into the local Library folder of your platform
+(e.g. "/usr/GNUstep/Local/Library" or "/Library/Application Support").
+
+    tar fvxj Cenon-?.?.?.tar.bz2
+
+This will create/update a directory with the Name 'Cenon'.
+Now, you can remove the tar archive.
+
+There is a minimal library included with the source codes of Cenon.
+If that is all you need, you can copy the folder Library/Cenon to
+the library directory of your system.

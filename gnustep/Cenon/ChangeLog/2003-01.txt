@@ -1,0 +1,37 @@
+Cenon Change Log - January 2003
+
+2003-01-07  Georg Fleischmann
+	* ProjectSettings.m (-init): set delegate of window to self
+	  ProjectSettings.m (-windowDidResignKey:): new
+
+2003-01-23  Ilonka Fleischmann
+	* IPAllStrokeWidth.m (-update): if (graphic != g) [(NSColorWell*)colorWell deactivate]
+	  IPAllStrokeWidth.m (-update): 2x [(NSColorWell*)colorWell setEnabled:YES] raus im else
+	  IPAllStrokeWidth.m (-setStrokeState): Setzt keine Farbe mehr !!!
+	  IPAllStrokeWidth.m (-setWidth): Setzt keine Farbe mehr !!!
+	* IPAllFilling.m (-update): if (graphic != g) [(NSColorWell*)colorWell deactivate]
+	* VRectangle.m (-setFillColor:): if (!width) [self setColor:fillColor]; raus !
+	  VRectangle.m (-setFilled:): if (flag && !filled) [self setFillColor:color]; raus !
+	  VRectangle.m (-fillColor): if (width && !filled) return color; raus !
+	  VRectangle.m (-uniteWith:): auch fillColor/endColor etc von ng gesetzt
+	* VArc.m (-setFillColor:): if (!width) [self setColor:fillColor]; raus !
+	  VArc.m (-setFilled:): if (flag && !filled) [self setFillColor:color]; raus !
+	  VArc.m (-fillColor): if (width && !filled) return color; raus !
+	  VArc.m (-uniteWith:): auch fillColor/endColor etc von ng gesetzt
+	* VPath.m (-setFillColor:): if (!width) [self setColor:fillColor]; raus !
+	  VPath.m (-setFilled:): if (flag && !filled) [self setFillColor:color]; raus !
+	  VPath.m (-fillColor): if (width && !filled) return color; raus !
+	  VPath.m (-uniteWith:): auch fillColor/endColor etc von ng gesetzt
+	* VPolyLine.m (-setFillColor:): if (!width) [self setColor:fillColor]; raus !
+	  VPolyLine.m (-setFilled:): if (flag && !filled) [self setFillColor:color]; raus !
+	  VPolyLine.m (-fillColor): if (width && !filled) return color; raus !
+	  VPolyLine.m (-uniteWith:): auch fillColor/endColor etc von ng gesetzt
+	* HiddenArea.m (-removeHiddenArea:): color vergleich !!!
+	  HiddenArea.m (-removePartsOf:hiddenBy:): auch fillColor/endColor etc von ng gesetzt
+	  HiddenArea.m (-uniteAreas:): color vergleich !!!
+	* DXFImportSub.m (alle): [g setFillColor:[state.color copy]]; ohne autorelease !
+	* GerberImportSub.m (alle): [g setFillColor:[state.color copy]]; ohne autorelease !
+	* HPGLImportSub.m (alle): [g setFillColor:[state.color copy]]; ohne autorelease !
+	* Type1ImportSub.m (alle): [g setFillColor:[state.color copy]]; ohne autorelease !
+	* DINImportSub.m (alle): [g setFillColor:[state.color copy]]; ohne autorelease !
+	* DXFExportSub.m (-exportToFile): col instead of [g color], col ist color or fillColor

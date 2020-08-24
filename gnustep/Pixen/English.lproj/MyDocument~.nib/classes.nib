@@ -1,0 +1,44 @@
+{
+    IBClasses = (
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {CLASS = MyDocument; LANGUAGE = ObjC; SUPERCLASS = NSDocument; }, 
+        {
+            ACTIONS = {
+                mergeDown = id; 
+                showBackgroundInfo = id; 
+                showPreviewWindow = id; 
+                showToolPalette = id; 
+                toggleLayersDrawer = id; 
+                zoomIn = id; 
+                zoomOut = id; 
+                zoomPercentageChanged = id; 
+                zoomStandard = id; 
+                zoomStepperStepped = id; 
+                zoomToFit = id; 
+            }; 
+            CLASS = PXCanvasController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                backgroundController = id; 
+                canvas = id; 
+                layerController = id; 
+                paletteController = id; 
+                previewController = id; 
+                prompter = id; 
+                scrollView = id; 
+                view = id; 
+                zoomPercentageBox = id; 
+                zoomStepper = id; 
+                zoomView = id; 
+            }; 
+            SUPERCLASS = NSWindowController; 
+        }, 
+        {
+            CLASS = PXCanvasView; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {canvas = id; }; 
+            SUPERCLASS = NSView; 
+        }
+    ); 
+    IBVersion = 1; 
+}

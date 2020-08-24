@@ -1,0 +1,27 @@
+{
+    IBClasses = (
+        {
+            CLASS = App; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {inspectorPanel = id; }; 
+            SUPERCLASS = NSApplication; 
+        }, 
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {changeLayer = id; newLayer = id; removeLayer = id; setName = id; }; 
+            CLASS = IPAllLayers; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {moveMatrix = id; nameField = id; }; 
+            SUPERCLASS = NSPanel; 
+        }, 
+        {
+            CLASS = InspectorPanel; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {allLayersWindow = id; }; 
+            SUPERCLASS = NSPanel; 
+        }, 
+        {CLASS = MoveMatrix; LANGUAGE = ObjC; SUPERCLASS = NSMatrix; }, 
+        {CLASS = SurfaceWell; LANGUAGE = ObjC; SUPERCLASS = NSColorWell; }
+    ); 
+    IBVersion = 1; 
+}

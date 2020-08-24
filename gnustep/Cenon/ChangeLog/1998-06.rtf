@@ -1,0 +1,41 @@
+{\rtf0\ansi{\fonttbl\f0\fmodern Courier;}
+\pard\tx1440\tx2700\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li2700\fi-2700\ql\qnatural
+
+\f0\b\fs24 \cf0 …nderungen för Juni 1998\
+
+\b0 \
+25.06.98	Cenon\
+\
+\pard\tx1440\tx4320\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li4320\fi-4320\ql\qnatural
+\cf0 Datum	Datei	VerÙndert\
+----------------------------------------------------------------------------------------------\
+05.06.98	Main.nib	Reverse entfernt\
+	Xyz.h	state -> speedMove hinzugefögt\
+	Xyz.m	-xyzLoadParms -> VDR, VMV geladen\
+		-xyzMoveZ:, -xyzDrawZ:, -xyzMoveXY::, -xyDrawXY::, -xyDrawXYZ::: -> neu und werden verwendet\
+	->	Beim laden eines Projektes wird das Magazin nicht richtig gesetzt\
+	DPMagazine.m	-setMagazineAt: -> currentToolList wurde zu fröh geholt\
+	->	Unterpfad einer Kundendatei ging in die falsche Richtung\
+	Path.m	-realBoundsOfSubPath:: -> neu\
+		-setDirectionCCW: -> testet auf Schnitt mit Eckpoint\
+16.06.98	Xyz.m, h	priorityHalt, priorityCont, priorityClear, priorityAlterSpeed, priorityAlterRev -> neu\
+	TextGraphic.m	-kernToFitHorizontal -> Textbounds werden auf sehr hoch gesetzt, damit innere Box (Container) ausreichend wachsen kann\
+		-setKerning -> setBounds entfernt\
+		-setFont, -setBaseOrigin -> NSTextFontInfo() ersetzt\
+	LayerCell.m	-drawInteriorWithFrame -> Werkzeuge werden grau dargestellt, wenn sie nicht im Magazin sind\
+	e2Output.m	-calcOutputFor: -> toolWarning kommt nur einmal und gar nicht im Expertenmodus\
+	Tile.nib	Copy -> neu\
+	apTile.m	-buildCopies -> neu\
+	App.h	-buildCopies -> neu\
+	e2Tile.m, h	-buildTileCopies -> neu\
+	DPLayer.m	-setDipDepth -> passive layer setzt auch pickOut layer auf dirty\
+24.06.98	Xyz.m	Look Ahead statt fastMode\
+
+\b Beta 13\
+
+\b0 \
+25.06.98	Xyz.m	-xyzSimulateMove3D::: -> neu\
+		-xyzDrawXYZ -> ruft xyzSimulateMove3D:::\
+\
+next: Beta 14\
+}

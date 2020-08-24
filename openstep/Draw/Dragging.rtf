@@ -1,0 +1,141 @@
+{\rtf0\ansi{\fonttbl\f0\fnil Helvetica;\f1\fnil Courier;\f2\fnil Times-Roman;
+}
+\paperw11340\paperh8400
+\pard\tx520\tx1060\tx1600\tx2120\tx2660\tx3200\tx3720\tx4260\tx4800\tx5320\ql\qnatural
+
+\f0\fs48 \cf0 Dragging stuff into Draw (file: 
+\f1 gvDrag.m
+\f0 )\
+
+\fs24 \
+
+\f2\fs28 This file is intended to handle things that are dragged into a Draw document (files and colors mostly).  There are a couple of things to keep in mind about the files case.  The first is whether the file being dragged in is being ``linked'' (via ObjectLinks).  The second is whether we are going to display the contents of the file or just the file's icon (or even just the little link button icon).\
+\
+Object Links is not currently a part of OpenStep, so anything you read here about that may not apply.\
+\
+
+\f0\fs36 Registering\
+
+\f2\fs28 \
+The basic idea is that we call 
+\f1\b registerForDragging
+\f2\b0  in 
+\f1\b GraphicView
+\f2\b0 's 
+\f1\b initWithFrame:
+\f2\b0 .  That calls the 
+\f1\b registerForDraggedTypes:
+\f2\b0  method to let the system know which types of things (represented by 
+\f1\b NSPasteboard
+\f2\b0  types) we are interested in having dragged into our view.\
+\
+
+\f0\fs36 Reacting to a Dragging Session\
+
+\f2\fs28 \
+Next, we implement some of the dragging protocol as follows:\
+\
+1. 
+\f1\b draggingEntered:
+\f2\b0 \
+\
+This is sent to us the first time something that we are interested in enters our view.  We respond by letting the system know whether we are actually interested in the dragged thing at the time the thing is dragged into our view (depending both on the state of our view and where the drag is) and what operations we will support.\
+\
+Basically, if the dragged thing is a color, we return that we will perform the ``generic'' thing on that color if dropped only if the 
+\f1\b Graphic
+\f2\b0  that is currently being dragged over can deal with having a color dropped on it (the 
+\f1\b acceptsColor:atPoint:
+\f2\b0  method is what we have created to figure this out).\
+\
+Otherwise, we will accept the dragged thing if it is a file of any sort or if 
+\f1\b NSImage
+\f2\b0  says that it can make some sense out of the 
+\f1\b NSPasteboard
+\f2\b0  of stuff being dragged in (this last case is very rare, applications rarely let you drag raw EPS out of themselves and into other apps--maybe more applications will start doing this in the future, we'll have to see).\
+\
+In reality, we shouldn't say that we can accept 
+\b any
+\b0  sort of file.  We can really only accept files that 
+\f1\b NSImage
+\f2\b0  can handle, RTF files, and (most of the time) plain files (because their usually ASCII).  We can easily determine if a filename is one 
+\f1\b NSImage
+\f2\b0  can handle (and we can obviously tell whether it's an RTF file), but the only way we can tell if a file is a ``plain'' file (i.e. not a Word file or some such) is by asking the system (see the message we send to 
+\f1\b NSWorkspace
+\f2\b0  below).  Unfortunately, since the drag protocol is a synchronous blocking protocol between the app and the system, we can't talk to the system in the middle of the drag (what a drag, huh?).\
+\
+So, what we do is just accept any file, and, if you drop a Word file in (without linking, of course), then we just ignore it.\
+\
+Speaking of linking, if the link key (the Control key) is down during the drag, then we really can accept any file because we can just drop its icon into the Draw document.  Then we just use ObjectLinks to make the double-clicking on it open the file up.  We also provide the user the option of creating a little Link Button instead of the file's icon.\
+\
+2. 
+\f1\b draggingUpdated:
+\f2\b0 \
+\
+This is called repeatedly as the dragged thing is dragged about our view.  Again, just like 
+\f1\b draggingEntered:
+\f2\b0  we return whether we are interested in accepting the dragged thing depending on where it currently is in our view and our current state.  This method must be pretty fast, and it is, because we have already examined the contents of the 
+\f1\b NSPasteboard
+\f2\b0  in 
+\f1\b draggingEntered:
+\f2\b0 .\
+\
+Basically all we really do of interest here is constantly reevaluate whether the 
+\f1\b Graphic
+\f2\b0  underneath the dragging is willing to accept a color (but only, of course, if it is a color we are dragging).\
+\
+3. 
+\f1\b performDragOperation:
+\f2\b0 \
+\
+This method is called just as the user lets go of the thing she's dragging.  This is normally where you do the work that the drop of the dragged thing causes.  And, indeed, if the dropped thing is a color, we update the color of the dropped-on 
+\f1\b Graphic
+\f2\b0  here.\
+\
+Unfortunately, often dropping something on a Draw document causes two very time-consuming things to happen.  First, a complicated PostScript or TIFF image might have to be drawn.  Second, a question might need to be asked of the user about how to deal with the dropped thing (this happens when you link a file in and Draw wants to know whether you want the contents of the file to appear in Draw, the file's icon, or a link button).\
+\
+Thus, we don't do the work that the drop results in in this method, instead, we wait until after the drag and drop is fully complete (as far as the system is concerned) and do the work in ...\
+\
+4. 
+\f1\b concludeDragOperation:
+\f2\b0 \
+\
+This is called after the drag and drop is completely done (and the system is out of the loop).  Thus, if there's an error, we can't do the ``slide-back'' animation.  It's a bummer, but there's really no way around it.  There's no slide-back on Windows anyway.\
+\
+This method is implemented by first looping through any filenames that are in the dragged 
+\f1\b NSPasteboard
+\f2\b0  looking either for Object Links files (
+\f1\b .objlink
+\f2\b0  files) which represent links (these are similar to the little things dropped in the filesystem in the Publish/Subscribe mechanism) or for files that 
+\f1\b NSImage
+\f2\b0  can handle (TIFF, EPS, other formats if you have filters lying around), or for RTF or plain files that the 
+\f1 Text
+\f2  object can handle.\
+\
+
+\f1\b createGraphicForDraggedLink:at:
+\f2\b0  handles the 
+\f1\b .objlink
+\f2\b0  files, and 
+\f1\b createGraphicForDraggedFile:withIcon:at:andLink:
+\f2\b0  handles all other files.  
+\f1\b createGraphicForDraggedLink:at:
+\f2\b0  is implemented simply by instantiating the link from the file and then calling the one method in all of Draw that actually adds a linked thing to the document (
+\f1\b addLink:toGraphic:at:update:
+\f2\b0  -- see 
+\f1\b gvLinks.m
+\f2\b0 ).  
+\f1\b createGraphicForDraggedFile:withIcon:at:andLink:
+\f2\b0  also calls that same method if we are linking the dragged file in.  The method called when you do a Paste and Link from the menu also calls that method.\
+\
+Finally, if we can't find any files that we can do anything with, we just call the same method that is called when you hit Paste in the menu (except that we go straight to handling only non-Draw formats).  Nice code reuse, huh?  Again, this last thing is pretty rare (at least it is today, who knows what tomorrow will bring?).\
+\
+By the way, you may will ask what this 
+\f1\b ERROR
+\f2\b0  thing is all about.  Well, the create functions return 
+\f1\b YES
+\f2\b0  if they were able to successfully incorporate something into the document, 
+\f1\b NO
+\f2\b0  if they weren't, and 
+\f1\b ERROR
+\f2\b0  if they found a problem with the thing being incorporated (i.e. a PostScript error in a dragged EPS file, for example).\
+}

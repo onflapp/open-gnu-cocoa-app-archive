@@ -1,0 +1,90 @@
+﻿/* The operation of undoing the last thing the user did. */
+"Undo" = "Fortryd";
+
+/* The operation of undoing the last %@ operation the user did--all the entries in the Operations and TextOperations .strings files are the %@ of this or Redo. */
+"Undo %@" = "Fortryd %@";
+
+/* The operation of redoing the last thing the user undid. */
+"Redo" = "Gentag";
+
+/* The operation of redoing the last %@ operation the user undid--all the entries in the Operations and TextOperations .strings files are the %@ of either this or Undo. */
+"Redo %@" = "Gentag %@";
+
+/* The operation of changing the size of a graphical entity by dragging a corner of it with the mouse. */
+"Resize" = "Gendan str.";
+
+/* The operation of changing the spacing or color of the grid. */
+"Grid Change" = "Ændre net";
+
+/* The operation of creating a new graphical entity by dragging the mouse.  The %@ is one of Rectangle, Circle, etc. */
+"New %@" = "Ny %@";
+
+/* The operation of changing the width of a line segment. */
+"Line Width" = "Linee bredde";
+
+/* The operation of changing the color of a line segment. */
+"Color" = "Farve";
+
+/* The operation of aligning some graphical entities together. */
+"Align" = "Justering";
+
+/* The operation of bringing a graphical entity or group of graphical entities to the front of all other graphical entities. */
+"Bring to Front" = "Læg forrest";
+
+/* The operation of unlocking all the graphical entities which were previously locked down (see Lock). */
+"Unlock" = "Lås op";
+
+/* The operation of changing the dimensions of a graphical entity by typing numbers into text fields for the width and height. */
+"Dimensions" = "Dimensioner";
+
+/* The operation of excluding all selected graphics so that they are not processed */
+"Exclude/Include" = "Exclude/Include";
+
+/* The operation of locking down all selected graphics so that they can't be edited in anyway until they are unlocked. */
+"Lock/Unlock" = "Lås/Lås op";
+
+/* The operation of returning a graphical entity to its natural aspect ratio, e.g., an oval becomes a circle, a rectangle becomes a square. */
+"Natural Size" = "Naturlig str.";
+
+/* The operation of moving a graphical entity. */
+"Move" = "Flyt";
+
+/* The operation of pressing the delete key to remove the selected graphical entites or text from the document entirely. */
+"Delete" = "Slet";
+"Remove" = "Fjern";
+
+/* The operation of starting to edit some text. */
+"Begin Editing" = "Begynd redigering";
+
+/* The operation of ungroup a bunch of graphical entities that are grouped together into a single graphical entity. */
+"Ungroup" = "Afgrupper";
+
+/* The operation of grouping a bunch of graphical entities together. */
+"Group" = "Gruppe";
+
+/* The operation of cutting some graphical entities out of the document and putting them on the Pasteboard. */
+"Cut" = "Klip";
+
+/* The operation of locking down all selected graphics so that they can't be edited in anyway until they are unlocked. */
+"Lock" = "Lås";
+
+/* The operation of filling a graphical entity's interior with a gray or color. */
+"Fill" = "Udfyldning";
+
+/* The operation of sending all the selected graphical entities to the back of (behind) all other graphical entities. */
+"Send To Back" = "Læg tilbage";
+
+/* The operation of ending the editing process and proceding onto some other operation. */
+"End Editing" = "Afllut redigering";
+
+/* The operation of getting something from the Pasteboard and inserting into the document. */
+"Paste" = "Indsæt";
+
+/* The user action of creating an area to type into. */
+"Text" = "Tekst";
+
+/* The user action of selecting an item in the Services menu (for the undo/redo menu). */
+"Service Call" = "Kald tjeneste";
+
+/* The user action of changing the font of a bunch of selected graphical entities (for the undo/redo menu). */
+"Font" = "Skrift";

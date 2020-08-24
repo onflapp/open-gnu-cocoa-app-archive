@@ -1,0 +1,167 @@
+{
+    APPCLASS = DrawApp; 
+    DYNAMIC_CODE_GEN = YES; 
+    FILESTABLE = {
+        CLASSES = (
+            Circle.m, 
+            Curve.m, 
+            DrawApp.m, 
+            DrawDocument.m, 
+            DrawPageLayout.m, 
+            DrawSpellText.m, 
+            Graphic.m, 
+            GraphicView.m, 
+            GridView.m, 
+            Group.m, 
+            Image.m, 
+            Inspector.m, 
+            Line.m, 
+            Polygon.m, 
+            Rectangle.m, 
+            Ruler.m, 
+            Scribble.m, 
+            SyncScrollView.m, 
+            TextGraphic.m
+        ); 
+        C_FILES = (); 
+        FRAMEWORKS = (AppKit.framework, Foundation.framework, System.framework); 
+        H_FILES = (
+            draw.h, 
+            Circle.h, 
+            Curve.h, 
+            DrawApp.h, 
+            DrawDocument.h, 
+            DrawPageLayout.h, 
+            DrawSpellText.h, 
+            Graphic.h, 
+            GraphicView.h, 
+            GridView.h, 
+            Group.h, 
+            Image.h, 
+            Inspector.h, 
+            Line.h, 
+            LocalizableStrings.h, 
+            Polygon.h, 
+            Rectangle.h, 
+            Ruler.h, 
+            Scribble.h, 
+            SyncScrollView.h, 
+            TextGraphic.h, 
+            compatibility.h, 
+            propertyList.h
+        ); 
+        IMAGES = (
+            Arrow.tiff, 
+            Circle.tiff, 
+            Cross.tiff, 
+            Curve.tiff, 
+            Line.tiff, 
+            Pencil.tiff, 
+            Polygon.tiff, 
+            Rectangle.tiff, 
+            Scribble.tiff, 
+            TextGraphic.tiff, 
+            paul.tiff, 
+            DrawApp.ico, 
+            DrawFile.ico, 
+            drawApp.tiff, 
+            drawFile.tiff
+        ); 
+        INTERFACES = (
+            "Draw-winnt.nib", 
+            Draw.nib, 
+            GridView.nib, 
+            InfoPanel.nib, 
+            InspectorPanel.nib, 
+            PageLayoutAccessory.nib, 
+            SavePanelAccessory.nib
+        ); 
+        M_FILES = (); 
+        OTHER_LIBS = (); 
+        OTHER_LINKED = (
+            drawWraps.psw, 
+            Draw_main.m, 
+            gvDrag.m, 
+            gvLinks.m, 
+            gvPasteboard.m, 
+            gvServices.m, 
+            compatibility.m, 
+            propertyList.m
+        ); 
+        OTHER_RESOURCES = (Localizable.strings, Operations.strings, CoverSheet.strings, Help.draw); 
+        OTHER_SOURCES = (
+            Makefile, 
+            Makefile.postamble, 
+            ChangeManager.rtf, 
+            Change.rtf, 
+            UndoDoc.rtf, 
+            UndoREADME.rtf, 
+            Links.rtf, 
+            Dragging.rtf, 
+            README.rtf
+        ); 
+        PRECOMPILED_HEADERS = (draw.h); 
+        PROJECT_HEADERS = (draw.h); 
+        PSWM_FILES = (); 
+        PSW_FILES = (); 
+        PUBLIC_HEADERS = (); 
+        SOUNDS = (); 
+        STRINGS_FILES = (); 
+        SUBPROJECTS = (graphicsUndo.subproj, undo.subproj); 
+    }; 
+    GENERATEMAIN = YES; 
+    LANGUAGE = English; 
+    LOCALIZABLE_FILES = {
+        Arrow.tiff = Arrow.tiff; 
+        Circle.tiff = Circle.tiff; 
+        CoverSheet.strings = CoverSheet.strings; 
+        Cross.tiff = Cross.tiff; 
+        Curve.tiff = Curve.tiff; 
+        "Draw-winnt.nib" = "Draw-winnt.nib"; 
+        Draw.nib = Draw.nib; 
+        GridView.nib = GridView.nib; 
+        Help.draw = Help.draw; 
+        InfoPanel.nib = InfoPanel.nib; 
+        InspectorPanel.nib = InspectorPanel.nib; 
+        Line.tiff = Line.tiff; 
+        Localizable.strings = Localizable.strings; 
+        Operations.strings = Operations.strings; 
+        PageLayoutAccessory.nib = PageLayoutAccessory.nib; 
+        Pencil.tiff = Pencil.tiff; 
+        Polygon.tiff = Polygon.tiff; 
+        Rectangle.tiff = Rectangle.tiff; 
+        SavePanelAccessory.nib = SavePanelAccessory.nib; 
+        Scribble.tiff = Scribble.tiff; 
+        TextGraphic.tiff = TextGraphic.tiff; 
+        paul.tiff = paul.tiff; 
+    }; 
+    MAKEFILEDIR = "$(NEXT_ROOT)/NextDeveloper/Makefiles/project"; 
+    NEXTSTEP_APPICON = drawApp.tiff; 
+    NEXTSTEP_BUILDDIR = ""; 
+    NEXTSTEP_BUILDTOOL = /bin/gnumake; 
+    NEXTSTEP_COMPILEROPTIONS = ""; 
+    NEXTSTEP_DOCUMENTEXTENSIONS = ({Extension = draw; Image = drawFile.tiff; }); 
+    NEXTSTEP_INSTALLDIR = /NextDeveloper/Demos; 
+    NEXTSTEP_LINKEROPTIONS = ""; 
+    NEXTSTEP_MAINNIB = Draw; 
+    PDO_UNIX_BUILDTOOL = $NEXT_ROOT/NextDeveloper/bin/make; 
+    PDO_UNIX_MAINNIB = Draw; 
+    PROJECTNAME = Draw; 
+    PROJECTTYPE = Application; 
+    PROJECTVERSION = 2.6; 
+    SYSTEMEXTENSIONS = (); 
+    WINDOWS_APPICON = DrawApp.ico; 
+    WINDOWS_BUILDDIR = ""; 
+    WINDOWS_BUILDTOOL = $NEXT_ROOT/NextDeveloper/Executables/make; 
+    WINDOWS_COMPILEROPTIONS = ""; 
+    WINDOWS_DOCUMENTEXTENSIONS = ({Extension = draw; Image = DrawFile.ico; }); 
+    WINDOWS_INSTALLDIR = /NextDemos; 
+    WINDOWS_LINKEROPTIONS = ""; 
+    WINDOWS_MAINNIB = Draw; 
+    appClassName = DrawApp; 
+    appWrapper = YES; 
+    mainNibFile = Draw.nib; 
+    makeTarget = "make debug"; 
+    writeMainfile = 1; 
+    writeMakefile = 1; 
+}

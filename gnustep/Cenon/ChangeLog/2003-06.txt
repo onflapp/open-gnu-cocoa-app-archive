@@ -1,0 +1,114 @@
+Cenon Change Log - June 2003
+
+2003-06-04  Georg Fleischmann
+	* dvPasteboard (-pasteFromPasteboard:...): paste on first editable layer, not last editable layer
+	  dvPasteboard (-pasteFromPasteboard:...): 1:1 paste, wenn Lage nicht editierbar aber leer
+
+2003-06-05  Georg Fleischmann
+	* App.m (-displayToolPanel:): -setFrameUsingName: added, disabled stuff removed
+	* DocView.m (-dealloc): [origin release]
+	* DocView.m, h (-pointRelativeOrigin:, -pointAbsolute:): new
+	  DocWindow.m (-displayCoordinate:ref:): p = [view pointRelativeOrigin:p0], 0.0 -> LARGENEG_COORD,
+	                                         p = p0 to display relative coordinates
+	  dvGrid.m (-resetGrid): offset added to draw grid relative origin
+	  dvGrid.m (-grid:): relative origin, grid() not used any more
+	  TPMove.m (-set:): convert point to absolute coordinates
+	  IPArc.m (-update:, -setCenter*:): converted to/from origin
+	  IPCurve.m (-update:, -setPoint*:, -setControl*:): converted to/from origin
+	  IPGroup.m (-update:, -setPoint*:): converted to/from origin
+	  IPImage.m (-update:, -setX:, -setY:): converted to/from origin
+	  IPLine.m (-update:, -setPoint*:, -setEnd*:): converted to/from origin
+	  IPLine3D.m (-update:, -setPoint*:, -setEnd*:): converted to/from origin
+	  IPMark.m (-update:, -setPoint*:): converted to/from origin
+	  IPPath.m (-update:, -setOrigin*:, -setPoint*:): converted to/from origin
+	  IPPolyLine.m (-update:, -setPoint*:): converted to/from origin
+	  IPRectangle.m (-update:, -setX:, -setY:): converted to/from origin
+	  IPSinking.m (-update:, -setPosition*:): converted to/from origin
+	  IPText.m (-update:, -setPoint*:): converted to/from origin
+	  IPCrosshairs.m (-setPoint*:): resetGrid added, -cache: instead of drawAndDisplay
+	* App.m (-runGridPanel:): update panel to have grid of current view displayed
+
+Cenon 3.60 beta 3
+
+2003-06-11 Ilonka Fleischmann
+	* DocView.m (-mouseDown:): [g isSelected] && .. for splitObject
+	* VCurve.m (pointOnCurveNextToPoint()): bounds.size.. < 50.0*TOLERANCE instead 100.0 !!!
+	  VCurve.m (pointOnCurveNextToPoint()): cp[4] und cp[0] = pc1[0]... instead cp und cp = pc1 !!!!!
+	* VPath.m (-getListOfObjectsSplittedAtPoint:): ..cpt.x) > 100.0*TOLERANCE instead of > TOLERANCE
+	  VPath.m (-getListOfObjectsSplittedAtPoint:): splitI == 0 && endPoint < 100.0*TOLERANCE ..
+
+2003-06-12  Georg Fleischmann
+	* dvGrid.m (-resetGrid): two grid lines where missing -> numGridRects + 2
+
+2003-06-15 Ilonka Fleischmann
+	* VRectangle.m (-drawWithPrincipal:): #if !defined(...  else if (VHFIsDrawingToScreen() && ..
+	* VPath.m (-drawWithPrincipal:): #if !defined(...  else if (VHFIsDrawingToScreen() && ..
+	* VText.m (-drawWithPrincipal:): #if !defined(...  else if (VHFIsDrawingToScreen() && ..
+	* VPolyLine.m (-drawWithPrincipal:): #if !defined(...  else if (VHFIsDrawingToScreen() && ..
+	* VGraphic.m (-drawWithPrincipal:): #if !defined(...  else if (VHFIsDrawingToScreen() && ..
+
+2003-06-18  Georg Fleischmann
+	* Mark.m (-name, setName:): new
+	  Mark.h (NSString *name): new
+	  Mark.m (-propertyList, -initFromPropertyList:): name added
+	  IPMark.m, h, nib: name added
+	  NameGraphicsChange.m, h: new
+	  ChangeDetail.m, h (NameChangeDetail): added
+	  undo.h: NameGraphicsChange.h added
+	  Operations.strings (NAME_OP): NAME_OP added
+
+2003-06-20  Georg Fleischmann
+	* VHFImport, VHFExport: added as subproject
+	  vhfCFGFunctions.m, h: added to VHFShared subproject
+
+2003-06-22  Georg Fleischmann
+	* IPAllLayers.m (-removeLayer:): Delete Button instead of OK
+	  messages.h: DELETE_STRING added
+
+2003-06-24  Georg Fleischmann
+	* App.m (-loadModules:): load modules from Library paths
+	  locations.h (BUNDLEFOLDER): changed
+	  functions.m, h (localBundlePath(), userBundlePath()): new
+	  *Library/Cenon/System/Bundles -> *Library/Bundles/Cenon, *Library/Cenon
+	* Cenon/System -> SinkingMetrics.plist, FontListNoFill moved to app resources
+	  Jobs -> CAM
+	  IPSinking.h, m (-updateDiameterPopUp:): load from resource path
+	  CharConversion -> resources
+	  locations.h: System folder removed
+	  VText.m (+initialize): load fontListNoFill from resource path too (not active)
+
+2003-06-24 Ilonka Fleischmann
+	* VPath.m (-join:): if ( filled || [self closed] ) setDirectionCCW:.. instead of only if ( filled )
+	  VPath.m (-splitTo:): splitted path mit subPaths in subPaths !! und sonst in einzelteile
+	  VPath.m (-setDirectionCCW:): PolyLine auch als einzelnes Element beröcksichtigt !!
+	  VPath.m (-directionOfSubPath:::): PolyLine auch als einzelnes Element beröcksichtigt !!
+	  VPath.m (-changeDirection): ruft setDirectionCCW: auf !
+	* VPolyLine.h, m (-setDirectionCCW:): new
+	  VPolyLine.m (-changeDirection): isDirectionCCW setzen !
+	  VPolyLine.m (setFilled:): setDirectionCCW: !
+  	* DocView.m (-reverse:): malen auf neuen Stand gebracht
+	* VRectangle.m (-changeDirection): new
+	* Main.nib (Edit): Reverse Direction new -> conncetion to reverse:
+	* VCurve.m (-drawWithPrincipal): if ( ..showDirection]) [self drawDirectionAtScale:...
+
+2003-06-25  Georg Fleischmann
+	* Main.nib: set Alt-d for reverse direction
+
+2003-06-26  Georg Fleischmann
+	* GraphicObjects.subproj: clean up to remove Linux warnings, spaces added behind operators
+	  graphicsUndo.subproj: clean up to remove warning on Linux
+	  Inspector.subproject: clean up to remove warning on Linux
+	  PreferencesPanel.subproj: clean up to remove warning on Linux
+	  ProjectSettingsPanel.subproj: clean up to remove warning on Linux
+	  TransformPanel.subproj: clean up to remove warning on Linux
+	  VHFShared: clean up to remove warning on Linux
+	  Cenon: clean up to remove warning on Linux
+	  Type1Import.m: clean up to remove warning on Linux and Apple
+	  *.m: if (), for (), while (), switch ()
+
+2003-06-28  Georg Fleischmann
+	* IPAllLayers.m (-setLayerList:): redisplay layer list, even if only the states changed
+
+2003-06-29  Georg Fleischmann
+	* messages.h (MODIFY_STRING:):new
+	  Localizable-strings: "Modify", "Delete" added

@@ -1,0 +1,33 @@
+VHFImport Library Change Log - 2006
+
+
+2006-03-24 Ilonka Fleischmann
+	* GerberImport.m (-getApertureMacro::::): Eagle octagon Workaround
+	-> this special makes octagonal pads created with the Eagle pcb program
+	   work
+
+2006-08-10 Georg Fleischmann
+	* DXFImport.m (-getLWPolyLine:addToList:):
+          set modeClosed with AND operator not '=='
+	-> this closes polyLines, if other flags are set
+
+2006-08-19 Georg Fleischmann
+	* Mac OS X: linker-flags: -undefined dynamic_lookup
+
+2006-11-04 Ilonka Fleischmann
+ 	* DINImport.m (-loadParameter): ops.start auf vorhandenen Wert
+	  abgefragt befor default zerstðrt wird
+ 	* DINImport.m (-setDefaultParameter): ops.start = @"%"; initialisiert
+ 	* DINImport.m (-interpret:): if ( fileFormat != DIN_EXCELLON )
+	  auskommentiert
+ 	  DINImport.m (-interpret:): no ops.start found und
+	  ( fileFormat == DIN_EXCELLON ) scanner an startLocation setzten
+	-> BohrdatenImport: jetzt kðnnen die Tools innerhalb der Datei
+	   initialisiert (diameter) werden
+
+2006-11-21 Ilonka Fleischmann
+	* HPGLImport.m (-interpret): labelTermiSet = 3 instead of ops.termi
+	  HPGLImport.m (-getLabel:): kein String return NO
+	  HPGLImport.m (-getGraphicFromData::):
+	  bei ops.label kein string damit auch kein Text
+	-> HPGLImport: damit werden Labels (Text) richtig eingelesen

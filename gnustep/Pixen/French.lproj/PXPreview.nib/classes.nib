@@ -1,0 +1,18 @@
+{
+    IBClasses = (
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            CLASS = PXCanvasView; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {alternateBackground = id; delegate = id; mainBackground = id; }; 
+            SUPERCLASS = NSView; 
+        }, 
+        {
+            CLASS = PXPreviewController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {view = id; }; 
+            SUPERCLASS = NSWindowController; 
+        }
+    ); 
+    IBVersion = 1; 
+}

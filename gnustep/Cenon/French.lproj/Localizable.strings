@@ -1,0 +1,114 @@
+/* Localized String for Cenon: French
+ *
+ * traduction M. Saro le 13-08-2010
+ * created:  2010-08-13
+ * modified: 2011-07-05 (Import: "You need to install GhostScript..." added, "DXF File exceeds maximum size!..." fixed)
+ *           2011-03-30
+ */
+
+/* Update Panel */
+"Connected to server" = "Connected to server";
+"Receiving data" = "Receiving data";
+"A new version of Cenon is available" = "Nouvelle version de Cenon";
+"Cenon is up to date" = "Cenon est à jour";
+"Downloading %d %@" = "Téléchargement %d %@";
+"items" = "items";  // depending of context:   items or Données  ***
+"item" = "item";    // depending of context:   item or Donnée  ***
+"of" = "de";        // Downloading 1 MB of 5 MB
+"Download succeeded !" = "Téléchargement terminé!";
+"Download failed !" = "Erreur de téléchargement!!";
+
+/* Menu Display */
+"Turn Grid Off" = "Supprimer grille";
+"Turn Grid On" = "Afficher grille";
+"Hide Directions" = "Masquer directions";
+"Show Directions" = "Afficher directions";
+"Hide Coordinates" = "Masquer coordonnées";
+"Show Coordinates" = "Afficher coordonnées";
+"Hide Moves" = "Masquer déplacements";
+"Show Moves" = "Afficher déplacements";
+"Hide Tool Diameter" = "Masquer l'outil diamètre";
+"Show Tool Diameter" = "Afficher l'outil diamètre";
+
+/* */
+"Select two objects for joining!" = "Sélectionner les deux objets à joindre";
+"Can't create backup file. File not saved!" = "Impossible de créer le fichier backup. Fichier non sauvé!";
+"Can't remove backup file." = "Impossible de supprimer le fichier backup.";
+"UNTITLED" = "Sans_titre";
+"Can't save file." = "Impossible de sauver le fichier.";
+
+/* Buttons */
+"OK" = "OK";
+"Cancel" = "Annuler";
+"Delete" = "Supprimer";
+"Modify" = "Modifier";
+"Keep" = "Garder";
+"Skip" = "Ignorrer";
+
+/* */
+"Could not start module." = "Impossible de démarrer le module.";
+"Could not open file." = "Impossible d'ouvrir le fichier.";
+"Could not open file\n%@." = "Impossible d'ouvrir le fichier:\n%@";
+"Could not open file\n%@. \nUsing Default." = "Impossible d'ouvrir le fichier:\n%@. \n Using Default.";
+"You have unsaved documents." = "Document(s) non sauvegardé(s)!";
+"Review Unsaved" = "Review non sauvé";
+"Quit Anyway" = "Quitter quand même";
+"Quit" = "Quitter";
+"Default" = "Standard";
+"Can't write file." = "Impossible d'écrire le fichier.";
+"Graphic has zero size." = "Dimension du Graphique: nulle.";
+"%@ has changes. Save them?" = "%@ a changé. Sauver?";
+"Close" = "Fermer";
+"Save" = "Sauver";
+"Do you want to revert to: %@ ?" = "Voulez vous revenir à %@ ?";
+"Don't Save" = "Ne pas sauver";
+"The margins or paper size specified are invalid." = "Les marges spécifiées ne sont valides.";
+"The contour will be calculated know! You may want to stop this operation to calculate on a later time." = "Calcul du contour maintenant! Arrêter l'opération pour différer le calcul.";
+"Calculate" = "Calculer";
+"Abort" = "Arrêt";
+"mm" = "mm";
+"inch" = "pouce";
+"pt" = "pt";
+"Name '%@' allready in use!" = "Le nom '%@' existe déjà!";
+"You need to install the Cenon Library!" = "Vous devez installer la bibliothèque Cenon!";
+
+"Do you really want to remove layer '%@' ?" = "Voulez-vous réellement supprimer la couche '%@' ?";
+"Only one layer of this kind allowed!" = "Une seule couche de ce type est autorisée!";
+"Clipping" = "Encadrement";
+
+/* import messages */
+"DXF File extends maximum size!\nPlease increase the DXF resolution in the Preferences." = "DXF File extends maximum size!\nSVP, augmenter la résolution DXF dans les préférences.";
+"Bore %.1f mm" = "Trous %.1f mm";
+"Some Objects are exceeding drawing bounds!" = "Des objets sont hors des limites du dessin!";
+"No layer available with name/color '%@'!" = "Aucune couche avec le nom/couleur '%@'!";
+"Create Layer" = "Nouvelle couche";
+
+"Layer is not editable!" = "Couche non éditable!";
+"Continue" = "Continuer";
+"Stop work?" = "Arrêt du travail?";
+"Clipped graphic out of range!" = "Cadre du graphique hors limites!";
+"DXF File exceeds maximum size!\nPlease increase the DXF resolution in the Preferences." = "DXF File exceeds maximum size!\nPlease increase the DXF resolution in the Preferences.";
+"You need to install GhostScript (gs) to import PDF or PostScript!" = "You need to install GhostScript (gs) to import PDF or PostScript!";
+
+/* Graphic Objects */
+"Line" = "Ligne";
+"Arc" = "Arc";
+"Curve" = "Courbe de Bezier";
+"Rectangle" = "Rectangle";
+"Clip Rectangle" = "Cadre rectangulaire";
+"Path" = "Chemin";
+"Web" = "Réseau";
+"Mark" = "Bohrmarke";
+"Text" = "Texte";
+"Textpath" = "Signet";
+"Thread" = "Thread";
+"Spiral" = "Spirale";
+"Sinking" = "Senkung";
+"Image" = "Image";
+
+/* TransformPanel */
+"Scale" = "Echelle";
+"Move" = "Déplacer";
+"Align" = "Aligner";
+"Rotate" = "Rotation";
+"Mix" = "Mix";

@@ -1,0 +1,141 @@
+/* The operation of undoing the last thing the user did. */
+"Undo" = "Undo";
+
+/* The operation of undoing the last %@ operation the user did--all the entries in the Operations and TextOperations .strings files are the %@ of this or Redo. */
+"Undo %@" = "Undo %@";
+
+/* The operation of redoing the last thing the user undid. */
+"Redo" = "Redo";
+
+/* The operation of redoing the last %@ operation the user undid--all the entries in the Operations and TextOperations .strings files are the %@ of either this or Undo. */
+"Redo %@" = "Redo %@";
+
+/* The operation of aligning some graphical entities together. */
+"Align" = "Ausrichten";
+
+/* The operation of building the contour of graphical entities */
+"Contour" = "Kontur";
+
+/* The operation of ending the editing process and proceding onto some other operation. */
+"Editing" = "Editieren";
+
+/* The operation of changing the size of a graphical entity by dragging a corner of it with the mouse. */
+"Resize" = "Grösse";
+
+/* The operation of changing the spacing or color of the grid. */
+"Grid Change" = "Gitter Veränderung";
+
+/* The operation of creating a new graphical entity by dragging the mouse.  The %@ is one of Rectangle, Circle, etc. */
+"New %@" = "Neu %@";
+
+/* The operation of aligning some graphical entities together. */
+"Align" = "Ausrichten";
+
+/* The operation of bringing a graphical entity or group of graphical entities to the front of all other graphical entities. */
+"Bring to Front" = "Nach vorne stellen";
+
+/* The operation of changing the color of a line segment. */
+"Color" = "Farbe";
+
+/* The operation of unlocking all the graphical entities which were previously locked down (see Lock). */
+"Unlock" = "Lösen";
+
+/* The operation of changing the dimensions of a graphical entity by typing numbers into text fields for the width and height. */
+"Dimensions" = "Grösse";
+
+/* The operation of changing the width of a line segment. */
+"Line Width" = "Linienstärke";
+
+/* The operation of changing the length of a graphical entity. */
+"Length" = "Länge";
+
+/* The operation of excluding all selected graphics so that they are not processed */
+"Exclude/Include" = "Auslassen/Bearbeiten";
+
+/* The operation of locking or unlocking all selected graphics so that they can't be edited in anyway until they are unlocked. */
+"Lock/Unlock" = "Fixieren/Lösen";
+
+/* The operation of returning a graphical entity to its natural aspect ratio, e.g., an oval becomes a circle, a rectangle becomes a square. */
+"Natural Size" = "Natürliche Grösse";
+
+/* The operation of moving a graphical entity. */
+"Move" = "Verschieben";
+
+/* The operation of adding/moving/removing a vertex of an object. */
+"Add vertex"    = "Stützpunkt einfügen";
+"Move vertex"   = "Stützpunkt verschieben";
+"Remove vertex" = "Stützpunkt entfernen";
+
+/* The operation of aligning some graphical entities together. */
+"Mix" = "Mischen";
+
+/* The operation of mirroring a graphical entity. */
+"Mirror" = "Spiegeln";
+
+/* The operation of renaming a graphical entity. */
+"Rename" = "Umbenennen";
+
+/* The operation of changing the radius of a graphical entity in the inspector panel */
+"Radius" = "Radius";
+
+/* The operation of rotating a graphical entity. */
+"Rotate" = "Drehen";
+
+/* The operation of scaling a graphical entity. */
+"Scale" = "Skalieren";
+
+/* The operation of pressing the delete key to remove the selected graphical entites or text from the document entirely. */
+"Delete" = "Entfernen";
+"Remove" = "Entfernen";
+
+/* The operation of starting to edit some text. */
+"Begin Editing" = "Beginn Editieren";
+
+/* The operation of ungroup a bunch of graphical entities that are grouped together into a single graphical entity. */
+"Ungroup" = "Gruppe Auflösen";
+
+/* The operation of grouping a bunch of graphical entities together. */
+"Group" = "Gruppieren";
+
+/* The operation of joining a bunch of graphical entities together. */
+"Join" = "Vereinigen";
+
+/* The operation of punching graphical entities from others. */
+"Punch" = "Ausstechen";
+
+/* The operation of splitting a path. */
+"Split" = "Auflösen";
+
+/* The operation of cutting some graphical entities out of the document and putting them on the Pasteboard. */
+"Cut" = "Ausschneiden";
+
+/* The operation of locking down all selected graphics so that they can't be edited in anyway until they are unlocked. */
+"Lock" = "Fixieren";
+
+/* The operation of filling a graphical entity's interior with a gray or color. */
+"Fill" = "Füllen";
+
+/* The operation of sending all the selected graphical entities to the back of (behind) all other graphical entities. */
+"Send To Back" = "Nach hinten stellen";
+
+/* The operation of ending the editing process and proceding onto some other operation. */
+"End Editing" = "End Editing";
+
+/* The operation of getting something from the Pasteboard and inserting into the document. */
+"Paste" = "Einfügen";
+
+/* The user action of creating an area to type into. */
+"Text" = "Text";
+
+/* The user action of selecting an item in the Services menu (for the undo/redo menu). */
+"Service Call" = "Service Aufruf";
+
+/* The user action of changing the font of a bunch of selected graphical entities (for the undo/redo menu). */
+"Font" = "Font";
+
+/* The operation of changing the stepwidth of a graduate or radial filling. */
+"Step Width" = "Schrittweite";
+
+/* The operation of changing the radial center of a radial filling */
+"Radial Center" = "Verlauf-Zentrum";
+

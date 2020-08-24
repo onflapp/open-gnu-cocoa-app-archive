@@ -1,0 +1,36 @@
+Cenon Change Log - October 2001
+
+2001-10-03  Georg Fleischmann
+	* DocView.m (-group:): call [change noteGroup:layer:],
+	                       remove objects from slist not part of the group
+	  DocView.m (-bindTextToPath:): call [change noteGroup:layer:]
+	                       remove objects from slist not part of the textpath
+	* GroupGraphicsChange.m, h: manage group for each layer
+	* TextPath.m (-initWithText...): call [super init]
+
+2001-10-08  Georg Fleischmann
+	* DPLayer (-setToolList:): use [toolPopup removeAllItems]
+
+2001-10-15  Georg Fleischmann
+	* Rectangle.m (-coordBounds:): check for rotAngle != 0.0
+
+2001-10-25  Georg Fleischmann
+	* PerformanceMap.m, h (removeAllObjects): new to remove references from graphic objects
+	* LayerObject.m (-createPerformanceMapWithFrame:, -release): call removeAllObjects for performanceMap
+	* TileScrollView.m (-dealloc): removed (= activated)
+	  TileScrollView.m (-tile): hack to retain NSRulerView to avoid crash with too many releases
+
+2001-10-30  Georg Fleischmann
+	* DocView.m (-addList:toLayerAtIndex:): layer<0 -> exception removed
+
+Cenon 3.50 beta 11
+
+2001-10-31  Georg Fleischmann
+	* DPLayerDetails.nib: autoresizing masks corrected
+	* PCBContour.m (-createRubOutputWithList:...): first filling, then contour
+	* MoveLayerGraphicsChange.m, h: new
+	* undo.h: MoveLayerGraphicsChange added
+	* TPAlign (-alignLayer:): use MoveLayerGraphicsChange
+	* TextGraphic.m, h: clean up
+	  TextGraphic (-setString:...): option to set lineHeight added
+	  TextGraphic.m (-setAngle:withCenter:): keep rotAngle positive

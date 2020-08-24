@@ -1,0 +1,38 @@
+
+Cenon 3.71:
+
+- New: Multi page documents (basic handling of pages + printing).
+       Template layers for even, odd and all pages with
+       wildcards for page number #PAGENUM# and page count #PAGECNT#
+       Example document: MultiPage.cenon
+- New: new editing Tool to add a vertex to Paths and PolyLines
+- New: removing of a vertex from Path and PolyLine
+- Punch: punch with Groups and Rectangles added
+- Undo for flatten text added
+- Optimization of memory usage
+- Fix: crash removed on Quit
+- Fix: several bug fixes for calculating contours of objects
+- Fix, Gerber-Export: Filled PolyLines are now filled
+                      don't export empty layers any more
+- bug fixes and cosmetics
+- Documentation updated
+
+Cenon 3.70:
+
+- Layer Inspector: direct adding of a layer with the given name
+- Punch: it is now possible to punch with an unfilled object
+- Ungroup: in mixed selection the groups can be ungrouped
+- Join: better closing (fill) of open paths
+- Printing: print always 100%
+- Fix, Printing: Print-Panel settings are stored
+- Gerber-Import: improved import of polygons
+- Gerber-Import: Arc angles close to 360 degree improved
+- Gerber-Export: output of complex paths improved
+- PostScript-Import: better support of CMYK color space
+- Display: better performance with many objects in groups or paths
+- Fix: loading of an empty group works
+- Fix, Contour: large images don't crash with contour fill and image contour
+- Fix for PolyLines within Paths
+- Antialiasing fixes for Apple and GNUstep
+- Apple: execultable now compiled with Panther (Mac OS 10.3)
+- more

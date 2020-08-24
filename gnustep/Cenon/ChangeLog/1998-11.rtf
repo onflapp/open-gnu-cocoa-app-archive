@@ -1,0 +1,35 @@
+{\rtf0\ansi{\fonttbl\f0\fmodern Courier;}
+\pard\tx1440\tx2700\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li2700\fi-2700\ql\qnatural
+
+\f0\b\fs24 \cf0 …nderungen för November 1998\
+
+\b0 \
+30.11.98	Cenon\
+\
+\pard\tx1440\tx4320\tx9360\tx11520\tx12240\tx12700\tx13500\tx14900\tx16220\tx16840\li4320\fi-4320\ql\qnatural
+\cf0 Datum	Datei	VerÙndert\
+----------------------------------------------------------------------------------------------\
+09.11.98	TextGraphic.m	-setBaseOrigin -> p.y+descender\
+22.11.98	DPLayer.m	-setLayerList: -> moveMatrix leer gedrawed\
+	Xyz.m	-executeUPath: -> delay(500) vorangesetzt wegen undefinierbarem Absturz\
+Version 3.10 vom 22.11.98\
+\
+24.11.98	e2Tile.m	-buildTileCopies: -> masterIndex l andersherum gezÙhlt\
+	messages.h	DXFSIZE_STRING -> neu\
+	DXFImportSub.m	-setBounds -> runterskaliert, wenn zu gross\
+25.11.98	Arc.m	-description -> neu\
+		-parallelObject:::: -> y vom center wird gemittelt\
+	types.h	Sqr -> neu\
+Version 3.10 vom 25.11.98\
+\
+30.11.98	App.m	-init -> savePanel aufgerufen um sicherzustellen, dass kein Open panel als save panel verwendet wird.\
+30.11.98	Ilonka\
+	Path.m	- contour: -> RichtungsArray auch för einzelne Objekte hochzÙhlen !!\
+		-> bei subpath ermittlung/Richtungsbestimmung und nur ein Element ->\
+		   Abfrage of Arc bevor conurbilden und addieren !!!\
+		- directionOfSubPath: -> a fast 360 Grad -> ignorieren !!!\
+		SmallAngle() -> verÙndert\
+	Arc.m	- getListOfObjectsSplittedFrom: -> bei negativem angle mössen die ps[] getauscht werden und die angles[] anders sortiert werden !\
+		- intersectLine: -> winkel vergleich toleranz nur noch 0.05 statt 0.1\
+Version 3.10 vom 30.11.98\
+}
