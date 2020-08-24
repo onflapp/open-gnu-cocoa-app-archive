@@ -1,0 +1,16 @@
+{
+	NSHelpFile = CVL.rtfd; /* Normally, it should be set in project inspector, but we have some problems on NT, as usual */
+    NSServices = (
+      	{
+            NSPortName = CVL;
+            NSMessage = selectInCVL;
+            NSSendTypes = (NSFilenamePboardType);
+            NSReturnTypes = ();
+            NSMenuItem = {
+                default = "CVL/Select";
+                English = "CVL/Select";
+                French = "CVL/S\U00E9lectionner"; /* e acute unicode */
+            };
+      	}
+    );
+}

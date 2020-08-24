@@ -1,0 +1,84 @@
+{
+    IBClasses = (
+        {
+            ACTIONS = {
+                setShowConflicts = id; 
+                setShowIgnored = id; 
+                setShowModified = id; 
+                setShowNeedsMerge = id; 
+                setShowNeedsUpdate = id; 
+                setShowNoStatus = id; 
+                setShowNotInCVS = id; 
+                setShowUnknown = id; 
+                setShowUpToDate = id; 
+            }; 
+            CLASS = DirectoryContentsFilterProvider; 
+            LANGUAGE = ObjC; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            ACTIONS = {showProgressPanel = id; }; 
+            CLASS = FirstResponder; 
+            LANGUAGE = ObjC; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            ACTIONS = {
+                addSelectedFiles = id; 
+                addSelectedFilesAsBinary = id; 
+                closeWorkArea = id; 
+                commitSelectedFiles = id; 
+                commitWorkArea = id; 
+                delete = id; 
+                deleteAndUpdateSelectedFiles = id; 
+                diffSelectedFiles = id; 
+                filterPreselectionPopped = id; 
+                openVersionsInTemporaryDirectory = id; 
+                openWithApplicationSelectedFiles = id; 
+                refreshSelectedFiles = id; 
+                reinstateFilesMarkedForRemoval = id; 
+                releaseWorkArea = id; 
+                removeSelectedFiles = id; 
+                replaceWorkAreaFiles = id; 
+                restoreFiles = id; 
+                revealSelectedFiles = id; 
+                revealWorkArea = id; 
+                saveVersionAs = id; 
+                setBrowserView = id; 
+                setListView = id; 
+                show = id; 
+                tagSelectedFiles = id; 
+                tagWorkArea = id; 
+                toggleFilterDrawer = id; 
+                turnOffEditing = id; 
+                turnOffWatchingForAllActions = id; 
+                turnOffWatchingForCommitAction = id; 
+                turnOffWatchingForEditAction = id; 
+                turnOffWatchingForUneditAction = id; 
+                turnOnEditing = id; 
+                turnOnWatchingForAllActions = id; 
+                turnOnWatchingForCommitAction = id; 
+                turnOnWatchingForEditAction = id; 
+                turnOnWatchingForNoActions = id; 
+                turnOnWatchingForUneditAction = id; 
+                updateSelectedFiles = id; 
+                updateWorkArea = id; 
+                viewerFrameSizeChanged = id; 
+            }; 
+            CLASS = WorkAreaViewer; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                filterButtonsMatrix = id; 
+                filterDrawer = NSDrawer; 
+                filterPopup = id; 
+                filterProvider = id; 
+                processesButton = id; 
+                repositoryRootPathTextField = NSTextField; 
+                viewHolder = id; 
+                window = id; 
+            }; 
+            SUPERCLASS = NSObject; 
+        }
+    ); 
+    IBVersion = 1; 
+}

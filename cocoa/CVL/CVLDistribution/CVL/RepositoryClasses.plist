@@ -1,0 +1,9 @@
+{
+    local=CvsLocalRepository;
+    remote=CvsRemoteRepository;
+    rsh=CvsRemoteRepository;
+    server=CvsRemoteRepository;
+    pserver=CvsPserverRepository;
+    kserver=CvsRemoteRepository;
+    bonjour=CvsPserverRepository;
+}

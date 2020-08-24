@@ -1,0 +1,59 @@
+{
+    IBClasses = (
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {
+                cancel = id; 
+                cvsEditorsAndWatchersEnabledButtonChanged = id; 
+                featuresChanged = id; 
+                overrideCvsWrappersFileInHomeDirectoryButtonChanged = id; 
+                save = id; 
+            }; 
+            CLASS = PreferencesController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                alertTimeBeepButton = NSButton; 
+                alertTimeDisplayButton = NSButton; 
+                alertTimeIntervalFormCell = NSFormCell; 
+                cvsEditorsAndWatchersEnabledButton = NSButton; 
+                cvsPathTextField = NSTextField; 
+                cvsTemplateFilteringSwitch = NSButton; 
+                cvsTemplateUseSwitch = NSButton; 
+                defaultWorkAreaPathTextField = NSTextField; 
+                displayCvsErrorsButton = NSButton; 
+                maxParallelRequestsField = NSFormCell; 
+                opendiffUnixPathField = NSTextField; 
+                overrideCvsWrappersFileInHomeDirectoryButton = NSButton; 
+                panel = NSPanel; 
+                startupOpenSwitch = NSButton; 
+            }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            ACTIONS = {
+                senOpenPanel = id; 
+                takeObjectValueFrom = id; 
+                takeStringArrayValueFrom = id; 
+                takeStringValueFrom = id; 
+            }; 
+            CLASS = SenOpenPanelController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {delegate = id; target = id; valueField = id; }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            ACTIONS = {moveDown = id; moveUp = id; newEntry = id; removeEntry = id; }; 
+            CLASS = SenStringArrayBrowserController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {browser = id; textField = id; }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            CLASS = "_NibOwner"; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {handle = id; }; 
+            SUPERCLASS = NSObject; 
+        }
+    ); 
+    IBVersion = 1; 
+}

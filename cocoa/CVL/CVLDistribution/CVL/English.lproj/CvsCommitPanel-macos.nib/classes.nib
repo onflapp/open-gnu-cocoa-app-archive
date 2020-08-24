@@ -1,0 +1,33 @@
+{
+    IBClasses = (
+        {
+            CLASS = CVLTextView; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {target = id; }; 
+            SUPERCLASS = NSTextView; 
+        }, 
+        {
+            ACTIONS = {
+                cancel = id; 
+                clear = id; 
+                clearCommitMessageHistory = id; 
+                insertCommitMessageFrom = id; 
+                ok = id; 
+            }; 
+            CLASS = CvsCommitPanelController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                cancelButton = NSButton; 
+                clearButton = NSButton; 
+                clearMenuItem = NSMenuItem; 
+                commitHistoryPopUpButton = NSPopUpButton; 
+                commitMessageTextView = CVLTextView; 
+                okButton = NSButton; 
+                titleTextField = NSTextField; 
+            }; 
+            SUPERCLASS = NSWindowController; 
+        }, 
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }
+    ); 
+    IBVersion = 1; 
+}

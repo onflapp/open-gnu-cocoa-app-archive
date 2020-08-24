@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundleDocumentTypes</key>
+	<array/>
+	<key>CFBundleExecutable</key>
+	<string>CVL</string>
+	<key>CFBundleIconFile</key>
+	<string>appicon</string>
+	<key>CFBundleIdentifier</key>
+	<string>ch.sente.CVL</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>CVL</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>3.4.14b90</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleVersion</key>
+	<string>3.4.14b90</string>
+	<key>LSEnvironment</key>
+	<dict>
+		<key>CVS_RSH</key>
+		<string>/usr/bin/ssh</string>
+	</dict>
+	<key>LSMinimumSystemVersion</key>
+	<string>10.3.0</string>
+	<key>LSMultipleInstancesProhibited</key>
+	<string>false</string>
+	<key>NSMainNibFile</key>
+	<string>EasyCVS</string>
+	<key>NSPrincipalClass</key>
+	<string>NSApplication</string>
+	<key>NSServices</key>
+	<array>
+		<dict>
+			<key>NSMenuItem</key>
+			<dict>
+				<key>default</key>
+				<string>CVL/Select File in CVL</string>
+			</dict>
+			<key>NSMessage</key>
+			<string>selectInCVL</string>
+			<key>NSPortName</key>
+			<string>CVL</string>
+			<key>NSSendTypes</key>
+			<array>
+				<string>NSFilenamesPboardType</string>
+				<string>NSStringPboardType</string>
+			</array>
+		</dict>
+		<dict>
+			<key>NSMenuItem</key>
+			<dict>
+				<key>default</key>
+				<string>CVL/Import into Selected CVS Repository</string>
+			</dict>
+			<key>NSMessage</key>
+			<string>importIntoCvs</string>
+			<key>NSPortName</key>
+			<string>CVL</string>
+			<key>NSSendTypes</key>
+			<array>
+				<string>NSFilenamesPboardType</string>
+				<string>NSStringPboardType</string>
+			</array>
+		</dict>
+	</array>
+</dict>
+</plist>

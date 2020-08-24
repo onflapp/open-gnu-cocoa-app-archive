@@ -1,0 +1,53 @@
+{
+    DYNAMIC_CODE_GEN = YES; 
+    FILESTABLE = {
+        CLASSES = (
+            SenFormControllerConnectInspector.m, 
+            SenOpenPanelInspector.m, 
+            SenPanelsPalette.m
+        ); 
+        English_INTERFACES = (
+            SenOpenPanelInspector.nib, 
+            SenForms.nib, 
+            SenFormControllerConnectInspector.nib
+        ); 
+        FRAMEWORKS = (AppKit.framework, Foundation.framework, InterfaceBuilder.framework); 
+        H_FILES = (
+            SenFormControllerConnectInspector.h, 
+            SenOpenPanelInspector.h, 
+            SenPanelsPalette.h
+        ); 
+        INTERFACES = (); 
+        OTHER_RESOURCES = (palette.table); 
+        OTHER_SOURCES = (
+            h.template, 
+            m.template, 
+            Makefile, 
+            Makefile.postamble, 
+            Makefile.preamble, 
+            OpenSourceLicense.html, 
+            sente.gif
+        ); 
+        PRECOMPILED_HEADERS = (); 
+        PROJECT_HEADERS = (); 
+        PUBLIC_HEADERS = (); 
+        SUBPROJECTS = (SenPanels.subproj); 
+    }; 
+    LANGUAGE = English; 
+    MAKEFILEDIR = "$(MAKEFILEPATH)/pb_makefiles"; 
+    NEXTSTEP_BUILDTOOL = /bin/gnumake; 
+    NEXTSTEP_INSTALLDIR = "$(HOME)/Library/Palettes"; 
+    NEXTSTEP_JAVA_COMPILER = /usr/bin/javac; 
+    NEXTSTEP_OBJCPLUS_COMPILER = /usr/bin/cc; 
+    PDO_UNIX_BUILDTOOL = $NEXT_ROOT/Developer/bin/make; 
+    PDO_UNIX_INSTALLDIR = "$(HOME)/Library/Palettes"; 
+    PDO_UNIX_JAVA_COMPILER = "$(JDKBINDIR)/javac"; 
+    PDO_UNIX_OBJCPLUS_COMPILER = "$(NEXTDEV_BIN)/gcc"; 
+    PROJECTNAME = SenPanelsPalette; 
+    PROJECTTYPE = Palette; 
+    PROJECTVERSION = 2.8; 
+    WINDOWS_BUILDTOOL = $NEXT_ROOT/Developer/Executables/make; 
+    WINDOWS_INSTALLDIR = Library/Palettes; 
+    WINDOWS_JAVA_COMPILER = "$(JDKBINDIR)/javac.exe"; 
+    WINDOWS_OBJCPLUS_COMPILER = "$(DEVDIR)/gcc"; 
+}

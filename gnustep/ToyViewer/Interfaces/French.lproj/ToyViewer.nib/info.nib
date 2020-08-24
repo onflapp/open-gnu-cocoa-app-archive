@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist SYSTEM "file://localhost/System/Library/DTDs/PropertyList.dtd">
+<plist version="0.9">
+<dict>
+	<key>IBDocumentLocation</key>
+	<string>14 29 356 240 0 0 1024 746 </string>
+	<key>IBEditorPositions</key>
+	<dict>
+		<key>105</key>
+		<string>65 658 512 44 0 0 1024 746 </string>
+	</dict>
+	<key>IBFramework Version</key>
+	<string>219.0</string>
+	<key>IBMainMenuLocation</key>
+	<string>14 274 512 44 0 0 1024 746 </string>
+	<key>IBOpenObjects</key>
+	<array>
+		<integer>105</integer>
+	</array>
+	<key>IBSystem Version</key>
+	<string>5S66</string>
+	<key>IBUserGuides</key>
+	<dict>
+		<key>Info</key>
+		<dict>
+			<key>guideLocations</key>
+			<array/>
+			<key>guidesLocked</key>
+			<string>NO</string>
+		</dict>
+		<key>msgPanel</key>
+		<dict>
+			<key>guideLocations</key>
+			<array/>
+			<key>guidesLocked</key>
+			<string>NO</string>
+		</dict>
+	</dict>
+</dict>
+</plist>

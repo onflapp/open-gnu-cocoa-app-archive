@@ -1,0 +1,132 @@
+{
+    IBClasses = (
+        {
+            ACTIONS = {openModule = id; showHelp = id; }; 
+            CLASS = CVLDelegate; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {activeViewer = id; helpView = id; }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            ACTIONS = {openModule = id; }; 
+            CLASS = CmdManager; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {activeViewer = id; }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {CLASS = EOApplication; LANGUAGE = ObjC; SUPERCLASS = NSApplication; }, 
+        {
+            ACTIONS = {
+                addRepository = id; 
+                addSelectedFiles = id; 
+                addSelectedFilesAsBinary = id; 
+                cancelChangesInSelectedFiles = id; 
+                clearConsole = id; 
+                closeWorkArea = id; 
+                commitSelectedFiles = id; 
+                commitWorkArea = id; 
+                diffSelectedFiles = id; 
+                displaySelectedFilesLog = id; 
+                displaySelectedFilesStatus = id; 
+                doubleSelect = id; 
+                newRepository = id; 
+                openFilesInWS = id; 
+                openRepositoryWorkarea = id; 
+                refreshSelectedFiles = id; 
+                releaseWorkArea = id; 
+                removeRepository = id; 
+                removeSelectedFiles = id; 
+                repositoryCheckout = id; 
+                repositoryImport = id; 
+                restoreFiles = id; 
+                retrieveSelectedFilesVersion = id; 
+                retrieveWorkAreaVersion = id; 
+                revealSelectedFiles = id; 
+                revealWorkArea = id; 
+                selectInWS = id; 
+                showComparator = id; 
+                showConsole = id; 
+                showCvsInfoPanel = id; 
+                showHelp = id; 
+                showInfoPanel = id; 
+                showInspectorPanel = id; 
+                showPreferences = id; 
+                showProgressPanel = id; 
+                showRepositoryViewer = id; 
+                tagSelectedFiles = id; 
+                tagWorkArea = id; 
+                updateSelectedFiles = id; 
+                updateViewer = id; 
+                updateWorkArea = id; 
+            }; 
+            CLASS = FirstResponder; 
+            LANGUAGE = ObjC; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            ACTIONS = {cancel = id; ok = id; }; 
+            CLASS = ImportPanelController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                messageField = id; 
+                panel = id; 
+                releaseTagField = id; 
+                repositoryPathField = id; 
+                vendorTagField = id; 
+            }; 
+            SUPERCLASS = Object; 
+        }, 
+        {
+            ACTIONS = {cancel = id; ok = id; }; 
+            CLASS = MessagePanelController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                cmdTitleTextField = id; 
+                iconButton = id; 
+                msgTextField = id; 
+                msgTitleTextField = id; 
+                panel = id; 
+            }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            ACTIONS = {clearText = id; show = id; }; 
+            CLASS = OutputPanelController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {panel = id; text = id; }; 
+            SUPERCLASS = Object; 
+        }, 
+        {
+            ACTIONS = {show = id; }; 
+            CLASS = ProgressPanelController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {browser = id; }; 
+            SUPERCLASS = Object; 
+        }, 
+        {
+            ACTIONS = {
+                findNext = id; 
+                findNextAndOrderFindPanelOut = id; 
+                findPrevious = id; 
+                jumpToSelection = id; 
+                orderFrontFindPanel = id; 
+                replace = id; 
+                replaceAll = id; 
+                replaceAndFind = id; 
+                takeFindStringFromSelection = id; 
+            }; 
+            CLASS = TextFinder; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                findNextButton = id; 
+                findTextField = id; 
+                ignoreCaseButton = id; 
+                replaceAllScopeMatrix = id; 
+                replaceTextField = id; 
+                statusField = id; 
+            }; 
+            SUPERCLASS = NSObject; 
+        }
+    ); 
+    IBVersion = 1; 
+}

@@ -1,0 +1,11 @@
+- Operator and expressions are not objects, but only strings 
+- SenOysterShell 
+    does only the minimum required for the NSString category, 
+    is still based on Perl 4.x API 
+- The meaning of isMatchedByOperator is not clear for ""
+- A problem with Perl, locale, string encodings?
+    [@"éléphant" stringByApplyingReplacementOperator:@"s/(\w+)/\u\L$1/g"] gives éLéPhant instead of (Éléphant or Eléphant ?) 
+    é is not considered a member of \w
+
+- study does not work ? wreak all tests!
+- And of course, it does not work with Unicode strings

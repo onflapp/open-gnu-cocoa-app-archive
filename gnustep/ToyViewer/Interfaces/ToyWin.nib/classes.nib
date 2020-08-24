@@ -1,0 +1,20 @@
+{
+    IBClasses = (
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {changeKeepOpen = id; reScale = id; }; 
+            CLASS = ToyWin; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                commentText = id; 
+                keepOpenButton = id; 
+                parental = id; 
+                scView = id; 
+                thiswindow = id; 
+            }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {CLASS = ToyWindow; LANGUAGE = ObjC; SUPERCLASS = NSWindow; }
+    ); 
+    IBVersion = 1; 
+}

@@ -1,0 +1,904 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 39;
+	objects = {
+		0259C573FE90428111CA0C5A = {
+			buildSettings = {
+			};
+			buildStyles = (
+				2E58F360FFB2326E11CA0CBA,
+				2E58F361FFB2326E11CA0CBA,
+			);
+			hasScannedForEncodings = 1;
+			isa = PBXProject;
+			mainGroup = 0259C574FE90428111CA0C5A;
+			projectDirPath = "";
+			targets = (
+				8D1AC9600486D14A00FE50C9,
+			);
+		};
+		0259C574FE90428111CA0C5A = {
+			children = (
+				32DBCF9E0370C38000C91783,
+				32DBCF9F0370C38200C91783,
+				3D26A34C0557A5A600C718BD,
+				0259C582FE90428111CA0C5A,
+				1ED78706FE9D4A0611CA0C5A,
+				2E58F364FFB232C311CA0CBA,
+			);
+			isa = PBXGroup;
+			name = SenPanelsPalette;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		0259C576FE90428111CA0C5A = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			path = SenPanelsPalette.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		0259C57AFE90428111CA0C5A = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = SenPanelsPalette.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		0259C582FE90428111CA0C5A = {
+			children = (
+				3DEF530405905663005EB9CA,
+				8D1AC9730486D14A00FE50C9,
+				8D1AC97F0486D23B00FE50C9,
+				3D26A32B05579FEF00C718BD,
+				3D26A32D05579FEF00C718BD,
+				3D26A32F05579FEF00C718BD,
+			);
+			isa = PBXGroup;
+			name = Resources;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+//020
+//021
+//022
+//023
+//024
+//1E0
+//1E1
+//1E2
+//1E3
+//1E4
+		1ED78706FE9D4A0611CA0C5A = {
+			children = (
+				8D1AC9740486D14A00FE50C9,
+			);
+			isa = PBXGroup;
+			name = Products;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+//1E0
+//1E1
+//1E2
+//1E3
+//1E4
+//2E0
+//2E1
+//2E2
+//2E3
+//2E4
+		2E58F360FFB2326E11CA0CBA = {
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				DEBUGGING_SYMBOLS = YES;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				OPTIMIZATION_CFLAGS = "-O0";
+				ZERO_LINK = YES;
+			};
+			isa = PBXBuildStyle;
+			name = Development;
+		};
+		2E58F361FFB2326E11CA0CBA = {
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				ZERO_LINK = NO;
+			};
+			isa = PBXBuildStyle;
+			name = Deployment;
+		};
+		2E58F362FFB2327711CA0CBA = {
+			isa = PBXFileReference;
+			lastKnownFileType = wrapper.framework;
+			name = InterfaceBuilder.framework;
+			path = /System/Library/Frameworks/InterfaceBuilder.framework;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		2E58F364FFB232C311CA0CBA = {
+			children = (
+				3D08AE09061461FF0072ACB4,
+				2E58F362FFB2327711CA0CBA,
+				DD92D38A0106425D02CA0E72,
+			);
+			isa = PBXGroup;
+			name = Frameworks;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+//2E0
+//2E1
+//2E2
+//2E3
+//2E4
+//320
+//321
+//322
+//323
+//324
+		32DBCF980370C29C00C91783 = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = SenPanelsPalette_Prefix.pch;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		32DBCF9E0370C38000C91783 = {
+			children = (
+				0259C57AFE90428111CA0C5A,
+				0259C576FE90428111CA0C5A,
+				3D26A3400557A51700C718BD,
+				3D26A3410557A51700C718BD,
+				3D26A3420557A51700C718BD,
+				3D26A3430557A51700C718BD,
+			);
+			isa = PBXGroup;
+			name = Classes;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		32DBCF9F0370C38200C91783 = {
+			children = (
+				32DBCF980370C29C00C91783,
+			);
+			isa = PBXGroup;
+			name = "Other Sources";
+			path = "";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+//320
+//321
+//322
+//323
+//324
+//3D0
+//3D1
+//3D2
+//3D3
+//3D4
+		3D08AE09061461FF0072ACB4 = {
+			isa = PBXFileReference;
+			lastKnownFileType = wrapper.framework;
+			name = SenFoundation.framework;
+			path = /Library/Frameworks/SenFoundation.framework;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		3D08AE0A061461FF0072ACB4 = {
+			fileRef = 3D08AE09061461FF0072ACB4;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		3D26A32B05579FEF00C718BD = {
+			children = (
+				3D26A32C05579FEF00C718BD,
+				3D8A3ABE0563A02800B9C7ED,
+			);
+			isa = PBXVariantGroup;
+			name = SenFormControllerConnectInspector.nib;
+			path = "";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3D26A32C05579FEF00C718BD = {
+			isa = PBXFileReference;
+			lastKnownFileType = wrapper.nib;
+			name = "English - macos";
+			path = "English.lproj/SenFormControllerConnectInspector-macos.nib";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3D26A32D05579FEF00C718BD = {
+			children = (
+				3D26A32E05579FEF00C718BD,
+				3D8A3AB805639FD600B9C7ED,
+			);
+			isa = PBXVariantGroup;
+			name = SenForms.nib;
+			path = "";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3D26A32E05579FEF00C718BD = {
+			isa = PBXFileReference;
+			lastKnownFileType = wrapper.nib;
+			name = "English - macos";
+			path = "English.lproj/SenForms-macos.nib";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3D26A32F05579FEF00C718BD = {
+			children = (
+				3D26A33005579FEF00C718BD,
+				3D8A3ABB05639FEF00B9C7ED,
+			);
+			isa = PBXVariantGroup;
+			name = SenOpenPanelInspector.nib;
+			path = "";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3D26A33005579FEF00C718BD = {
+			isa = PBXFileReference;
+			lastKnownFileType = wrapper.nib;
+			name = "English - macos";
+			path = "English.lproj/SenOpenPanelInspector-macos.nib";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3D26A33105579FEF00C718BD = {
+			fileRef = 3D26A32B05579FEF00C718BD;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		3D26A33205579FEF00C718BD = {
+			fileRef = 3D26A32D05579FEF00C718BD;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		3D26A33305579FEF00C718BD = {
+			fileRef = 3D26A32F05579FEF00C718BD;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		3D26A3400557A51700C718BD = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = SenFormControllerConnectInspector.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3D26A3410557A51700C718BD = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			path = SenFormControllerConnectInspector.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3D26A3420557A51700C718BD = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = SenOpenPanelInspector.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3D26A3430557A51700C718BD = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			path = SenOpenPanelInspector.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3D26A3440557A51700C718BD = {
+			fileRef = 3D26A3400557A51700C718BD;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		3D26A3450557A51700C718BD = {
+			fileRef = 3D26A3410557A51700C718BD;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		3D26A3460557A51700C718BD = {
+			fileRef = 3D26A3420557A51700C718BD;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		3D26A3470557A51700C718BD = {
+			fileRef = 3D26A3430557A51700C718BD;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		3D26A34C0557A5A600C718BD = {
+			children = (
+				3D26A34D0557A5A600C718BD,
+				3D26A34E0557A5A600C718BD,
+				3D26A3520557A5A600C718BD,
+				3D26A3530557A5A600C718BD,
+				3D26A3540557A5A600C718BD,
+				3D26A3550557A5A600C718BD,
+				3D26A3570557A5A600C718BD,
+				3D26A3580557A5A600C718BD,
+				3D26A3590557A5A600C718BD,
+				3D26A35A0557A5A600C718BD,
+				3D26A35B0557A5A600C718BD,
+				3D26A35C0557A5A600C718BD,
+				3D26A35D0557A5A600C718BD,
+				3D26A35E0557A5A600C718BD,
+				3D26A35F0557A5A600C718BD,
+				3D26A3600557A5A600C718BD,
+				3D26A3610557A5A600C718BD,
+				3D26A3620557A5A600C718BD,
+				3D26A3630557A5A600C718BD,
+				3D26A3640557A5A600C718BD,
+			);
+			isa = PBXGroup;
+			path = SenPanels.subproj;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3D26A34D0557A5A600C718BD = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = CvsTagFormatter.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3D26A34E0557A5A600C718BD = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			path = CvsTagFormatter.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3D26A3520557A5A600C718BD = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = NSCell_SenPanelAdditions.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3D26A3530557A5A600C718BD = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			path = NSCell_SenPanelAdditions.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3D26A3540557A5A600C718BD = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = NSTextView_SenPanelAdditions.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3D26A3550557A5A600C718BD = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			path = NSTextView_SenPanelAdditions.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3D26A3570557A5A600C718BD = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = SenFormController.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3D26A3580557A5A600C718BD = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			path = SenFormController.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3D26A3590557A5A600C718BD = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = SenFormControllerConnector.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3D26A35A0557A5A600C718BD = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			path = SenFormControllerConnector.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3D26A35B0557A5A600C718BD = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = SenFormPanelController.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3D26A35C0557A5A600C718BD = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			path = SenFormPanelController.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3D26A35D0557A5A600C718BD = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = SenMultiPageController.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3D26A35E0557A5A600C718BD = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			path = SenMultiPageController.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3D26A35F0557A5A600C718BD = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = SenOpenPanelController.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3D26A3600557A5A600C718BD = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			path = SenOpenPanelController.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3D26A3610557A5A600C718BD = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = SenPanelFactory.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3D26A3620557A5A600C718BD = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			path = SenPanelFactory.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3D26A3630557A5A600C718BD = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = _NibOwner.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3D26A3640557A5A600C718BD = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			path = _NibOwner.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3D26A3670557A5A600C718BD = {
+			fileRef = 3D26A34D0557A5A600C718BD;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		3D26A3680557A5A600C718BD = {
+			fileRef = 3D26A34E0557A5A600C718BD;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		3D26A36C0557A5A600C718BD = {
+			fileRef = 3D26A3520557A5A600C718BD;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		3D26A36D0557A5A600C718BD = {
+			fileRef = 3D26A3530557A5A600C718BD;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		3D26A36E0557A5A600C718BD = {
+			fileRef = 3D26A3540557A5A600C718BD;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		3D26A36F0557A5A600C718BD = {
+			fileRef = 3D26A3550557A5A600C718BD;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		3D26A3710557A5A600C718BD = {
+			fileRef = 3D26A3570557A5A600C718BD;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		3D26A3720557A5A600C718BD = {
+			fileRef = 3D26A3580557A5A600C718BD;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		3D26A3730557A5A600C718BD = {
+			fileRef = 3D26A3590557A5A600C718BD;
+			isa = PBXBuildFile;
+			settings = {
+				ATTRIBUTES = (
+				);
+			};
+		};
+		3D26A3740557A5A600C718BD = {
+			fileRef = 3D26A35A0557A5A600C718BD;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		3D26A3750557A5A600C718BD = {
+			fileRef = 3D26A35B0557A5A600C718BD;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		3D26A3760557A5A600C718BD = {
+			fileRef = 3D26A35C0557A5A600C718BD;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		3D26A3770557A5A600C718BD = {
+			fileRef = 3D26A35D0557A5A600C718BD;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		3D26A3780557A5A600C718BD = {
+			fileRef = 3D26A35E0557A5A600C718BD;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		3D26A3790557A5A600C718BD = {
+			fileRef = 3D26A35F0557A5A600C718BD;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		3D26A37A0557A5A600C718BD = {
+			fileRef = 3D26A3600557A5A600C718BD;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		3D26A37B0557A5A600C718BD = {
+			fileRef = 3D26A3610557A5A600C718BD;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		3D26A37C0557A5A600C718BD = {
+			fileRef = 3D26A3620557A5A600C718BD;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		3D26A37D0557A5A600C718BD = {
+			fileRef = 3D26A3630557A5A600C718BD;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		3D26A37E0557A5A600C718BD = {
+			fileRef = 3D26A3640557A5A600C718BD;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		3D8A3AB805639FD600B9C7ED = {
+			isa = PBXFileReference;
+			lastKnownFileType = wrapper.nib;
+			name = English;
+			path = English.lproj/SenForms.nib;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3D8A3ABB05639FEF00B9C7ED = {
+			isa = PBXFileReference;
+			lastKnownFileType = wrapper.nib;
+			name = English;
+			path = English.lproj/SenOpenPanelInspector.nib;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3D8A3ABE0563A02800B9C7ED = {
+			isa = PBXFileReference;
+			lastKnownFileType = wrapper.nib;
+			name = English;
+			path = English.lproj/SenFormControllerConnectInspector.nib;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3DEF530405905663005EB9CA = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = text.xml;
+			name = palette.table;
+			path = Panther/palette.table;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3DEF530505905663005EB9CA = {
+			fileRef = 3DEF530405905663005EB9CA;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+//3D0
+//3D1
+//3D2
+//3D3
+//3D4
+//8D0
+//8D1
+//8D2
+//8D3
+//8D4
+		8D1AC9600486D14A00FE50C9 = {
+			buildPhases = (
+				8D1AC9610486D14A00FE50C9,
+				8D1AC9660486D14A00FE50C9,
+				8D1AC96A0486D14A00FE50C9,
+				8D1AC96E0486D14A00FE50C9,
+				8D1AC9710486D14A00FE50C9,
+			);
+			buildRules = (
+			);
+			buildSettings = {
+				DEPLOYMENT_LOCATION = YES;
+				DEPLOYMENT_POSTPROCESSING = YES;
+				GCC_ENABLE_TRIGRAPHS = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = SenPanelsPalette_Prefix.pch;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = NO;
+				GCC_WARN_CHECK_SWITCH_STATEMENTS = YES;
+				GCC_WARN_FOUR_CHARACTER_CONSTANTS = NO;
+				GCC_WARN_INITIALIZER_NOT_FULLY_BRACKETED = YES;
+				GCC_WARN_MISSING_PARENTHESES = YES;
+				GCC_WARN_SHADOW = YES;
+				GCC_WARN_TYPECHECK_CALLS_TO_PRINTF = YES;
+				GCC_WARN_UNKNOWN_PRAGMAS = NO;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_LABEL = YES;
+				GCC_WARN_UNUSED_VALUE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = /Developer/Palettes;
+				LIBRARY_STYLE = Bundle;
+				OTHER_CFLAGS = "-DPANTHER";
+				OTHER_LDFLAGS = "-bundle";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = SenPanelsPalette;
+				SECTORDER_FLAGS = "";
+				WRAPPER_EXTENSION = palette;
+			};
+			dependencies = (
+			);
+			isa = PBXNativeTarget;
+			name = SenPanelsPalette;
+			productInstallPath = "$(HOME)/Developer/Palettes";
+			productName = SenPanelsPalette;
+			productReference = 8D1AC9740486D14A00FE50C9;
+			productType = "com.apple.product-type.bundle";
+		};
+		8D1AC9610486D14A00FE50C9 = {
+			buildActionMask = 2147483647;
+			files = (
+				8D1AC9620486D14A00FE50C9,
+				8D1AC9630486D14A00FE50C9,
+				3D26A3440557A51700C718BD,
+				3D26A3460557A51700C718BD,
+				3D26A3670557A5A600C718BD,
+				3D26A36C0557A5A600C718BD,
+				3D26A36E0557A5A600C718BD,
+				3D26A3710557A5A600C718BD,
+				3D26A3730557A5A600C718BD,
+				3D26A3750557A5A600C718BD,
+				3D26A3770557A5A600C718BD,
+				3D26A3790557A5A600C718BD,
+				3D26A37B0557A5A600C718BD,
+				3D26A37D0557A5A600C718BD,
+			);
+			isa = PBXHeadersBuildPhase;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8D1AC9620486D14A00FE50C9 = {
+			fileRef = 32DBCF980370C29C00C91783;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		8D1AC9630486D14A00FE50C9 = {
+			fileRef = 0259C57AFE90428111CA0C5A;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		8D1AC9660486D14A00FE50C9 = {
+			buildActionMask = 2147483647;
+			files = (
+				8D1AC9800486D23B00FE50C9,
+				3D26A33105579FEF00C718BD,
+				3D26A33205579FEF00C718BD,
+				3D26A33305579FEF00C718BD,
+				3DEF530505905663005EB9CA,
+			);
+			isa = PBXResourcesBuildPhase;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8D1AC96A0486D14A00FE50C9 = {
+			buildActionMask = 2147483647;
+			files = (
+				8D1AC96B0486D14A00FE50C9,
+				3D26A3450557A51700C718BD,
+				3D26A3470557A51700C718BD,
+				3D26A3680557A5A600C718BD,
+				3D26A36D0557A5A600C718BD,
+				3D26A36F0557A5A600C718BD,
+				3D26A3720557A5A600C718BD,
+				3D26A3740557A5A600C718BD,
+				3D26A3760557A5A600C718BD,
+				3D26A3780557A5A600C718BD,
+				3D26A37A0557A5A600C718BD,
+				3D26A37C0557A5A600C718BD,
+				3D26A37E0557A5A600C718BD,
+			);
+			isa = PBXSourcesBuildPhase;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8D1AC96B0486D14A00FE50C9 = {
+			fileRef = 0259C576FE90428111CA0C5A;
+			isa = PBXBuildFile;
+			settings = {
+				ATTRIBUTES = (
+				);
+			};
+		};
+		8D1AC96E0486D14A00FE50C9 = {
+			buildActionMask = 2147483647;
+			files = (
+				8D1AC96F0486D14A00FE50C9,
+				8D1AC9700486D14A00FE50C9,
+				3D08AE0A061461FF0072ACB4,
+			);
+			isa = PBXFrameworksBuildPhase;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8D1AC96F0486D14A00FE50C9 = {
+			fileRef = 2E58F362FFB2327711CA0CBA;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		8D1AC9700486D14A00FE50C9 = {
+			fileRef = DD92D38A0106425D02CA0E72;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		8D1AC9710486D14A00FE50C9 = {
+			buildActionMask = 2147483647;
+			files = (
+			);
+			isa = PBXRezBuildPhase;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8D1AC9730486D14A00FE50C9 = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = text.plist;
+			path = Info.plist;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		8D1AC9740486D14A00FE50C9 = {
+			explicitFileType = wrapper.cfbundle;
+			includeInIndex = 0;
+			isa = PBXFileReference;
+			path = SenPanelsPalette.palette;
+			refType = 3;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8D1AC97B0486D23100FE50C9 = {
+			fileEncoding = 10;
+			isa = PBXFileReference;
+			lastKnownFileType = text.plist.strings;
+			name = English;
+			path = English.lproj/InfoPlist.strings;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		8D1AC97F0486D23B00FE50C9 = {
+			children = (
+				8D1AC97B0486D23100FE50C9,
+			);
+			isa = PBXVariantGroup;
+			name = InfoPlist.strings;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		8D1AC9800486D23B00FE50C9 = {
+			fileRef = 8D1AC97F0486D23B00FE50C9;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+//8D0
+//8D1
+//8D2
+//8D3
+//8D4
+//DD0
+//DD1
+//DD2
+//DD3
+//DD4
+		DD92D38A0106425D02CA0E72 = {
+			isa = PBXFileReference;
+			lastKnownFileType = wrapper.framework;
+			name = Cocoa.framework;
+			path = /System/Library/Frameworks/Cocoa.framework;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+	};
+	rootObject = 0259C573FE90428111CA0C5A;
+}

@@ -1,0 +1,3 @@
+{
+    NSMACHOperatingSystem = {Archs = "18 "; Args = "DSTROOT=/Local"; Target = install; }; 
+}

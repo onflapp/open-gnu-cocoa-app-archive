@@ -1,0 +1,1045 @@
+// !$*UTF8*$!
+{
+	00D108F500917BDF7F000001 = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{84, 176}, {750, 502}}";
+		};
+	};
+	00FA34C500A0D4C67F000001 = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{61, 197}, {750, 502}}";
+		};
+	};
+	00FA34C800A0E8907F000001 = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{38, 218}, {750, 502}}";
+		};
+	};
+	00FA7AFE009538E3851E54A2 = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{15, 239}, {750, 502}}";
+		};
+	};
+	01048381008882837F000001 = {
+		activeBuildStyle = 0144115F0089422F7F000001;
+		activeExecutable = 8ADE317F01A3C459131E9EA1;
+		activeTarget = 8ADE317601A3C459131E9EA1;
+		addToTargets = (
+			0104853C008882837F000001,
+		);
+		breakpoints = (
+		);
+		executables = (
+			010486D0008883237F000001,
+			010486CF008882A67F000001,
+			012DF72E00DD96AD7F000001,
+			010486E300888A627F000001,
+			010486D3008883237F000001,
+			010486D4008883237F000001,
+			8ADE317F01A3C459131E9EA1,
+			8A6257B7020954F5131E9EA1,
+			010486D50088857E7F000001,
+			010486E000888A627F000001,
+			010486D1008883237F000001,
+			010486D2008883237F000001,
+		);
+		perUserDictionary = {
+			PBXPerProjectTemplateStateSaveDate = 53614344;
+			"PBXTemplateGeometry-F5CA7ECB015C094F0DCA290F" = {
+				ContentSize = "{668, 621}";
+				LeftSlideOut = {
+					Collapsed = NO;
+					Frame = "{{0, 0}, {668, 621}}";
+					Split0 = {
+						Collapsed = NO;
+						Frame = "{{0, 0}, {668, 621}}";
+						Split0 = {
+							Frame = "{{0, 0}, {668, 621}}";
+						};
+						SplitCount = 1;
+						Tab0 = {
+							Debugger = {
+								Collapsed = NO;
+								Frame = "{{0, 0}, {484, 208}}";
+								Split0 = {
+									Frame = "{{0, 24}, {484, 184}}";
+									Split0 = {
+										Frame = "{{0, 0}, {236, 184}}";
+									};
+									Split1 = {
+										DebugVariablesTableConfiguration = (
+											Name,
+											123,
+											Value,
+											85,
+											Summary,
+											62.123,
+										);
+										Frame = "{{245, 0}, {239, 184}}";
+									};
+									SplitCount = 2;
+								};
+								SplitCount = 1;
+								Tab0 = {
+									Frame = "{{0, 0}, {100, 50}}";
+								};
+								Tab1 = {
+									Frame = "{{0, 0}, {100, 50}}";
+								};
+								TabCount = 2;
+								TabsVisible = YES;
+							};
+							Frame = "{{0, 0}, {484, 208}}";
+							LauncherConfigVersion = 7;
+						};
+						Tab1 = {
+							Frame = "{{0, 0}, {664, 208}}";
+							LauncherConfigVersion = 3;
+							Runner = {
+								Frame = "{{0, 0}, {664, 208}}";
+							};
+						};
+						Tab2 = {
+							BuildMessageFrame = "{{0, 0}, {666, 43}}";
+							BuildTranscriptFrame = "{{0, 52}, {666, 0}}";
+							Frame = "{{0, 0}, {664, 50}}";
+						};
+						Tab3 = {
+							Frame = "{{0, 0}, {612, 295}}";
+						};
+						TabCount = 4;
+						TabsVisible = NO;
+					};
+					SplitCount = 1;
+					Tab0 = {
+						Frame = "{{0, 0}, {313, 531}}";
+						GroupTreeTableConfiguration = (
+							TargetStatusColumn,
+							18,
+							MainColumn,
+							280,
+						);
+					};
+					Tab1 = {
+						ClassesFrame = "{{0, 0}, {280, 398}}";
+						ClassesTreeTableConfiguration = (
+							PBXBookColumnIdentifier,
+							20,
+							PBXClassColumnIdentifier,
+							237,
+						);
+						Frame = "{{0, 0}, {278, 659}}";
+						MembersFrame = "{{0, 407}, {280, 252}}";
+						MembersTreeTableConfiguration = (
+							PBXBookColumnIdentifier,
+							20,
+							PBXMethodColumnIdentifier,
+							236,
+						);
+					};
+					Tab2 = {
+						Frame = "{{0, 0}, {200, 100}}";
+					};
+					Tab3 = {
+						Frame = "{{0, 0}, {200, 557}}";
+						TargetTableConfiguration = (
+							ActiveObject,
+							16,
+							ObjectNames,
+							202.296,
+						);
+					};
+					Tab4 = {
+						BreakpointsTreeTableConfiguration = (
+							breakpointColumn,
+							197,
+							enabledColumn,
+							31,
+						);
+						Frame = "{{0, 0}, {250, 100}}";
+					};
+					TabCount = 5;
+					TabsVisible = NO;
+				};
+				StatusViewVisible = NO;
+				Template = F5CA7ECB015C094F0DCA290F;
+				ToolbarVisible = NO;
+				WindowLocation = "{48, 103}";
+			};
+			PBXWorkspaceContents = (
+				{
+					LeftSlideOut = {
+						Split0 = {
+							Split0 = {
+								NavCount = 1;
+								NavGeometry0 = {
+									Frame = "{{0, 0}, {150, 530}}";
+									NavBarVisible = YES;
+								};
+							};
+							SplitCount = 1;
+							Tab0 = {
+								Debugger = {
+									Split0 = {
+										SplitCount = 2;
+									};
+									SplitCount = 1;
+									TabCount = 2;
+								};
+								LauncherConfigVersion = 7;
+							};
+							Tab1 = {
+								LauncherConfigVersion = 3;
+								Runner = {
+								};
+							};
+							TabCount = 4;
+						};
+						SplitCount = 1;
+						Tab1 = {
+							OptionsSetName = "フラット化、すべてのクラス";
+						};
+						TabCount = 5;
+					};
+				},
+			);
+			PBXWorkspaceGeometries = (
+				{
+					ContentSize = "{352, 553}";
+					LeftSlideOut = {
+						ActiveTab = 0;
+						Collapsed = YES;
+						Frame = "{{0, 23}, {352, 530}}";
+						Split0 = {
+							Collapsed = NO;
+							Frame = "{{1e+06, 1e+06}, {0, 530}}";
+							Split0 = {
+								Frame = "{{0, 0}, {0, 530}}";
+							};
+							SplitCount = 1;
+							Tab0 = {
+								Debugger = {
+									Collapsed = NO;
+									Frame = "{{0, 0}, {484, 208}}";
+									Split0 = {
+										Frame = "{{0, 24}, {484, 184}}";
+										Split0 = {
+											Frame = "{{0, 0}, {236, 184}}";
+										};
+										Split1 = {
+											DebugVariablesTableConfiguration = (
+												Name,
+												123,
+												Value,
+												85,
+												Summary,
+												62.123,
+											);
+											Frame = "{{245, 0}, {239, 184}}";
+										};
+										SplitCount = 2;
+									};
+									SplitCount = 1;
+									Tab0 = {
+										Frame = "{{0, 0}, {100, 50}}";
+									};
+									Tab1 = {
+										Frame = "{{0, 0}, {100, 50}}";
+									};
+									TabCount = 2;
+									TabsVisible = YES;
+								};
+								Frame = "{{0, 0}, {484, 208}}";
+								LauncherConfigVersion = 7;
+							};
+							Tab1 = {
+								Frame = "{{0, 0}, {664, 208}}";
+								LauncherConfigVersion = 3;
+								Runner = {
+									Frame = "{{0, 0}, {664, 208}}";
+								};
+							};
+							Tab2 = {
+								BuildMessageFrame = "{{0, 0}, {666, 43}}";
+								BuildTranscriptFrame = "{{0, 52}, {666, 0}}";
+								Frame = "{{0, 0}, {664, 50}}";
+							};
+							Tab3 = {
+								Frame = "{{0, 0}, {612, 295}}";
+							};
+							TabCount = 4;
+							TabsVisible = NO;
+						};
+						SplitCount = 1;
+						Tab0 = {
+							Frame = "{{0, 0}, {328, 530}}";
+							GroupTreeTableConfiguration = (
+								TargetStatusColumn,
+								18,
+								MainColumn,
+								295,
+							);
+						};
+						Tab1 = {
+							ClassesFrame = "{{0, 0}, {343, 348}}";
+							ClassesTreeTableConfiguration = (
+								PBXBookColumnIdentifier,
+								20,
+								PBXClassColumnIdentifier,
+								300,
+							);
+							Frame = "{{0, 0}, {341, 578}}";
+							MembersFrame = "{{0, 357}, {343, 221}}";
+							MembersTreeTableConfiguration = (
+								PBXBookColumnIdentifier,
+								20,
+								PBXMethodColumnIdentifier,
+								299,
+							);
+						};
+						Tab2 = {
+							Frame = "{{0, 0}, {319, 576}}";
+						};
+						Tab3 = {
+							Frame = "{{0, 0}, {341, 578}}";
+							TargetTableConfiguration = (
+								ActiveObject,
+								16,
+								ObjectNames,
+								308.296,
+							);
+						};
+						Tab4 = {
+							BreakpointsTreeTableConfiguration = (
+								breakpointColumn,
+								266,
+								enabledColumn,
+								31,
+							);
+							Frame = "{{0, 0}, {319, 576}}";
+						};
+						TabCount = 5;
+						TabsVisible = YES;
+					};
+					StatusViewVisible = YES;
+					Template = F5E465990156DFB90DCA290F;
+					ToolbarVisible = YES;
+					WindowLocation = "{12, 114}";
+				},
+			);
+			PBXWorkspaceStateSaveDate = 53614344;
+		};
+		projectwideBuildSettings = {
+		};
+		wantsIndex = 1;
+		wantsSCM = -1;
+	};
+	01048385008882837F000001 = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{15, 239}, {750, 502}}";
+		};
+	};
+	01048388008882837F000001 = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{15, 239}, {750, 502}}";
+		};
+	};
+	0104838F008882837F000001 = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{38, 218}, {750, 502}}";
+		};
+	};
+	01048392008882837F000001 = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{148, 130}, {750, 502}}";
+		};
+	};
+	01048393008882837F000001 = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{31, 132}, {750, 502}}";
+		};
+	};
+	01048394008882837F000001 = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{7, 239}, {750, 502}}";
+		};
+	};
+	01048396008882837F000001 = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{38, 218}, {750, 502}}";
+		};
+	};
+	0104839B008882837F000001 = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{15, 239}, {750, 502}}";
+		};
+	};
+	0104839C008882837F000001 = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{61, 197}, {750, 502}}";
+		};
+	};
+	0104839E008882837F000001 = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{202, 123}, {750, 502}}";
+		};
+	};
+	0104839F008882837F000001 = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{38, 218}, {750, 502}}";
+		};
+	};
+	010483A0008882837F000001 = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{15, 239}, {750, 502}}";
+		};
+	};
+	010483A1008882837F000001 = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{61, 197}, {750, 502}}";
+		};
+	};
+	010483AB008882837F000001 = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{61, 197}, {750, 502}}";
+		};
+	};
+	010483AE008882837F000001 = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{84, 176}, {750, 502}}";
+		};
+	};
+	010483AF008882837F000001 = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{61, 197}, {750, 502}}";
+		};
+	};
+	010483B6008882837F000001 = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{38, 218}, {750, 502}}";
+		};
+	};
+	010483BC008882837F000001 = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{38, 218}, {750, 502}}";
+		};
+	};
+	010483BD008882837F000001 = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{7, 239}, {750, 502}}";
+		};
+	};
+	010483C8008882837F000001 = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{14, 195}, {750, 502}}";
+		};
+	};
+	010483C9008882837F000001 = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{38, 218}, {750, 502}}";
+		};
+	};
+	010483CA008882837F000001 = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{15, 239}, {750, 502}}";
+		};
+	};
+	0104845F008882837F000001 = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{130, 134}, {750, 502}}";
+		};
+	};
+	01048467008882837F000001 = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{2, 124}, {750, 502}}";
+		};
+	};
+	0104846E008882837F000001 = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{222, 50}, {750, 502}}";
+		};
+	};
+	01048470008882837F000001 = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{80, 196}, {750, 502}}";
+		};
+	};
+	01048471008882837F000001 = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{237, 192}, {750, 502}}";
+		};
+	};
+	01048472008882837F000001 = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{153, 113}, {750, 502}}";
+		};
+	};
+	01048478008882837F000001 = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{61, 197}, {750, 502}}";
+		};
+	};
+	0104847A008882837F000001 = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{15, 239}, {750, 502}}";
+		};
+	};
+	0104847C008882837F000001 = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{14, 162}, {750, 502}}";
+		};
+	};
+	0104847E008882837F000001 = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{274, 119}, {750, 502}}";
+		};
+	};
+	0104847F008882837F000001 = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{15, 239}, {750, 502}}";
+		};
+	};
+	01048480008882837F000001 = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{38, 218}, {750, 502}}";
+		};
+	};
+	01048481008882837F000001 = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{72, 239}, {750, 502}}";
+		};
+	};
+	01048485008882837F000001 = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{38, 218}, {750, 502}}";
+		};
+	};
+	0104848D008882837F000001 = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{222, 50}, {750, 502}}";
+		};
+	};
+	0104848F008882837F000001 = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{153, 113}, {750, 502}}";
+		};
+	};
+	01048492008882837F000001 = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{130, 134}, {750, 502}}";
+		};
+	};
+	01048497008882837F000001 = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{15, 239}, {750, 502}}";
+		};
+	};
+	0104849C008882837F000001 = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{227, 122}, {750, 502}}";
+		};
+	};
+	0104849F008882837F000001 = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{15, 239}, {750, 502}}";
+		};
+	};
+	010484A9008882837F000001 = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{199, 71}, {750, 502}}";
+		};
+	};
+	010484AA008882837F000001 = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{127, 124}, {750, 502}}";
+		};
+	};
+	010484B3008882837F000001 = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{61, 197}, {750, 502}}";
+		};
+	};
+	010484B4008882837F000001 = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{15, 239}, {750, 502}}";
+		};
+	};
+	010484B5008882837F000001 = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{38, 218}, {750, 502}}";
+		};
+	};
+	010484B6008882837F000001 = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{61, 197}, {750, 502}}";
+		};
+	};
+	010484B7008882837F000001 = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{107, 155}, {750, 502}}";
+		};
+	};
+	010484B8008882837F000001 = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{130, 134}, {750, 502}}";
+		};
+	};
+	010484BA008882837F000001 = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{61, 197}, {750, 502}}";
+		};
+	};
+	010484CA008882837F000001 = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{15, 239}, {750, 502}}";
+		};
+	};
+	010484CB008882837F000001 = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{259, 196}, {750, 502}}";
+		};
+	};
+	010484CD008882837F000001 = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{15, 239}, {750, 502}}";
+		};
+	};
+	010484F0008882837F000001 = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{107, 155}, {750, 502}}";
+		};
+	};
+	010484F1008882837F000001 = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{236, 94}, {750, 502}}";
+		};
+	};
+	010484F7008882837F000001 = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{225, 49}, {750, 502}}";
+		};
+	};
+	0104853C008882837F000001 = {
+		activeExec = 0;
+		executables = (
+			010486CF008882A67F000001,
+		);
+	};
+	0104853E008882837F000001 = {
+		activeExec = 0;
+		executables = (
+			010486D0008883237F000001,
+		);
+	};
+	01048549008882837F000001 = {
+		activeExec = 0;
+		executables = (
+			010486D1008883237F000001,
+		);
+	};
+	01048555008882837F000001 = {
+		activeExec = 0;
+		executables = (
+			010486D2008883237F000001,
+		);
+	};
+	01048565008882837F000001 = {
+		activeExec = 0;
+		executables = (
+			010486D3008883237F000001,
+		);
+	};
+	0104856C008882837F000001 = {
+		activeExec = 0;
+		executables = (
+			010486D4008883237F000001,
+		);
+	};
+	01048578008882837F000001 = {
+		activeExec = 0;
+		executables = (
+			010486D50088857E7F000001,
+		);
+	};
+	01048584008882837F000001 = {
+		activeExec = 0;
+	};
+	010485C6008882837F000001 = {
+		activeExec = 0;
+	};
+	010485D0008882837F000001 = {
+		activeExec = 0;
+	};
+	010485E4008882837F000001 = {
+		activeExec = 0;
+	};
+	010485F2008882837F000001 = {
+		activeExec = 0;
+	};
+	01048600008882837F000001 = {
+		activeExec = 0;
+		executables = (
+			010486E000888A627F000001,
+		);
+	};
+	0104860B008882837F000001 = {
+		activeExec = 0;
+	};
+	01048632008882837F000001 = {
+		activeExec = 0;
+		executables = (
+			010486E300888A627F000001,
+		);
+	};
+	010486CF008882A67F000001 = {
+		activeArgIndex = 2147483647;
+		argumentStrings = (
+		);
+		debuggerPlugin = GDBDebugging;
+		dylibVariantSuffix = "";
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		isa = PBXExecutable;
+		name = "ToyViewer (Application)";
+		shlibInfoDictList = (
+		);
+		sourceDirectories = (
+		);
+	};
+	010486D0008883237F000001 = {
+		activeArgIndex = 2147483647;
+		argumentStrings = (
+		);
+		debuggerPlugin = GDBDebugging;
+		dylibVariantSuffix = "";
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		isa = PBXExecutable;
+		name = "pcx2pxo (Tool)";
+		shlibInfoDictList = (
+		);
+		sourceDirectories = (
+		);
+	};
+	010486D1008883237F000001 = {
+		activeArgIndex = 2147483647;
+		argumentStrings = (
+		);
+		debuggerPlugin = GDBDebugging;
+		dylibVariantSuffix = "";
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		isa = PBXExecutable;
+		name = "mag2pxo (Tool)";
+		shlibInfoDictList = (
+		);
+		sourceDirectories = (
+		);
+	};
+	010486D2008883237F000001 = {
+		activeArgIndex = 2147483647;
+		argumentStrings = (
+		);
+		debuggerPlugin = GDBDebugging;
+		dylibVariantSuffix = "";
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		isa = PBXExecutable;
+		name = "hpcdtoppm (Tool)";
+		shlibInfoDictList = (
+		);
+		sourceDirectories = (
+		);
+	};
+	010486D3008883237F000001 = {
+		activeArgIndex = 2147483647;
+		argumentStrings = (
+		);
+		debuggerPlugin = GDBDebugging;
+		dylibVariantSuffix = "";
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		isa = PBXExecutable;
+		name = "xbm2pbm (Tool)";
+		shlibInfoDictList = (
+		);
+		sourceDirectories = (
+		);
+	};
+	010486D4008883237F000001 = {
+		activeArgIndex = 2147483647;
+		argumentStrings = (
+		);
+		debuggerPlugin = GDBDebugging;
+		dylibVariantSuffix = "";
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		isa = PBXExecutable;
+		name = "png2pao (Tool)";
+		shlibInfoDictList = (
+		);
+		sourceDirectories = (
+		);
+	};
+	010486D50088857E7F000001 = {
+		activeArgIndex = 2147483647;
+		argumentStrings = (
+		);
+		debuggerPlugin = GDBDebugging;
+		dylibVariantSuffix = "";
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		isa = PBXExecutable;
+		name = "pao2png (Tool)";
+		shlibInfoDictList = (
+		);
+		sourceDirectories = (
+		);
+	};
+	010486E000888A627F000001 = {
+		activeArgIndex = 2147483647;
+		argumentStrings = (
+		);
+		debuggerPlugin = GDBDebugging;
+		dylibVariantSuffix = "";
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		isa = PBXExecutable;
+		name = "bmp2pxo (Tool)";
+		shlibInfoDictList = (
+		);
+		sourceDirectories = (
+		);
+	};
+	010486E300888A627F000001 = {
+		activeArgIndex = 2147483647;
+		argumentStrings = (
+		);
+		debuggerPlugin = GDBDebugging;
+		dylibVariantSuffix = "";
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		isa = PBXExecutable;
+		name = "pxo2bmp (Tool)";
+		shlibInfoDictList = (
+		);
+		sourceDirectories = (
+		);
+	};
+	012DF72900DD96AD7F000001 = {
+		activeExec = 0;
+		executables = (
+			012DF72E00DD96AD7F000001,
+		);
+	};
+	012DF72E00DD96AD7F000001 = {
+		activeArgIndex = 2147483647;
+		argumentStrings = (
+		);
+		debuggerPlugin = GDBDebugging;
+		dylibVariantSuffix = "";
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		isa = PBXExecutable;
+		name = "ras2pxo (Tool)";
+		shlibInfoDictList = (
+		);
+		sourceDirectories = (
+		);
+	};
+	0F7598A9009234AF7F000001 = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{107, 155}, {750, 502}}";
+		};
+	};
+	65463D3B01D55F7200190005 = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{38, 218}, {750, 502}}";
+		};
+	};
+	654DB4EF0236DA6B00190005 = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{231, 91}, {750, 502}}";
+		};
+	};
+	654DB4F10236DB9700190005 = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{211, 82}, {750, 502}}";
+		};
+	};
+	65BD541C02027DE000190005 = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{89, 195}, {750, 502}}";
+		};
+	};
+	65BD541D02027DE000190005 = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{176, 92}, {750, 502}}";
+		};
+	};
+	8A25BF5701A488CE131E9EA1 = {
+		activeExec = 0;
+	};
+	8A3F26CF01ACF693131E9EA1 = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{191, 160}, {750, 502}}";
+		};
+	};
+	8A4C24A1027E68BC131E6FA1 = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{202, 160}, {750, 502}}";
+		};
+	};
+	8A62579602092E38131E9EA1 = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{181, 98}, {750, 502}}";
+		};
+	};
+	8A62579E0209544F131E9EA1 = {
+		activeExec = 0;
+		executables = (
+			8A6257B7020954F5131E9EA1,
+		);
+	};
+	8A6257A5020954A7131E9EA1 = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{38, 218}, {750, 502}}";
+		};
+	};
+	8A6257A7020954A7131E9EA1 = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{61, 197}, {750, 502}}";
+		};
+	};
+	8A6257A9020954A7131E9EA1 = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{84, 176}, {750, 502}}";
+		};
+	};
+	8A6257B7020954F5131E9EA1 = {
+		activeArgIndex = 2147483647;
+		argumentStrings = (
+		);
+		debuggerPlugin = GDBDebugging;
+		dylibVariantSuffix = "";
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		isa = PBXExecutable;
+		name = "newicon (Tool)";
+		shlibInfoDictList = (
+		);
+		sourceDirectories = (
+		);
+	};
+	8A6AFB6102B87B11131E6FA1 = {
+		activeExec = 0;
+	};
+	8A9FD6ED01A38818131E9EA1 = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{237, 192}, {750, 502}}";
+		};
+	};
+	8A9FD71F01A3999C131E9EA1 = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{199, 71}, {750, 502}}";
+		};
+	};
+	8ADE317601A3C459131E9EA1 = {
+		activeExec = 0;
+		executables = (
+			8ADE317F01A3C459131E9EA1,
+		);
+	};
+	8ADE317F01A3C459131E9EA1 = {
+		activeArgIndex = 2147483647;
+		argumentStrings = (
+		);
+		debuggerPlugin = GDBDebugging;
+		dylibVariantSuffix = "";
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		isa = PBXExecutable;
+		name = "ToyViewer Wrapper";
+		shlibInfoDictList = (
+		);
+		sourceDirectories = (
+		);
+	};
+	8AEA7A7F020FC934131E9EA1 = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{15, 239}, {750, 502}}";
+		};
+	};
+	8AEA7A80020FC934131E9EA1 = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{58, 192}, {750, 502}}";
+		};
+	};
+	F51B9069029742F701190002 = {
+		activeExec = 0;
+	};
+	F51B907B0297AD6B01190002 = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{227, 141}, {750, 502}}";
+		};
+	};
+	F51B907C0297AD6B01190002 = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{38, 218}, {750, 502}}";
+		};
+	};
+	F51D476602906DCB01190002 = {
+		activeExec = 0;
+	};
+	F51E3EB302FB69EB01190002 = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{15, 239}, {750, 502}}";
+		};
+	};
+	F55893DE02E8CD0201190002 = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{196, 126}, {750, 502}}";
+		};
+	};
+	F568DD4D02716B7C01190006 = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{61, 197}, {750, 502}}";
+		};
+	};
+	F56D45B4028E746E01190002 = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{107, 155}, {750, 502}}";
+		};
+	};
+	F56D45BC028E7A3901190002 = {
+		activeExec = 0;
+	};
+	F5CF571602C614FB01190002 = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{108, 168}, {750, 502}}";
+		};
+	};
+	F5CF571702C614FB01190002 = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{15, 239}, {750, 502}}";
+		};
+	};
+	F5E55AC2028EC3C701190002 = {
+		activeExec = 0;
+	};
+	F5E55ADB028ED10001190002 = {
+		activeExec = 0;
+	};
+}

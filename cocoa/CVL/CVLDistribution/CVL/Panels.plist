@@ -1,0 +1,15 @@
+{
+    Preferences = {nib = Preferences; autosaveFrame = YES; };
+    CvsTagPanel = {nib = CvsTagPanel; };
+    CvsCheckoutModulePanel = {nib = CvsCheckoutModulePanel; };
+    CvsImportPanel = {nib = CvsImportPanel; };
+    CvsCommitPanel = {nib = CvsCommitPanel; autosaveFrame = YES; };
+    CvsPserverLogin = {nib = CvsPserverLogin; }; 
+    CvsLocalRepositoryEdit = {defaultValues = {method = local; }; nib = CvsLocalRepositoryPage; }; 
+    CvsPserverRepositoryEdit = {defaultValues = {method = pserver; }; "NT nib"= CvsPserverRepositoryNTPage;
+        nib = CvsPserverRepositoryPage; }; 
+    CvsRepositoryEdit = {nib = CvsOtherRepositoryPage; }; 
+    RepositoryChoice = {nib = RepositoryChoice; }; 
+    CvsNewRepositoryPanel = {defaultValues = {method = local; }; nib = CvsNewRepositoryPanel; }; 
+    CvsRendezvousRepositoryEdit = {defaultValues = {method = pserver; }; nib = CvsRendezvousRepositoryPage; }; 
+}

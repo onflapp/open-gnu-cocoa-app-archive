@@ -1,0 +1,5 @@
+{
+    name = "Status";
+    key = "1";
+    title = "Status Inspector";
+}

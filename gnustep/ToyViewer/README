@@ -1,0 +1,19 @@
+This is the Port of ToyViewer by ogihara
+
+http://waltz.cs.kobe-u.ac.jp/OSX/toyv-eng.html
+
+open & some Tool Panel should work
+
+
+INSTALL
+
+1- Install a recent GNUstep CVS
+2- cd Dithering.fproj  && make && make install (su - if need)
+3- cd .. && make && make install (su - if need)
+
+
+
+GNUstep bugs repports : fabien@fr.alcove.com
+
+
+

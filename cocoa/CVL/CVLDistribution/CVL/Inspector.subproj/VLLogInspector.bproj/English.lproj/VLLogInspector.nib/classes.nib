@@ -1,0 +1,52 @@
+{
+    IBClasses = (
+        {
+            CLASS = AnchorInspectorManager; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {currentSelection = id; lastmodifiedClock = id; }; 
+            SUPERCLASS = InspectorManager; 
+        }, 
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {setInspector = id; }; 
+            CLASS = InspectorManager; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                currentView = id; 
+                iconButton = id; 
+                inspected = id; 
+                inspectorPopup = id; 
+                multiView = id; 
+                nameField = id; 
+                panel = id; 
+                urlField = id; 
+            }; 
+            SUPERCLASS = Object; 
+        }, 
+        {
+            ACTIONS = {select = id; showDifference = id; showLog = id; }; 
+            CLASS = VLLogInspector; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {date = id; logField = id; table = id; window = id; }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            CLASS = VLStatusInspector; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                lastCheckoutedClock = id; 
+                lastModifiedClock = id; 
+                repVersionField = id; 
+                statusField = id; 
+                stickyDateField = id; 
+                stickyOptionField = id; 
+                stickyTagField = id; 
+                versionField = id; 
+                view = id; 
+                window = id; 
+            }; 
+            SUPERCLASS = NSObject; 
+        }
+    ); 
+    IBVersion = 1; 
+}

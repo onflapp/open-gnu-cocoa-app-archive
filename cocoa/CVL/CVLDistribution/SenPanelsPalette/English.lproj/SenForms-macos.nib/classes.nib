@@ -1,0 +1,60 @@
+{
+    IBClasses = (
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {CLASS = NSObject; LANGUAGE = ObjC; }, 
+        {
+            ACTIONS = {
+                refreshControls = id; 
+                takeObjectValueFromSender = id; 
+                takeObjectValuesFromAllControls = id; 
+            }; 
+            CLASS = SenFormController; 
+            LANGUAGE = ObjC; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            ACTIONS = {cancel = id; ok = id; }; 
+            CLASS = SenFormPanelController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {formController = id; panel = id; }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            ACTIONS = {refreshControls = id; switchPage = id; takeObjectValuesFromAllControls = id; }; 
+            CLASS = SenMultiPageController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {popup = id; swappableView = id; }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            ACTIONS = {
+                openPanel = id; 
+                takeObjectValueFrom = id; 
+                takeStringArrayValueFrom = id; 
+                takeStringValueFrom = id; 
+            }; 
+            CLASS = SenOpenPanelController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {accessoryView = id; delegate = id; valueField = id; }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            CLASS = SenPanelFactory; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {handle = id; }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            CLASS = SenPanelsPalette; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                formControllerRepresentative = id; 
+                formPanelControllerRepresentative = id; 
+                multiPageControllerRepresentative = id; 
+                openPanelControllerRepresentative = id; 
+            }; 
+            SUPERCLASS = IBPalette; 
+        }
+    ); 
+    IBVersion = 1; 
+}

@@ -1,0 +1,343 @@
+{
+    ColorChangeCtr = {
+	Actions = (
+	    "changeAlpha:",
+	    "doit:"
+	);
+	Outlets = (
+	    comparison,
+	    imageOpCtr,
+	    methodMenu,
+	    newAlpha,
+	    newWell,
+	    origAlpha,
+	    origWell,
+	    whichside
+	);
+	Super = NSObject;
+    };
+    EnhanceCtr = {
+	Actions = (
+	    "emboss:",
+	    "enhance:"
+	);
+	Outlets = (
+	    embossSlider,
+	    embossSwitch,
+	    enhanceSlider
+	);
+	Super = NSObject;
+    };
+    FirstResponder = {
+	Actions = (
+	    "activateContextHelpMode:",
+	    "alignCenter:",
+	    "alignJustified:",
+	    "alignLeft:",
+	    "alignRight:",
+	    "arrangeInFront:",
+	    "cancel:",
+	    "capitalizeWord:",
+	    "changeColor:",
+	    "changeFont:",
+	    "checkSpelling:",
+	    "close:",
+	    "complete:",
+	    "copy:",
+	    "copyFont:",
+	    "copyRuler:",
+	    "cut:",
+	    "delete:",
+	    "deleteBackward:",
+	    "deleteForward:",
+	    "deleteToBeginningOfLine:",
+	    "deleteToBeginningOfParagraph:",
+	    "deleteToEndOfLine:",
+	    "deleteToEndOfParagraph:",
+	    "deleteToMark:",
+	    "deleteWordBackward:",
+	    "deleteWordForward:",
+	    "deminiaturize:",
+	    "deselectAll:",
+	    "fax:",
+	    "hide:",
+	    "hideOtherApplications:",
+	    "indent:",
+	    "loosenKerning:",
+	    "lowerBaseline:",
+	    "lowercaseWord:",
+	    "makeKeyAndOrderFront:",
+	    "miniaturize:",
+	    "miniaturizeAll:",
+	    "moveBackward:",
+	    "moveBackwardAndModifySelection:",
+	    "moveDown:",
+	    "moveDownAndModifySelection:",
+	    "moveForward:",
+	    "moveForwardAndModifySelection:",
+	    "moveLeft:",
+	    "moveRight:",
+	    "moveToBeginningOfDocument:",
+	    "moveToBeginningOfLine:",
+	    "moveToBeginningOfParagraph:",
+	    "moveToEndOfDocument:",
+	    "moveToEndOfLine:",
+	    "moveToEndOfParagraph:",
+	    "moveUp:",
+	    "moveUpAndModifySelection:",
+	    "moveWordBackward:",
+	    "moveWordBackwardAndModifySelection:",
+	    "moveWordForward:",
+	    "moveWordForwardAndModifySelection:",
+	    "newDocument:",
+	    "ok:",
+	    "openDocument:",
+	    "orderBack:",
+	    "orderFront:",
+	    "orderFrontColorPanel:",
+	    "orderFrontDataLinkPanel:",
+	    "orderFrontHelpPanel:",
+	    "orderFrontStandardAboutPanel:",
+	    "orderFrontStandardInfoPanel:",
+	    "orderOut:",
+	    "pageDown:",
+	    "pageUp:",
+	    "paste:",
+	    "pasteAsPlainText:",
+	    "pasteAsRichText:",
+	    "pasteFont:",
+	    "pasteRuler:",
+	    "performClose:",
+	    "performMiniaturize:",
+	    "performZoom:",
+	    "print:",
+	    "raiseBaseline:",
+	    "revertDocumentToSaved:",
+	    "runPageLayout:",
+	    "runToolbarCustomizationPalette:",
+	    "saveAllDocuments:",
+	    "saveDocument:",
+	    "saveDocumentAs:",
+	    "saveDocumentTo:",
+	    "scrollLineDown:",
+	    "scrollLineUp:",
+	    "scrollPageDown:",
+	    "scrollPageUp:",
+	    "scrollViaScroller:",
+	    "selectAll:",
+	    "selectLine:",
+	    "selectNextKeyView:",
+	    "selectParagraph:",
+	    "selectPreviousKeyView:",
+	    "selectText:",
+	    "selectText:",
+	    "selectToMark:",
+	    "selectWord:",
+	    "showContextHelp:",
+	    "showGuessPanel:",
+	    "showHelp:",
+	    "showWindow:",
+	    "stop:",
+	    "subscript:",
+	    "superscript:",
+	    "swapWithMark:",
+	    "takeDoubleValueFrom:",
+	    "takeFloatValueFrom:",
+	    "takeIntValueFrom:",
+	    "takeObjectValueFrom:",
+	    "takeStringValueFrom:",
+	    "terminate:",
+	    "tightenKerning:",
+	    "toggle:",
+	    "toggleContinuousSpellChecking:",
+	    "toggleRuler:",
+	    "toggleToolbarShown:",
+	    "toggleTraditionalCharacterShape:",
+	    "transpose:",
+	    "transposeWords:",
+	    "turnOffKerning:",
+	    "turnOffLigatures:",
+	    "underline:",
+	    "unhide:",
+	    "unhideAllApplications:",
+	    "unscript:",
+	    "uppercaseWord:",
+	    "useAllLigatures:",
+	    "useStandardKerning:",
+	    "useStandardLigatures:",
+	    "yank:",
+	    "zoom:"
+	);
+	Super = NSObject;
+    };
+    ImageOpCtr = {
+	Actions = (
+	    "activatePanel:",
+	    "convertCMYtoRGB:",
+	    "flip:",
+	    "loadNewTool:",
+	    "newBitmap:",
+	    "readyForSize:",
+	    "reduce:",
+	    "rotateByAngle:"
+	);
+	Outlets = (
+	    clrChangePanel,
+	    clrTonePanel,
+	    enhancePanel,
+	    imageOpr,
+	    monoPanel,
+	    posterizePanel,
+	    randomPanel,
+	    reducePanel,
+	    resizePanel,
+	    rotatePanel,
+	    sframePanel,
+	    toolButton,
+	    toolPanel,
+	    toolView
+	);
+	Super = NSObject;
+    };
+    MonoCtr = {
+	Actions = (
+	    "changeBrightness:",
+	    "changeValue:",
+	    "monochrome:",
+	    "reset:"
+	);
+	Outlets = (
+	    NSCell,
+	    contrSlider,
+	    ditherSW,
+	    gammaSlider,
+	    valTexts,
+	    imageOpCtr,
+	    monoView,
+	    stepsSW,
+	    brightSlider
+	);
+	Super = NSObject;
+    };
+    NoiseCtr = {
+	Actions = (
+	    "changeValue:",
+	    "doit:"
+	);
+	Outlets = (
+	    brightSW,
+	    freqSlider,
+	    freqText,
+	    granSlider,
+	    magSlider,
+	    magText
+	);
+	Super = NSObject;
+    };
+    PosterCtrl = {
+	Actions = (
+	    "posterize:"
+	);
+	Outlets = (
+	    optionMenu,
+	    potserCtrlSlider,
+	    posterDiffSlider
+	);
+	Super = NSObject;
+    };
+    ReduceCtr = {
+	Actions = (
+	    "colorHalftone:",
+	    "reduceFixedPanel:",
+	    "reduceSelect:",
+	    "truncateBits:"
+	);
+	Outlets = (
+	    cutdownBits,
+	    fixedColors,
+	    fourBitSW,
+	    mcaColors,
+	    psudoColors,
+	    psudoMethod,
+	    withDitherSW
+	);
+	Super = NSObject;
+    };
+    RotateCtr = {
+	Actions = (
+	    "adjustValue:",
+	    "changeValue:",
+	    "doit:",
+	    "writtenAngle:"
+	);
+	Outlets = (
+	    angleSlider,
+	    angleText,
+	    imageOp,
+	    rotView,
+	    smoothSW,
+	    angleStepper
+	);
+	Super = NSObject;
+    };
+    RotateView = {
+	Actions = (
+	    "takeIntValueFrom:"
+	);
+	Outlets = (
+	    angleText
+	);
+	Super = NSView;
+    };
+    SmResizeCtr = {
+	Actions = (
+	    "changeText:",
+	    "changeValue:",
+	    "doResize:",
+	    "resetValue:",
+	    "setAutoDetect:",
+	    "setCurrentScale:"
+	);
+	Outlets = (
+	    autoButton,
+	    imageOpCtr,
+	    methodButton,
+	    newSizeText,
+	    ratioText,
+	    scaleText,
+	    slider
+	);
+	Super = NSObject;
+    };
+    SoftFrameCtr = {
+	Actions = (
+	    "changeAlpha:",
+	    "doit:",
+	    "selectShape:"
+	);
+	Outlets = (
+	    alphaSW,
+	    colorwell,
+	    imageOpCtr,
+	    shape,
+	    widthSL
+	);
+	Super = NSObject;
+    };
+    TonePanelCtrl = {
+	Actions = (
+	    "changeColorValue:",
+	    "changeMainValue:",
+	    "colorTone:",
+	    "reset:"
+	);
+	Outlets = (
+	    colorIndicators,
+	    colorSliders,
+	    imageOpCtr,
+	    mainIndicator,
+	    mainSlider
+	);
+	Super = NSObject;
+    };
+}

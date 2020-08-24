@@ -1,0 +1,47 @@
+{
+    IBClasses = (
+        {
+            ACTIONS = {cancel = id; clear = id; import = id; }; 
+            CLASS = CvsImportController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                cancelButton = NSButton; 
+                clearButton = NSButton; 
+                cvsImportControllerAlias = NSObjectController; 
+                cvsRootTextField = NSTextField; 
+                importButton = NSButton; 
+                importMessageTextField = NSTextField; 
+                importRepositoryPathTextField = NSTextField; 
+                moduleNameTextField = NSTextField; 
+                releaseTagTextField = NSTextField; 
+                repositoryDirectoryTextField = NSTextField; 
+                repositoryOpenPanelController = SenOpenPanelController; 
+                repositorySubpathTextField = NSTextField; 
+                sourceOpenPanelController = SenOpenPanelController; 
+                sourcePathTextField = NSTextField; 
+                vendorTagTextField = NSTextField; 
+            }; 
+            SUPERCLASS = NSWindowController; 
+        }, 
+        {CLASS = CvsTagFormatter; LANGUAGE = ObjC; SUPERCLASS = NSFormatter; }, 
+        {
+            ACTIONS = {"" = id; }; 
+            CLASS = FirstResponder; 
+            LANGUAGE = ObjC; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            ACTIONS = {
+                openPanel = id; 
+                takeObjectValueFrom = id; 
+                takeStringArrayValueFrom = id; 
+                takeStringValueFrom = id; 
+            }; 
+            CLASS = SenOpenPanelController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {accessoryView = id; delegate = id; valueField = id; }; 
+            SUPERCLASS = NSObject; 
+        }
+    ); 
+    IBVersion = 1; 
+}

@@ -1,0 +1,15 @@
+"WorkAreaListViewer" = {
+    ACTIONS = {};
+    OUTLETS = {browser = id; window = id; };
+    SUPERCLASS = NSObject;
+};
+"BrowserController" = {
+    ACTIONS = {"doubleSelect:" = id; "miniaturize:" = id; "select:" = id; "show:" = id; };
+    OUTLETS = {browser = id; };
+    SUPERCLASS = Object;
+};
+"FirstResponder" = {
+    ACTIONS = {};
+    OUTLETS = {};
+    CATEGORY = LocalActions;
+};

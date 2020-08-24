@@ -1,0 +1,28 @@
+{
+    IBClasses = (
+        {
+            ACTIONS = {changeAlpha = id; doit = id; }; 
+            CLASS = ColorChangeCtr; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                comparison = id; 
+                methodMenu = id; 
+                newAlpha = id; 
+                newWell = id; 
+                origAlpha = id; 
+                origWell = id; 
+                whichside = id; 
+            }; 
+            SUPERCLASS = ImgToolCtrlAbs; 
+        }, 
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {setup = id; }; 
+            CLASS = ImgToolCtrlAbs; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {panel = id; }; 
+            SUPERCLASS = NSObject; 
+        }
+    ); 
+    IBVersion = 1; 
+}

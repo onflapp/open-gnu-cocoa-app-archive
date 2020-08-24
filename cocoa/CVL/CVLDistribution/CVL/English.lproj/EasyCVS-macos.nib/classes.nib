@@ -1,0 +1,283 @@
+{
+    IBClasses = (
+        {
+            ACTIONS = {
+                openModule = id; 
+                showHelp = id; 
+                showInspectorPanel = id; 
+                showLicense = id; 
+                showProgressPanel = id; 
+                showReleaseNotes = id; 
+                showRepositoryViewer = id; 
+            }; 
+            CLASS = CVLDelegate; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                cancelEditingMenuItem = NSMenuItem; 
+                fileMenu = NSMenu; 
+                helpView = NSTextView; 
+                startEditingMenuItem = NSMenuItem; 
+                startWatchingMenuItem = NSMenuItem; 
+                stopWatchingMenuItem = NSMenuItem; 
+                workAreaDrawerMenuItem = NSMenuItem; 
+            }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {CLASS = EOApplication; LANGUAGE = ObjC; SUPERCLASS = NSApplication; }, 
+        {
+            ACTIONS = {
+                addRepository = id; 
+                addSelectedFiles = id; 
+                addSelectedFilesAsBinary = id; 
+                clearConsole = id; 
+                closeWorkArea = id; 
+                commitSelectedFiles = id; 
+                commitWorkArea = id; 
+                deleteAndUpdateSelectedFiles = id; 
+                diffSelectedFiles = id; 
+                doubleSelect = id; 
+                newRepository = id; 
+                openFilesInWS = id; 
+                openRepositoryWorkarea = id; 
+                openVersionsInTemporaryDirectory = id; 
+                refreshSelectedFiles = id; 
+                reinstateFilesMarkedForRemoval = id; 
+                releaseWorkArea = id; 
+                removeRepository = id; 
+                removeSelectedFiles = id; 
+                removeStickyAttributesAndUpdate = id; 
+                renameSelectedFile = id; 
+                replaceWorkAreaFiles = id; 
+                repositoryCheckout = id; 
+                repositoryImport = id; 
+                restoreFiles = id; 
+                restoreWorkAreaFiles = id; 
+                restoreWorkAreaVersion = id; 
+                revealSelectedFiles = id; 
+                revealWorkArea = id; 
+                saveVersionAs = id; 
+                selectInWS = id; 
+                showComparator = id; 
+                showConsole = id; 
+                showCvsInfoPanel = id; 
+                showHelp = id; 
+                showInfoPanel = id; 
+                showInspector = id; 
+                showInspectorPanel = id; 
+                showPreferences = id; 
+                showProgressPanel = id; 
+                showRepositoryViewer = id; 
+                tagSelectedFiles = id; 
+                tagWorkArea = id; 
+                toggleFilterDrawer = id; 
+                turnOffEditing = id; 
+                turnOffWatchingForAllActions = id; 
+                turnOffWatchingForCommitAction = id; 
+                turnOffWatchingForEditAction = id; 
+                turnOffWatchingForNoActions = id; 
+                turnOffWatchingForUneditAction = id; 
+                turnOnEditing = id; 
+                turnOnWatchingForAllActions = id; 
+                turnOnWatchingForCommitAction = id; 
+                turnOnWatchingForEditAction = id; 
+                turnOnWatchingForNoActions = id; 
+                turnOnWatchingForUneditAction = id; 
+                updateSelectedFiles = id; 
+                updateViewer = id; 
+                updateWorkArea = id; 
+            }; 
+            CLASS = FirstResponder; 
+            LANGUAGE = ObjC; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            ACTIONS = {cancel = id; ok = id; }; 
+            CLASS = ImportPanelController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                messageField = id; 
+                panel = id; 
+                releaseTagField = id; 
+                repositoryPathField = id; 
+                vendorTagField = id; 
+            }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            ACTIONS = {cancel = id; ok = id; }; 
+            CLASS = MessagePanelController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                cmdTitleTextField = id; 
+                iconButton = id; 
+                msgTextField = id; 
+                msgTitleTextField = id; 
+                panel = id; 
+            }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            ACTIONS = {clearText = id; show = id; }; 
+            CLASS = OutputPanelController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {panel = id; text = id; }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            ACTIONS = {show = id; }; 
+            CLASS = ProgressPanelController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {browser = id; requests = id; tableView = id; }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            ACTIONS = {
+                refreshControls = id; 
+                takeObjectValueFromSender = id; 
+                takeObjectValuesFromAllControls = id; 
+            }; 
+            CLASS = SenFormController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {controls = id; dictionaryValue = id; objectValue = id; values = id; }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            ACTIONS = {cancel = id; ok = id; }; 
+            CLASS = SenFormPanelController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {dictionaryValue = id; formController = id; panel = id; showAndRunModal = id; }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            ACTIONS = {refreshControls = id; switchPage = id; takeObjectValuesFromAllControls = id; }; 
+            CLASS = SenMultiPageController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                currentPageController = id; 
+                dictionaryValue = id; 
+                pageControllers = id; 
+                popup = id; 
+                swappableView = id; 
+            }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            ACTIONS = {
+                takeObjectValueFrom = id; 
+                takeStringArrayValueFrom = id; 
+                takeStringValueFrom = id; 
+            }; 
+            CLASS = SenOpenPanelController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                accessoryView = id; 
+                allowsMultipleSelection = id; 
+                canChooseDirectories = id; 
+                canChooseFiles = id; 
+                delegate = id; 
+                directory = id; 
+                fileNames = id; 
+                prompt = id; 
+                requiredFileType = id; 
+                saveVsOpenPanel = id; 
+                stringValue = id; 
+                target = id; 
+                title = id; 
+                treatsFilePackagesAsDirectories = id; 
+                useSaveVsOpenPanel = id; 
+                valueField = id; 
+            }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            CLASS = SenPanelFactory; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {panels = id; properties = id; }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            ACTIONS = {
+                findNext = id; 
+                findNextAndOrderFindPanelOut = id; 
+                findPrevious = id; 
+                jumpToSelection = id; 
+                orderFrontFindPanel = id; 
+                replace = id; 
+                replaceAll = id; 
+                replaceAndFind = id; 
+                takeFindStringFromSelection = id; 
+            }; 
+            CLASS = TextFinder; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                findNextButton = id; 
+                findTextField = id; 
+                ignoreCaseButton = id; 
+                replaceAllScopeMatrix = id; 
+                replaceTextField = id; 
+                statusField = id; 
+            }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            ACTIONS = {checkForUpdates = id; takeBoolFromObject = id; }; 
+            CLASS = UKUpdateChecker; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {prefsButton = NSButton; }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            ACTIONS = {
+                addSelectedFiles = id; 
+                addSelectedFilesAsBinary = id; 
+                closeWorkArea = id; 
+                commitSelectedFiles = id; 
+                commitWorkArea = id; 
+                diffSelectedFiles = id; 
+                filterPreselectionPopped = id; 
+                openVersionsInTemporaryDirectory = id; 
+                openWithApplicationSelectedFiles = id; 
+                refreshSelectedFiles = id; 
+                releaseWorkArea = id; 
+                removeSelectedFiles = id; 
+                replaceWorkAreaFiles = id; 
+                restoreFiles = id; 
+                revealSelectedFiles = id; 
+                revealWorkArea = id; 
+                saveVersionAs = id; 
+                setBrowserView = id; 
+                setListView = id; 
+                show = id; 
+                tagSelectedFiles = id; 
+                tagWorkArea = id; 
+                turnOffEditing = id; 
+                turnOffWatchingForAllActions = id; 
+                turnOffWatchingForCommitAction = id; 
+                turnOffWatchingForEditAction = id; 
+                turnOffWatchingForNoneActions = id; 
+                turnOffWatchingForUneditAction = id; 
+                turnOnWatchingForAllActions = id; 
+                turnOnWatchingForCommitAction = id; 
+                turnOnWatchingForEditAction = id; 
+                turnOnWatchingForNoneActions = id; 
+                turnOnWatchingForUneditAction = id; 
+                updateSelectedFiles = id; 
+                updateWorkArea = id; 
+                viewerFrameSizeChanged = id; 
+            }; 
+            CLASS = WorkAreaViewer; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                filterButtonsMatrix = id; 
+                filterPopup = id; 
+                filterProvider = id; 
+                processesButton = id; 
+                viewHolder = id; 
+                window = id; 
+            }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {CLASS = "java.lang.Object"; LANGUAGE = Java; }
+    ); 
+    IBVersion = 1; 
+}

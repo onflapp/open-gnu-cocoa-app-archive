@@ -1,0 +1,937 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 39;
+	objects = {
+		3DBE367504CD3A9B00A8000F = {
+			children = (
+				3DBE368104CD3A9B00A8000F,
+				3DBE368804CD3A9B00A8000F,
+				3DBE368F04CD3A9B00A8000F,
+				3DBE369904CD3A9B00A8000F,
+				3DBE369C04CD3A9B00A8000F,
+				3DBE36A404CD3A9B00A8000F,
+				3DBE36D004CD3A9C00A8000F,
+				3DBE36D704CD3A9C00A8000F,
+				3DBE368004CD3A9B00A8000F,
+			);
+			isa = PBXGroup;
+			name = SenPanelsPalette;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3DBE367704CD3A9B00A8000F = {
+			buildRules = (
+			);
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			isa = PBXBuildStyle;
+			name = Development;
+		};
+		3DBE367804CD3A9B00A8000F = {
+			buildRules = (
+			);
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+			};
+			isa = PBXBuildStyle;
+			name = Deployment;
+		};
+		3DBE367904CD3A9B00A8000F = {
+			buildActionMask = 2147483647;
+			files = (
+				3DBE368A04CD3A9B00A8000F,
+				3DBE368C04CD3A9B00A8000F,
+				3DBE368E04CD3A9B00A8000F,
+				3DBE36BB04CD3A9C00A8000F,
+				3DBE36BD04CD3A9C00A8000F,
+				3DBE36BF04CD3A9C00A8000F,
+				3DBE36C104CD3A9C00A8000F,
+				3DBE36C304CD3A9C00A8000F,
+				3DBE36C504CD3A9C00A8000F,
+				3DBE36C704CD3A9C00A8000F,
+				3DBE36C904CD3A9C00A8000F,
+				3DBE36CB04CD3A9C00A8000F,
+			);
+			isa = PBXHeadersBuildPhase;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3DBE367A04CD3A9B00A8000F = {
+			buildActionMask = 2147483647;
+			files = (
+				3DBE369104CD3A9B00A8000F,
+				3DBE369404CD3A9B00A8000F,
+				3DBE369704CD3A9B00A8000F,
+				3DBE369B04CD3A9B00A8000F,
+			);
+			isa = PBXResourcesBuildPhase;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3DBE367B04CD3A9B00A8000F = {
+			buildActionMask = 2147483647;
+			files = (
+				3DBE368304CD3A9B00A8000F,
+				3DBE368504CD3A9B00A8000F,
+				3DBE368704CD3A9B00A8000F,
+				3DBE36A804CD3A9C00A8000F,
+				3DBE36AA04CD3A9C00A8000F,
+				3DBE36AC04CD3A9C00A8000F,
+				3DBE36AE04CD3A9C00A8000F,
+				3DBE36B004CD3A9C00A8000F,
+				3DBE36B204CD3A9C00A8000F,
+				3DBE36B404CD3A9C00A8000F,
+				3DBE36B604CD3A9C00A8000F,
+				3DBE36B804CD3A9C00A8000F,
+			);
+			isa = PBXSourcesBuildPhase;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3DBE367C04CD3A9B00A8000F = {
+			buildActionMask = 2147483647;
+			files = (
+				3DBE36D204CD3A9C00A8000F,
+				3DBE36D404CD3A9C00A8000F,
+				3DBE36D604CD3A9C00A8000F,
+				3DE0B2AB05906E5A00A8000F,
+			);
+			isa = PBXFrameworksBuildPhase;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3DBE367D04CD3A9B00A8000F = {
+			buildActionMask = 2147483647;
+			files = (
+			);
+			isa = PBXRezBuildPhase;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3DBE367E04CD3A9B00A8000F = {
+			buildPhases = (
+				3DBE367904CD3A9B00A8000F,
+				3DBE367A04CD3A9B00A8000F,
+				3DBE367B04CD3A9B00A8000F,
+				3DBE367C04CD3A9B00A8000F,
+				3DBE367D04CD3A9B00A8000F,
+			);
+			buildSettings = {
+				INSTALL_PATH = "$(HOME)/Library/Palettes";
+				OTHER_CFLAGS = "-DMACOSX -DPANTHER";
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = SenPanelsPalette;
+				SECTORDER_FLAGS = "";
+				WARNING_CFLAGS = "-Wmost -Wno-four-char-constants -Wno-unknown-pragmas";
+				WRAPPER_EXTENSION = palette;
+			};
+			dependencies = (
+			);
+			isa = PBXBundleTarget;
+			name = "SenPanelsPalette (Bundle)";
+			productInstallPath = "$(HOME)/Library/Palettes";
+			productName = "SenPanelsPalette (Bundle)";
+			productReference = 3DBE367F04CD3A9B00A8000F;
+			productSettingsXML = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
+<!DOCTYPE plist PUBLIC \"-//Apple Computer//DTD PLIST 1.0//EN\" \"http://www.apple.com/DTDs/PropertyList-1.0.dtd\">
+<plist version=\"1.0\">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundleExecutable</key>
+	<string>SenPanelsPalette</string>
+	<key>CFBundleGetInfoString</key>
+	<string></string>
+	<key>CFBundleIconFile</key>
+	<string></string>
+	<key>CFBundleIdentifier</key>
+	<string></string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string></string>
+	<key>CFBundlePackageType</key>
+	<string>BNDL</string>
+	<key>CFBundleShortVersionString</key>
+	<string></string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleVersion</key>
+	<string>0.0.1d1</string>
+</dict>
+</plist>
+";
+		};
+		3DBE367F04CD3A9B00A8000F = {
+			expectedFileType = folder;
+			includeInIndex = 0;
+			isa = PBXFileReference;
+			path = SenPanelsPalette.palette;
+			refType = 3;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3DBE368004CD3A9B00A8000F = {
+			children = (
+				3DBE367F04CD3A9B00A8000F,
+			);
+			isa = PBXGroup;
+			name = Products;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3DBE368104CD3A9B00A8000F = {
+			children = (
+				3DBE368204CD3A9B00A8000F,
+				3DBE368404CD3A9B00A8000F,
+				3DBE368604CD3A9B00A8000F,
+			);
+			isa = PBXGroup;
+			name = Classes;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3DBE368204CD3A9B00A8000F = {
+			expectedFileType = sourcecode.c.objc;
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			path = SenFormControllerConnectInspector.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3DBE368304CD3A9B00A8000F = {
+			fileRef = 3DBE368204CD3A9B00A8000F;
+			isa = PBXBuildFile;
+			settings = {
+				ATTRIBUTES = (
+				);
+			};
+		};
+		3DBE368404CD3A9B00A8000F = {
+			expectedFileType = sourcecode.c.objc;
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			path = SenOpenPanelInspector.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3DBE368504CD3A9B00A8000F = {
+			fileRef = 3DBE368404CD3A9B00A8000F;
+			isa = PBXBuildFile;
+			settings = {
+				ATTRIBUTES = (
+				);
+			};
+		};
+		3DBE368604CD3A9B00A8000F = {
+			expectedFileType = sourcecode.c.objc;
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			path = SenPanelsPalette.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3DBE368704CD3A9B00A8000F = {
+			fileRef = 3DBE368604CD3A9B00A8000F;
+			isa = PBXBuildFile;
+			settings = {
+				ATTRIBUTES = (
+				);
+			};
+		};
+		3DBE368804CD3A9B00A8000F = {
+			children = (
+				3DBE368904CD3A9B00A8000F,
+				3DBE368B04CD3A9B00A8000F,
+				3DBE368D04CD3A9B00A8000F,
+			);
+			isa = PBXGroup;
+			name = Headers;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3DBE368904CD3A9B00A8000F = {
+			expectedFileType = sourcecode.c.h;
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			path = SenFormControllerConnectInspector.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3DBE368A04CD3A9B00A8000F = {
+			fileRef = 3DBE368904CD3A9B00A8000F;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		3DBE368B04CD3A9B00A8000F = {
+			expectedFileType = sourcecode.c.h;
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			path = SenOpenPanelInspector.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3DBE368C04CD3A9B00A8000F = {
+			fileRef = 3DBE368B04CD3A9B00A8000F;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		3DBE368D04CD3A9B00A8000F = {
+			expectedFileType = sourcecode.c.h;
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			path = SenPanelsPalette.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3DBE368E04CD3A9B00A8000F = {
+			fileRef = 3DBE368D04CD3A9B00A8000F;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		3DBE368F04CD3A9B00A8000F = {
+			children = (
+				3DBE369004CD3A9B00A8000F,
+				3DBE369304CD3A9B00A8000F,
+				3DBE369604CD3A9B00A8000F,
+			);
+			isa = PBXGroup;
+			name = Interfaces;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3DBE369004CD3A9B00A8000F = {
+			children = (
+				3DBE369204CD3A9B00A8000F,
+			);
+			isa = PBXVariantGroup;
+			name = SenOpenPanelInspector.nib;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3DBE369104CD3A9B00A8000F = {
+			fileRef = 3DBE369004CD3A9B00A8000F;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		3DBE369204CD3A9B00A8000F = {
+			expectedFileType = wrapper.nib;
+			isa = PBXFileReference;
+			name = English;
+			path = English.lproj/SenOpenPanelInspector.nib;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3DBE369304CD3A9B00A8000F = {
+			children = (
+				3DBE369504CD3A9B00A8000F,
+			);
+			isa = PBXVariantGroup;
+			name = SenForms.nib;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3DBE369404CD3A9B00A8000F = {
+			fileRef = 3DBE369304CD3A9B00A8000F;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		3DBE369504CD3A9B00A8000F = {
+			expectedFileType = wrapper.nib;
+			isa = PBXFileReference;
+			name = English;
+			path = English.lproj/SenForms.nib;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3DBE369604CD3A9B00A8000F = {
+			children = (
+				3DBE369804CD3A9B00A8000F,
+			);
+			isa = PBXVariantGroup;
+			name = SenFormControllerConnectInspector.nib;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3DBE369704CD3A9B00A8000F = {
+			fileRef = 3DBE369604CD3A9B00A8000F;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		3DBE369804CD3A9B00A8000F = {
+			expectedFileType = wrapper.nib;
+			isa = PBXFileReference;
+			name = English;
+			path = English.lproj/SenFormControllerConnectInspector.nib;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3DBE369904CD3A9B00A8000F = {
+			children = (
+				3DBE369A04CD3A9B00A8000F,
+			);
+			isa = PBXGroup;
+			name = Resources;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3DBE369A04CD3A9B00A8000F = {
+			expectedFileType = text;
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			path = palette.table;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3DBE369B04CD3A9B00A8000F = {
+			fileRef = 3DBE369A04CD3A9B00A8000F;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		3DBE369C04CD3A9B00A8000F = {
+			children = (
+				3DBE369D04CD3A9B00A8000F,
+				3DBE369E04CD3A9B00A8000F,
+				3DBE369F04CD3A9B00A8000F,
+				3DBE36A004CD3A9B00A8000F,
+				3DBE36A104CD3A9B00A8000F,
+				3DBE36A204CD3A9B00A8000F,
+				3DBE36A304CD3A9B00A8000F,
+			);
+			isa = PBXGroup;
+			name = "Supporting Files";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3DBE369D04CD3A9B00A8000F = {
+			expectedFileType = text;
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			path = h.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3DBE369E04CD3A9B00A8000F = {
+			expectedFileType = text;
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			path = m.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3DBE369F04CD3A9B00A8000F = {
+			expectedFileType = sourcecode.make;
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			path = Makefile;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3DBE36A004CD3A9B00A8000F = {
+			expectedFileType = text;
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			path = Makefile.postamble;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3DBE36A104CD3A9B00A8000F = {
+			expectedFileType = text;
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			path = Makefile.preamble;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3DBE36A204CD3A9B00A8000F = {
+			expectedFileType = text.html;
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			path = OpenSourceLicense.html;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3DBE36A304CD3A9B00A8000F = {
+			expectedFileType = image.gif;
+			isa = PBXFileReference;
+			path = sente.gif;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3DBE36A404CD3A9B00A8000F = {
+			children = (
+				3DBE36A504CD3A9B00A8000F,
+			);
+			isa = PBXGroup;
+			name = Subprojects;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3DBE36A504CD3A9B00A8000F = {
+			children = (
+				3DBE36A604CD3A9B00A8000F,
+				3DBE36B904CD3A9C00A8000F,
+				3DBE36CC04CD3A9C00A8000F,
+			);
+			isa = PBXGroup;
+			name = SenPanels;
+			path = SenPanels.subproj;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3DBE36A604CD3A9B00A8000F = {
+			children = (
+				3DBE36A704CD3A9B00A8000F,
+				3DBE36A904CD3A9C00A8000F,
+				3DBE36AB04CD3A9C00A8000F,
+				3DBE36AD04CD3A9C00A8000F,
+				3DBE36AF04CD3A9C00A8000F,
+				3DBE36B104CD3A9C00A8000F,
+				3DBE36B304CD3A9C00A8000F,
+				3DBE36B504CD3A9C00A8000F,
+				3DBE36B704CD3A9C00A8000F,
+			);
+			isa = PBXGroup;
+			name = Classes;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3DBE36A704CD3A9B00A8000F = {
+			expectedFileType = sourcecode.c.objc;
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			path = SenFormController.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3DBE36A804CD3A9C00A8000F = {
+			fileRef = 3DBE36A704CD3A9B00A8000F;
+			isa = PBXBuildFile;
+			settings = {
+				ATTRIBUTES = (
+				);
+			};
+		};
+		3DBE36A904CD3A9C00A8000F = {
+			expectedFileType = sourcecode.c.objc;
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			path = SenFormControllerConnector.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3DBE36AA04CD3A9C00A8000F = {
+			fileRef = 3DBE36A904CD3A9C00A8000F;
+			isa = PBXBuildFile;
+			settings = {
+				ATTRIBUTES = (
+				);
+			};
+		};
+		3DBE36AB04CD3A9C00A8000F = {
+			expectedFileType = sourcecode.c.objc;
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			path = SenFormPanelController.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3DBE36AC04CD3A9C00A8000F = {
+			fileRef = 3DBE36AB04CD3A9C00A8000F;
+			isa = PBXBuildFile;
+			settings = {
+				ATTRIBUTES = (
+				);
+			};
+		};
+		3DBE36AD04CD3A9C00A8000F = {
+			expectedFileType = sourcecode.c.objc;
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			path = SenPanelFactory.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3DBE36AE04CD3A9C00A8000F = {
+			fileRef = 3DBE36AD04CD3A9C00A8000F;
+			isa = PBXBuildFile;
+			settings = {
+				ATTRIBUTES = (
+				);
+			};
+		};
+		3DBE36AF04CD3A9C00A8000F = {
+			expectedFileType = sourcecode.c.objc;
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			path = _NibOwner.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3DBE36B004CD3A9C00A8000F = {
+			fileRef = 3DBE36AF04CD3A9C00A8000F;
+			isa = PBXBuildFile;
+			settings = {
+				ATTRIBUTES = (
+				);
+			};
+		};
+		3DBE36B104CD3A9C00A8000F = {
+			expectedFileType = sourcecode.c.objc;
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			path = SenOpenPanelController.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3DBE36B204CD3A9C00A8000F = {
+			fileRef = 3DBE36B104CD3A9C00A8000F;
+			isa = PBXBuildFile;
+			settings = {
+				ATTRIBUTES = (
+				);
+			};
+		};
+		3DBE36B304CD3A9C00A8000F = {
+			expectedFileType = sourcecode.c.objc;
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			path = SenMultiPageController.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3DBE36B404CD3A9C00A8000F = {
+			fileRef = 3DBE36B304CD3A9C00A8000F;
+			isa = PBXBuildFile;
+			settings = {
+				ATTRIBUTES = (
+				);
+			};
+		};
+		3DBE36B504CD3A9C00A8000F = {
+			expectedFileType = sourcecode.c.objc;
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			path = NSCell_SenPanelAdditions.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3DBE36B604CD3A9C00A8000F = {
+			fileRef = 3DBE36B504CD3A9C00A8000F;
+			isa = PBXBuildFile;
+			settings = {
+				ATTRIBUTES = (
+				);
+			};
+		};
+		3DBE36B704CD3A9C00A8000F = {
+			expectedFileType = sourcecode.c.objc;
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			path = NSTextView_SenPanelAdditions.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3DBE36B804CD3A9C00A8000F = {
+			fileRef = 3DBE36B704CD3A9C00A8000F;
+			isa = PBXBuildFile;
+			settings = {
+				ATTRIBUTES = (
+				);
+			};
+		};
+		3DBE36B904CD3A9C00A8000F = {
+			children = (
+				3DBE36BA04CD3A9C00A8000F,
+				3DBE36BC04CD3A9C00A8000F,
+				3DBE36BE04CD3A9C00A8000F,
+				3DBE36C004CD3A9C00A8000F,
+				3DBE36C204CD3A9C00A8000F,
+				3DBE36C404CD3A9C00A8000F,
+				3DBE36C604CD3A9C00A8000F,
+				3DBE36C804CD3A9C00A8000F,
+				3DBE36CA04CD3A9C00A8000F,
+			);
+			isa = PBXGroup;
+			name = Headers;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3DBE36BA04CD3A9C00A8000F = {
+			expectedFileType = sourcecode.c.h;
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			path = SenFormController.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3DBE36BB04CD3A9C00A8000F = {
+			fileRef = 3DBE36BA04CD3A9C00A8000F;
+			isa = PBXBuildFile;
+			settings = {
+				ATTRIBUTES = (
+					Project,
+				);
+			};
+		};
+		3DBE36BC04CD3A9C00A8000F = {
+			expectedFileType = sourcecode.c.h;
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			path = SenFormControllerConnector.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3DBE36BD04CD3A9C00A8000F = {
+			fileRef = 3DBE36BC04CD3A9C00A8000F;
+			isa = PBXBuildFile;
+			settings = {
+				ATTRIBUTES = (
+					Project,
+				);
+			};
+		};
+		3DBE36BE04CD3A9C00A8000F = {
+			expectedFileType = sourcecode.c.h;
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			path = SenFormPanelController.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3DBE36BF04CD3A9C00A8000F = {
+			fileRef = 3DBE36BE04CD3A9C00A8000F;
+			isa = PBXBuildFile;
+			settings = {
+				ATTRIBUTES = (
+					Project,
+				);
+			};
+		};
+		3DBE36C004CD3A9C00A8000F = {
+			expectedFileType = sourcecode.c.h;
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			path = SenPanelFactory.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3DBE36C104CD3A9C00A8000F = {
+			fileRef = 3DBE36C004CD3A9C00A8000F;
+			isa = PBXBuildFile;
+			settings = {
+				ATTRIBUTES = (
+					Project,
+				);
+			};
+		};
+		3DBE36C204CD3A9C00A8000F = {
+			expectedFileType = sourcecode.c.h;
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			path = _NibOwner.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3DBE36C304CD3A9C00A8000F = {
+			fileRef = 3DBE36C204CD3A9C00A8000F;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		3DBE36C404CD3A9C00A8000F = {
+			expectedFileType = sourcecode.c.h;
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			path = SenOpenPanelController.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3DBE36C504CD3A9C00A8000F = {
+			fileRef = 3DBE36C404CD3A9C00A8000F;
+			isa = PBXBuildFile;
+			settings = {
+				ATTRIBUTES = (
+					Project,
+				);
+			};
+		};
+		3DBE36C604CD3A9C00A8000F = {
+			expectedFileType = sourcecode.c.h;
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			path = SenMultiPageController.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3DBE36C704CD3A9C00A8000F = {
+			fileRef = 3DBE36C604CD3A9C00A8000F;
+			isa = PBXBuildFile;
+			settings = {
+				ATTRIBUTES = (
+					Project,
+				);
+			};
+		};
+		3DBE36C804CD3A9C00A8000F = {
+			expectedFileType = sourcecode.c.h;
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			path = NSCell_SenPanelAdditions.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3DBE36C904CD3A9C00A8000F = {
+			fileRef = 3DBE36C804CD3A9C00A8000F;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		3DBE36CA04CD3A9C00A8000F = {
+			expectedFileType = sourcecode.c.h;
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			path = NSTextView_SenPanelAdditions.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3DBE36CB04CD3A9C00A8000F = {
+			fileRef = 3DBE36CA04CD3A9C00A8000F;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		3DBE36CC04CD3A9C00A8000F = {
+			children = (
+				3DBE36CD04CD3A9C00A8000F,
+				3DBE36CE04CD3A9C00A8000F,
+				3DBE36CF04CD3A9C00A8000F,
+			);
+			isa = PBXGroup;
+			name = "Supporting Files";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3DBE36CD04CD3A9C00A8000F = {
+			expectedFileType = text;
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			path = Makefile.preamble;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3DBE36CE04CD3A9C00A8000F = {
+			expectedFileType = sourcecode.make;
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			path = Makefile;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3DBE36CF04CD3A9C00A8000F = {
+			expectedFileType = text;
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			path = Makefile.postamble;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3DBE36D004CD3A9C00A8000F = {
+			children = (
+				3DBE36D104CD3A9C00A8000F,
+				3DBE36D304CD3A9C00A8000F,
+				3DBE36D504CD3A9C00A8000F,
+				3DE0B2AA05906E5A00A8000F,
+			);
+			isa = PBXGroup;
+			name = "External Frameworks and Libraries";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3DBE36D104CD3A9C00A8000F = {
+			expectedFileType = wrapper.framework;
+			isa = PBXFileReference;
+			name = AppKit.framework;
+			path = /System/Library/Frameworks/AppKit.framework;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		3DBE36D204CD3A9C00A8000F = {
+			fileRef = 3DBE36D104CD3A9C00A8000F;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		3DBE36D304CD3A9C00A8000F = {
+			expectedFileType = wrapper.framework;
+			isa = PBXFileReference;
+			name = Foundation.framework;
+			path = /System/Library/Frameworks/Foundation.framework;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		3DBE36D404CD3A9C00A8000F = {
+			fileRef = 3DBE36D304CD3A9C00A8000F;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		3DBE36D504CD3A9C00A8000F = {
+			expectedFileType = wrapper.framework;
+			isa = PBXFileReference;
+			name = InterfaceBuilder.framework;
+			path = /System/Library/Frameworks/InterfaceBuilder.framework;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		3DBE36D604CD3A9C00A8000F = {
+			fileRef = 3DBE36D504CD3A9C00A8000F;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		3DBE36D704CD3A9C00A8000F = {
+			expectedFileType = text.rtf;
+			isa = PBXFileReference;
+			name = "Import Log.rtf";
+			path = "/automount/Network/Users/william/ProjectsForPanther/SenPanelsPalette/Import Log.rtf";
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		3DBE36D804CD3A9C00A8000F = {
+			buildStyles = (
+				3DBE367704CD3A9B00A8000F,
+				3DBE367804CD3A9B00A8000F,
+			);
+			hasScannedForEncodings = 1;
+			isa = PBXProject;
+			mainGroup = 3DBE367504CD3A9B00A8000F;
+			productRefGroup = 3DBE368004CD3A9B00A8000F;
+			projectDirPath = "";
+			targets = (
+				3DBE367E04CD3A9B00A8000F,
+			);
+		};
+		3DE0B2AA05906E5A00A8000F = {
+			expectedFileType = wrapper.framework;
+			isa = PBXFileReference;
+			name = SenFoundation.framework;
+			path = /Library/Frameworks/SenFoundation.framework;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		3DE0B2AB05906E5A00A8000F = {
+			fileRef = 3DE0B2AA05906E5A00A8000F;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+	};
+	rootObject = 3DBE36D804CD3A9C00A8000F;
+}

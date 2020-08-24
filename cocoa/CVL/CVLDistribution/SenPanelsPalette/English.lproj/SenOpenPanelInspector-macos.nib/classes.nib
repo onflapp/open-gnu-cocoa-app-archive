@@ -1,0 +1,22 @@
+{
+    IBClasses = (
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {chooseType = id; }; 
+            CLASS = SenOpenPanelInspector; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                allowsMultipleSelectionSwitch = id; 
+                canChooseDirectoriesSwitch = id; 
+                canChooseFilesSwitch = id; 
+                promptText = id; 
+                requiredFileTypeText = id; 
+                saveVsOpenRadio = id; 
+                titleText = id; 
+                treatsFilePackagesAsDirectoriesSwitch = id; 
+            }; 
+            SUPERCLASS = IBInspector; 
+        }
+    ); 
+    IBVersion = 1; 
+}

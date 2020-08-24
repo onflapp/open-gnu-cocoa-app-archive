@@ -1,0 +1,12 @@
+{
+    IBClasses = (
+        {
+            CLASS = CVLTextView; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {escapeTarget = id; target = id; }; 
+            SUPERCLASS = NSTextView; 
+        }, 
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }
+    ); 
+    IBVersion = 1; 
+}

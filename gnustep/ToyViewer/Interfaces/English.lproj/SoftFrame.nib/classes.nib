@@ -1,0 +1,36 @@
+{
+    IBClasses = (
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {setup = id; }; 
+            CLASS = ImgToolCtrlAbs; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {panel = id; }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            ACTIONS = {
+                changeAlpha = id; 
+                changeSlider = id; 
+                changeUnitSW = id; 
+                doit = id; 
+                selectShape = id; 
+            }; 
+            CLASS = SoftFrameCtr; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                alphaSW = id; 
+                buttonwell = id; 
+                colorwell = id; 
+                indicator = id; 
+                maxtext = id; 
+                shape = id; 
+                unitRB = id; 
+                welltitle = id; 
+                widthSL = id; 
+            }; 
+            SUPERCLASS = ImgToolCtrlAbs; 
+        }
+    ); 
+    IBVersion = 1; 
+}

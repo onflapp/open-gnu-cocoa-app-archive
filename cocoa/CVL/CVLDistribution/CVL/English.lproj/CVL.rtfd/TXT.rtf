@@ -1,0 +1,1002 @@
+{\rtf1\mac\ansicpg10000\cocoartf102
+{\fonttbl\f0\fswiss\fcharset77 Helvetica-Bold;\f1\fswiss\fcharset77 Helvetica;\f2\fswiss\fcharset77 Helvetica-Oblique;
+\f3\froman\fcharset77 Times-Roman;\f4\fmodern\fcharset77 Courier;\f5\ftech\fcharset2 Symbol;
+}
+{\colortbl;\red255\green255\blue255;\red255\green0\blue0;}
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\f0\b\fs36 \cf0 Note\
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+\cf0 {{\NeXTGraphic 3PixelRule.tiff \width7180 \height60
+}¬}\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\f1\b0\fs12 \cf0 \
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\fs24 \cf0 This document is way out of date. Please read with the understanding that the lastest version may not work as described below. Also a lot of new features are not covered. This note was added on 17-Dec-2004.
+\f0\b\fs36 \
+\
+Overview\
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+\cf0 {{\NeXTGraphic 1__#$!@%!#__3PixelRule.tiff \width7180 \height60
+}¬}\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\f1\b0\fs12 \cf0 \
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\fs24 \cf0 Welcome to CVL.app (Concurrent Versions Librarian), a graphical user interface to CVS most often used commands. Its work area viewer allows you to quickly check the status of your files and directories.
+\f2\i \
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\f3\i0 \cf0 \
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\f1 \cf0 Check the CVL home page for latest information: 
+\f4\fs20 http://www.sente.ch/software/cvl/
+\f1\fs24  .\
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\f3 \cf0 \
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\f1 \cf0 This document does not explain how CVS works, nor how to properly install CVS on your system. For any question about CVS, refer for instance to 
+\f4\fs20 http://www.loria.fr/~molli/cvs-index.html
+\f1\fs24 . For any question about configuring CVS with MacOS X, OPENSTEP or Windows NT, please check Usenet and mailing list archives.\
+\
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\f3 \cf0 \
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\f0\b\fs36 \cf0 Requirements\
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+\cf0 {{\NeXTGraphic 1__#$!@%!#__3PixelRule.tiff \width7180 \height60
+}¬}\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\f1\b0\fs12 \cf0 \
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\li720\fi-360\ql\qnatural
+
+\fs24 \cf0 	MacOS X 10.1 or\
+	MacOS X Server (Rhapsody) or\
+	OPENSTEP 4.2 Mach (i386, m68k) or\
+	Windows 2000/NT/95 with WebObjects, YellowBox or OPENSTEP 4.2 Enterprise\
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\li720\fi-360\ql\qnatural
+\cf0 {{\NeXTGraphic CheckMark.tiff \width200 \height220
+}¬}\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\li720\fi-360\ql\qnatural
+
+\f1\fs24 \cf0 	CVS 1.7 or greater installed and working on your system.\
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\f3 \cf0 \
+\
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\f0\b\fs48 \cf0 Getting started \
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\f1\b0\fs12 \cf0 \
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\f0\b\fs36 \cf0 \
+Configuring CVL\
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+\cf0 {{\NeXTGraphic 1__#$!@%!#__3PixelRule.tiff \width7180 \height60
+}¬}\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\f1\b0\fs12 \cf0 \
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\fs24 \cf0 To use CVL, you first need to configure it with the path for the 
+\f0\b cvs
+\f1\b0  and 
+\f0\b opendiff
+\f1\b0  executables:\
+ \
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\f0\b \cf0 1.
+\f1\b0  Launch CVL.\
+
+\f0\b 2.
+\f1\b0  Open the Preferences with Edit {{\NeXTGraphic TaskArrowSm.tiff \width100 \height160
+}¬}
+\f1\fs24  Preferences... (on Windows, Tools {{\NeXTGraphic TaskArrowSm.tiff \width100 \height160
+}¬}
+\f1\fs24  Preferences...)\
+
+\f0\b 3. 
+\f1\b0 Fill-in the preferences with the values of your system. \
+\
+On Mac OS X and Rhapsody you shouldn't need to change the provided values.\
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\f0\b\fs36 \cf0 \
+The opened repositories window\
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+\cf0 {{\NeXTGraphic 1__#$!@%!#__3PixelRule.tiff \width7180 \height60
+}¬}\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\f1\b0\fs12 \cf0 \
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\fs24 \cf0 A CVS repository is a shared database where versions of your files are stored.\
+CVL allows you to use several repositories, listed in the repository window.\
+To open it, use the Tools {{\NeXTGraphic TaskArrowSm.tiff \width100 \height160
+}¬}
+\f1\fs24  Repositories {{\NeXTGraphic TaskArrowSm.tiff \width100 \height160
+}¬}
+\f1\fs24  Show Repositories menu item. (On Windows, this window is automatically opened when CVL is started).\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc
+\cf0 {{\NeXTGraphic Repositories.tiff \width11380 \height8000
+}¬}\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc
+
+\f1\fs24 \cf0 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc
+
+\f0\b\fs36 \cf0 \
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\f1\b0\fs24 \cf0 To work with CVS, you must choose at least one repository to work with.\
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\f0\b\fs36 \cf0 \
+Choosing a repository\
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+\cf0 {{\NeXTGraphic 1__#$!@%!#__3PixelRule.tiff \width7180 \height60
+}¬}\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\f1\b0\fs12 \cf0 \
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\fs24 \cf0 To add a repository to the list of available repositories:\
+\
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\f0\b \cf0 1.
+\f1\b0  Click the 
+\f0\b Add...
+\f1\b0  button in the 
+\f0\b Repositories
+\f1\b0  window.\
+
+\f0\b 2.
+\f1\b0  Choose the type of repository you want to open.\
+
+\f0\b 3.
+\f1\b0  Fill the information, and click 
+\f0\b OK
+\f1\b0 .\
+
+\f0\b 4. 
+\f1\b0 In the repository list, select the repository you want to work with.\
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\f0\b\fs36 \cf0 \
+Placing resources under CVS control\
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+\cf0 {{\NeXTGraphic 1__#$!@%!#__3PixelRule.tiff \width7180 \height60
+}¬}\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\f1\b0\fs12 \cf0 \
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\fs24 \cf0 This is done in CVS and CVL by creating a module (a folder in the repository):\
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\f0\b \cf0 \
+1.
+\f1\b0  Open the Import panel with the 
+\f0\b Import...
+\f1\b0  button in the 
+\f0\b Repositories
+\f1\b0  window.\
+
+\f0\b 2. 
+\f1\b0 Choose the path of the folder you want to put under cvs control, the path for the new module is then suggested. \
+
+\f0\b 3. 
+\f1\b0 Change the path of the new module if the default value does not suit your needs.\
+
+\f0\b 4. 
+\f1\b0 Give an import message, a release tag and a vendor tag. \
+
+\f0\b 5.
+\f1\b0  Click 
+\f0\b Import
+\f1\b0  to create the module and import the sources.\
+\
+You should also declare your module in the repository's 'modules' file, to list it in the module name list:\
+\
+
+\f0\b 6.
+\f1\b0  Click on the 
+\f0\b Modules
+\f1\b0  tab.\
+
+\f0\b 7.
+\f1\b0  Add a new line: 
+\f4\fs20 myModule myModule
+\f1\fs24  (read cvs documentation for explanations)\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc
+
+\f0\b\fs36 \cf0 \
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+\cf0 Working with files
+\f3\b0\fs24 \
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+\cf0 {{\NeXTGraphic 1__#$!@%!#__3PixelRule.tiff \width7180 \height60
+}¬}\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\f1\fs12 \cf0 \
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\fs24 \cf0 To work on resources under CVS control, you need first to create a work area which carries a working copy of those resources:
+\f0\b \
+\
+1.
+\f1\b0  Open the Checkout panel with the 
+\f0\b Checkout...
+\f1\b0  button in the 
+\f0\b Repositories
+\f1\b0  window.\
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\f0\b \cf0 2. 
+\f1\b0 Choose a module (by name...) from the list of named modules, or (by path...) by browsing a local repository or typing its path.\
+
+\f0\b 3. 
+\f1\b0 Choose the folder in which you want to create your work area\
+4. You can also choose which folder name it will create, else name will depend on module definition.\
+
+\f0\b 4.
+\f1\b0  Click 
+\f0\b Checkout
+\f1\b0  to create the work area.\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc
+\cf0 \
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+\cf0 You are now ready to edit files, make versions, and share your changes under the supervision of CVS. The work area viewer shows the work area files and their status. You can filter the display of files from their status using the check boxes on the left of the browser.\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc
+\cf0 {{\NeXTGraphic WorkAreaViewer.tiff \width11020 \height6540
+}¬}\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc
+
+\f1\fs24 \cf0 \
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+\cf0 \
+CVL uses the following convention to display file status:\
+\
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+\cf0 {{\NeXTGraphic 2PixelRule.tiff \width7180 \height20
+}¬}\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\f3\fs24 \cf0 \
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\tx7900\tx8260\tx8700\tx9100\li360\ql\qnatural
+
+\f0\b \cf0 CVL icon and name	meaning										 					frequent operations\
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+\cf0 {{\NeXTGraphic 2PixelRule.tiff \width7180 \height20
+}¬}\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\f3\b0\fs24 \cf0 \
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\tx7900\tx8260\tx8700\tx9100\li360\ql\qnatural
+
+\f1 \cf0 	Up to date			The work area file is the same as the last repository\
+							version\
+  \
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx9100\li360\ql\qnatural
+\cf0 {{\NeXTGraphic plus.tiff \width240 \height240
+}¬}\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx9100\li360\ql\qnatural
+
+\f1\fs24 \cf0 	Locally modified	The work area file has been modified, 		commit\
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\tx7900\tx8260\tx8700\tx9100\li360\ql\qnatural
+\cf0 							added or removed				\
+\
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\tx7900\tx8260\tx8700\tx9100\li360\ql\qnatural
+\cf0 {{\NeXTGraphic minus.tiff \width240 \height240
+}¬}\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\tx7900\tx8260\tx8700\tx9100\li360\ql\qnatural
+
+\f1\fs24 \cf0 	Needs update		A newer version of the file is available in the repository	update\
+\
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx9120\li360\ql\qnatural
+\cf0 {{\NeXTGraphic triangle.tiff \width240 \height240
+}¬}\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx9120\li360\ql\qnatural
+
+\f1\fs24 \cf0 	Needs merge		A newer version of the file is available in the repository	update\
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\tx7900\tx8260\tx8700\tx9100\li360\ql\qnatural
+\cf0 							and the file has been modified in the work area\
+\
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\tx7900\tx8260\tx8700\tx9100\li360\ql\qnatural
+\cf0 {{\NeXTGraphic blackPoint.tiff \width240 \height240
+}¬}\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\tx7900\tx8260\tx8700\tx9100\li360\ql\qnatural
+
+\f1\fs24 \cf0 	Conflicts				Changes in the repository and the work area confilct		merge manually then update\
+\
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\tx7900\tx8260\tx8700\tx9100\li360\ql\qnatural
+\cf0 {{\NeXTGraphic star.tiff \width240 \height240
+}¬}\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\tx7900\tx8260\tx8700\tx9100\li360\ql\qnatural
+
+\f1\fs24 \cf0 	Not in CVS			The file is not known of CVS, or the directory 				add\
+							contains files not known of CVS\
+\
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+\cf0 {{\NeXTGraphic questionMark.tiff \width240 \height240
+}¬}\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\f1\fs24 \cf0 	Unknown				Undefined status\
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\tx7900\tx8260\tx8700\tx9100\li360\ql\qnatural
+\cf0 \
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\tx7900\tx8260\tx8700\tx9100\li360\ql\qnatural
+\cf0 {{\NeXTGraphic times.tiff \width240 \height240
+}¬}\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\tx7900\tx8260\tx8700\tx9100\li360\ql\qnatural
+
+\f1\fs24 \cf0 	Ignored				The file or directory will be ignored by CVS\
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+\cf0 {{\NeXTGraphic 2PixelRule.tiff \width7180 \height20
+}¬}\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\f3\fs24 \cf0 \
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\f1 \cf0 \
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\f0\b\fs36 \cf0 Refreshing files status
+\f3\b0\fs24 \
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+\cf0 {{\NeXTGraphic 1__#$!@%!#__3PixelRule.tiff \width7180 \height60
+}¬}\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\f1\fs12 \cf0 \
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\fs24 \cf0 CVL currently does not receive notification of changes made to files locally or in the repository.\
+To refresh the displayed status information:\
+\
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\f0\b \cf0 1.
+\f1\b0  Select the files, or directories to update.\
+
+\f0\b 2.
+\f1\b0  Use the menu File {{\NeXTGraphic TaskArrowSm.tiff \width100 \height160
+}¬}
+\f1\fs24  Refresh.\
+\
+You can also refresh all the files of the work area by using the menu Work Area {{\NeXTGraphic TaskArrowSm.tiff \width100 \height160
+}¬}
+\f1\fs24  Refresh\
+\
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\f0\b\fs36 \cf0 Getting the last version of files (update)
+\f3\b0\fs24 \
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+\cf0 {{\NeXTGraphic 1__#$!@%!#__3PixelRule.tiff \width7180 \height60
+}¬}\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\f1\fs12 \cf0 \
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\f0\b\fs24 \cf0 1.
+\f1\b0  Select the files, or directories to update.\
+
+\f0\b 2.
+\f1\b0  Use the menu File {{\NeXTGraphic TaskArrowSm.tiff \width100 \height160
+}¬}
+\f1\fs24  Update.\
+\
+You can also update all the files of the work area by using the Work Area {{\NeXTGraphic TaskArrowSm.tiff \width100 \height160
+}¬}
+\f1\fs24  Update\
+\
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\f0\b\fs36 \cf0 Making your version available (commit)
+\f3\b0\fs24 \
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+\cf0 {{\NeXTGraphic 1__#$!@%!#__3PixelRule.tiff \width7180 \height60
+}¬}\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\f1\fs12 \cf0 \
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\fs24 \cf0 For this operation, the files to be commited must be up-to-date or locally modified, if they are not, get the last version of those files first.\
+\
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\f0\b \cf0 1.
+\f1\b0  Select the files, or directories to commit.\
+
+\f0\b 2.
+\f1\b0  Use the menu File {{\NeXTGraphic TaskArrowSm.tiff \width100 \height160
+}¬}
+\f1\fs24  Commit..., give a message describing your changes, click 
+\f0\b OK
+\f1\b0 .\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc
+\cf0 \
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+\cf0 You can also commit all the files of the work area by using the Work Area {{\NeXTGraphic TaskArrowSm.tiff \width100 \height160
+}¬}
+\f1\fs24  Commit...\
+\
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\f0\b\fs36 \cf0 Inspecting a file
+\f3\b0\fs24 \
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+\cf0 {{\NeXTGraphic 1__#$!@%!#__3PixelRule.tiff \width7180 \height60
+}¬}\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\f1\fs12 \cf0 \
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\fs24 \cf0 The inspector will help you getting details about the selected file. Open it using one of the menu items in the submenu Tools {{\NeXTGraphic TaskArrowSm.tiff \width100 \height160
+}¬}
+\f1\fs24  Inspector.\
+Using the popup button, you can switch between pages.\
+\
+The 
+\f0\b Status
+\f1\b0  page shows the CVS status, repository and work area versions, modification and last update dates, and sticky attributes of the selected file.\
+\
+The 
+\f0\b Logs
+\f1\b0  page shows the history of the selected file, and for each version the message given when changes were commited. If you double-click on a revision, FileMerge is launched and makes a comparison between the selected and current revisions. If you select two revisions and click on the 
+\f5 d
+\f1  button in the upper-right corner, the comparison is done between these two revisions.\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc
+\cf0 {{\NeXTGraphic StatusInspector.tiff \width5740 \height8880
+}¬}\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc
+
+\f1\fs24 \cf0 		{{\NeXTGraphic LogInspector.tiff \width5720 \height8860
+}¬}
+\f1\fs24  \
+\
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+\cf0 The 
+\f0\b Differences
+\f1\b0  page shows what changes have been made to the selected and locally modified file compared to the repository version. You can also change the format used to display the differences, and also use FileMerge (Cmd-Shift-D) or the 
+\f0\b Comparator
+\f1\b0  tool.\
+\
+The 
+\f0\b Tags
+\f1\b0  page shows all existing tags for the selected file. If you double-click on a revision, FileMerge is launched and makes a comparison between the selected and current revisions. If you select two revisions and click on the 
+\f5 d
+\f1  button in the upper-right corner, the comparison is done between these two revisions.\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc
+\cf0 {{\NeXTGraphic DifferencesInspector.tiff \width5740 \height8820
+}¬}\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc
+
+\f1\fs24 \cf0 		\
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+\cf0 \
+The 
+\f0\b Contents
+\f1\b0  page displays the contents of text files.\
+\
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\f0\b\fs36 \cf0 How to solve a conflict
+\f3\b0\fs24 \
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+\cf0 {{\NeXTGraphic 1__#$!@%!#__3PixelRule.tiff \width7180 \height60
+}¬}\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\f1\fs12 \cf0 \
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\fs24 \cf0 When CVS fails to merge differences between the repository version of a file and the work area version, the file in the work area includes the changes from the two versions. It's your responsibility to choose what are the pertinent changes.\
+\
+To do this, you can use the FileMerge application directly from CVL: select a file with a conflict and use File {{\NeXTGraphic TaskArrowSm.tiff \width100 \height160
+}¬}
+\f1\fs24  Open Differences. This will launch FileMerge.app with all the available information to help you merge the changes.\
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+\cf2 Warning: \cf0 Open differences does not work for conflicts obtained when merging across branches\cf2 \
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+\cf0 \
+Alternatively, you can edit the file with any text editor and remove the markers (<<<, ===, >>>) inserted by CVS.\
+\
+To tell CVS you are done with the merge, update it with the File {{\NeXTGraphic TaskArrowSm.tiff \width100 \height160
+}¬}
+\f1\fs24  Update menu item. The status of the file should change to "Locally Modified".\
+\
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\f0\b\fs36 \cf0 What to do with new files
+\f3\b0\fs24 \
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+\cf0 {{\NeXTGraphic 1__#$!@%!#__3PixelRule.tiff \width7180 \height60
+}¬}\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\f1\fs12 \cf0 \
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\fs24 \cf0 CVS does not handle new files in your work area automatically. To make CVS aware of the new files, add them to the work area. Use the File {{\NeXTGraphic TaskArrowSm.tiff \width100 \height160
+}¬}
+\f1\fs24  Add to Work Area menu item to do this. The status of the file will change to "Locally Added". To effectively record the new file in the repository, commit the file.\
+You can also add a whole directory tree, for instance a new subproject in a ProjectBuilder project, very easily, as the Add command is recursive: it will add the direcotry and all its contents, even sub-directories.\
+\
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\f0\b\fs36 \cf0 How to remove a file
+\f3\b0\fs24 \
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+\cf0 {{\NeXTGraphic 1__#$!@%!#__3PixelRule.tiff \width7180 \height60
+}¬}\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\f3\fs24 \cf0 \
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\f1 \cf0 Select the file, use the File {{\NeXTGraphic TaskArrowSm.tiff \width100 \height160
+}¬}
+\f1\fs24  Remove from Work Area... menu item. 
+\f0\b All changes made to the file will be lost
+\f1\b0 . The new status of the file will be "Locally Removed". To effectively record the removal in the repository, commit the file.\
+To remove a directory, 
+\f0\b do not
+\f1\b0  delete it first from another application (Finder or ProjectBuilder, if you're using Project Builder, and you're removing a subproject, don't answer YES to the question 'remove the subproject from disk'). The File {{\NeXTGraphic TaskArrowSm.tiff \width100 \height160
+}¬}
+\f1\fs24  Remove From Work Area... operation is recursive.\
+\
+An empty directory under CVS control will have its status set to Unkown when updated.\
+\
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\f0\b\fs36 \cf0 How to rename a file or a directory
+\f3\b0\fs24 \
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+\cf0 {{\NeXTGraphic 1__#$!@%!#__3PixelRule.tiff \width7180 \height60
+}¬}\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\f3\fs24 \cf0 \
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\f1 \cf0 CVS does not have an operation for renaming a file. As a workaround, proceed as follow:\
+Rename your file, for instance from the Finder or ProjectBuilder application\
+In CVL, if you refresh the view, the previous filename should displayed in red, because it is missing.\
+Use File  {{\NeXTGraphic TaskArrowSm.tiff \width100 \height160
+}¬}
+\f1\fs24  Remove to remove the previous filename from the work area\
+Use File  {{\NeXTGraphic TaskArrowSm.tiff \width100 \height160
+}¬}
+\f1\fs24  Add to add the file under its new name in the work area.\
+\
+Renaming a directory is tricky: you should first make a copy of the directory with the new name, remove manually \ul all\ulnone  the CVS directories inside this copy. Then remove the old directory (See 'How to remove a file'), then add the new directory (See 'What to do with new files').\
+\
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\f0\b\fs36 \cf0 How to setup a local repository \
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+\cf0 {{\NeXTGraphic 1__#$!@%!#__3PixelRule.tiff \width7180 \height60
+}¬}\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\f3\b0\fs24 \cf0 \
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\f1 \cf0 Full information to handle repositories are available from the CVS information sources.\
+To create a 
+\f0\b local
+\f1\b0  repository, just do the following:\
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\f0\b \cf0 1.
+\f1\b0  Open the New Repository panel with the 
+\f0\b New...
+\f1\b0  button in the 
+\f0\b Repositories
+\f1\b0  window.\
+
+\f0\b 2. 
+\f1\b0 Set the path to your new repository folder. \
+
+\f0\b 3.
+\f1\b0  Click 
+\f0\b Create
+\f1\b0  to create the repository.\
+\
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\f0\b\fs36 \cf0 How to configure a repository
+\f3\b0\fs24 \
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+\cf0 {{\NeXTGraphic 1__#$!@%!#__3PixelRule.tiff \width7180 \height60
+}¬}\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\f3\fs24 \cf0 \
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\f1 \cf0 CVL will create a Work Area with all administrative files in ~/Library/Application Support/CVL/Repositories, in your home directory.\
+You can edit administrative files here and commit your changes to effectively configure the repository. Some files may be modified directly from within CVL, like modules, cvsignore and cvswrappers.\
+\
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\f0\b\fs36 \cf0 How to connect to a repository via SSH \
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+\cf0 {{\NeXTGraphic 2__#$!@%!#__3PixelRule.tiff \width7180 \height60
+}¬}\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\f3\b0\fs24 \cf0 \
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\f1 \cf0 On MacOS X, use SSHPassKey.app from CodeFab: 
+\f4\fs20 http://www.codefab.com/unsupported/SSHPassKey_v1.1-1.dmg
+\f1\fs24 \
+On Rhapsody, here are two ways to do it, depending on your security model, i.e. with or without password. You use SSH keys:\
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\f0\b \cf0 1.
+\f1\b0  Check whether you have a RSA or DSA key: \
+		
+\f4 [local:] $ ls ~/.ssh/id_*.pub\
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\f1 \cf0 	There should be at least one file: 
+\f4 id_rsa.pub
+\f1  for RSA and 
+\f4 id_dsa.pub
+\f1  for DSA keys.\
+	If you cannot find one you have to generate a new key pair on your local computer:\
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\f4 \cf0 		[local:] $ ssh-keygen -t rsa\
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\f1 \cf0 	Here we generate the RSA key. Usually the public key is stored in 
+\f4 ~/.ssh/id_rsa.pub
+\f1 \
+	When asked for the passphrase, type one, or just press ENTER. \
+	Refere to 
+\f4 man ssh-keygen
+\f1  for more information.
+\f4 \
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\f0\b \cf0 2.
+\f1\b0  Copy this key to your account on the remote server:\
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\f4 \cf0 		[local:] $ scp ~/.ssh/id_rsa.pub user@remote.server.com:~/\
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\f0\b \cf0 3. 
+\f1\b0 Connect via ssh to the remote host:\
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\f4 \cf0 		[local:] $ ssh user@remote.server.com\
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\f0\b \cf0 4
+\f1\b0 . Append the new file to ~/.ssh/
+\f4 authorized_keys2
+\f1 :\
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\f4 \cf0 		[remote:] $ cat ~/id_rsa.pub >> ~/.ssh/authorized_keys2\
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\f0\b \cf0 5. 
+\f1\b0 Test login to the remote host:\
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\f4 \cf0 		[local 2:] $ ssh user@remote.server.com\
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\f1 \cf0 	If login does not work ask somebody to help you.\
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\f0\b \cf0 6. 
+\f1\b0 Tell CVL to use that secure line for contacting the repository, you do this by using a repository of type 
+\f0\b :ext:
+\f1\b0 \
+	In the 
+\f0\b Repositories
+\f1\b0  window, click on button 
+\f0\b Add...
+\f1\b0 , choose the 
+\f0\b Other
+\f1\b0  repository type:\
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\f4 \cf0 		
+\f1 Repository root: 
+\f4 :ext:user@remote.host.com:/path/to/repository/\
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\f1 \cf0 	You should have read and write access to 
+\f4 /path/to/repository/
+\f1  on the remote server if you want to read and write modules.\
+	After clicking 
+\f0\b OK
+\f1\b0 , CVL will try to connect immediately, and fail, as we haven't finished configuring it. Don't worry.\
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\f0\b \cf0 7. 
+\f1\b0 In the 
+\f0\b Repositories
+\f1\b0  Window, tab 
+\f0\b Environment
+\f1\b0 , click on 
+\f0\b Add
+\f1\b0  to add key 
+\f4\fs20 CVS_RSH
+\f1\fs24  with value 
+\f4\fs20 /usr/bin/ssh
+\f1\fs24 .\
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\f4 \cf0 \
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\f1 \cf0 If you have a key with a passphrase: 
+\f0\b \
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\f4\b0 \cf0 \
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\f0\b \cf0 8.
+\f1\b0  Launch 
+\f0\b ssh-agent
+\f1\b0  in the Terminal, then activate your identity with 
+\f0\b ssh-add
+\f1\b0  (e.g. 
+\f4\fs20 ssh-add ~/.ssh/id_rsa
+\f1\fs24 , see ssh documentation for more information).\
+
+\f0\b 9.
+\f1\b0  Back in CVL, in 
+\f0\b Repositories
+\f1\b0  window, tab 
+\f0\b Environment
+\f1\b0 , add environment variables SSH_AGENT_PID and SSH_AUTH_SOCK (copied from ssh-agent output).\
+\
+Finally, click the 
+\f0\b Modules
+\f1\b0  tab and then the 
+\f0\b Revert
+\f1\b0  button; now cvs can connect.\
+\
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\f0\b\fs48 \cf0 Troubleshooting
+\f3\b0 \
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\f1\fs12 \cf0 \
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\fs36 \cf0 How to find out why an operation was not completed
+\fs24 \
+Open the console with the Tools {{\NeXTGraphic TaskArrowSm.tiff \width100 \height160
+}¬}
+\f1\fs24  Console {{\NeXTGraphic TaskArrowSm.tiff \width100 \height160
+}¬}
+\f1\fs24  Show Console menu item to look at CVS operations output. Errors should appear in red. Note that you can configure the console to automatically pop up when there is a new log.\
+
+\fs36 \
+No files are displayed
+\fs24 \
+Under Windows, CVL should be installed on a local disk, in a path that does not contain any space character. Also, check your rights. CVL will not work if you can't write in the CVL directory, or in your home directory.\
+\
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\f0\b\fs48 \cf0 Appendix
+\f3\b0 \
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\f1\fs12 \cf0 \
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\f0\b\fs28 \cf0 Interface to CVS commands\
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\f1\b0\fs24 \cf0 The following table maps CVS commands to user interface elements in CVL. The Work Area menu operations apply to all the files in the work area of the active window. The File menu operations apply to the selected files in the work area of the active window.\
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\f3 \cf0 \
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\f0\b \cf0 CVS command  						CVL user interface element\
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\f3\b0 \cf0 \
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\f1 \cf0 import										Tools {{\NeXTGraphic TaskArrowSm.tiff \width100 \height160
+}¬}
+\f1\fs24  Repositories {{\NeXTGraphic TaskArrowSm.tiff \width100 \height160
+}¬}
+\f1\fs24  Import...\
+\
+checkout (co)							Tools {{\NeXTGraphic TaskArrowSm.tiff \width100 \height160
+}¬}
+\f1\fs24  Repositories {{\NeXTGraphic TaskArrowSm.tiff \width100 \height160
+}¬}
+\f1\fs24  Checkout...\
+\
+commit (checkin,ci)						Work Area {{\NeXTGraphic TaskArrowSm.tiff \width100 \height160
+}¬}
+\f1\fs24  Commit Files...\
+											File {{\NeXTGraphic TaskArrowSm.tiff \width100 \height160
+}¬}
+\f1\fs24  Commit...\
+										\
+update									Work Area {{\NeXTGraphic TaskArrowSm.tiff \width100 \height160
+}¬}
+\f1\fs24  Update Files...\
+											File {{\NeXTGraphic TaskArrowSm.tiff \width100 \height160
+}¬}
+\f1\fs24  Update\
+	\
+update -r | -D								Work Area {{\NeXTGraphic TaskArrowSm.tiff \width100 \height160
+}¬}
+\f1\fs24  Restore Version...\
+											File {{\NeXTGraphic TaskArrowSm.tiff \width100 \height160
+}¬}
+\f1\fs24  Restore Version...\
+\
+tag											Work Area {{\NeXTGraphic TaskArrowSm.tiff \width100 \height160
+}¬}
+\f1\fs24  Tag Files...\
+											File {{\NeXTGraphic TaskArrowSm.tiff \width100 \height160
+}¬}
+\f1\fs24  Tag...\
+	\
+add										File {{\NeXTGraphic TaskArrowSm.tiff \width100 \height160
+}¬}
+\f1\fs24  Add to Work Area\
+\
+remove -f									File {{\NeXTGraphic TaskArrowSm.tiff \width100 \height160
+}¬}
+\f1\fs24  Remove from Work Area...\
+\
+status
+\f2\i 										
+\f1\i0 Tools {{\NeXTGraphic TaskArrowSm.tiff \width100 \height160
+}¬}
+\f1\fs24  Inspector {{\NeXTGraphic TaskArrowSm.tiff \width100 \height160
+}¬}
+\f1\fs24  Status\
+\
+log											Tools {{\NeXTGraphic TaskArrowSm.tiff \width100 \height160
+}¬}
+\f1\fs24  Inspector {{\NeXTGraphic TaskArrowSm.tiff \width100 \height160
+}¬}
+\f1\fs24  Logs\
+\
+diff											Tools {{\NeXTGraphic TaskArrowSm.tiff \width100 \height160
+}¬}
+\f1\fs24  Inspector {{\NeXTGraphic TaskArrowSm.tiff \width100 \height160
+}¬}
+\f1\fs24  Differences\
+											File  {{\NeXTGraphic TaskArrowSm.tiff \width100 \height160
+}¬}
+\f1\fs24  Open Differences\
+\
+log -h										Tools {{\NeXTGraphic TaskArrowSm.tiff \width100 \height160
+}¬}
+\f1\fs24  Inspector {{\NeXTGraphic TaskArrowSm.tiff \width100 \height160
+}¬}
+\f1\fs24  Tags\
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+\cf0 {{\NeXTGraphic 2PixelRule.tiff \width7180 \height20
+}¬}\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\f3\fs24 \cf0 \
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\f1 \cf0 \
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\f0\b\fs28 \cf0 CVL files and directories status\
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\f1\b0\fs24 \cf0 The following table maps the CVS status to their name and icon in CVL.\
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+\cf0 {{\NeXTGraphic 2PixelRule.tiff \width7180 \height20
+}¬}\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\f3\fs24 \cf0 \
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\f0\b \cf0 CVS status  							CVL icon and name\
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\f3\b0 \cf0 \
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\f1 \cf0 Up-to-date									Up to date\
+Locally Modified							Locally modified\
+Locally Added							{{\NeXTGraphic plus.tiff \width240 \height240
+}¬}
+\f1\fs24 	Locally modified\
+Locally Removed							Locally modified\
+Needs Patch								{{\NeXTGraphic minus.tiff \width240 \height240
+}¬}
+\f1\fs24 	Needs update\
+Needs Checkout							Needs update\
+Needs Merge							{{\NeXTGraphic triangle.tiff \width240 \height240
+}¬}
+\f1\fs24 	Needs merge\
+Unresolved Conflict					{{\NeXTGraphic blackPoint.tiff \width240 \height240
+}¬}
+\f1\fs24 	Conflicts\
+not under CVS control					{{\NeXTGraphic star.tiff \width240 \height240
+}¬}
+\f1\fs24 	Not in CVS\
+Unknown									{{\NeXTGraphic questionMark.tiff \width240 \height240
+}¬}
+\f1\fs24 	Unknown\
+(ignored files)							{{\NeXTGraphic times.tiff \width240 \height240
+}¬}
+\f1\fs24 	Ignored\
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\f3 \cf0 \
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\f1 \cf0 \
+CVL also displays status for directories. A directory inherits its status from its files when they are identical (ignoring up-to-date, and unknown files), otherwise, its status is attributed as follow:\
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+\cf0 {{\NeXTGraphic 2PixelRule.tiff \width7180 \height20
+}¬}\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\f3\fs24 \cf0 \
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\f0\b \cf0 Directory contains files				CVL icon and name\
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+\cf0 {{\NeXTGraphic 2PixelRule.tiff \width7180 \height20
+}¬}\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\f3\b0\fs24 \cf0 \
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\f1 \cf0 not under CVS control					{{\NeXTGraphic star.tiff \width240 \height240
+}¬}
+\f1\fs24 	Not in CVS\
+with mixed status						{{\NeXTGraphic triangle.tiff \width240 \height240
+}¬}
+\f1\fs24 	Mixed Status\
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+\cf0 {{\NeXTGraphic 2PixelRule.tiff \width7180 \height20
+}¬}\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\f3\fs24 \cf0 \
+\
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\f0\b\fs48 \cf0 Glossary\
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\f1\b0\fs12 \cf0 \
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\f0\b\fs36 \cf0 Module
+\f3\b0\fs24 \
+\pard\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\li360\ql\qnatural
+
+\f1 \cf0 A CVS module is a collection of related files in the repository. Typically, it's all the files of a project. A Module is defined by its path in the repository or a logical name.
+\f0\b\fs36 \
+\
+Repository\
+
+\f1\b0\fs24 A CVS repository is a database of files that remember every version of files. It's stored as a directory.
+\f0\b\fs36 \
+\
+Work area \
+
+\f1\b0\fs24 A work area is a directory containing working copies of files stored in the repository. 
+\f0\b\fs36 \
+\
+Wrappers \
+
+\f1\b0\fs24 A wrapper is a directory viewed as a single binary file by CVS. nibs files are typical of wrappers. You should avoid using them.
+\f0\b\fs36 \
+}

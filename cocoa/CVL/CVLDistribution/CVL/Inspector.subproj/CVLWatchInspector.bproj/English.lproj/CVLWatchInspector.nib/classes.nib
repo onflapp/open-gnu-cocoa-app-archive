@@ -1,0 +1,24 @@
+{
+    IBClasses = (
+        {
+            CLASS = CVLInspector; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {view = NSView; window = NSWindow; }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            CLASS = CVLWatchInspector; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                commitTableColumn = NSTableColumn; 
+                editTableColumn = NSTableColumn; 
+                editorTableView = NSTableView; 
+                uneditTableColumn = NSTableColumn; 
+                watcherTableView = NSTableView; 
+            }; 
+            SUPERCLASS = CVLInspector; 
+        }, 
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }
+    ); 
+    IBVersion = 1; 
+}

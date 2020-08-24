@@ -1,0 +1,13 @@
+{
+    IBClasses = (
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {interruptSelectedRequests = id; moreInfo = id; }; 
+            CLASS = ProgressPanelController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {killButton = NSButton; moreInfoButton = NSButton; tableView = NSTableView; }; 
+            SUPERCLASS = NSWindowController; 
+        }
+    ); 
+    IBVersion = 1; 
+}

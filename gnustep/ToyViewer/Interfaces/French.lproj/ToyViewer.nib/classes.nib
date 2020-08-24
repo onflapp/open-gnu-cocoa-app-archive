@@ -1,0 +1,91 @@
+{
+    IBClasses = (
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {makeKeyAndOrderFront = id; selectHelp = id; }; 
+            CLASS = HelpPanelControl; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {bundle = id; helpPanel = id; helpText = id; }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            ACTIONS = {
+                activateToolPanel = id; 
+                convertCMYKtoRGB = id; 
+                flip = id; 
+                loadNewTool = id; 
+                newBitmap = id; 
+                readyForResize = id; 
+                reduce = id; 
+                rotateByAngle = id; 
+            }; 
+            CLASS = ImageOpCtr; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                imageOpr = id; 
+                monoPanel = id; 
+                reducePanel = id; 
+                resizePanel = id; 
+                rotatePanel = id; 
+                toolButton = id; 
+                toolPanel = id; 
+                toolView = id; 
+            }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            ACTIONS = {reset = id; takeFloatValueFrom = id; }; 
+            CLASS = PercentView; 
+            LANGUAGE = ObjC; 
+            SUPERCLASS = NSView; 
+        }, 
+        {
+            ACTIONS = {changeSlider = id; changeValue = id; makeKeyAndOrderFront = id; }; 
+            CLASS = PrefControl; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                adIntSlider = id; 
+                adIntText = id; 
+                origSW = id; 
+                panel = id; 
+                pcdBright = id; 
+                pcdSize = id; 
+                positionSW = id; 
+                timedAltSW = id; 
+                updateSvcSW = id; 
+            }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            ACTIONS = {
+                activateInspector = id; 
+                activatePreferences = id; 
+                activateWebPage = id; 
+                attachIcon = id; 
+                attraction = id; 
+                autoDisplay = id; 
+                deleteAllWindow = id; 
+                openFile = id; 
+                openPasteBoard = id; 
+                print = id; 
+                removeIcon = id; 
+                runPageLayout = id; 
+                saveAs = id; 
+                showAllWindow = id; 
+                showNextWindow = id; 
+                toggleFrontMode = id; 
+            }; 
+            CLASS = TVController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {frontModeMenu = id; imageOpCtr = id; recentMenu = id; }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            CLASS = WaitMessageCtr; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {messagePanel = id; messageText = id; progressView = id; }; 
+            SUPERCLASS = NSObject; 
+        }
+    ); 
+    IBVersion = 1; 
+}

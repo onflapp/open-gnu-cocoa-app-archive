@@ -1,0 +1,21 @@
+{
+    IBClasses = (
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {openMailer = id; openURL = id; showCvsVersion = id; showImg = id; }; 
+            CLASS = InfoController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                cvsInfoPanel = id; 
+                dateCell = id; 
+                expirationMesgCell = id; 
+                imgView = id; 
+                textView = id; 
+                thePanel = id; 
+                versionCell = id; 
+            }; 
+            SUPERCLASS = NSObject; 
+        }
+    ); 
+    IBVersion = 1; 
+}

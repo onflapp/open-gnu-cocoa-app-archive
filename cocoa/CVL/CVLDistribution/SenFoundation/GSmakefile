@@ -1,0 +1,70 @@
+#
+#  SenFoundation makefile.
+#  
+#  Written by: Mirko Viviani <mirko.viviani@rccr.cremona.it>
+#
+#  Date: 5 October 2000
+#
+
+# Install into the system root by default
+SenFoundation_INSTALLATION_DIR = $(GNUSTEP_LOCAL_ROOT)
+
+GNUSTEP_MAKEFILES = $(GNUSTEP_SYSTEM_ROOT)/Makefiles
+
+include $(GNUSTEP_MAKEFILES)/common.make
+
+include Version
+
+PACKAGE_NAME = SenFoundation
+FRAMEWORK_VAR = SENFOUNDATION
+SenFoundation_CURRENT_VERSION_NAME = A
+
+# The library to be compiled
+FRAMEWORK_NAME = SenFoundation
+
+SENFOUNDATION_INSTALL_PREFIX=$(GNUSTEP_LOCAL_ROOT)
+
+# The C source files to be compiled
+SenFoundation_C_FILES = 
+  
+# The Objective-C source files to be compiled
+SenFoundation_OBJC_FILES = \
+NSArray_SenAdditions.m                  SenDateInterval.m \
+NSBundle_SenAdditions.m                 SenEmptiness.m \
+NSException_SenAdditions.m              SenFileSystemTree.m \
+NSMutableDictionary_SenAdditions.m      SenInvocationEnumerator.m \
+NSNumber_Extensions.m                   SenMutableTree.m \
+NSObject_SenAdditions.m                 SenQualifier.m \
+NSObject_SenRuntimeUtilities.m          SenRandom.m \
+NSObject_SenTree.m                      SenSelection.m \
+NSString_SenAdditions.m                 SenSortOrdering.m \
+NSTask_SenAdditions.m                   SenTreeEnumerator.m \
+NSUserDefaults_SenAdditions.m           SenUtilities.m \
+SenClassEnumerator.m                    SenValueTree.m \
+SenCollection.m
+
+SenFoundation_HEADER_FILES = \
+NSArray_SenAdditions.h                  SenEmptiness.h \
+NSBundle_SenAdditions.h                 SenFileSystemTree.h \
+NSException_SenAdditions.h              SenFoundation.h \
+NSMutableDictionary_SenAdditions.h      SenFoundationDefines.h \
+NSNumber_Extensions.h                   SenInvocationEnumerator.h \
+NSObject_SenAdditions.h                 SenMutableTree.h \
+NSObject_SenRuntimeUtilities.h          SenQualifier.h \
+NSObject_SenTree.h                      SenRandom.h \
+NSString_SenAdditions.h                 SenSelection.h \
+NSTask_SenAdditions.h                   SenSortOrdering.h \
+NSUserDefaults_SenAdditions.h           SenTreeEnumerator.h \
+SenAssertion.h                          SenTrees.h \
+SenClassEnumerator.h                    SenUtilities.h \
+SenCollection.h                         SenValueTree.h \
+SenDateInterval.h
+
+
+-include Makefile.preamble
+
+-include GNUmakefile.local
+
+include $(GNUSTEP_MAKEFILES)/framework.make
+
+-include Makefile.postamble

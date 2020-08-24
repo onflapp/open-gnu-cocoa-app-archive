@@ -1,0 +1,59 @@
+# These extensions are pre-defined in the application to
+# be activated by double-clicking.
+jpg	@/djpeg $
+JPG	@/djpeg $
+jpeg	@/djpeg $
+bie	@/jbgtopbm $
+jbig	@/jbgtopbm $
+jbg	@/jbgtopbm $
+mag	@/mag2pxo $
+MAG	@/mag2pxo $
+pcx	@/pcx2pxo $
+PCX	@/pcx2pxo $
+xbm	@/xbm2pbm $
+XBM	@/xbm2pbm $
+png	@/png2pao $
+PNG	@/png2pao $
+ras	@/ras2pxo $
+RAS	@/ras2pxo $
+sun	@/ras2pxo $
+SUN	@/ras2pxo $
+## OPENSTEP can display ordinary BMP files, but compressed (RLE) ones.
+bmp	@/bmp2pxo $
+BMP	@/bmp2pxo $
+dib	@/bmp2pxo $
+DIB	@/bmp2pxo $
+## For JPEG2000, JasPer 1.500.4 is used.
+jp2	@/jasper -t jp2 -T pnm -f $
+jpc	@/jasper -t jpc -T pnm -f $
+j2k	@/jasper -t jpc -T pnm -f $
+JP2	@/jasper -t jp2 -T pnm -f $
+JPC	@/jasper -t jpc -T pnm -f $
+J2K	@/jasper -t jpc -T pnm -f $
+# Routines for tiff, eps, bmp, and gif are included in ToyViewer.
+#
+# You can add useful filters which can convert images into
+# PPM format (or PXO/PAO Format).
+# If you want to add some filters for you only, you can
+# write information of filters in a user custom file,
+# "~/.toyviewerrc" or "~/Library/ToyViewer/rc.arch".  Where, "arch"
+# is a name of architectures, e.g., m68k, i386, hppa, or sparc.
+# Pre-defined information is overrided by user custom file.
+# So, if you list a filter for "gif", gif files will be 
+# opened through the filter.
+#
+#Format:
+#
+# <extension> <path_of_command> <args> ...
+#
+# One of args must be '$', which is replaced by the image file.
+# If the first character of path is '~', it is extended to the home
+# directory. If '@', it is extended to the application directory.
+# Lines beginning with '#' are comments.
+#
+#Example...
+#gif	@/gif2pxo $
+#GIF	@/gif2pxo $
+#jpg	/usr/local/bin/djpeg $
+#g3	/usr/local/pbmplus/g3topbm -reversebits $
+#qwe	~/Unix/bin/qwe2ppm $ -

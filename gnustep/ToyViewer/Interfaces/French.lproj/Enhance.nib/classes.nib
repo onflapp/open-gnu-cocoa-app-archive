@@ -1,0 +1,27 @@
+{
+    IBClasses = (
+        {
+            ACTIONS = {contour = id; emboss = id; }; 
+            CLASS = ContourCtr; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {colorSlider = id; contourSlider = id; embossSwitch = id; enhanceSlider = id; }; 
+            SUPERCLASS = ImgToolCtrlAbs; 
+        }, 
+        {
+            ACTIONS = {blur = id; enhance = id; }; 
+            CLASS = EnhanceCtr; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {blurSlider = id; contourCtrl = id; enhanceSlider = id; whichside = id; }; 
+            SUPERCLASS = ImgToolCtrlAbs; 
+        }, 
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {setup = id; }; 
+            CLASS = ImgToolCtrlAbs; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {panel = id; }; 
+            SUPERCLASS = NSObject; 
+        }
+    ); 
+    IBVersion = 1; 
+}

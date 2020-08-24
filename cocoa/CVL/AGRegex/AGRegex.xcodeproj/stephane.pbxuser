@@ -1,0 +1,60 @@
+// !$*UTF8*$!
+{
+	0867D690FE84028FC02AAC07 /* Project object */ = {
+		activeBuildConfigurationName = Deployment;
+		activeBuildStyle = 014CEA440018CDF011CA2923 /* Development */;
+		activeTarget = 8DC2EF4F0486A6940098B216 /* AGRegex */;
+		codeSenseManager = F4A2771409ED376E00CB6D7B /* Code sense */;
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					243,
+					20,
+					48,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 169395848;
+			PBXWorkspaceStateSaveDate = 169395848;
+		};
+		sourceControlManager = F4A2771309ED376E00CB6D7B /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	3DF8E81105C12000008A5854 /* pcre.c */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {453, 118902}}";
+			sepNavSelRange = "{117367, 16}";
+			sepNavVisRect = "{{0, 60529}, {453, 201}}";
+		};
+	};
+	8DC2EF4F0486A6940098B216 /* AGRegex */ = {
+		activeExec = 0;
+	};
+	F4A2771309ED376E00CB6D7B /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+		};
+		scmType = "";
+	};
+	F4A2771409ED376E00CB6D7B /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+}

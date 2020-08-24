@@ -1,0 +1,175 @@
+{
+    IBClasses = (
+        {
+            ACTIONS = {changeAlpha = id; doit = id; }; 
+            CLASS = ColorChangeCtr; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                comparison = id; 
+                imageOpCtr = id; 
+                methodMenu = id; 
+                newAlpha = id; 
+                newWell = id; 
+                origAlpha = id; 
+                origWell = id; 
+                whichside = id; 
+            }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            ACTIONS = {emboss = id; enhance = id; }; 
+            CLASS = EnhanceCtr; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {embossSlider = id; embossSwitch = id; enhanceSlider = id; }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {
+                activateToolPanel = id; 
+                convertCMYKtoRGB = id; 
+                flip = id; 
+                loadNewTool = id; 
+                newBitmap = id; 
+                readyForResize = id; 
+                reduce = id; 
+                rotateByAngle = id; 
+            }; 
+            CLASS = ImageOpCtr; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                imageOpr = id; 
+                monoPanel = id; 
+                reducePanel = id; 
+                resizePanel = id; 
+                rotatePanel = id; 
+                toolButton = id; 
+                toolPanel = id; 
+                toolView = id; 
+            }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            ACTIONS = {changeBrightness = id; changeValue = id; monochrome = id; reset = id; }; 
+            CLASS = MonoCtr; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                brightSlider = id; 
+                contrSlider = id; 
+                ditherSW = id; 
+                gammaSlider = id; 
+                imageOpCtr = id; 
+                monoView = id; 
+                stepsSW = id; 
+                valTexts = id; 
+            }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {CLASS = MonotoneView; LANGUAGE = ObjC; SUPERCLASS = NSView; }, 
+        {
+            ACTIONS = {changeValue = id; doit = id; }; 
+            CLASS = NoiseCtr; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                brightSW = id; 
+                freqSlider = id; 
+                freqText = id; 
+                granSlider = id; 
+                magSlider = id; 
+                magText = id; 
+            }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            ACTIONS = {posterize = id; }; 
+            CLASS = PosterCtrl; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {optionMenu = id; posterCtrlSlider = id; posterDiffSlider = id; }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            ACTIONS = {
+                colorHalftone = id; 
+                reduceFixedPalette = id; 
+                reduceSelect = id; 
+                truncateBits = id; 
+            }; 
+            CLASS = ReduceCtr; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                cutdownBits = id; 
+                fixedColors = id; 
+                fourBitSW = id; 
+                mcaColors = id; 
+                psudoColors = id; 
+                psudoMethod = id; 
+                withDitherSW = id; 
+            }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            ACTIONS = {adjustValue = id; changeValue = id; doit = id; writenAngle = id; }; 
+            CLASS = RotateCtr; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                angleSlider = id; 
+                angleStepper = id; 
+                angleText = id; 
+                imageOp = id; 
+                rotView = id; 
+                smoothSW = id; 
+            }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            ACTIONS = {takeIntValueFrom = id; }; 
+            CLASS = RotateView; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {angleText = id; }; 
+            SUPERCLASS = NSView; 
+        }, 
+        {
+            ACTIONS = {
+                changeText = id; 
+                changeValue = id; 
+                doResize = id; 
+                resetValue = id; 
+                setAutoDetect = id; 
+                setCurrentScale = id; 
+            }; 
+            CLASS = SmResizeCtr; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                autoButton = id; 
+                imageOpCtr = id; 
+                methodButton = id; 
+                newSizeText = id; 
+                ratioText = id; 
+                scaleText = id; 
+                slider = id; 
+            }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            ACTIONS = {changeAlpha = id; doit = id; selectShape = id; }; 
+            CLASS = SoftFrameCtr; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {alphaSW = id; colorwell = id; imageOpCtr = id; shape = id; widthSL = id; }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            ACTIONS = {changeColorValue = id; changeMainValue = id; colorTone = id; reset = id; }; 
+            CLASS = TonePanelCtrl; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                colorIndicators = id; 
+                colorSliders = id; 
+                imageOpCtr = id; 
+                mainIndicator = id; 
+                mainSlider = id; 
+            }; 
+            SUPERCLASS = NSObject; 
+        }
+    ); 
+    IBVersion = 1; 
+}

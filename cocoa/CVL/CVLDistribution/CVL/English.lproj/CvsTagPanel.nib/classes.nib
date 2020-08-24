@@ -1,0 +1,50 @@
+{
+    IBClasses = (
+        {
+            ACTIONS = {cancel = id; ok = id; }; 
+            CLASS = CVLCmdPanelController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                branchTagCheckBox = id; 
+                commitCmdTitleTextField = id; 
+                commitMsgTextField = id; 
+                commitpanel = id; 
+                moveTagCheckBox = id; 
+                tagCmdTitleTextField = id; 
+                tagMsgTextField = id; 
+                tagpanel = id; 
+            }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            ACTIONS = {cancel = id; ok = id; }; 
+            CLASS = CVLTagPanel; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                branchTagCheckBox = id; 
+                cmdTitleTextField = id; 
+                moveTagCheckBox = id; 
+                msgTextField = id; 
+                panel = id; 
+            }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {CLASS = CvsTagFormatter; LANGUAGE = ObjC; SUPERCLASS = NSFormatter; }, 
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            CLASS = MyTextField; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {formatter = id; }; 
+            SUPERCLASS = NSTextField; 
+        }, 
+        {
+            ACTIONS = {selectText = id; }; 
+            CLASS = NSTextField; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {formatter = id; }; 
+            SUPERCLASS = NSControl; 
+        }, 
+        {CLASS = NSTextFieldCell; LANGUAGE = ObjC; SUPERCLASS = NSActionCell; }
+    ); 
+    IBVersion = 1; 
+}

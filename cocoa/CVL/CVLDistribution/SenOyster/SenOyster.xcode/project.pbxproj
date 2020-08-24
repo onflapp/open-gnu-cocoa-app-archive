@@ -1,0 +1,730 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 39;
+	objects = {
+		014CEA440018CDF011CA2923 = {
+			buildRules = (
+			);
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				DEBUGGING_SYMBOLS = YES;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				OPTIMIZATION_CFLAGS = "-O0";
+				ZERO_LINK = YES;
+			};
+			isa = PBXBuildStyle;
+			name = Development;
+		};
+		014CEA450018CDF011CA2923 = {
+			buildRules = (
+			);
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				DEPLOYMENT_LOCATION = YES;
+				DEPLOYMENT_POSTPROCESSING = YES;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				ZERO_LINK = NO;
+			};
+			isa = PBXBuildStyle;
+			name = Deployment;
+		};
+//010
+//011
+//012
+//013
+//014
+//030
+//031
+//032
+//033
+//034
+		034768DFFF38A50411DB9C8B = {
+			children = (
+				8DC2EF5B0486A6940098B216,
+				3DFD9343056E2B2000984AEC,
+			);
+			isa = PBXGroup;
+			name = Products;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+//030
+//031
+//032
+//033
+//034
+//080
+//081
+//082
+//083
+//084
+		0867D690FE84028FC02AAC07 = {
+			buildSettings = {
+			};
+			buildStyles = (
+				014CEA440018CDF011CA2923,
+				014CEA450018CDF011CA2923,
+				3D0E2531056A26DD008C5DAA,
+			);
+			hasScannedForEncodings = 1;
+			isa = PBXProject;
+			mainGroup = 0867D691FE84028FC02AAC07;
+			productRefGroup = 034768DFFF38A50411DB9C8B;
+			projectDirPath = "";
+			targets = (
+				8DC2EF4F0486A6940098B216,
+				3DFD9342056E2B2000984AEC,
+			);
+		};
+		0867D691FE84028FC02AAC07 = {
+			children = (
+				08FB77AEFE84172EC02AAC07,
+				3D6DBE5B054FE2A700091E74,
+				32C88DFF0371C24200C91783,
+				089C1665FE841158C02AAC07,
+				3D6DC0DA054FE31500091E74,
+				0867D69AFE84028FC02AAC07,
+				034768DFFF38A50411DB9C8B,
+			);
+			isa = PBXGroup;
+			name = SenOyster;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		0867D69AFE84028FC02AAC07 = {
+			children = (
+				1058C7B0FEA5585E11CA2CBB,
+				1058C7B2FEA5585E11CA2CBB,
+			);
+			isa = PBXGroup;
+			name = "External Frameworks and Libraries";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		0867D69BFE84028FC02AAC07 = {
+			fallbackIsa = PBXFileReference;
+			isa = PBXFrameworkReference;
+			lastKnownFileType = wrapper.framework;
+			name = Foundation.framework;
+			path = /System/Library/Frameworks/Foundation.framework;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		0867D6A5FE840307C02AAC07 = {
+			fallbackIsa = PBXFileReference;
+			isa = PBXFrameworkReference;
+			lastKnownFileType = wrapper.framework;
+			name = AppKit.framework;
+			path = /System/Library/Frameworks/AppKit.framework;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		089C1665FE841158C02AAC07 = {
+			children = (
+				3D6DBE58054FE29400091E74,
+				8DC2EF5A0486A6940098B216,
+				089C1666FE841158C02AAC07,
+			);
+			isa = PBXGroup;
+			name = Resources;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		089C1666FE841158C02AAC07 = {
+			children = (
+				089C1667FE841158C02AAC07,
+			);
+			isa = PBXVariantGroup;
+			name = InfoPlist.strings;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		089C1667FE841158C02AAC07 = {
+			fileEncoding = 10;
+			isa = PBXFileReference;
+			lastKnownFileType = text.plist.strings;
+			name = English;
+			path = English.lproj/InfoPlist.strings;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		08FB77AEFE84172EC02AAC07 = {
+			children = (
+				3D6DBD6F054FE14400091E74,
+				3D6DBD70054FE14400091E74,
+				3D6DBD71054FE14400091E74,
+				3D6DBD72054FE14400091E74,
+			);
+			isa = PBXGroup;
+			name = Classes;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+//080
+//081
+//082
+//083
+//084
+//100
+//101
+//102
+//103
+//104
+		1058C7B0FEA5585E11CA2CBB = {
+			children = (
+				1058C7B1FEA5585E11CA2CBB,
+				3D0E253A056A2775008C5DAA,
+				3D8DDF4C056B9F5D00CB4144,
+			);
+			isa = PBXGroup;
+			name = "Linked Frameworks";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		1058C7B1FEA5585E11CA2CBB = {
+			fallbackIsa = PBXFileReference;
+			isa = PBXFrameworkReference;
+			lastKnownFileType = wrapper.framework;
+			name = Cocoa.framework;
+			path = /System/Library/Frameworks/Cocoa.framework;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		1058C7B2FEA5585E11CA2CBB = {
+			children = (
+				0867D69BFE84028FC02AAC07,
+				0867D6A5FE840307C02AAC07,
+				3D6DC122054FE7BA00091E74,
+			);
+			isa = PBXGroup;
+			name = "Other Frameworks";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+//100
+//101
+//102
+//103
+//104
+//320
+//321
+//322
+//323
+//324
+		32C88DFF0371C24200C91783 = {
+			children = (
+				32DBCF5E0370ADEE00C91783,
+			);
+			isa = PBXGroup;
+			name = "Other Sources";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		32DBCF5E0370ADEE00C91783 = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = SenOyster_Prefix.pch;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+//320
+//321
+//322
+//323
+//324
+//3D0
+//3D1
+//3D2
+//3D3
+//3D4
+		3D0E2531056A26DD008C5DAA = {
+			buildRules = (
+			);
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				DEPLOYMENT_LOCATION = YES;
+				DEPLOYMENT_POSTPROCESSING = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(TARGET_BUILD_DIR)";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				INSTALL_PATH = "@executable_path/../Frameworks";
+				SKIP_INSTALL = YES;
+				ZERO_LINK = NO;
+			};
+			isa = PBXBuildStyle;
+			name = EmbeddedDeployment;
+		};
+		3D0E253A056A2775008C5DAA = {
+			isa = PBXFileReference;
+			lastKnownFileType = wrapper.framework;
+			name = SenFoundation.framework;
+			path = UninstalledProducts/SenFoundation.framework;
+			refType = 3;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3D0E253B056A2775008C5DAA = {
+			fileRef = 3D0E253A056A2775008C5DAA;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		3D6DBD6F054FE14400091E74 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = NSString.SenOysterRegex.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3D6DBD70054FE14400091E74 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			path = NSString.SenOysterRegex.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3D6DBD71054FE14400091E74 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = SenOysterShell.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3D6DBD72054FE14400091E74 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			path = SenOysterShell.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3D6DBD73054FE14400091E74 = {
+			fileRef = 3D6DBD6F054FE14400091E74;
+			isa = PBXBuildFile;
+			settings = {
+				ATTRIBUTES = (
+					Public,
+				);
+			};
+		};
+		3D6DBD74054FE14400091E74 = {
+			fileRef = 3D6DBD70054FE14400091E74;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		3D6DBD75054FE14400091E74 = {
+			fileRef = 3D6DBD71054FE14400091E74;
+			isa = PBXBuildFile;
+			settings = {
+				ATTRIBUTES = (
+					Public,
+				);
+			};
+		};
+		3D6DBD76054FE14400091E74 = {
+			fileRef = 3D6DBD72054FE14400091E74;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		3D6DBE50054FE26700091E74 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = text.html;
+			path = OpenSourceLicense.html;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3D6DBE51054FE26700091E74 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = SenOyster.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3D6DBE52054FE26700091E74 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = SenOysterDefines.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3D6DBE53054FE26700091E74 = {
+			fileRef = 3D6DBE50054FE26700091E74;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		3D6DBE54054FE26700091E74 = {
+			fileRef = 3D6DBE51054FE26700091E74;
+			isa = PBXBuildFile;
+			settings = {
+				ATTRIBUTES = (
+					Public,
+				);
+			};
+		};
+		3D6DBE55054FE26700091E74 = {
+			fileRef = 3D6DBE52054FE26700091E74;
+			isa = PBXBuildFile;
+			settings = {
+				ATTRIBUTES = (
+					Public,
+				);
+			};
+		};
+		3D6DBE58054FE29400091E74 = {
+			children = (
+				3D6DBE50054FE26700091E74,
+			);
+			isa = PBXGroup;
+			name = Documentation;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3D6DBE5B054FE2A700091E74 = {
+			children = (
+				3D6DBE51054FE26700091E74,
+				3D6DBE52054FE26700091E74,
+			);
+			isa = PBXGroup;
+			name = "Other Headers";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3D6DC0DA054FE31500091E74 = {
+			children = (
+				3D6DC0FB054FE34200091E74,
+				3D6DC0FE054FE37600091E74,
+			);
+			isa = PBXGroup;
+			name = Tests;
+			path = Tests.subproj;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3D6DC0DF054FE31500091E74 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = RegexTestCase.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3D6DC0E0054FE31500091E74 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			path = RegexTestCase.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3D6DC0E1054FE31500091E74 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = SenOysterTest.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3D6DC0E2054FE31500091E74 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.objc;
+			path = SenOysterTest.m;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3D6DC0E5054FE31500091E74 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = re_tests;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3D6DC0E6054FE31500091E74 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = text.script.perl;
+			path = regexp.t;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3D6DC0FB054FE34200091E74 = {
+			children = (
+				3D6DC0DF054FE31500091E74,
+				3D6DC0E0054FE31500091E74,
+				3D6DC0E1054FE31500091E74,
+				3D6DC0E2054FE31500091E74,
+			);
+			isa = PBXGroup;
+			name = Classes;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3D6DC0FE054FE37600091E74 = {
+			children = (
+				3D6DC0E5054FE31500091E74,
+				3D6DC0E6054FE31500091E74,
+			);
+			isa = PBXGroup;
+			name = Resources;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		3D6DC122054FE7BA00091E74 = {
+			isa = PBXFileReference;
+			lastKnownFileType = "compiled.mach-o.dylib";
+			name = libperl.dylib;
+			path = "/System/Library/Perl/5.8.1/darwin-thread-multi-2level/CORE/libperl.dylib";
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		3D6DC123054FE7BA00091E74 = {
+			fileRef = 3D6DC122054FE7BA00091E74;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		3D8DDF4C056B9F5D00CB4144 = {
+			isa = PBXFileReference;
+			lastKnownFileType = wrapper.framework;
+			name = SenTestingKit.framework;
+			path = UninstalledProducts/SenTestingKit.framework;
+			refType = 3;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3DFD9340056E2B2000984AEC = {
+			buildActionMask = 2147483647;
+			files = (
+				3DFD9345056E2B3C00984AEC,
+				3DFD9347056E2B3D00984AEC,
+			);
+			isa = PBXHeadersBuildPhase;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3DFD9341056E2B2000984AEC = {
+			buildActionMask = 2147483647;
+			files = (
+				3DFD9346056E2B3C00984AEC,
+				3DFD9348056E2B3E00984AEC,
+			);
+			isa = PBXSourcesBuildPhase;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3DFD9342056E2B2000984AEC = {
+			buildPhases = (
+				3DFD9340056E2B2000984AEC,
+				3DFD9341056E2B2000984AEC,
+			);
+			buildRules = (
+			);
+			buildSettings = {
+				GCC_WARN_FOUR_CHARACTER_CONSTANTS = NO;
+				GCC_WARN_UNKNOWN_PRAGMAS = NO;
+				INSTALL_PATH = /usr/local/bin;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = TestFramework;
+				SECTORDER_FLAGS = "";
+				WARNING_CFLAGS = "-Wmost";
+			};
+			dependencies = (
+			);
+			isa = PBXNativeTarget;
+			name = TestFramework;
+			productName = TestFramework;
+			productReference = 3DFD9343056E2B2000984AEC;
+			productType = "com.apple.product-type.tool";
+		};
+		3DFD9343056E2B2000984AEC = {
+			explicitFileType = "compiled.mach-o.executable";
+			includeInIndex = 0;
+			isa = PBXFileReference;
+			path = TestFramework;
+			refType = 3;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3DFD9345056E2B3C00984AEC = {
+			fileRef = 3D6DC0DF054FE31500091E74;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		3DFD9346056E2B3C00984AEC = {
+			fileRef = 3D6DC0E0054FE31500091E74;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		3DFD9347056E2B3D00984AEC = {
+			fileRef = 3D6DC0E1054FE31500091E74;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		3DFD9348056E2B3E00984AEC = {
+			fileRef = 3D6DC0E2054FE31500091E74;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+//3D0
+//3D1
+//3D2
+//3D3
+//3D4
+//8D0
+//8D1
+//8D2
+//8D3
+//8D4
+		8DC2EF4F0486A6940098B216 = {
+			buildPhases = (
+				8DC2EF500486A6940098B216,
+				8DC2EF520486A6940098B216,
+				8DC2EF540486A6940098B216,
+				8DC2EF560486A6940098B216,
+				8DC2EF580486A6940098B216,
+			);
+			buildRules = (
+			);
+			buildSettings = {
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				"Enable trigraphs" = NO;
+				FRAMEWORK_SEARCH_PATHS = "\"$(SYSTEM_DEVELOPER_DIR)/Builds/william/UninstalledProducts\"";
+				FRAMEWORK_VERSION = A;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = SenOyster_Prefix.pch;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_CHECK_SWITCH_STATEMENTS = YES;
+				GCC_WARN_FOUR_CHARACTER_CONSTANTS = YES;
+				GCC_WARN_INITIALIZER_NOT_FULLY_BRACKETED = YES;
+				GCC_WARN_MISSING_PARENTHESES = YES;
+				GCC_WARN_SHADOW = YES;
+				GCC_WARN_TYPECHECK_CALLS_TO_PRINTF = YES;
+				GCC_WARN_UNKNOWN_PRAGMAS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_LABEL = YES;
+				GCC_WARN_UNUSED_VALUE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "\"$(SYSTEM_LIBRARY_DIR)/Perl/5.8.1/darwin-thread-multi-2level/CORE\"";
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = /Library/Frameworks;
+				LIBRARY_SEARCH_PATHS = "\"$(SYSTEM_LIBRARY_DIR)/Perl/5.8.1/darwin-thread-multi-2level/CORE\"";
+				LIBRARY_STYLE = Dynamic;
+				"Library search paths" = "\"$(SYSTEM_LIBRARY_DIR)/Perl/5.8.1/darwin-thread-multi-2level/CORE\"";
+				OTHER_LDFLAGS = "-seg1addr 0x30100000";
+				PRODUCT_NAME = SenOyster;
+				SECTORDER_FLAGS = "";
+				"Wrapper extension" = framework;
+			};
+			dependencies = (
+			);
+			isa = PBXNativeTarget;
+			name = Framework;
+			productInstallPath = "$(HOME)/Library/Frameworks";
+			productName = SenOyster;
+			productReference = 8DC2EF5B0486A6940098B216;
+			productType = "com.apple.product-type.framework";
+		};
+		8DC2EF500486A6940098B216 = {
+			buildActionMask = 2147483647;
+			files = (
+				8DC2EF510486A6940098B216,
+				3D6DBD73054FE14400091E74,
+				3D6DBD75054FE14400091E74,
+				3D6DBE54054FE26700091E74,
+				3D6DBE55054FE26700091E74,
+			);
+			isa = PBXHeadersBuildPhase;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8DC2EF510486A6940098B216 = {
+			fileRef = 32DBCF5E0370ADEE00C91783;
+			isa = PBXBuildFile;
+			settings = {
+				ATTRIBUTES = (
+				);
+			};
+		};
+		8DC2EF520486A6940098B216 = {
+			buildActionMask = 2147483647;
+			files = (
+				8DC2EF530486A6940098B216,
+				3D6DBE53054FE26700091E74,
+			);
+			isa = PBXResourcesBuildPhase;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8DC2EF530486A6940098B216 = {
+			fileRef = 089C1666FE841158C02AAC07;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		8DC2EF540486A6940098B216 = {
+			buildActionMask = 2147483647;
+			files = (
+				3D6DBD74054FE14400091E74,
+				3D6DBD76054FE14400091E74,
+			);
+			isa = PBXSourcesBuildPhase;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8DC2EF560486A6940098B216 = {
+			buildActionMask = 2147483647;
+			files = (
+				8DC2EF570486A6940098B216,
+				3D6DC123054FE7BA00091E74,
+				3D0E253B056A2775008C5DAA,
+			);
+			isa = PBXFrameworksBuildPhase;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8DC2EF570486A6940098B216 = {
+			fileRef = 1058C7B1FEA5585E11CA2CBB;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		8DC2EF580486A6940098B216 = {
+			buildActionMask = 2147483647;
+			files = (
+			);
+			isa = PBXRezBuildPhase;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8DC2EF5A0486A6940098B216 = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = text.plist;
+			path = Info.plist;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		8DC2EF5B0486A6940098B216 = {
+			explicitFileType = wrapper.framework;
+			includeInIndex = 0;
+			isa = PBXFileReference;
+			path = SenOyster.framework;
+			refType = 3;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+	};
+	rootObject = 0867D690FE84028FC02AAC07;
+}

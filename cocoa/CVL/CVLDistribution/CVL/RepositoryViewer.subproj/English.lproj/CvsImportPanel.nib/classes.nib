@@ -1,0 +1,59 @@
+{
+    IBClasses = (
+        {
+            ACTIONS = {
+                cancelModuleChoice = id; 
+                okModuleChoice = id; 
+                openModuleChoicePanel = id; 
+                selectModulePath = id; 
+            }; 
+            CLASS = CoModuleController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                moduleChoiceListControler = id; 
+                moduleChoicePanel = id; 
+                moduleOpenPanelController = id; 
+                modulePathButton = id; 
+            }; 
+            SUPERCLASS = SenFormPanelController; 
+        }, 
+        {CLASS = CvsTagFormatter; LANGUAGE = ObjC; SUPERCLASS = NSFormatter; }, 
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {
+                cancelModuleNames = id; 
+                okModuleNames = id; 
+                openModuleNamesPanel = id; 
+                selectModulePath = id; 
+            }; 
+            CLASS = ModuleChoiceController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                formController = id; 
+                moduleNameBrowser = id; 
+                moduleNamesListControler = id; 
+                moduleNamesPanel = id; 
+                moduleOpenPanelController = id; 
+                modulePathButton = id; 
+                panel = id; 
+                panelController = id; 
+            }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            ACTIONS = {selectText = id; }; 
+            CLASS = NSTextField; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {formatter = id; }; 
+            SUPERCLASS = NSControl; 
+        }, 
+        {
+            ACTIONS = {moveDown = id; moveUp = id; newEntry = id; removeEntry = id; }; 
+            CLASS = SenStringArrayBrowserController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {browser = id; }; 
+            SUPERCLASS = NSObject; 
+        }
+    ); 
+    IBVersion = 1; 
+}

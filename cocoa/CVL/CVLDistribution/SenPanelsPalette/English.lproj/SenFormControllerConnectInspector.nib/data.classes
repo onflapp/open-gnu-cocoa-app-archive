@@ -1,0 +1,6 @@
+"FirstResponder" = {ACTIONS = {}; OUTLETS = {}; SUPERCLASS = NSObject; };
+"SenFormControllerConnectInspector" = {
+    ACTIONS = {"connect:" = id; "disconnect:" = id; "showConnection:" = id; }; 
+    OUTLETS = {editorColumn = id; labelColumn = id; tableView = id; }; 
+    SUPERCLASS = IBInspector; 
+};

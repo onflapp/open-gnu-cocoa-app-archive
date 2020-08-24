@@ -1,0 +1,141 @@
+<HTML>
+<head>
+<META HTTP-EQUIV="content-type" CONTENT="text/html;charset=iso-8859-1">
+<title>Custom</title>
+<META NAME="AppleTitle" CONTENT="ToyViewer Help">
+<META NAME="AppleFont" CONTENT="Lucida Grande,Helvetica">
+<META NAME="AppleSearchResultsFont" CONTENT="Lucida Grande,Helvetica">
+</head>
+
+<BODY BGCOLOR="#FFFFD0">
+<h3 align=right><i>ToyViewer (Ver.4.10)</i></h3>
+<hr>
+
+<h2>How to display other image formats</h2>
+You can set ToyViewer to display any image format if there is a filter program to ppm (pbm, pgm, ppm, or pnm).  See <a href="http://www.pbmplus.com/">PBMPLUS</a>, or
+<a href="http://sourceforge.net/projects/netpbm/">Netpbm</a>.
+
+<p>
+To do so, definition file "~/.toyviewerrc" or "~/Library/ToyViewer/rc.ppc" have to be presented.
+<!------------------------
+  Where, "<i>arch</i>" is a name of architectures, e.g., i386, or ppc.  In the case that the executable file of a filter is for only one architecture, or in the case that the executable files for each architecture are stored in different directories, you can specify different definition files for each architecture.  For example, specification of filters for PowerPC is written in "rc.ppc".
+------------------------->
+<p>
+Format of the definition file is below:
+
+<pre>    &lt;ext&gt;      &lt;path&gt;  &lt;args&gt; ... </pre>
+
+Where, &lt;ext&gt; is an extension of image files, 
+&lt;path&gt; is a full path name of the filter program, and 
+&lt;args&gt; are arguments for the program.  
+One of &lt;args&gt; should be `$', which is replaced by the image file name.  If the first character of path is `~', it is extended to the home directory.  If `@', it is extended to the application directory (.../ToyViewer.app/Contents/Resources).  Lines beginning with `#' are comments.  The following are examples.
+<pre>
+jfif  @/djpeg $
+ras   /usr/local/netpbm/bin/rasttopnm $
+sgi   /usr/local/netpbm/bin/sgitopnm $
+g3    /usr/local/netpbm/bin/g3topbm -reversebits $
+qwe   ~/Unix/bin/qwe2ppm $ -
+</pre>
+This customization is prior to pre-definition of ToyViewer.app.  For example, if you write specification for extension `gif', gif files will be opened using specified filter.
+<p>
+Image files specified in the definition file can be opened using open panel (select "File / Open " menu).
+You can also open image files by dragging the icon onto the icon of ToyViewer placed on the Dock.
+Note that you can not activate ToyViewer by double-clicking the icon of the image file.
+<p>
+<h3>Caution</h3>
+Programs cjpeg and djpeg presented by ToyViewer are modified to read and write comments in data files.  Do not replace them with other programs.
+<p>
+<h3>Example</h3>
+Suppose that you frequently use gray-scaled raw image data for your research.  The image has 320x200 pixels and no header.  Each byte in the data represents one pixel (value range: 0 - 255).  Extension of files is "gs".  You can display easily this format with ToyViewer.
+<br>
+First, make a executable shell script as below (filename=gstoppm.sh):
+<pre>
+#!/bin/sh
+echo "P5 320 200 255"
+cat $1
+</pre>
+This simple script is a converter to pbm format.
+Then, edit "~/Library/ToyViewer/rc.ppc" and add next line:
+<pre>
+gs      ~/Unix/bin/gstoppm.sh $
+</pre>
+If you want to put the script in "~/Library/ToyViewer", type like this.
+<pre>
+gs      ~/Library/ToyViewer/gstoppm.sh $
+</pre>
+Restart ToyViewer, and you would be able to display "gs" files with ToyViewer.
+<p>
+
+
+<h2>Image Conversion Filter Services</h2>
+If ToyViewer is installed in the standard directory such as ~/Applications or /Applications, ToyViewer provides image conversion filter services.
+<br>
+For example, you can drag &amp; drop a file icon of a bie image into a RTF document of TextEdit, or into a document of OmniGraffle (Image files are translated into tiff format).
+<p>
+If the service fails because of incomplete image file, for example, ToyViewer returns a small substitutive image to show that some error occurred.
+<p>
+
+<h3>Customize of Filter Service</h3>
+Caution:
+The following description is for ToyViewer on OPENSTEP.  It does not work on Mac OS X.  I'm now investigating how to add new filter services.  ...Of course, you can add directly some description to Info.plist of ToyViewer.
+
+
+<blockquote>
+
+If you specify new filter programs in the way as described above, you can also make ToyViewer provide image conversion filter services for image formats that is newly added.   To do so, definition file "~/Library/Services/ToyViewer.services" have to be presented.
+<br>
+Now, let's suppose that we are going to add new formats that are specified in previous example to filter services.  The contents of ToyViewer.services is the following.
+<pre>{
+    NSServices = (
+        { NSFilter = convertToTIFF;
+                NSPortName = ToyViewer;
+                NSSendTypes = (NSTypedFilenamesPboardType:jfif,
+                                        NSTypedFilenamesPboardType:ras,
+                                        NSTypedFilenamesPboardType:sgi,
+                                        NSTypedFilenamesPboardType:g3,
+                                        NSTypedFilenamesPboardType:qwe
+                                );
+                NSReturnTypes = (NSTIFFPboardType);
+                NSTimeout = 30000;
+        }
+        );
+}
+</pre>
+Once this file is ready, restart ToyViewer to make enable to provide filter services.
+<br>
+If the services do not work successfully, type "make_services" command into a terminal, or try to login again, please.
+<p>
+<h3>Example</h3>
+If you want to use filter service for "gs" images which is described in previous section, make "~/Library/Services/ToyViewer.services" as the following:
+<pre>{
+    NSServices = (
+        { NSFilter = convertToTIFF;
+                NSPortName = ToyViewer;
+                NSSendTypes = (NSTypedFilenamesPboardType:gs);
+                NSReturnTypes = (NSTIFFPboardType);
+                NSTimeout = 30000;
+        }
+        );
+}
+</pre>
+<blockquote>
+<p>
+
+<!-----------------
+<h2>How to Share Customized ToyViewer?</h2>
+
+The way to customize described in previous sections is for personal
+users.
+<br>
+If you are sharing ToyViewer that are in /Local/Applications,
+add information of new image formats into
+"ToyViewer.app/Resources/filters".
+In order to use filter service, write declaration in
+"/Local/Library/Services/ToyViewer.services".
+------------------>
+
+<hr>
+<h3 align=right><a href="index.html">Return to Help Index</a></h3>
+
+</body>
+</HTML>

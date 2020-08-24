@@ -1,0 +1,12 @@
+{	defaults=(
+	elipsis,
+        unknown,
+	plus,
+        minus,
+        triangle,
+        blackPoint,
+        star,
+        times,
+	questionMark       
+	);
+}

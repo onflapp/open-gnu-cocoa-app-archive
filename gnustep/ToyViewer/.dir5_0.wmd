@@ -1,0 +1,6 @@
+{
+    RootNode = "~/work/ToyViewer/src"; 
+    Toolbar = No; 
+    ViewName = Browser; 
+    WindowFrame = "{{491, 145}, {450, 445}}"; 
+}

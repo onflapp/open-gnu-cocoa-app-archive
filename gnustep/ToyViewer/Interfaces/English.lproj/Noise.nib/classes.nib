@@ -1,0 +1,27 @@
+{
+    IBClasses = (
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {setup = id; }; 
+            CLASS = ImgToolCtrlAbs; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {panel = id; }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            ACTIONS = {changeValue = id; doit = id; }; 
+            CLASS = NoiseCtr; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                brightSW = id; 
+                freqSlider = id; 
+                freqText = id; 
+                granSlider = id; 
+                magSlider = id; 
+                magText = id; 
+            }; 
+            SUPERCLASS = ImgToolCtrlAbs; 
+        }
+    ); 
+    IBVersion = 1; 
+}

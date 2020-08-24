@@ -1,0 +1,41 @@
+{
+    BUNDLE_EXTENSION = bundle; 
+    DYNAMIC_CODE_GEN = YES; 
+    English_RESOURCES = {}; 
+    FILESTABLE = {
+        CLASSES = (CVLContentInspector.m); 
+        English_INTERFACES = (CVLContentInspector.nib); 
+        English_OTHER_RESOURCES = (LocalizedInfo.plist); 
+        FRAMEWORKS = (AppKit.framework, Foundation.framework); 
+        H_FILES = (CVLContentInspector.h); 
+        INTERFACES = (); 
+        OTHER_RESOURCES = (); 
+        OTHER_SOURCES = (
+            Makefile.preamble, 
+            Makefile, 
+            Makefile.postamble, 
+            m.template, 
+            h.template, 
+            CustomInfo.plist
+        ); 
+        SUBPROJECTS = (); 
+    }; 
+    LANGUAGE = English; 
+    MAKEFILEDIR = "$(MAKEFILEPATH)/pb_makefiles"; 
+    NEXTSTEP_BUILDDIR = "$(HOME)/Builds"; 
+    NEXTSTEP_BUILDTOOL = /bin/gnumake; 
+    NEXTSTEP_INSTALLDIR = /Applications; 
+    NEXTSTEP_JAVA_COMPILER = /usr/bin/javac; 
+    NEXTSTEP_OBJCPLUS_COMPILER = /usr/bin/cc; 
+    PDO_UNIX_BUILDTOOL = $NEXT_ROOT/Developer/bin/make; 
+    PDO_UNIX_INSTALLDIR = /Library/Bundles; 
+    PDO_UNIX_JAVA_COMPILER = "$(JDKBINDIR)/javac"; 
+    PDO_UNIX_OBJCPLUS_COMPILER = "$(NEXTDEV_BIN)/gcc"; 
+    PROJECTNAME = CVLContentInspector; 
+    PROJECTTYPE = "Loadable Bundle"; 
+    PROJECTVERSION = 2.8; 
+    WINDOWS_BUILDTOOL = $NEXT_ROOT/Developer/Executables/make; 
+    WINDOWS_INSTALLDIR = /Library/Bundles; 
+    WINDOWS_JAVA_COMPILER = "$(JDKBINDIR)/javac.exe"; 
+    WINDOWS_OBJCPLUS_COMPILER = "$(DEVDIR)/gcc"; 
+}

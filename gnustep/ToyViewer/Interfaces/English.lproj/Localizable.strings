@@ -1,0 +1,153 @@
+/* 
+ * Error Messages
+ */
+/* Err_OPEN */
+"Can't open file";
+
+/* Err_FORMAT */
+"Illegal image format";
+
+/* Err_MEMORY */
+"Can't get working memory";
+
+/* Err_SHORT */
+"Encountered unexpected EOF";
+
+/* Err_ILLG */
+"Illegal information included";
+
+/* Err_IMPLEMENT */
+"Unsupported image format";
+
+/* Err_SAVE */
+"Can't write into file";
+
+/* Err_SAV_IMPL */
+"Can't save this format";
+
+/* Err_EPS_IMPL */
+"Can't apply to EPS";
+
+/* Err_EPS_ONLY */
+"This operation is only to EPS";
+
+/* Err_PDF_IMPL */
+"Can't apply to PDF";
+
+/* Err_PDF_ONLY */
+"This operation is only to PDF";
+
+/* Err_EPS_PDF_IMPL */
+"Can't apply to PDF/EPS";
+
+/* Err_EPS_PDF_ONLY */
+"This operation is only to PDF/EPS";
+
+/* Err_OPR_IMPL */
+"Can't apply this operation";
+
+/* Err_NOFILE */
+"There is no file";
+
+/* Err_FLT_EXEC */
+"Can't execute filter program";
+
+/* Err_ACCESS */
+"Can't access to file";
+
+/* ERROR */
+"ERROR";
+
+/* WARNING */
+"WARNING";
+
+/* 
+ * Color Reduction Messages
+ */
+/* BMP_Reduction */
+"Reduce Color?" = "This image has more than 256 colors.  Do you want to reduce colors to 256 ?";
+
+/* BMP_Leave */
+"Leave" = "Leave as it is";
+
+/* BMP_Reduce */
+"Reduce" = "Reduce Colors";
+
+/* Stop_SAVE */
+"Cancel";
+
+/* GIF_Reduction */
+"Reduction Start" = "This image has more than 256 colors.  Colors are reduced to 256.";
+
+/* NO_GIF_Filter */
+"No GIF Filter";
+
+/* NO_PXO2GIF */
+"Filter pxo2gif does not exist" = "We don't have filter pxo2gif.  ToyViewer can't make GIF file with current Mac OS X successfully.";
+
+/* NO_Need_Reduction */
+"No Need to Reduce" = "%@: No Need to Reduce Colors.  This image has only %d colors.";
+
+/* Background Window */
+"Bring to Front";
+"Send to Back";
+
+/* AquaTooLarge */
+"Image size is too large as Aqua-Button." = "Oval Aqua-Button is for relatively small images.  This image is too large.";
+
+/* Keywords */
+"Bilevel";
+"gray";
+
+/* Effects */
+"Paste";
+"Rotate";
+"SmRotate";
+"Flip";
+"Clip";
+"Negative";
+"Bitmap";
+"ResizeEPS";
+"SmResize";
+"Resize";
+"Gray";
+"BiLevel";
+"Bright";
+"ColorTone";
+"Reduce";
+"HalfToning";
+"Dither";
+"ColorChange";
+"Enhance";
+"Blur";
+"Emboss";
+"Contour";
+"Noise";
+"Mosaic";
+"Frame";
+"Posterize";
+"CMYKtoRGB";
+
+/* Wait Messages */
+"Color Tuning...";
+"Contouring...";
+"Converting...";
+"Embossing...";
+"Enhancing...";
+"Blurring...";
+"Making Palette...";
+"Packing Bits...";
+"Painting...";
+"Posterizing";
+"Posterizing...";
+"Reducing...";
+"Reducing 255 col." = "Reducing into 255 colors";
+"Resizing...";
+"Rotating...";
+"Starting Reduction...";
+"Thinning Lines...";
+"Trying Reduction";
+"Writing Image...";
+
+/* Web Site */
+"Web Page of Takeshi Ogihara" = "http://waltz.cs.scitec.kobe-u.ac.jp/";

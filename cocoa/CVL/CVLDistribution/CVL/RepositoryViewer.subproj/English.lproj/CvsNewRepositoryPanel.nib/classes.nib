@@ -1,0 +1,38 @@
+{
+    IBClasses = (
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {
+                addRepository = id; 
+                newRepository = id; 
+                removeRepository = id; 
+                repositoryCheckout = id; 
+                repositoryImport = id; 
+                revertRepositoryParams = id; 
+                saveRepositoryParams = id; 
+            }; 
+            CLASS = RepositoryViewer; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                checkoutButton = id; 
+                importButton = id; 
+                noRepositoryView = id; 
+                removeButton = id; 
+                tabView = id; 
+                tabViewItemView = id; 
+                tableView = id; 
+                textView = id; 
+                window = id; 
+            }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            ACTIONS = {cancel = id; ok = id; }; 
+            CLASS = SenFormPanelController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {formController = id; panel = id; }; 
+            SUPERCLASS = NSObject; 
+        }
+    ); 
+    IBVersion = 1; 
+}

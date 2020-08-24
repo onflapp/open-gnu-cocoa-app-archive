@@ -1,0 +1,18 @@
+{
+	states= {
+		start= {
+			enteringSelector="start";
+		};
+		end = {
+			enteringSelector="conditionBecameTrue";
+		};
+	};
+	transitions= (
+            {
+                sourceState= start;
+                targetState= end;
+                conditionSelector= conditionIsTrue;
+            }
+	);
+	beginState= start;
+}

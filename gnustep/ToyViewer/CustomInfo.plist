@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist SYSTEM "file://localhost/System/Library/DTDs/PropertyList.dtd">
+<plist version="0.9">
+<dict>
+	<key>NSServices</key>
+	<array>
+		<dict>
+			<key>NSFilter</key>
+			<string>convertToTIFF</string>
+			<key>NSPortName</key>
+			<string>ToyViewer</string>
+			<key>NSReturnTypes</key>
+			<array>
+				<string>NSTIFFPboardType</string>
+			</array>
+			<key>NSSendTypes</key>
+			<array>
+				<string>NSTypedFilenamesPboardType:dib</string>
+				<string>NSTypedFilenamesPboardType:DIB</string>
+				<string>NSTypedFilenamesPboardType:pcx</string>
+				<string>NSTypedFilenamesPboardType:PCX</string>
+				<string>NSTypedFilenamesPboardType:ppm</string>
+				<string>NSTypedFilenamesPboardType:pgm</string>
+				<string>NSTypedFilenamesPboardType:pbm</string>
+				<string>NSTypedFilenamesPboardType:pnm</string>
+				<string>NSTypedFilenamesPboardType:bie</string>
+				<string>NSTypedFilenamesPboardType:jbig</string>
+				<string>NSTypedFilenamesPboardType:mag</string>
+				<string>NSTypedFilenamesPboardType:MAG</string>
+				<string>NSTypedFilenamesPboardType:xbm</string>
+				<string>NSTypedFilenamesPboardType:XBM</string>
+				<string>NSTypedFilenamesPboardType:ras</string>
+				<string>NSTypedFilenamesPboardType:RAS</string>
+			</array>
+			<key>NSTimeout</key>
+			<string>20000</string>
+		</dict>
+		<dict>
+			<key>NSFilter</key>
+			<string>convertToTIFF</string>
+			<key>NSPortName</key>
+			<string>ToyViewer</string>
+			<key>NSReturnTypes</key>
+			<array>
+				<string>NSTIFFPboardType</string>
+			</array>
+			<key>NSSendTypes</key>
+			<array>
+				<string>NSTypedFilenamesPboardType:pcd</string>
+				<string>NSTypedFilenamesPboardType:PCD</string>
+			</array>
+			<key>NSTimeout</key>
+			<string>30000</string>
+		</dict>
+	</array>
+</dict>
+</plist>

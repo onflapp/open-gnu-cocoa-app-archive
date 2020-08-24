@@ -1,0 +1,54 @@
+{
+	states= {
+		start= {
+		};
+                askPassword= {
+                        enteringSelector="askPassword";
+                };
+                waitForAuthorization= {
+                        attributes= { awaitsAuthorization="YES"; }
+                };
+		cvsTask= {
+			enteringSelector="startTask";
+                        attributes= { isRunning="YES"; }
+		};
+                failure= {
+                       enteringSelector="endWithFailure";
+                };
+                success= {
+                       enteringSelector="endWithSuccess";
+                };
+	};
+	transitions= (
+            {
+                sourceState= start;
+                targetState= askPassword;
+                conditionSelector= haveNoPassword;
+            },
+            {   sourceState= start;
+                targetState= waitForAuthorization;
+                conditionSelector= havePassword;
+            },
+            {   sourceState= askPassword;
+                targetState= waitForAuthorization;
+                conditionSelector= havePassword;
+            },
+            {   sourceState= askPassword;
+                targetState= failure;
+                conditionSelector= haveNoPassword;
+            },
+            {   sourceState= waitForAuthorization;
+                targetState= cvsTask;
+                conditionSelector= authorizedToRun;
+            },
+            {   sourceState= cvsTask;
+                targetState= askPassword;
+                conditionSelector= taskWasAFailure;
+            },
+            {   sourceState= cvsTask;
+                targetState= success;
+                conditionSelector= taskWasSuccessfull;
+            },
+	);
+	beginState= start;
+}

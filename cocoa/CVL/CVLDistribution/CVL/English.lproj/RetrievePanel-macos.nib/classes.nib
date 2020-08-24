@@ -1,0 +1,41 @@
+{
+    IBClasses = (
+        {CLASS = CvsTagFormatter; LANGUAGE = ObjC; SUPERCLASS = NSFormatter; }, 
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {
+                cancel = id; 
+                getDateTime = id; 
+                hide = id; 
+                resultsChanged = id; 
+                selectionMatrixChanged = id; 
+                show = id; 
+                tagSelectedFromPullDownButton = id; 
+            }; 
+            CLASS = RestoreRetrieveController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                actionButton = NSButton; 
+                dateTextField = NSTextField; 
+                selectionMatrix = NSMatrix; 
+                tagTitlePopUpButton = NSPopUpButton; 
+                tagTitleTextField = NSTextField; 
+                versionPanel = NSPanel; 
+            }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            ACTIONS = {
+                openVersionInTemporaryDirectory = id; 
+                performButtonAction = id; 
+                replaceWorkAreaFile = id; 
+                saveVersionAs = id; 
+            }; 
+            CLASS = RetrievePanelController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {headingTabView = NSTabView; revisionTextField = NSTextField; }; 
+            SUPERCLASS = RestoreRetrieveController; 
+        }
+    ); 
+    IBVersion = 1; 
+}

@@ -1,0 +1,38 @@
+{
+    IBClasses = (
+        {
+            ACTIONS = {
+                changeFullScreen = id; 
+                init = id; 
+                pausePush = id; 
+                playPush = id; 
+                quitPush = id; 
+                sliderChange = id; 
+                sliderDown = id; 
+                sliderUp = id; 
+                stepPush = id; 
+            }; 
+            CLASS = ADController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                fscreenMethod = id; 
+                fscreenSW = id; 
+                lButton = id; 
+                loopSW = id; 
+                nextFile = id; 
+                panel = id; 
+                pauseButton = id; 
+                playButton = id; 
+                quitButton = id; 
+                rButton = id; 
+                slave = id; 
+                slider = id; 
+                sliderMax = id; 
+                stepButton = id; 
+            }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }
+    ); 
+    IBVersion = 1; 
+}

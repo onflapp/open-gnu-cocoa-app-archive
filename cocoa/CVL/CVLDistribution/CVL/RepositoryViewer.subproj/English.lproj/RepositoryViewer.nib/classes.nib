@@ -1,0 +1,50 @@
+{
+    IBClasses = (
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {CLASS = RepositoryDataSource; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {addRepository = id; removeRepository = id; }; 
+            CLASS = RepositoryPanelController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {tableView = id; window = id; }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            ACTIONS = {
+                addEnvironmentVariable = id; 
+                addRepository = id; 
+                newRepository = id; 
+                openRepositoryWorkarea = id; 
+                removeEnvironmentVariable = id; 
+                removeRepository = id; 
+                repositoryCheckout = id; 
+                repositoryImport = id; 
+                revertRepositoryParams = id; 
+                saveRepositoryParams = id; 
+                validateRepositoryParams = id; 
+            }; 
+            CLASS = RepositoryViewer; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                addEnvVariableButton = id; 
+                checkoutButton = id; 
+                envTableView = id; 
+                importButton = id; 
+                noRepositoryView = id; 
+                openWorkareaButton = id; 
+                removeButton = id; 
+                removeEnvVariableButton = id; 
+                revertRepositoryParamsButton = id; 
+                saveRepositoryParamsButton = id; 
+                tabView = id; 
+                tabViewEnvItemView = id; 
+                tabViewItemView = id; 
+                tableView = id; 
+                textView = id; 
+                validateRepositoryParamsButton = id; 
+            }; 
+            SUPERCLASS = NSWindowController; 
+        }
+    ); 
+    IBVersion = 1; 
+}

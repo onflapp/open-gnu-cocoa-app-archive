@@ -1,0 +1,13 @@
+{
+    IBClasses = (
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {activate = id; toggleEditable = id; writeComment = id; }; 
+            CLASS = InspectorCtrl; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {buttons = id; commentText = id; editSW = id; infoText = id; panel = id; }; 
+            SUPERCLASS = NSObject; 
+        }
+    ); 
+    IBVersion = 1; 
+}

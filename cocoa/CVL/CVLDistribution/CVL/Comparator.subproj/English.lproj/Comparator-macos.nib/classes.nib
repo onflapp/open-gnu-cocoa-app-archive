@@ -1,0 +1,52 @@
+{
+    IBClasses = (
+        {
+            ACTIONS = {
+                choiceChanged = id; 
+                compareVersions = id; 
+                getDateTime = id; 
+                matrixSelectionChanged = id; 
+                useAncestorChanged = id; 
+            }; 
+            CLASS = Comparator; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                ancestorDateTextField = NSTextField; 
+                ancestorMatrix = NSMatrix; 
+                ancestorRevisionPopup = NSPopUpButton; 
+                ancestorSetDateButton = NSButton; 
+                ancestorSwitch = NSButton; 
+                ancestorTagPopup = NSPopUpButton; 
+                compareButton = NSButton; 
+                leftDateTextField = NSTextField; 
+                leftMatrix = NSMatrix; 
+                leftRevisionPopup = NSPopUpButton; 
+                leftSetDateButton = NSButton; 
+                leftTagPopup = NSPopUpButton; 
+                mergeChooserButton = NSButton; 
+                mergeTextField = NSTextField; 
+                pathTextField = NSTextField; 
+                rightDateTextField = NSTextField; 
+                rightMatrix = NSMatrix; 
+                rightRevisionPopup = NSPopUpButton; 
+                rightSetDateButton = NSButton; 
+                rightTagPopup = NSPopUpButton; 
+            }; 
+            SUPERCLASS = NSWindowController; 
+        }, 
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {
+                senOpenPanel = id; 
+                takeObjectValueFrom = id; 
+                takeStringArrayValueFrom = id; 
+                takeStringValueFrom = id; 
+            }; 
+            CLASS = SenOpenPanelController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {delegate = id; target = id; valueField = id; }; 
+            SUPERCLASS = NSObject; 
+        }
+    ); 
+    IBVersion = 1; 
+}

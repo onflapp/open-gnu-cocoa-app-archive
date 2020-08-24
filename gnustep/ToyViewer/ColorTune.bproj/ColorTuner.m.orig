@@ -1,0 +1,198 @@
+#import "ColorTuner.h"
+#import <AppKit/NSApplication.h>
+#import <AppKit/NSImage.h>
+#import <AppKit/NSBitmapImageRep.h>
+#import <AppKit/NSControl.h>
+#import <AppKit/NSPanel.h>
+#import <AppKit/NSTextField.h>
+#import <Foundation/NSBundle.h>	/* LocalizedString */
+#import <stdio.h>
+#import <stdlib.h>
+#import <string.h>
+#import <libc.h>
+#import "../TVController.h"
+#import "../ToyWin.h"
+#import "../ToyWinEPS.h"
+#import "../ToyView.h"
+#import "../common.h"
+#import "../getpixel.h"
+#import "../AlertShower.h"
+#import "../WaitMessageCtr.h"
+#import "TonePanelCtrl.h"
+
+#define  rLimit		0.004
+
+
+@implementation ColorTuner
+
++ (int)opcode {
+	return ColorTone;
+}
+
++ (NSString *)oprString {
+	return NSLocalizedString(@"ColorTone", Effects);
+}
+
+- (id)waitingMessage
+{
+	return [theWaitMsg messageDisplay:
+		NSLocalizedString(@"Color Tuning...", ColorTuning)];
+}
+
+/* overwrite */
+- (BOOL)checkInfo:(NSString *)filename
+{
+	if (![[self class] check:(ck_EPS|ck_CMYK|ck_MONO)
+			info:cinf filename:filename])
+		return YES;
+	return NO;
+}
+
+static const float cnv[3][3] = {
+	{ 1, 0, -1 },
+	{ 0, 1, -1 },
+	{ 1, 1,  1 } };
+static const float rcnv[3][3] = {
+	{  2,  -1,  1 },
+	{ -1,   2,  1 },
+	{ -1,  -1,  1 } };	/*  * 1/3 */
+static float satcnv[3][3];
+
+/* Saturation Enhancement
+   (1) RGB --convert--> r=(2R,-G,-B)/3, g=(-R,2G,-B)/3, k=(R,G,B)/3
+   (2) r *= sat,  g *= sat
+   (3) rgk --convert--> RGB
+ */
+
+static void sat_enhance_init(float satval)
+{
+	float	v[3][3], w;
+	int	i, j, k;
+
+	for (j = 0; j < 3; j++)
+		v[j][2] = rcnv[j][2];
+	for (i = 0; i < 2; i++)
+	    for (j = 0; j < 3; j++)
+		v[j][i] = rcnv[j][i] * satval;
+	for (i = 0; i < 3; i++)
+	    for (j = 0; j < 3; j++) {
+		w = 0.0;
+		for (k = 0; k < 3; k++)
+		    w += v[i][k] * cnv[k][j];
+		satcnv[i][j] = w / 3.0;
+	    }
+}
+
+static void sat_enhance(int elm[])
+{
+	float	w[3];
+	int	i, j;
+
+	for (i = 0; i < 3; i++) {
+		w[i] = 0;
+		for (j = 0; j < 3; j++)
+			w[i] += satcnv[i][j] * elm[j];
+	}
+	for (i = 0; i < 3; i++)
+		elm[i] = (int)(w[i] + 0.5);
+}
+
+- (void)setSaturation:(float)sval andHue:(float *)hval
+{
+	int i;
+
+	for (i = 0; i < N_Colors; i++)
+		ratio[i] = (hval[i] < -rLimit || hval[i] > rLimit)
+			? hval[i] : 0.0;
+	if (sval < 1.0-rLimit || sval > 1.0+rLimit) {
+		satval = sval;
+		sat_enhance_init(satval);
+	}else {
+		satval = 0.0;
+		sat_enhance_init(1.0);
+	}
+}
+
+- (BOOL)makeNewPlane:(unsigned char **)newmap with:(commonInfo *)newinf
+{
+	int total, i, x, idx;
+	int pnum, dif, alp, err;
+	int elm[MAXPLANE], mdfy[MAXPLANE];
+	double r;
+	const unsigned char order[8][3] = {
+		{ RED, GREEN, BLUE }, /* R>G>B; 000; R>G, R>B, G>B */
+		{ RED, BLUE, GREEN }, /* R>B>G; 001; R>G, R>B, G<B */
+		{ 0,    0,    0    }, /* R>G>B; 010; R>G, R<B, G>B NEVER!! */
+		{ BLUE, RED, GREEN }, /* B>R>G; 011; R>G, R<B, G<B */
+		{ GREEN, RED, BLUE }, /* G>R>B; 100; R<G, R>B, G>B */
+		{ 0,    0,    0    }, /* R>G>B; 101; R<G, R>B, G<B NEVER!! */
+		{ GREEN, BLUE, RED }, /* G>B>R; 110; R<G, R<B, G>B */
+		{ BLUE, GREEN, RED }, /* B>G>R; 111; R<G, R<B, G<B */
+	};
+	const unsigned char *co;
+
+	pnum = cinf->numcolors;	/* must be 3 */
+	if (cinf->alpha) alp = pnum++;
+	else alp = 0;
+	err = allocImage(newmap, cinf->width, cinf->height, 8, pnum);
+	if (err) return NO;
+
+	resetPixel(map, 0);
+	total = cinf->height * cinf->width;
+	[theWaitMsg setProgress:(total - 1)];
+	for (idx = 0; idx < total; idx++) {
+		[theWaitMsg progress: idx];
+		getPixelA(elm);
+		if (satval != 0.0)
+			sat_enhance(elm);
+		x = (elm[0] >= elm[1]) ? 0 : 4;
+		if (elm[0] < elm[2]) x |= 2;
+		if (elm[1] < elm[2]) x |= 1;
+		co = order[x];
+
+		if ((r = ratio[co[0]]) != 0.0) { /* RGB */
+			/* r >= -1.0, shoud be */
+			if (r > 0) {
+			    dif = r * (elm[co[0]] - elm[co[1]]);
+			    if ((mdfy[co[0]] = elm[co[0]] + dif) > 255)
+				mdfy[co[0]] = 255;
+			    if ((mdfy[co[1]] = elm[co[1]] - dif) < elm[co[2]])
+				mdfy[co[1]] = elm[co[2]];
+			    mdfy[co[2]] = elm[co[2]];
+			}else {
+			    dif = r * (elm[co[0]] - elm[co[1]]) / 3.0;
+			    mdfy[co[0]] = elm[co[0]] + dif * 2;
+			    mdfy[co[1]] = elm[co[1]] - dif;
+			    mdfy[co[2]] = elm[co[2]] - dif;
+			}
+		}else {
+			for (i = 0; i < 3; i++)
+				mdfy[i] = elm[i];
+		}
+		if ((r = ratio[co[2]+3]) != 0.0) { /* CMY */
+			if (r > 0) {
+			    dif = r * (elm[co[1]] - elm[co[2]]);
+			    if ((mdfy[co[1]] += dif) > mdfy[co[0]])
+				mdfy[co[1]] = mdfy[co[0]];
+			    if ((mdfy[co[2]] -= dif) < 0)
+				mdfy[co[2]] = 0;
+			}else {
+			    dif = r * (elm[co[1]] - elm[co[2]]) / 3.0;
+			    mdfy[co[0]] += dif;
+			    mdfy[co[1]] += dif;
+			    mdfy[co[2]] -= dif * 2;
+			}
+		}
+
+		for (i = 0; i < 3; i++) {
+			int v = mdfy[i];
+			newmap[i][idx] = (v > 255) ? 255 : ((v < 0) ? 0 : v);
+		}
+		if (alp) newmap[alp][idx] = elm[ALPHA];
+	}
+	if (newinf->alpha) newinf->alpha = hadAlpha();
+	[theWaitMsg resetProgress];
+	return YES;
+}
+
+@end

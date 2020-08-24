@@ -1,0 +1,38 @@
+{
+    IBClasses = (
+        {
+            CLASS = CVLFileIconWell; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {dataSource = id; }; 
+            SUPERCLASS = NSControl; 
+        }, 
+        {
+            ACTIONS = {
+                nameEdited = id; 
+                setInspector = id; 
+                setInspectorFromMenuItem = id; 
+                showWindow = id; 
+            }; 
+            CLASS = CVLInspectorManager; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                fileIconWell = CVLFileIconWell; 
+                filenameTextField = NSTextField; 
+                fullPathTextField = NSTextField; 
+                inspectorPopup = NSPopUpButton; 
+                multiView = NSView; 
+                window = NSWindow; 
+            }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            CLASS = DisplayInspector; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {contentView = id; displayPanels = id; mainView = id; scrollView = id; }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {CLASS = NSObject; LANGUAGE = ObjC; }
+    ); 
+    IBVersion = 1; 
+}

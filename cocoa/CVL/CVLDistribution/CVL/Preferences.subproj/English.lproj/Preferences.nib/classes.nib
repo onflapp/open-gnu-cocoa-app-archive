@@ -1,0 +1,37 @@
+{
+    IBClasses = (
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {cancel = id; set = id; }; 
+            CLASS = PreferencesController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                alertTimeBeepButton = id; 
+                alertTimeDisplayButton = id; 
+                alertTimeIntervalFormCell = id; 
+                browserResizeMatrix = id; 
+                columnCountField = id; 
+                columnWidthField = id; 
+                compressionTextField = id; 
+                cvsPathTextField = id; 
+                cvsRootTextField = id; 
+                cvsTemplateFilteringSwitch = id; 
+                cvsTemplateUseSwitch = id; 
+                maxParallelRequestsField = id; 
+                opendiffUnixPathField = id; 
+                panel = id; 
+                showRepositoryFilesSwitch = id; 
+                startupOpenSwitch = id; 
+            }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            ACTIONS = {moveDown = id; moveUp = id; newEntry = id; removeEntry = id; }; 
+            CLASS = SenStringArrayBrowserController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {browser = id; textField = id; }; 
+            SUPERCLASS = NSObject; 
+        }
+    ); 
+    IBVersion = 1; 
+}

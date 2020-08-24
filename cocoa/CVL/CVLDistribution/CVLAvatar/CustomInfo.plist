@@ -1,0 +1,10 @@
+NotificationNames = (
+    PBProjectDidSaveNotification,
+
+    PBFileAddedToProjectNotification,
+    PBFileRemovedFromProjectNotification,
+
+    PBFileDidSaveNotification,
+    PBFileDeletedNotification,
+    PBFileRenamedNotification
+)

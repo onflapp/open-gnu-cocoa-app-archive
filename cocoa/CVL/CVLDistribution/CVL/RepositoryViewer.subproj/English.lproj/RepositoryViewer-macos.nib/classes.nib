@@ -1,0 +1,64 @@
+{
+    IBClasses = (
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {CLASS = RepositoryDataSource; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {addRepository = id; removeRepository = id; }; 
+            CLASS = RepositoryPanelController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {tableView = id; window = id; }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            ACTIONS = {
+                addEnvironmentVariable = id; 
+                addRepository = id; 
+                newRepository = id; 
+                openRepositoryWorkarea = id; 
+                removeEnvironmentVariable = id; 
+                removeRepository = id; 
+                repositoryCheckout = id; 
+                repositoryImport = id; 
+                revertRepositoryParams = id; 
+                saveRepositoryParams = id; 
+                updateCVSExecutablePath = id; 
+                updateCompressionLevel = id; 
+                validateRepositoryParams = id; 
+            }; 
+            CLASS = RepositoryViewer; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                addEnvVariableButton = NSButton; 
+                bottomBox = NSBox; 
+                checkoutButton = NSButton; 
+                cvsWrappersTextView = NSTextView; 
+                envTableView = NSTableView; 
+                ignoredFilesTextView = NSTextView; 
+                importButton = NSButton; 
+                modulesTextView = NSTextView; 
+                noRepositoryView = NSView; 
+                openWorkareaButton = NSButton; 
+                removeButton = NSButton; 
+                removeEnvVariableButton = NSButton; 
+                repositoryCVSExecutablePathTextField = NSTextField; 
+                repositoryCompressionLevelTextField = NSTextField; 
+                repositoryRootTextField = NSTextField; 
+                repositorySplitView = NSSplitView; 
+                repositoryTableView = NSTableView; 
+                revertCVSWrappersButton = NSButton; 
+                revertIgnoredFilesButton = NSButton; 
+                revertModulesButton = NSButton; 
+                saveCVSWrappersButton = NSButton; 
+                saveIgnoredFilesButton = NSButton; 
+                saveModulesButton = NSButton; 
+                tabView = NSTabView; 
+                topBox = NSBox; 
+                validateCVSWrappersButton = NSButton; 
+                validateIgnoredFilesButton = NSButton; 
+                validateModulesButton = NSButton; 
+            }; 
+            SUPERCLASS = NSWindowController; 
+        }
+    ); 
+    IBVersion = 1; 
+}

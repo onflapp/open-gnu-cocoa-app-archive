@@ -1,0 +1,6 @@
+{	defaults=(
+        unknown,
+        watched,
+        edited
+	);
+}

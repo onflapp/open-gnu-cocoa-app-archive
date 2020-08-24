@@ -1,0 +1,20 @@
+{
+    IBClasses = (
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {setup = id; }; 
+            CLASS = ImgToolCtrlAbs; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {panel = id; }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            ACTIONS = {posterize = id; }; 
+            CLASS = PosterCtrl; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {optionMenu = id; posterCtrlSlider = id; posterDiffSlider = id; }; 
+            SUPERCLASS = ImgToolCtrlAbs; 
+        }
+    ); 
+    IBVersion = 1; 
+}

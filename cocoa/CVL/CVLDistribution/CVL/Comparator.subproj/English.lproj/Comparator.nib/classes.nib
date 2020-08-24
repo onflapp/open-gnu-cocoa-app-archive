@@ -1,0 +1,49 @@
+{
+    IBClasses = (
+        {
+            ACTIONS = {
+                choiceChanged = id; 
+                compareVersions = id; 
+                toggleFreeFormDate = id; 
+                useAncestor = id; 
+            }; 
+            CLASS = Comparator; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                ancestorBox = id; 
+                ancestorDateTextField = id; 
+                ancestorMatrix = id; 
+                ancestorRevisionPopup = id; 
+                ancestorSwitch = id; 
+                ancestorTagPopup = id; 
+                comparisonButton = id; 
+                freeFormSwitch = id; 
+                leftDateTextField = id; 
+                leftMatrix = id; 
+                leftRevisionPopup = id; 
+                leftTagPopup = id; 
+                mergeChooserButton = id; 
+                mergeTextField = id; 
+                pathTextField = id; 
+                rightDateTextField = id; 
+                rightMatrix = id; 
+                rightRevisionPopup = id; 
+                rightTagPopup = id; 
+            }; 
+            SUPERCLASS = NSWindowController; 
+        }, 
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {
+                takeObjectValueFrom = id; 
+                takeStringArrayValueFrom = id; 
+                takeStringValueFrom = id; 
+            }; 
+            CLASS = SenOpenPanelController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {delegate = id; target = id; valueField = id; }; 
+            SUPERCLASS = NSObject; 
+        }
+    ); 
+    IBVersion = 1; 
+}

@@ -1,0 +1,129 @@
+<HTML>
+<head>
+<META HTTP-EQUIV="content-type" CONTENT="text/html;charset=Shift_JIS"><title>カスタマイズ</title>
+<META NAME="AppleTitle" CONTENT="ToyViewer ヘルプ"><META NAME="AppleFont" CONTENT="ヒラギノ角ゴ Pro W3,MS Pゴシック,Osaka"><META NAME="AppleSearchResultsFont" CONTENT="ヒラギノ角ゴ Pro W3,MS Pゴシック,Osaka"></head>
+
+<BODY BGCOLOR="#FFFFD0">
+<h3 align=right><i>ToyViewer (Ver.4.10)</i></h3>
+<hr>
+
+<h2>他の形式のファイルを表示するには</h2>
+どんな画像ファイルでも ppm形式(pbm, pgm, ppm, または pnm)へのフィルタがあれば、ToyViewerで表示するように設定できます。ppmについては、
+<a href="http://www.pbmplus.com/">PBMPLUS</a>, 
+<a href="http://sourceforge.net/projects/netpbm/">Netpbm</a> などを参照して下さい。
+<p>
+このためには、以下の形式で "<tt>~</tt>/.toyviewerrc", 
+あるいは "<tt>~</tt>/Library/ToyViewer/rc.ppc" にフィルタの指定を記述しておきます(’<tt>~</tt>’はチルダで、ホームディレクトリを表す)。
+<!-----------------
+ここで、"<i>arch</i>"は i386, あるいは ppc のいずれかのアーキテクチャ名です。フィルタの実行ファイルの格納場所がアーキテクチャごとに異なる、あるいはあるアーキテクチャで動く実行ファイルしかないというような場合、アーキテクチャごとに指定の記述を違ったものにしておくことが可能です。例えば、PowerPCで実行する場合のフィルタ指定はファイル rc.ppc に記述すればよいのです。
+------------------>
+<p>
+<pre>    &lt;ext&gt;      &lt;path&gt;  &lt;args&gt; ... </pre>
+
+ここで &lt;ext&gt; は画像ファイルの拡張子、
+&lt;path&gt; はフィルタプログラムの絶対パス、
+&lt;args&gt; には引数を指定します。引数のどれかは '$' でなければならず、これが読み込みたいファイル名に置き換えられます。&lt;path&gt; の先頭の '<tt>~</tt>' はホームディレクトリに、'@' は ToyViewer.app/Contents/Resources のパスに展開されます。また、行の先頭に '#' を置くとコメントとなります。以下に例を示します。
+<pre>
+jfif  @/djpeg $
+ras   /usr/local/netpbm/bin/rasttopnm $
+sgi   /usr/local/netpbm/bin/sgitopnm $
+g3    /usr/local/netpbm/bin/g3topbm -reversebits $
+qwe   ~/Unix/bin/qwe2ppm $ -
+</pre>
+この方法で指定した変換方法は、ToyViewer.appであらかじめ用意した表示方式に優先します。例えば、gifという拡張子についての指定をファイルに記述しておけば、その指定した方法で変換、表示されます。
+<p>
+以上の方法で表示可能になった画像ファイルをオープンするには、メニューの「ファイル/オープン」から指定するか、Dockに表示されたToyViewer のアイコン上に画像ファイルのアイコンをドラッグ＆ドロップします。
+アイコンをダブルクリックしても、ToyViewerは起動しませんので注意して下さい。
+<p>
+<h3>注意</h3>
+ToyViewer が提供している cjpeg, djpeg は、コメントが読み書きできるように改良されたプログラムです。他のプログラムで置き換えると正常に動作しなくなります。
+<p>
+<h3>例</h3>
+あなたが研究のためにグレイスケールの生データを頻繁に使うと考えましょう。そのデータは 320x200ピクセルでヘッダ情報はなく、各バイトが１ピクセル(範囲は0-255)を表しています。拡張子は "gs" です。ToyViewerを使うと、このようなデータも容易に表示できます。
+<br>
+まず、以下のような実行可能なシェルスクリプトを作成します(ファイル名はgstoppm.sh)。このシンプルなスクリプトは、pgm形式への変換フィルタとして機能します。
+<pre>
+#!/bin/sh
+echo "P5 320 200 255"
+cat $1
+</pre>
+次に、"<tt>~</tt>/Library/ToyViewer/rc.ppc" というファイルを編集して次の行を追加します。
+<pre>
+gs      ~/Unix/bin/gstoppm.sh $
+</pre>
+もし、スクリプトも "<tt>~</tt>/Library/ToyViewer" に置きたいならこうします。
+<pre>
+gs      ~/Library/ToyViewer/gstoppm.sh $
+</pre>
+これで ToyViewer を起動しなおせば、"gs"ファイルをToyViewerで表示できるようになります。
+<p>
+
+
+<h2>画像変換フィルタサービス</h2>
+ToyViewer が <tt>~</tt>/Applications や /Applications などの標準的なパスにインストールされていれば、画像変換フィルタサービスが受けられます。
+<br>
+例えば、TextEditの RTF文書内、OmniGraffleの文書内に bie形式、Sun Raster形式のファイルアイコンをドラッグ＆ドロップすることができます(変換後の形式は tiffです)。
+<p>
+画像ファイルが壊れているなどの理由でサービスが失敗した場合、サービスを要求したアプリケーションにはエラーを示す小さな代用のイメージが返されます。
+<p>
+<h3>フィルタサービスのカスタマイズ</h3>
+注意：以下の記述は OPENSTEP 上の ToyViewer に対するもので、Mac OS X 上では動作しません。どのようにしたらフィルタサービスを追加できるか、現在調査中です。もちろん、ToyViewerの Info.plist に直接手を加えることも可能です。
+<p>
+<blockquote>
+上記の方法で他の画像形式のフィルタプログラムを ToyViewer から使えるように設定した場合、これらの形式の画像もフィルタサービスから利用できるように設定できます。このためには、<tt>~</tt>/Library/Servicesに ToyViewer.services というファイルを作成します。
+<br>
+今、前項の例で追加した拡張子の画像ファイルに対してフィルタサービスが使えるようにするためには、ToyViewer.servicesに以下のように記述します。
+<pre>{
+    NSServices = (
+        { NSFilter = convertToTIFF;
+                NSPortName = ToyViewer;
+                NSSendTypes = (NSTypedFilenamesPboardType:jfif,
+                                        NSTypedFilenamesPboardType:ras,
+                                        NSTypedFilenamesPboardType:sgi,
+                                        NSTypedFilenamesPboardType:g3,
+                                        NSTypedFilenamesPboardType:qwe
+                                );
+                NSReturnTypes = (NSTIFFPboardType);
+                NSTimeout = 30000;
+        }
+        );
+}
+</pre>
+このファイルを作成した後、ToyViewer を起動しなおせば、フィルタサービスが利用できるようになります。
+<br>
+うまくサービスが機能しない場合は、make_services コマンドを Terminal から入力したり、ログインし直したりしてみて下さい。
+<p>
+<h3>例</h3>
+前節の例で、"gs"イメージについてフィルタサービスも利用したいならば、"<tt>~</tt>/Library/Services/ToyViewer.services" を以下のように作成します。
+<pre>{
+    NSServices = (
+        { NSFilter = convertToTIFF;
+                NSPortName = ToyViewer;
+                NSSendTypes = (NSTypedFilenamesPboardType:gs);
+                NSReturnTypes = (NSTIFFPboardType);
+                NSTimeout = 30000;
+        }
+        );
+}
+</pre>
+</blockquote>
+<p>
+
+
+<!-----------------------
+<h2>複数ユーザで同一のカスタマイズを利用するには</h2>
+
+上記の方法は、個人ユーザのカスタマイズ方法です。
+<br>
+ToyViewer.app が /Local/Applications などにあって、複数のユーザで共有している場合、
+新しい画像形式の情報は "ToyViewer.app/Resources/filters" に書き加えて下さい。
+また、フィルタサービスを利用するには、
+"/Local/Library/Services/ToyViewer.services" というファイルに定義を書くとよいでしょう。
+------------------------->
+
+<hr>
+<h3 align=right><a href="index.html">ヘルプ目次へ戻る</a></h3>
+
+</body>
+</HTML>
+

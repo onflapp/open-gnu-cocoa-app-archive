@@ -1,0 +1,12 @@
+{
+    IBClasses = (
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            CLASS = NoInspector; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {messageField = id; window = id; }; 
+            SUPERCLASS = Object; 
+        }
+    ); 
+    IBVersion = 1; 
+}

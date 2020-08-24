@@ -1,0 +1,115 @@
+<HTML>
+<head>
+<META HTTP-EQUIV="content-type" CONTENT="text/html;charset=iso-8859-1">
+<title>Image Formats</title>
+<META NAME="AppleTitle" CONTENT="ToyViewer Help">
+<META NAME="AppleFont" CONTENT="Lucida Grande,Helvetica">
+<META NAME="AppleSearchResultsFont" CONTENT="Lucida Grande,Helvetica">
+</head>
+
+<BODY BGCOLOR="#FFFFD0">
+<h3 align=right><i>ToyViewer (Ver.4.30)</i></h3>
+<hr>
+
+<h2>Image Formats that ToyViewer can Display</h2>
+After setting with the inspector of the Finder,
+image formats following can be opened by double-clicking their icons:
+<blockquote>
+	tiff, pdf, eps, gif, bmp, png, jpg, JPEG2000(jp2, jpc, j2k), 
+	bie(jbig), pcx, pcd, 
+	pnm, ppm, pbm, pgm, xbm, mag, and Sun Raster.
+</blockquote>
+(mag is a popular image format in Japan, especially on old NEC-PCs.)
+<p>
+
+
+<h2>Save in JPG Format</h2>
+JPG can achieve high compression, however, quality of the image is decayed.  In general, high quality prevents good compression, and good compression spoils quality.  The parameter of JPG can be set by the save panel.
+<br>
+JPG is recommended to apply to continuous color or monochrome 8bit images.  Applying to other images, especially B/W images, will bring not only worse quality of images but also larger file size.
+<br>
+You can save images in interlaced(progressive) format.
+In case that an image in this format is displayed on a Web page, its outline is displayed faster even if the speed of the net is slow.  But, compression ratio is slightly worse.
+<p>
+B/W images saved in bie(jbig) format can achieve higher compression ratio.  Quality of images does not spoilt by jbig compression.
+<p>
+
+
+<h2>Format of TIFF Compression</h2>
+When you save an image in tiff, you can select either no compression or LZW compression.  As LZW is a lossless compression, the quality of the image is not spoiled.
+<p>
+On OPENSTEP, we can read/write tiff images which are compressed with JPEG compression.  Mac OS X does not support this format any more.  In this format, we can not save images but also read them.
+<p>
+
+<h2>About JPEG2000 Format</h2>
+In JPEG2000 format, same as JPG, high quality prevents good compression, and good compression spoils quality.  The parameter of JPG can be set by the save panel.
+Besides, in JPEG2000, you can save images without loss of the original data  (lossless compression).
+<br>
+JPEG2000 is recommended to apply to continuous color or monochrome 8bit images.
+In lossless compression, JPEG2000 provides better compression ratio than PNG.  In lossy compression, even if compression ratio is relatively high, artificial noise is inconspicuous comparing with JPG.
+<p>
+Not only jp2 format, which is available on QuickTime or Preview, but also j2k format (jpc format), which is used on the net is available.
+ToyViewer uses JasPer (<a href="http://www.ece.uvic.ca/%7emdadams/jasper/">http://www.ece.uvic.ca/&tilde;mdadams/jasper/</a>) to read/write JPEG2000 images.
+<p>
+
+
+<h2>About EPS Files</h2>
+Current version of Mac OS X (10.1.5) can not display EPS files.  There are APIs in Cocoa environment, but they are not available.
+<p>
+
+<!-----------------------------------------------
+<h2>EPS Files Made by Other Environments</h2>
+Some EPS images, especially made by tools of X-Window, have illegal "%%Page:" comments.  Some EPS images used by Macintosh have unnecessary information at the beginning of and at the tail of the file.
+<br>
+Reading in EPS images, ToyViewer tries to strip off unnecessary information.  So, ToyViewer can display some files which cannot be displayed by Preview.app or other applications.  Once they can be displayed, save them as EPS file again.  The files newly saved would be used also by other applications.
+Note that ToyViewer cannot display every wrong EPS files.
+<p>
+
+
+<h2>Saving as EPS Files</h2>
+If the image saved has EPS format, information in it is reserved.  Otherwise, if it is a bitmap image, EPS file created has only a sequence of pixels.  So, EPS files made from bitmap images are distorted by enlargement or shrinkage.
+<p>
+-------------------------------------------------->
+
+
+<h2>Convert PDF to Bitmap</h2>
+See <a href="Effect.html#rescale">"Resize"</a>.
+<br>
+Menu item "Operation / PDF/EPS->Bitmap" is also available.  But, this function can not resize the size of images.
+<p>
+
+
+<h2>BMP Format (DIB Format) Image Files</h2>
+There are various kind of BMP Format.  Full color format and paletted format look like standard.  However, we also could find so-called 15bits or 16bits BMP format images, and some images are compressed by RLE.  OPENSTEP can display ordinary BMP files, but can not other variations.
+<br>
+ToyViewer can also display 15bits format and compressed images.
+<p>
+
+
+<h2>Color Reduction</h2>
+When an image with more than 256 colors is saved as gif, color reduction should be done.
+<br>
+ToyViewer uses Median Cut Algorithm by Paul Heckbert for color reduction,  which is also used in ppmquant (by Jef Poskanzer).  However, as ToyViewer can select colors effectively, very nice images could be generated.
+<br>
+ToyViewer also presents color reduction by quasi-halftone and dithering methods.  Reduction by "Fixed Palette" uses the palette which is common to Windows and Macintosh.
+<p>
+
+
+<h2>CMYK Color Space</h2>
+In some tiff images, color is represented with CMYK instead of RGB.  ToyViewer can convert CMYK into RGB using "Operation / CMYK->RGB", but it takes a long time with current implementation.
+<p>
+Because representation of CMYK color space depends on real color of ink, converted color may much differ according to the software.
+<p>
+
+
+<h2>Interlaced Image</h2>
+ToyViewer can read and write interlaced (progressive) images in gif, png, or jpg.  Interlaced images are displayed progressively, for example, on WWW clients.  If you do not use your images for such purposes, interlaced format is without merit.  In some cases, size of image data would be increased.
+<br>
+Note that some old browsers could not deal with interlaced jpg format.
+<p>
+
+<hr>
+<h3 align=right><a href="index.html">Return to Help Index</a></h3>
+
+</body>
+</HTML>

@@ -1,0 +1,92 @@
+cvs commands issued on thursday 10-July-2003.
+
+On Jaguar:
+
+cvs -d /Network/Projects co -d SenFoundation SenFoundation_FW
+cvs -d /Network/Projects co -d SenOyster SenOyster_FW
+cvs -d /Network/Projects co -d SenTestingKit SenTestingKit_FW
+cvs -d /Network/Projects co SenPanelsPalette
+cvs -d /Network/Projects/ co -r CVLv27_patches CVL
+cvs -d /Network/Projects/ co -r CVLv27_patches CVLDistributionAlone
+
+First open CVL.pbproj in CVLDistributionAlone and then open the inspector on the CVL target. Here the version string needs to be updated in Basic Information and in Display Information.
+then
+To install CVL use the following command in the Terminal application:
+In CVLDistributionAlone
+
+pbbuild -buildstyle Deployment install
+
+use
+
+xcodebuild -buildstyle Deployment install
+
+on Panther and Tiger:
+
+First build AGRegex and SenFoundation in Embedded Deployment style and then CVL in the Deployment style.
+
+
+Use the Disk Utility app (or on Jaguar use the Disk Copy app) to create an empty 10MB read/write disk image (i.e. CVLv27.7-Panther.dmg) and then in the Finder drag the CVL application into it. Also add Help.rtfd (a copy of CVL.rtfd) and OpenSourceLicense.html and sente.gif and sente.png. Need sente.png for background picture now because a gif will not work on Panther (Do not need the sente.png image for Jaguar). Need sente.gif for the OpenSourceLicense.html.
+
+Select  the dmg folder in finder and then open the "View Options" menu item. You need to be in icon view mode for the View Options to display correctly. Select the Picture background radio button at the bottom. and then select the
+sente.png in the dmg folder. Then hide the sente.png item as follows. Note: hiding the sente.png file seems to make the image not appear as a background image.
+
+To hide the sente.png:
+
+/Developer/Tools/SetFile -a V /Volumes/CVLv27.6-Panther/sente.png
+
+One can also use the XRay application the hide sente.png.
+
+Create a read-only compressed image of CVLv27.7-Panther.dmg using the Disk Utility app (or on Jaguar use the Disk Copy app). Select the read/write disk image and click on the Convert menu item. Then name it and select the compression popup button.
+
+
+Now using RBrowser
+
+Copy the CVLv27.7-Jaugar.dmg and CVLv27.7-Panther.dmg to qfwfq.sente.ch:/Users/ftp/pub/software/CVL.
+
+Relink these files to CVL-Panther.dmg (for Panther) and CVL.dmg (for Jaugar) using the Terminal app.
+
+	ssh root@qfwfq.sente.ch
+	Password: <root password>
+	cd /Users/ftp/pub/software/CVL
+	rm CVL-Panther.dmg
+	ln -s CVL-3.3.4-v55-Panther.dmg CVL-Panther.dmg
+
+Create the file CVL-3.3.4-v55-Panther-sources.dmg and link it to CVL-sources.dmg.
+
+	Use the Disk Utility app to create an empty 40MB read/write disk image (i.e. CVL-3.3.4-v55-Panther-sources.dmg) and then in the Finder drag the CVL source into it. Also add the frameworks AGRegex and SenFoundation and SenPanelsPalette. Add OpenSourceLicense.html and sente.gif. Need sente.gif for the OpenSourceLicense.html. At some point need to add an updated HowToBuildCVL.txt file. Create a read-only compressed image of CVL-3.3.4-v55-Panther-sources.dmg using the Disk Utility app. Select the read/write disk image and click on the Convert menu item. Then name it and select the compression popup button. Now using RBrowser copy the CVL-3.3.4-v55-Panther-sources.dmg to qfwfq.sente.ch:/Users/ftp/pub/software/CVL.
+
+	cd /Users/ftp/pub/software/CVL
+	rm CVL-sources.dmg
+	ln -s CVL-3.3.4-v55-Panther-sources.dmg CVL-sources.dmg
+
+!!! Note: Not doing the tgz file as of June 2005--William!!!
+
+Create the file CVL-3.3.4-v55-Panther-sources.tgz and link it to CVL-sources.tgz.
+
+	Create a new directory named CVL-3.3.4-v55-Panther-sources and then in the Finder drag the CVL source into it. Also add the frameworks AGRegex and SenFoundation and SenPanelsPalette. Add OpenSourceLicense.html and sente.gif. Need sente.gif for the OpenSourceLicense.html. At some point need to add an updated HowToBuildCVL.txt file.
+	cd to parent of CVL-3.3.4-v55-Panther-sources
+	cd /Users/william/ProjectsForPantherXcode/ReadWriteDiskImages
+	gnutar -zcf CVL-3.3.4-v55-Panther-sources.tgz CVL-3.3.4-v55-Panther-sources
+
+Using RBrowser copy  CVL-3.3.4-v55-Panther-sources.tgz to /Users/ftp/pub/software/CVL on qfwfq.sente.ch
+
+	ssh root@qfwfq.sente.ch
+	Password: <root password>
+	cd /Users/ftp/pub/software/CVL
+	rm CVL-sources.tgz
+	ln -s CVL-3.3.4-v55-Panther-sources.tgz CVL-sources.tgz
+
+Update the following files (do not replace them since the paths to the images are different):
+	qfwfq.sente.ch:/Library/WebServer/www.sente.ch/Documents/software/cvl/ReleaseNotes.html
+
+	qfwfq.sente.ch:/Library/WebServer/www.sente.ch/Documents/software/cvl/index.html
+
+	qfwfq.sente.ch:/Library/WebServer/www.sente.ch/Documents/software/cvl/new_versions.plist
+
+To update using RBrowser; select the file and then right click on it an then select the menu item "Open in Application" Then double click on the TextEdit app in the inspector window.
+
+To help with the release notes run the command inside the CVL source folder:
+
+/usr/bin/cvs -d :pserver:william@dub:/Volumes/dupondt/Developer/Repositories/CVSWrapRepository log -N -d ">2004-01-12"
+
+to generate a change log file.

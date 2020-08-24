@@ -1,0 +1,28 @@
+{
+    IBClasses = (
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {CLASS = ResponderText; LANGUAGE = ObjC; SUPERCLASS = NSCStringText; }, 
+        {
+            ACTIONS = {
+                findNext = id; 
+                findNextAndOrderFindPanelOut = id; 
+                findPrevious = id; 
+                replace = id; 
+                replaceAll = id; 
+                replaceAndFind = id; 
+            }; 
+            CLASS = TextFinder; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                findNextButton = id; 
+                findTextField = id; 
+                ignoreCaseButton = id; 
+                replaceAllScopeMatrix = id; 
+                replaceTextField = id; 
+                statusField = id; 
+            }; 
+            SUPERCLASS = NSObject; 
+        }
+    ); 
+    IBVersion = 1; 
+}

@@ -1,0 +1,13 @@
+{
+    IBClasses = (
+        {
+            ACTIONS = {doubleSelect = id; miniaturize = id; select = id; show = id; }; 
+            CLASS = BrowserController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {browser = id; }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }
+    ); 
+    IBVersion = 1; 
+}

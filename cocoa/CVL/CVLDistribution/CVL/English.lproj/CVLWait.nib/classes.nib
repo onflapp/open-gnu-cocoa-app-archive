@@ -1,0 +1,18 @@
+{
+    IBClasses = (
+        {
+            ACTIONS = {cancelWaiting = id; }; 
+            CLASS = CVLWaitController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                cancelButton = NSButton; 
+                messageTextField = NSTextField; 
+                progressIndicator = NSProgressIndicator; 
+                waitPanel = NSPanel; 
+            }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }
+    ); 
+    IBVersion = 1; 
+}

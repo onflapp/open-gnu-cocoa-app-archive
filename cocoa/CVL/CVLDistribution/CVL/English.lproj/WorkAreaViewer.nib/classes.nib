@@ -1,0 +1,41 @@
+{
+    IBClasses = (
+        {
+            ACTIONS = {
+                setShowConflicts = id; 
+                setShowIgnored = id; 
+                setShowModified = id; 
+                setShowNeedsMerge = id; 
+                setShowNeedsUpdate = id; 
+                setShowNoStatus = id; 
+                setShowNotInCVS = id; 
+                setShowUnknown = id; 
+                setShowUpToDate = id; 
+            }; 
+            CLASS = DirectoryContentsFilterProvider; 
+            LANGUAGE = ObjC; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            ACTIONS = {showProgressPanel = id; }; 
+            CLASS = FirstResponder; 
+            LANGUAGE = ObjC; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            ACTIONS = {filterPreselectionPopped = id; }; 
+            CLASS = WorkAreaViewer; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                filterButtonsMatrix = id; 
+                filterPopup = id; 
+                filterProvider = id; 
+                processesButton = id; 
+                viewHolder = id; 
+                window = id; 
+            }; 
+            SUPERCLASS = NSObject; 
+        }
+    ); 
+    IBVersion = 1; 
+}

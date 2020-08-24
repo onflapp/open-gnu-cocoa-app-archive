@@ -1,0 +1,46 @@
+{
+    IBClasses = (
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {
+                changeMargin = id; 
+                changeRecentFileNumber = id; 
+                changeValue = id; 
+                changeWell = id; 
+                makeKeyAndOrderFront = id; 
+                setPosition = id; 
+                showPositionPanel = id; 
+            }; 
+            CLASS = PrefControl; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                adIgnoreSW = id; 
+                adIntSlider = id; 
+                fscrWell = id; 
+                marginSWs = id; 
+                marginWidth = id; 
+                origSW = id; 
+                panel = id; 
+                pcdBright = id; 
+                pcdSize = id; 
+                positionPanel = id; 
+                positionSW = id; 
+                recentFNumTX = id; 
+                timedAltSW = id; 
+                transSW = id; 
+                unixExpertSW = id; 
+                updateSvcSW = id; 
+                winIntSlider = id; 
+            }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            ACTIONS = {takeFloatValueFrom = id; }; 
+            CLASS = SliderAndTextCtr; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {slider = id; text = id; }; 
+            SUPERCLASS = NSObject; 
+        }
+    ); 
+    IBVersion = 1; 
+}

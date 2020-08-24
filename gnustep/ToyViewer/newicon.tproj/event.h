@@ -1,0 +1,1 @@
+OSErr updateFinderIcon(FSSpec *changedContainer);

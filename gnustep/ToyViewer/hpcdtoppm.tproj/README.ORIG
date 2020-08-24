@@ -1,0 +1,121 @@
+
+This is Version 0.6 of hpcdtoppm, Hadmut's pcd to ppm converter.
+It has this name to be distinguishable in case someone
+else is producing a program also called pcdtoppm.
+
+Read the README.TOO and edit the config.h and the Makefile !
+
+This program converts Photo-CD-Images to the ppm-Format of
+pbmplus. You can compile the program in two ways:
+
+1. Use its own ppm-writing-routines. In this case
+   you don't need ppm-includes or libraries. You
+   have to define macro 'OWN_WRITE' in the source or
+   by compiler-option. I am not sure, whether the
+   format of the ppm-header is the same on non-unix
+   machines. If you get problems with line-endings
+   (things like CR, LF, CR/LF), modify the macro
+   PPM_Header.
+
+2. You can use the pbmplus-routines. In this case
+   you need some files from the pbmplus package to compile:
+
+   ppm.h pgm.h pbm.h pbmplus.h libppm.a libpgm.a libpbm.a
+
+
+IMPORTANT: Some older versions of the gcc have problems with
+optimization. They produce buggy code. This code will not
+die with 'segmentation fault' or something like that, it 
+just produces damaged images. 
+
+I did not have detailed information of the file-format and
+most of my information I got by staring at the hex-dumps
+of an image file. So I am not absolutly sure, whether it
+works on all Photo-CDs, because there are some bytes in
+the header which I don't understand. But it works on
+my Photo-CD.
+
+Note that you will get a 24 bit image. You can view these
+files with xv, but if you have an 8-bit-screen you will
+sometimes have some color-defects (if you have an 1-bit-screen
+you will often have a lot of color-defects :-). 
+It will also take some time to show with xv.
+
+You can produce nice overview prints if you get the icontact
+program of Mark B. Hanson and put something like
+
+decode	pcd	hpcdtoppm -1 -a
+
+in your ~/.icrc 
+
+or by use of the pcdindex script of Pieter S. van der
+Meulen in this distribution.
+
+
+If you compile the program on a machine other than
+SPARC please send me a short email which machine
+you are using, whether you had problems or which
+changes you have made.
+
+If you port the program to any machine, please tell me,
+what you did and where to get the program. Within the
+last weeks I got a lot of mail asking for the special
+Amiga/NeXT/SGI/... version. Read the Special.* files.
+
+
+
+Thanks to
+
+- James Pearson (jcpearso@ps.ucl.ac.uk) for giving debugging hints for 
+  the 64Base code, for sending a 64Base image and the code to find the
+  64Base files from the image file path.
+
+- R. P. Channing ["Rick"] Rodgers (rodgers@nlm.nih.gov) for improving the
+  man page.
+
+
+- Some people sending code for TIFF and GIF writing code. Sorry, I didn't
+  have the time to implant the code yet. I don't know whether many people want
+  to have such extensions, please send mail if so.
+
+- Adolf Mathias (mathias@ira.uka.de) for writing some of the
+  postscript drivers.
+
+- Pieter S. van der Meulen for the contact sheet script.
+
+- Jeff for finding out how to detect the orientation of the 
+  Overview thumbnails [ Hi Jeff, how are you? :-) ]
+
+- A lot of people for sending mail about
+  compilation on MS-DOS and OS/2 and many other machines.
+
+- lots and lots of people for sending me their improvements of the code.
+  Sorry, but I can not read and analyze them all. I do not have so
+  much time for the decoder, its my hobby, not my job. Often I get
+  mail with a complete source and "Hi Hadmut, I have improved your
+  code. It is now faster/smaller/better/something_else." But I don't
+  know, *what* is changed. A simple diff doesn't work, they all were
+  reformatting my source completely and I do not have the time to
+  read all sources to find the real changes. There are a lot
+  of real good ideas, but *please* tell me, where is the beef.
+
+- lots of people sending me just a formatted version of my code.
+  Thanks to them all, and yes, I have indent(1). I prefer
+  this way of formatting C-source.
+
+
+
+
+Hadmut Danisch  (danisch@ira.uka.de , will change in future)
+E.I.S.S.  (European Institute for System Security)
+Universitaet Karlsruhe
+Am Fasanengarten 5
+
+D-76128 Karlsruhe  
+
+Germany
+
+FAX: +49 721 696893
+Tel./FAX privat: +49 721 607306  (will change in future)
+
+

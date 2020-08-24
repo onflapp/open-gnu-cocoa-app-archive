@@ -1,0 +1,32 @@
+IMPORTANT
+=========
+Only the build on 10.4 using Xcode 2.2 is supported and up-to-date!
+First, open project AGRegex/AGRegex.xcodeproj and compile it.
+Then, open project CVLDistribution/SenFoundation/SenFoundation.xcodeproj and compile it.
+Finally, open project CVLDistribution/CVL/CVL.xcodeproj and compile it.
+
+
+Building CVL on MacOS X Server/YellowBox NT
+===========================================
+
+CVL depends on three SenFrameworks, and must be distributed as a stand-alone application which contains frameworks in the app wrapper.
+CVS modules: Cocoa/SenFoundation, Cocoa/OCUnit/SenTestingKit, Cocoa/Oyster/SenOyster, Cocoa/CVLLauncher, CVL
+
+For distribution:
+-----------------
+Default install path (DSTROOT) is $HOME. If you want to modify it, add DSTROOT=/my/root/path in Build Options/Arguments.
+First, remove SenFoundation.framework, SenTestingKit.framework and SenOyster.framework from ~/Library/Frameworks, $(NEXT_ROOT)/Local/Library/Frameworks, /Network/Library/Frameworks (on NT, do not forget ~/Library/Executables, $(NEXT_ROOT)/Local/Library/Executables; also delete perl.dll and cw3230mt.dll)
+Perform a build <install> on SenFoundation.framework, then SenTestingKit.framework, and finally SenOyster.framework; default install will put frameworks in ~/Library/Frameworks (on NT, also in ~/Library/Executables)
+Perform a build <install> on CVL; default install will put application in ~/Applications
+Perform a build <install> on CVLLauncher; it will create in ~/Applications/CVLLauncher the final CVL.app containing all frameworks. It copies frameworks from ~/Library/Frameworks (on NT, also ~/Library/Executables), application from ~/Applications, and put all this stuff in a newly created wrapper, ~/Applications/CVLLauncher/CVL.app.
+
+For development:
+----------------
+For development, you don't need to create a full wrapper; if frameworks are installed in ~/Library/Frameworks, you don't need to compile the CVLLauncher; simply compiling CVL (in app, debug, install, etc.) is enough.
+
+
+Building CVL on MacOS X
+=======================
+
+On MacOS X, project has been ported to support the new ProjectBuilder, PBX. Frameworks are added to CVL.app wrapper: we no longer need CVLLauncher. Note that CVL uses *-macos.nib files: other nib files are used only with MacOS X server and YellowBox.
+CVLAvatar has not yet been ported to the new PBX, and PBFilenamePasteboardFix is no longer needed (BTW, it does not work on MacOS X Server/YellowBox with WebObjects 4.5).

@@ -1,0 +1,611 @@
+<HTML>
+
+<HEAD>
+<TITLE>Sen:te - CVL Release Notes</TITLE>
+</HEAD>
+
+<BODY>
+<TABLE BORDER=0 WIDTH = 100%>
+	<TR>
+		<TD COLSPAN=1 ROWSPAN=3><IMG SRC="sente.gif" ALT="Sen:te"></TD>
+		<TD> </TD>
+	</TR>
+	<TR>
+		<TD ALIGN=RIGHT VALIGN=BOTTOM><H1><IMG SRC="cvl.gif"><BR><A HREF="http://www.sente.ch/software/cvl/">CVL</A> Release Notes</H1><BR></TD>
+	</TR>
+	<TR>
+		<TD HEIGHT=24> </TD>
+	</TR>
+</TABLE>
+<HR NOSHADE SIZE=1>
+
+
+<H2><A NAME="Release Notes">Release Notes</A></H2>
+
+<P>
+<H3><IMG SRC="new.gif" ALT="NEW!">in 
+  3.4.14 (b90) (May 23th, 2006)</H3>
+<H4> New Features </H4>
+<UL>
+  <LI>Universal binary
+</UL>
+
+<P>
+<H3><IMG SRC="new.gif" ALT="NEW!">in 
+  3.4.13 (b89) (July 26th, 2005)</H3>
+<H4> New Features </H4>
+<UL>
+  <LI>None
+</UL>
+<H4> Corrections </H4>
+<UL>
+  <LI>Fixed a problem that CVL was not parsing the .cvspass file correctly when encountering the new cvs format where the entries start with a slash. These entries had a port number in them and that was not being handled correctly.
+  <LI>There was code that was checking for a repository access method of remote which is no longer being used. Removed this code.
+  <LI>Other minor corrections.
+</UL>
+<H4> Changes </H4>
+<UL>
+  <LI>Increased the connection timeout to remote repositories from 30 seconds to 120 seconds. Now allows the user to continue trying to connect after each 120 second attempt.
+  <LI>Added the present version info to the "Check for Update" panel.
+</UL>
+
+<P>
+<H3>New in 3.4.12 (b86) (June 27th, 2005)</H3>
+<H4> New Feature </H4>
+<UL>
+  <LI>None
+</UL>
+<H4> Corrections </H4>
+<UL>
+  <LI>Refactored the "Add Repository" panel. The old nib had ballooned to 2.2MB in size. This nib was replaced by a nib created from scratch. Also added code so that the buttons were enabled and disabled as soon as the user starts typing. Also the name Rendezvous was replaced by Bonjour. Also fixed the Bonjour and the Other tabs so that work better with Bonjour and SSH.
+</UL>
+
+<P>
+<H3>New in 3.4.11 (b85) (June 20th, 2005)</H3>
+<H4> New Feature </H4>
+<UL>
+  <LI>CVL can now be run from multiple login sessions. The restriction of one instance of the CVL application per login user remains.
+  <LI>Re-designed the "Import Panel" to be easier to use.
+  <LI>Added the automatic addition of an entry to the modules file when importing into CVS.
+  <LI>Added "Unknown" to the set of Interesting Files to view in the CVL browser.
+  <LI>When using the CVS Wrappers feature, CVL will now also include a link to ~/.cvsignore in addition to links to ~/.cvsrc and ~/.cvspass.
+</UL>
+<H4> Corrections </H4>
+<UL>
+  <LI>Added code to better handle cvswrapper errors.
+  <LI>The add panel for repositories was broken in a number of ways. This has been fixed.
+  <LI>Fixed a bug where the CVSROOT files "module", "cvswrapper" and "cvsignore" files were not being created when the pserver did not return the CVSROOT directory.
+  <LI>Fixed a bug where we were using a nil key to remove dictionary entries.
+  <LI>Other small bug fixes.
+</UL>
+
+
+<P>
+<H3>New in 3.4.10 (b77) (May 24th, 2005)</H3>
+<H4> New Feature </H4>
+<UL>
+  <LI>Added support for 'port' information in pserver mode
+</UL>
+<H4> Corrections </H4>
+<UL>
+  <LI>Fixed problem with ~/.cvsrc which was not used in some cases
+</UL>
+
+<P>
+<H3>New in 3.4.9 (b76) (May 4th, 2005)</H3>
+<H4> Corrections </H4>
+<UL>
+  <LI>Fixed bug introduced in previous version which was eating commit messages lines following empty lines
+  <LI>No longer restricts window resizing
+  <LI>Removed debug log
+</UL>
+
+<P>
+<H3>New in 3.4.8 (b75) (Apr 29th, 2005)</H3>
+<H4>New features</H4>
+<UL>
+  <LI> Added "Copy Tag" contextual menu item in Tag Inspector.
+  <LI> Added cvs executable choice on a per-repository basis.
+  <LI> Added Tiger compatibility.
+</UL>
+<p></P>
+<H4> Corrections </H4>
+<UL>
+  <LI>No longer removes empty lines in commit messages (except leading ones).
+  <LI>Fixed compatibility problem with pserver password in cvs >= 1.11.x
+  <LI>Fixed empty fields in "Distant repository login" panel
+  <LI>Fixed bug with inspectors not loading
+</UL>
+
+<P>
+<H3>New in 3.4.7 (b72) (Dec 17th, 2004)</H3>
+<H4>New features</H4>
+<UL>
+  <LI> None.
+</UL>
+<p></P>
+<H4> Corrections </H4>
+<UL>
+  <LI>Fixed a bug where cvs wrapper files were broken that came thru pipes from pservers. Using cvs checkout into temporary directories now.
+</UL>
+
+<P>
+<H3> New in 3.4.6 (b71) (Dec 10th, 2004)/H3>
+<H4>New features</H4>
+<UL>
+  <LI> Added a new easier way of entering date and time when requesting a checkout based on date or when asking for a file restore, a file replacement or a file difference when based on a date.
+  <LI> Added a "Check for Updates" feature.
+  <LI>The CVS compression level is now specified per repository instead of one value for all repositories. 
+  <LI>Changed the behavior of the status of folders to show a star (i.e. not in CVS) status when the folder is already added to the repositiory and has new files in it or any of its sub-folders. The old behavior showed these folders with a plus (i.e. modified). This behavior was the one CVL had prior to version 3.0.1v31.
+  <LI>The CVL browser viewer can now perform a right-size operation; that is, double clicking the column resize icon will size a column to the smallest width that contains all the content without clipping or truncating. Double clicking again will restore the column to its previous size.
+  <LI>Refactored the Add Repository Panel. Added more validation checks.
+  <LI>Added a new menu item "Update Locally" which will perform a non-recursive update on a folder.
+  <LI>Added a new feature that allows the CVS Wrapper files to be specified by repository. This is a user preference. 
+</UL>
+<p></P>
+<H4> Corrections </H4>
+<UL>
+  <LI>Fixed the editing of textfields in the preferences panel so that the user no longer needs to click out of a textfield to end the editing before a save.
+  <LI>Fixed a bug. When doing a replace or restore from the log inspector the correct name sometimes does not show up in the alert panel after selecting one of these commands.
+  <LI>In cvs 1.12.9, the date format in 'cvs log' output has changed from 'yyyy/mm/dd' to 'yyyy-mm-dd'. CVL will now handle this. 
+  <LI>Fixed an out-of-bounds exception which was occurring when displaying the environment table view while changing from a repository with more environment variables to one with less.
+</UL>
+Thanks to M. Uli Kusterer for providing the code for the "Check for Updates" feature. He has this and other free code at <A HREF="http://www.zathras.de/angelweb/sourcecode.htm">http://www.zathras.de/angelweb/sourcecode.htm</A>.
+<BR>
+Also thanks to St&eacute;phane Sudre for providing the code for the entering of dates and times. He has this and other code at <A HREF="http://s.sudre.free.fr/Software/DevPotPourri.html">http://s.sudre.free.fr/Software/DevPotPourri.html</A>.
+<P>
+<H3> New in 3.4.3 (v55) (Oct 4th, 2004)</H3>
+<H4>New features</H4>
+<UL>
+  <LI>In the Inspectors the drag and drop of the icons was not working. Fixed.
+  <LI>Removed the dynamic building of Services related to importing files into CVS Repostories. This did not work well. Will instead provide a way to select the repostory in the import panel.
+  <LI>In the Log Inspector, the Mod column displays null instead of an empty string. Fixed.
+  <LI>Sometimes CVL was committing the whole workarea instead of a single file. A check has been added to prevent this.
+  <LI>Added <B>Release Notes</B> menu item to the <B>Help</B> menu.
+  <LI>Added <B>License</B> menu item to the <B>Help</B> menu.
+  <LI>The CVL browser now uses the new column resizing feature. Removed the old column resizing preferences.
+  <LI>CVL now uses the color blue when refering to files that are branch tagged.
+  <LI>CVL can now restore individual files to any previous version.
+  <LI>CVL can now remove any sticky tags or dates from individual files.
+  <LI>CVL menu items are a little smarter now about disabling themselves.
+</UL>
+<p></P>
+<H4> Corrections </H4>
+<UL>
+  <LI>The "Cancel" button was not working in the workarea update request confirmation sheet. It would update anyway. Fixed. 
+</UL>
+
+<P>
+<H3> New in 3.3.4 (v47) (May 4th, 2004)</H3>
+<H4>New features</H4>
+<UL>
+  <LI>Added a feature so that CVL will detect and offer to fix empty directories that are tagged with a branch tag when all the other non-empty directories are tagged with a non-branch tag.
+  <LI>Re-enabled the <strong>Restore Version...</strong> workarea menu item.
+  <LI>In the Restore Version panel the release tags are now fetched from the repository and presented to the user via of a pulldown button.
+  <LI>An alert panel is displayed to the user now if fetching the release tags takes more than one-half of a second.
+  <LI>Added an alert message when the user asks for a workarea commit.
+  <LI>Replaced the regular expression framework SenOyster that was using perl with the AGRegex framework that uses the pcre-4.3 library written in C.
+  <LI>Added a "Commit History" feature to CVL. This allows the user to select prior commit messages from a popup button in the commit panel.
+  <LI>Took the filters that used to be on the left of the CVL browser and made them into a drawer.
+</UL>
+<p></P>
+<H4> Corrections </H4>
+<UL>
+  <LI>When committing while using templates an extra commit command was being issued, fixed.
+  <LI>When performing version restores on the whole workarea, nib files are deleted correctly and empty directories are removed.
+  <LI>When the user removes a directory and its contents from a workarea then CVL will correctly not show the directory in its browser.
+  <LI>Added a check to see if a file exists before trying to open it via of the workspace. Puts up an user alert it it does not exists.
+  <LI>Fixed the bug where the CVL browser does not refresh itself correctly after committing a file that was marked for removal.
+  <LI>Enabled the <strong>Delete and Update...</strong> menu item under more liberal conditions. In particular the user can now run this action on files that have been marked for removal.
+  <LI>Enabled the menu item named <strong>Reinstate File(s) Marked For Removal...</strong> under more liberal conditions. The user can now use this action on a mix of files.
+  <LI>Disabled the <strong>Replace WorkArea File(s) with Version...</strong> menu item when there is a file that has been marked for removal.
+  <LI>Fixed a bug where the browser viewer did not remember its state in some situations.  Such as location and size. Expanded this feature to remember state even when not displaying the viewer. 
+  <LI>Fixed a bug where the CVL file browser was not updated after deleting a file that was not also in the CVS repository.
+</UL>
+
+<P>
+<H3> New in 3.0.2 (v33) (Jan 12th, 2004)</H3>
+<H4>New features</H4>
+<UL>
+  <LI>Added a <strong>Delete...</strong> menu item
+</UL>
+<p></P>
+<H4> Corrections </H4>
+<UL>
+  <LI>Fixed a bug where many files or folders are marked as inconsistent
+  <LI>Rendezvous CVS pserver services show up now in the Repository panel
+</UL>
+<P>
+<H3>New in 3.0.1 (v31) (Dec 24th, 2003)</H3>
+</P>
+<H4> Corrections </H4>
+<UL>
+<LI>CVL now displays the Help file
+<LI>Checking for CVS consistency has been turned off until it can be fixed
+<LI>CVS compression has been set to default to zero instead of one in the preferences
+</UL>
+<P><H3>New in 3.0 (v30) (Dec 17th, 2003)</H3>
+</P>
+<H4> Corrections </H4>
+<UL>
+<LI>Corrected a bug when adding a pserver repository
+<LI>Corrected a bug in Modules window when the user selects no modules
+<LI>Corrected a bug when CVL encountered files that had been deleted
+<LI>Corrected a bug where file names were changing to italics when on a branch
+<LI>Corrected a bug bug where the item "Interesting files" was not enabled
+<LI>Corrected a bug where files in sub-folders could not be replaced, opened or saved
+<LI>The columns in the tag and log inspectors now remember their sizes
+<LI>Inspectors display characters other than the ASCII characters correctly
+<LI>Many other bugs have been corrected.
+</UL>
+<H4>New features</H4>
+<UL>
+<LI>Added the menu item "Reinstate Removed Files..."
+<LI>Removed the menu item "Restore Version..."
+<LI>Added the menu item "Replace WorkArea File(s) with Version"
+<LI>Added the menu item "Open Version(s) in Temporary Directory"
+<LI>Added the menu item "Save Version as..."
+<LI>Added the same contextual menus to the Log Inspector
+<LI>Re-organized the Preferences Panel
+<LI>Added validation checks in user inputs to the Preferences Panel
+<LI>Renamed some of the submenu items in the File menu to better indicate their function
+<LI>Added enabling and disabling of submenu items in the File menu
+<LI>Changed the behavior of the status of folders to show a plus when new files are added
+<LI>Added a Default WorkArea Path to the preferences
+<LI>Added a preference to allow the displaying of CVS errors
+<LI>Added more checking of user inputs in the  repository checkout panel
+<LI>Made CVL a native Xcode project
+<LI>Added a lot more error and warning messages
+<LI>Added CVS watchers and editors
+<LI>Added a user default for the logging of commands in the Console window.
+<LI>Added a new feature called "Custom files" In the the "View files with status"
+</UL>
+<P><H3>New in v27.6 (Jul 31st, 2003)</H3></P>
+<H4> Corrections </H4>
+<UL>
+<LI>Corrected import operation
+<Li>Corrected multiple-launch problem with FileMerge
+<LI>Corrected persistent FileMerge task problem
+<LI>Corrected bug when retrieving file status
+<LI>Corrected bug when restoring wrappers
+</UL>
+<H4>New features</H4>
+<UL>
+<LI>Added support for Panther (MacOS X 10.3 beta)
+<LI>Console: can now display full cvs requests
+<LI>Tag/Log inspectors: added sorting
+<LI>Finder is now notified when files/directories have changed
+<LI>Added menu Reveal in Finder for files and work area
+<LI>Added read-only checkouts
+<LI>Now strict on tag format
+<LI>You can now push the Enter key to perform the commit in the commit panel
+<LI>Added possibility to get alerted after a time-consuming operation finished
+<LI>Added support for Rendezvous cvs pserver (<A HREF="http://supertart.com/software/CVSServerSetup/">http://supertart.com/software/CVSServerSetup/</A>)
+<LI>Revved 'restore version' and 'checkout' panels
+</UL>
+<P><H3>New in v27.5 (Mar 25th, 2003)</H3></P>
+<I>This is an intermediate release for MacOS X 10.2 only</I>
+<H4> Corrections </H4>
+<UL>
+<LI>Corrected crasher when comparing differences with ancestor (file with conflicts) 
+<LI>Corrected cvswrappers parsing 
+<LI>Corrected alert messages in import 
+<LI>Corrected bug in import 
+</UL>
+<P><H3>New in v27 (Jul 5th, 2002)</H3></P>
+<H4>Known bugs</H4>
+<UL>
+<LI> (Windows version) Services don't work if CVL is not running.
+<LI> Open Differences does not work for conflicts obtained when merging across branches.
+<LI> (Windows version) Restoring a version of a wrapper directory does not work. Restored file is in fact a .gtar.gz file. Workaround: unarchive it before using it.
+<LI> (Windows version) A user recently reported that if you're using Windows NT 4 SP4 you may encounter severe slowness using cvs, hence CVL; cvs reports "connection timeout" errors. This problem is due to Service Pack 4. You should try to update to SP5 or later if you have this problem.
+<LI> (WebObjects 4.5 only) ProjectBuilder crashes if PBFilenamePasteboardFix bundle is loaded.
+<LI> (Windows and MacOS X Server Rhapsody only) CVL provides a <B>Select in CVL</B> service to any application capable of selecting files. Unfortunately, ProjectBuilder does not provide correct information for this service to work. The PBFilenamePasteboardFix ProjectBuilder bundle, available as open source, fixes this problem (only for WebObjects 4.0).
+<LI> Inspector/Comparator still displays selection when Console or Repository List window is active
+<LI> File retrieval panel: tag list is displayed only if tag inspector is displayed 
+<LI> SpellChecker does not work for commit, due to modal dialog 
+</UL>
+<H4>New features</H4>
+<UL>
+<LI> Added new resizing behavior for browser: now user can choose a constant column width, or constant column number 
+<LI> Files which have a sticky tag or date are now displayed in italic in the browser 
+<LI> Added date formatters for Comparator and file retrieval/checkout by date 
+<LI> Console: added splitview and auto-popup mechanism 
+<LI> Checkout: user can now choose output directory name 
+<LI> Now checks the existence of file ~/.cvswrappers in case of pserver use and warns user when it's missing 
+<LI> (MacOS X) added menu "Open Recent" 
+<LI> Added menu "File/Add to Work Area as Binary" 
+<LI> File retrieval panel: now displays tag list (does not work in all cases) 
+<LI> Logs/tags Inspectors: user can now launch FileMerge directly by double-clicking a revision/tag to compare it with the current revision, or user can select two revisions/tags and compare them by clicking on the delta button (upperright corner of the tableView) 
+<LI> Added Content Inspector 
+<LI> Added text finding capability for Console and modules list 
+<LI> Added SpellChecker support 
+<LI> (MacOS X) CVL files are now stored in ~/Library/Application Support/CVL instead of ~/Library/CVL 
+<LI> Logs Inspector: added Mod column to display how many lines changed from previous revision
+<LI> Differences Inspector: added output format choice (+context) 
+<LI> (MacOS X) now uses modal sheets in some dialogs 
+<LI> Inspector's icon can now be double-clicked to open inspected file(s)
+</UL>
+<H4>Corrections</H4>
+<UL>
+<LI> Inspector/Comparator is now updated when choosing menu "Select All" 
+<LI> Initial size of the browser is now correct
+<LI> Inspector/Comparator is now updated correctly when application becomes active 
+<LI> Import: now checks that both release and vendor tags have been set 
+<LI> Environment variable HOME is now set when missing (that was a problem on Windows)
+<LI> Home directory is now found out correctly on Windows
+<LI> All .cvswrappers and .cvsignore files are now read 
+<LI> Faster startup/refresh (40% speed gain) 
+<LI> Wrappers can now be retrieved by revision/tag/date, or diff'ed with FileMerge, as any other files (not implemented on Windows) 
+<LI> diff now works with files containing non-ASCII characters 
+<LI> (MacOS X) resized UI elements to better fit in windows
+<LI> (MacOS X) corrected problems with some NFS configurations 
+<LI> Corrected window position restoration 
+<LI> Updated documentation and screenshots 
+<LI> (Windows) documentation is now visible within CVL application 
+<LI> Corrected bug with pattern matching of ignored files and wrappers. 
+</UL>
+
+<P><H3>New in v23 (October 5th, 2001)</H3></P>
+<H4>Corrections</H4>
+<UL>
+<LI> Corrected crasher on 10.1. Many thanks to Chuck!
+<LI> (MacOS X only) Definitively corrected problem with some $HOME directory configurations on NFS servers.
+<LI> (There was no need to make a new release on MacOS X Server 1.x and Windows; corrections apply only to MacOS X 10.1)
+</UL>
+
+<P><H3>New in v22.1 (May 4th, 2001)</H3></P>
+<H4>Correction</H4>
+<UL>
+<LI> (MacOS X only) Corrected problem with some $HOME directory configurations (CVL could not create directories if $HOME was NFS-mounted or was on another disk; technically speaking, we only #defined CVL_NFS_BUG in CVL project; no source change).
+</UL>
+
+<P><H3>New in v22 (April 30th, 2001)</H3></P>
+<H4>Known bugs</H4>
+<UL>
+<LI> (Windows version) Services don't work if CVL is not running.
+<LI> Open Differences does not work for conflicts obtained when merging across branches.
+<LI> Restoring a version of a wrapper directory does not work. Restored file is in fact a .gtar.gz file. Workaround: unarchive it before using it.
+<LI> (Windows version) A user recently reported that if you're using Windows NT 4 SP4 you may encounter severe slowness using cvs, hence CVL; cvs reports "connection timeout" errors. This problem is due to Service Pack 4. You should try to update to SP5 or later if you have this problem.
+<LI> (WebObjects 4.5 only) ProjectBuilder crashes if PBFilenamePasteboardFix bundle is loaded.
+<LI> (MacOS X only) Sometimes window positions are not restored.
+</UL>
+<H4>New features</H4>
+<UL>
+<LI> Added support for MacOS X.
+<LI> Added support for cvs commit templates (use is optional).
+<LI> Option: CVL no longer open browsers at startup (thank you to Tom Hageman).
+<LI> Commit and Preferences panel positions are saved (thank you to Tom Hageman).
+</UL>
+<H4>Corrections</H4>
+<UL>
+<LI> Comparator no longer tries to update it if it is not visible.
+<LI> Corrected bugs when retrieving lines from strings (thank you to Moritz Thomas).
+<LI> A bit less swapping on NT (thank you to Tom Hageman).
+</UL>
+<P> Thanks to Tom Hageman, Moritz Thomas, Greg Hulands, Jean-Fran&ccedil;ois Veillette and Steve Loranz for their contributions.
+
+
+<P><H3>New in v20 DP4 (June 16th, 2000)</H3></P>
+<H4>Known bugs</H4>
+<UL>
+<LI> (MacOS X DP4 only) Nibs have not be reworked. Some images/icons are not displayed.
+<LI> (Windows version) Services don't work if CVL is not running.
+<LI> Open Differences does not work for conflicts obtained when merging across branches.
+<LI> Restoring a version of a wrapper directory does not work. Restored file is in fact a .gtar.gz file. Workaround: unarchive it before using it.
+<LI> (Windows version) A user recently reported that if you're using Windows NT 4 SP4 you may encounter severe slowness using cvs, hence CVL; cvs reports "connection timeout" errors. This problem is due to Service Pack 4. You should try to update to SP5 or later if you have this problem.
+<LI> (WebObjects 4.5 only) ProjectBuilder crashes if CVLAvatar or PBFilenamePasteboardFix bundles are loaded.
+</UL>
+<H4>New feature</H4>
+<UL>
+<LI> Recompiled for DP4. Thanks to Greg Huland.
+</UL>
+
+
+<P><H3>New in v20 (May 12th, 2000)</H3></P>
+<H4>Known bugs</H4>
+<UL>
+<LI> (Windows version) Services don't work if CVL is not running.
+<LI> Open Differences does not work for conflicts obtained when merging across branches.
+<LI> Restoring a version of a wrapper directory does not work. Restored file is in fact a .gtar.gz file. Workaround: unarchive it before using it.
+<LI> (Windows version) A user recently reported that if you're using Windows NT 4 SP4 you may encounter severe slowness using cvs, hence CVL; cvs reports "connection timeout" errors. This problem is due to Service Pack 4. You should try to update to SP5 or later if you have this problem.
+</UL>
+<H4>New feature</H4>
+<UL>
+<LI> <B>CVL is now open-source!</B> You can download sources at <A HREF="ftp://sente.epfl.ch/pub/software/CVL/CVL-sources.tgz">ftp://sente.epfl.ch/pub/software/CVL/CVL-sources.tgz</A>
+ Open-source license can be read at <A HREF="http://www.sente.ch/software/OpenSourceLicense.html">http://www.sente.ch/software/OpenSourceLicense.html</A>
+</UL>
+<H4>Correction</H4>
+<UL>
+<LI> Commit, tag, update operations are faster (no longer perform
+status on parent directory if it is not necessary).
+</UL>
+
+
+<P><H3>New in v19 (March 17th, 2000)</H3></P>
+<H4>Corrections</H4>
+<UL>
+<LI> Corrected broken comparator tool.
+<LI> No longer writes dummy comment in cvsignore file. Note that you should delete existing cvsignore files containing "# This is a dummy..." in ~/Library/CVL/Repositories/...
+<LI> Now really re-reads $CVSROOT/CVSROOT/cvsignore file when it is committed. 
+<LI> Now updates takes in account .cvsignore when directory is refreshed.
+<LI> (MacOS X Server only) Corrected arrow-key navigation in browsers.
+<LI> Repositories window: revert button is now enabled even if checkout failed or file was not available. 
+</UL>
+
+
+<P><H3>New in v18 (March 1st, 2000)</H3></P>
+<H4>Correction</H4>
+<UL>
+<LI> Repository import was broken in previous version.
+</UL>
+
+
+<P><H3>New in v17 (February 29th, 2000)</H3></P>
+<H4>New features</H4>
+<UL>
+<LI> Cvs friendly renaming of files and directories (Inspector).
+<LI> Setting of environment variable on a per repository basis (Repositories).
+<LI> Added Absent and Inconsistent captions on windows.
+<LI> Help file updated, and available also on Windows.
+<LI> Compression level (-z option) preference.
+<LI> (Windows version) Asks user to confirm quit when last window is closed.
+</UL>
+<H4>Corrections</H4>
+<UL>
+<LI> Inspector and Comparator synchronization with selection.
+<LI> Updates when cvswrapper file is modified.
+<LI> No longer crashes on diff of files containing non ASCII characters.
+<LI> Renamed service "Select in CVL" to "CVL/Select".
+<LI> Corrected many bugs due to quickStatus.
+<LI> Supports CVSROOT containing path with drive letter.
+<LI> (Windows version) Restores panel states.
+<LI> (Windows version) Executable icon.
+</UL>
+<H4>Hidden user defaults</H4>
+<UL>
+<LI> rcsdiffOptions. String. Default is empty. Options passed to cvs diff command. Same effect as adding &lt;diff theString&gt; in ~/.cvsrc file.
+<LI> TaskTracingEnabled. Boolean (YES/NO). Default is NO. Used for debugging. Prints to stdout all cvs calls.
+<LI> RequestTimeout. Integer. Default is 0 (no timeout). Possibility to set a timeout (in seconds) on cvs commands.
+<LI> NoQuickStatus. String. Default is NO. May be used to disable quickStatus algorithm, and use the old (but slower) status algorithm.
+</UL>
+
+
+<P><H3>New in 1.0v15 (December 1st, 1999)</H3></P>
+<UL>
+<LI> Recursive remove 
+<LI> Added cvs release 
+<LI> Bug corrected: sticky info and sticky dates are now refreshed correctly 
+<LI> Bug corrected: sticky date has now correct timezone
+<LI> Added dynamic CVL import services
+<LI> Now double-clicking a file in the browser launches TextEdit when no other application is launched
+<LI> Corrected bug which sometimes prevented CVL to work correctly when $HOME was NFS-exported
+<LI> Reworked menus
+</UL>
+
+
+<P><H3>New in 1.0v14 (internal release, October 18th, 1999)</H3></P>
+<UL>
+<LI> Corrected modules file content parsing
+<LI> Now startup and refresh take twice less time to perform
+<LI> Corrected bug: when getting status on a file having status <File had conflicts on merge>, an uncaught exception was raised 
+<LI> Added File menu as contextual menu of browser 
+</UL>
+
+
+<P><H3>New in 1.0v13 (internal release, October 1st, 1999)</H3></P>
+<UL>
+<LI> Corrected bug: typing some keys in textViews could crash CVL 
+<LI> Added Version comparison tool (not for directories or multiselection) 
+<LI> Now accepts multiselection for Open Differences
+<LI> Corrected problem with reading of ~/Library/CVL 
+<LI> Modules: supports aliases (but opens only the first work area) 
+<LI> Some GUI updates and corrections
+</UL>
+
+
+<P><H3>New in 1.0v12 (September 15th, 1999)</H3></P>
+<UL>
+<LI> Add is now recursive
+<LI> Now supports pservers which refuse to share their CVSROOT
+<LI> Repository Window:
+<UL>
+<LI> Corrected bug when tableView selection was not up-to-date.
+<LI> Added TabView with modules, cvsignore and cvswrappers file. Files are editable and committable.
+<LI> Added button New to allow creation of local repositories
+<LI> Added button Open Work Area to open CVSROOT work area
+<LI> Now buttons are disabled when necessary
+</UL>
+<LI> Inspector:
+<UL>
+<LI> Inspector refresh corrected (for most of cases)
+<LI> Inspected files icon is now draggable
+</UL>
+<LI> When doing an update or a checkout (or restoring a version), added switch to set -A flag (remove sticky attributes)
+<LI> Checkout: now checkout is correct when a module is defined with -d option
+<LI> Added About cvs... panel
+<LI> Modules are now sorted in a case insensitive way
+<LI> Console now prints timestamp for each log
+<LI> Corrected bug when parsing cvswrappers file
+<LI> Work areas are no longer opened more than once
+<LI> Added support for dragging files/folders onto CVL.app icon
+<LI> Corrected bug with Services
+<LI> Other UI improvements/corrections
+</UL>
+
+
+<P><H3>New in 1.0b11 (May 1st, 1999)</H3></P>
+<UL>
+<LI> Includes CVLAvatar, a ProjectBuilder bundle.
+<LI> Date and revision can be specified for module checkout.
+<LI> Fixed menu layout and shortcuts in MacOSX version.
+<LI> Delete and Update "macro".
+<LI> Updated Help file.
+</UL>
+
+
+<P><H3>New in 1.0b10</H3></P>
+<UL>
+<LI> PBFilenamePasteboardFix available.
+<LI> Correction of reported defects.
+</UL>
+
+<P><H3>New in 1.0b9</H3></P>
+<UL>
+<LI> New process scheduling
+<LI> Enabled Services on selection.
+<LI> Correction of reported defects
+<LI> This should be the very last revision for the OPENSTEP versions (Mach and Windows). 
+</UL>
+
+<P><H3>New in 1.0b7</H3></P>
+<UL>
+<LI> Correction of reported defects.
+<LI> User interface changes on Mac OS X server version (compliance with Apple guidelines).
+<LI> This should be the last revision for the OPENSTEP versions (Mach and Windows). 
+</UL>
+
+<P><H3>New in 1.0b6</H3></P>
+<UL>
+<LI> Streamlined user interface.
+<LI> Tag inspector.
+<LI> New algorithm to compute directory status.
+<LI> Correction of reported defects.
+</UL>
+
+<P><H3>New in 1.0b5</H3></P>
+<UL>
+<LI> Now available for Rhapsody Intel.
+<LI> Compatibility with old work areas corrected.
+</UL>
+
+<P><H3>New in 1.0b4</H3></P>
+<UL>
+<LI> Easy access to local and remote repositories.
+<LI> Now available for Windows.
+</UL>
+
+<P><H3>New in 1.0b3</H3></P>
+<UL>
+<LI> Interface to FileMerge.app to resolve merges and conflicts.
+<LI> Differences Inspector.
+<LI> Improved support for multiple repositories.
+<LI> Improved support for client/server mode, logins.
+<LI> Faster and concurrent operations.
+</UL>
+
+
+<H2>Software Library</H2>
+<P>More Mac OS X, WebObjects or OPENSTEP <A HREF="http://www.sente.ch/software/">software</A> to download from Sen:te</P>
+
+<HR NOSHADE SIZE=1><P ALIGN = CENTER>
+<IMG SRC="home.gif" ALT=""><A HREF="http://www.sente.ch/sente/Welcome.htm">Welcome</A>
+<IMG SRC="find.gif" ALT=""><A HREF="http://www.sente.ch/sente/English.wlproj/SearchForm.html">Search</A>
+<IMG SRC="info.gif" ALT=""><A HREF="http://www.sente.ch/sente/English.wlproj/Addresses.html">Information</A>
+<IMG SRC="mail.gif" ALT=""><A HREF=mailto:info@sente.ch>Ask Sen:te</A>
+<BR>
+&copy;Copyright 1994-2004, Sen:te (Sente, Ltd). All rights reserved.
+</P>
+
+</BODY>
+</HTML>

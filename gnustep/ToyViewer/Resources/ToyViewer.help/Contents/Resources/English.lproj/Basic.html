@@ -1,0 +1,83 @@
+<HTML>
+<head>
+<META HTTP-EQUIV="content-type" CONTENT="text/html;charset=iso-8859-1">
+<title>Basic</title>
+<META NAME="AppleTitle" CONTENT="ToyViewer Help">
+<META NAME="AppleFont" CONTENT="Lucida Grande,Helvetica">
+<META NAME="AppleSearchResultsFont" CONTENT="Lucida Grande,Helvetica">
+</head>
+
+<BODY BGCOLOR="#FFFFD0">
+<h3 align=right><i>ToyViewer (Ver.4.30)</i></h3>
+<hr>
+<h2>Display of Image Files</h2>
+Image formats following can be opened by double-clicking their icons:
+<blockquote>
+	tiff, (eps), gif, bmp, png, jpg, JPEG2000(jp2, jpc, j2k), 
+	bie(jbig), pcx, pcd, 
+	pnm, ppm, pbm, pgm, xbm, mag, and Sun Raster.
+</blockquote>
+Note: Display of EPS files is not realized in the current version of Mac OS X (10.2).
+<br>
+Note: MAG is a popular image format in Japan, especially on old NEC-PCs.
+<p>
+To activate ToyViewer by double-clicking icons, set ToyViewer as the default tool using "File / Show Info" (cmd-I) menu of the Finder.
+<p>
+ToyViewer can open image files by selecting "File / Open" of the menu.
+<p>
+Image files can also be opened by dragging their icons onto the icon of ToyViewer placed on Dock, Finder, or Desktop.
+<br>
+Some image files would have extensions that could not be recognized by ToyViewer.  Especially, most image files made on Mac OS do not have extensions, but creator code.
+In such cases, these files can be opened by drag &amp; drop.
+<p>
+
+
+<h2>Save Images</h2>
+Displayed images can be saved in following image formats:
+<blockquote>
+	tiff, (eps), pdf, bmp, gif, png, jpg, JPEG2000, bie(jbig), pnm, or xbm.
+</blockquote>
+
+Images in gif format have at most 256 colors.  If you try to save an image that has more than 256 colors as a gif image, the color reduction routine is activated automatically.
+Images that can be saved in bie(jbig) or in xbm format should be monochrome bilevel images.
+<p>
+When an image in one format is saved in other format, usually, the size of the image is preserved.  When an eps or pdf image is saved in other format, however, size of the saved image depends on the size of the image scaled on the window.
+<p>
+There are two kinds of representation in png or bmp formats.  One uses a palette of colors to save the image compactly, and the other specifies colors for each pixel.  ToyViewer checks automatically the number of colors in the image to be saved, and if possible, saves it in paletted representation.
+<p>
+
+
+<h2>Open Pasteboard</h2>
+If a tiff, pdf, or eps image is copied into the pasteboard (by copy operation), you can display the image in a new window by clicking "File / Open Pasteboard" of the menu.
+For example, if you select and copy some objects on OmniGraffle and then do "Open Pasteboard", them are displayed in a pdf image.  And if you copy a still image of a movie played on QuickTime Player, you can display it as a pict image.
+<p>
+
+
+<h2>Scaling</h2>
+Specifying scale using popup list of each window, you can display enlarged or shrinked image.
+Besides, you can directly type enlarge/shrink ratio (percentage) into the popup list.
+<br>
+Note that image data itself is not modified when it is resized in the window.  If you want to make a resized new image, use "Operation / Resize...", which is described in "Image Operation".
+<p>
+
+<h2>Remark Button</h2>
+A small check button on the lower right corner of each window is "Remark Button".
+<br>
+After many windows are displayed, you can close all of them with the operation "Close All Windows".  However, only windows whose remark button is checked are not closed automatically.
+<br>
+Using the feature <a href="ScanDir.html">"Scan Images in a Folder"</a>, you can show images one after another, and windows once displayed are closed automatically.  Also in this feature, windows whose remark button is checked are not closed automatically.
+<p>
+
+<h2>Print</h2>
+Displayed images can be printed.
+<p>
+The popup menu "Settings" of Page Setup provides the item "ToyViewer".
+You can set Printer Resolution and Paper Margin with this panel.
+<br>
+The higher you specify Printer Resolution, the smaller the size of images becomes.  As Printer Resolution, you had better to specify lower value than that of the real printer, because most printers represent colors by the density of dots.
+
+<hr>
+<h3 align=right><a href="index.html">Return to Help Index</a></h3>
+
+</body>
+</HTML>

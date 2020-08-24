@@ -1,0 +1,42 @@
+{
+    IBClasses = (
+        {
+            ACTIONS = {
+                decreaseMonth = id; 
+                decreaseYear = id; 
+                done = id; 
+                increaseMonth = id; 
+                increaseYear = id; 
+                setDay = id; 
+                setValue = id; 
+            }; 
+            CLASS = DateTimeController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                calendarControl = WBCalendarControl; 
+                dateTimeDrawer = NSDrawer; 
+                dateTimeTextField = NSTextField; 
+                monthTextField = NSTextField; 
+                parentController = id; 
+                timeControl = WBTimeControl; 
+                yearTextField = NSTextField; 
+            }; 
+            SUPERCLASS = NSWindowController; 
+        }, 
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            CLASS = WBCalendarControl; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {target = id; timeStrings = id; }; 
+            SUPERCLASS = NSControl; 
+        }, 
+        {
+            ACTIONS = {decrement = id; increment = id; }; 
+            CLASS = WBTimeControl; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {delegate = id; stepper = NSStepper; }; 
+            SUPERCLASS = NSControl; 
+        }
+    ); 
+    IBVersion = 1; 
+}

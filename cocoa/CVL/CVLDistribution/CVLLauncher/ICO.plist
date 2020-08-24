@@ -1,0 +1,7 @@
+/* This file fakes a PB.project file, with only two key-value pairs,*/
+/* just to allow us to set the icon of a tool executable...         */
+/* See Makefile.postamble/appResources.o                            */
+{
+    WINDOWS_APPICON = appicon.ico; 
+    PROJECTNAME = CVL; 
+}

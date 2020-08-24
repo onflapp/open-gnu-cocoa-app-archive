@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist SYSTEM "file://localhost/System/Library/DTDs/PropertyList.dtd">
+<plist version="0.9">
+<dict>
+	<key>IBFramework Version</key>
+	<string>219.0</string>
+	<key>IBOpenObjects</key>
+	<array>
+		<integer>8</integer>
+	</array>
+	<key>IBSystem Version</key>
+	<string>5S66</string>
+	<key>IBUserGuides</key>
+	<dict>
+		<key>scalePanel</key>
+		<dict>
+			<key>guideLocations</key>
+			<array/>
+			<key>guidesLocked</key>
+			<string>NO</string>
+		</dict>
+	</dict>
+</dict>
+</plist>

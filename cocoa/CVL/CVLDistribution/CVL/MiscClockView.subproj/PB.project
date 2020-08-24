@@ -1,0 +1,14 @@
+{
+    FILESTABLE = {
+        CLASSES = (MiscClockViewExtensions.m); 
+        H_FILES = (MiscClockViewExtensions.h); 
+        IMAGES = (MiscClockStuff.tiff); 
+        OTHER_SOURCES = (Makefile.preamble, Makefile, Makefile.postamble); 
+    }; 
+    GENERATEMAIN = YES; 
+    LANGUAGE = English; 
+    LOCALIZABLE_FILES = {}; 
+    PROJECTNAME = MiscClockView; 
+    PROJECTTYPE = Subproject; 
+    PROJECTVERSION = 2.6; 
+}

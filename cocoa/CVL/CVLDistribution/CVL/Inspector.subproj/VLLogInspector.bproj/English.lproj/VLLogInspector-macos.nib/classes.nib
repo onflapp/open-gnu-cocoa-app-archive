@@ -1,0 +1,71 @@
+{
+    IBClasses = (
+        {
+            CLASS = AnchorInspectorManager; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {currentSelection = id; lastmodifiedClock = id; }; 
+            SUPERCLASS = InspectorManager; 
+        }, 
+        {
+            CLASS = CVLInspector; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {view = NSView; window = NSWindow; }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            ACTIONS = {
+                openVersionInTemporaryDirectory = id; 
+                replaceWorkAreaFile = id; 
+                restoreWorkAreaFile = id; 
+                saveVersionAs = id; 
+                select = id; 
+                showDifference = id; 
+            }; 
+            CLASS = CVLVersionInspector; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {table = NSTableView; }; 
+            SUPERCLASS = CVLInspector; 
+        }, 
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {setInspector = id; }; 
+            CLASS = InspectorManager; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                currentView = id; 
+                iconButton = id; 
+                inspected = id; 
+                inspectorPopup = id; 
+                multiView = id; 
+                nameField = id; 
+                panel = id; 
+                urlField = id; 
+            }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            CLASS = VLLogInspector; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {logField = NSTextView; }; 
+            SUPERCLASS = CVLVersionInspector; 
+        }, 
+        {
+            CLASS = VLStatusInspector; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                lastCheckoutedClock = id; 
+                lastModifiedClock = id; 
+                repVersionField = id; 
+                statusField = id; 
+                stickyDateField = id; 
+                stickyOptionField = id; 
+                stickyTagField = id; 
+                versionField = id; 
+                view = id; 
+                window = id; 
+            }; 
+            SUPERCLASS = NSObject; 
+        }
+    ); 
+    IBVersion = 1; 
+}

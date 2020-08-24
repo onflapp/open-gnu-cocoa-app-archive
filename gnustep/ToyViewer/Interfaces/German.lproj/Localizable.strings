@@ -1,0 +1,153 @@
+/* 
+ * Error Messages
+ */
+/* Err_OPEN */
+"Can't open file" = "Kann Datei nicht öffnen";
+
+/* Err_FORMAT */
+"Illegal image format" = "Ungültiges Bildformat";
+
+/* Err_MEMORY */
+"Can't get working memory" = "Kann keinen funktionierenden Speicher bekommen";
+
+/* Err_SHORT */
+"Encountered unexpected EOF" = "Unerwartetes Dateiende angetroffen";
+
+/* Err_ILLG */
+"Illegal information included" = "Ungültige Information enthalten";
+
+/* Err_IMPLEMENT */
+"Unsupported image format" = "Nicht unterstütztes Bildformat";
+
+/* Err_SAVE */
+"Can't write into file" = "Kann nicht in Datei schreiben";
+
+/* Err_SAV_IMPL */
+"Can't save this format" = "Kann dieses Format nicht speichern";
+
+/* Err_EPS_IMPL */
+"Can't apply to EPS" = "Kann dies nicht auf EPS anwenden";
+
+/* Err_EPS_ONLY */
+"This operation is only to EPS" = "Diese Operation gilt nur für EPS";
+
+/* Err_PDF_IMPL */
+"Can't apply to PDF" = "Kann dies nicht auf PDF anwenden";
+
+/* Err_PDF_ONLY */
+"This operation is only to PDF" = "Diese Operation gilt nur für PDF";
+
+/* Err_EPS_PDF_IMPL */
+"Can't apply to PDF/EPS" = "Kann dies nicht auf PDF/EPS anwenden";
+
+/* Err_EPS_PDF_ONLY */
+"This operation is only to PDF/EPS" = "Diese Operation gilt nur für PDF/EPS";
+
+/* Err_OPR_IMPL */
+"Can't apply this operation" = "Kann diese Operation nicht anwenden";
+
+/* Err_NOFILE */
+"There is no file" = "Es gibt keine Datei";
+
+/* Err_FLT_EXEC */
+"Can't execute filter program" = "Kann das Filter-Programm nicht ausführen";
+
+/* Err_ACCESS */
+"Can't access to file"; = "Kann auf Datei nicht zugreifen";
+
+/* ERROR */
+"ERROR" = "Fehler!";
+
+/* WARNING */
+"WARNING" = "Warnung!";
+
+/* 
+ * Color Reduction Messages
+ */
+/* BMP_Reduction */
+"Reduce Color?" = "Dieses Bild hat mehr als 256 Farben. Wollen Sie die Farben auf 256 reduzieren?";
+
+/* BMP_Leave */
+"Leave" = "So lassen, wie es ist";
+
+/* BMP_Reduce */
+"Reduce" = "Farben reduzieren";
+
+/* Stop_SAVE */
+"Cancel" = "Abbrechen";
+
+/* GIF_Reduction */
+"Reduction Start" = "Dieses Bild hat mehr als 256 Farben.  Die Farben werden auf 256 reduziert.";
+
+/* NO_GIF_Filter */
+"No GIF Filter" = "Kein GIF-Filter";
+
+/* NO_PXO2GIF */
+"Filter pxo2gif does not exist" = "Wir haben den Filter pxo2gif nicht. ToyViewer kann keine GIF-Datei mit der momentanen OS X Version erfolgreich erstellen.";
+
+/* NO_Need_Reduction */
+"No Need to Reduce" = "%@:ÄnFarben müssen nicht reduziert werden.  Dieses Bild hat nur %d Farben.";
+
+/* Background Window */
+"Bring to Front" = "In den Vordergrund bringen";
+"Send to Back" = "In den Hintergrund bringen";
+
+/* AquaTooLarge */
+"Image size is too large as Aqua-Button." = "Oval Aqua-Button is for relatively small images.  This image is too large.";
+
+/* Keywords */
+"Bilevel";
+"gray"; = "grau";
+
+/* Effects */
+"Paste" = "Einsetzen";
+"Rotate" = "Drehen";
+"SmRotate";
+"Flip" = "Spiegeln";
+"Clip" = "Beschneiden";
+"Negative" = "Farbumkehr (Negativ)";
+"Bitmap";
+"ResizeEPS";
+"SmResize";
+"Resize" = "Größe ändern";
+"Gray" = "Grau";
+"BiLevel";
+"Bright";
+"ColorTone";
+"Reduce" = "Reduzieren";
+"HalfToning";
+"Dither";
+"ColorChange";
+"Enhance" = "Schärfen";
+"Blur" = "Glätten";
+"Emboss" = "Relief";
+"Contour" = "Kontur";
+"Noise" = "Rauschen";
+"Mosaic" = "Mosaik";
+"Frame" = "Rahmen";
+"Posterize";
+"CMYKtoRGB";
+
+/* Wait Messages */
+"Color Tuning..." = "Verändere Farben...";
+"Contouring..." = "Erstelle Konturen...";
+"Converting..." = "Konvertieren...";
+"Embossing...";
+"Enhancing...";
+"Blurring...";
+"Making Palette..." = "Erstelle Pallette";
+"Packing Bits...";
+"Painting...";
+"Posterizing";
+"Posterizing...";
+"Reducing..." = "Reduziere...";
+"Reducing 255 col." = "Reduziere auf 256 Farben";
+"Resizing..." = "Ändere Größe...";
+"Rotating..." = "Drehe...";
+"Starting Reduction..." = "Beginne Reduzierung";
+"Thinning Lines...";
+"Trying Reduction" = "Versuche Reduzierung";
+"Writing Image..." = "Schreibe Bild...";
+
+/* Web Site */
+"Web Page of Takeshi Ogihara" = "http://waltz.cs.scitec.kobe-u.ac.jp/";

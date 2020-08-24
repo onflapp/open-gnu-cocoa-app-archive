@@ -1,0 +1,33 @@
+{
+    IBClasses = (
+        {
+            ACTIONS = {
+                add = id; 
+                cancel = id; 
+                clear = id; 
+                openCvsExecutablePath = id; 
+                openLocalRepositoryPath = id; 
+                selectRepository = id; 
+            }; 
+            CLASS = AddRepositoryController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                AddRepositoryControllerAlias = NSObjectController; 
+                addButton = NSButton; 
+                bonjourRepositoryProperties = RepositoryProperties; 
+                cancelButton = NSButton; 
+                clearButton = NSButton; 
+                localRepositoryProperties = RepositoryProperties; 
+                otherRepositoryProperties = RepositoryProperties; 
+                pserverRepositoryProperties = RepositoryProperties; 
+                repositoryTypeTabView = NSTabView; 
+                searchProgressTextField = NSTextField; 
+                serverListPopUpButton = NSPopUpButton; 
+            }; 
+            SUPERCLASS = NSWindowController; 
+        }, 
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {CLASS = RepositoryProperties; LANGUAGE = ObjC; SUPERCLASS = NSObject; }
+    ); 
+    IBVersion = 1; 
+}

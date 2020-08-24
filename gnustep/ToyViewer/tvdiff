@@ -1,0 +1,26 @@
+#!/bin/csh
+if ( $#argv == 0 ) then
+  echo Usage: $0 directory
+  exit 1
+endif
+foreach f ( *.{m,h,c} *proj/*.{m,h,c} )
+  echo === $f
+  if ( -f $1/$f ) then
+    diff $f $1/$f
+  else
+    echo '**** ' File \"{$f}\" does not exist in $1.
+  endif
+end
+foreach f ( $1/*.{m,h,c} )
+  set ff=$f:t
+  if ( ! -f $ff ) then
+    echo '**** ' File \"{$f}\" does not exist here.
+  endif
+end
+foreach f ( $1/*proj/*.{m,h,c} )
+  set p=$f:h
+  set ff={$p:t}/{$f:t}
+  if ( ! -f $ff ) then
+    echo '**** ' File \"{$ff}\" does not exist here.
+  endif
+end

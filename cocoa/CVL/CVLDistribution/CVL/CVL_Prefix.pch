@@ -1,0 +1,13 @@
+//
+// Prefix header for all source files of the 'CVL' target in the 'CVL' project
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+    #import <AppKit/AppKit.h>
+	#import <SenFoundation/SenFoundation.h>
+    #if WITH_FS_NOTIFICATION_CENTER
+	    #import <FSNotificationCenter/FSNotificationCenter.h>
+    #endif
+	#import <AGRegex/AGRegexes.h>
+#endif

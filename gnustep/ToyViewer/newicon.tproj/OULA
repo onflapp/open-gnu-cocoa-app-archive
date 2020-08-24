@@ -1,0 +1,158 @@
+Making all for tool newicon...
+ Compiling file custom.c ...
+custom.c:1:27: warning: Carbon/Carbon.h: Aucun fichier ou répertoire de ce type
+In file included from custom.c:4:
+custom.h:1:27: warning: Carbon/Carbon.h: Succès
+In file included from custom.c:4:
+custom.h:22: parse error before '*' token
+custom.h:23: parse error before "setIconImages"
+custom.h:23: parse error before "ihandle"
+custom.h:23: warning: data definition has no type or storage class
+In file included from custom.c:6:
+utils.h:1:2: warning: #import is obsolete, use an #ifndef wrapper in the header file
+utils.h:1:26: warning: Carbon/Carbon.h: Succès
+utils.h:2:38: warning: CoreServices/CoreServices.h: Aucun fichier ou répertoire de ce type
+In file included from custom.c:6:
+utils.h:4: parse error before "getFSSpecForPath"
+utils.h:4: parse error before '*' token
+utils.h:4: warning: data definition has no type or storage class
+utils.h:5: parse error before "getFSRefForPath"
+utils.h:5: parse error before '*' token
+utils.h:5: warning: data definition has no type or storage class
+utils.h:6: parse error before "getFSSpecForDirIcon"
+utils.h:6: parse error before '*' token
+utils.h:6: warning: data definition has no type or storage class
+utils.h:7: parse error before '*' token
+utils.h:8: parse error before "getFSRefForParenPath"
+utils.h:8: parse error before '*' token
+utils.h:8: warning: data definition has no type or storage class
+utils.h:9: parse error before "getFSSpecForParenPath"
+utils.h:9: parse error before '*' token
+utils.h:9: warning: data definition has no type or storage class
+utils.h:10: parse error before "openRsrcForkAndGetIcon"
+utils.h:10: parse error before '*' token
+utils.h:10: warning: data definition has no type or storage class
+utils.h:11: parse error before "openRsrcForkWithEmptyIcon"
+utils.h:11: parse error before '*' token
+utils.h:11: warning: data definition has no type or storage class
+utils.h:12: parse error before "Boolean"
+utils.h:13: parse error before "isRegularFile"
+utils.h:13: parse error before "Boolean"
+utils.h:13: warning: data definition has no type or storage class
+In file included from custom.c:7:
+dirmark.h:1:27: warning: Carbon/Carbon.h: Succès
+In file included from dirmark.h:2,
+                 from custom.c:7:
+custom.h:1:27: warning: Carbon/Carbon.h: Succès
+In file included from custom.c:7:
+dirmark.h:9: parse error before "UInt32"
+dirmark.h:10: parse error before "UInt16"
+custom.c:9: parse error before "thumbDataH"
+custom.c:9: warning: initialization makes integer from pointer without a cast
+custom.c:9: warning: initialization makes integer from pointer without a cast
+custom.c:9: warning: data definition has no type or storage class
+custom.c:10: parse error before "largeDataH"
+custom.c:10: warning: initialization makes integer from pointer without a cast
+custom.c:10: warning: initialization makes integer from pointer without a cast
+custom.c:10: warning: data definition has no type or storage class
+custom.c:11: parse error before "smallDataH"
+custom.c:11: warning: initialization makes integer from pointer without a cast
+custom.c:11: warning: initialization makes integer from pointer without a cast
+custom.c:11: warning: data definition has no type or storage class
+custom.c:16: parse error before "OSType"
+custom.c:16: warning: no semicolon at end of struct or union
+custom.c:17: warning: data definition has no type or storage class
+custom.c:19: warning: braces around scalar initializer
+custom.c:19: warning: (near initialization for `family[0]')
+custom.c:19: warning: multi-character character constant
+custom.c:19: warning: excess elements in scalar initializer
+custom.c:19: warning: (near initialization for `family[0]')
+custom.c:21: warning: braces around scalar initializer
+custom.c:21: warning: (near initialization for `family[1]')
+custom.c:21: warning: multi-character character constant
+custom.c:21: warning: excess elements in scalar initializer
+custom.c:21: warning: (near initialization for `family[1]')
+custom.c:22: warning: braces around scalar initializer
+custom.c:22: warning: (near initialization for `family[2]')
+custom.c:22: warning: multi-character character constant
+custom.c:22: warning: excess elements in scalar initializer
+custom.c:22: warning: (near initialization for `family[2]')
+custom.c:24: warning: braces around scalar initializer
+custom.c:24: warning: (near initialization for `family[3]')
+custom.c:24: warning: multi-character character constant
+custom.c:24: warning: excess elements in scalar initializer
+custom.c:24: warning: (near initialization for `family[3]')
+custom.c:27: warning: data definition has no type or storage class
+custom.c: In function `makeThumbIcon':
+custom.c:76: warning: comparison between pointer and integer
+custom.c:76: warning: comparison between pointer and integer
+custom.c:79: invalid type argument of `unary *'
+custom.c:80: invalid type argument of `unary *'
+custom.c: In function `makeLargeIcon':
+custom.c:122: `UInt32' undeclared (first use in this function)
+custom.c:122: (Each undeclared identifier is reported only once
+custom.c:122: for each function it appears in.)
+custom.c:122: parse error before "v"
+custom.c:133: warning: comparison between pointer and integer
+custom.c:133: warning: comparison between pointer and integer
+custom.c:137: invalid type argument of `unary *'
+custom.c:138: invalid type argument of `unary *'
+custom.c:149: `v' undeclared (first use in this function)
+custom.c:166: `pp' undeclared (first use in this function)
+custom.c:166: parse error before ')' token
+custom.c:169: parse error before ')' token
+custom.c: In function `makeSmallIcon':
+custom.c:183: `UInt16' undeclared (first use in this function)
+custom.c:183: parse error before "v"
+custom.c:192: warning: comparison between pointer and integer
+custom.c:192: warning: comparison between pointer and integer
+custom.c:194: warning: return makes integer from pointer without a cast
+custom.c:196: invalid type argument of `unary *'
+custom.c:197: invalid type argument of `unary *'
+custom.c:208: `v' undeclared (first use in this function)
+custom.c:225: `pp' undeclared (first use in this function)
+custom.c:225: parse error before ')' token
+custom.c:228: parse error before ')' token
+custom.c: In function `attachDirMark':
+custom.c:270: invalid type argument of `unary *'
+custom.c:271: invalid type argument of `unary *'
+custom.c:272: invalid type argument of `unary *'
+custom.c:273: `UInt32' undeclared (first use in this function)
+custom.c:273: parse error before ')' token
+custom.c:274: invalid type argument of `unary *'
+custom.c:275: `UInt16' undeclared (first use in this function)
+custom.c:275: parse error before ')' token
+custom.c: At top level:
+custom.c:278: parse error before '*' token
+custom.c: In function `allocIconHandle':
+custom.c:282: `IconFamilyHandle' undeclared (first use in this function)
+custom.c:282: parse error before "ihandle"
+custom.c:283: `IconFamilyPtr' undeclared (first use in this function)
+custom.c:284: `IconFamilyElement' undeclared (first use in this function)
+custom.c:284: `pElement' undeclared (first use in this function)
+custom.c:288: request for member `rsize' in something not a structure or union
+custom.c:289: `ihandle' undeclared (first use in this function)
+custom.c:289: parse error before "NewHandle"
+custom.c:292: `ihandp' undeclared (first use in this function)
+custom.c:293: `pIconFamily' undeclared (first use in this function)
+custom.c:294: `kIconFamilyType' undeclared (first use in this function)
+custom.c:298: request for member `ostyp' in something not a structure or union
+custom.c:299: request for member `rsize' in something not a structure or union
+custom.c:300: parse error before ')' token
+custom.c:300: request for member `rsize' in something not a structure or union
+custom.c: At top level:
+custom.c:323: parse error before "setIconImages"
+custom.c:323: parse error before "ihandle"
+custom.c: In function `setIconImages':
+custom.c:325: `OSErr' undeclared (first use in this function)
+custom.c:325: parse error before "err"
+custom.c:327: `err' undeclared (first use in this function)
+custom.c:327: `ihandle' undeclared (first use in this function)
+custom.c:327: `kSmall1BitMask' undeclared (first use in this function)
+custom.c:328: `kSmall32BitData' undeclared (first use in this function)
+custom.c:333: `kLarge1BitMask' undeclared (first use in this function)
+custom.c:334: `kLarge32BitData' undeclared (first use in this function)
+custom.c:335: `kThumbnail8BitMask' undeclared (first use in this function)
+custom.c:336: `kThumbnail32BitData' undeclared (first use in this function)
+make[1]: *** [shared_obj/ix86/linux-gnu/gnu-gnu-gnu/custom.o] Erreur 1
+make: *** [newicon.all.tool.variables] Erreur 2

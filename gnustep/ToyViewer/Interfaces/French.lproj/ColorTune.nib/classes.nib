@@ -1,0 +1,32 @@
+{
+    IBClasses = (
+        {
+            CLASS = ColorToneView; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {cache = id; }; 
+            SUPERCLASS = NSView; 
+        }, 
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {setup = id; }; 
+            CLASS = ImgToolCtrlAbs; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {panel = id; }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            ACTIONS = {changeColorValue = id; changeMainValue = id; colorTone = id; reset = id; }; 
+            CLASS = TonePanelCtrl; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                colorIndicators = id; 
+                colorSliders = id; 
+                mainIndicator = id; 
+                mainSlider = id; 
+                toneview = id; 
+            }; 
+            SUPERCLASS = ImgToolCtrlAbs; 
+        }
+    ); 
+    IBVersion = 1; 
+}

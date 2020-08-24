@@ -1,0 +1,30 @@
+{
+    NSMACHOperatingSystem = {
+        Archs = "18 "; 
+        Args = "DSTROOT=/Local"; 
+        LauncherSelectedExec = (/Local/Developer/Builds/stephane/CVL/CVL.debug/CVL); 
+        NonProjectExecutables = (
+            {
+                asrc_array = (
+                    /Network/Users/stephane/Projects/CVLSources/CVLDistribution/CVL, 
+                    /Network/Users/stephane/Projects/CVLSources/CVLDistribution/CVL/Repositories.subproj, 
+                    /Network/Users/stephane/Projects/CVLSources/CVLDistribution/CVL/Requests.subproj
+                ); 
+                env_array = ({UseThisRow = YES; value = YES; var = NSZombieEnabled; }); 
+                exec_class = PBLibExecutable; 
+                exec_path = /Local/Developer/Builds/stephane/CVL/CVL.app/CVL; 
+            }, 
+            {
+                asrc_array = (
+                    /Network/Users/stephane/Projects/CVLSources/CVLDistribution/CVL, 
+                    /Network/Users/stephane/Projects/CVLSources/CVLDistribution/CVL/Requests.subproj, 
+                    /Network/Users/stephane/Projects/CVLSources/CVLDistribution/CVL/Repositories.subproj, 
+                    /Network/Users/stephane/Projects/CVLSources/CVLDistribution/CVL/SenPanels.subproj
+                ); 
+                exec_class = PBLibExecutable; 
+                exec_path = /Local/Developer/Builds/stephane/CVL/CVL.debug/CVL; 
+            }
+        ); 
+        Target = debug; 
+    }; 
+}

@@ -1,0 +1,809 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 42;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3D68F64105C686E7003F4EE3 /* SenCheckpoint.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D68F63F05C686E7003F4EE3 /* SenCheckpoint.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3D68F64205C686E7003F4EE3 /* SenCheckpoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D68F64005C686E7003F4EE3 /* SenCheckpoint.m */; };
+		3D8A35EA0563804E00B9C7ED /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0867D69BFE84028FC02AAC07 /* Foundation.framework */; };
+		3DAD0155054E7E3700F32242 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DAD0154054E7E3700F32242 /* Carbon.framework */; };
+		3DAD01F2054E7E6800F32242 /* SenDateInterval.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3DAD01F0054E7E6800F32242 /* SenDateInterval.strings */; };
+		3DAD020C054E7EF400F32242 /* OpenSourceLicense.html in Resources */ = {isa = PBXBuildFile; fileRef = 3DAD020B054E7EF400F32242 /* OpenSourceLicense.html */; };
+		3DAD038E054E8D2700F32242 /* SenAssertion.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DADFF81054E7DD800F32242 /* SenAssertion.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3DADFEF7054E7BE300F32242 /* mt19937int.c in Sources */ = {isa = PBXBuildFile; fileRef = 3DADFEF6054E7BE300F32242 /* mt19937int.c */; };
+		3DADFF2C054E7D6600F32242 /* NSArray_SenAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DADFF11054E7D6600F32242 /* NSArray_SenAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3DADFF2D054E7D6600F32242 /* NSBundle_SenAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DADFF12054E7D6600F32242 /* NSBundle_SenAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3DADFF2E054E7D6600F32242 /* NSException_SenAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DADFF13054E7D6600F32242 /* NSException_SenAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3DADFF2F054E7D6600F32242 /* NSFileManager_SenAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DADFF14054E7D6600F32242 /* NSFileManager_SenAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3DADFF30054E7D6600F32242 /* NSMutableDictionary_SenAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DADFF15054E7D6600F32242 /* NSMutableDictionary_SenAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3DADFF31054E7D6600F32242 /* NSNumber_Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DADFF16054E7D6600F32242 /* NSNumber_Extensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3DADFF32054E7D6600F32242 /* NSObject_SenAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DADFF17054E7D6600F32242 /* NSObject_SenAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3DADFF33054E7D6600F32242 /* NSObject_SenRuntimeUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DADFF18054E7D6600F32242 /* NSObject_SenRuntimeUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3DADFF34054E7D6600F32242 /* NSObject_SenTree.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DADFF19054E7D6600F32242 /* NSObject_SenTree.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3DADFF35054E7D6600F32242 /* NSString_SenAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DADFF1A054E7D6600F32242 /* NSString_SenAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3DADFF36054E7D6600F32242 /* NSTask_SenAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DADFF1B054E7D6600F32242 /* NSTask_SenAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3DADFF37054E7D6600F32242 /* NSUserDefaults_SenAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DADFF1C054E7D6600F32242 /* NSUserDefaults_SenAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3DADFF38054E7D6600F32242 /* SenClassEnumerator.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DADFF1D054E7D6600F32242 /* SenClassEnumerator.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3DADFF39054E7D6600F32242 /* SenCollection.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DADFF1E054E7D6600F32242 /* SenCollection.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3DADFF3A054E7D6600F32242 /* SenDateInterval.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DADFF1F054E7D6600F32242 /* SenDateInterval.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3DADFF3B054E7D6600F32242 /* SenEmptiness.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DADFF20054E7D6600F32242 /* SenEmptiness.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3DADFF3C054E7D6600F32242 /* SenFileSystemTree.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DADFF21054E7D6600F32242 /* SenFileSystemTree.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3DADFF3D054E7D6600F32242 /* SenInvocationEnumerator.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DADFF22054E7D6600F32242 /* SenInvocationEnumerator.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3DADFF3E054E7D6600F32242 /* SenMutableTree.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DADFF23054E7D6600F32242 /* SenMutableTree.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3DADFF3F054E7D6600F32242 /* SenPathUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DADFF24054E7D6600F32242 /* SenPathUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3DADFF40054E7D6600F32242 /* SenQualifier.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DADFF25054E7D6600F32242 /* SenQualifier.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3DADFF41054E7D6600F32242 /* SenRandom.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DADFF26054E7D6600F32242 /* SenRandom.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3DADFF42054E7D6600F32242 /* SenSelection.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DADFF27054E7D6600F32242 /* SenSelection.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3DADFF43054E7D6600F32242 /* SenSortOrdering.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DADFF28054E7D6600F32242 /* SenSortOrdering.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3DADFF44054E7D6600F32242 /* SenTreeEnumerator.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DADFF29054E7D6600F32242 /* SenTreeEnumerator.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3DADFF45054E7D6600F32242 /* SenUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DADFF2A054E7D6600F32242 /* SenUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3DADFF46054E7D6600F32242 /* SenValueTree.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DADFF2B054E7D6600F32242 /* SenValueTree.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3DADFF64054E7DB100F32242 /* NSArray_SenAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DADFF49054E7DB100F32242 /* NSArray_SenAdditions.m */; };
+		3DADFF65054E7DB100F32242 /* NSBundle_SenAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DADFF4A054E7DB100F32242 /* NSBundle_SenAdditions.m */; };
+		3DADFF66054E7DB100F32242 /* NSException_SenAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DADFF4B054E7DB100F32242 /* NSException_SenAdditions.m */; };
+		3DADFF67054E7DB100F32242 /* NSFileManager_SenAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DADFF4C054E7DB100F32242 /* NSFileManager_SenAdditions.m */; };
+		3DADFF68054E7DB100F32242 /* NSMutableDictionary_SenAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DADFF4D054E7DB100F32242 /* NSMutableDictionary_SenAdditions.m */; };
+		3DADFF69054E7DB100F32242 /* NSNumber_Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DADFF4E054E7DB100F32242 /* NSNumber_Extensions.m */; };
+		3DADFF6A054E7DB100F32242 /* NSObject_SenAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DADFF4F054E7DB100F32242 /* NSObject_SenAdditions.m */; };
+		3DADFF6B054E7DB100F32242 /* NSObject_SenRuntimeUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DADFF50054E7DB100F32242 /* NSObject_SenRuntimeUtilities.m */; };
+		3DADFF6C054E7DB100F32242 /* NSObject_SenTree.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DADFF51054E7DB100F32242 /* NSObject_SenTree.m */; };
+		3DADFF6D054E7DB100F32242 /* NSString_SenAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DADFF52054E7DB100F32242 /* NSString_SenAdditions.m */; };
+		3DADFF6E054E7DB100F32242 /* NSTask_SenAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DADFF53054E7DB100F32242 /* NSTask_SenAdditions.m */; };
+		3DADFF6F054E7DB100F32242 /* NSUserDefaults_SenAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DADFF54054E7DB100F32242 /* NSUserDefaults_SenAdditions.m */; };
+		3DADFF70054E7DB100F32242 /* SenClassEnumerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DADFF55054E7DB100F32242 /* SenClassEnumerator.m */; };
+		3DADFF71054E7DB100F32242 /* SenCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DADFF56054E7DB100F32242 /* SenCollection.m */; };
+		3DADFF72054E7DB100F32242 /* SenDateInterval.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DADFF57054E7DB100F32242 /* SenDateInterval.m */; };
+		3DADFF73054E7DB100F32242 /* SenEmptiness.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DADFF58054E7DB100F32242 /* SenEmptiness.m */; };
+		3DADFF74054E7DB100F32242 /* SenFileSystemTree.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DADFF59054E7DB100F32242 /* SenFileSystemTree.m */; };
+		3DADFF75054E7DB100F32242 /* SenInvocationEnumerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DADFF5A054E7DB100F32242 /* SenInvocationEnumerator.m */; };
+		3DADFF76054E7DB100F32242 /* SenMutableTree.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DADFF5B054E7DB100F32242 /* SenMutableTree.m */; };
+		3DADFF77054E7DB200F32242 /* SenPathUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DADFF5C054E7DB100F32242 /* SenPathUtilities.m */; };
+		3DADFF78054E7DB200F32242 /* SenQualifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DADFF5D054E7DB100F32242 /* SenQualifier.m */; };
+		3DADFF79054E7DB200F32242 /* SenRandom.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DADFF5E054E7DB100F32242 /* SenRandom.m */; };
+		3DADFF7A054E7DB200F32242 /* SenSelection.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DADFF5F054E7DB100F32242 /* SenSelection.m */; };
+		3DADFF7B054E7DB200F32242 /* SenSortOrdering.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DADFF60054E7DB100F32242 /* SenSortOrdering.m */; };
+		3DADFF7C054E7DB200F32242 /* SenTreeEnumerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DADFF61054E7DB100F32242 /* SenTreeEnumerator.m */; };
+		3DADFF7D054E7DB200F32242 /* SenUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DADFF62054E7DB100F32242 /* SenUtilities.m */; };
+		3DADFF7E054E7DB200F32242 /* SenValueTree.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DADFF63054E7DB100F32242 /* SenValueTree.m */; };
+		3DADFF86054E7DD800F32242 /* SenFoundation.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DADFF82054E7DD800F32242 /* SenFoundation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3DADFF87054E7DD800F32242 /* SenFoundationDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DADFF83054E7DD800F32242 /* SenFoundationDefines.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3DADFF88054E7DD800F32242 /* SenTrees.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DADFF84054E7DD800F32242 /* SenTrees.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3DADFF8C054E7E0000F32242 /* sente.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3DADFF8B054E7E0000F32242 /* sente.gif */; };
+		3DB97718056289DA001EC5B5 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8DC2EF5A0486A6940098B216 /* Info.plist */; };
+		8DC2EF510486A6940098B216 /* SenFoundation_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 32DBCF5E0370ADEE00C91783 /* SenFoundation_Prefix.pch */; };
+		8DC2EF530486A6940098B216 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C1666FE841158C02AAC07 /* InfoPlist.strings */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXBuildStyle section */
+		014CEA440018CDF011CA2923 /* Development */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				DEBUGGING_SYMBOLS = YES;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				OPTIMIZATION_CFLAGS = "-O0";
+				ZERO_LINK = YES;
+			};
+			name = Development;
+		};
+		014CEA450018CDF011CA2923 /* Deployment */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				ZERO_LINK = NO;
+			};
+			name = Deployment;
+		};
+		3D0E24A6056A16FE008C5DAA /* EmbeddedDeployment */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				DEPLOYMENT_LOCATION = YES;
+				DEPLOYMENT_POSTPROCESSING = YES;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				INSTALL_PATH = "@executable_path/../Frameworks";
+				SKIP_INSTALL = YES;
+				ZERO_LINK = NO;
+			};
+			name = EmbeddedDeployment;
+		};
+/* End PBXBuildStyle section */
+
+/* Begin PBXFileReference section */
+		0867D69BFE84028FC02AAC07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		089C1667FE841158C02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		32DBCF5E0370ADEE00C91783 /* SenFoundation_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SenFoundation_Prefix.pch; sourceTree = "<group>"; };
+		3D0B69B8067DCF9A00FC6739 /* NSIndexSet_SenAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSIndexSet_SenAdditions.h; sourceTree = "<group>"; };
+		3D0B69B9067DCF9A00FC6739 /* NSIndexSet_SenAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSIndexSet_SenAdditions.m; sourceTree = "<group>"; };
+		3D68F63F05C686E7003F4EE3 /* SenCheckpoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SenCheckpoint.h; sourceTree = "<group>"; };
+		3D68F64005C686E7003F4EE3 /* SenCheckpoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SenCheckpoint.m; sourceTree = "<group>"; };
+		3DAD0154054E7E3700F32242 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = /System/Library/Frameworks/Carbon.framework; sourceTree = "<absolute>"; };
+		3DAD01F1054E7E6800F32242 /* SenDateInterval.strings */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.plist.strings; name = SenDateInterval.strings; path = English.lproj/SenDateInterval.strings; sourceTree = "<group>"; };
+		3DAD01F5054E7E7E00F32242 /* SenDateInterval.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = SenDateInterval.strings; path = French.lproj/SenDateInterval.strings; sourceTree = "<group>"; };
+		3DAD020B054E7EF400F32242 /* OpenSourceLicense.html */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.html; path = OpenSourceLicense.html; sourceTree = SOURCE_ROOT; };
+		3DADFEF6054E7BE300F32242 /* mt19937int.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; path = mt19937int.c; sourceTree = SOURCE_ROOT; };
+		3DADFF11054E7D6600F32242 /* NSArray_SenAdditions.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = NSArray_SenAdditions.h; sourceTree = "<group>"; };
+		3DADFF12054E7D6600F32242 /* NSBundle_SenAdditions.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = NSBundle_SenAdditions.h; sourceTree = "<group>"; };
+		3DADFF13054E7D6600F32242 /* NSException_SenAdditions.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = NSException_SenAdditions.h; sourceTree = "<group>"; };
+		3DADFF14054E7D6600F32242 /* NSFileManager_SenAdditions.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = NSFileManager_SenAdditions.h; sourceTree = "<group>"; };
+		3DADFF15054E7D6600F32242 /* NSMutableDictionary_SenAdditions.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = NSMutableDictionary_SenAdditions.h; sourceTree = "<group>"; };
+		3DADFF16054E7D6600F32242 /* NSNumber_Extensions.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = NSNumber_Extensions.h; sourceTree = "<group>"; };
+		3DADFF17054E7D6600F32242 /* NSObject_SenAdditions.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = NSObject_SenAdditions.h; sourceTree = "<group>"; };
+		3DADFF18054E7D6600F32242 /* NSObject_SenRuntimeUtilities.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = NSObject_SenRuntimeUtilities.h; sourceTree = "<group>"; };
+		3DADFF19054E7D6600F32242 /* NSObject_SenTree.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = NSObject_SenTree.h; sourceTree = "<group>"; };
+		3DADFF1A054E7D6600F32242 /* NSString_SenAdditions.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = NSString_SenAdditions.h; sourceTree = "<group>"; };
+		3DADFF1B054E7D6600F32242 /* NSTask_SenAdditions.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = NSTask_SenAdditions.h; sourceTree = "<group>"; };
+		3DADFF1C054E7D6600F32242 /* NSUserDefaults_SenAdditions.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = NSUserDefaults_SenAdditions.h; sourceTree = "<group>"; };
+		3DADFF1D054E7D6600F32242 /* SenClassEnumerator.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = SenClassEnumerator.h; sourceTree = "<group>"; };
+		3DADFF1E054E7D6600F32242 /* SenCollection.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = SenCollection.h; sourceTree = "<group>"; };
+		3DADFF1F054E7D6600F32242 /* SenDateInterval.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = SenDateInterval.h; sourceTree = "<group>"; };
+		3DADFF20054E7D6600F32242 /* SenEmptiness.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = SenEmptiness.h; sourceTree = "<group>"; };
+		3DADFF21054E7D6600F32242 /* SenFileSystemTree.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = SenFileSystemTree.h; sourceTree = "<group>"; };
+		3DADFF22054E7D6600F32242 /* SenInvocationEnumerator.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = SenInvocationEnumerator.h; sourceTree = "<group>"; };
+		3DADFF23054E7D6600F32242 /* SenMutableTree.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = SenMutableTree.h; sourceTree = "<group>"; };
+		3DADFF24054E7D6600F32242 /* SenPathUtilities.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = SenPathUtilities.h; sourceTree = "<group>"; };
+		3DADFF25054E7D6600F32242 /* SenQualifier.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = SenQualifier.h; sourceTree = "<group>"; };
+		3DADFF26054E7D6600F32242 /* SenRandom.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = SenRandom.h; sourceTree = "<group>"; };
+		3DADFF27054E7D6600F32242 /* SenSelection.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = SenSelection.h; sourceTree = "<group>"; };
+		3DADFF28054E7D6600F32242 /* SenSortOrdering.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = SenSortOrdering.h; sourceTree = "<group>"; };
+		3DADFF29054E7D6600F32242 /* SenTreeEnumerator.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = SenTreeEnumerator.h; sourceTree = "<group>"; };
+		3DADFF2A054E7D6600F32242 /* SenUtilities.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = SenUtilities.h; sourceTree = "<group>"; };
+		3DADFF2B054E7D6600F32242 /* SenValueTree.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = SenValueTree.h; sourceTree = "<group>"; };
+		3DADFF49054E7DB100F32242 /* NSArray_SenAdditions.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = NSArray_SenAdditions.m; sourceTree = SOURCE_ROOT; };
+		3DADFF4A054E7DB100F32242 /* NSBundle_SenAdditions.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = NSBundle_SenAdditions.m; sourceTree = SOURCE_ROOT; };
+		3DADFF4B054E7DB100F32242 /* NSException_SenAdditions.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = NSException_SenAdditions.m; sourceTree = SOURCE_ROOT; };
+		3DADFF4C054E7DB100F32242 /* NSFileManager_SenAdditions.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = NSFileManager_SenAdditions.m; sourceTree = SOURCE_ROOT; };
+		3DADFF4D054E7DB100F32242 /* NSMutableDictionary_SenAdditions.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = NSMutableDictionary_SenAdditions.m; sourceTree = SOURCE_ROOT; };
+		3DADFF4E054E7DB100F32242 /* NSNumber_Extensions.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = NSNumber_Extensions.m; sourceTree = SOURCE_ROOT; };
+		3DADFF4F054E7DB100F32242 /* NSObject_SenAdditions.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = NSObject_SenAdditions.m; sourceTree = SOURCE_ROOT; };
+		3DADFF50054E7DB100F32242 /* NSObject_SenRuntimeUtilities.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = NSObject_SenRuntimeUtilities.m; sourceTree = SOURCE_ROOT; };
+		3DADFF51054E7DB100F32242 /* NSObject_SenTree.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = NSObject_SenTree.m; sourceTree = SOURCE_ROOT; };
+		3DADFF52054E7DB100F32242 /* NSString_SenAdditions.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = NSString_SenAdditions.m; sourceTree = SOURCE_ROOT; };
+		3DADFF53054E7DB100F32242 /* NSTask_SenAdditions.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = NSTask_SenAdditions.m; sourceTree = SOURCE_ROOT; };
+		3DADFF54054E7DB100F32242 /* NSUserDefaults_SenAdditions.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = NSUserDefaults_SenAdditions.m; sourceTree = SOURCE_ROOT; };
+		3DADFF55054E7DB100F32242 /* SenClassEnumerator.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = SenClassEnumerator.m; sourceTree = SOURCE_ROOT; };
+		3DADFF56054E7DB100F32242 /* SenCollection.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = SenCollection.m; sourceTree = SOURCE_ROOT; };
+		3DADFF57054E7DB100F32242 /* SenDateInterval.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = SenDateInterval.m; sourceTree = SOURCE_ROOT; };
+		3DADFF58054E7DB100F32242 /* SenEmptiness.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = SenEmptiness.m; sourceTree = SOURCE_ROOT; };
+		3DADFF59054E7DB100F32242 /* SenFileSystemTree.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = SenFileSystemTree.m; sourceTree = SOURCE_ROOT; };
+		3DADFF5A054E7DB100F32242 /* SenInvocationEnumerator.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = SenInvocationEnumerator.m; sourceTree = SOURCE_ROOT; };
+		3DADFF5B054E7DB100F32242 /* SenMutableTree.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = SenMutableTree.m; sourceTree = SOURCE_ROOT; };
+		3DADFF5C054E7DB100F32242 /* SenPathUtilities.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = SenPathUtilities.m; sourceTree = SOURCE_ROOT; };
+		3DADFF5D054E7DB100F32242 /* SenQualifier.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = SenQualifier.m; sourceTree = SOURCE_ROOT; };
+		3DADFF5E054E7DB100F32242 /* SenRandom.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = SenRandom.m; sourceTree = SOURCE_ROOT; };
+		3DADFF5F054E7DB100F32242 /* SenSelection.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = SenSelection.m; sourceTree = SOURCE_ROOT; };
+		3DADFF60054E7DB100F32242 /* SenSortOrdering.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = SenSortOrdering.m; sourceTree = SOURCE_ROOT; };
+		3DADFF61054E7DB100F32242 /* SenTreeEnumerator.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = SenTreeEnumerator.m; sourceTree = SOURCE_ROOT; };
+		3DADFF62054E7DB100F32242 /* SenUtilities.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = SenUtilities.m; sourceTree = SOURCE_ROOT; };
+		3DADFF63054E7DB100F32242 /* SenValueTree.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = SenValueTree.m; sourceTree = SOURCE_ROOT; };
+		3DADFF81054E7DD800F32242 /* SenAssertion.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = SenAssertion.h; sourceTree = SOURCE_ROOT; };
+		3DADFF82054E7DD800F32242 /* SenFoundation.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = SenFoundation.h; sourceTree = SOURCE_ROOT; };
+		3DADFF83054E7DD800F32242 /* SenFoundationDefines.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = SenFoundationDefines.h; sourceTree = SOURCE_ROOT; };
+		3DADFF84054E7DD800F32242 /* SenTrees.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = SenTrees.h; sourceTree = SOURCE_ROOT; };
+		3DADFF8B054E7E0000F32242 /* sente.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = sente.gif; sourceTree = SOURCE_ROOT; };
+		8DC2EF5A0486A6940098B216 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		8DC2EF5B0486A6940098B216 /* SenFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SenFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E925443A09114837003A2D99 /* libzip.0.0.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libzip.0.0.5.dylib; path = /usr/local/lib/libzip.0.0.5.dylib; sourceTree = "<absolute>"; };
+		E9DF3A820910FE7900F7D93C /* SenZipPackage.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = SenZipPackage.h; sourceTree = "<group>"; };
+		E9DF3A830910FE7900F7D93C /* SenZipPackage.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = SenZipPackage.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8DC2EF560486A6940098B216 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3DAD0155054E7E3700F32242 /* Carbon.framework in Frameworks */,
+				3D8A35EA0563804E00B9C7ED /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		034768DFFF38A50411DB9C8B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8DC2EF5B0486A6940098B216 /* SenFoundation.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0867D691FE84028FC02AAC07 /* SenFoundation */ = {
+			isa = PBXGroup;
+			children = (
+				08FB77AEFE84172EC02AAC07 /* Classes */,
+				3DADFF0B054E7CE100F32242 /* Other Headers */,
+				32C88DFF0371C24200C91783 /* Other Sources */,
+				089C1665FE841158C02AAC07 /* Resources */,
+				0867D69AFE84028FC02AAC07 /* External Frameworks and Libraries */,
+				034768DFFF38A50411DB9C8B /* Products */,
+			);
+			name = SenFoundation;
+			sourceTree = "<group>";
+		};
+		0867D69AFE84028FC02AAC07 /* External Frameworks and Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				E925443A09114837003A2D99 /* libzip.0.0.5.dylib */,
+				1058C7B0FEA5585E11CA2CBB /* Linked Frameworks */,
+				1058C7B2FEA5585E11CA2CBB /* Other Frameworks */,
+			);
+			name = "External Frameworks and Libraries";
+			sourceTree = "<group>";
+		};
+		089C1665FE841158C02AAC07 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3DAD0208054E7ED800F32242 /* Documentation */,
+				3DADFF0E054E7D1100F32242 /* Images */,
+				8DC2EF5A0486A6940098B216 /* Info.plist */,
+				089C1666FE841158C02AAC07 /* InfoPlist.strings */,
+				3DAD01F0054E7E6800F32242 /* SenDateInterval.strings */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		08FB77AEFE84172EC02AAC07 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				E9DF3A820910FE7900F7D93C /* SenZipPackage.h */,
+				E9DF3A830910FE7900F7D93C /* SenZipPackage.m */,
+				3DADFF11054E7D6600F32242 /* NSArray_SenAdditions.h */,
+				3DADFF49054E7DB100F32242 /* NSArray_SenAdditions.m */,
+				3DADFF12054E7D6600F32242 /* NSBundle_SenAdditions.h */,
+				3DADFF4A054E7DB100F32242 /* NSBundle_SenAdditions.m */,
+				3DADFF13054E7D6600F32242 /* NSException_SenAdditions.h */,
+				3DADFF4B054E7DB100F32242 /* NSException_SenAdditions.m */,
+				3DADFF14054E7D6600F32242 /* NSFileManager_SenAdditions.h */,
+				3DADFF4C054E7DB100F32242 /* NSFileManager_SenAdditions.m */,
+				3DADFF15054E7D6600F32242 /* NSMutableDictionary_SenAdditions.h */,
+				3DADFF4D054E7DB100F32242 /* NSMutableDictionary_SenAdditions.m */,
+				3DADFF16054E7D6600F32242 /* NSNumber_Extensions.h */,
+				3DADFF4E054E7DB100F32242 /* NSNumber_Extensions.m */,
+				3DADFF17054E7D6600F32242 /* NSObject_SenAdditions.h */,
+				3DADFF4F054E7DB100F32242 /* NSObject_SenAdditions.m */,
+				3DADFF18054E7D6600F32242 /* NSObject_SenRuntimeUtilities.h */,
+				3DADFF50054E7DB100F32242 /* NSObject_SenRuntimeUtilities.m */,
+				3DADFF19054E7D6600F32242 /* NSObject_SenTree.h */,
+				3DADFF51054E7DB100F32242 /* NSObject_SenTree.m */,
+				3DADFF1A054E7D6600F32242 /* NSString_SenAdditions.h */,
+				3DADFF52054E7DB100F32242 /* NSString_SenAdditions.m */,
+				3DADFF1B054E7D6600F32242 /* NSTask_SenAdditions.h */,
+				3DADFF53054E7DB100F32242 /* NSTask_SenAdditions.m */,
+				3DADFF1C054E7D6600F32242 /* NSUserDefaults_SenAdditions.h */,
+				3DADFF54054E7DB100F32242 /* NSUserDefaults_SenAdditions.m */,
+				3DADFF1D054E7D6600F32242 /* SenClassEnumerator.h */,
+				3DADFF55054E7DB100F32242 /* SenClassEnumerator.m */,
+				3DADFF1E054E7D6600F32242 /* SenCollection.h */,
+				3DADFF56054E7DB100F32242 /* SenCollection.m */,
+				3DADFF1F054E7D6600F32242 /* SenDateInterval.h */,
+				3DADFF57054E7DB100F32242 /* SenDateInterval.m */,
+				3DADFF20054E7D6600F32242 /* SenEmptiness.h */,
+				3DADFF58054E7DB100F32242 /* SenEmptiness.m */,
+				3DADFF21054E7D6600F32242 /* SenFileSystemTree.h */,
+				3DADFF59054E7DB100F32242 /* SenFileSystemTree.m */,
+				3DADFF22054E7D6600F32242 /* SenInvocationEnumerator.h */,
+				3DADFF5A054E7DB100F32242 /* SenInvocationEnumerator.m */,
+				3DADFF23054E7D6600F32242 /* SenMutableTree.h */,
+				3DADFF5B054E7DB100F32242 /* SenMutableTree.m */,
+				3DADFF24054E7D6600F32242 /* SenPathUtilities.h */,
+				3DADFF5C054E7DB100F32242 /* SenPathUtilities.m */,
+				3DADFF25054E7D6600F32242 /* SenQualifier.h */,
+				3DADFF5D054E7DB100F32242 /* SenQualifier.m */,
+				3DADFF26054E7D6600F32242 /* SenRandom.h */,
+				3DADFF5E054E7DB100F32242 /* SenRandom.m */,
+				3DADFF27054E7D6600F32242 /* SenSelection.h */,
+				3DADFF5F054E7DB100F32242 /* SenSelection.m */,
+				3DADFF28054E7D6600F32242 /* SenSortOrdering.h */,
+				3DADFF60054E7DB100F32242 /* SenSortOrdering.m */,
+				3DADFF29054E7D6600F32242 /* SenTreeEnumerator.h */,
+				3DADFF61054E7DB100F32242 /* SenTreeEnumerator.m */,
+				3DADFF2A054E7D6600F32242 /* SenUtilities.h */,
+				3DADFF62054E7DB100F32242 /* SenUtilities.m */,
+				3DADFF2B054E7D6600F32242 /* SenValueTree.h */,
+				3DADFF63054E7DB100F32242 /* SenValueTree.m */,
+				3D0B69B8067DCF9A00FC6739 /* NSIndexSet_SenAdditions.h */,
+				3D0B69B9067DCF9A00FC6739 /* NSIndexSet_SenAdditions.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		1058C7B0FEA5585E11CA2CBB /* Linked Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0867D69BFE84028FC02AAC07 /* Foundation.framework */,
+				3DAD0154054E7E3700F32242 /* Carbon.framework */,
+			);
+			name = "Linked Frameworks";
+			sourceTree = "<group>";
+		};
+		1058C7B2FEA5585E11CA2CBB /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		32C88DFF0371C24200C91783 /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				32DBCF5E0370ADEE00C91783 /* SenFoundation_Prefix.pch */,
+				3DADFEF6054E7BE300F32242 /* mt19937int.c */,
+				3D68F63F05C686E7003F4EE3 /* SenCheckpoint.h */,
+				3D68F64005C686E7003F4EE3 /* SenCheckpoint.m */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		3DAD0208054E7ED800F32242 /* Documentation */ = {
+			isa = PBXGroup;
+			children = (
+				3DAD020B054E7EF400F32242 /* OpenSourceLicense.html */,
+			);
+			name = Documentation;
+			sourceTree = "<group>";
+		};
+		3DADFF0B054E7CE100F32242 /* Other Headers */ = {
+			isa = PBXGroup;
+			children = (
+				3DADFF81054E7DD800F32242 /* SenAssertion.h */,
+				3DADFF82054E7DD800F32242 /* SenFoundation.h */,
+				3DADFF83054E7DD800F32242 /* SenFoundationDefines.h */,
+				3DADFF84054E7DD800F32242 /* SenTrees.h */,
+			);
+			name = "Other Headers";
+			sourceTree = "<group>";
+		};
+		3DADFF0E054E7D1100F32242 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				3DADFF8B054E7E0000F32242 /* sente.gif */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		8DC2EF500486A6940098B216 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8DC2EF510486A6940098B216 /* SenFoundation_Prefix.pch in Headers */,
+				3DADFF2C054E7D6600F32242 /* NSArray_SenAdditions.h in Headers */,
+				3DADFF2D054E7D6600F32242 /* NSBundle_SenAdditions.h in Headers */,
+				3DADFF2E054E7D6600F32242 /* NSException_SenAdditions.h in Headers */,
+				3DADFF2F054E7D6600F32242 /* NSFileManager_SenAdditions.h in Headers */,
+				3DADFF30054E7D6600F32242 /* NSMutableDictionary_SenAdditions.h in Headers */,
+				3DADFF31054E7D6600F32242 /* NSNumber_Extensions.h in Headers */,
+				3DADFF32054E7D6600F32242 /* NSObject_SenAdditions.h in Headers */,
+				3DADFF33054E7D6600F32242 /* NSObject_SenRuntimeUtilities.h in Headers */,
+				3DADFF34054E7D6600F32242 /* NSObject_SenTree.h in Headers */,
+				3DADFF35054E7D6600F32242 /* NSString_SenAdditions.h in Headers */,
+				3DADFF36054E7D6600F32242 /* NSTask_SenAdditions.h in Headers */,
+				3DADFF37054E7D6600F32242 /* NSUserDefaults_SenAdditions.h in Headers */,
+				3DADFF38054E7D6600F32242 /* SenClassEnumerator.h in Headers */,
+				3DADFF39054E7D6600F32242 /* SenCollection.h in Headers */,
+				3DADFF3A054E7D6600F32242 /* SenDateInterval.h in Headers */,
+				3DADFF3B054E7D6600F32242 /* SenEmptiness.h in Headers */,
+				3DADFF3C054E7D6600F32242 /* SenFileSystemTree.h in Headers */,
+				3DADFF3D054E7D6600F32242 /* SenInvocationEnumerator.h in Headers */,
+				3DADFF3E054E7D6600F32242 /* SenMutableTree.h in Headers */,
+				3DADFF3F054E7D6600F32242 /* SenPathUtilities.h in Headers */,
+				3DADFF40054E7D6600F32242 /* SenQualifier.h in Headers */,
+				3DADFF41054E7D6600F32242 /* SenRandom.h in Headers */,
+				3DADFF42054E7D6600F32242 /* SenSelection.h in Headers */,
+				3DADFF43054E7D6600F32242 /* SenSortOrdering.h in Headers */,
+				3DADFF44054E7D6600F32242 /* SenTreeEnumerator.h in Headers */,
+				3DADFF45054E7D6600F32242 /* SenUtilities.h in Headers */,
+				3DADFF46054E7D6600F32242 /* SenValueTree.h in Headers */,
+				3DADFF86054E7DD800F32242 /* SenFoundation.h in Headers */,
+				3DADFF87054E7DD800F32242 /* SenFoundationDefines.h in Headers */,
+				3DADFF88054E7DD800F32242 /* SenTrees.h in Headers */,
+				3DAD038E054E8D2700F32242 /* SenAssertion.h in Headers */,
+				3D68F64105C686E7003F4EE3 /* SenCheckpoint.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		8DC2EF4F0486A6940098B216 /* Framework */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E9980B4008D9A2EA0025562C /* Build configuration list for PBXNativeTarget "Framework" */;
+			buildPhases = (
+				8DC2EF500486A6940098B216 /* Headers */,
+				8DC2EF520486A6940098B216 /* Resources */,
+				8DC2EF540486A6940098B216 /* Sources */,
+				8DC2EF560486A6940098B216 /* Frameworks */,
+				8DC2EF580486A6940098B216 /* Rez */,
+			);
+			buildRules = (
+			);
+			buildSettings = {
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_SEARCH_PATHS = "";
+				FRAMEWORK_VERSION = A;
+				GCC_ENABLE_TRIGRAPHS = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = SenFoundation_Prefix.pch;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_CHECK_SWITCH_STATEMENTS = YES;
+				GCC_WARN_INITIALIZER_NOT_FULLY_BRACKETED = YES;
+				GCC_WARN_MISSING_PARENTHESES = YES;
+				GCC_WARN_SHADOW = YES;
+				GCC_WARN_TYPECHECK_CALLS_TO_PRINTF = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_LABEL = YES;
+				GCC_WARN_UNUSED_VALUE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "";
+				INFOPLIST_FILE = Info.plist;
+				LIBRARY_SEARCH_PATHS = "";
+				LIBRARY_STYLE = Dynamic;
+				OTHER_LDFLAGS = (
+					"-seg1addr",
+					0x15000000,
+					"-headerpad_max_install_names",
+				);
+				PRODUCT_NAME = SenFoundation;
+				SECTORDER_FLAGS = "";
+				SKIP_INSTALL = NO;
+				WRAPPER_EXTENSION = framework;
+			};
+			dependencies = (
+			);
+			name = Framework;
+			productInstallPath = "$(HOME)/Library/Frameworks";
+			productName = SenFoundation;
+			productReference = 8DC2EF5B0486A6940098B216 /* SenFoundation.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0867D690FE84028FC02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = E9980B4508D9A2EA0025562C /* Build configuration list for PBXProject "SenFoundation" */;
+			buildSettings = {
+			};
+			buildStyles = (
+				014CEA440018CDF011CA2923 /* Development */,
+				014CEA450018CDF011CA2923 /* Deployment */,
+				3D0E24A6056A16FE008C5DAA /* EmbeddedDeployment */,
+			);
+			hasScannedForEncodings = 1;
+			mainGroup = 0867D691FE84028FC02AAC07 /* SenFoundation */;
+			productRefGroup = 034768DFFF38A50411DB9C8B /* Products */;
+			projectDirPath = "";
+			targets = (
+				8DC2EF4F0486A6940098B216 /* Framework */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8DC2EF520486A6940098B216 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8DC2EF530486A6940098B216 /* InfoPlist.strings in Resources */,
+				3DADFF8C054E7E0000F32242 /* sente.gif in Resources */,
+				3DAD01F2054E7E6800F32242 /* SenDateInterval.strings in Resources */,
+				3DAD020C054E7EF400F32242 /* OpenSourceLicense.html in Resources */,
+				3DB97718056289DA001EC5B5 /* Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXRezBuildPhase section */
+		8DC2EF580486A6940098B216 /* Rez */ = {
+			isa = PBXRezBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXRezBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8DC2EF540486A6940098B216 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3DADFEF7054E7BE300F32242 /* mt19937int.c in Sources */,
+				3DADFF64054E7DB100F32242 /* NSArray_SenAdditions.m in Sources */,
+				3DADFF65054E7DB100F32242 /* NSBundle_SenAdditions.m in Sources */,
+				3DADFF66054E7DB100F32242 /* NSException_SenAdditions.m in Sources */,
+				3DADFF67054E7DB100F32242 /* NSFileManager_SenAdditions.m in Sources */,
+				3DADFF68054E7DB100F32242 /* NSMutableDictionary_SenAdditions.m in Sources */,
+				3DADFF69054E7DB100F32242 /* NSNumber_Extensions.m in Sources */,
+				3DADFF6A054E7DB100F32242 /* NSObject_SenAdditions.m in Sources */,
+				3DADFF6B054E7DB100F32242 /* NSObject_SenRuntimeUtilities.m in Sources */,
+				3DADFF6C054E7DB100F32242 /* NSObject_SenTree.m in Sources */,
+				3DADFF6D054E7DB100F32242 /* NSString_SenAdditions.m in Sources */,
+				3DADFF6E054E7DB100F32242 /* NSTask_SenAdditions.m in Sources */,
+				3DADFF6F054E7DB100F32242 /* NSUserDefaults_SenAdditions.m in Sources */,
+				3DADFF70054E7DB100F32242 /* SenClassEnumerator.m in Sources */,
+				3DADFF71054E7DB100F32242 /* SenCollection.m in Sources */,
+				3DADFF72054E7DB100F32242 /* SenDateInterval.m in Sources */,
+				3DADFF73054E7DB100F32242 /* SenEmptiness.m in Sources */,
+				3DADFF74054E7DB100F32242 /* SenFileSystemTree.m in Sources */,
+				3DADFF75054E7DB100F32242 /* SenInvocationEnumerator.m in Sources */,
+				3DADFF76054E7DB100F32242 /* SenMutableTree.m in Sources */,
+				3DADFF77054E7DB200F32242 /* SenPathUtilities.m in Sources */,
+				3DADFF78054E7DB200F32242 /* SenQualifier.m in Sources */,
+				3DADFF79054E7DB200F32242 /* SenRandom.m in Sources */,
+				3DADFF7A054E7DB200F32242 /* SenSelection.m in Sources */,
+				3DADFF7B054E7DB200F32242 /* SenSortOrdering.m in Sources */,
+				3DADFF7C054E7DB200F32242 /* SenTreeEnumerator.m in Sources */,
+				3DADFF7D054E7DB200F32242 /* SenUtilities.m in Sources */,
+				3DADFF7E054E7DB200F32242 /* SenValueTree.m in Sources */,
+				3D68F64205C686E7003F4EE3 /* SenCheckpoint.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		089C1666FE841158C02AAC07 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				089C1667FE841158C02AAC07 /* English */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		3DAD01F0054E7E6800F32242 /* SenDateInterval.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3DAD01F1054E7E6800F32242 /* SenDateInterval.strings */,
+				3DAD01F5054E7E7E00F32242 /* SenDateInterval.strings */,
+			);
+			name = SenDateInterval.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E9980B4108D9A2EA0025562C /* Development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				DEBUGGING_SYMBOLS = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_SEARCH_PATHS = "";
+				FRAMEWORK_VERSION = A;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_ENABLE_TRIGRAPHS = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = SenFoundation_Prefix.pch;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_CHECK_SWITCH_STATEMENTS = YES;
+				GCC_WARN_INITIALIZER_NOT_FULLY_BRACKETED = YES;
+				GCC_WARN_MISSING_PARENTHESES = YES;
+				GCC_WARN_SHADOW = YES;
+				GCC_WARN_TYPECHECK_CALLS_TO_PRINTF = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_LABEL = YES;
+				GCC_WARN_UNUSED_VALUE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "";
+				INFOPLIST_FILE = Info.plist;
+				LIBRARY_SEARCH_PATHS = "";
+				LIBRARY_STYLE = Dynamic;
+				MACH_O_TYPE = mh_dylib;
+				OPTIMIZATION_CFLAGS = "-O0";
+				OTHER_LDFLAGS = (
+					"-seg1addr",
+					0x15000000,
+					"-headerpad_max_install_names",
+				);
+				PRODUCT_NAME = SenFoundation;
+				SECTORDER_FLAGS = "";
+				SKIP_INSTALL = NO;
+				WRAPPER_EXTENSION = framework;
+				ZERO_LINK = YES;
+			};
+			name = Development;
+		};
+		E9980B4208D9A2EA0025562C /* Deployment */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_SEARCH_PATHS = "";
+				FRAMEWORK_VERSION = A;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_ENABLE_TRIGRAPHS = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = SenFoundation_Prefix.pch;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_CHECK_SWITCH_STATEMENTS = YES;
+				GCC_WARN_INITIALIZER_NOT_FULLY_BRACKETED = YES;
+				GCC_WARN_MISSING_PARENTHESES = YES;
+				GCC_WARN_SHADOW = YES;
+				GCC_WARN_TYPECHECK_CALLS_TO_PRINTF = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_LABEL = YES;
+				GCC_WARN_UNUSED_VALUE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "";
+				INFOPLIST_FILE = Info.plist;
+				LIBRARY_SEARCH_PATHS = "";
+				LIBRARY_STYLE = Dynamic;
+				MACH_O_TYPE = mh_dylib;
+				OTHER_LDFLAGS = (
+					"-seg1addr",
+					0x15000000,
+					"-headerpad_max_install_names",
+				);
+				PRODUCT_NAME = SenFoundation;
+				SECTORDER_FLAGS = "";
+				SKIP_INSTALL = NO;
+				WRAPPER_EXTENSION = framework;
+				ZERO_LINK = NO;
+			};
+			name = Deployment;
+		};
+		E9980B4308D9A2EA0025562C /* EmbeddedDeployment */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				DEPLOYMENT_LOCATION = YES;
+				DEPLOYMENT_POSTPROCESSING = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_SEARCH_PATHS = "";
+				FRAMEWORK_VERSION = A;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_ENABLE_TRIGRAPHS = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = SenFoundation_Prefix.pch;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_CHECK_SWITCH_STATEMENTS = YES;
+				GCC_WARN_INITIALIZER_NOT_FULLY_BRACKETED = YES;
+				GCC_WARN_MISSING_PARENTHESES = YES;
+				GCC_WARN_SHADOW = YES;
+				GCC_WARN_TYPECHECK_CALLS_TO_PRINTF = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_LABEL = YES;
+				GCC_WARN_UNUSED_VALUE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "";
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "@executable_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = "";
+				LIBRARY_STYLE = Dynamic;
+				MACH_O_TYPE = mh_dylib;
+				OTHER_LDFLAGS = (
+					"-seg1addr",
+					0x15000000,
+					"-headerpad_max_install_names",
+				);
+				PRODUCT_NAME = SenFoundation;
+				SECTORDER_FLAGS = "";
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = framework;
+				ZERO_LINK = NO;
+			};
+			name = EmbeddedDeployment;
+		};
+		E9980B4408D9A2EA0025562C /* Default */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_SEARCH_PATHS = "";
+				FRAMEWORK_VERSION = A;
+				GCC_ENABLE_TRIGRAPHS = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = SenFoundation_Prefix.pch;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_CHECK_SWITCH_STATEMENTS = YES;
+				GCC_WARN_INITIALIZER_NOT_FULLY_BRACKETED = YES;
+				GCC_WARN_MISSING_PARENTHESES = YES;
+				GCC_WARN_SHADOW = YES;
+				GCC_WARN_TYPECHECK_CALLS_TO_PRINTF = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_LABEL = YES;
+				GCC_WARN_UNUSED_VALUE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "";
+				INFOPLIST_FILE = Info.plist;
+				LIBRARY_SEARCH_PATHS = "";
+				LIBRARY_STYLE = Dynamic;
+				MACH_O_TYPE = mh_dylib;
+				OTHER_LDFLAGS = (
+					"-seg1addr",
+					0x15000000,
+					"-headerpad_max_install_names",
+				);
+				PRODUCT_NAME = SenFoundation;
+				SECTORDER_FLAGS = "";
+				SKIP_INSTALL = NO;
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Default;
+		};
+		E9980B4608D9A2EA0025562C /* Development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+			};
+			name = Development;
+		};
+		E9980B4708D9A2EA0025562C /* Deployment */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					ppc,
+					i386,
+				);
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+			};
+			name = Deployment;
+		};
+		E9980B4808D9A2EA0025562C /* EmbeddedDeployment */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+			};
+			name = EmbeddedDeployment;
+		};
+		E9980B4908D9A2EA0025562C /* Default */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+			};
+			name = Default;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E9980B4008D9A2EA0025562C /* Build configuration list for PBXNativeTarget "Framework" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E9980B4108D9A2EA0025562C /* Development */,
+				E9980B4208D9A2EA0025562C /* Deployment */,
+				E9980B4308D9A2EA0025562C /* EmbeddedDeployment */,
+				E9980B4408D9A2EA0025562C /* Default */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Default;
+		};
+		E9980B4508D9A2EA0025562C /* Build configuration list for PBXProject "SenFoundation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E9980B4608D9A2EA0025562C /* Development */,
+				E9980B4708D9A2EA0025562C /* Deployment */,
+				E9980B4808D9A2EA0025562C /* EmbeddedDeployment */,
+				E9980B4908D9A2EA0025562C /* Default */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Default;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0867D690FE84028FC02AAC07 /* Project object */;
+}

@@ -1,0 +1,7 @@
+Class = SenPanelsPalette;			/* (a subclass of IBPalette) */
+NibFile = SenForms;			/* (a nib file name) */
+ExportClasses = (SenOpenPanelController, SenFormController, SenPanelFactory, SenFormPanelController, SenMultiPageController);
+/* Icon =;				(a tiff/eps file name) */
+/* ExportClasses = ();			(a list of class names) */
+/* ExportImages = ();			(a list of icon names) */
+/* ExportSounds = ();			(a list of sound names) */

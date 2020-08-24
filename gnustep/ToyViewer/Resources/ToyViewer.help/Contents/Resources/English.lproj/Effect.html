@@ -1,0 +1,229 @@
+<HTML>
+<head>
+<META HTTP-EQUIV="content-type" CONTENT="text/html;charset=iso-8859-1">
+<title>Various Effects</title>
+<META NAME="AppleTitle" CONTENT="ToyViewer Help">
+<META NAME="AppleFont" CONTENT="Lucida Grande,Helvetica">
+<META NAME="AppleSearchResultsFont" CONTENT="Lucida Grande,Helvetica">
+</head>
+
+<BODY BGCOLOR="#FFFFD0">
+<h3 align=right><i>ToyViewer (Ver.4.20)</i></h3>
+<hr>
+
+<h2>Clip</h2>
+You can select a part of the image by dragging.  Selected area can be clipped by "Operation / Clip" (Cmd-Opt-C) of the menu.  Clipped images are displayed on newly opened windows.
+<p>
+
+<h3>Clipping and Copy</h3>
+You can `copy' a part of the image selected by dragging as a tiff image.  However, resolution and number of colors of the image depend on the environment.
+<br>
+Clipped image keeps same quality as original.
+<p>
+
+<h3>Clipping of PDF/EPS</h3>
+ToyViewer can not clip PDF images.
+<p>
+Clipping an EPS image, only parameters of `BoundingBox' of the image are modified.  So, all information out of the frame is still in the image file.
+<br>
+Current version of Mac OS X (10.1.5) does not display EPS images.
+<p>
+
+
+<h2>Rotate / Flip</h2>
+Displayed images are rotated or flipped selecting sub-items of "Operation" of the menu.  New windows are opened to display rotated or flipped images.
+<br>
+If you click "Operation / Rotate..." of the menu a panel is displayed, on which you can set any angle to rotate.
+<br>
+If check button "Smooth Image" is marked, newly created images are smooth, but it does not have alpha value.
+<br>
+This operation can not be applied to PDF images.
+<p>
+
+
+<a name="rescale">
+<h2>Resize</h2>
+</a>
+Clicking the item "Operation / Resize..." of the menu, you can display the tool panel to make resized images.
+<br>
+Specify magnification with the slider, and then click "Bitmap -> Bitmap", "EPS -> EPS", or "PDF/EPS -> Bitmap".  Where, "Bitmap" represents all image formats except PDF/EPS (Pixel based formats).
+<br>
+When you resize a PDF/EPS image, newly created images are always smooth.  So, don't care about "DCT" or "Bilinear" .
+<br>
+When you shrink a bitmap image, as "DCT" is applied automatically, only pre-defined magnifications can be selected.  Removing check from "Auto Select" and selecting "Bilinear", you can specify any magnification.  Both of them can make resized images keeping good quality for pictorial images.  But, for palettized or bilevel images, DCT would be recommended. 
+<br>
+When you enlarge a bitmap image, use "Bilinear" method.  Any magnification could be used.
+<br>
+The new image is displayed on newly opened window.
+<p>
+
+
+<h2>Color Reduction</h2>
+ToyViewer is able to make a new image with less colors from the original image that has more colors.  However, this operation can not be applied to PDF/EPS images.
+<p>
+Clicking "Effect / Color Reduction (256)" of the menu, you can make a new image with only 256 colors.
+<p>
+Clicking "Effect / Color Reduction..." of the menu, a tool panel is displayed.  You can specify the method and parameters of reduction with it.  There are several methods to reduce images; usually, "Dither + MCA(Median Cut Algorithm)" could make more beautiful images.  Reduction by "Fixed Palette" uses the palette which is common to Windows and Macintosh.  You can also cut off bits of each color value to 4, 2, or 1.
+<br>
+The new image is displayed on newly opened window.
+<br>
+If you want to make a monochrome image, see "Brightness / Monochrome".
+<p>
+
+
+<h2>Negative</h2>
+You can make a negative image of the original one with "Effect / Negative" of the menu.  If an area is selected by dragging, only the area is made negative.
+<br>
+The new image is displayed on newly opened window.
+<br>
+This operation can not be applied to PDF/EPS images.
+<p>
+
+
+<h2>Brightness / Monochrome</h2>
+Brightness, contrast, and gamma value of images can be changed.  You can also make monochrome images from color images.
+<p>
+If you click "Effect / Brightness/Monochrome..." of the menu a panel is displayed.  With three sliders on the panel you can set brightness, contrast, or gamma of the image newly created.
+<br>
+If you click "Brightness" button a new image is displayed, which is changed its brightness/contrast.
+<br>
+If you click "Monochrome" button, a monochrome image is newly displayed.  Method and the number of steps are set by popup lists.  The brightness/contrast is also controlled by the sliders on the panel.  If you want to cut off pixels into 4, 2, or 1 bit without dithering, use menu of "Color Reduction".
+<br>
+This operation can not be applied to PDF/EPS images.
+<p>
+
+
+<h2>Color Tone</h2>
+You can tune color tone (saturation and hue) of images.
+<p>
+If you click "Effect / Enhance Color Tone..." of the menu a panel is displayed, on which you can set the degree of enhancement.  Large value of "Saturation" makes images brilliant.  You can also control hue of images.
+<br>
+If you click "Doit" button an enhanced image is newly displayed.
+<br>
+This operation can not be applied to PDF/EPS images.
+<p>
+
+
+<h2>Enhance &amp; Blur</h2>
+You can enhance or soften edges in images.
+<p>
+If you click "Effect / Enhance &amp; Blur..." of the menu a panel is displayed, on which you can set the degree of enhancement or blurring.  Clicking the button "Enhance" or "Blur", you can display a new image.
+<br>
+If an area is selected by dragging, only the inside (or outside) of the area is enhanced / blurred.
+<br>
+This operation can not be applied to PDF/EPS images.
+<p>
+
+
+<h2>Replace Colors</h2>
+You can replace specified color in the image with other color or transparent color.
+<p>
+If you click "Effect / Replace Colors..." of the menu a panel is displayed, on which you can set replaced colors with the color-wells.  The degree of exactness in comparison of colors is set by the slider.
+<br>
+If an area is selected by dragging, this operation will be applied to only inside or outside of the area.
+<br>
+If you click "Doit" button a new image is newly displayed.
+<p>
+ToyViewer provides 4 ways of color replacement.
+<ol>
+<li> Replace with target
+<li> Convert matched colors
+<li> Convert all gradually
+<li> Convert all similarly
+</ol>
+<br>
+Original <img src="../images/cc0.jpg">
+<br>
+Replace <img src="../images/ccwell1.jpg">
+ --&gt; <img src="../images/ccwell2.jpg">
+<p>
+
+ (1)<img src="../images/cc1.jpg">
+ (2)<img src="../images/cc2.jpg">
+<br>
+ (3)<img src="../images/cc3.jpg">
+ (4)<img src="../images/cc4.jpg">
+
+<p>
+This operation can not be applied to PDF/EPS images.
+<p>
+
+<h2>Remove Alpha Value</h2>
+You can replace alpha (transparent) value in images with some color.
+<br>
+In previous "Replace Colors", check "Alpha" button in the frame of "Original" and specify some color (typically white or black) in the color-well of "Replace".
+<p>
+
+
+<h2>Noise</h2>
+You can add random noise into the image data.
+<p>
+If you click "Effect / Noise/Mosaic..." of the menu a panel is displayed.  With "Frequency" slider, you can set the ratio of pixels that is modified.  And, with "Magnitude" slider, you can set the magnitude of noise added.  If an area is selected by dragging, this operation will be applied to only inside of the area.
+<br>
+If you click "Noise" button a new image is newly displayed.
+<br>
+This operation can not be applied to PDF/EPS images.
+<p>
+
+
+<h2>Mosaic</h2>
+Dull the selected area with mosaic-like pattern.  Without selection, whole the image is dulled.
+<p>
+If you click "Effect / Noise/Mosaic..." of the menu a panel is displayed.  With "Granularity" slider, you can set the size of blocks which form mosaic.  If you click "Mosaic" button a new image is newly displayed.
+<br>
+This operation can not be applied to PDF/EPS images.
+<br>
+
+
+<h2>Soft Frame</h2>
+You can add a foggy frame to the image.
+<p>
+If you click "Effect / Make Soft Frame..." of the menu a panel is displayed.  With "Shape" button, you can select the shape of the frame added.  With "Width" slider, you can set the width of the frame.  And, with the color-well, you can set the color of the frame.
+<br>
+If you click "Doit" button a new image is newly displayed.
+<br>
+This operation can not be applied to PDF/EPS images.
+<p>
+You can make Aqua-button-like images as below.
+Note that this function is effective especially for small images.
+<p>
+<blockquote>
+ <img src="../images/cube1.gif" align=middle> ==&gt;
+ <img src="../images/cube2.gif" align=middle>
+</blockquote>
+</p>
+
+<h2>Posterize</h2>
+The areas in which pixels have similar color are painted uniformly.
+<p>
+If you click "Effect / Posterize..." of the menu a panel is displayed.  With "Degree" slider, you can select fineness of areas.  "Color Control" slider specifies fineness in aspect of difference of colors.
+<br>
+This operation can not be applied to PDF/EPS images.
+<p>
+
+
+<h2>Embossing</h2>
+You can give embossing effects to images.  Embossed images look like relief.
+<p>
+If you click "Effect / Contour/Emboss..." of the menu a panel is displayed.  You can specify the degree of embossing with the upper slider.  With "Mixed Color" slider, you can add color to the image.  You can also specify the direction of embossing with the radio button.  If you click "Emboss" button a new image is newly displayed.
+<br>
+This operation can not be applied to PDF/EPS images.
+<p>
+
+
+<h2>Contour</h2>
+You can extract contour lines of the image.
+<p>
+If you click "Effect / Contour/Emboss..." of the menu a panel is displayed.  You can set degree of sensitivity with the upper slider.  With larger value, more lines could be extracted.  With "Mixed Color" slider, you can add color to the image.  You can specify the thickness of contour with "Contrast" slider.  If you click "Contour" button a new image is newly displayed.
+<br>
+This operation can not be applied to PDF/EPS images.
+<p>
+Applying "posterize" described above after this operation, you can get interesting effect.
+<p>
+
+
+<hr>
+<h3 align=right><a href="index.html">Return to Help Index</a></h3>
+
+</body>
+</HTML>

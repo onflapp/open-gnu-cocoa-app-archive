@@ -1,0 +1,13 @@
+{
+    IBClasses = (
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {connect = id; disconnect = id; showConnection = id; }; 
+            CLASS = SenFormControllerConnectInspector; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {editorColumn = id; labelColumn = id; tableView = id; }; 
+            SUPERCLASS = IBInspector; 
+        }
+    ); 
+    IBVersion = 1; 
+}

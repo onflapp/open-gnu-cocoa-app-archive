@@ -1,0 +1,75 @@
+// !$*UTF8*$!
+{
+	0867D690FE84028FC02AAC07 /* Project object */ = {
+		activeBuildConfigurationName = Deployment;
+		activeBuildStyle = 014CEA440018CDF011CA2923 /* Development */;
+		activeTarget = 8DC2EF4F0486A6940098B216 /* Framework */;
+		codeSenseManager = F4A276FF09ED31E600CB6D7B /* Code sense */;
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					243,
+					20,
+					48,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 169396183;
+			PBXWorkspaceStateSaveDate = 169396183;
+		};
+		sourceControlManager = F4A276FE09ED31E600CB6D7B /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	3DADFF53054E7DB100F32242 /* NSTask_SenAdditions.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {453, 2422}}";
+			sepNavSelRange = "{3854, 108}";
+			sepNavVisRect = "{{0, 1717}, {453, 193}}";
+		};
+	};
+	8DC2EF4F0486A6940098B216 /* Framework */ = {
+		activeExec = 0;
+	};
+	E9DF3A820910FE7900F7D93C /* SenZipPackage.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {734, 406}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRect = "{{0, 252}, {734, 154}}";
+		};
+	};
+	E9DF3A830910FE7900F7D93C /* SenZipPackage.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {734, 1512}}";
+			sepNavSelRange = "{234, 10}";
+			sepNavVisRect = "{{0, 105}, {734, 154}}";
+			sepNavWindowFrame = "{{61, 397}, {750, 558}}";
+		};
+	};
+	F4A276FE09ED31E600CB6D7B /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+		};
+		scmType = "";
+	};
+	F4A276FF09ED31E600CB6D7B /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+}

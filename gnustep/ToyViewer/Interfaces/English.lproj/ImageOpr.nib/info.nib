@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist SYSTEM "file://localhost/System/Library/DTDs/PropertyList.dtd">
+<plist version="0.9">
+<dict>
+	<key>IBDocumentLocation</key>
+	<string>191 49 356 240 0 0 1024 746 </string>
+	<key>IBFramework Version</key>
+	<string>219.0</string>
+	<key>IBSystem Version</key>
+	<string>5S66</string>
+	<key>IBUserGuides</key>
+	<dict>
+		<key>PosterPanel</key>
+		<dict>
+			<key>guideLocations</key>
+			<array/>
+			<key>guidesLocked</key>
+			<string>NO</string>
+		</dict>
+		<key>ReductionPanel</key>
+		<dict>
+			<key>guideLocations</key>
+			<array/>
+			<key>guidesLocked</key>
+			<string>NO</string>
+		</dict>
+		<key>colorTone</key>
+		<dict>
+			<key>guideLocations</key>
+			<array/>
+			<key>guidesLocked</key>
+			<string>NO</string>
+		</dict>
+		<key>edgePanel</key>
+		<dict>
+			<key>guideLocations</key>
+			<array/>
+			<key>guidesLocked</key>
+			<string>NO</string>
+		</dict>
+		<key>monoPanel</key>
+		<dict>
+			<key>guideLocations</key>
+			<array/>
+			<key>guidesLocked</key>
+			<string>NO</string>
+		</dict>
+		<key>randomPanel</key>
+		<dict>
+			<key>guideLocations</key>
+			<array/>
+			<key>guidesLocked</key>
+			<string>NO</string>
+		</dict>
+		<key>rotatePanel</key>
+		<dict>
+			<key>guideLocations</key>
+			<array/>
+			<key>guidesLocked</key>
+			<string>NO</string>
+		</dict>
+		<key>sframePanel</key>
+		<dict>
+			<key>guideLocations</key>
+			<array/>
+			<key>guidesLocked</key>
+			<string>NO</string>
+		</dict>
+		<key>smResizePanel</key>
+		<dict>
+			<key>guideLocations</key>
+			<array/>
+			<key>guidesLocked</key>
+			<string>NO</string>
+		</dict>
+		<key>toolPanel</key>
+		<dict>
+			<key>guideLocations</key>
+			<array/>
+			<key>guidesLocked</key>
+			<string>NO</string>
+		</dict>
+	</dict>
+</dict>
+</plist>

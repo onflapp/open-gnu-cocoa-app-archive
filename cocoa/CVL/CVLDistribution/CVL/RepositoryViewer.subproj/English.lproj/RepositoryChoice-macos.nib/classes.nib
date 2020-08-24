@@ -1,0 +1,44 @@
+{
+    IBClasses = (
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {CLASS = NSObject; LANGUAGE = ObjC; }, 
+        {
+            ACTIONS = {cancel = id; ok = id; switchPage = id; }; 
+            CLASS = RepositoryChoicePanel; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {panel = id; popup = id; swappableView = id; }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            ACTIONS = {
+                refreshControls = id; 
+                takeObjectValueFromSender = id; 
+                takeObjectValuesFromAllControls = id; 
+            }; 
+            CLASS = SenFormController; 
+            LANGUAGE = ObjC; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            ACTIONS = {cancel = id; ok = id; }; 
+            CLASS = SenFormPanelController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {formController = id; panel = id; }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            ACTIONS = {refreshControls = id; switchPage = id; takeObjectValuesFromAllControls = id; }; 
+            CLASS = SenMultiPageController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {popup = NSPopUpButton; swappableView = NSView; }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            CLASS = SenPanelFactory; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {handle = id; }; 
+            SUPERCLASS = NSObject; 
+        }
+    ); 
+    IBVersion = 1; 
+}

@@ -1,0 +1,21 @@
+{
+    IBClasses = (
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {CLASS = GifSavePanel; LANGUAGE = ObjC; SUPERCLASS = TVSavePanel; }, 
+        {
+            ACTIONS = {cancel = id; ok = id; selectText = id; }; 
+            CLASS = NSSavePanel; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {accessoryView = id; browser = id; form = id; okButton = id; separator = id; }; 
+            SUPERCLASS = NSPanel; 
+        }, 
+        {
+            ACTIONS = {changeSuffix = id; setInterlaceBy = id; setThumbnailBy = id; }; 
+            CLASS = TVSavePanel; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {accessory = id; interlaceSW = id; suffixButton = id; thumbnailSW = id; }; 
+            SUPERCLASS = NSSavePanel; 
+        }
+    ); 
+    IBVersion = 1; 
+}

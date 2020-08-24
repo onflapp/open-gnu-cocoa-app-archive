@@ -1,0 +1,24 @@
+{
+    IBClasses = (
+        {
+            ACTIONS = {
+                clearText = id; 
+                toggleAutoPopup = id; 
+                toggleRequestLogging = id; 
+                updatePopupTimeout = id; 
+            }; 
+            CLASS = CVLConsoleController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                autoPopupSwitch = id; 
+                logRequestsSwitch = id; 
+                popupTimeoutFormCell = id; 
+                text = id; 
+            }; 
+            SUPERCLASS = NSWindowController; 
+        }, 
+        {CLASS = CVLConsoleWindow; LANGUAGE = ObjC; SUPERCLASS = NSWindow; }, 
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }
+    ); 
+    IBVersion = 1; 
+}

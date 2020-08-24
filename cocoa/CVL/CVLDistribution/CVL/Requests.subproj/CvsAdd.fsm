@@ -1,0 +1,69 @@
+{
+	states= {
+		start= {
+		};
+		cvsTask= {
+			enteringSelector="startTask";
+                        attributes= { isRunning="YES"; }
+		};
+		waitRepository = {
+			enteringSelector="waitForRepository";
+		};
+                waitForAuthorization= {
+                        attributes= { awaitsAuthorization="YES"; }
+                };
+                addChildren= {
+			enteringSelector="scheduleChildren";
+                };
+                failure= {
+                       enteringSelector="endWithFailure";
+                };
+                success= {
+                       enteringSelector="endWithSuccess";
+                };
+	};
+	transitions= (
+            {
+                sourceState= start;
+                targetState= waitForAuthorization;
+                conditionSelector= readyForCvsTask;
+            },
+            {   sourceState= start;
+                targetState= waitRepository;
+                conditionSelector= repositoryIsNotReady;
+            },
+            {   sourceState= waitForAuthorization;
+                targetState= cvsTask;
+                conditionSelector= authorizedToRun;
+            },
+            {   sourceState= cvsTask;
+                targetState= waitRepository;
+                conditionSelector= taskFailedBecauseOfAccess;
+            },
+            {   sourceState= cvsTask;
+                targetState= addChildren;
+                conditionSelector= taskWasSuccessfull;
+            },
+            {   sourceState= cvsTask;
+                targetState= failure;
+                conditionSelector= taskWasAFailure;
+            },
+            {   sourceState= waitRepository;
+                targetState= start;
+                conditionSelector= repositoryIsReady;
+            },
+            {   sourceState= waitRepository;
+                targetState= failure;
+                conditionSelector= repositoryFailed;
+            },
+            {   sourceState= addChildren;
+                targetState= failure;
+                conditionSelector= childrenRequestsFailed;
+            },
+            {   sourceState= addChildren;
+                targetState= success;
+                conditionSelector= childrenRequestsSuceeded;
+            }
+	);
+	beginState= start;
+}

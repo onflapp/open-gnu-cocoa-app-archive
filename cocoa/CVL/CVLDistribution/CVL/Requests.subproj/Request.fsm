@@ -1,0 +1,44 @@
+{
+	states= {
+		start= {
+			enteringSelector="start";
+		};
+		task= {
+			enteringSelector="startTask";
+                        attributes= { isRunning="YES"; }
+		};
+                waitForAuthorization= {
+                        attributes= { awaitsAuthorization="YES"; }
+                };
+                failure= {
+                };
+                success= {
+                };
+	};
+	transitions= (
+            {
+                sourceState= start;
+                targetState= waitForAuthorization;
+                conditionSelector= readyForTask;
+            },
+            {
+                sourceState= waitForAuthorization;
+                targetState= task;
+                conditionSelector= authorizedToRun;
+            },
+            {
+                sourceState=start;
+                targetState= failure;
+                conditionSelector= failedToGetReady;
+            },
+            {   sourceState= task;
+                targetState= success;
+                conditionSelector= taskWasSuccessfull;
+            },
+            {   sourceState= task;
+                targetState= failure;
+                conditionSelector= taskWasAFailure;
+            }
+	);
+	beginState= start;
+}

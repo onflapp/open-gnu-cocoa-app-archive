@@ -1,0 +1,43 @@
+{
+    IBClasses = (
+        {CLASS = CvsTagFormatter; LANGUAGE = ObjC; SUPERCLASS = NSFormatter; }, 
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {selectText = id; }; 
+            CLASS = NSTextField; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {formatter = id; }; 
+            SUPERCLASS = NSControl; 
+        }, 
+        {
+            ACTIONS = {
+                cancel = id; 
+                hide = id; 
+                ok = id; 
+                resultsChanged = id; 
+                saveAs = id; 
+                selectionMatrixChanged = id; 
+                show = id; 
+                toggleFreeFormDate = id; 
+            }; 
+            CLASS = RetrievePanelController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                dateCell = id; 
+                dateCellLabel = id; 
+                freeFormSwitch = id; 
+                openButton = id; 
+                panel = id; 
+                releaseTag = id; 
+                releaseTagLabel = id; 
+                revision = id; 
+                revisionLabel = id; 
+                saveAsButton = id; 
+                selectionMatrix = id; 
+                stickySwitch = id; 
+            }; 
+            SUPERCLASS = NSObject; 
+        }
+    ); 
+    IBVersion = 1; 
+}
